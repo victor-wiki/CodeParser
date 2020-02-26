@@ -79,7 +79,7 @@ namespace CodeParser.Test
                         string className = classDeclaration.identifier().GetText();
 
                         this.WriteKeyValue("Class", className);
-                        this.WriteLeftBrace();
+                        this.WriteBeginBrace();
 
                         ClassStatementContext[] classStatements = classDeclaration.GetRuleContexts<ClassStatementContext>();
 
@@ -106,7 +106,7 @@ namespace CodeParser.Test
                             }
                         }
 
-                        this.WriteRightBrace();
+                        this.WriteEndBrace();
                     }
                     else if (function != null)
                     {

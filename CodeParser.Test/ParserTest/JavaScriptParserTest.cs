@@ -68,7 +68,7 @@ namespace CodeParser.Test
                                     else
                                     {
                                         this.WriteKeyValue("Class", name);
-                                        this.WriteLeftBrace();
+                                        this.WriteBeginBrace();
 
                                         foreach (ObjectLiteralExpressionContext exp in exps)
                                         {
@@ -88,7 +88,7 @@ namespace CodeParser.Test
                                             }
                                         }
 
-                                        this.WriteRightBrace();
+                                        this.WriteEndBrace();
                                     }
                                 }
                             }

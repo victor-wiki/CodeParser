@@ -17,9 +17,9 @@ namespace CodeParser.Test
             {
                 this.WriteLine();
                 this.Write($"{file.Name}");
-                this.WriteLeftBoundaryLine();
+                this.WriteBeginBoundaryLine();
                 this.Parse(file);
-                this.WriteRightBoundaryLine();
+                this.WriteEndBoundaryLine();
             }
         }
 
@@ -28,22 +28,22 @@ namespace CodeParser.Test
             this.Write("");
         }
 
-        protected void WriteLeftBoundaryLine()
+        protected void WriteBeginBoundaryLine()
         {
             this.Write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         }
 
-        protected void WriteRightBoundaryLine()
+        protected void WriteEndBoundaryLine()
         {
             this.Write("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         }
 
-        protected void WriteLeftBrace()
+        protected void WriteBeginBrace()
         {
             this.Write("{");
         }
 
-        protected void WriteRightBrace()
+        protected void WriteEndBrace()
         {
             this.Write("}");
         }

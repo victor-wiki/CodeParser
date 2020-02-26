@@ -83,7 +83,7 @@ namespace CodeParser.Test
 
                                     this.WriteLine();
                                     this.WriteKeyValue("Class", className);
-                                    this.WriteLeftBrace();
+                                    this.WriteBeginBrace();
 
                                     MemberspecificationContext[] members = classSpec.GetRuleContexts<MemberspecificationContext>();
 
@@ -100,7 +100,7 @@ namespace CodeParser.Test
                                         }
                                     }
 
-                                    this.WriteRightBrace();
+                                    this.WriteEndBrace();
                                 }
                             }
                         }

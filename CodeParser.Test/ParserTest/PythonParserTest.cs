@@ -47,11 +47,11 @@ namespace CodeParser.Test
                         this.WriteLine();
                         this.WriteKeyValue("Class", name);
 
-                        this.WriteLeftBrace();
+                        this.WriteBeginBrace();
 
                         this.ParseClassContext(classdef);
 
-                        this.WriteRightBrace();
+                        this.WriteEndBrace();
                     }
                 }
             }

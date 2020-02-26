@@ -55,7 +55,7 @@ namespace CodeParser.Test
 
                         this.WriteLine();
                         this.WriteKeyValue("Interface", name);
-                        this.WriteLeftBrace();
+                        this.WriteBeginBrace();
 
                         var members = interfaceContext.interfaceBody().interfaceBodyDeclaration().Select(item => item.interfaceMemberDeclaration());
                         foreach (InterfaceMemberDeclarationContext member in members)
@@ -76,7 +76,7 @@ namespace CodeParser.Test
                                 this.WriteKeyValue("Method", methodName);
                             }
                         }
-                        this.WriteRightBrace();
+                        this.WriteEndBrace();
                     }
                     else if (child is ClassDeclarationContext)
                     {
@@ -85,7 +85,7 @@ namespace CodeParser.Test
 
                         this.WriteLine();
                         this.Write($"Class:{name}");
-                        this.WriteLeftBrace();
+                        this.WriteBeginBrace();
 
                         var members = classContext.classBody().classBodyDeclaration().Select(item => item.memberDeclaration());
                         foreach (MemberDeclarationContext member in members)
@@ -107,7 +107,7 @@ namespace CodeParser.Test
                             }
                         }
 
-                        this.WriteRightBrace();
+                        this.WriteEndBrace();
                     }
                 }
             }

@@ -126,15 +126,15 @@ namespace CodeParser.Test
 
             if (isClass)
             {
-                this.WriteLeftBrace();
+                this.WriteBeginBrace();
                 this.ParseClassDeclaration(classContext);
-                this.WriteRightBrace();
+                this.WriteEndBrace();
             }
             else if (isInterface)
             {
-                this.WriteLeftBrace();
+                this.WriteBeginBrace();
                 this.ParseInterfaceDeclaration(interfaceContext);
-                this.WriteRightBrace();
+                this.WriteEndBrace();
             }
         }
 
