@@ -49,7 +49,7 @@ class HelloWorld {
 
 	function sayHello(?string $word)
 	{
-		echo $word;
+	    echo $word;
 	}
 }
 
