@@ -38,11 +38,17 @@ namespace CodeParser.Test
 
                 foreach (TopStatementContext topStatement in phpBlock.topStatement())
                 {
-                    StatementContext statement = topStatement.statement();
+                    UseDeclarationContext useDeclaration = topStatement.useDeclaration();
+                    StatementContext statement = topStatement.statement();                    
                     ClassDeclarationContext classDeclaration = topStatement.classDeclaration();
                     FunctionDeclarationContext function = topStatement.functionDeclaration();
 
-                    if (statement != null)
+                    if(useDeclaration!=null)
+                    {
+                        string name = useDeclaration.useDeclarationContentList().GetText();
+                        this.WriteKeyValue("Use", name);
+                    }
+                    else if (statement != null)
                     {
                         ExpressionStatementContext expression = statement.expressionStatement();
 

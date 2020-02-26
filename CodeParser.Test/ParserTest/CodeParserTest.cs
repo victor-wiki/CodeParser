@@ -16,7 +16,7 @@ namespace CodeParser.Test
             foreach (var file in files)
             {
                 this.WriteLine();
-                this.Write($"begin to parse file:{file.Name}");
+                this.Write($"{file.Name}");
                 this.WriteLeftBoundaryLine();
                 this.Parse(file);
                 this.WriteRightBoundaryLine();

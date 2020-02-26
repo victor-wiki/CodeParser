@@ -16,7 +16,7 @@ class HelloWorld {
 
 function test()
 {
-   $helloWorld =new HelloWorld();
+   $helloWorld = new HelloWorld();
    $helloWorld->sayHello();
 }
 
