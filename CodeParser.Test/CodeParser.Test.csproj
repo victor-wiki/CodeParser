@@ -57,7 +57,7 @@
     <Compile Include="ParserTest\CSharpParserTest.cs" />
     <Compile Include="ParserTest\CppParserTest.cs" />
     <Compile Include="ParserTest\JavaScriptParserTest.cs" />
-    <Compile Include="ParserTest\PHPParserTest.cs" />
+    <Compile Include="ParserTest\PhpParserTest.cs" />
     <Compile Include="ParserTest\PythonParserTest.cs" />
     <Compile Include="ParserTest\JavaParserTest.cs" />
     <Compile Include="ParserHelper.cs" />
