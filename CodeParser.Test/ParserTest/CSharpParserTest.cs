@@ -31,9 +31,7 @@ namespace CodeParser.Test
         }
 
         private void ParseNode(IParseTree node)
-        {
-            string type = node.GetType().Name;
-
+        {           
             if (node is Using_directivesContext)
             {
                 Using_directivesContext usingContext = node as Using_directivesContext;
@@ -68,6 +66,7 @@ namespace CodeParser.Test
                         foreach (var childMember in childMembers)
                         {
                             var childMemberDeclaration = childMember.children[0];
+
                             if (childMemberDeclaration is Type_declarationContext)
                             {
                                 this.ParseTypeDeclaration(childMemberDeclaration as Type_declarationContext);
@@ -144,6 +143,7 @@ namespace CodeParser.Test
             foreach (var member in members)
             {
                 Common_member_declarationContext child = member.GetRuleContext<Common_member_declarationContext>(0);
+
                 if (child is Common_member_declarationContext)
                 {
                     Common_member_declarationContext commonMemberContext = child as Common_member_declarationContext;
@@ -194,6 +194,7 @@ namespace CodeParser.Test
         private void ParseInterfaceDeclaration(Interface_definitionContext node)
         {
             var members = node.interface_body().interface_member_declaration();
+
             foreach (var member in members)
             {
                 if (member is Interface_member_declarationContext)

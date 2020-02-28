@@ -34,23 +34,29 @@ namespace CodeParser.Test
             if (node is PackageDeclarationContext)
             {
                 PackageDeclarationContext packageContext = node as PackageDeclarationContext;
+
                 string name = this.GetNodeName(packageContext);
+
                 this.WriteKeyValue("Package", name);
             }
             else if (node is ImportDeclarationContext)
             {
                 ImportDeclarationContext importContext = node as ImportDeclarationContext;
+
                 string name = this.GetNodeName(importContext);
+
                 this.WriteKeyValue("Import", name);
             }
             else if (node is TypeDeclarationContext)
             {
                 TypeDeclarationContext typeContext = node as TypeDeclarationContext;
+
                 foreach (var child in typeContext.children)
                 {
                     if (child is InterfaceDeclarationContext)
                     {
                         InterfaceDeclarationContext interfaceContext = child as InterfaceDeclarationContext;
+
                         string name = interfaceContext.IDENTIFIER().GetText();
 
                         this.WriteLine();
@@ -58,6 +64,7 @@ namespace CodeParser.Test
                         this.WriteBeginBrace();
 
                         var members = interfaceContext.interfaceBody().interfaceBodyDeclaration().Select(item => item.interfaceMemberDeclaration());
+
                         foreach (InterfaceMemberDeclarationContext member in members)
                         {
                             var constContext = member.constDeclaration();
@@ -88,6 +95,7 @@ namespace CodeParser.Test
                         this.WriteBeginBrace();
 
                         var members = classContext.classBody().classBodyDeclaration().Select(item => item.memberDeclaration());
+
                         foreach (MemberDeclarationContext member in members)
                         {
                             FieldDeclarationContext field = member.fieldDeclaration();

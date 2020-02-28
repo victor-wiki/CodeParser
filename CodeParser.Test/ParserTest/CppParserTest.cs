@@ -67,6 +67,7 @@ namespace CodeParser.Test
                     else if (simpleDeclaration != null)
                     {
                         DeclspecifierseqContext[] decls = simpleDeclaration.GetRuleContexts<DeclspecifierseqContext>();
+
                         foreach (DeclspecifierseqContext decl in decls)
                         {
                             DeclspecifierContext declSpec = decl.declspecifier();
@@ -90,6 +91,7 @@ namespace CodeParser.Test
                                     foreach (MemberspecificationContext member in members)
                                     {
                                         MemberspecificationContext[] memberSpecs = member.GetRuleContexts<MemberspecificationContext>();
+
                                         foreach (MemberspecificationContext memberSpec in memberSpecs)
                                         {
                                             MemberdeclarationContext memberDeclaration = memberSpec.memberdeclaration();
@@ -116,6 +118,7 @@ namespace CodeParser.Test
         private void ParseFunction(FunctiondefinitionContext node)
         {
             PtrdeclaratorContext[] ptrs = node.declarator().GetRuleContexts<PtrdeclaratorContext>();
+
             foreach (PtrdeclaratorContext ptr in ptrs)
             {
                 NoptrdeclaratorContext noptr = ptr.noptrdeclarator();

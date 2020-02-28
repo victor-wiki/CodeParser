@@ -33,6 +33,7 @@ namespace CodeParser.Test
             if (node is TranslationUnitContext)
             {
                 TranslationUnitContext transUnit = node as TranslationUnitContext;
+
                 this.ParseTranslationUnit(transUnit);
             }
         }
@@ -56,6 +57,7 @@ namespace CodeParser.Test
                 foreach (DeclarationContext declaration in declarations)
                 {
                     InitDeclaratorListContext initDeclaratorList = declaration.initDeclaratorList();
+
                     string name = initDeclaratorList.initDeclarator().declarator().directDeclarator().Identifier().GetText();
 
                     this.WriteKeyValue("Field", name);

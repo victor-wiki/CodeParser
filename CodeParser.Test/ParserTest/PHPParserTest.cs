@@ -46,6 +46,7 @@ namespace CodeParser.Test
                     if(useDeclaration!=null)
                     {
                         string name = useDeclaration.useDeclarationContentList().GetText();
+
                         this.WriteKeyValue("Use", name);
                     }
                     else if (statement != null)
@@ -60,6 +61,7 @@ namespace CodeParser.Test
                             foreach (AssignmentExpressionContext assignment in assignments)
                             {
                                 string name = assignment.assignable().GetText();
+
                                 this.WriteKeyValue("Field", name);
                             }
 
@@ -79,6 +81,7 @@ namespace CodeParser.Test
                         string className = classDeclaration.identifier().GetText();
 
                         this.WriteKeyValue("Class", className);
+
                         this.WriteBeginBrace();
 
                         ClassStatementContext[] classStatements = classDeclaration.GetRuleContexts<ClassStatementContext>();
@@ -86,11 +89,13 @@ namespace CodeParser.Test
                         foreach (ClassStatementContext classStatement in classStatements)
                         {
                             VariableInitializerContext[] variables = classStatement.variableInitializer();
+
                             bool isField = variables.Length > 0;
 
                             foreach (VariableInitializerContext variable in variables)
                             {
                                 string name = variable.GetText();
+
                                 this.WriteKeyValue("Field", name);
                             }
 

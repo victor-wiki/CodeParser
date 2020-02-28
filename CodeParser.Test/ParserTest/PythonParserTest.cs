@@ -90,6 +90,7 @@ namespace CodeParser.Test
                             Testlist_star_exprContext[] ss = expr.GetRuleContexts<Testlist_star_exprContext>();
 
                             string name = ss.FirstOrDefault()?.GetText();
+
                             if (!string.IsNullOrEmpty(name))
                             {
                                 this.WriteKeyValue("Field", name);

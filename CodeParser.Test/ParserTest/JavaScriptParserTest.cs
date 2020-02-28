@@ -30,8 +30,7 @@ namespace CodeParser.Test
         }
 
         private void ParseNode(IParseTree node)
-        {
-            string type = node.GetType().Name;
+        {            
             if (node is SourceElementsContext)
             {
                 SourceElementsContext elementsContext = node as SourceElementsContext;
