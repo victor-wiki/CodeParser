@@ -173,7 +173,7 @@ namespace CodeParser
 
         private void Emit(int tokenType, int channel = DefaultTokenChannel, string text = "")
         {
-            var _tokenFactorySourcePair = new Antlr4.Runtime.Sharpen.Tuple<ITokenSource, ICharStream>(this, (ICharStream)InputStream);
+            var _tokenFactorySourcePair = new Tuple<ITokenSource, ICharStream>(this, (ICharStream)InputStream);
             IToken token =
 #if LIGHT_TOKEN
                 new PT.PM.AntlrUtils.LightToken((PT.PM.AntlrUtils.LightInputStream) _tokenFactorySourcePair.Item2,

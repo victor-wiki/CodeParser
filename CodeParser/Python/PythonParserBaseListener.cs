@@ -33,7 +33,7 @@ namespace CodeParser
     /// of the available methods.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
-    [System.CLSCompliant(false)]
+    //[System.CLSCompliant(false)]
     public partial class PythonParserBaseListener : IPythonParserListener
     {
         /// <summary>
