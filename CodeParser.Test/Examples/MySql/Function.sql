@@ -1,0 +1,14 @@
+CREATE  FUNCTION `test`.`sumNum`(_NUM INT) RETURNS INT(11)
+ 
+BEGIN
+
+    SET @I=1;
+	SET @RES=0; 
+
+	WHILE @I<=_NUM DO
+		SET @RES=@RES+@I;
+		SET @I=@I+1;
+	END WHILE; 
+
+	RETURN @RES; 
+END

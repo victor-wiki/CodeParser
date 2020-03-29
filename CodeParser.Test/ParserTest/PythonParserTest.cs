@@ -31,9 +31,8 @@ namespace CodeParser.Test
 
         private void ParseNode(IParseTree node)
         {
-            if (node is StmtContext)
-            {
-                StmtContext stmtContext = node as StmtContext;
+            if (node is StmtContext stmtContext)
+            {               
                 Compound_stmtContext compound_Stmt = stmtContext.compound_stmt();
 
                 if (compound_Stmt != null)

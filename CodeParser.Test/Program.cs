@@ -13,6 +13,7 @@ namespace CodeParser.Test
             Parse("JavaScript");
             Parse("C++");
             Parse("C");
+            Parse("MySql");
 
             Console.ReadLine();
         }       

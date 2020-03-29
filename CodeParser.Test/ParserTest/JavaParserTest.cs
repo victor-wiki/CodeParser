@@ -31,26 +31,20 @@ namespace CodeParser.Test
 
         private void ParseNode(IParseTree node)
         {
-            if (node is PackageDeclarationContext)
+            if (node is PackageDeclarationContext packageContext)
             {
-                PackageDeclarationContext packageContext = node as PackageDeclarationContext;
-
                 string name = this.GetNodeName(packageContext);
 
                 this.WriteKeyValue("Package", name);
             }
-            else if (node is ImportDeclarationContext)
+            else if (node is ImportDeclarationContext importContext)
             {
-                ImportDeclarationContext importContext = node as ImportDeclarationContext;
-
                 string name = this.GetNodeName(importContext);
 
                 this.WriteKeyValue("Import", name);
             }
-            else if (node is TypeDeclarationContext)
+            else if (node is TypeDeclarationContext typeContext)
             {
-                TypeDeclarationContext typeContext = node as TypeDeclarationContext;
-
                 foreach (var child in typeContext.children)
                 {
                     if (child is InterfaceDeclarationContext)
@@ -72,7 +66,7 @@ namespace CodeParser.Test
                             {
                                 string constName = constContext.constantDeclarator(0).IDENTIFIER().GetText();
 
-                                this.Write($"Const field:{constName}");
+                                this.WriteLine($"Const field:{constName}");
                             }
 
                             InterfaceMethodDeclarationContext method = member.interfaceMethodDeclaration();
@@ -91,7 +85,7 @@ namespace CodeParser.Test
                         string name = this.GetNodeName(classContext);
 
                         this.WriteLine();
-                        this.Write($"Class:{name}");
+                        this.WriteLine($"Class:{name}");
                         this.WriteBeginBrace();
 
                         var members = classContext.classBody().classBodyDeclaration().Select(item => item.memberDeclaration());

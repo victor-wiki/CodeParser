@@ -6,8 +6,14 @@
 
   <ItemGroup>
     <Compile Remove="JavaClass\**" />
+    <Compile Remove="MySql0\**" />
+    <Compile Remove="MySql2\**" />
     <EmbeddedResource Remove="JavaClass\**" />
+    <EmbeddedResource Remove="MySql0\**" />
+    <EmbeddedResource Remove="MySql2\**" />
     <None Remove="JavaClass\**" />
+    <None Remove="MySql0\**" />
+    <None Remove="MySql2\**" />
   </ItemGroup>
 
   <ItemGroup>

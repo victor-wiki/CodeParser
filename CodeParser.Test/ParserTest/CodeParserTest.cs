@@ -6,17 +6,21 @@ namespace CodeParser.Test
     public abstract class CodeParserTest
     {
         public abstract string Language { get; }
+        public virtual string SubFolder { get; set; }
         public abstract string FileExtension { get; }
+
+        protected int indent = 0;
 
         public void Parse()
         {
-            DirectoryInfo di = new DirectoryInfo("Examples");
+            DirectoryInfo di = new DirectoryInfo("Examples" + (!string.IsNullOrEmpty(this.SubFolder) ? ("/" + this.SubFolder) : ""));
+
             FileInfo[] files = di.GetFiles("*" + this.FileExtension);
 
             foreach (var file in files)
             {
                 this.WriteLine();
-                this.Write($"{file.Name}");
+                this.WriteLine($"{file.Name}");
                 this.WriteBeginBoundaryLine();
                 this.Parse(file);
                 this.WriteEndBoundaryLine();
@@ -25,39 +29,49 @@ namespace CodeParser.Test
 
         protected void WriteLine()
         {
-            this.Write("");
+            this.WriteLine("");
         }
 
         protected void WriteBeginBoundaryLine()
         {
-            this.Write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            this.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         }
 
         protected void WriteEndBoundaryLine()
         {
-            this.Write("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+            this.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         }
 
-        protected void WriteBeginBrace()
+        protected void WriteBeginBrace(int indent = 0)
         {
-            this.Write("{");
+            this.WriteLine(this.GetIndent(indent) + "{");
         }
 
-        protected void WriteEndBrace()
+        protected void WriteEndBrace(int indent = 0)
         {
-            this.Write("}");
+            this.WriteLine(this.GetIndent(indent) + "}");
         }
 
         public virtual void Parse(FileInfo file) { }
 
-        protected void WriteKeyValue(string key, string value)
+        protected void WriteKeyValue(string key, string value, int indent=0)
         {
-            this.Write($"{key}:{value}");
+            this.WriteLine(this.GetIndent(indent) + $"{key}:{value}");
+        }       
+
+        protected void WriteLine(string text, int indent=0)
+        {
+            Console.WriteLine(this.GetIndent(indent) + text);
         }
 
-        protected void Write(string text)
+        protected void Write(string text, int indent = 0)
         {
-            Console.WriteLine(text);
+            Console.Write(this.GetIndent(indent) + text);
+        }
+
+        private string GetIndent(int indent)
+        {
+            return "".PadLeft(indent, ' ');
         }
     }
 }
