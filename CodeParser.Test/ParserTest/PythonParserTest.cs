@@ -8,8 +8,7 @@ namespace CodeParser.Test
 {
     public class PythonParserTest : CodeParserTest
     {
-        public override string Language => "Python";
-        public override string FileExtension => ".py";
+        public override string Language => "Python";      
 
         public override void Parse(FileInfo file)
         {

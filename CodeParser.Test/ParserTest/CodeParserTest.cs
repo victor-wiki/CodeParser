@@ -4,18 +4,17 @@ using System.IO;
 namespace CodeParser.Test
 {
     public abstract class CodeParserTest
-    {
+    {       
+        public virtual string SubFolder { get; set; }  
         public abstract string Language { get; }
-        public virtual string SubFolder { get; set; }
-        public abstract string FileExtension { get; }
 
-        protected int indent = 0;
+        protected int indent = 0;       
 
-        public void Parse()
+        public void Parse(ParserInfo info)
         {
             DirectoryInfo di = new DirectoryInfo("Examples" + (!string.IsNullOrEmpty(this.SubFolder) ? ("/" + this.SubFolder) : ""));
 
-            FileInfo[] files = di.GetFiles("*" + this.FileExtension);
+            FileInfo[] files = di.GetFiles("*" + info.FileExtension);
 
             foreach (var file in files)
             {

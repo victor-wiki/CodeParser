@@ -9,8 +9,7 @@ namespace CodeParser.Test
 {
     public class MySqlParserTest : CodeParserTest
     {
-        public override string Language => "MySql";
-        public override string FileExtension => ".sql";
+        public override string Language => "MySql";       
         public override string SubFolder => "MySql";
 
         public override void Parse(FileInfo file)

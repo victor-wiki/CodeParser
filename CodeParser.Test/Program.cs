@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeParser;
+using System;
 
 namespace CodeParser.Test
 {
@@ -20,10 +21,19 @@ namespace CodeParser.Test
 
         static void Parse(string language)
         {
-            CodeParserTest codeParserTest = ParserHelper.GetParser(language);
+            CodeParserTest codeParserTest = ParserHelper.GetParserTest(language);
             if (codeParserTest != null)
             {
-                codeParserTest.Parse();
+                ParserInfo info = ParserManager.GetParserInfoByLanguage(language);
+
+                if(info!=null)
+                {
+                    codeParserTest.Parse(info);
+                }
+                else
+                {
+                    Console.WriteLine($"Can't get ParserInfo for language \"{language}\".");
+                }
             }
             else
             {

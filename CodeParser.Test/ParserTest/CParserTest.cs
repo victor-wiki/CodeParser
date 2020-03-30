@@ -7,8 +7,7 @@ namespace CodeParser.Test
 {
     public class CParserTest : CodeParserTest
     {
-        public override string Language => "C";
-        public override string FileExtension => ".c";
+        public override string Language => "C";      
 
         public override void Parse(FileInfo file)
         {

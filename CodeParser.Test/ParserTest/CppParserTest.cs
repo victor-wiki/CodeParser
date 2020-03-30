@@ -7,8 +7,7 @@ namespace CodeParser.Test
 {
     public class CppParserTest : CodeParserTest
     {
-        public override string Language => "C++";
-        public override string FileExtension => ".cpp";
+        public override string Language => "C++";       
 
         public override void Parse(FileInfo file)
         {

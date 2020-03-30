@@ -8,8 +8,7 @@ namespace CodeParser.Test
 {
     public class JavaParserTest : CodeParserTest
     {
-        public override string Language => "Java";
-        public override string FileExtension => ".java";
+        public override string Language => "Java";       
 
         public override void Parse(FileInfo file)
         {

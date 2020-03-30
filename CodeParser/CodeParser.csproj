@@ -17,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Java\Java9BaseListener.cs" />
-    <Compile Remove="Java\Java9Lexer.cs" />
-    <Compile Remove="Java\Java9Listener.cs" />
-    <Compile Remove="Java\Java9Parser.cs" />
+    <Compile Remove="Parser\Java\Java9BaseListener.cs" />
+    <Compile Remove="Parser\Java\Java9Lexer.cs" />
+    <Compile Remove="Parser\Java\Java9Listener.cs" />
+    <Compile Remove="Parser\Java\Java9Parser.cs" />
   </ItemGroup>
 
   <ItemGroup>

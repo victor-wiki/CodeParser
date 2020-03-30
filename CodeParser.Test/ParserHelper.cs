@@ -7,7 +7,7 @@ namespace CodeParser.Test
     public class ParserHelper
     {       
 
-        public static CodeParserTest GetParser(string language)
+        public static CodeParserTest GetParserTest(string language)
         {
             var assembly = Assembly.GetExecutingAssembly();
             var typeArray = assembly.ExportedTypes;

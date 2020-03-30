@@ -8,8 +8,7 @@ namespace CodeParser.Test
 {
     public class JavaScriptParserTest : CodeParserTest
     {
-        public override string Language => "JavaScript";
-        public override string FileExtension => ".js";
+        public override string Language => "JavaScript";       
 
         public override void Parse(FileInfo file)
         {

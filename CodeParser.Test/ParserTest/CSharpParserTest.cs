@@ -9,8 +9,7 @@ namespace CodeParser.Test
 {
     public class CSharpParserTest : CodeParserTest
     {
-        public override string Language => "C#";
-        public override string FileExtension => ".cs";
+        public override string Language => "C#";       
 
         public override void Parse(FileInfo file)
         {
