@@ -20,7 +20,7 @@ namespace CodeParser.Viewer
         private string coderPaserDllName = "CodeParser.dll";
         private Assembly assembly = null;
         private List<Type> parserTypes = new List<Type>();
-        private Parser parser = null;       
+        private Parser parser = null;
 
         private static List<string> ignoreMethods = new List<string>()
         {
@@ -240,8 +240,9 @@ namespace CodeParser.Viewer
 
                             string nodeText = isArray ? (m.Name + "[]") : m.Name;
                             TreeNode childNode = this.CreateTreeNode(nodeText);
+                            childNode.Name = m.Name;
 
-                            childNode.Tag = childValue;                            
+                            childNode.Tag = childValue;
 
                             node.Nodes.Add(childNode);
 
@@ -272,7 +273,14 @@ namespace CodeParser.Viewer
 
                                 foreach (IParseTree tn in treeNodes)
                                 {
-                                    TreeNode childNode = this.CreateTreeNode($"{tn.GetType().Name}");
+                                    if (tn is TerminalNodeImpl && tn.GetText() == "<EOF>" && this.chkHideEmptyNode.Checked)
+                                    {
+                                        continue;
+                                    }
+
+                                    string childName = tn.GetType().Name;
+                                    TreeNode childNode = this.CreateTreeNode($"{childName}");
+                                    childNode.Name = childName;
                                     childNode.Tag = tn;
 
                                     node.Nodes.Add(childNode);
@@ -293,7 +301,7 @@ namespace CodeParser.Viewer
             {
                 node.Expand();
             }
-        }       
+        }
 
         private TreeNode CreateTreeNode(string text, string imageKey = null)
         {
@@ -377,7 +385,14 @@ namespace CodeParser.Viewer
 
         private void tsmiExpandAll_Click(object sender, EventArgs e)
         {
+            TreeNode node = this.tvParserNodes.SelectedNode;            
+
             this.tvParserNodes.ExpandAll();
+
+            if (node != null)
+            {
+                node.EnsureVisible();
+            }
         }
 
         private void tsmiCollapseAll_Click(object sender, EventArgs e)
@@ -412,6 +427,8 @@ namespace CodeParser.Viewer
                 this.txtChildCount.Text = values.Length.ToString();
                 this.txtText.Text = string.Join(Environment.NewLine, values.Select(item => this.GetNodeValueInfo(item).Text));
             }
+
+            this.lblMessage.Text = this.GetTreeNodePath(e.Node);
         }
 
         private string GetFileContent()
@@ -479,5 +496,85 @@ namespace CodeParser.Viewer
         {
             this.LoadTree();
         }
+
+        private void tvParserNodes_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.tvParserNodes.SelectedNode = e.Node;
+
+                this.SetMenuItemVisible(e.Node);
+
+                this.contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+
+        private void SetMenuItemVisible(TreeNode node)
+        {
+            this.tsmiCollapseToChildren.Visible = node != null;
+            this.tsmiCopyPath.Visible = node != null;           
+        }
+
+        private void tvParserNodes_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && this.tvParserNodes.SelectedNode == null)
+            {
+                this.SetMenuItemVisible(null);
+
+                this.contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+
+        private void tsmiCollapseToChildren_Click(object sender, EventArgs e)
+        {
+            TreeNode node = this.tvParserNodes.SelectedNode;
+
+            if(node!=null)
+            {
+                foreach(TreeNode tn in node.Nodes)
+                {
+                    tn.Collapse();
+                }
+            }
+        }
+
+        private string GetTreeNodePath(TreeNode node)
+        {
+            List<string> texts = new List<string>();
+
+            texts.Add(string.IsNullOrEmpty(node.Name) ? node.Text: node.Name);
+
+            TreeNode parent = node.Parent;
+            while(parent!=null)
+            {
+                texts.Add(string.IsNullOrEmpty(parent.Name) ? parent.Text: parent.Name);
+                parent = parent.Parent;
+            }
+
+            texts.Reverse();
+
+            return string.Join(" > ", texts);
+        }
+
+        private void tsmiCopyPath_Click(object sender, EventArgs e)
+        {
+            TreeNode node = this.tvParserNodes.SelectedNode;
+
+            if (node != null)
+            {
+                string path = this.GetTreeNodePath(node);
+
+                if (!string.IsNullOrEmpty(path))
+                {
+                    Clipboard.SetDataObject(path);
+                    MessageBox.Show("The path has been copied to clipboard.");
+                }
+            }
+        }
+
+        private void frmMain_SizeChanged(object sender, EventArgs e)
+        {
+            
+        }      
     }
 }

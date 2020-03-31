@@ -51,6 +51,9 @@
             this.rbChildren = new System.Windows.Forms.RadioButton();
             this.rbMethods = new System.Windows.Forms.RadioButton();
             this.btnReload = new System.Windows.Forms.Button();
+            this.tsmiCopyPath = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCollapseToChildren = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -77,40 +80,43 @@
             this.splitContainer1.Panel2.Controls.Add(this.txtTypeName);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Size = new System.Drawing.Size(832, 483);
+            this.splitContainer1.Size = new System.Drawing.Size(832, 461);
             this.splitContainer1.SplitterDistance = 418;
             this.splitContainer1.TabIndex = 0;
             // 
             // tvParserNodes
             // 
-            this.tvParserNodes.ContextMenuStrip = this.contextMenuStrip1;
             this.tvParserNodes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvParserNodes.Location = new System.Drawing.Point(0, 0);
             this.tvParserNodes.Name = "tvParserNodes";
-            this.tvParserNodes.Size = new System.Drawing.Size(418, 483);
+            this.tvParserNodes.Size = new System.Drawing.Size(418, 461);
             this.tvParserNodes.TabIndex = 0;
             this.tvParserNodes.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvParserNodes_AfterSelect);
+            this.tvParserNodes.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvParserNodes_NodeMouseClick);
             this.tvParserNodes.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvParserNodes_NodeMouseDoubleClick);
+            this.tvParserNodes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tvParserNodes_MouseClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiExpandAll,
-            this.tsmiCollapseAll});
+            this.tsmiCollapseAll,
+            this.tsmiCollapseToChildren,
+            this.tsmiCopyPath});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(142, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(191, 92);
             // 
             // tsmiExpandAll
             // 
             this.tsmiExpandAll.Name = "tsmiExpandAll";
-            this.tsmiExpandAll.Size = new System.Drawing.Size(141, 22);
+            this.tsmiExpandAll.Size = new System.Drawing.Size(190, 22);
             this.tsmiExpandAll.Text = "expand all";
             this.tsmiExpandAll.Click += new System.EventHandler(this.tsmiExpandAll_Click);
             // 
             // tsmiCollapseAll
             // 
             this.tsmiCollapseAll.Name = "tsmiCollapseAll";
-            this.tsmiCollapseAll.Size = new System.Drawing.Size(141, 22);
+            this.tsmiCollapseAll.Size = new System.Drawing.Size(190, 22);
             this.tsmiCollapseAll.Text = "collapse all";
             this.tsmiCollapseAll.Click += new System.EventHandler(this.tsmiCollapseAll_Click);
             // 
@@ -121,7 +127,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtText.Location = new System.Drawing.Point(3, 82);
             this.txtText.Name = "txtText";
-            this.txtText.Size = new System.Drawing.Size(404, 398);
+            this.txtText.Size = new System.Drawing.Size(404, 379);
             this.txtText.TabIndex = 7;
             this.txtText.Text = "";
             // 
@@ -266,12 +272,35 @@
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
+            // tsmiCopyPath
+            // 
+            this.tsmiCopyPath.Name = "tsmiCopyPath";
+            this.tsmiCopyPath.Size = new System.Drawing.Size(190, 22);
+            this.tsmiCopyPath.Text = "copy path";
+            this.tsmiCopyPath.Click += new System.EventHandler(this.tsmiCopyPath_Click);
+            // 
+            // tsmiCollapseToChildren
+            // 
+            this.tsmiCollapseToChildren.Name = "tsmiCollapseToChildren";
+            this.tsmiCollapseToChildren.Size = new System.Drawing.Size(190, 22);
+            this.tsmiCollapseToChildren.Text = "collapse to children";
+            this.tsmiCollapseToChildren.Click += new System.EventHandler(this.tsmiCollapseToChildren_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblMessage.Location = new System.Drawing.Point(0, 530);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(837, 18);
+            this.lblMessage.TabIndex = 12;
+            // 
             // frmMain
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 548);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.rbMethods);
             this.Controls.Add(this.rbChildren);
@@ -288,6 +317,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CodeParser viewer";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.SizeChanged += new System.EventHandler(this.frmMain_SizeChanged);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmMain_DragDrop);
             this.DragOver += new System.Windows.Forms.DragEventHandler(this.frmMain_DragOver);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -324,6 +354,9 @@
         private System.Windows.Forms.RadioButton rbChildren;
         private System.Windows.Forms.RadioButton rbMethods;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCollapseToChildren;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyPath;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
 
