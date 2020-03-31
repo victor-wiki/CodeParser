@@ -16,6 +16,7 @@ namespace CodeParser
                     new ParserInfo() { ParserName = nameof(CParser), Language= "C", FileExtension = ".c", EntryRuleName =nameof(CParser.compilationUnit) },
                     new ParserInfo() { ParserName = nameof(CPP14Parser), Language= "C++", FileExtension = ".cpp", EntryRuleName =nameof(CPP14Parser.translationunit) },
                     new ParserInfo() { ParserName = nameof(CSharpParser), Language= "C#", FileExtension = ".cs", EntryRuleName =nameof(CSharpParser.compilation_unit) },
+                    new ParserInfo() { ParserName = nameof(Java8Parser), Language= "Java8", FileExtension = ".java", EntryRuleName =nameof(Java8Parser.compilationUnit) },
                     new ParserInfo() { ParserName = nameof(JavaParser), Language= "Java", FileExtension = ".java", EntryRuleName =nameof(JavaParser.compilationUnit) },
                     new ParserInfo() { ParserName = nameof(JavaScriptParser), Language= "JavaScript", FileExtension = ".js", EntryRuleName =nameof(JavaScriptParser.program) },                    
                     new ParserInfo() { ParserName = nameof(PythonParser), Language= "Python", FileExtension = ".py", EntryRuleName =nameof(PythonParser.file_input)},                   
