@@ -30,65 +30,63 @@ using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 using DFA = Antlr4.Runtime.Dfa.DFA;
 
-namespace CodeParser
+[System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
+//[System.CLSCompliant(false)]
+public partial class CParser : Parser
 {
-    [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
-    //[System.CLSCompliant(false)]
-    public partial class CParser : Parser
-    {
-        protected static DFA[] decisionToDFA;
-        protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
-        public const int
-            T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, T__7 = 8, T__8 = 9,
-            T__9 = 10, T__10 = 11, T__11 = 12, T__12 = 13, T__13 = 14, Auto = 15, Break = 16, Case = 17,
-            Char = 18, Const = 19, Continue = 20, Default = 21, Do = 22, Double = 23, Else = 24,
-            Enum = 25, Extern = 26, Float = 27, For = 28, Goto = 29, If = 30, Inline = 31, Int = 32,
-            Long = 33, Register = 34, Restrict = 35, Return = 36, Short = 37, Signed = 38, Sizeof = 39,
-            Static = 40, Struct = 41, Switch = 42, Typedef = 43, Union = 44, Unsigned = 45, Void = 46,
-            Volatile = 47, While = 48, Alignas = 49, Alignof = 50, Atomic = 51, Bool = 52, Complex = 53,
-            Generic = 54, Imaginary = 55, Noreturn = 56, StaticAssert = 57, ThreadLocal = 58,
-            LeftParen = 59, RightParen = 60, LeftBracket = 61, RightBracket = 62, LeftBrace = 63,
-            RightBrace = 64, Less = 65, LessEqual = 66, Greater = 67, GreaterEqual = 68, LeftShift = 69,
-            RightShift = 70, Plus = 71, PlusPlus = 72, Minus = 73, MinusMinus = 74, Star = 75,
-            Div = 76, Mod = 77, And = 78, Or = 79, AndAnd = 80, OrOr = 81, Caret = 82, Not = 83, Tilde = 84,
-            Question = 85, Colon = 86, Semi = 87, Comma = 88, Assign = 89, StarAssign = 90, DivAssign = 91,
-            ModAssign = 92, PlusAssign = 93, MinusAssign = 94, LeftShiftAssign = 95, RightShiftAssign = 96,
-            AndAssign = 97, XorAssign = 98, OrAssign = 99, Equal = 100, NotEqual = 101, Arrow = 102,
-            Dot = 103, Ellipsis = 104, Identifier = 105, Constant = 106, DigitSequence = 107,
-            StringLiteral = 108, ComplexDefine = 109, IncludeDirective = 110, AsmBlock = 111,
-            LineAfterPreprocessing = 112, LineDirective = 113, PragmaDirective = 114, Whitespace = 115,
-            Newline = 116, BlockComment = 117, LineComment = 118;
-        public const int
-            RULE_primaryExpression = 0, RULE_genericSelection = 1, RULE_genericAssocList = 2,
-            RULE_genericAssociation = 3, RULE_postfixExpression = 4, RULE_argumentExpressionList = 5,
-            RULE_unaryExpression = 6, RULE_unaryOperator = 7, RULE_castExpression = 8,
-            RULE_multiplicativeExpression = 9, RULE_additiveExpression = 10, RULE_shiftExpression = 11,
-            RULE_relationalExpression = 12, RULE_equalityExpression = 13, RULE_andExpression = 14,
-            RULE_exclusiveOrExpression = 15, RULE_inclusiveOrExpression = 16, RULE_logicalAndExpression = 17,
-            RULE_logicalOrExpression = 18, RULE_conditionalExpression = 19, RULE_assignmentExpression = 20,
-            RULE_assignmentOperator = 21, RULE_expression = 22, RULE_constantExpression = 23,
-            RULE_declaration = 24, RULE_declarationSpecifiers = 25, RULE_declarationSpecifiers2 = 26,
-            RULE_declarationSpecifier = 27, RULE_initDeclaratorList = 28, RULE_initDeclarator = 29,
-            RULE_storageClassSpecifier = 30, RULE_typeSpecifier = 31, RULE_structOrUnionSpecifier = 32,
-            RULE_structOrUnion = 33, RULE_structDeclarationList = 34, RULE_structDeclaration = 35,
-            RULE_specifierQualifierList = 36, RULE_structDeclaratorList = 37, RULE_structDeclarator = 38,
-            RULE_enumSpecifier = 39, RULE_enumeratorList = 40, RULE_enumerator = 41,
-            RULE_enumerationConstant = 42, RULE_atomicTypeSpecifier = 43, RULE_typeQualifier = 44,
-            RULE_functionSpecifier = 45, RULE_alignmentSpecifier = 46, RULE_declarator = 47,
-            RULE_directDeclarator = 48, RULE_gccDeclaratorExtension = 49, RULE_gccAttributeSpecifier = 50,
-            RULE_gccAttributeList = 51, RULE_gccAttribute = 52, RULE_nestedParenthesesBlock = 53,
-            RULE_pointer = 54, RULE_typeQualifierList = 55, RULE_parameterTypeList = 56,
-            RULE_parameterList = 57, RULE_parameterDeclaration = 58, RULE_identifierList = 59,
-            RULE_typeName = 60, RULE_abstractDeclarator = 61, RULE_directAbstractDeclarator = 62,
-            RULE_typedefName = 63, RULE_initializer = 64, RULE_initializerList = 65,
-            RULE_designation = 66, RULE_designatorList = 67, RULE_designator = 68,
-            RULE_staticAssertDeclaration = 69, RULE_statement = 70, RULE_labeledStatement = 71,
-            RULE_compoundStatement = 72, RULE_blockItemList = 73, RULE_blockItem = 74,
-            RULE_expressionStatement = 75, RULE_selectionStatement = 76, RULE_iterationStatement = 77,
-            RULE_forCondition = 78, RULE_forDeclaration = 79, RULE_forExpression = 80,
-            RULE_jumpStatement = 81, RULE_compilationUnit = 82, RULE_translationUnit = 83,
-            RULE_externalDeclaration = 84, RULE_functionDefinition = 85, RULE_declarationList = 86;
-        public static readonly string[] ruleNames = {
+    protected static DFA[] decisionToDFA;
+    protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
+    public const int
+        T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, T__7 = 8, T__8 = 9,
+        T__9 = 10, T__10 = 11, T__11 = 12, T__12 = 13, T__13 = 14, Auto = 15, Break = 16, Case = 17,
+        Char = 18, Const = 19, Continue = 20, Default = 21, Do = 22, Double = 23, Else = 24,
+        Enum = 25, Extern = 26, Float = 27, For = 28, Goto = 29, If = 30, Inline = 31, Int = 32,
+        Long = 33, Register = 34, Restrict = 35, Return = 36, Short = 37, Signed = 38, Sizeof = 39,
+        Static = 40, Struct = 41, Switch = 42, Typedef = 43, Union = 44, Unsigned = 45, Void = 46,
+        Volatile = 47, While = 48, Alignas = 49, Alignof = 50, Atomic = 51, Bool = 52, Complex = 53,
+        Generic = 54, Imaginary = 55, Noreturn = 56, StaticAssert = 57, ThreadLocal = 58,
+        LeftParen = 59, RightParen = 60, LeftBracket = 61, RightBracket = 62, LeftBrace = 63,
+        RightBrace = 64, Less = 65, LessEqual = 66, Greater = 67, GreaterEqual = 68, LeftShift = 69,
+        RightShift = 70, Plus = 71, PlusPlus = 72, Minus = 73, MinusMinus = 74, Star = 75,
+        Div = 76, Mod = 77, And = 78, Or = 79, AndAnd = 80, OrOr = 81, Caret = 82, Not = 83, Tilde = 84,
+        Question = 85, Colon = 86, Semi = 87, Comma = 88, Assign = 89, StarAssign = 90, DivAssign = 91,
+        ModAssign = 92, PlusAssign = 93, MinusAssign = 94, LeftShiftAssign = 95, RightShiftAssign = 96,
+        AndAssign = 97, XorAssign = 98, OrAssign = 99, Equal = 100, NotEqual = 101, Arrow = 102,
+        Dot = 103, Ellipsis = 104, Identifier = 105, Constant = 106, DigitSequence = 107,
+        StringLiteral = 108, ComplexDefine = 109, IncludeDirective = 110, AsmBlock = 111,
+        LineAfterPreprocessing = 112, LineDirective = 113, PragmaDirective = 114, Whitespace = 115,
+        Newline = 116, BlockComment = 117, LineComment = 118;
+    public const int
+        RULE_primaryExpression = 0, RULE_genericSelection = 1, RULE_genericAssocList = 2,
+        RULE_genericAssociation = 3, RULE_postfixExpression = 4, RULE_argumentExpressionList = 5,
+        RULE_unaryExpression = 6, RULE_unaryOperator = 7, RULE_castExpression = 8,
+        RULE_multiplicativeExpression = 9, RULE_additiveExpression = 10, RULE_shiftExpression = 11,
+        RULE_relationalExpression = 12, RULE_equalityExpression = 13, RULE_andExpression = 14,
+        RULE_exclusiveOrExpression = 15, RULE_inclusiveOrExpression = 16, RULE_logicalAndExpression = 17,
+        RULE_logicalOrExpression = 18, RULE_conditionalExpression = 19, RULE_assignmentExpression = 20,
+        RULE_assignmentOperator = 21, RULE_expression = 22, RULE_constantExpression = 23,
+        RULE_declaration = 24, RULE_declarationSpecifiers = 25, RULE_declarationSpecifiers2 = 26,
+        RULE_declarationSpecifier = 27, RULE_initDeclaratorList = 28, RULE_initDeclarator = 29,
+        RULE_storageClassSpecifier = 30, RULE_typeSpecifier = 31, RULE_structOrUnionSpecifier = 32,
+        RULE_structOrUnion = 33, RULE_structDeclarationList = 34, RULE_structDeclaration = 35,
+        RULE_specifierQualifierList = 36, RULE_structDeclaratorList = 37, RULE_structDeclarator = 38,
+        RULE_enumSpecifier = 39, RULE_enumeratorList = 40, RULE_enumerator = 41,
+        RULE_enumerationConstant = 42, RULE_atomicTypeSpecifier = 43, RULE_typeQualifier = 44,
+        RULE_functionSpecifier = 45, RULE_alignmentSpecifier = 46, RULE_declarator = 47,
+        RULE_directDeclarator = 48, RULE_gccDeclaratorExtension = 49, RULE_gccAttributeSpecifier = 50,
+        RULE_gccAttributeList = 51, RULE_gccAttribute = 52, RULE_nestedParenthesesBlock = 53,
+        RULE_pointer = 54, RULE_typeQualifierList = 55, RULE_parameterTypeList = 56,
+        RULE_parameterList = 57, RULE_parameterDeclaration = 58, RULE_identifierList = 59,
+        RULE_typeName = 60, RULE_abstractDeclarator = 61, RULE_directAbstractDeclarator = 62,
+        RULE_typedefName = 63, RULE_initializer = 64, RULE_initializerList = 65,
+        RULE_designation = 66, RULE_designatorList = 67, RULE_designator = 68,
+        RULE_staticAssertDeclaration = 69, RULE_statement = 70, RULE_labeledStatement = 71,
+        RULE_compoundStatement = 72, RULE_blockItemList = 73, RULE_blockItem = 74,
+        RULE_expressionStatement = 75, RULE_selectionStatement = 76, RULE_iterationStatement = 77,
+        RULE_forCondition = 78, RULE_forDeclaration = 79, RULE_forExpression = 80,
+        RULE_jumpStatement = 81, RULE_compilationUnit = 82, RULE_translationUnit = 83,
+        RULE_externalDeclaration = 84, RULE_functionDefinition = 85, RULE_declarationList = 86;
+    public static readonly string[] ruleNames = {
         "primaryExpression", "genericSelection", "genericAssocList", "genericAssociation",
         "postfixExpression", "argumentExpressionList", "unaryExpression", "unaryOperator",
         "castExpression", "multiplicativeExpression", "additiveExpression", "shiftExpression",
@@ -114,7 +112,7 @@ namespace CodeParser
         "functionDefinition", "declarationList"
     };
 
-        private static readonly string[] _LiteralNames = {
+    private static readonly string[] _LiteralNames = {
         null, "'__extension__'", "'__builtin_va_arg'", "'__builtin_offsetof'",
         "'__m128'", "'__m128d'", "'__m128i'", "'__typeof__'", "'__inline__'",
         "'__stdcall'", "'__declspec'", "'__asm'", "'__attribute__'", "'__asm__'",
@@ -131,7 +129,7 @@ namespace CodeParser
         "';'", "','", "'='", "'*='", "'/='", "'%='", "'+='", "'-='", "'<<='",
         "'>>='", "'&='", "'^='", "'|='", "'=='", "'!='", "'->'", "'.'", "'...'"
     };
-        private static readonly string[] _SymbolicNames = {
+    private static readonly string[] _SymbolicNames = {
         null, null, null, null, null, null, null, null, null, null, null, null,
         null, null, null, "Auto", "Break", "Case", "Char", "Const", "Continue",
         "Default", "Do", "Double", "Else", "Enum", "Extern", "Float", "For", "Goto",
@@ -151,8856 +149,8856 @@ namespace CodeParser
         "LineDirective", "PragmaDirective", "Whitespace", "Newline", "BlockComment",
         "LineComment"
     };
-        public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
+    public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
-        [NotNull]
-        public override IVocabulary Vocabulary
+    [NotNull]
+    public override IVocabulary Vocabulary
+    {
+        get
         {
-            get
-            {
-                return DefaultVocabulary;
-            }
+            return DefaultVocabulary;
         }
+    }
 
-        public override string GrammarFileName { get { return "C.g4"; } }
+    public override string GrammarFileName { get { return "C.g4"; } }
 
-        public override string[] RuleNames { get { return ruleNames; } }
+    public override string[] RuleNames { get { return ruleNames; } }
 
-        public override string SerializedAtn { get { return new string(_serializedATN); } }
+    public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-        static CParser()
+    static CParser()
+    {
+        decisionToDFA = new DFA[_ATN.NumberOfDecisions];
+        for (int i = 0; i < _ATN.NumberOfDecisions; i++)
         {
-            decisionToDFA = new DFA[_ATN.NumberOfDecisions];
-            for (int i = 0; i < _ATN.NumberOfDecisions; i++)
-            {
-                decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
-            }
+            decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
         }
+    }
 
-        public CParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
+    public CParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
 
-        public CParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
-        : base(input, output, errorOutput)
+    public CParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
+    : base(input, output, errorOutput)
+    {
+        Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
+    }
+
+    public partial class PrimaryExpressionContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public ITerminalNode Constant() { return GetToken(CParser.Constant, 0); }
+        public ITerminalNode[] StringLiteral() { return GetTokens(CParser.StringLiteral); }
+        public ITerminalNode StringLiteral(int i)
         {
-            Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
+            return GetToken(CParser.StringLiteral, i);
         }
-
-        public partial class PrimaryExpressionContext : ParserRuleContext
-        {
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public ITerminalNode Constant() { return GetToken(CParser.Constant, 0); }
-            public ITerminalNode[] StringLiteral() { return GetTokens(CParser.StringLiteral); }
-            public ITerminalNode StringLiteral(int i)
-            {
-                return GetToken(CParser.StringLiteral, i);
-            }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public GenericSelectionContext genericSelection()
-            {
-                return GetRuleContext<GenericSelectionContext>(0);
-            }
-            public CompoundStatementContext compoundStatement()
-            {
-                return GetRuleContext<CompoundStatementContext>(0);
-            }
-            public UnaryExpressionContext unaryExpression()
-            {
-                return GetRuleContext<UnaryExpressionContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public TypeNameContext typeName()
-            {
-                return GetRuleContext<TypeNameContext>(0);
-            }
-            public PrimaryExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_primaryExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterPrimaryExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitPrimaryExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public PrimaryExpressionContext primaryExpression()
-        {
-            PrimaryExpressionContext _localctx = new PrimaryExpressionContext(Context, State);
-            EnterRule(_localctx, 0, RULE_primaryExpression);
-            int _la;
-            try
-            {
-                int _alt;
-                State = 207;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 2, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 174; Match(Identifier);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 175; Match(Constant);
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 177;
-                            ErrorHandler.Sync(this);
-                            _alt = 1;
-                            do
-                            {
-                                switch (_alt)
-                                {
-                                    case 1:
-                                        {
-                                            {
-                                                State = 176; Match(StringLiteral);
-                                            }
-                                        }
-                                        break;
-                                    default:
-                                        throw new NoViableAltException(this);
-                                }
-                                State = 179;
-                                ErrorHandler.Sync(this);
-                                _alt = Interpreter.AdaptivePredict(TokenStream, 0, Context);
-                            } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
-                        }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 181; Match(LeftParen);
-                            State = 182; expression(0);
-                            State = 183; Match(RightParen);
-                        }
-                        break;
-                    case 5:
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 185; genericSelection();
-                        }
-                        break;
-                    case 6:
-                        EnterOuterAlt(_localctx, 6);
-                        {
-                            State = 187;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == T__0)
-                            {
-                                {
-                                    State = 186; Match(T__0);
-                                }
-                            }
-
-                            State = 189; Match(LeftParen);
-                            State = 190; compoundStatement();
-                            State = 191; Match(RightParen);
-                        }
-                        break;
-                    case 7:
-                        EnterOuterAlt(_localctx, 7);
-                        {
-                            State = 193; Match(T__1);
-                            State = 194; Match(LeftParen);
-                            State = 195; unaryExpression();
-                            State = 196; Match(Comma);
-                            State = 197; typeName();
-                            State = 198; Match(RightParen);
-                        }
-                        break;
-                    case 8:
-                        EnterOuterAlt(_localctx, 8);
-                        {
-                            State = 200; Match(T__2);
-                            State = 201; Match(LeftParen);
-                            State = 202; typeName();
-                            State = 203; Match(Comma);
-                            State = 204; unaryExpression();
-                            State = 205; Match(RightParen);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class GenericSelectionContext : ParserRuleContext
-        {
-            public ITerminalNode Generic() { return GetToken(CParser.Generic, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public GenericAssocListContext genericAssocList()
-            {
-                return GetRuleContext<GenericAssocListContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public GenericSelectionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_genericSelection; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterGenericSelection(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitGenericSelection(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public GenericSelectionContext genericSelection()
-        {
-            GenericSelectionContext _localctx = new GenericSelectionContext(Context, State);
-            EnterRule(_localctx, 2, RULE_genericSelection);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 209; Match(Generic);
-                    State = 210; Match(LeftParen);
-                    State = 211; assignmentExpression();
-                    State = 212; Match(Comma);
-                    State = 213; genericAssocList(0);
-                    State = 214; Match(RightParen);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class GenericAssocListContext : ParserRuleContext
-        {
-            public GenericAssociationContext genericAssociation()
-            {
-                return GetRuleContext<GenericAssociationContext>(0);
-            }
-            public GenericAssocListContext genericAssocList()
-            {
-                return GetRuleContext<GenericAssocListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public GenericAssocListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_genericAssocList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterGenericAssocList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitGenericAssocList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public GenericAssocListContext genericAssocList()
-        {
-            return genericAssocList(0);
-        }
-
-        private GenericAssocListContext genericAssocList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            GenericAssocListContext _localctx = new GenericAssocListContext(Context, _parentState);
-            GenericAssocListContext _prevctx = _localctx;
-            int _startState = 4;
-            EnterRecursionRule(_localctx, 4, RULE_genericAssocList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 217; genericAssociation();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 224;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 3, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new GenericAssocListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_genericAssocList);
-                                    State = 219;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 220; Match(Comma);
-                                    State = 221; genericAssociation();
-                                }
-                            }
-                        }
-                        State = 226;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 3, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class GenericAssociationContext : ParserRuleContext
-        {
-            public TypeNameContext typeName()
-            {
-                return GetRuleContext<TypeNameContext>(0);
-            }
-            public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ITerminalNode Default() { return GetToken(CParser.Default, 0); }
-            public GenericAssociationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_genericAssociation; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterGenericAssociation(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitGenericAssociation(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public GenericAssociationContext genericAssociation()
-        {
-            GenericAssociationContext _localctx = new GenericAssociationContext(Context, State);
-            EnterRule(_localctx, 6, RULE_genericAssociation);
-            try
-            {
-                State = 234;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case T__0:
-                    case T__3:
-                    case T__4:
-                    case T__5:
-                    case T__6:
-                    case Char:
-                    case Const:
-                    case Double:
-                    case Enum:
-                    case Float:
-                    case Int:
-                    case Long:
-                    case Restrict:
-                    case Short:
-                    case Signed:
-                    case Struct:
-                    case Union:
-                    case Unsigned:
-                    case Void:
-                    case Volatile:
-                    case Atomic:
-                    case Bool:
-                    case Complex:
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 227; typeName();
-                            State = 228; Match(Colon);
-                            State = 229; assignmentExpression();
-                        }
-                        break;
-                    case Default:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 231; Match(Default);
-                            State = 232; Match(Colon);
-                            State = 233; assignmentExpression();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class PostfixExpressionContext : ParserRuleContext
-        {
-            public PrimaryExpressionContext primaryExpression()
-            {
-                return GetRuleContext<PrimaryExpressionContext>(0);
-            }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public TypeNameContext typeName()
-            {
-                return GetRuleContext<TypeNameContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
-            public InitializerListContext initializerList()
-            {
-                return GetRuleContext<InitializerListContext>(0);
-            }
-            public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public PostfixExpressionContext postfixExpression()
-            {
-                return GetRuleContext<PostfixExpressionContext>(0);
-            }
-            public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
-            public ArgumentExpressionListContext argumentExpressionList()
-            {
-                return GetRuleContext<ArgumentExpressionListContext>(0);
-            }
-            public ITerminalNode Dot() { return GetToken(CParser.Dot, 0); }
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public ITerminalNode Arrow() { return GetToken(CParser.Arrow, 0); }
-            public ITerminalNode PlusPlus() { return GetToken(CParser.PlusPlus, 0); }
-            public ITerminalNode MinusMinus() { return GetToken(CParser.MinusMinus, 0); }
-            public PostfixExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_postfixExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterPostfixExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitPostfixExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public PostfixExpressionContext postfixExpression()
-        {
-            return postfixExpression(0);
-        }
-
-        private PostfixExpressionContext postfixExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            PostfixExpressionContext _localctx = new PostfixExpressionContext(Context, _parentState);
-            PostfixExpressionContext _prevctx = _localctx;
-            int _startState = 8;
-            EnterRecursionRule(_localctx, 8, RULE_postfixExpression, _p);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 270;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 5, Context))
-                    {
-                        case 1:
-                            {
-                                State = 237; primaryExpression();
-                            }
-                            break;
-                        case 2:
-                            {
-                                State = 238; Match(LeftParen);
-                                State = 239; typeName();
-                                State = 240; Match(RightParen);
-                                State = 241; Match(LeftBrace);
-                                State = 242; initializerList(0);
-                                State = 243; Match(RightBrace);
-                            }
-                            break;
-                        case 3:
-                            {
-                                State = 245; Match(LeftParen);
-                                State = 246; typeName();
-                                State = 247; Match(RightParen);
-                                State = 248; Match(LeftBrace);
-                                State = 249; initializerList(0);
-                                State = 250; Match(Comma);
-                                State = 251; Match(RightBrace);
-                            }
-                            break;
-                        case 4:
-                            {
-                                State = 253; Match(T__0);
-                                State = 254; Match(LeftParen);
-                                State = 255; typeName();
-                                State = 256; Match(RightParen);
-                                State = 257; Match(LeftBrace);
-                                State = 258; initializerList(0);
-                                State = 259; Match(RightBrace);
-                            }
-                            break;
-                        case 5:
-                            {
-                                State = 261; Match(T__0);
-                                State = 262; Match(LeftParen);
-                                State = 263; typeName();
-                                State = 264; Match(RightParen);
-                                State = 265; Match(LeftBrace);
-                                State = 266; initializerList(0);
-                                State = 267; Match(Comma);
-                                State = 268; Match(RightBrace);
-                            }
-                            break;
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 295;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 293;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 7, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new PostfixExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
-                                            State = 272;
-                                            if (!(Precpred(Context, 10))) throw new FailedPredicateException(this, "Precpred(Context, 10)");
-                                            State = 273; Match(LeftBracket);
-                                            State = 274; expression(0);
-                                            State = 275; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new PostfixExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
-                                            State = 277;
-                                            if (!(Precpred(Context, 9))) throw new FailedPredicateException(this, "Precpred(Context, 9)");
-                                            State = 278; Match(LeftParen);
-                                            State = 280;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                                            {
-                                                {
-                                                    State = 279; argumentExpressionList(0);
-                                                }
-                                            }
-
-                                            State = 282; Match(RightParen);
-                                        }
-                                        break;
-                                    case 3:
-                                        {
-                                            _localctx = new PostfixExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
-                                            State = 283;
-                                            if (!(Precpred(Context, 8))) throw new FailedPredicateException(this, "Precpred(Context, 8)");
-                                            State = 284; Match(Dot);
-                                            State = 285; Match(Identifier);
-                                        }
-                                        break;
-                                    case 4:
-                                        {
-                                            _localctx = new PostfixExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
-                                            State = 286;
-                                            if (!(Precpred(Context, 7))) throw new FailedPredicateException(this, "Precpred(Context, 7)");
-                                            State = 287; Match(Arrow);
-                                            State = 288; Match(Identifier);
-                                        }
-                                        break;
-                                    case 5:
-                                        {
-                                            _localctx = new PostfixExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
-                                            State = 289;
-                                            if (!(Precpred(Context, 6))) throw new FailedPredicateException(this, "Precpred(Context, 6)");
-                                            State = 290; Match(PlusPlus);
-                                        }
-                                        break;
-                                    case 6:
-                                        {
-                                            _localctx = new PostfixExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
-                                            State = 291;
-                                            if (!(Precpred(Context, 5))) throw new FailedPredicateException(this, "Precpred(Context, 5)");
-                                            State = 292; Match(MinusMinus);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 297;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class ArgumentExpressionListContext : ParserRuleContext
-        {
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ArgumentExpressionListContext argumentExpressionList()
-            {
-                return GetRuleContext<ArgumentExpressionListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public ArgumentExpressionListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_argumentExpressionList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterArgumentExpressionList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitArgumentExpressionList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ArgumentExpressionListContext argumentExpressionList()
-        {
-            return argumentExpressionList(0);
-        }
-
-        private ArgumentExpressionListContext argumentExpressionList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            ArgumentExpressionListContext _localctx = new ArgumentExpressionListContext(Context, _parentState);
-            ArgumentExpressionListContext _prevctx = _localctx;
-            int _startState = 10;
-            EnterRecursionRule(_localctx, 10, RULE_argumentExpressionList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 299; assignmentExpression();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 306;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 9, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new ArgumentExpressionListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_argumentExpressionList);
-                                    State = 301;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 302; Match(Comma);
-                                    State = 303; assignmentExpression();
-                                }
-                            }
-                        }
-                        State = 308;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 9, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class UnaryExpressionContext : ParserRuleContext
-        {
-            public PostfixExpressionContext postfixExpression()
-            {
-                return GetRuleContext<PostfixExpressionContext>(0);
-            }
-            public ITerminalNode PlusPlus() { return GetToken(CParser.PlusPlus, 0); }
-            public UnaryExpressionContext unaryExpression()
-            {
-                return GetRuleContext<UnaryExpressionContext>(0);
-            }
-            public ITerminalNode MinusMinus() { return GetToken(CParser.MinusMinus, 0); }
-            public UnaryOperatorContext unaryOperator()
-            {
-                return GetRuleContext<UnaryOperatorContext>(0);
-            }
-            public CastExpressionContext castExpression()
-            {
-                return GetRuleContext<CastExpressionContext>(0);
-            }
-            public ITerminalNode Sizeof() { return GetToken(CParser.Sizeof, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public TypeNameContext typeName()
-            {
-                return GetRuleContext<TypeNameContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public ITerminalNode Alignof() { return GetToken(CParser.Alignof, 0); }
-            public ITerminalNode AndAnd() { return GetToken(CParser.AndAnd, 0); }
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public UnaryExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_unaryExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterUnaryExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitUnaryExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public UnaryExpressionContext unaryExpression()
-        {
-            UnaryExpressionContext _localctx = new UnaryExpressionContext(Context, State);
-            EnterRule(_localctx, 12, RULE_unaryExpression);
-            try
-            {
-                State = 331;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 10, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 309; postfixExpression(0);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 310; Match(PlusPlus);
-                            State = 311; unaryExpression();
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 312; Match(MinusMinus);
-                            State = 313; unaryExpression();
-                        }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 314; unaryOperator();
-                            State = 315; castExpression();
-                        }
-                        break;
-                    case 5:
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 317; Match(Sizeof);
-                            State = 318; unaryExpression();
-                        }
-                        break;
-                    case 6:
-                        EnterOuterAlt(_localctx, 6);
-                        {
-                            State = 319; Match(Sizeof);
-                            State = 320; Match(LeftParen);
-                            State = 321; typeName();
-                            State = 322; Match(RightParen);
-                        }
-                        break;
-                    case 7:
-                        EnterOuterAlt(_localctx, 7);
-                        {
-                            State = 324; Match(Alignof);
-                            State = 325; Match(LeftParen);
-                            State = 326; typeName();
-                            State = 327; Match(RightParen);
-                        }
-                        break;
-                    case 8:
-                        EnterOuterAlt(_localctx, 8);
-                        {
-                            State = 329; Match(AndAnd);
-                            State = 330; Match(Identifier);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class UnaryOperatorContext : ParserRuleContext
-        {
-            public ITerminalNode And() { return GetToken(CParser.And, 0); }
-            public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
-            public ITerminalNode Plus() { return GetToken(CParser.Plus, 0); }
-            public ITerminalNode Minus() { return GetToken(CParser.Minus, 0); }
-            public ITerminalNode Tilde() { return GetToken(CParser.Tilde, 0); }
-            public ITerminalNode Not() { return GetToken(CParser.Not, 0); }
-            public UnaryOperatorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_unaryOperator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterUnaryOperator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitUnaryOperator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public UnaryOperatorContext unaryOperator()
-        {
-            UnaryOperatorContext _localctx = new UnaryOperatorContext(Context, State);
-            EnterRule(_localctx, 14, RULE_unaryOperator);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 333;
-                    _la = TokenStream.LA(1);
-                    if (!(((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (Minus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class CastExpressionContext : ParserRuleContext
-        {
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public TypeNameContext typeName()
-            {
-                return GetRuleContext<TypeNameContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public CastExpressionContext castExpression()
-            {
-                return GetRuleContext<CastExpressionContext>(0);
-            }
-            public UnaryExpressionContext unaryExpression()
-            {
-                return GetRuleContext<UnaryExpressionContext>(0);
-            }
-            public ITerminalNode DigitSequence() { return GetToken(CParser.DigitSequence, 0); }
-            public CastExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_castExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterCastExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitCastExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public CastExpressionContext castExpression()
-        {
-            CastExpressionContext _localctx = new CastExpressionContext(Context, State);
-            EnterRule(_localctx, 16, RULE_castExpression);
-            try
-            {
-                State = 348;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 11, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 335; Match(LeftParen);
-                            State = 336; typeName();
-                            State = 337; Match(RightParen);
-                            State = 338; castExpression();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 340; Match(T__0);
-                            State = 341; Match(LeftParen);
-                            State = 342; typeName();
-                            State = 343; Match(RightParen);
-                            State = 344; castExpression();
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 346; unaryExpression();
-                        }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 347; Match(DigitSequence);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class MultiplicativeExpressionContext : ParserRuleContext
-        {
-            public CastExpressionContext castExpression()
-            {
-                return GetRuleContext<CastExpressionContext>(0);
-            }
-            public MultiplicativeExpressionContext multiplicativeExpression()
-            {
-                return GetRuleContext<MultiplicativeExpressionContext>(0);
-            }
-            public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
-            public ITerminalNode Div() { return GetToken(CParser.Div, 0); }
-            public ITerminalNode Mod() { return GetToken(CParser.Mod, 0); }
-            public MultiplicativeExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_multiplicativeExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterMultiplicativeExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitMultiplicativeExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public MultiplicativeExpressionContext multiplicativeExpression()
-        {
-            return multiplicativeExpression(0);
-        }
-
-        private MultiplicativeExpressionContext multiplicativeExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            MultiplicativeExpressionContext _localctx = new MultiplicativeExpressionContext(Context, _parentState);
-            MultiplicativeExpressionContext _prevctx = _localctx;
-            int _startState = 18;
-            EnterRecursionRule(_localctx, 18, RULE_multiplicativeExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 351; castExpression();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 364;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 13, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 362;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 12, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new MultiplicativeExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_multiplicativeExpression);
-                                            State = 353;
-                                            if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
-                                            State = 354; Match(Star);
-                                            State = 355; castExpression();
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new MultiplicativeExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_multiplicativeExpression);
-                                            State = 356;
-                                            if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
-                                            State = 357; Match(Div);
-                                            State = 358; castExpression();
-                                        }
-                                        break;
-                                    case 3:
-                                        {
-                                            _localctx = new MultiplicativeExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_multiplicativeExpression);
-                                            State = 359;
-                                            if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                            State = 360; Match(Mod);
-                                            State = 361; castExpression();
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 366;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 13, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class AdditiveExpressionContext : ParserRuleContext
-        {
-            public MultiplicativeExpressionContext multiplicativeExpression()
-            {
-                return GetRuleContext<MultiplicativeExpressionContext>(0);
-            }
-            public AdditiveExpressionContext additiveExpression()
-            {
-                return GetRuleContext<AdditiveExpressionContext>(0);
-            }
-            public ITerminalNode Plus() { return GetToken(CParser.Plus, 0); }
-            public ITerminalNode Minus() { return GetToken(CParser.Minus, 0); }
-            public AdditiveExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_additiveExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterAdditiveExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitAdditiveExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public AdditiveExpressionContext additiveExpression()
-        {
-            return additiveExpression(0);
-        }
-
-        private AdditiveExpressionContext additiveExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            AdditiveExpressionContext _localctx = new AdditiveExpressionContext(Context, _parentState);
-            AdditiveExpressionContext _prevctx = _localctx;
-            int _startState = 20;
-            EnterRecursionRule(_localctx, 20, RULE_additiveExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 368; multiplicativeExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 378;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 15, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 376;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 14, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new AdditiveExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_additiveExpression);
-                                            State = 370;
-                                            if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
-                                            State = 371; Match(Plus);
-                                            State = 372; multiplicativeExpression(0);
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new AdditiveExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_additiveExpression);
-                                            State = 373;
-                                            if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                            State = 374; Match(Minus);
-                                            State = 375; multiplicativeExpression(0);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 380;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 15, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class ShiftExpressionContext : ParserRuleContext
-        {
-            public AdditiveExpressionContext additiveExpression()
-            {
-                return GetRuleContext<AdditiveExpressionContext>(0);
-            }
-            public ShiftExpressionContext shiftExpression()
-            {
-                return GetRuleContext<ShiftExpressionContext>(0);
-            }
-            public ITerminalNode LeftShift() { return GetToken(CParser.LeftShift, 0); }
-            public ITerminalNode RightShift() { return GetToken(CParser.RightShift, 0); }
-            public ShiftExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_shiftExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterShiftExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitShiftExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ShiftExpressionContext shiftExpression()
-        {
-            return shiftExpression(0);
-        }
-
-        private ShiftExpressionContext shiftExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            ShiftExpressionContext _localctx = new ShiftExpressionContext(Context, _parentState);
-            ShiftExpressionContext _prevctx = _localctx;
-            int _startState = 22;
-            EnterRecursionRule(_localctx, 22, RULE_shiftExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 382; additiveExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 392;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 17, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 390;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 16, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new ShiftExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_shiftExpression);
-                                            State = 384;
-                                            if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
-                                            State = 385; Match(LeftShift);
-                                            State = 386; additiveExpression(0);
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new ShiftExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_shiftExpression);
-                                            State = 387;
-                                            if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                            State = 388; Match(RightShift);
-                                            State = 389; additiveExpression(0);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 394;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 17, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class RelationalExpressionContext : ParserRuleContext
-        {
-            public ShiftExpressionContext shiftExpression()
-            {
-                return GetRuleContext<ShiftExpressionContext>(0);
-            }
-            public RelationalExpressionContext relationalExpression()
-            {
-                return GetRuleContext<RelationalExpressionContext>(0);
-            }
-            public ITerminalNode Less() { return GetToken(CParser.Less, 0); }
-            public ITerminalNode Greater() { return GetToken(CParser.Greater, 0); }
-            public ITerminalNode LessEqual() { return GetToken(CParser.LessEqual, 0); }
-            public ITerminalNode GreaterEqual() { return GetToken(CParser.GreaterEqual, 0); }
-            public RelationalExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_relationalExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterRelationalExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitRelationalExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public RelationalExpressionContext relationalExpression()
-        {
-            return relationalExpression(0);
-        }
-
-        private RelationalExpressionContext relationalExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            RelationalExpressionContext _localctx = new RelationalExpressionContext(Context, _parentState);
-            RelationalExpressionContext _prevctx = _localctx;
-            int _startState = 24;
-            EnterRecursionRule(_localctx, 24, RULE_relationalExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 396; shiftExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 412;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 19, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 410;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 18, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new RelationalExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
-                                            State = 398;
-                                            if (!(Precpred(Context, 4))) throw new FailedPredicateException(this, "Precpred(Context, 4)");
-                                            State = 399; Match(Less);
-                                            State = 400; shiftExpression(0);
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new RelationalExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
-                                            State = 401;
-                                            if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
-                                            State = 402; Match(Greater);
-                                            State = 403; shiftExpression(0);
-                                        }
-                                        break;
-                                    case 3:
-                                        {
-                                            _localctx = new RelationalExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
-                                            State = 404;
-                                            if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
-                                            State = 405; Match(LessEqual);
-                                            State = 406; shiftExpression(0);
-                                        }
-                                        break;
-                                    case 4:
-                                        {
-                                            _localctx = new RelationalExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
-                                            State = 407;
-                                            if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                            State = 408; Match(GreaterEqual);
-                                            State = 409; shiftExpression(0);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 414;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 19, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class EqualityExpressionContext : ParserRuleContext
-        {
-            public RelationalExpressionContext relationalExpression()
-            {
-                return GetRuleContext<RelationalExpressionContext>(0);
-            }
-            public EqualityExpressionContext equalityExpression()
-            {
-                return GetRuleContext<EqualityExpressionContext>(0);
-            }
-            public ITerminalNode Equal() { return GetToken(CParser.Equal, 0); }
-            public ITerminalNode NotEqual() { return GetToken(CParser.NotEqual, 0); }
-            public EqualityExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_equalityExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterEqualityExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitEqualityExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public EqualityExpressionContext equalityExpression()
-        {
-            return equalityExpression(0);
-        }
-
-        private EqualityExpressionContext equalityExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            EqualityExpressionContext _localctx = new EqualityExpressionContext(Context, _parentState);
-            EqualityExpressionContext _prevctx = _localctx;
-            int _startState = 26;
-            EnterRecursionRule(_localctx, 26, RULE_equalityExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 416; relationalExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 426;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 21, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 424;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 20, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new EqualityExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_equalityExpression);
-                                            State = 418;
-                                            if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
-                                            State = 419; Match(Equal);
-                                            State = 420; relationalExpression(0);
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new EqualityExpressionContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_equalityExpression);
-                                            State = 421;
-                                            if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                            State = 422; Match(NotEqual);
-                                            State = 423; relationalExpression(0);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 428;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 21, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class AndExpressionContext : ParserRuleContext
-        {
-            public EqualityExpressionContext equalityExpression()
-            {
-                return GetRuleContext<EqualityExpressionContext>(0);
-            }
-            public AndExpressionContext andExpression()
-            {
-                return GetRuleContext<AndExpressionContext>(0);
-            }
-            public ITerminalNode And() { return GetToken(CParser.And, 0); }
-            public AndExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_andExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterAndExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitAndExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public AndExpressionContext andExpression()
-        {
-            return andExpression(0);
-        }
-
-        private AndExpressionContext andExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            AndExpressionContext _localctx = new AndExpressionContext(Context, _parentState);
-            AndExpressionContext _prevctx = _localctx;
-            int _startState = 28;
-            EnterRecursionRule(_localctx, 28, RULE_andExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 430; equalityExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 437;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 22, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new AndExpressionContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_andExpression);
-                                    State = 432;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 433; Match(And);
-                                    State = 434; equalityExpression(0);
-                                }
-                            }
-                        }
-                        State = 439;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 22, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class ExclusiveOrExpressionContext : ParserRuleContext
-        {
-            public AndExpressionContext andExpression()
-            {
-                return GetRuleContext<AndExpressionContext>(0);
-            }
-            public ExclusiveOrExpressionContext exclusiveOrExpression()
-            {
-                return GetRuleContext<ExclusiveOrExpressionContext>(0);
-            }
-            public ITerminalNode Caret() { return GetToken(CParser.Caret, 0); }
-            public ExclusiveOrExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_exclusiveOrExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterExclusiveOrExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitExclusiveOrExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ExclusiveOrExpressionContext exclusiveOrExpression()
-        {
-            return exclusiveOrExpression(0);
-        }
-
-        private ExclusiveOrExpressionContext exclusiveOrExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            ExclusiveOrExpressionContext _localctx = new ExclusiveOrExpressionContext(Context, _parentState);
-            ExclusiveOrExpressionContext _prevctx = _localctx;
-            int _startState = 30;
-            EnterRecursionRule(_localctx, 30, RULE_exclusiveOrExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 441; andExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 448;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 23, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new ExclusiveOrExpressionContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_exclusiveOrExpression);
-                                    State = 443;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 444; Match(Caret);
-                                    State = 445; andExpression(0);
-                                }
-                            }
-                        }
-                        State = 450;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 23, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class InclusiveOrExpressionContext : ParserRuleContext
-        {
-            public ExclusiveOrExpressionContext exclusiveOrExpression()
-            {
-                return GetRuleContext<ExclusiveOrExpressionContext>(0);
-            }
-            public InclusiveOrExpressionContext inclusiveOrExpression()
-            {
-                return GetRuleContext<InclusiveOrExpressionContext>(0);
-            }
-            public ITerminalNode Or() { return GetToken(CParser.Or, 0); }
-            public InclusiveOrExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_inclusiveOrExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterInclusiveOrExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitInclusiveOrExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public InclusiveOrExpressionContext inclusiveOrExpression()
-        {
-            return inclusiveOrExpression(0);
-        }
-
-        private InclusiveOrExpressionContext inclusiveOrExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            InclusiveOrExpressionContext _localctx = new InclusiveOrExpressionContext(Context, _parentState);
-            InclusiveOrExpressionContext _prevctx = _localctx;
-            int _startState = 32;
-            EnterRecursionRule(_localctx, 32, RULE_inclusiveOrExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 452; exclusiveOrExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 459;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 24, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new InclusiveOrExpressionContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_inclusiveOrExpression);
-                                    State = 454;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 455; Match(Or);
-                                    State = 456; exclusiveOrExpression(0);
-                                }
-                            }
-                        }
-                        State = 461;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 24, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class LogicalAndExpressionContext : ParserRuleContext
-        {
-            public InclusiveOrExpressionContext inclusiveOrExpression()
-            {
-                return GetRuleContext<InclusiveOrExpressionContext>(0);
-            }
-            public LogicalAndExpressionContext logicalAndExpression()
-            {
-                return GetRuleContext<LogicalAndExpressionContext>(0);
-            }
-            public ITerminalNode AndAnd() { return GetToken(CParser.AndAnd, 0); }
-            public LogicalAndExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_logicalAndExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterLogicalAndExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitLogicalAndExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public LogicalAndExpressionContext logicalAndExpression()
-        {
-            return logicalAndExpression(0);
-        }
-
-        private LogicalAndExpressionContext logicalAndExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            LogicalAndExpressionContext _localctx = new LogicalAndExpressionContext(Context, _parentState);
-            LogicalAndExpressionContext _prevctx = _localctx;
-            int _startState = 34;
-            EnterRecursionRule(_localctx, 34, RULE_logicalAndExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 463; inclusiveOrExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 470;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 25, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new LogicalAndExpressionContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_logicalAndExpression);
-                                    State = 465;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 466; Match(AndAnd);
-                                    State = 467; inclusiveOrExpression(0);
-                                }
-                            }
-                        }
-                        State = 472;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 25, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class LogicalOrExpressionContext : ParserRuleContext
-        {
-            public LogicalAndExpressionContext logicalAndExpression()
-            {
-                return GetRuleContext<LogicalAndExpressionContext>(0);
-            }
-            public LogicalOrExpressionContext logicalOrExpression()
-            {
-                return GetRuleContext<LogicalOrExpressionContext>(0);
-            }
-            public ITerminalNode OrOr() { return GetToken(CParser.OrOr, 0); }
-            public LogicalOrExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_logicalOrExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterLogicalOrExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitLogicalOrExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public LogicalOrExpressionContext logicalOrExpression()
-        {
-            return logicalOrExpression(0);
-        }
-
-        private LogicalOrExpressionContext logicalOrExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            LogicalOrExpressionContext _localctx = new LogicalOrExpressionContext(Context, _parentState);
-            LogicalOrExpressionContext _prevctx = _localctx;
-            int _startState = 36;
-            EnterRecursionRule(_localctx, 36, RULE_logicalOrExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 474; logicalAndExpression(0);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 481;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 26, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new LogicalOrExpressionContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_logicalOrExpression);
-                                    State = 476;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 477; Match(OrOr);
-                                    State = 478; logicalAndExpression(0);
-                                }
-                            }
-                        }
-                        State = 483;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 26, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class ConditionalExpressionContext : ParserRuleContext
-        {
-            public LogicalOrExpressionContext logicalOrExpression()
-            {
-                return GetRuleContext<LogicalOrExpressionContext>(0);
-            }
-            public ITerminalNode Question() { return GetToken(CParser.Question, 0); }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
-            public ConditionalExpressionContext conditionalExpression()
-            {
-                return GetRuleContext<ConditionalExpressionContext>(0);
-            }
-            public ConditionalExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_conditionalExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterConditionalExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitConditionalExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ConditionalExpressionContext conditionalExpression()
-        {
-            ConditionalExpressionContext _localctx = new ConditionalExpressionContext(Context, State);
-            EnterRule(_localctx, 38, RULE_conditionalExpression);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 484; logicalOrExpression(0);
-                    State = 490;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 27, Context))
-                    {
-                        case 1:
-                            {
-                                State = 485; Match(Question);
-                                State = 486; expression(0);
-                                State = 487; Match(Colon);
-                                State = 488; conditionalExpression();
-                            }
-                            break;
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class AssignmentExpressionContext : ParserRuleContext
-        {
-            public ConditionalExpressionContext conditionalExpression()
-            {
-                return GetRuleContext<ConditionalExpressionContext>(0);
-            }
-            public UnaryExpressionContext unaryExpression()
-            {
-                return GetRuleContext<UnaryExpressionContext>(0);
-            }
-            public AssignmentOperatorContext assignmentOperator()
-            {
-                return GetRuleContext<AssignmentOperatorContext>(0);
-            }
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ITerminalNode DigitSequence() { return GetToken(CParser.DigitSequence, 0); }
-            public AssignmentExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_assignmentExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterAssignmentExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitAssignmentExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public AssignmentExpressionContext assignmentExpression()
-        {
-            AssignmentExpressionContext _localctx = new AssignmentExpressionContext(Context, State);
-            EnterRule(_localctx, 40, RULE_assignmentExpression);
-            try
-            {
-                State = 498;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 28, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 492; conditionalExpression();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 493; unaryExpression();
-                            State = 494; assignmentOperator();
-                            State = 495; assignmentExpression();
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 497; Match(DigitSequence);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class AssignmentOperatorContext : ParserRuleContext
-        {
-            public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
-            public ITerminalNode StarAssign() { return GetToken(CParser.StarAssign, 0); }
-            public ITerminalNode DivAssign() { return GetToken(CParser.DivAssign, 0); }
-            public ITerminalNode ModAssign() { return GetToken(CParser.ModAssign, 0); }
-            public ITerminalNode PlusAssign() { return GetToken(CParser.PlusAssign, 0); }
-            public ITerminalNode MinusAssign() { return GetToken(CParser.MinusAssign, 0); }
-            public ITerminalNode LeftShiftAssign() { return GetToken(CParser.LeftShiftAssign, 0); }
-            public ITerminalNode RightShiftAssign() { return GetToken(CParser.RightShiftAssign, 0); }
-            public ITerminalNode AndAssign() { return GetToken(CParser.AndAssign, 0); }
-            public ITerminalNode XorAssign() { return GetToken(CParser.XorAssign, 0); }
-            public ITerminalNode OrAssign() { return GetToken(CParser.OrAssign, 0); }
-            public AssignmentOperatorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_assignmentOperator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterAssignmentOperator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitAssignmentOperator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public AssignmentOperatorContext assignmentOperator()
-        {
-            AssignmentOperatorContext _localctx = new AssignmentOperatorContext(Context, State);
-            EnterRule(_localctx, 42, RULE_assignmentOperator);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 500;
-                    _la = TokenStream.LA(1);
-                    if (!(((((_la - 89)) & ~0x3f) == 0 && ((1L << (_la - 89)) & ((1L << (Assign - 89)) | (1L << (StarAssign - 89)) | (1L << (DivAssign - 89)) | (1L << (ModAssign - 89)) | (1L << (PlusAssign - 89)) | (1L << (MinusAssign - 89)) | (1L << (LeftShiftAssign - 89)) | (1L << (RightShiftAssign - 89)) | (1L << (AndAssign - 89)) | (1L << (XorAssign - 89)) | (1L << (OrAssign - 89)))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ExpressionContext : ParserRuleContext
-        {
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public ExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_expression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
         public ExpressionContext expression()
         {
-            return expression(0);
+            return GetRuleContext<ExpressionContext>(0);
         }
-
-        private ExpressionContext expression(int _p)
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public GenericSelectionContext genericSelection()
         {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            ExpressionContext _localctx = new ExpressionContext(Context, _parentState);
-            ExpressionContext _prevctx = _localctx;
-            int _startState = 44;
-            EnterRecursionRule(_localctx, 44, RULE_expression, _p);
-            try
+            return GetRuleContext<GenericSelectionContext>(0);
+        }
+        public CompoundStatementContext compoundStatement()
+        {
+            return GetRuleContext<CompoundStatementContext>(0);
+        }
+        public UnaryExpressionContext unaryExpression()
+        {
+            return GetRuleContext<UnaryExpressionContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public TypeNameContext typeName()
+        {
+            return GetRuleContext<TypeNameContext>(0);
+        }
+        public PrimaryExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_primaryExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterPrimaryExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitPrimaryExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public PrimaryExpressionContext primaryExpression()
+    {
+        PrimaryExpressionContext _localctx = new PrimaryExpressionContext(Context, State);
+        EnterRule(_localctx, 0, RULE_primaryExpression);
+        int _la;
+        try
+        {
+            int _alt;
+            State = 207;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 2, Context))
             {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
                     {
-                        State = 503; assignmentExpression();
+                        State = 174; Match(Identifier);
                     }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 510;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 29, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
                     {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new ExpressionContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_expression);
-                                    State = 505;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 506; Match(Comma);
-                                    State = 507; assignmentExpression();
-                                }
-                            }
-                        }
-                        State = 512;
+                        State = 175; Match(Constant);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 177;
                         ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 29, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class ConstantExpressionContext : ParserRuleContext
-        {
-            public ConditionalExpressionContext conditionalExpression()
-            {
-                return GetRuleContext<ConditionalExpressionContext>(0);
-            }
-            public ConstantExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_constantExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterConstantExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitConstantExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ConstantExpressionContext constantExpression()
-        {
-            ConstantExpressionContext _localctx = new ConstantExpressionContext(Context, State);
-            EnterRule(_localctx, 46, RULE_constantExpression);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 513; conditionalExpression();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DeclarationContext : ParserRuleContext
-        {
-            public DeclarationSpecifiersContext declarationSpecifiers()
-            {
-                return GetRuleContext<DeclarationSpecifiersContext>(0);
-            }
-            public InitDeclaratorListContext initDeclaratorList()
-            {
-                return GetRuleContext<InitDeclaratorListContext>(0);
-            }
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public StaticAssertDeclarationContext staticAssertDeclaration()
-            {
-                return GetRuleContext<StaticAssertDeclarationContext>(0);
-            }
-            public DeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_declaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DeclarationContext declaration()
-        {
-            DeclarationContext _localctx = new DeclarationContext(Context, State);
-            EnterRule(_localctx, 48, RULE_declaration);
-            try
-            {
-                State = 523;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 30, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
+                        _alt = 1;
+                        do
                         {
-                            State = 515; declarationSpecifiers();
-                            State = 516; initDeclaratorList(0);
-                            State = 517; Match(Semi);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 519; declarationSpecifiers();
-                            State = 520; Match(Semi);
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 522; staticAssertDeclaration();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DeclarationSpecifiersContext : ParserRuleContext
-        {
-            public DeclarationSpecifierContext[] declarationSpecifier()
-            {
-                return GetRuleContexts<DeclarationSpecifierContext>();
-            }
-            public DeclarationSpecifierContext declarationSpecifier(int i)
-            {
-                return GetRuleContext<DeclarationSpecifierContext>(i);
-            }
-            public DeclarationSpecifiersContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_declarationSpecifiers; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDeclarationSpecifiers(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDeclarationSpecifiers(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DeclarationSpecifiersContext declarationSpecifiers()
-        {
-            DeclarationSpecifiersContext _localctx = new DeclarationSpecifiersContext(Context, State);
-            EnterRule(_localctx, 50, RULE_declarationSpecifiers);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 526;
-                    ErrorHandler.Sync(this);
-                    _alt = 1;
-                    do
-                    {
-                        switch (_alt)
-                        {
-                            case 1:
-                                {
-                                    {
-                                        State = 525; declarationSpecifier();
-                                    }
-                                }
-                                break;
-                            default:
-                                throw new NoViableAltException(this);
-                        }
-                        State = 528;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 31, Context);
-                    } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DeclarationSpecifiers2Context : ParserRuleContext
-        {
-            public DeclarationSpecifierContext[] declarationSpecifier()
-            {
-                return GetRuleContexts<DeclarationSpecifierContext>();
-            }
-            public DeclarationSpecifierContext declarationSpecifier(int i)
-            {
-                return GetRuleContext<DeclarationSpecifierContext>(i);
-            }
-            public DeclarationSpecifiers2Context(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_declarationSpecifiers2; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDeclarationSpecifiers2(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDeclarationSpecifiers2(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DeclarationSpecifiers2Context declarationSpecifiers2()
-        {
-            DeclarationSpecifiers2Context _localctx = new DeclarationSpecifiers2Context(Context, State);
-            EnterRule(_localctx, 52, RULE_declarationSpecifiers2);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 531;
-                    ErrorHandler.Sync(this);
-                    _alt = 1;
-                    do
-                    {
-                        switch (_alt)
-                        {
-                            case 1:
-                                {
-                                    {
-                                        State = 530; declarationSpecifier();
-                                    }
-                                }
-                                break;
-                            default:
-                                throw new NoViableAltException(this);
-                        }
-                        State = 533;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 32, Context);
-                    } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DeclarationSpecifierContext : ParserRuleContext
-        {
-            public StorageClassSpecifierContext storageClassSpecifier()
-            {
-                return GetRuleContext<StorageClassSpecifierContext>(0);
-            }
-            public TypeSpecifierContext typeSpecifier()
-            {
-                return GetRuleContext<TypeSpecifierContext>(0);
-            }
-            public TypeQualifierContext typeQualifier()
-            {
-                return GetRuleContext<TypeQualifierContext>(0);
-            }
-            public FunctionSpecifierContext functionSpecifier()
-            {
-                return GetRuleContext<FunctionSpecifierContext>(0);
-            }
-            public AlignmentSpecifierContext alignmentSpecifier()
-            {
-                return GetRuleContext<AlignmentSpecifierContext>(0);
-            }
-            public DeclarationSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_declarationSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDeclarationSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDeclarationSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DeclarationSpecifierContext declarationSpecifier()
-        {
-            DeclarationSpecifierContext _localctx = new DeclarationSpecifierContext(Context, State);
-            EnterRule(_localctx, 54, RULE_declarationSpecifier);
-            try
-            {
-                State = 540;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 33, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 535; storageClassSpecifier();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 536; typeSpecifier(0);
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 537; typeQualifier();
-                        }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 538; functionSpecifier();
-                        }
-                        break;
-                    case 5:
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 539; alignmentSpecifier();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class InitDeclaratorListContext : ParserRuleContext
-        {
-            public InitDeclaratorContext initDeclarator()
-            {
-                return GetRuleContext<InitDeclaratorContext>(0);
-            }
-            public InitDeclaratorListContext initDeclaratorList()
-            {
-                return GetRuleContext<InitDeclaratorListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public InitDeclaratorListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_initDeclaratorList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterInitDeclaratorList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitInitDeclaratorList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public InitDeclaratorListContext initDeclaratorList()
-        {
-            return initDeclaratorList(0);
-        }
-
-        private InitDeclaratorListContext initDeclaratorList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            InitDeclaratorListContext _localctx = new InitDeclaratorListContext(Context, _parentState);
-            InitDeclaratorListContext _prevctx = _localctx;
-            int _startState = 56;
-            EnterRecursionRule(_localctx, 56, RULE_initDeclaratorList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 543; initDeclarator();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 550;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 34, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new InitDeclaratorListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_initDeclaratorList);
-                                    State = 545;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 546; Match(Comma);
-                                    State = 547; initDeclarator();
-                                }
-                            }
-                        }
-                        State = 552;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 34, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class InitDeclaratorContext : ParserRuleContext
-        {
-            public DeclaratorContext declarator()
-            {
-                return GetRuleContext<DeclaratorContext>(0);
-            }
-            public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
-            public InitializerContext initializer()
-            {
-                return GetRuleContext<InitializerContext>(0);
-            }
-            public InitDeclaratorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_initDeclarator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterInitDeclarator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitInitDeclarator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public InitDeclaratorContext initDeclarator()
-        {
-            InitDeclaratorContext _localctx = new InitDeclaratorContext(Context, State);
-            EnterRule(_localctx, 58, RULE_initDeclarator);
-            try
-            {
-                State = 558;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 35, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 553; declarator();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 554; declarator();
-                            State = 555; Match(Assign);
-                            State = 556; initializer();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class StorageClassSpecifierContext : ParserRuleContext
-        {
-            public ITerminalNode Typedef() { return GetToken(CParser.Typedef, 0); }
-            public ITerminalNode Extern() { return GetToken(CParser.Extern, 0); }
-            public ITerminalNode Static() { return GetToken(CParser.Static, 0); }
-            public ITerminalNode ThreadLocal() { return GetToken(CParser.ThreadLocal, 0); }
-            public ITerminalNode Auto() { return GetToken(CParser.Auto, 0); }
-            public ITerminalNode Register() { return GetToken(CParser.Register, 0); }
-            public StorageClassSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_storageClassSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStorageClassSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStorageClassSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StorageClassSpecifierContext storageClassSpecifier()
-        {
-            StorageClassSpecifierContext _localctx = new StorageClassSpecifierContext(Context, State);
-            EnterRule(_localctx, 60, RULE_storageClassSpecifier);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 560;
-                    _la = TokenStream.LA(1);
-                    if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Auto) | (1L << Extern) | (1L << Register) | (1L << Static) | (1L << Typedef) | (1L << ThreadLocal))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class TypeSpecifierContext : ParserRuleContext
-        {
-            public ITerminalNode Void() { return GetToken(CParser.Void, 0); }
-            public ITerminalNode Char() { return GetToken(CParser.Char, 0); }
-            public ITerminalNode Short() { return GetToken(CParser.Short, 0); }
-            public ITerminalNode Int() { return GetToken(CParser.Int, 0); }
-            public ITerminalNode Long() { return GetToken(CParser.Long, 0); }
-            public ITerminalNode Float() { return GetToken(CParser.Float, 0); }
-            public ITerminalNode Double() { return GetToken(CParser.Double, 0); }
-            public ITerminalNode Signed() { return GetToken(CParser.Signed, 0); }
-            public ITerminalNode Unsigned() { return GetToken(CParser.Unsigned, 0); }
-            public ITerminalNode Bool() { return GetToken(CParser.Bool, 0); }
-            public ITerminalNode Complex() { return GetToken(CParser.Complex, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public AtomicTypeSpecifierContext atomicTypeSpecifier()
-            {
-                return GetRuleContext<AtomicTypeSpecifierContext>(0);
-            }
-            public StructOrUnionSpecifierContext structOrUnionSpecifier()
-            {
-                return GetRuleContext<StructOrUnionSpecifierContext>(0);
-            }
-            public EnumSpecifierContext enumSpecifier()
-            {
-                return GetRuleContext<EnumSpecifierContext>(0);
-            }
-            public TypedefNameContext typedefName()
-            {
-                return GetRuleContext<TypedefNameContext>(0);
-            }
-            public ConstantExpressionContext constantExpression()
-            {
-                return GetRuleContext<ConstantExpressionContext>(0);
-            }
-            public TypeSpecifierContext typeSpecifier()
-            {
-                return GetRuleContext<TypeSpecifierContext>(0);
-            }
-            public PointerContext pointer()
-            {
-                return GetRuleContext<PointerContext>(0);
-            }
-            public TypeSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_typeSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterTypeSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitTypeSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public TypeSpecifierContext typeSpecifier()
-        {
-            return typeSpecifier(0);
-        }
-
-        private TypeSpecifierContext typeSpecifier(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            TypeSpecifierContext _localctx = new TypeSpecifierContext(Context, _parentState);
-            TypeSpecifierContext _prevctx = _localctx;
-            int _startState = 62;
-            EnterRecursionRule(_localctx, 62, RULE_typeSpecifier, _p);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 577;
-                    ErrorHandler.Sync(this);
-                    switch (TokenStream.LA(1))
-                    {
-                        case T__3:
-                        case T__4:
-                        case T__5:
-                        case Char:
-                        case Double:
-                        case Float:
-                        case Int:
-                        case Long:
-                        case Short:
-                        case Signed:
-                        case Unsigned:
-                        case Void:
-                        case Bool:
-                        case Complex:
-                            {
-                                State = 563;
-                                _la = TokenStream.LA(1);
-                                if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << Char) | (1L << Double) | (1L << Float) | (1L << Int) | (1L << Long) | (1L << Short) | (1L << Signed) | (1L << Unsigned) | (1L << Void) | (1L << Bool) | (1L << Complex))) != 0)))
-                                {
-                                    ErrorHandler.RecoverInline(this);
-                                }
-                                else
-                                {
-                                    ErrorHandler.ReportMatch(this);
-                                    Consume();
-                                }
-                            }
-                            break;
-                        case T__0:
-                            {
-                                State = 564; Match(T__0);
-                                State = 565; Match(LeftParen);
-                                State = 566;
-                                _la = TokenStream.LA(1);
-                                if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__5))) != 0)))
-                                {
-                                    ErrorHandler.RecoverInline(this);
-                                }
-                                else
-                                {
-                                    ErrorHandler.ReportMatch(this);
-                                    Consume();
-                                }
-                                State = 567; Match(RightParen);
-                            }
-                            break;
-                        case Atomic:
-                            {
-                                State = 568; atomicTypeSpecifier();
-                            }
-                            break;
-                        case Struct:
-                        case Union:
-                            {
-                                State = 569; structOrUnionSpecifier();
-                            }
-                            break;
-                        case Enum:
-                            {
-                                State = 570; enumSpecifier();
-                            }
-                            break;
-                        case Identifier:
-                            {
-                                State = 571; typedefName();
-                            }
-                            break;
-                        case T__6:
-                            {
-                                State = 572; Match(T__6);
-                                State = 573; Match(LeftParen);
-                                State = 574; constantExpression();
-                                State = 575; Match(RightParen);
-                            }
-                            break;
-                        default:
-                            throw new NoViableAltException(this);
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 583;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 37, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new TypeSpecifierContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_typeSpecifier);
-                                    State = 579;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 580; pointer();
-                                }
-                            }
-                        }
-                        State = 585;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 37, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class StructOrUnionSpecifierContext : ParserRuleContext
-        {
-            public StructOrUnionContext structOrUnion()
-            {
-                return GetRuleContext<StructOrUnionContext>(0);
-            }
-            public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
-            public StructDeclarationListContext structDeclarationList()
-            {
-                return GetRuleContext<StructDeclarationListContext>(0);
-            }
-            public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public StructOrUnionSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_structOrUnionSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStructOrUnionSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStructOrUnionSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StructOrUnionSpecifierContext structOrUnionSpecifier()
-        {
-            StructOrUnionSpecifierContext _localctx = new StructOrUnionSpecifierContext(Context, State);
-            EnterRule(_localctx, 64, RULE_structOrUnionSpecifier);
-            int _la;
-            try
-            {
-                State = 597;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 39, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 586; structOrUnion();
-                            State = 588;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Identifier)
-                            {
-                                {
-                                    State = 587; Match(Identifier);
-                                }
-                            }
-
-                            State = 590; Match(LeftBrace);
-                            State = 591; structDeclarationList(0);
-                            State = 592; Match(RightBrace);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 594; structOrUnion();
-                            State = 595; Match(Identifier);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class StructOrUnionContext : ParserRuleContext
-        {
-            public ITerminalNode Struct() { return GetToken(CParser.Struct, 0); }
-            public ITerminalNode Union() { return GetToken(CParser.Union, 0); }
-            public StructOrUnionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_structOrUnion; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStructOrUnion(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStructOrUnion(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StructOrUnionContext structOrUnion()
-        {
-            StructOrUnionContext _localctx = new StructOrUnionContext(Context, State);
-            EnterRule(_localctx, 66, RULE_structOrUnion);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 599;
-                    _la = TokenStream.LA(1);
-                    if (!(_la == Struct || _la == Union))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class StructDeclarationListContext : ParserRuleContext
-        {
-            public StructDeclarationContext structDeclaration()
-            {
-                return GetRuleContext<StructDeclarationContext>(0);
-            }
-            public StructDeclarationListContext structDeclarationList()
-            {
-                return GetRuleContext<StructDeclarationListContext>(0);
-            }
-            public StructDeclarationListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_structDeclarationList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStructDeclarationList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStructDeclarationList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StructDeclarationListContext structDeclarationList()
-        {
-            return structDeclarationList(0);
-        }
-
-        private StructDeclarationListContext structDeclarationList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            StructDeclarationListContext _localctx = new StructDeclarationListContext(Context, _parentState);
-            StructDeclarationListContext _prevctx = _localctx;
-            int _startState = 68;
-            EnterRecursionRule(_localctx, 68, RULE_structDeclarationList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 602; structDeclaration();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 608;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 40, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new StructDeclarationListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_structDeclarationList);
-                                    State = 604;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 605; structDeclaration();
-                                }
-                            }
-                        }
-                        State = 610;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 40, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class StructDeclarationContext : ParserRuleContext
-        {
-            public SpecifierQualifierListContext specifierQualifierList()
-            {
-                return GetRuleContext<SpecifierQualifierListContext>(0);
-            }
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public StructDeclaratorListContext structDeclaratorList()
-            {
-                return GetRuleContext<StructDeclaratorListContext>(0);
-            }
-            public StaticAssertDeclarationContext staticAssertDeclaration()
-            {
-                return GetRuleContext<StaticAssertDeclarationContext>(0);
-            }
-            public StructDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_structDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStructDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStructDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StructDeclarationContext structDeclaration()
-        {
-            StructDeclarationContext _localctx = new StructDeclarationContext(Context, State);
-            EnterRule(_localctx, 70, RULE_structDeclaration);
-            int _la;
-            try
-            {
-                State = 618;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case T__0:
-                    case T__3:
-                    case T__4:
-                    case T__5:
-                    case T__6:
-                    case Char:
-                    case Const:
-                    case Double:
-                    case Enum:
-                    case Float:
-                    case Int:
-                    case Long:
-                    case Restrict:
-                    case Short:
-                    case Signed:
-                    case Struct:
-                    case Union:
-                    case Unsigned:
-                    case Void:
-                    case Volatile:
-                    case Atomic:
-                    case Bool:
-                    case Complex:
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 611; specifierQualifierList();
-                            State = 613;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (Star - 59)) | (1L << (Caret - 59)) | (1L << (Colon - 59)) | (1L << (Identifier - 59)))) != 0))
-                            {
-                                {
-                                    State = 612; structDeclaratorList(0);
-                                }
-                            }
-
-                            State = 615; Match(Semi);
-                        }
-                        break;
-                    case StaticAssert:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 617; staticAssertDeclaration();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class SpecifierQualifierListContext : ParserRuleContext
-        {
-            public TypeSpecifierContext typeSpecifier()
-            {
-                return GetRuleContext<TypeSpecifierContext>(0);
-            }
-            public SpecifierQualifierListContext specifierQualifierList()
-            {
-                return GetRuleContext<SpecifierQualifierListContext>(0);
-            }
-            public TypeQualifierContext typeQualifier()
-            {
-                return GetRuleContext<TypeQualifierContext>(0);
-            }
-            public SpecifierQualifierListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_specifierQualifierList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterSpecifierQualifierList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitSpecifierQualifierList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public SpecifierQualifierListContext specifierQualifierList()
-        {
-            SpecifierQualifierListContext _localctx = new SpecifierQualifierListContext(Context, State);
-            EnterRule(_localctx, 72, RULE_specifierQualifierList);
-            try
-            {
-                State = 628;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 45, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 620; typeSpecifier(0);
-                            State = 622;
-                            ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 43, Context))
+                            switch (_alt)
                             {
                                 case 1:
                                     {
-                                        State = 621; specifierQualifierList();
-                                    }
-                                    break;
-                            }
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 624; typeQualifier();
-                            State = 626;
-                            ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 44, Context))
-                            {
-                                case 1:
-                                    {
-                                        State = 625; specifierQualifierList();
-                                    }
-                                    break;
-                            }
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class StructDeclaratorListContext : ParserRuleContext
-        {
-            public StructDeclaratorContext structDeclarator()
-            {
-                return GetRuleContext<StructDeclaratorContext>(0);
-            }
-            public StructDeclaratorListContext structDeclaratorList()
-            {
-                return GetRuleContext<StructDeclaratorListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public StructDeclaratorListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_structDeclaratorList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStructDeclaratorList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStructDeclaratorList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StructDeclaratorListContext structDeclaratorList()
-        {
-            return structDeclaratorList(0);
-        }
-
-        private StructDeclaratorListContext structDeclaratorList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            StructDeclaratorListContext _localctx = new StructDeclaratorListContext(Context, _parentState);
-            StructDeclaratorListContext _prevctx = _localctx;
-            int _startState = 74;
-            EnterRecursionRule(_localctx, 74, RULE_structDeclaratorList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 631; structDeclarator();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 638;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new StructDeclaratorListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_structDeclaratorList);
-                                    State = 633;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 634; Match(Comma);
-                                    State = 635; structDeclarator();
-                                }
-                            }
-                        }
-                        State = 640;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class StructDeclaratorContext : ParserRuleContext
-        {
-            public DeclaratorContext declarator()
-            {
-                return GetRuleContext<DeclaratorContext>(0);
-            }
-            public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
-            public ConstantExpressionContext constantExpression()
-            {
-                return GetRuleContext<ConstantExpressionContext>(0);
-            }
-            public StructDeclaratorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_structDeclarator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStructDeclarator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStructDeclarator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StructDeclaratorContext structDeclarator()
-        {
-            StructDeclaratorContext _localctx = new StructDeclaratorContext(Context, State);
-            EnterRule(_localctx, 76, RULE_structDeclarator);
-            int _la;
-            try
-            {
-                State = 647;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 48, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 641; declarator();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 643;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (Star - 59)) | (1L << (Caret - 59)) | (1L << (Identifier - 59)))) != 0))
-                            {
-                                {
-                                    State = 642; declarator();
-                                }
-                            }
-
-                            State = 645; Match(Colon);
-                            State = 646; constantExpression();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class EnumSpecifierContext : ParserRuleContext
-        {
-            public ITerminalNode Enum() { return GetToken(CParser.Enum, 0); }
-            public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
-            public EnumeratorListContext enumeratorList()
-            {
-                return GetRuleContext<EnumeratorListContext>(0);
-            }
-            public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public EnumSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_enumSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterEnumSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitEnumSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public EnumSpecifierContext enumSpecifier()
-        {
-            EnumSpecifierContext _localctx = new EnumSpecifierContext(Context, State);
-            EnterRule(_localctx, 78, RULE_enumSpecifier);
-            int _la;
-            try
-            {
-                State = 668;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 51, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 649; Match(Enum);
-                            State = 651;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Identifier)
-                            {
-                                {
-                                    State = 650; Match(Identifier);
-                                }
-                            }
-
-                            State = 653; Match(LeftBrace);
-                            State = 654; enumeratorList(0);
-                            State = 655; Match(RightBrace);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 657; Match(Enum);
-                            State = 659;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Identifier)
-                            {
-                                {
-                                    State = 658; Match(Identifier);
-                                }
-                            }
-
-                            State = 661; Match(LeftBrace);
-                            State = 662; enumeratorList(0);
-                            State = 663; Match(Comma);
-                            State = 664; Match(RightBrace);
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 666; Match(Enum);
-                            State = 667; Match(Identifier);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class EnumeratorListContext : ParserRuleContext
-        {
-            public EnumeratorContext enumerator()
-            {
-                return GetRuleContext<EnumeratorContext>(0);
-            }
-            public EnumeratorListContext enumeratorList()
-            {
-                return GetRuleContext<EnumeratorListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public EnumeratorListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_enumeratorList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterEnumeratorList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitEnumeratorList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public EnumeratorListContext enumeratorList()
-        {
-            return enumeratorList(0);
-        }
-
-        private EnumeratorListContext enumeratorList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            EnumeratorListContext _localctx = new EnumeratorListContext(Context, _parentState);
-            EnumeratorListContext _prevctx = _localctx;
-            int _startState = 80;
-            EnterRecursionRule(_localctx, 80, RULE_enumeratorList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 671; enumerator();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 678;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 52, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new EnumeratorListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_enumeratorList);
-                                    State = 673;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 674; Match(Comma);
-                                    State = 675; enumerator();
-                                }
-                            }
-                        }
-                        State = 680;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 52, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class EnumeratorContext : ParserRuleContext
-        {
-            public EnumerationConstantContext enumerationConstant()
-            {
-                return GetRuleContext<EnumerationConstantContext>(0);
-            }
-            public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
-            public ConstantExpressionContext constantExpression()
-            {
-                return GetRuleContext<ConstantExpressionContext>(0);
-            }
-            public EnumeratorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_enumerator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterEnumerator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitEnumerator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public EnumeratorContext enumerator()
-        {
-            EnumeratorContext _localctx = new EnumeratorContext(Context, State);
-            EnterRule(_localctx, 82, RULE_enumerator);
-            try
-            {
-                State = 686;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 53, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 681; enumerationConstant();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 682; enumerationConstant();
-                            State = 683; Match(Assign);
-                            State = 684; constantExpression();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class EnumerationConstantContext : ParserRuleContext
-        {
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public EnumerationConstantContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_enumerationConstant; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterEnumerationConstant(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitEnumerationConstant(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public EnumerationConstantContext enumerationConstant()
-        {
-            EnumerationConstantContext _localctx = new EnumerationConstantContext(Context, State);
-            EnterRule(_localctx, 84, RULE_enumerationConstant);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 688; Match(Identifier);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class AtomicTypeSpecifierContext : ParserRuleContext
-        {
-            public ITerminalNode Atomic() { return GetToken(CParser.Atomic, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public TypeNameContext typeName()
-            {
-                return GetRuleContext<TypeNameContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public AtomicTypeSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_atomicTypeSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterAtomicTypeSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitAtomicTypeSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public AtomicTypeSpecifierContext atomicTypeSpecifier()
-        {
-            AtomicTypeSpecifierContext _localctx = new AtomicTypeSpecifierContext(Context, State);
-            EnterRule(_localctx, 86, RULE_atomicTypeSpecifier);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 690; Match(Atomic);
-                    State = 691; Match(LeftParen);
-                    State = 692; typeName();
-                    State = 693; Match(RightParen);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class TypeQualifierContext : ParserRuleContext
-        {
-            public ITerminalNode Const() { return GetToken(CParser.Const, 0); }
-            public ITerminalNode Restrict() { return GetToken(CParser.Restrict, 0); }
-            public ITerminalNode Volatile() { return GetToken(CParser.Volatile, 0); }
-            public ITerminalNode Atomic() { return GetToken(CParser.Atomic, 0); }
-            public TypeQualifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_typeQualifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterTypeQualifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitTypeQualifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public TypeQualifierContext typeQualifier()
-        {
-            TypeQualifierContext _localctx = new TypeQualifierContext(Context, State);
-            EnterRule(_localctx, 88, RULE_typeQualifier);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 695;
-                    _la = TokenStream.LA(1);
-                    if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class FunctionSpecifierContext : ParserRuleContext
-        {
-            public ITerminalNode Inline() { return GetToken(CParser.Inline, 0); }
-            public ITerminalNode Noreturn() { return GetToken(CParser.Noreturn, 0); }
-            public GccAttributeSpecifierContext gccAttributeSpecifier()
-            {
-                return GetRuleContext<GccAttributeSpecifierContext>(0);
-            }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public FunctionSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_functionSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterFunctionSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitFunctionSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public FunctionSpecifierContext functionSpecifier()
-        {
-            FunctionSpecifierContext _localctx = new FunctionSpecifierContext(Context, State);
-            EnterRule(_localctx, 90, RULE_functionSpecifier);
-            int _la;
-            try
-            {
-                State = 703;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case T__7:
-                    case T__8:
-                    case Inline:
-                    case Noreturn:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 697;
-                            _la = TokenStream.LA(1);
-                            if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__8) | (1L << Inline) | (1L << Noreturn))) != 0)))
-                            {
-                                ErrorHandler.RecoverInline(this);
-                            }
-                            else
-                            {
-                                ErrorHandler.ReportMatch(this);
-                                Consume();
-                            }
-                        }
-                        break;
-                    case T__11:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 698; gccAttributeSpecifier();
-                        }
-                        break;
-                    case T__9:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 699; Match(T__9);
-                            State = 700; Match(LeftParen);
-                            State = 701; Match(Identifier);
-                            State = 702; Match(RightParen);
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class AlignmentSpecifierContext : ParserRuleContext
-        {
-            public ITerminalNode Alignas() { return GetToken(CParser.Alignas, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public TypeNameContext typeName()
-            {
-                return GetRuleContext<TypeNameContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public ConstantExpressionContext constantExpression()
-            {
-                return GetRuleContext<ConstantExpressionContext>(0);
-            }
-            public AlignmentSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_alignmentSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterAlignmentSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitAlignmentSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public AlignmentSpecifierContext alignmentSpecifier()
-        {
-            AlignmentSpecifierContext _localctx = new AlignmentSpecifierContext(Context, State);
-            EnterRule(_localctx, 92, RULE_alignmentSpecifier);
-            try
-            {
-                State = 715;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 55, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 705; Match(Alignas);
-                            State = 706; Match(LeftParen);
-                            State = 707; typeName();
-                            State = 708; Match(RightParen);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 710; Match(Alignas);
-                            State = 711; Match(LeftParen);
-                            State = 712; constantExpression();
-                            State = 713; Match(RightParen);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DeclaratorContext : ParserRuleContext
-        {
-            public DirectDeclaratorContext directDeclarator()
-            {
-                return GetRuleContext<DirectDeclaratorContext>(0);
-            }
-            public PointerContext pointer()
-            {
-                return GetRuleContext<PointerContext>(0);
-            }
-            public GccDeclaratorExtensionContext[] gccDeclaratorExtension()
-            {
-                return GetRuleContexts<GccDeclaratorExtensionContext>();
-            }
-            public GccDeclaratorExtensionContext gccDeclaratorExtension(int i)
-            {
-                return GetRuleContext<GccDeclaratorExtensionContext>(i);
-            }
-            public DeclaratorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_declarator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDeclarator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDeclarator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DeclaratorContext declarator()
-        {
-            DeclaratorContext _localctx = new DeclaratorContext(Context, State);
-            EnterRule(_localctx, 94, RULE_declarator);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 718;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Star || _la == Caret)
-                    {
-                        {
-                            State = 717; pointer();
-                        }
-                    }
-
-                    State = 720; directDeclarator(0);
-                    State = 724;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 57, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            {
-                                {
-                                    State = 721; gccDeclaratorExtension();
-                                }
-                            }
-                        }
-                        State = 726;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 57, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DirectDeclaratorContext : ParserRuleContext
-        {
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public DeclaratorContext declarator()
-            {
-                return GetRuleContext<DeclaratorContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
-            public ITerminalNode DigitSequence() { return GetToken(CParser.DigitSequence, 0); }
-            public PointerContext pointer()
-            {
-                return GetRuleContext<PointerContext>(0);
-            }
-            public DirectDeclaratorContext directDeclarator()
-            {
-                return GetRuleContext<DirectDeclaratorContext>(0);
-            }
-            public TypeSpecifierContext typeSpecifier()
-            {
-                return GetRuleContext<TypeSpecifierContext>(0);
-            }
-            public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
-            public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
-            public TypeQualifierListContext typeQualifierList()
-            {
-                return GetRuleContext<TypeQualifierListContext>(0);
-            }
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ITerminalNode Static() { return GetToken(CParser.Static, 0); }
-            public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
-            public ParameterTypeListContext parameterTypeList()
-            {
-                return GetRuleContext<ParameterTypeListContext>(0);
-            }
-            public IdentifierListContext identifierList()
-            {
-                return GetRuleContext<IdentifierListContext>(0);
-            }
-            public DirectDeclaratorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_directDeclarator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDirectDeclarator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDirectDeclarator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DirectDeclaratorContext directDeclarator()
-        {
-            return directDeclarator(0);
-        }
-
-        private DirectDeclaratorContext directDeclarator(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            DirectDeclaratorContext _localctx = new DirectDeclaratorContext(Context, _parentState);
-            DirectDeclaratorContext _prevctx = _localctx;
-            int _startState = 96;
-            EnterRecursionRule(_localctx, 96, RULE_directDeclarator, _p);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 744;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 59, Context))
-                    {
-                        case 1:
-                            {
-                                State = 728; Match(Identifier);
-                            }
-                            break;
-                        case 2:
-                            {
-                                State = 729; Match(LeftParen);
-                                State = 730; declarator();
-                                State = 731; Match(RightParen);
-                            }
-                            break;
-                        case 3:
-                            {
-                                State = 733; Match(Identifier);
-                                State = 734; Match(Colon);
-                                State = 735; Match(DigitSequence);
-                            }
-                            break;
-                        case 4:
-                            {
-                                State = 736; Match(LeftParen);
-                                State = 738;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << Char) | (1L << Double) | (1L << Enum) | (1L << Float) | (1L << Int) | (1L << Long) | (1L << Short) | (1L << Signed) | (1L << Struct) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Atomic) | (1L << Bool) | (1L << Complex))) != 0) || _la == Identifier)
-                                {
-                                    {
-                                        State = 737; typeSpecifier(0);
-                                    }
-                                }
-
-                                State = 740; pointer();
-                                State = 741; directDeclarator(0);
-                                State = 742; Match(RightParen);
-                            }
-                            break;
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 791;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 789;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 65, Context))
-                                {
-                                    case 1:
                                         {
-                                            _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
-                                            State = 746;
-                                            if (!(Precpred(Context, 8))) throw new FailedPredicateException(this, "Precpred(Context, 8)");
-                                            State = 747; Match(LeftBracket);
-                                            State = 749;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                                            {
-                                                {
-                                                    State = 748; typeQualifierList(0);
-                                                }
-                                            }
-
-                                            State = 752;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                                            {
-                                                {
-                                                    State = 751; assignmentExpression();
-                                                }
-                                            }
-
-                                            State = 754; Match(RightBracket);
+                                            State = 176; Match(StringLiteral);
                                         }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
-                                            State = 755;
-                                            if (!(Precpred(Context, 7))) throw new FailedPredicateException(this, "Precpred(Context, 7)");
-                                            State = 756; Match(LeftBracket);
-                                            State = 757; Match(Static);
-                                            State = 759;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                                            {
-                                                {
-                                                    State = 758; typeQualifierList(0);
-                                                }
-                                            }
-
-                                            State = 761; assignmentExpression();
-                                            State = 762; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 3:
-                                        {
-                                            _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
-                                            State = 764;
-                                            if (!(Precpred(Context, 6))) throw new FailedPredicateException(this, "Precpred(Context, 6)");
-                                            State = 765; Match(LeftBracket);
-                                            State = 766; typeQualifierList(0);
-                                            State = 767; Match(Static);
-                                            State = 768; assignmentExpression();
-                                            State = 769; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 4:
-                                        {
-                                            _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
-                                            State = 771;
-                                            if (!(Precpred(Context, 5))) throw new FailedPredicateException(this, "Precpred(Context, 5)");
-                                            State = 772; Match(LeftBracket);
-                                            State = 774;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                                            {
-                                                {
-                                                    State = 773; typeQualifierList(0);
-                                                }
-                                            }
-
-                                            State = 776; Match(Star);
-                                            State = 777; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 5:
-                                        {
-                                            _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
-                                            State = 778;
-                                            if (!(Precpred(Context, 4))) throw new FailedPredicateException(this, "Precpred(Context, 4)");
-                                            State = 779; Match(LeftParen);
-                                            State = 780; parameterTypeList();
-                                            State = 781; Match(RightParen);
-                                        }
-                                        break;
-                                    case 6:
-                                        {
-                                            _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
-                                            State = 783;
-                                            if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
-                                            State = 784; Match(LeftParen);
-                                            State = 786;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if (_la == Identifier)
-                                            {
-                                                {
-                                                    State = 785; identifierList(0);
-                                                }
-                                            }
-
-                                            State = 788; Match(RightParen);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 793;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class GccDeclaratorExtensionContext : ParserRuleContext
-        {
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public ITerminalNode[] StringLiteral() { return GetTokens(CParser.StringLiteral); }
-            public ITerminalNode StringLiteral(int i)
-            {
-                return GetToken(CParser.StringLiteral, i);
-            }
-            public GccAttributeSpecifierContext gccAttributeSpecifier()
-            {
-                return GetRuleContext<GccAttributeSpecifierContext>(0);
-            }
-            public GccDeclaratorExtensionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_gccDeclaratorExtension; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterGccDeclaratorExtension(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitGccDeclaratorExtension(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public GccDeclaratorExtensionContext gccDeclaratorExtension()
-        {
-            GccDeclaratorExtensionContext _localctx = new GccDeclaratorExtensionContext(Context, State);
-            EnterRule(_localctx, 98, RULE_gccDeclaratorExtension);
-            int _la;
-            try
-            {
-                State = 803;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case T__10:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 794; Match(T__10);
-                            State = 795; Match(LeftParen);
-                            State = 797;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            do
-                            {
-                                {
-                                    {
-                                        State = 796; Match(StringLiteral);
-                                    }
-                                }
-                                State = 799;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                            } while (_la == StringLiteral);
-                            State = 801; Match(RightParen);
-                        }
-                        break;
-                    case T__11:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 802; gccAttributeSpecifier();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class GccAttributeSpecifierContext : ParserRuleContext
-        {
-            public ITerminalNode[] LeftParen() { return GetTokens(CParser.LeftParen); }
-            public ITerminalNode LeftParen(int i)
-            {
-                return GetToken(CParser.LeftParen, i);
-            }
-            public GccAttributeListContext gccAttributeList()
-            {
-                return GetRuleContext<GccAttributeListContext>(0);
-            }
-            public ITerminalNode[] RightParen() { return GetTokens(CParser.RightParen); }
-            public ITerminalNode RightParen(int i)
-            {
-                return GetToken(CParser.RightParen, i);
-            }
-            public GccAttributeSpecifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_gccAttributeSpecifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterGccAttributeSpecifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitGccAttributeSpecifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public GccAttributeSpecifierContext gccAttributeSpecifier()
-        {
-            GccAttributeSpecifierContext _localctx = new GccAttributeSpecifierContext(Context, State);
-            EnterRule(_localctx, 100, RULE_gccAttributeSpecifier);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 805; Match(T__11);
-                    State = 806; Match(LeftParen);
-                    State = 807; Match(LeftParen);
-                    State = 808; gccAttributeList();
-                    State = 809; Match(RightParen);
-                    State = 810; Match(RightParen);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class GccAttributeListContext : ParserRuleContext
-        {
-            public GccAttributeContext[] gccAttribute()
-            {
-                return GetRuleContexts<GccAttributeContext>();
-            }
-            public GccAttributeContext gccAttribute(int i)
-            {
-                return GetRuleContext<GccAttributeContext>(i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(CParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(CParser.Comma, i);
-            }
-            public GccAttributeListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_gccAttributeList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterGccAttributeList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitGccAttributeList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public GccAttributeListContext gccAttributeList()
-        {
-            GccAttributeListContext _localctx = new GccAttributeListContext(Context, State);
-            EnterRule(_localctx, 102, RULE_gccAttributeList);
-            int _la;
-            try
-            {
-                State = 821;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 70, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 812; gccAttribute();
-                            State = 817;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            while (_la == Comma)
-                            {
-                                {
-                                    {
-                                        State = 813; Match(Comma);
-                                        State = 814; gccAttribute();
-                                    }
-                                }
-                                State = 819;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                            }
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class GccAttributeContext : ParserRuleContext
-        {
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public ITerminalNode[] LeftParen() { return GetTokens(CParser.LeftParen); }
-            public ITerminalNode LeftParen(int i)
-            {
-                return GetToken(CParser.LeftParen, i);
-            }
-            public ITerminalNode[] RightParen() { return GetTokens(CParser.RightParen); }
-            public ITerminalNode RightParen(int i)
-            {
-                return GetToken(CParser.RightParen, i);
-            }
-            public ArgumentExpressionListContext argumentExpressionList()
-            {
-                return GetRuleContext<ArgumentExpressionListContext>(0);
-            }
-            public GccAttributeContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_gccAttribute; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterGccAttribute(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitGccAttribute(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public GccAttributeContext gccAttribute()
-        {
-            GccAttributeContext _localctx = new GccAttributeContext(Context, State);
-            EnterRule(_localctx, 104, RULE_gccAttribute);
-            int _la;
-            try
-            {
-                State = 832;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case T__0:
-                    case T__1:
-                    case T__2:
-                    case T__3:
-                    case T__4:
-                    case T__5:
-                    case T__6:
-                    case T__7:
-                    case T__8:
-                    case T__9:
-                    case T__10:
-                    case T__11:
-                    case T__12:
-                    case T__13:
-                    case Auto:
-                    case Break:
-                    case Case:
-                    case Char:
-                    case Const:
-                    case Continue:
-                    case Default:
-                    case Do:
-                    case Double:
-                    case Else:
-                    case Enum:
-                    case Extern:
-                    case Float:
-                    case For:
-                    case Goto:
-                    case If:
-                    case Inline:
-                    case Int:
-                    case Long:
-                    case Register:
-                    case Restrict:
-                    case Return:
-                    case Short:
-                    case Signed:
-                    case Sizeof:
-                    case Static:
-                    case Struct:
-                    case Switch:
-                    case Typedef:
-                    case Union:
-                    case Unsigned:
-                    case Void:
-                    case Volatile:
-                    case While:
-                    case Alignas:
-                    case Alignof:
-                    case Atomic:
-                    case Bool:
-                    case Complex:
-                    case Generic:
-                    case Imaginary:
-                    case Noreturn:
-                    case StaticAssert:
-                    case ThreadLocal:
-                    case LeftBracket:
-                    case RightBracket:
-                    case LeftBrace:
-                    case RightBrace:
-                    case Less:
-                    case LessEqual:
-                    case Greater:
-                    case GreaterEqual:
-                    case LeftShift:
-                    case RightShift:
-                    case Plus:
-                    case PlusPlus:
-                    case Minus:
-                    case MinusMinus:
-                    case Star:
-                    case Div:
-                    case Mod:
-                    case And:
-                    case Or:
-                    case AndAnd:
-                    case OrOr:
-                    case Caret:
-                    case Not:
-                    case Tilde:
-                    case Question:
-                    case Colon:
-                    case Semi:
-                    case Assign:
-                    case StarAssign:
-                    case DivAssign:
-                    case ModAssign:
-                    case PlusAssign:
-                    case MinusAssign:
-                    case LeftShiftAssign:
-                    case RightShiftAssign:
-                    case AndAssign:
-                    case XorAssign:
-                    case OrAssign:
-                    case Equal:
-                    case NotEqual:
-                    case Arrow:
-                    case Dot:
-                    case Ellipsis:
-                    case Identifier:
-                    case Constant:
-                    case DigitSequence:
-                    case StringLiteral:
-                    case ComplexDefine:
-                    case IncludeDirective:
-                    case AsmBlock:
-                    case LineAfterPreprocessing:
-                    case LineDirective:
-                    case PragmaDirective:
-                    case Whitespace:
-                    case Newline:
-                    case BlockComment:
-                    case LineComment:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 823;
-                            _la = TokenStream.LA(1);
-                            if (_la <= 0 || (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (RightParen - 59)) | (1L << (Comma - 59)))) != 0)))
-                            {
-                                ErrorHandler.RecoverInline(this);
-                            }
-                            else
-                            {
-                                ErrorHandler.ReportMatch(this);
-                                Consume();
-                            }
-                            State = 829;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == LeftParen)
-                            {
-                                {
-                                    State = 824; Match(LeftParen);
-                                    State = 826;
-                                    ErrorHandler.Sync(this);
-                                    _la = TokenStream.LA(1);
-                                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                                    {
-                                        {
-                                            State = 825; argumentExpressionList(0);
-                                        }
-                                    }
-
-                                    State = 828; Match(RightParen);
-                                }
-                            }
-
-                        }
-                        break;
-                    case RightParen:
-                    case Comma:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class NestedParenthesesBlockContext : ParserRuleContext
-        {
-            public ITerminalNode[] LeftParen() { return GetTokens(CParser.LeftParen); }
-            public ITerminalNode LeftParen(int i)
-            {
-                return GetToken(CParser.LeftParen, i);
-            }
-            public NestedParenthesesBlockContext[] nestedParenthesesBlock()
-            {
-                return GetRuleContexts<NestedParenthesesBlockContext>();
-            }
-            public NestedParenthesesBlockContext nestedParenthesesBlock(int i)
-            {
-                return GetRuleContext<NestedParenthesesBlockContext>(i);
-            }
-            public ITerminalNode[] RightParen() { return GetTokens(CParser.RightParen); }
-            public ITerminalNode RightParen(int i)
-            {
-                return GetToken(CParser.RightParen, i);
-            }
-            public NestedParenthesesBlockContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_nestedParenthesesBlock; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterNestedParenthesesBlock(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitNestedParenthesesBlock(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public NestedParenthesesBlockContext nestedParenthesesBlock()
-        {
-            NestedParenthesesBlockContext _localctx = new NestedParenthesesBlockContext(Context, State);
-            EnterRule(_localctx, 106, RULE_nestedParenthesesBlock);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 841;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << Auto) | (1L << Break) | (1L << Case) | (1L << Char) | (1L << Const) | (1L << Continue) | (1L << Default) | (1L << Do) | (1L << Double) | (1L << Else) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << For) | (1L << Goto) | (1L << If) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Return) | (1L << Short) | (1L << Signed) | (1L << Sizeof) | (1L << Static) | (1L << Struct) | (1L << Switch) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << While) | (1L << Alignas) | (1L << Alignof) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Generic) | (1L << Imaginary) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal) | (1L << LeftParen) | (1L << LeftBracket) | (1L << RightBracket) | (1L << LeftBrace))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (RightBrace - 64)) | (1L << (Less - 64)) | (1L << (LessEqual - 64)) | (1L << (Greater - 64)) | (1L << (GreaterEqual - 64)) | (1L << (LeftShift - 64)) | (1L << (RightShift - 64)) | (1L << (Plus - 64)) | (1L << (PlusPlus - 64)) | (1L << (Minus - 64)) | (1L << (MinusMinus - 64)) | (1L << (Star - 64)) | (1L << (Div - 64)) | (1L << (Mod - 64)) | (1L << (And - 64)) | (1L << (Or - 64)) | (1L << (AndAnd - 64)) | (1L << (OrOr - 64)) | (1L << (Caret - 64)) | (1L << (Not - 64)) | (1L << (Tilde - 64)) | (1L << (Question - 64)) | (1L << (Colon - 64)) | (1L << (Semi - 64)) | (1L << (Comma - 64)) | (1L << (Assign - 64)) | (1L << (StarAssign - 64)) | (1L << (DivAssign - 64)) | (1L << (ModAssign - 64)) | (1L << (PlusAssign - 64)) | (1L << (MinusAssign - 64)) | (1L << (LeftShiftAssign - 64)) | (1L << (RightShiftAssign - 64)) | (1L << (AndAssign - 64)) | (1L << (XorAssign - 64)) | (1L << (OrAssign - 64)) | (1L << (Equal - 64)) | (1L << (NotEqual - 64)) | (1L << (Arrow - 64)) | (1L << (Dot - 64)) | (1L << (Ellipsis - 64)) | (1L << (Identifier - 64)) | (1L << (Constant - 64)) | (1L << (DigitSequence - 64)) | (1L << (StringLiteral - 64)) | (1L << (ComplexDefine - 64)) | (1L << (IncludeDirective - 64)) | (1L << (AsmBlock - 64)) | (1L << (LineAfterPreprocessing - 64)) | (1L << (LineDirective - 64)) | (1L << (PragmaDirective - 64)) | (1L << (Whitespace - 64)) | (1L << (Newline - 64)) | (1L << (BlockComment - 64)) | (1L << (LineComment - 64)))) != 0))
-                    {
-                        {
-                            State = 839;
-                            ErrorHandler.Sync(this);
-                            switch (TokenStream.LA(1))
-                            {
-                                case T__0:
-                                case T__1:
-                                case T__2:
-                                case T__3:
-                                case T__4:
-                                case T__5:
-                                case T__6:
-                                case T__7:
-                                case T__8:
-                                case T__9:
-                                case T__10:
-                                case T__11:
-                                case T__12:
-                                case T__13:
-                                case Auto:
-                                case Break:
-                                case Case:
-                                case Char:
-                                case Const:
-                                case Continue:
-                                case Default:
-                                case Do:
-                                case Double:
-                                case Else:
-                                case Enum:
-                                case Extern:
-                                case Float:
-                                case For:
-                                case Goto:
-                                case If:
-                                case Inline:
-                                case Int:
-                                case Long:
-                                case Register:
-                                case Restrict:
-                                case Return:
-                                case Short:
-                                case Signed:
-                                case Sizeof:
-                                case Static:
-                                case Struct:
-                                case Switch:
-                                case Typedef:
-                                case Union:
-                                case Unsigned:
-                                case Void:
-                                case Volatile:
-                                case While:
-                                case Alignas:
-                                case Alignof:
-                                case Atomic:
-                                case Bool:
-                                case Complex:
-                                case Generic:
-                                case Imaginary:
-                                case Noreturn:
-                                case StaticAssert:
-                                case ThreadLocal:
-                                case LeftBracket:
-                                case RightBracket:
-                                case LeftBrace:
-                                case RightBrace:
-                                case Less:
-                                case LessEqual:
-                                case Greater:
-                                case GreaterEqual:
-                                case LeftShift:
-                                case RightShift:
-                                case Plus:
-                                case PlusPlus:
-                                case Minus:
-                                case MinusMinus:
-                                case Star:
-                                case Div:
-                                case Mod:
-                                case And:
-                                case Or:
-                                case AndAnd:
-                                case OrOr:
-                                case Caret:
-                                case Not:
-                                case Tilde:
-                                case Question:
-                                case Colon:
-                                case Semi:
-                                case Comma:
-                                case Assign:
-                                case StarAssign:
-                                case DivAssign:
-                                case ModAssign:
-                                case PlusAssign:
-                                case MinusAssign:
-                                case LeftShiftAssign:
-                                case RightShiftAssign:
-                                case AndAssign:
-                                case XorAssign:
-                                case OrAssign:
-                                case Equal:
-                                case NotEqual:
-                                case Arrow:
-                                case Dot:
-                                case Ellipsis:
-                                case Identifier:
-                                case Constant:
-                                case DigitSequence:
-                                case StringLiteral:
-                                case ComplexDefine:
-                                case IncludeDirective:
-                                case AsmBlock:
-                                case LineAfterPreprocessing:
-                                case LineDirective:
-                                case PragmaDirective:
-                                case Whitespace:
-                                case Newline:
-                                case BlockComment:
-                                case LineComment:
-                                    {
-                                        State = 834;
-                                        _la = TokenStream.LA(1);
-                                        if (_la <= 0 || (_la == LeftParen || _la == RightParen))
-                                        {
-                                            ErrorHandler.RecoverInline(this);
-                                        }
-                                        else
-                                        {
-                                            ErrorHandler.ReportMatch(this);
-                                            Consume();
-                                        }
-                                    }
-                                    break;
-                                case LeftParen:
-                                    {
-                                        State = 835; Match(LeftParen);
-                                        State = 836; nestedParenthesesBlock();
-                                        State = 837; Match(RightParen);
                                     }
                                     break;
                                 default:
                                     throw new NoViableAltException(this);
                             }
-                        }
-                        State = 843;
+                            State = 179;
+                            ErrorHandler.Sync(this);
+                            _alt = Interpreter.AdaptivePredict(TokenStream, 0, Context);
+                        } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 181; Match(LeftParen);
+                        State = 182; expression(0);
+                        State = 183; Match(RightParen);
+                    }
+                    break;
+                case 5:
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 185; genericSelection();
+                    }
+                    break;
+                case 6:
+                    EnterOuterAlt(_localctx, 6);
+                    {
+                        State = 187;
                         ErrorHandler.Sync(this);
                         _la = TokenStream.LA(1);
+                        if (_la == T__0)
+                        {
+                            {
+                                State = 186; Match(T__0);
+                            }
+                        }
+
+                        State = 189; Match(LeftParen);
+                        State = 190; compoundStatement();
+                        State = 191; Match(RightParen);
                     }
+                    break;
+                case 7:
+                    EnterOuterAlt(_localctx, 7);
+                    {
+                        State = 193; Match(T__1);
+                        State = 194; Match(LeftParen);
+                        State = 195; unaryExpression();
+                        State = 196; Match(Comma);
+                        State = 197; typeName();
+                        State = 198; Match(RightParen);
+                    }
+                    break;
+                case 8:
+                    EnterOuterAlt(_localctx, 8);
+                    {
+                        State = 200; Match(T__2);
+                        State = 201; Match(LeftParen);
+                        State = 202; typeName();
+                        State = 203; Match(Comma);
+                        State = 204; unaryExpression();
+                        State = 205; Match(RightParen);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class GenericSelectionContext : ParserRuleContext
+    {
+        public ITerminalNode Generic() { return GetToken(CParser.Generic, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public GenericAssocListContext genericAssocList()
+        {
+            return GetRuleContext<GenericAssocListContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public GenericSelectionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_genericSelection; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterGenericSelection(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitGenericSelection(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GenericSelectionContext genericSelection()
+    {
+        GenericSelectionContext _localctx = new GenericSelectionContext(Context, State);
+        EnterRule(_localctx, 2, RULE_genericSelection);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 209; Match(Generic);
+                State = 210; Match(LeftParen);
+                State = 211; assignmentExpression();
+                State = 212; Match(Comma);
+                State = 213; genericAssocList(0);
+                State = 214; Match(RightParen);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class GenericAssocListContext : ParserRuleContext
+    {
+        public GenericAssociationContext genericAssociation()
+        {
+            return GetRuleContext<GenericAssociationContext>(0);
+        }
+        public GenericAssocListContext genericAssocList()
+        {
+            return GetRuleContext<GenericAssocListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public GenericAssocListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_genericAssocList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterGenericAssocList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitGenericAssocList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GenericAssocListContext genericAssocList()
+    {
+        return genericAssocList(0);
+    }
+
+    private GenericAssocListContext genericAssocList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        GenericAssocListContext _localctx = new GenericAssocListContext(Context, _parentState);
+        GenericAssocListContext _prevctx = _localctx;
+        int _startState = 4;
+        EnterRecursionRule(_localctx, 4, RULE_genericAssocList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 217; genericAssociation();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 224;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 3, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new GenericAssocListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_genericAssocList);
+                                State = 219;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 220; Match(Comma);
+                                State = 221; genericAssociation();
+                            }
+                        }
+                    }
+                    State = 226;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 3, Context);
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class PointerContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
-            public TypeQualifierListContext typeQualifierList()
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class GenericAssociationContext : ParserRuleContext
+    {
+        public TypeNameContext typeName()
+        {
+            return GetRuleContext<TypeNameContext>(0);
+        }
+        public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ITerminalNode Default() { return GetToken(CParser.Default, 0); }
+        public GenericAssociationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_genericAssociation; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterGenericAssociation(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitGenericAssociation(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GenericAssociationContext genericAssociation()
+    {
+        GenericAssociationContext _localctx = new GenericAssociationContext(Context, State);
+        EnterRule(_localctx, 6, RULE_genericAssociation);
+        try
+        {
+            State = 234;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
             {
-                return GetRuleContext<TypeQualifierListContext>(0);
-            }
-            public PointerContext pointer()
-            {
-                return GetRuleContext<PointerContext>(0);
-            }
-            public ITerminalNode Caret() { return GetToken(CParser.Caret, 0); }
-            public PointerContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_pointer; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterPointer(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitPointer(this);
+                case T__0:
+                case T__3:
+                case T__4:
+                case T__5:
+                case T__6:
+                case Char:
+                case Const:
+                case Double:
+                case Enum:
+                case Float:
+                case Int:
+                case Long:
+                case Restrict:
+                case Short:
+                case Signed:
+                case Struct:
+                case Union:
+                case Unsigned:
+                case Void:
+                case Volatile:
+                case Atomic:
+                case Bool:
+                case Complex:
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 227; typeName();
+                        State = 228; Match(Colon);
+                        State = 229; assignmentExpression();
+                    }
+                    break;
+                case Default:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 231; Match(Default);
+                        State = 232; Match(Colon);
+                        State = 233; assignmentExpression();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
             }
         }
-
-        [RuleVersion(0)]
-        public PointerContext pointer()
+        catch (RecognitionException re)
         {
-            PointerContext _localctx = new PointerContext(Context, State);
-            EnterRule(_localctx, 108, RULE_pointer);
-            int _la;
-            try
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class PostfixExpressionContext : ParserRuleContext
+    {
+        public PrimaryExpressionContext primaryExpression()
+        {
+            return GetRuleContext<PrimaryExpressionContext>(0);
+        }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public TypeNameContext typeName()
+        {
+            return GetRuleContext<TypeNameContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
+        public InitializerListContext initializerList()
+        {
+            return GetRuleContext<InitializerListContext>(0);
+        }
+        public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public PostfixExpressionContext postfixExpression()
+        {
+            return GetRuleContext<PostfixExpressionContext>(0);
+        }
+        public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
+        public ArgumentExpressionListContext argumentExpressionList()
+        {
+            return GetRuleContext<ArgumentExpressionListContext>(0);
+        }
+        public ITerminalNode Dot() { return GetToken(CParser.Dot, 0); }
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public ITerminalNode Arrow() { return GetToken(CParser.Arrow, 0); }
+        public ITerminalNode PlusPlus() { return GetToken(CParser.PlusPlus, 0); }
+        public ITerminalNode MinusMinus() { return GetToken(CParser.MinusMinus, 0); }
+        public PostfixExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_postfixExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterPostfixExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitPostfixExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public PostfixExpressionContext postfixExpression()
+    {
+        return postfixExpression(0);
+    }
+
+    private PostfixExpressionContext postfixExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        PostfixExpressionContext _localctx = new PostfixExpressionContext(Context, _parentState);
+        PostfixExpressionContext _prevctx = _localctx;
+        int _startState = 8;
+        EnterRecursionRule(_localctx, 8, RULE_postfixExpression, _p);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
             {
-                State = 862;
+                State = 270;
                 ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 80, Context))
+                switch (Interpreter.AdaptivePredict(TokenStream, 5, Context))
                 {
                     case 1:
-                        EnterOuterAlt(_localctx, 1);
                         {
-                            State = 844; Match(Star);
-                            State = 846;
-                            ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 76, Context))
-                            {
-                                case 1:
-                                    {
-                                        State = 845; typeQualifierList(0);
-                                    }
-                                    break;
-                            }
+                            State = 237; primaryExpression();
                         }
                         break;
                     case 2:
-                        EnterOuterAlt(_localctx, 2);
                         {
-                            State = 848; Match(Star);
-                            State = 850;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                            {
-                                {
-                                    State = 849; typeQualifierList(0);
-                                }
-                            }
-
-                            State = 852; pointer();
+                            State = 238; Match(LeftParen);
+                            State = 239; typeName();
+                            State = 240; Match(RightParen);
+                            State = 241; Match(LeftBrace);
+                            State = 242; initializerList(0);
+                            State = 243; Match(RightBrace);
                         }
                         break;
                     case 3:
-                        EnterOuterAlt(_localctx, 3);
                         {
-                            State = 853; Match(Caret);
-                            State = 855;
-                            ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 78, Context))
-                            {
-                                case 1:
-                                    {
-                                        State = 854; typeQualifierList(0);
-                                    }
-                                    break;
-                            }
+                            State = 245; Match(LeftParen);
+                            State = 246; typeName();
+                            State = 247; Match(RightParen);
+                            State = 248; Match(LeftBrace);
+                            State = 249; initializerList(0);
+                            State = 250; Match(Comma);
+                            State = 251; Match(RightBrace);
                         }
                         break;
                     case 4:
-                        EnterOuterAlt(_localctx, 4);
                         {
-                            State = 857; Match(Caret);
-                            State = 859;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                            {
-                                {
-                                    State = 858; typeQualifierList(0);
-                                }
-                            }
-
-                            State = 861; pointer();
+                            State = 253; Match(T__0);
+                            State = 254; Match(LeftParen);
+                            State = 255; typeName();
+                            State = 256; Match(RightParen);
+                            State = 257; Match(LeftBrace);
+                            State = 258; initializerList(0);
+                            State = 259; Match(RightBrace);
+                        }
+                        break;
+                    case 5:
+                        {
+                            State = 261; Match(T__0);
+                            State = 262; Match(LeftParen);
+                            State = 263; typeName();
+                            State = 264; Match(RightParen);
+                            State = 265; Match(LeftBrace);
+                            State = 266; initializerList(0);
+                            State = 267; Match(Comma);
+                            State = 268; Match(RightBrace);
                         }
                         break;
                 }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class TypeQualifierListContext : ParserRuleContext
-        {
-            public TypeQualifierContext typeQualifier()
-            {
-                return GetRuleContext<TypeQualifierContext>(0);
-            }
-            public TypeQualifierListContext typeQualifierList()
-            {
-                return GetRuleContext<TypeQualifierListContext>(0);
-            }
-            public TypeQualifierListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_typeQualifierList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterTypeQualifierList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitTypeQualifierList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public TypeQualifierListContext typeQualifierList()
-        {
-            return typeQualifierList(0);
-        }
-
-        private TypeQualifierListContext typeQualifierList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            TypeQualifierListContext _localctx = new TypeQualifierListContext(Context, _parentState);
-            TypeQualifierListContext _prevctx = _localctx;
-            int _startState = 110;
-            EnterRecursionRule(_localctx, 110, RULE_typeQualifierList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 865; typeQualifier();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 871;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new TypeQualifierListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_typeQualifierList);
-                                    State = 867;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 868; typeQualifier();
-                                }
-                            }
-                        }
-                        State = 873;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class ParameterTypeListContext : ParserRuleContext
-        {
-            public ParameterListContext parameterList()
-            {
-                return GetRuleContext<ParameterListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public ITerminalNode Ellipsis() { return GetToken(CParser.Ellipsis, 0); }
-            public ParameterTypeListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_parameterTypeList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterParameterTypeList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitParameterTypeList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ParameterTypeListContext parameterTypeList()
-        {
-            ParameterTypeListContext _localctx = new ParameterTypeListContext(Context, State);
-            EnterRule(_localctx, 112, RULE_parameterTypeList);
-            try
-            {
-                State = 879;
+                Context.Stop = TokenStream.LT(-1);
+                State = 295;
                 ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 82, Context))
+                _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
                 {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 874; parameterList(0);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 875; parameterList(0);
-                            State = 876; Match(Comma);
-                            State = 877; Match(Ellipsis);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ParameterListContext : ParserRuleContext
-        {
-            public ParameterDeclarationContext parameterDeclaration()
-            {
-                return GetRuleContext<ParameterDeclarationContext>(0);
-            }
-            public ParameterListContext parameterList()
-            {
-                return GetRuleContext<ParameterListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public ParameterListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_parameterList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterParameterList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitParameterList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ParameterListContext parameterList()
-        {
-            return parameterList(0);
-        }
-
-        private ParameterListContext parameterList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            ParameterListContext _localctx = new ParameterListContext(Context, _parentState);
-            ParameterListContext _prevctx = _localctx;
-            int _startState = 114;
-            EnterRecursionRule(_localctx, 114, RULE_parameterList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
+                    if (_alt == 1)
                     {
-                        State = 882; parameterDeclaration();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 889;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 83, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
                         {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new ParameterListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_parameterList);
-                                    State = 884;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 885; Match(Comma);
-                                    State = 886; parameterDeclaration();
-                                }
-                            }
-                        }
-                        State = 891;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 83, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class ParameterDeclarationContext : ParserRuleContext
-        {
-            public DeclarationSpecifiersContext declarationSpecifiers()
-            {
-                return GetRuleContext<DeclarationSpecifiersContext>(0);
-            }
-            public DeclaratorContext declarator()
-            {
-                return GetRuleContext<DeclaratorContext>(0);
-            }
-            public DeclarationSpecifiers2Context declarationSpecifiers2()
-            {
-                return GetRuleContext<DeclarationSpecifiers2Context>(0);
-            }
-            public AbstractDeclaratorContext abstractDeclarator()
-            {
-                return GetRuleContext<AbstractDeclaratorContext>(0);
-            }
-            public ParameterDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_parameterDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterParameterDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitParameterDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ParameterDeclarationContext parameterDeclaration()
-        {
-            ParameterDeclarationContext _localctx = new ParameterDeclarationContext(Context, State);
-            EnterRule(_localctx, 116, RULE_parameterDeclaration);
-            try
-            {
-                State = 899;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 85, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 892; declarationSpecifiers();
-                            State = 893; declarator();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 895; declarationSpecifiers2();
-                            State = 897;
+                            State = 293;
                             ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 84, Context))
+                            switch (Interpreter.AdaptivePredict(TokenStream, 7, Context))
                             {
                                 case 1:
                                     {
-                                        State = 896; abstractDeclarator();
+                                        _localctx = new PostfixExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
+                                        State = 272;
+                                        if (!(Precpred(Context, 10))) throw new FailedPredicateException(this, "Precpred(Context, 10)");
+                                        State = 273; Match(LeftBracket);
+                                        State = 274; expression(0);
+                                        State = 275; Match(RightBracket);
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        _localctx = new PostfixExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
+                                        State = 277;
+                                        if (!(Precpred(Context, 9))) throw new FailedPredicateException(this, "Precpred(Context, 9)");
+                                        State = 278; Match(LeftParen);
+                                        State = 280;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                                        {
+                                            {
+                                                State = 279; argumentExpressionList(0);
+                                            }
+                                        }
+
+                                        State = 282; Match(RightParen);
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        _localctx = new PostfixExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
+                                        State = 283;
+                                        if (!(Precpred(Context, 8))) throw new FailedPredicateException(this, "Precpred(Context, 8)");
+                                        State = 284; Match(Dot);
+                                        State = 285; Match(Identifier);
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        _localctx = new PostfixExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
+                                        State = 286;
+                                        if (!(Precpred(Context, 7))) throw new FailedPredicateException(this, "Precpred(Context, 7)");
+                                        State = 287; Match(Arrow);
+                                        State = 288; Match(Identifier);
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        _localctx = new PostfixExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
+                                        State = 289;
+                                        if (!(Precpred(Context, 6))) throw new FailedPredicateException(this, "Precpred(Context, 6)");
+                                        State = 290; Match(PlusPlus);
+                                    }
+                                    break;
+                                case 6:
+                                    {
+                                        _localctx = new PostfixExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_postfixExpression);
+                                        State = 291;
+                                        if (!(Precpred(Context, 5))) throw new FailedPredicateException(this, "Precpred(Context, 5)");
+                                        State = 292; Match(MinusMinus);
                                     }
                                     break;
                             }
                         }
+                    }
+                    State = 297;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class ArgumentExpressionListContext : ParserRuleContext
+    {
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ArgumentExpressionListContext argumentExpressionList()
+        {
+            return GetRuleContext<ArgumentExpressionListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public ArgumentExpressionListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_argumentExpressionList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterArgumentExpressionList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitArgumentExpressionList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ArgumentExpressionListContext argumentExpressionList()
+    {
+        return argumentExpressionList(0);
+    }
+
+    private ArgumentExpressionListContext argumentExpressionList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        ArgumentExpressionListContext _localctx = new ArgumentExpressionListContext(Context, _parentState);
+        ArgumentExpressionListContext _prevctx = _localctx;
+        int _startState = 10;
+        EnterRecursionRule(_localctx, 10, RULE_argumentExpressionList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 299; assignmentExpression();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 306;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 9, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new ArgumentExpressionListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_argumentExpressionList);
+                                State = 301;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 302; Match(Comma);
+                                State = 303; assignmentExpression();
+                            }
+                        }
+                    }
+                    State = 308;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 9, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class UnaryExpressionContext : ParserRuleContext
+    {
+        public PostfixExpressionContext postfixExpression()
+        {
+            return GetRuleContext<PostfixExpressionContext>(0);
+        }
+        public ITerminalNode PlusPlus() { return GetToken(CParser.PlusPlus, 0); }
+        public UnaryExpressionContext unaryExpression()
+        {
+            return GetRuleContext<UnaryExpressionContext>(0);
+        }
+        public ITerminalNode MinusMinus() { return GetToken(CParser.MinusMinus, 0); }
+        public UnaryOperatorContext unaryOperator()
+        {
+            return GetRuleContext<UnaryOperatorContext>(0);
+        }
+        public CastExpressionContext castExpression()
+        {
+            return GetRuleContext<CastExpressionContext>(0);
+        }
+        public ITerminalNode Sizeof() { return GetToken(CParser.Sizeof, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public TypeNameContext typeName()
+        {
+            return GetRuleContext<TypeNameContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public ITerminalNode Alignof() { return GetToken(CParser.Alignof, 0); }
+        public ITerminalNode AndAnd() { return GetToken(CParser.AndAnd, 0); }
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public UnaryExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_unaryExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterUnaryExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitUnaryExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public UnaryExpressionContext unaryExpression()
+    {
+        UnaryExpressionContext _localctx = new UnaryExpressionContext(Context, State);
+        EnterRule(_localctx, 12, RULE_unaryExpression);
+        try
+        {
+            State = 331;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 10, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 309; postfixExpression(0);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 310; Match(PlusPlus);
+                        State = 311; unaryExpression();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 312; Match(MinusMinus);
+                        State = 313; unaryExpression();
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 314; unaryOperator();
+                        State = 315; castExpression();
+                    }
+                    break;
+                case 5:
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 317; Match(Sizeof);
+                        State = 318; unaryExpression();
+                    }
+                    break;
+                case 6:
+                    EnterOuterAlt(_localctx, 6);
+                    {
+                        State = 319; Match(Sizeof);
+                        State = 320; Match(LeftParen);
+                        State = 321; typeName();
+                        State = 322; Match(RightParen);
+                    }
+                    break;
+                case 7:
+                    EnterOuterAlt(_localctx, 7);
+                    {
+                        State = 324; Match(Alignof);
+                        State = 325; Match(LeftParen);
+                        State = 326; typeName();
+                        State = 327; Match(RightParen);
+                    }
+                    break;
+                case 8:
+                    EnterOuterAlt(_localctx, 8);
+                    {
+                        State = 329; Match(AndAnd);
+                        State = 330; Match(Identifier);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class UnaryOperatorContext : ParserRuleContext
+    {
+        public ITerminalNode And() { return GetToken(CParser.And, 0); }
+        public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
+        public ITerminalNode Plus() { return GetToken(CParser.Plus, 0); }
+        public ITerminalNode Minus() { return GetToken(CParser.Minus, 0); }
+        public ITerminalNode Tilde() { return GetToken(CParser.Tilde, 0); }
+        public ITerminalNode Not() { return GetToken(CParser.Not, 0); }
+        public UnaryOperatorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_unaryOperator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterUnaryOperator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitUnaryOperator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public UnaryOperatorContext unaryOperator()
+    {
+        UnaryOperatorContext _localctx = new UnaryOperatorContext(Context, State);
+        EnterRule(_localctx, 14, RULE_unaryOperator);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 333;
+                _la = TokenStream.LA(1);
+                if (!(((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (Minus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)))) != 0)))
+                {
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class CastExpressionContext : ParserRuleContext
+    {
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public TypeNameContext typeName()
+        {
+            return GetRuleContext<TypeNameContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public CastExpressionContext castExpression()
+        {
+            return GetRuleContext<CastExpressionContext>(0);
+        }
+        public UnaryExpressionContext unaryExpression()
+        {
+            return GetRuleContext<UnaryExpressionContext>(0);
+        }
+        public ITerminalNode DigitSequence() { return GetToken(CParser.DigitSequence, 0); }
+        public CastExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_castExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterCastExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitCastExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public CastExpressionContext castExpression()
+    {
+        CastExpressionContext _localctx = new CastExpressionContext(Context, State);
+        EnterRule(_localctx, 16, RULE_castExpression);
+        try
+        {
+            State = 348;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 11, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 335; Match(LeftParen);
+                        State = 336; typeName();
+                        State = 337; Match(RightParen);
+                        State = 338; castExpression();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 340; Match(T__0);
+                        State = 341; Match(LeftParen);
+                        State = 342; typeName();
+                        State = 343; Match(RightParen);
+                        State = 344; castExpression();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 346; unaryExpression();
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 347; Match(DigitSequence);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class MultiplicativeExpressionContext : ParserRuleContext
+    {
+        public CastExpressionContext castExpression()
+        {
+            return GetRuleContext<CastExpressionContext>(0);
+        }
+        public MultiplicativeExpressionContext multiplicativeExpression()
+        {
+            return GetRuleContext<MultiplicativeExpressionContext>(0);
+        }
+        public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
+        public ITerminalNode Div() { return GetToken(CParser.Div, 0); }
+        public ITerminalNode Mod() { return GetToken(CParser.Mod, 0); }
+        public MultiplicativeExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_multiplicativeExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterMultiplicativeExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitMultiplicativeExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public MultiplicativeExpressionContext multiplicativeExpression()
+    {
+        return multiplicativeExpression(0);
+    }
+
+    private MultiplicativeExpressionContext multiplicativeExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        MultiplicativeExpressionContext _localctx = new MultiplicativeExpressionContext(Context, _parentState);
+        MultiplicativeExpressionContext _prevctx = _localctx;
+        int _startState = 18;
+        EnterRecursionRule(_localctx, 18, RULE_multiplicativeExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 351; castExpression();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 364;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 13, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            State = 362;
+                            ErrorHandler.Sync(this);
+                            switch (Interpreter.AdaptivePredict(TokenStream, 12, Context))
+                            {
+                                case 1:
+                                    {
+                                        _localctx = new MultiplicativeExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_multiplicativeExpression);
+                                        State = 353;
+                                        if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
+                                        State = 354; Match(Star);
+                                        State = 355; castExpression();
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        _localctx = new MultiplicativeExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_multiplicativeExpression);
+                                        State = 356;
+                                        if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
+                                        State = 357; Match(Div);
+                                        State = 358; castExpression();
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        _localctx = new MultiplicativeExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_multiplicativeExpression);
+                                        State = 359;
+                                        if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                        State = 360; Match(Mod);
+                                        State = 361; castExpression();
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    State = 366;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 13, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class AdditiveExpressionContext : ParserRuleContext
+    {
+        public MultiplicativeExpressionContext multiplicativeExpression()
+        {
+            return GetRuleContext<MultiplicativeExpressionContext>(0);
+        }
+        public AdditiveExpressionContext additiveExpression()
+        {
+            return GetRuleContext<AdditiveExpressionContext>(0);
+        }
+        public ITerminalNode Plus() { return GetToken(CParser.Plus, 0); }
+        public ITerminalNode Minus() { return GetToken(CParser.Minus, 0); }
+        public AdditiveExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_additiveExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterAdditiveExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitAdditiveExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AdditiveExpressionContext additiveExpression()
+    {
+        return additiveExpression(0);
+    }
+
+    private AdditiveExpressionContext additiveExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        AdditiveExpressionContext _localctx = new AdditiveExpressionContext(Context, _parentState);
+        AdditiveExpressionContext _prevctx = _localctx;
+        int _startState = 20;
+        EnterRecursionRule(_localctx, 20, RULE_additiveExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 368; multiplicativeExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 378;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 15, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            State = 376;
+                            ErrorHandler.Sync(this);
+                            switch (Interpreter.AdaptivePredict(TokenStream, 14, Context))
+                            {
+                                case 1:
+                                    {
+                                        _localctx = new AdditiveExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_additiveExpression);
+                                        State = 370;
+                                        if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
+                                        State = 371; Match(Plus);
+                                        State = 372; multiplicativeExpression(0);
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        _localctx = new AdditiveExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_additiveExpression);
+                                        State = 373;
+                                        if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                        State = 374; Match(Minus);
+                                        State = 375; multiplicativeExpression(0);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    State = 380;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 15, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class ShiftExpressionContext : ParserRuleContext
+    {
+        public AdditiveExpressionContext additiveExpression()
+        {
+            return GetRuleContext<AdditiveExpressionContext>(0);
+        }
+        public ShiftExpressionContext shiftExpression()
+        {
+            return GetRuleContext<ShiftExpressionContext>(0);
+        }
+        public ITerminalNode LeftShift() { return GetToken(CParser.LeftShift, 0); }
+        public ITerminalNode RightShift() { return GetToken(CParser.RightShift, 0); }
+        public ShiftExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_shiftExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterShiftExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitShiftExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ShiftExpressionContext shiftExpression()
+    {
+        return shiftExpression(0);
+    }
+
+    private ShiftExpressionContext shiftExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        ShiftExpressionContext _localctx = new ShiftExpressionContext(Context, _parentState);
+        ShiftExpressionContext _prevctx = _localctx;
+        int _startState = 22;
+        EnterRecursionRule(_localctx, 22, RULE_shiftExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 382; additiveExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 392;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 17, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            State = 390;
+                            ErrorHandler.Sync(this);
+                            switch (Interpreter.AdaptivePredict(TokenStream, 16, Context))
+                            {
+                                case 1:
+                                    {
+                                        _localctx = new ShiftExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_shiftExpression);
+                                        State = 384;
+                                        if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
+                                        State = 385; Match(LeftShift);
+                                        State = 386; additiveExpression(0);
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        _localctx = new ShiftExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_shiftExpression);
+                                        State = 387;
+                                        if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                        State = 388; Match(RightShift);
+                                        State = 389; additiveExpression(0);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    State = 394;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 17, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class RelationalExpressionContext : ParserRuleContext
+    {
+        public ShiftExpressionContext shiftExpression()
+        {
+            return GetRuleContext<ShiftExpressionContext>(0);
+        }
+        public RelationalExpressionContext relationalExpression()
+        {
+            return GetRuleContext<RelationalExpressionContext>(0);
+        }
+        public ITerminalNode Less() { return GetToken(CParser.Less, 0); }
+        public ITerminalNode Greater() { return GetToken(CParser.Greater, 0); }
+        public ITerminalNode LessEqual() { return GetToken(CParser.LessEqual, 0); }
+        public ITerminalNode GreaterEqual() { return GetToken(CParser.GreaterEqual, 0); }
+        public RelationalExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_relationalExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterRelationalExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitRelationalExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public RelationalExpressionContext relationalExpression()
+    {
+        return relationalExpression(0);
+    }
+
+    private RelationalExpressionContext relationalExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        RelationalExpressionContext _localctx = new RelationalExpressionContext(Context, _parentState);
+        RelationalExpressionContext _prevctx = _localctx;
+        int _startState = 24;
+        EnterRecursionRule(_localctx, 24, RULE_relationalExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 396; shiftExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 412;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 19, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            State = 410;
+                            ErrorHandler.Sync(this);
+                            switch (Interpreter.AdaptivePredict(TokenStream, 18, Context))
+                            {
+                                case 1:
+                                    {
+                                        _localctx = new RelationalExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
+                                        State = 398;
+                                        if (!(Precpred(Context, 4))) throw new FailedPredicateException(this, "Precpred(Context, 4)");
+                                        State = 399; Match(Less);
+                                        State = 400; shiftExpression(0);
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        _localctx = new RelationalExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
+                                        State = 401;
+                                        if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
+                                        State = 402; Match(Greater);
+                                        State = 403; shiftExpression(0);
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        _localctx = new RelationalExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
+                                        State = 404;
+                                        if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
+                                        State = 405; Match(LessEqual);
+                                        State = 406; shiftExpression(0);
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        _localctx = new RelationalExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_relationalExpression);
+                                        State = 407;
+                                        if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                        State = 408; Match(GreaterEqual);
+                                        State = 409; shiftExpression(0);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    State = 414;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 19, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class EqualityExpressionContext : ParserRuleContext
+    {
+        public RelationalExpressionContext relationalExpression()
+        {
+            return GetRuleContext<RelationalExpressionContext>(0);
+        }
+        public EqualityExpressionContext equalityExpression()
+        {
+            return GetRuleContext<EqualityExpressionContext>(0);
+        }
+        public ITerminalNode Equal() { return GetToken(CParser.Equal, 0); }
+        public ITerminalNode NotEqual() { return GetToken(CParser.NotEqual, 0); }
+        public EqualityExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_equalityExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterEqualityExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitEqualityExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public EqualityExpressionContext equalityExpression()
+    {
+        return equalityExpression(0);
+    }
+
+    private EqualityExpressionContext equalityExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        EqualityExpressionContext _localctx = new EqualityExpressionContext(Context, _parentState);
+        EqualityExpressionContext _prevctx = _localctx;
+        int _startState = 26;
+        EnterRecursionRule(_localctx, 26, RULE_equalityExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 416; relationalExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 426;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 21, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            State = 424;
+                            ErrorHandler.Sync(this);
+                            switch (Interpreter.AdaptivePredict(TokenStream, 20, Context))
+                            {
+                                case 1:
+                                    {
+                                        _localctx = new EqualityExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_equalityExpression);
+                                        State = 418;
+                                        if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
+                                        State = 419; Match(Equal);
+                                        State = 420; relationalExpression(0);
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        _localctx = new EqualityExpressionContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_equalityExpression);
+                                        State = 421;
+                                        if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                        State = 422; Match(NotEqual);
+                                        State = 423; relationalExpression(0);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    State = 428;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 21, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class AndExpressionContext : ParserRuleContext
+    {
+        public EqualityExpressionContext equalityExpression()
+        {
+            return GetRuleContext<EqualityExpressionContext>(0);
+        }
+        public AndExpressionContext andExpression()
+        {
+            return GetRuleContext<AndExpressionContext>(0);
+        }
+        public ITerminalNode And() { return GetToken(CParser.And, 0); }
+        public AndExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_andExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterAndExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitAndExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AndExpressionContext andExpression()
+    {
+        return andExpression(0);
+    }
+
+    private AndExpressionContext andExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        AndExpressionContext _localctx = new AndExpressionContext(Context, _parentState);
+        AndExpressionContext _prevctx = _localctx;
+        int _startState = 28;
+        EnterRecursionRule(_localctx, 28, RULE_andExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 430; equalityExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 437;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 22, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new AndExpressionContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_andExpression);
+                                State = 432;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 433; Match(And);
+                                State = 434; equalityExpression(0);
+                            }
+                        }
+                    }
+                    State = 439;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 22, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class ExclusiveOrExpressionContext : ParserRuleContext
+    {
+        public AndExpressionContext andExpression()
+        {
+            return GetRuleContext<AndExpressionContext>(0);
+        }
+        public ExclusiveOrExpressionContext exclusiveOrExpression()
+        {
+            return GetRuleContext<ExclusiveOrExpressionContext>(0);
+        }
+        public ITerminalNode Caret() { return GetToken(CParser.Caret, 0); }
+        public ExclusiveOrExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_exclusiveOrExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterExclusiveOrExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitExclusiveOrExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExclusiveOrExpressionContext exclusiveOrExpression()
+    {
+        return exclusiveOrExpression(0);
+    }
+
+    private ExclusiveOrExpressionContext exclusiveOrExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        ExclusiveOrExpressionContext _localctx = new ExclusiveOrExpressionContext(Context, _parentState);
+        ExclusiveOrExpressionContext _prevctx = _localctx;
+        int _startState = 30;
+        EnterRecursionRule(_localctx, 30, RULE_exclusiveOrExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 441; andExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 448;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 23, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new ExclusiveOrExpressionContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_exclusiveOrExpression);
+                                State = 443;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 444; Match(Caret);
+                                State = 445; andExpression(0);
+                            }
+                        }
+                    }
+                    State = 450;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 23, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class InclusiveOrExpressionContext : ParserRuleContext
+    {
+        public ExclusiveOrExpressionContext exclusiveOrExpression()
+        {
+            return GetRuleContext<ExclusiveOrExpressionContext>(0);
+        }
+        public InclusiveOrExpressionContext inclusiveOrExpression()
+        {
+            return GetRuleContext<InclusiveOrExpressionContext>(0);
+        }
+        public ITerminalNode Or() { return GetToken(CParser.Or, 0); }
+        public InclusiveOrExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_inclusiveOrExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterInclusiveOrExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitInclusiveOrExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public InclusiveOrExpressionContext inclusiveOrExpression()
+    {
+        return inclusiveOrExpression(0);
+    }
+
+    private InclusiveOrExpressionContext inclusiveOrExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        InclusiveOrExpressionContext _localctx = new InclusiveOrExpressionContext(Context, _parentState);
+        InclusiveOrExpressionContext _prevctx = _localctx;
+        int _startState = 32;
+        EnterRecursionRule(_localctx, 32, RULE_inclusiveOrExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 452; exclusiveOrExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 459;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 24, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new InclusiveOrExpressionContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_inclusiveOrExpression);
+                                State = 454;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 455; Match(Or);
+                                State = 456; exclusiveOrExpression(0);
+                            }
+                        }
+                    }
+                    State = 461;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 24, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class LogicalAndExpressionContext : ParserRuleContext
+    {
+        public InclusiveOrExpressionContext inclusiveOrExpression()
+        {
+            return GetRuleContext<InclusiveOrExpressionContext>(0);
+        }
+        public LogicalAndExpressionContext logicalAndExpression()
+        {
+            return GetRuleContext<LogicalAndExpressionContext>(0);
+        }
+        public ITerminalNode AndAnd() { return GetToken(CParser.AndAnd, 0); }
+        public LogicalAndExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_logicalAndExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterLogicalAndExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitLogicalAndExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public LogicalAndExpressionContext logicalAndExpression()
+    {
+        return logicalAndExpression(0);
+    }
+
+    private LogicalAndExpressionContext logicalAndExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        LogicalAndExpressionContext _localctx = new LogicalAndExpressionContext(Context, _parentState);
+        LogicalAndExpressionContext _prevctx = _localctx;
+        int _startState = 34;
+        EnterRecursionRule(_localctx, 34, RULE_logicalAndExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 463; inclusiveOrExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 470;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 25, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new LogicalAndExpressionContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_logicalAndExpression);
+                                State = 465;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 466; Match(AndAnd);
+                                State = 467; inclusiveOrExpression(0);
+                            }
+                        }
+                    }
+                    State = 472;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 25, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class LogicalOrExpressionContext : ParserRuleContext
+    {
+        public LogicalAndExpressionContext logicalAndExpression()
+        {
+            return GetRuleContext<LogicalAndExpressionContext>(0);
+        }
+        public LogicalOrExpressionContext logicalOrExpression()
+        {
+            return GetRuleContext<LogicalOrExpressionContext>(0);
+        }
+        public ITerminalNode OrOr() { return GetToken(CParser.OrOr, 0); }
+        public LogicalOrExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_logicalOrExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterLogicalOrExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitLogicalOrExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public LogicalOrExpressionContext logicalOrExpression()
+    {
+        return logicalOrExpression(0);
+    }
+
+    private LogicalOrExpressionContext logicalOrExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        LogicalOrExpressionContext _localctx = new LogicalOrExpressionContext(Context, _parentState);
+        LogicalOrExpressionContext _prevctx = _localctx;
+        int _startState = 36;
+        EnterRecursionRule(_localctx, 36, RULE_logicalOrExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 474; logicalAndExpression(0);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 481;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 26, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new LogicalOrExpressionContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_logicalOrExpression);
+                                State = 476;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 477; Match(OrOr);
+                                State = 478; logicalAndExpression(0);
+                            }
+                        }
+                    }
+                    State = 483;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 26, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class ConditionalExpressionContext : ParserRuleContext
+    {
+        public LogicalOrExpressionContext logicalOrExpression()
+        {
+            return GetRuleContext<LogicalOrExpressionContext>(0);
+        }
+        public ITerminalNode Question() { return GetToken(CParser.Question, 0); }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
+        public ConditionalExpressionContext conditionalExpression()
+        {
+            return GetRuleContext<ConditionalExpressionContext>(0);
+        }
+        public ConditionalExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_conditionalExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterConditionalExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitConditionalExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ConditionalExpressionContext conditionalExpression()
+    {
+        ConditionalExpressionContext _localctx = new ConditionalExpressionContext(Context, State);
+        EnterRule(_localctx, 38, RULE_conditionalExpression);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 484; logicalOrExpression(0);
+                State = 490;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 27, Context))
+                {
+                    case 1:
+                        {
+                            State = 485; Match(Question);
+                            State = 486; expression(0);
+                            State = 487; Match(Colon);
+                            State = 488; conditionalExpression();
+                        }
                         break;
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class IdentifierListContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public IdentifierListContext identifierList()
-            {
-                return GetRuleContext<IdentifierListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public IdentifierListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_identifierList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterIdentifierList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitIdentifierList(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
-
-        [RuleVersion(0)]
-        public IdentifierListContext identifierList()
+        finally
         {
-            return identifierList(0);
+            ExitRule();
         }
+        return _localctx;
+    }
 
-        private IdentifierListContext identifierList(int _p)
+    public partial class AssignmentExpressionContext : ParserRuleContext
+    {
+        public ConditionalExpressionContext conditionalExpression()
         {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            IdentifierListContext _localctx = new IdentifierListContext(Context, _parentState);
-            IdentifierListContext _prevctx = _localctx;
-            int _startState = 118;
-            EnterRecursionRule(_localctx, 118, RULE_identifierList, _p);
-            try
+            return GetRuleContext<ConditionalExpressionContext>(0);
+        }
+        public UnaryExpressionContext unaryExpression()
+        {
+            return GetRuleContext<UnaryExpressionContext>(0);
+        }
+        public AssignmentOperatorContext assignmentOperator()
+        {
+            return GetRuleContext<AssignmentOperatorContext>(0);
+        }
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ITerminalNode DigitSequence() { return GetToken(CParser.DigitSequence, 0); }
+        public AssignmentExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_assignmentExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterAssignmentExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitAssignmentExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AssignmentExpressionContext assignmentExpression()
+    {
+        AssignmentExpressionContext _localctx = new AssignmentExpressionContext(Context, State);
+        EnterRule(_localctx, 40, RULE_assignmentExpression);
+        try
+        {
+            State = 498;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 28, Context))
             {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
                     {
-                        State = 902; Match(Identifier);
+                        State = 492; conditionalExpression();
                     }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 909;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
                     {
-                        if (_alt == 1)
+                        State = 493; unaryExpression();
+                        State = 494; assignmentOperator();
+                        State = 495; assignmentExpression();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 497; Match(DigitSequence);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class AssignmentOperatorContext : ParserRuleContext
+    {
+        public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
+        public ITerminalNode StarAssign() { return GetToken(CParser.StarAssign, 0); }
+        public ITerminalNode DivAssign() { return GetToken(CParser.DivAssign, 0); }
+        public ITerminalNode ModAssign() { return GetToken(CParser.ModAssign, 0); }
+        public ITerminalNode PlusAssign() { return GetToken(CParser.PlusAssign, 0); }
+        public ITerminalNode MinusAssign() { return GetToken(CParser.MinusAssign, 0); }
+        public ITerminalNode LeftShiftAssign() { return GetToken(CParser.LeftShiftAssign, 0); }
+        public ITerminalNode RightShiftAssign() { return GetToken(CParser.RightShiftAssign, 0); }
+        public ITerminalNode AndAssign() { return GetToken(CParser.AndAssign, 0); }
+        public ITerminalNode XorAssign() { return GetToken(CParser.XorAssign, 0); }
+        public ITerminalNode OrAssign() { return GetToken(CParser.OrAssign, 0); }
+        public AssignmentOperatorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_assignmentOperator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterAssignmentOperator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitAssignmentOperator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AssignmentOperatorContext assignmentOperator()
+    {
+        AssignmentOperatorContext _localctx = new AssignmentOperatorContext(Context, State);
+        EnterRule(_localctx, 42, RULE_assignmentOperator);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 500;
+                _la = TokenStream.LA(1);
+                if (!(((((_la - 89)) & ~0x3f) == 0 && ((1L << (_la - 89)) & ((1L << (Assign - 89)) | (1L << (StarAssign - 89)) | (1L << (DivAssign - 89)) | (1L << (ModAssign - 89)) | (1L << (PlusAssign - 89)) | (1L << (MinusAssign - 89)) | (1L << (LeftShiftAssign - 89)) | (1L << (RightShiftAssign - 89)) | (1L << (AndAssign - 89)) | (1L << (XorAssign - 89)) | (1L << (OrAssign - 89)))) != 0)))
+                {
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ExpressionContext : ParserRuleContext
+    {
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public ExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_expression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExpressionContext expression()
+    {
+        return expression(0);
+    }
+
+    private ExpressionContext expression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        ExpressionContext _localctx = new ExpressionContext(Context, _parentState);
+        ExpressionContext _prevctx = _localctx;
+        int _startState = 44;
+        EnterRecursionRule(_localctx, 44, RULE_expression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 503; assignmentExpression();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 510;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 29, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
                         {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
                             {
-                                {
-                                    _localctx = new IdentifierListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_identifierList);
-                                    State = 904;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 905; Match(Comma);
-                                    State = 906; Match(Identifier);
-                                }
+                                _localctx = new ExpressionContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_expression);
+                                State = 505;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 506; Match(Comma);
+                                State = 507; assignmentExpression();
                             }
                         }
-                        State = 911;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
                     }
+                    State = 512;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 29, Context);
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
         }
-
-        public partial class TypeNameContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public SpecifierQualifierListContext specifierQualifierList()
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class ConstantExpressionContext : ParserRuleContext
+    {
+        public ConditionalExpressionContext conditionalExpression()
+        {
+            return GetRuleContext<ConditionalExpressionContext>(0);
+        }
+        public ConstantExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_constantExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterConstantExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitConstantExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ConstantExpressionContext constantExpression()
+    {
+        ConstantExpressionContext _localctx = new ConstantExpressionContext(Context, State);
+        EnterRule(_localctx, 46, RULE_constantExpression);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                return GetRuleContext<SpecifierQualifierListContext>(0);
-            }
-            public AbstractDeclaratorContext abstractDeclarator()
-            {
-                return GetRuleContext<AbstractDeclaratorContext>(0);
-            }
-            public TypeNameContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_typeName; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterTypeName(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitTypeName(this);
+                State = 513; conditionalExpression();
             }
         }
-
-        [RuleVersion(0)]
-        public TypeNameContext typeName()
+        catch (RecognitionException re)
         {
-            TypeNameContext _localctx = new TypeNameContext(Context, State);
-            EnterRule(_localctx, 120, RULE_typeName);
-            int _la;
-            try
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DeclarationContext : ParserRuleContext
+    {
+        public DeclarationSpecifiersContext declarationSpecifiers()
+        {
+            return GetRuleContext<DeclarationSpecifiersContext>(0);
+        }
+        public InitDeclaratorListContext initDeclaratorList()
+        {
+            return GetRuleContext<InitDeclaratorListContext>(0);
+        }
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public StaticAssertDeclarationContext staticAssertDeclaration()
+        {
+            return GetRuleContext<StaticAssertDeclarationContext>(0);
+        }
+        public DeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_declaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DeclarationContext declaration()
+    {
+        DeclarationContext _localctx = new DeclarationContext(Context, State);
+        EnterRule(_localctx, 48, RULE_declaration);
+        try
+        {
+            State = 523;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 30, Context))
             {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 912; specifierQualifierList();
-                    State = 914;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (LeftBracket - 59)) | (1L << (Star - 59)) | (1L << (Caret - 59)))) != 0))
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
                     {
+                        State = 515; declarationSpecifiers();
+                        State = 516; initDeclaratorList(0);
+                        State = 517; Match(Semi);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 519; declarationSpecifiers();
+                        State = 520; Match(Semi);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 522; staticAssertDeclaration();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DeclarationSpecifiersContext : ParserRuleContext
+    {
+        public DeclarationSpecifierContext[] declarationSpecifier()
+        {
+            return GetRuleContexts<DeclarationSpecifierContext>();
+        }
+        public DeclarationSpecifierContext declarationSpecifier(int i)
+        {
+            return GetRuleContext<DeclarationSpecifierContext>(i);
+        }
+        public DeclarationSpecifiersContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_declarationSpecifiers; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDeclarationSpecifiers(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDeclarationSpecifiers(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DeclarationSpecifiersContext declarationSpecifiers()
+    {
+        DeclarationSpecifiersContext _localctx = new DeclarationSpecifiersContext(Context, State);
+        EnterRule(_localctx, 50, RULE_declarationSpecifiers);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 526;
+                ErrorHandler.Sync(this);
+                _alt = 1;
+                do
+                {
+                    switch (_alt)
+                    {
+                        case 1:
+                            {
+                                {
+                                    State = 525; declarationSpecifier();
+                                }
+                            }
+                            break;
+                        default:
+                            throw new NoViableAltException(this);
+                    }
+                    State = 528;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 31, Context);
+                } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DeclarationSpecifiers2Context : ParserRuleContext
+    {
+        public DeclarationSpecifierContext[] declarationSpecifier()
+        {
+            return GetRuleContexts<DeclarationSpecifierContext>();
+        }
+        public DeclarationSpecifierContext declarationSpecifier(int i)
+        {
+            return GetRuleContext<DeclarationSpecifierContext>(i);
+        }
+        public DeclarationSpecifiers2Context(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_declarationSpecifiers2; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDeclarationSpecifiers2(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDeclarationSpecifiers2(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DeclarationSpecifiers2Context declarationSpecifiers2()
+    {
+        DeclarationSpecifiers2Context _localctx = new DeclarationSpecifiers2Context(Context, State);
+        EnterRule(_localctx, 52, RULE_declarationSpecifiers2);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 531;
+                ErrorHandler.Sync(this);
+                _alt = 1;
+                do
+                {
+                    switch (_alt)
+                    {
+                        case 1:
+                            {
+                                {
+                                    State = 530; declarationSpecifier();
+                                }
+                            }
+                            break;
+                        default:
+                            throw new NoViableAltException(this);
+                    }
+                    State = 533;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 32, Context);
+                } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DeclarationSpecifierContext : ParserRuleContext
+    {
+        public StorageClassSpecifierContext storageClassSpecifier()
+        {
+            return GetRuleContext<StorageClassSpecifierContext>(0);
+        }
+        public TypeSpecifierContext typeSpecifier()
+        {
+            return GetRuleContext<TypeSpecifierContext>(0);
+        }
+        public TypeQualifierContext typeQualifier()
+        {
+            return GetRuleContext<TypeQualifierContext>(0);
+        }
+        public FunctionSpecifierContext functionSpecifier()
+        {
+            return GetRuleContext<FunctionSpecifierContext>(0);
+        }
+        public AlignmentSpecifierContext alignmentSpecifier()
+        {
+            return GetRuleContext<AlignmentSpecifierContext>(0);
+        }
+        public DeclarationSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_declarationSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDeclarationSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDeclarationSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DeclarationSpecifierContext declarationSpecifier()
+    {
+        DeclarationSpecifierContext _localctx = new DeclarationSpecifierContext(Context, State);
+        EnterRule(_localctx, 54, RULE_declarationSpecifier);
+        try
+        {
+            State = 540;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 33, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 535; storageClassSpecifier();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 536; typeSpecifier(0);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 537; typeQualifier();
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 538; functionSpecifier();
+                    }
+                    break;
+                case 5:
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 539; alignmentSpecifier();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class InitDeclaratorListContext : ParserRuleContext
+    {
+        public InitDeclaratorContext initDeclarator()
+        {
+            return GetRuleContext<InitDeclaratorContext>(0);
+        }
+        public InitDeclaratorListContext initDeclaratorList()
+        {
+            return GetRuleContext<InitDeclaratorListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public InitDeclaratorListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_initDeclaratorList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterInitDeclaratorList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitInitDeclaratorList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public InitDeclaratorListContext initDeclaratorList()
+    {
+        return initDeclaratorList(0);
+    }
+
+    private InitDeclaratorListContext initDeclaratorList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        InitDeclaratorListContext _localctx = new InitDeclaratorListContext(Context, _parentState);
+        InitDeclaratorListContext _prevctx = _localctx;
+        int _startState = 56;
+        EnterRecursionRule(_localctx, 56, RULE_initDeclaratorList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 543; initDeclarator();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 550;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 34, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
                         {
-                            State = 913; abstractDeclarator();
+                            {
+                                _localctx = new InitDeclaratorListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_initDeclaratorList);
+                                State = 545;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 546; Match(Comma);
+                                State = 547; initDeclarator();
+                            }
                         }
                     }
-
+                    State = 552;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 34, Context);
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class AbstractDeclaratorContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public PointerContext pointer()
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class InitDeclaratorContext : ParserRuleContext
+    {
+        public DeclaratorContext declarator()
+        {
+            return GetRuleContext<DeclaratorContext>(0);
+        }
+        public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
+        public InitializerContext initializer()
+        {
+            return GetRuleContext<InitializerContext>(0);
+        }
+        public InitDeclaratorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_initDeclarator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterInitDeclarator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitInitDeclarator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public InitDeclaratorContext initDeclarator()
+    {
+        InitDeclaratorContext _localctx = new InitDeclaratorContext(Context, State);
+        EnterRule(_localctx, 58, RULE_initDeclarator);
+        try
+        {
+            State = 558;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 35, Context))
             {
-                return GetRuleContext<PointerContext>(0);
-            }
-            public DirectAbstractDeclaratorContext directAbstractDeclarator()
-            {
-                return GetRuleContext<DirectAbstractDeclaratorContext>(0);
-            }
-            public GccDeclaratorExtensionContext[] gccDeclaratorExtension()
-            {
-                return GetRuleContexts<GccDeclaratorExtensionContext>();
-            }
-            public GccDeclaratorExtensionContext gccDeclaratorExtension(int i)
-            {
-                return GetRuleContext<GccDeclaratorExtensionContext>(i);
-            }
-            public AbstractDeclaratorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_abstractDeclarator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterAbstractDeclarator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitAbstractDeclarator(this);
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 553; declarator();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 554; declarator();
+                        State = 555; Match(Assign);
+                        State = 556; initializer();
+                    }
+                    break;
             }
         }
-
-        [RuleVersion(0)]
-        public AbstractDeclaratorContext abstractDeclarator()
+        catch (RecognitionException re)
         {
-            AbstractDeclaratorContext _localctx = new AbstractDeclaratorContext(Context, State);
-            EnterRule(_localctx, 122, RULE_abstractDeclarator);
-            int _la;
-            try
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class StorageClassSpecifierContext : ParserRuleContext
+    {
+        public ITerminalNode Typedef() { return GetToken(CParser.Typedef, 0); }
+        public ITerminalNode Extern() { return GetToken(CParser.Extern, 0); }
+        public ITerminalNode Static() { return GetToken(CParser.Static, 0); }
+        public ITerminalNode ThreadLocal() { return GetToken(CParser.ThreadLocal, 0); }
+        public ITerminalNode Auto() { return GetToken(CParser.Auto, 0); }
+        public ITerminalNode Register() { return GetToken(CParser.Register, 0); }
+        public StorageClassSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_storageClassSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStorageClassSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStorageClassSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StorageClassSpecifierContext storageClassSpecifier()
+    {
+        StorageClassSpecifierContext _localctx = new StorageClassSpecifierContext(Context, State);
+        EnterRule(_localctx, 60, RULE_storageClassSpecifier);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                int _alt;
-                State = 927;
+                State = 560;
+                _la = TokenStream.LA(1);
+                if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Auto) | (1L << Extern) | (1L << Register) | (1L << Static) | (1L << Typedef) | (1L << ThreadLocal))) != 0)))
+                {
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class TypeSpecifierContext : ParserRuleContext
+    {
+        public ITerminalNode Void() { return GetToken(CParser.Void, 0); }
+        public ITerminalNode Char() { return GetToken(CParser.Char, 0); }
+        public ITerminalNode Short() { return GetToken(CParser.Short, 0); }
+        public ITerminalNode Int() { return GetToken(CParser.Int, 0); }
+        public ITerminalNode Long() { return GetToken(CParser.Long, 0); }
+        public ITerminalNode Float() { return GetToken(CParser.Float, 0); }
+        public ITerminalNode Double() { return GetToken(CParser.Double, 0); }
+        public ITerminalNode Signed() { return GetToken(CParser.Signed, 0); }
+        public ITerminalNode Unsigned() { return GetToken(CParser.Unsigned, 0); }
+        public ITerminalNode Bool() { return GetToken(CParser.Bool, 0); }
+        public ITerminalNode Complex() { return GetToken(CParser.Complex, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public AtomicTypeSpecifierContext atomicTypeSpecifier()
+        {
+            return GetRuleContext<AtomicTypeSpecifierContext>(0);
+        }
+        public StructOrUnionSpecifierContext structOrUnionSpecifier()
+        {
+            return GetRuleContext<StructOrUnionSpecifierContext>(0);
+        }
+        public EnumSpecifierContext enumSpecifier()
+        {
+            return GetRuleContext<EnumSpecifierContext>(0);
+        }
+        public TypedefNameContext typedefName()
+        {
+            return GetRuleContext<TypedefNameContext>(0);
+        }
+        public ConstantExpressionContext constantExpression()
+        {
+            return GetRuleContext<ConstantExpressionContext>(0);
+        }
+        public TypeSpecifierContext typeSpecifier()
+        {
+            return GetRuleContext<TypeSpecifierContext>(0);
+        }
+        public PointerContext pointer()
+        {
+            return GetRuleContext<PointerContext>(0);
+        }
+        public TypeSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_typeSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterTypeSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitTypeSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public TypeSpecifierContext typeSpecifier()
+    {
+        return typeSpecifier(0);
+    }
+
+    private TypeSpecifierContext typeSpecifier(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        TypeSpecifierContext _localctx = new TypeSpecifierContext(Context, _parentState);
+        TypeSpecifierContext _prevctx = _localctx;
+        int _startState = 62;
+        EnterRecursionRule(_localctx, 62, RULE_typeSpecifier, _p);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 577;
                 ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 90, Context))
+                switch (TokenStream.LA(1))
+                {
+                    case T__3:
+                    case T__4:
+                    case T__5:
+                    case Char:
+                    case Double:
+                    case Float:
+                    case Int:
+                    case Long:
+                    case Short:
+                    case Signed:
+                    case Unsigned:
+                    case Void:
+                    case Bool:
+                    case Complex:
+                        {
+                            State = 563;
+                            _la = TokenStream.LA(1);
+                            if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << Char) | (1L << Double) | (1L << Float) | (1L << Int) | (1L << Long) | (1L << Short) | (1L << Signed) | (1L << Unsigned) | (1L << Void) | (1L << Bool) | (1L << Complex))) != 0)))
+                            {
+                                ErrorHandler.RecoverInline(this);
+                            }
+                            else
+                            {
+                                ErrorHandler.ReportMatch(this);
+                                Consume();
+                            }
+                        }
+                        break;
+                    case T__0:
+                        {
+                            State = 564; Match(T__0);
+                            State = 565; Match(LeftParen);
+                            State = 566;
+                            _la = TokenStream.LA(1);
+                            if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__4) | (1L << T__5))) != 0)))
+                            {
+                                ErrorHandler.RecoverInline(this);
+                            }
+                            else
+                            {
+                                ErrorHandler.ReportMatch(this);
+                                Consume();
+                            }
+                            State = 567; Match(RightParen);
+                        }
+                        break;
+                    case Atomic:
+                        {
+                            State = 568; atomicTypeSpecifier();
+                        }
+                        break;
+                    case Struct:
+                    case Union:
+                        {
+                            State = 569; structOrUnionSpecifier();
+                        }
+                        break;
+                    case Enum:
+                        {
+                            State = 570; enumSpecifier();
+                        }
+                        break;
+                    case Identifier:
+                        {
+                            State = 571; typedefName();
+                        }
+                        break;
+                    case T__6:
+                        {
+                            State = 572; Match(T__6);
+                            State = 573; Match(LeftParen);
+                            State = 574; constantExpression();
+                            State = 575; Match(RightParen);
+                        }
+                        break;
+                    default:
+                        throw new NoViableAltException(this);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 583;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 37, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new TypeSpecifierContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_typeSpecifier);
+                                State = 579;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 580; pointer();
+                            }
+                        }
+                    }
+                    State = 585;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 37, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class StructOrUnionSpecifierContext : ParserRuleContext
+    {
+        public StructOrUnionContext structOrUnion()
+        {
+            return GetRuleContext<StructOrUnionContext>(0);
+        }
+        public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
+        public StructDeclarationListContext structDeclarationList()
+        {
+            return GetRuleContext<StructDeclarationListContext>(0);
+        }
+        public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public StructOrUnionSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_structOrUnionSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStructOrUnionSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStructOrUnionSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StructOrUnionSpecifierContext structOrUnionSpecifier()
+    {
+        StructOrUnionSpecifierContext _localctx = new StructOrUnionSpecifierContext(Context, State);
+        EnterRule(_localctx, 64, RULE_structOrUnionSpecifier);
+        int _la;
+        try
+        {
+            State = 597;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 39, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 586; structOrUnion();
+                        State = 588;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Identifier)
+                        {
+                            {
+                                State = 587; Match(Identifier);
+                            }
+                        }
+
+                        State = 590; Match(LeftBrace);
+                        State = 591; structDeclarationList(0);
+                        State = 592; Match(RightBrace);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 594; structOrUnion();
+                        State = 595; Match(Identifier);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class StructOrUnionContext : ParserRuleContext
+    {
+        public ITerminalNode Struct() { return GetToken(CParser.Struct, 0); }
+        public ITerminalNode Union() { return GetToken(CParser.Union, 0); }
+        public StructOrUnionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_structOrUnion; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStructOrUnion(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStructOrUnion(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StructOrUnionContext structOrUnion()
+    {
+        StructOrUnionContext _localctx = new StructOrUnionContext(Context, State);
+        EnterRule(_localctx, 66, RULE_structOrUnion);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 599;
+                _la = TokenStream.LA(1);
+                if (!(_la == Struct || _la == Union))
+                {
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class StructDeclarationListContext : ParserRuleContext
+    {
+        public StructDeclarationContext structDeclaration()
+        {
+            return GetRuleContext<StructDeclarationContext>(0);
+        }
+        public StructDeclarationListContext structDeclarationList()
+        {
+            return GetRuleContext<StructDeclarationListContext>(0);
+        }
+        public StructDeclarationListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_structDeclarationList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStructDeclarationList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStructDeclarationList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StructDeclarationListContext structDeclarationList()
+    {
+        return structDeclarationList(0);
+    }
+
+    private StructDeclarationListContext structDeclarationList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        StructDeclarationListContext _localctx = new StructDeclarationListContext(Context, _parentState);
+        StructDeclarationListContext _prevctx = _localctx;
+        int _startState = 68;
+        EnterRecursionRule(_localctx, 68, RULE_structDeclarationList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 602; structDeclaration();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 608;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 40, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new StructDeclarationListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_structDeclarationList);
+                                State = 604;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 605; structDeclaration();
+                            }
+                        }
+                    }
+                    State = 610;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 40, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class StructDeclarationContext : ParserRuleContext
+    {
+        public SpecifierQualifierListContext specifierQualifierList()
+        {
+            return GetRuleContext<SpecifierQualifierListContext>(0);
+        }
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public StructDeclaratorListContext structDeclaratorList()
+        {
+            return GetRuleContext<StructDeclaratorListContext>(0);
+        }
+        public StaticAssertDeclarationContext staticAssertDeclaration()
+        {
+            return GetRuleContext<StaticAssertDeclarationContext>(0);
+        }
+        public StructDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_structDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStructDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStructDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StructDeclarationContext structDeclaration()
+    {
+        StructDeclarationContext _localctx = new StructDeclarationContext(Context, State);
+        EnterRule(_localctx, 70, RULE_structDeclaration);
+        int _la;
+        try
+        {
+            State = 618;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case T__0:
+                case T__3:
+                case T__4:
+                case T__5:
+                case T__6:
+                case Char:
+                case Const:
+                case Double:
+                case Enum:
+                case Float:
+                case Int:
+                case Long:
+                case Restrict:
+                case Short:
+                case Signed:
+                case Struct:
+                case Union:
+                case Unsigned:
+                case Void:
+                case Volatile:
+                case Atomic:
+                case Bool:
+                case Complex:
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 611; specifierQualifierList();
+                        State = 613;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (Star - 59)) | (1L << (Caret - 59)) | (1L << (Colon - 59)) | (1L << (Identifier - 59)))) != 0))
+                        {
+                            {
+                                State = 612; structDeclaratorList(0);
+                            }
+                        }
+
+                        State = 615; Match(Semi);
+                    }
+                    break;
+                case StaticAssert:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 617; staticAssertDeclaration();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class SpecifierQualifierListContext : ParserRuleContext
+    {
+        public TypeSpecifierContext typeSpecifier()
+        {
+            return GetRuleContext<TypeSpecifierContext>(0);
+        }
+        public SpecifierQualifierListContext specifierQualifierList()
+        {
+            return GetRuleContext<SpecifierQualifierListContext>(0);
+        }
+        public TypeQualifierContext typeQualifier()
+        {
+            return GetRuleContext<TypeQualifierContext>(0);
+        }
+        public SpecifierQualifierListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_specifierQualifierList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterSpecifierQualifierList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitSpecifierQualifierList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public SpecifierQualifierListContext specifierQualifierList()
+    {
+        SpecifierQualifierListContext _localctx = new SpecifierQualifierListContext(Context, State);
+        EnterRule(_localctx, 72, RULE_specifierQualifierList);
+        try
+        {
+            State = 628;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 45, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 620; typeSpecifier(0);
+                        State = 622;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 43, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 621; specifierQualifierList();
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 624; typeQualifier();
+                        State = 626;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 44, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 625; specifierQualifierList();
+                                }
+                                break;
+                        }
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class StructDeclaratorListContext : ParserRuleContext
+    {
+        public StructDeclaratorContext structDeclarator()
+        {
+            return GetRuleContext<StructDeclaratorContext>(0);
+        }
+        public StructDeclaratorListContext structDeclaratorList()
+        {
+            return GetRuleContext<StructDeclaratorListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public StructDeclaratorListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_structDeclaratorList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStructDeclaratorList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStructDeclaratorList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StructDeclaratorListContext structDeclaratorList()
+    {
+        return structDeclaratorList(0);
+    }
+
+    private StructDeclaratorListContext structDeclaratorList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        StructDeclaratorListContext _localctx = new StructDeclaratorListContext(Context, _parentState);
+        StructDeclaratorListContext _prevctx = _localctx;
+        int _startState = 74;
+        EnterRecursionRule(_localctx, 74, RULE_structDeclaratorList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 631; structDeclarator();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 638;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new StructDeclaratorListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_structDeclaratorList);
+                                State = 633;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 634; Match(Comma);
+                                State = 635; structDeclarator();
+                            }
+                        }
+                    }
+                    State = 640;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class StructDeclaratorContext : ParserRuleContext
+    {
+        public DeclaratorContext declarator()
+        {
+            return GetRuleContext<DeclaratorContext>(0);
+        }
+        public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
+        public ConstantExpressionContext constantExpression()
+        {
+            return GetRuleContext<ConstantExpressionContext>(0);
+        }
+        public StructDeclaratorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_structDeclarator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStructDeclarator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStructDeclarator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StructDeclaratorContext structDeclarator()
+    {
+        StructDeclaratorContext _localctx = new StructDeclaratorContext(Context, State);
+        EnterRule(_localctx, 76, RULE_structDeclarator);
+        int _la;
+        try
+        {
+            State = 647;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 48, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 641; declarator();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 643;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (Star - 59)) | (1L << (Caret - 59)) | (1L << (Identifier - 59)))) != 0))
+                        {
+                            {
+                                State = 642; declarator();
+                            }
+                        }
+
+                        State = 645; Match(Colon);
+                        State = 646; constantExpression();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class EnumSpecifierContext : ParserRuleContext
+    {
+        public ITerminalNode Enum() { return GetToken(CParser.Enum, 0); }
+        public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
+        public EnumeratorListContext enumeratorList()
+        {
+            return GetRuleContext<EnumeratorListContext>(0);
+        }
+        public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public EnumSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_enumSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterEnumSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitEnumSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public EnumSpecifierContext enumSpecifier()
+    {
+        EnumSpecifierContext _localctx = new EnumSpecifierContext(Context, State);
+        EnterRule(_localctx, 78, RULE_enumSpecifier);
+        int _la;
+        try
+        {
+            State = 668;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 51, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 649; Match(Enum);
+                        State = 651;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Identifier)
+                        {
+                            {
+                                State = 650; Match(Identifier);
+                            }
+                        }
+
+                        State = 653; Match(LeftBrace);
+                        State = 654; enumeratorList(0);
+                        State = 655; Match(RightBrace);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 657; Match(Enum);
+                        State = 659;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Identifier)
+                        {
+                            {
+                                State = 658; Match(Identifier);
+                            }
+                        }
+
+                        State = 661; Match(LeftBrace);
+                        State = 662; enumeratorList(0);
+                        State = 663; Match(Comma);
+                        State = 664; Match(RightBrace);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 666; Match(Enum);
+                        State = 667; Match(Identifier);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class EnumeratorListContext : ParserRuleContext
+    {
+        public EnumeratorContext enumerator()
+        {
+            return GetRuleContext<EnumeratorContext>(0);
+        }
+        public EnumeratorListContext enumeratorList()
+        {
+            return GetRuleContext<EnumeratorListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public EnumeratorListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_enumeratorList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterEnumeratorList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitEnumeratorList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public EnumeratorListContext enumeratorList()
+    {
+        return enumeratorList(0);
+    }
+
+    private EnumeratorListContext enumeratorList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        EnumeratorListContext _localctx = new EnumeratorListContext(Context, _parentState);
+        EnumeratorListContext _prevctx = _localctx;
+        int _startState = 80;
+        EnterRecursionRule(_localctx, 80, RULE_enumeratorList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 671; enumerator();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 678;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 52, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new EnumeratorListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_enumeratorList);
+                                State = 673;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 674; Match(Comma);
+                                State = 675; enumerator();
+                            }
+                        }
+                    }
+                    State = 680;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 52, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class EnumeratorContext : ParserRuleContext
+    {
+        public EnumerationConstantContext enumerationConstant()
+        {
+            return GetRuleContext<EnumerationConstantContext>(0);
+        }
+        public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
+        public ConstantExpressionContext constantExpression()
+        {
+            return GetRuleContext<ConstantExpressionContext>(0);
+        }
+        public EnumeratorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_enumerator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterEnumerator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitEnumerator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public EnumeratorContext enumerator()
+    {
+        EnumeratorContext _localctx = new EnumeratorContext(Context, State);
+        EnterRule(_localctx, 82, RULE_enumerator);
+        try
+        {
+            State = 686;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 53, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 681; enumerationConstant();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 682; enumerationConstant();
+                        State = 683; Match(Assign);
+                        State = 684; constantExpression();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class EnumerationConstantContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public EnumerationConstantContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_enumerationConstant; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterEnumerationConstant(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitEnumerationConstant(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public EnumerationConstantContext enumerationConstant()
+    {
+        EnumerationConstantContext _localctx = new EnumerationConstantContext(Context, State);
+        EnterRule(_localctx, 84, RULE_enumerationConstant);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 688; Match(Identifier);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class AtomicTypeSpecifierContext : ParserRuleContext
+    {
+        public ITerminalNode Atomic() { return GetToken(CParser.Atomic, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public TypeNameContext typeName()
+        {
+            return GetRuleContext<TypeNameContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public AtomicTypeSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_atomicTypeSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterAtomicTypeSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitAtomicTypeSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AtomicTypeSpecifierContext atomicTypeSpecifier()
+    {
+        AtomicTypeSpecifierContext _localctx = new AtomicTypeSpecifierContext(Context, State);
+        EnterRule(_localctx, 86, RULE_atomicTypeSpecifier);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 690; Match(Atomic);
+                State = 691; Match(LeftParen);
+                State = 692; typeName();
+                State = 693; Match(RightParen);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class TypeQualifierContext : ParserRuleContext
+    {
+        public ITerminalNode Const() { return GetToken(CParser.Const, 0); }
+        public ITerminalNode Restrict() { return GetToken(CParser.Restrict, 0); }
+        public ITerminalNode Volatile() { return GetToken(CParser.Volatile, 0); }
+        public ITerminalNode Atomic() { return GetToken(CParser.Atomic, 0); }
+        public TypeQualifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_typeQualifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterTypeQualifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitTypeQualifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public TypeQualifierContext typeQualifier()
+    {
+        TypeQualifierContext _localctx = new TypeQualifierContext(Context, State);
+        EnterRule(_localctx, 88, RULE_typeQualifier);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 695;
+                _la = TokenStream.LA(1);
+                if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0)))
+                {
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class FunctionSpecifierContext : ParserRuleContext
+    {
+        public ITerminalNode Inline() { return GetToken(CParser.Inline, 0); }
+        public ITerminalNode Noreturn() { return GetToken(CParser.Noreturn, 0); }
+        public GccAttributeSpecifierContext gccAttributeSpecifier()
+        {
+            return GetRuleContext<GccAttributeSpecifierContext>(0);
+        }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public FunctionSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_functionSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterFunctionSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitFunctionSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public FunctionSpecifierContext functionSpecifier()
+    {
+        FunctionSpecifierContext _localctx = new FunctionSpecifierContext(Context, State);
+        EnterRule(_localctx, 90, RULE_functionSpecifier);
+        int _la;
+        try
+        {
+            State = 703;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case T__7:
+                case T__8:
+                case Inline:
+                case Noreturn:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 697;
+                        _la = TokenStream.LA(1);
+                        if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__8) | (1L << Inline) | (1L << Noreturn))) != 0)))
+                        {
+                            ErrorHandler.RecoverInline(this);
+                        }
+                        else
+                        {
+                            ErrorHandler.ReportMatch(this);
+                            Consume();
+                        }
+                    }
+                    break;
+                case T__11:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 698; gccAttributeSpecifier();
+                    }
+                    break;
+                case T__9:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 699; Match(T__9);
+                        State = 700; Match(LeftParen);
+                        State = 701; Match(Identifier);
+                        State = 702; Match(RightParen);
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class AlignmentSpecifierContext : ParserRuleContext
+    {
+        public ITerminalNode Alignas() { return GetToken(CParser.Alignas, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public TypeNameContext typeName()
+        {
+            return GetRuleContext<TypeNameContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public ConstantExpressionContext constantExpression()
+        {
+            return GetRuleContext<ConstantExpressionContext>(0);
+        }
+        public AlignmentSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_alignmentSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterAlignmentSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitAlignmentSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AlignmentSpecifierContext alignmentSpecifier()
+    {
+        AlignmentSpecifierContext _localctx = new AlignmentSpecifierContext(Context, State);
+        EnterRule(_localctx, 92, RULE_alignmentSpecifier);
+        try
+        {
+            State = 715;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 55, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 705; Match(Alignas);
+                        State = 706; Match(LeftParen);
+                        State = 707; typeName();
+                        State = 708; Match(RightParen);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 710; Match(Alignas);
+                        State = 711; Match(LeftParen);
+                        State = 712; constantExpression();
+                        State = 713; Match(RightParen);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DeclaratorContext : ParserRuleContext
+    {
+        public DirectDeclaratorContext directDeclarator()
+        {
+            return GetRuleContext<DirectDeclaratorContext>(0);
+        }
+        public PointerContext pointer()
+        {
+            return GetRuleContext<PointerContext>(0);
+        }
+        public GccDeclaratorExtensionContext[] gccDeclaratorExtension()
+        {
+            return GetRuleContexts<GccDeclaratorExtensionContext>();
+        }
+        public GccDeclaratorExtensionContext gccDeclaratorExtension(int i)
+        {
+            return GetRuleContext<GccDeclaratorExtensionContext>(i);
+        }
+        public DeclaratorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_declarator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDeclarator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDeclarator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DeclaratorContext declarator()
+    {
+        DeclaratorContext _localctx = new DeclaratorContext(Context, State);
+        EnterRule(_localctx, 94, RULE_declarator);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 718;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Star || _la == Caret)
+                {
+                    {
+                        State = 717; pointer();
+                    }
+                }
+
+                State = 720; directDeclarator(0);
+                State = 724;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 57, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        {
+                            {
+                                State = 721; gccDeclaratorExtension();
+                            }
+                        }
+                    }
+                    State = 726;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 57, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DirectDeclaratorContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public DeclaratorContext declarator()
+        {
+            return GetRuleContext<DeclaratorContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
+        public ITerminalNode DigitSequence() { return GetToken(CParser.DigitSequence, 0); }
+        public PointerContext pointer()
+        {
+            return GetRuleContext<PointerContext>(0);
+        }
+        public DirectDeclaratorContext directDeclarator()
+        {
+            return GetRuleContext<DirectDeclaratorContext>(0);
+        }
+        public TypeSpecifierContext typeSpecifier()
+        {
+            return GetRuleContext<TypeSpecifierContext>(0);
+        }
+        public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
+        public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
+        public TypeQualifierListContext typeQualifierList()
+        {
+            return GetRuleContext<TypeQualifierListContext>(0);
+        }
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ITerminalNode Static() { return GetToken(CParser.Static, 0); }
+        public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
+        public ParameterTypeListContext parameterTypeList()
+        {
+            return GetRuleContext<ParameterTypeListContext>(0);
+        }
+        public IdentifierListContext identifierList()
+        {
+            return GetRuleContext<IdentifierListContext>(0);
+        }
+        public DirectDeclaratorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_directDeclarator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDirectDeclarator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDirectDeclarator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DirectDeclaratorContext directDeclarator()
+    {
+        return directDeclarator(0);
+    }
+
+    private DirectDeclaratorContext directDeclarator(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        DirectDeclaratorContext _localctx = new DirectDeclaratorContext(Context, _parentState);
+        DirectDeclaratorContext _prevctx = _localctx;
+        int _startState = 96;
+        EnterRecursionRule(_localctx, 96, RULE_directDeclarator, _p);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 744;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 59, Context))
                 {
                     case 1:
-                        EnterOuterAlt(_localctx, 1);
                         {
-                            State = 916; pointer();
+                            State = 728; Match(Identifier);
                         }
                         break;
                     case 2:
-                        EnterOuterAlt(_localctx, 2);
                         {
-                            State = 918;
+                            State = 729; Match(LeftParen);
+                            State = 730; declarator();
+                            State = 731; Match(RightParen);
+                        }
+                        break;
+                    case 3:
+                        {
+                            State = 733; Match(Identifier);
+                            State = 734; Match(Colon);
+                            State = 735; Match(DigitSequence);
+                        }
+                        break;
+                    case 4:
+                        {
+                            State = 736; Match(LeftParen);
+                            State = 738;
                             ErrorHandler.Sync(this);
                             _la = TokenStream.LA(1);
-                            if (_la == Star || _la == Caret)
+                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << Char) | (1L << Double) | (1L << Enum) | (1L << Float) | (1L << Int) | (1L << Long) | (1L << Short) | (1L << Signed) | (1L << Struct) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Atomic) | (1L << Bool) | (1L << Complex))) != 0) || _la == Identifier)
                             {
                                 {
-                                    State = 917; pointer();
+                                    State = 737; typeSpecifier(0);
                                 }
                             }
 
-                            State = 920; directAbstractDeclarator(0);
-                            State = 924;
+                            State = 740; pointer();
+                            State = 741; directDeclarator(0);
+                            State = 742; Match(RightParen);
+                        }
+                        break;
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 791;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            State = 789;
+                            ErrorHandler.Sync(this);
+                            switch (Interpreter.AdaptivePredict(TokenStream, 65, Context))
+                            {
+                                case 1:
+                                    {
+                                        _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
+                                        State = 746;
+                                        if (!(Precpred(Context, 8))) throw new FailedPredicateException(this, "Precpred(Context, 8)");
+                                        State = 747; Match(LeftBracket);
+                                        State = 749;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
+                                        {
+                                            {
+                                                State = 748; typeQualifierList(0);
+                                            }
+                                        }
+
+                                        State = 752;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                                        {
+                                            {
+                                                State = 751; assignmentExpression();
+                                            }
+                                        }
+
+                                        State = 754; Match(RightBracket);
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
+                                        State = 755;
+                                        if (!(Precpred(Context, 7))) throw new FailedPredicateException(this, "Precpred(Context, 7)");
+                                        State = 756; Match(LeftBracket);
+                                        State = 757; Match(Static);
+                                        State = 759;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
+                                        {
+                                            {
+                                                State = 758; typeQualifierList(0);
+                                            }
+                                        }
+
+                                        State = 761; assignmentExpression();
+                                        State = 762; Match(RightBracket);
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
+                                        State = 764;
+                                        if (!(Precpred(Context, 6))) throw new FailedPredicateException(this, "Precpred(Context, 6)");
+                                        State = 765; Match(LeftBracket);
+                                        State = 766; typeQualifierList(0);
+                                        State = 767; Match(Static);
+                                        State = 768; assignmentExpression();
+                                        State = 769; Match(RightBracket);
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
+                                        State = 771;
+                                        if (!(Precpred(Context, 5))) throw new FailedPredicateException(this, "Precpred(Context, 5)");
+                                        State = 772; Match(LeftBracket);
+                                        State = 774;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
+                                        {
+                                            {
+                                                State = 773; typeQualifierList(0);
+                                            }
+                                        }
+
+                                        State = 776; Match(Star);
+                                        State = 777; Match(RightBracket);
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
+                                        State = 778;
+                                        if (!(Precpred(Context, 4))) throw new FailedPredicateException(this, "Precpred(Context, 4)");
+                                        State = 779; Match(LeftParen);
+                                        State = 780; parameterTypeList();
+                                        State = 781; Match(RightParen);
+                                    }
+                                    break;
+                                case 6:
+                                    {
+                                        _localctx = new DirectDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directDeclarator);
+                                        State = 783;
+                                        if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
+                                        State = 784; Match(LeftParen);
+                                        State = 786;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if (_la == Identifier)
+                                        {
+                                            {
+                                                State = 785; identifierList(0);
+                                            }
+                                        }
+
+                                        State = 788; Match(RightParen);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    State = 793;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class GccDeclaratorExtensionContext : ParserRuleContext
+    {
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public ITerminalNode[] StringLiteral() { return GetTokens(CParser.StringLiteral); }
+        public ITerminalNode StringLiteral(int i)
+        {
+            return GetToken(CParser.StringLiteral, i);
+        }
+        public GccAttributeSpecifierContext gccAttributeSpecifier()
+        {
+            return GetRuleContext<GccAttributeSpecifierContext>(0);
+        }
+        public GccDeclaratorExtensionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_gccDeclaratorExtension; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterGccDeclaratorExtension(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitGccDeclaratorExtension(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GccDeclaratorExtensionContext gccDeclaratorExtension()
+    {
+        GccDeclaratorExtensionContext _localctx = new GccDeclaratorExtensionContext(Context, State);
+        EnterRule(_localctx, 98, RULE_gccDeclaratorExtension);
+        int _la;
+        try
+        {
+            State = 803;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case T__10:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 794; Match(T__10);
+                        State = 795; Match(LeftParen);
+                        State = 797;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        do
+                        {
+                            {
+                                {
+                                    State = 796; Match(StringLiteral);
+                                }
+                            }
+                            State = 799;
+                            ErrorHandler.Sync(this);
+                            _la = TokenStream.LA(1);
+                        } while (_la == StringLiteral);
+                        State = 801; Match(RightParen);
+                    }
+                    break;
+                case T__11:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 802; gccAttributeSpecifier();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class GccAttributeSpecifierContext : ParserRuleContext
+    {
+        public ITerminalNode[] LeftParen() { return GetTokens(CParser.LeftParen); }
+        public ITerminalNode LeftParen(int i)
+        {
+            return GetToken(CParser.LeftParen, i);
+        }
+        public GccAttributeListContext gccAttributeList()
+        {
+            return GetRuleContext<GccAttributeListContext>(0);
+        }
+        public ITerminalNode[] RightParen() { return GetTokens(CParser.RightParen); }
+        public ITerminalNode RightParen(int i)
+        {
+            return GetToken(CParser.RightParen, i);
+        }
+        public GccAttributeSpecifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_gccAttributeSpecifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterGccAttributeSpecifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitGccAttributeSpecifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GccAttributeSpecifierContext gccAttributeSpecifier()
+    {
+        GccAttributeSpecifierContext _localctx = new GccAttributeSpecifierContext(Context, State);
+        EnterRule(_localctx, 100, RULE_gccAttributeSpecifier);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 805; Match(T__11);
+                State = 806; Match(LeftParen);
+                State = 807; Match(LeftParen);
+                State = 808; gccAttributeList();
+                State = 809; Match(RightParen);
+                State = 810; Match(RightParen);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class GccAttributeListContext : ParserRuleContext
+    {
+        public GccAttributeContext[] gccAttribute()
+        {
+            return GetRuleContexts<GccAttributeContext>();
+        }
+        public GccAttributeContext gccAttribute(int i)
+        {
+            return GetRuleContext<GccAttributeContext>(i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(CParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(CParser.Comma, i);
+        }
+        public GccAttributeListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_gccAttributeList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterGccAttributeList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitGccAttributeList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GccAttributeListContext gccAttributeList()
+    {
+        GccAttributeListContext _localctx = new GccAttributeListContext(Context, State);
+        EnterRule(_localctx, 102, RULE_gccAttributeList);
+        int _la;
+        try
+        {
+            State = 821;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 70, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 812; gccAttribute();
+                        State = 817;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        while (_la == Comma)
+                        {
+                            {
+                                {
+                                    State = 813; Match(Comma);
+                                    State = 814; gccAttribute();
+                                }
+                            }
+                            State = 819;
+                            ErrorHandler.Sync(this);
+                            _la = TokenStream.LA(1);
+                        }
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class GccAttributeContext : ParserRuleContext
+    {
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public ITerminalNode[] LeftParen() { return GetTokens(CParser.LeftParen); }
+        public ITerminalNode LeftParen(int i)
+        {
+            return GetToken(CParser.LeftParen, i);
+        }
+        public ITerminalNode[] RightParen() { return GetTokens(CParser.RightParen); }
+        public ITerminalNode RightParen(int i)
+        {
+            return GetToken(CParser.RightParen, i);
+        }
+        public ArgumentExpressionListContext argumentExpressionList()
+        {
+            return GetRuleContext<ArgumentExpressionListContext>(0);
+        }
+        public GccAttributeContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_gccAttribute; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterGccAttribute(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitGccAttribute(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GccAttributeContext gccAttribute()
+    {
+        GccAttributeContext _localctx = new GccAttributeContext(Context, State);
+        EnterRule(_localctx, 104, RULE_gccAttribute);
+        int _la;
+        try
+        {
+            State = 832;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case T__0:
+                case T__1:
+                case T__2:
+                case T__3:
+                case T__4:
+                case T__5:
+                case T__6:
+                case T__7:
+                case T__8:
+                case T__9:
+                case T__10:
+                case T__11:
+                case T__12:
+                case T__13:
+                case Auto:
+                case Break:
+                case Case:
+                case Char:
+                case Const:
+                case Continue:
+                case Default:
+                case Do:
+                case Double:
+                case Else:
+                case Enum:
+                case Extern:
+                case Float:
+                case For:
+                case Goto:
+                case If:
+                case Inline:
+                case Int:
+                case Long:
+                case Register:
+                case Restrict:
+                case Return:
+                case Short:
+                case Signed:
+                case Sizeof:
+                case Static:
+                case Struct:
+                case Switch:
+                case Typedef:
+                case Union:
+                case Unsigned:
+                case Void:
+                case Volatile:
+                case While:
+                case Alignas:
+                case Alignof:
+                case Atomic:
+                case Bool:
+                case Complex:
+                case Generic:
+                case Imaginary:
+                case Noreturn:
+                case StaticAssert:
+                case ThreadLocal:
+                case LeftBracket:
+                case RightBracket:
+                case LeftBrace:
+                case RightBrace:
+                case Less:
+                case LessEqual:
+                case Greater:
+                case GreaterEqual:
+                case LeftShift:
+                case RightShift:
+                case Plus:
+                case PlusPlus:
+                case Minus:
+                case MinusMinus:
+                case Star:
+                case Div:
+                case Mod:
+                case And:
+                case Or:
+                case AndAnd:
+                case OrOr:
+                case Caret:
+                case Not:
+                case Tilde:
+                case Question:
+                case Colon:
+                case Semi:
+                case Assign:
+                case StarAssign:
+                case DivAssign:
+                case ModAssign:
+                case PlusAssign:
+                case MinusAssign:
+                case LeftShiftAssign:
+                case RightShiftAssign:
+                case AndAssign:
+                case XorAssign:
+                case OrAssign:
+                case Equal:
+                case NotEqual:
+                case Arrow:
+                case Dot:
+                case Ellipsis:
+                case Identifier:
+                case Constant:
+                case DigitSequence:
+                case StringLiteral:
+                case ComplexDefine:
+                case IncludeDirective:
+                case AsmBlock:
+                case LineAfterPreprocessing:
+                case LineDirective:
+                case PragmaDirective:
+                case Whitespace:
+                case Newline:
+                case BlockComment:
+                case LineComment:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 823;
+                        _la = TokenStream.LA(1);
+                        if (_la <= 0 || (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (RightParen - 59)) | (1L << (Comma - 59)))) != 0)))
+                        {
+                            ErrorHandler.RecoverInline(this);
+                        }
+                        else
+                        {
+                            ErrorHandler.ReportMatch(this);
+                            Consume();
+                        }
+                        State = 829;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == LeftParen)
+                        {
+                            {
+                                State = 824; Match(LeftParen);
+                                State = 826;
+                                ErrorHandler.Sync(this);
+                                _la = TokenStream.LA(1);
+                                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                                {
+                                    {
+                                        State = 825; argumentExpressionList(0);
+                                    }
+                                }
+
+                                State = 828; Match(RightParen);
+                            }
+                        }
+
+                    }
+                    break;
+                case RightParen:
+                case Comma:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class NestedParenthesesBlockContext : ParserRuleContext
+    {
+        public ITerminalNode[] LeftParen() { return GetTokens(CParser.LeftParen); }
+        public ITerminalNode LeftParen(int i)
+        {
+            return GetToken(CParser.LeftParen, i);
+        }
+        public NestedParenthesesBlockContext[] nestedParenthesesBlock()
+        {
+            return GetRuleContexts<NestedParenthesesBlockContext>();
+        }
+        public NestedParenthesesBlockContext nestedParenthesesBlock(int i)
+        {
+            return GetRuleContext<NestedParenthesesBlockContext>(i);
+        }
+        public ITerminalNode[] RightParen() { return GetTokens(CParser.RightParen); }
+        public ITerminalNode RightParen(int i)
+        {
+            return GetToken(CParser.RightParen, i);
+        }
+        public NestedParenthesesBlockContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_nestedParenthesesBlock; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterNestedParenthesesBlock(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitNestedParenthesesBlock(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public NestedParenthesesBlockContext nestedParenthesesBlock()
+    {
+        NestedParenthesesBlockContext _localctx = new NestedParenthesesBlockContext(Context, State);
+        EnterRule(_localctx, 106, RULE_nestedParenthesesBlock);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 841;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << Auto) | (1L << Break) | (1L << Case) | (1L << Char) | (1L << Const) | (1L << Continue) | (1L << Default) | (1L << Do) | (1L << Double) | (1L << Else) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << For) | (1L << Goto) | (1L << If) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Return) | (1L << Short) | (1L << Signed) | (1L << Sizeof) | (1L << Static) | (1L << Struct) | (1L << Switch) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << While) | (1L << Alignas) | (1L << Alignof) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Generic) | (1L << Imaginary) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal) | (1L << LeftParen) | (1L << LeftBracket) | (1L << RightBracket) | (1L << LeftBrace))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (RightBrace - 64)) | (1L << (Less - 64)) | (1L << (LessEqual - 64)) | (1L << (Greater - 64)) | (1L << (GreaterEqual - 64)) | (1L << (LeftShift - 64)) | (1L << (RightShift - 64)) | (1L << (Plus - 64)) | (1L << (PlusPlus - 64)) | (1L << (Minus - 64)) | (1L << (MinusMinus - 64)) | (1L << (Star - 64)) | (1L << (Div - 64)) | (1L << (Mod - 64)) | (1L << (And - 64)) | (1L << (Or - 64)) | (1L << (AndAnd - 64)) | (1L << (OrOr - 64)) | (1L << (Caret - 64)) | (1L << (Not - 64)) | (1L << (Tilde - 64)) | (1L << (Question - 64)) | (1L << (Colon - 64)) | (1L << (Semi - 64)) | (1L << (Comma - 64)) | (1L << (Assign - 64)) | (1L << (StarAssign - 64)) | (1L << (DivAssign - 64)) | (1L << (ModAssign - 64)) | (1L << (PlusAssign - 64)) | (1L << (MinusAssign - 64)) | (1L << (LeftShiftAssign - 64)) | (1L << (RightShiftAssign - 64)) | (1L << (AndAssign - 64)) | (1L << (XorAssign - 64)) | (1L << (OrAssign - 64)) | (1L << (Equal - 64)) | (1L << (NotEqual - 64)) | (1L << (Arrow - 64)) | (1L << (Dot - 64)) | (1L << (Ellipsis - 64)) | (1L << (Identifier - 64)) | (1L << (Constant - 64)) | (1L << (DigitSequence - 64)) | (1L << (StringLiteral - 64)) | (1L << (ComplexDefine - 64)) | (1L << (IncludeDirective - 64)) | (1L << (AsmBlock - 64)) | (1L << (LineAfterPreprocessing - 64)) | (1L << (LineDirective - 64)) | (1L << (PragmaDirective - 64)) | (1L << (Whitespace - 64)) | (1L << (Newline - 64)) | (1L << (BlockComment - 64)) | (1L << (LineComment - 64)))) != 0))
+                {
+                    {
+                        State = 839;
+                        ErrorHandler.Sync(this);
+                        switch (TokenStream.LA(1))
+                        {
+                            case T__0:
+                            case T__1:
+                            case T__2:
+                            case T__3:
+                            case T__4:
+                            case T__5:
+                            case T__6:
+                            case T__7:
+                            case T__8:
+                            case T__9:
+                            case T__10:
+                            case T__11:
+                            case T__12:
+                            case T__13:
+                            case Auto:
+                            case Break:
+                            case Case:
+                            case Char:
+                            case Const:
+                            case Continue:
+                            case Default:
+                            case Do:
+                            case Double:
+                            case Else:
+                            case Enum:
+                            case Extern:
+                            case Float:
+                            case For:
+                            case Goto:
+                            case If:
+                            case Inline:
+                            case Int:
+                            case Long:
+                            case Register:
+                            case Restrict:
+                            case Return:
+                            case Short:
+                            case Signed:
+                            case Sizeof:
+                            case Static:
+                            case Struct:
+                            case Switch:
+                            case Typedef:
+                            case Union:
+                            case Unsigned:
+                            case Void:
+                            case Volatile:
+                            case While:
+                            case Alignas:
+                            case Alignof:
+                            case Atomic:
+                            case Bool:
+                            case Complex:
+                            case Generic:
+                            case Imaginary:
+                            case Noreturn:
+                            case StaticAssert:
+                            case ThreadLocal:
+                            case LeftBracket:
+                            case RightBracket:
+                            case LeftBrace:
+                            case RightBrace:
+                            case Less:
+                            case LessEqual:
+                            case Greater:
+                            case GreaterEqual:
+                            case LeftShift:
+                            case RightShift:
+                            case Plus:
+                            case PlusPlus:
+                            case Minus:
+                            case MinusMinus:
+                            case Star:
+                            case Div:
+                            case Mod:
+                            case And:
+                            case Or:
+                            case AndAnd:
+                            case OrOr:
+                            case Caret:
+                            case Not:
+                            case Tilde:
+                            case Question:
+                            case Colon:
+                            case Semi:
+                            case Comma:
+                            case Assign:
+                            case StarAssign:
+                            case DivAssign:
+                            case ModAssign:
+                            case PlusAssign:
+                            case MinusAssign:
+                            case LeftShiftAssign:
+                            case RightShiftAssign:
+                            case AndAssign:
+                            case XorAssign:
+                            case OrAssign:
+                            case Equal:
+                            case NotEqual:
+                            case Arrow:
+                            case Dot:
+                            case Ellipsis:
+                            case Identifier:
+                            case Constant:
+                            case DigitSequence:
+                            case StringLiteral:
+                            case ComplexDefine:
+                            case IncludeDirective:
+                            case AsmBlock:
+                            case LineAfterPreprocessing:
+                            case LineDirective:
+                            case PragmaDirective:
+                            case Whitespace:
+                            case Newline:
+                            case BlockComment:
+                            case LineComment:
+                                {
+                                    State = 834;
+                                    _la = TokenStream.LA(1);
+                                    if (_la <= 0 || (_la == LeftParen || _la == RightParen))
+                                    {
+                                        ErrorHandler.RecoverInline(this);
+                                    }
+                                    else
+                                    {
+                                        ErrorHandler.ReportMatch(this);
+                                        Consume();
+                                    }
+                                }
+                                break;
+                            case LeftParen:
+                                {
+                                    State = 835; Match(LeftParen);
+                                    State = 836; nestedParenthesesBlock();
+                                    State = 837; Match(RightParen);
+                                }
+                                break;
+                            default:
+                                throw new NoViableAltException(this);
+                        }
+                    }
+                    State = 843;
+                    ErrorHandler.Sync(this);
+                    _la = TokenStream.LA(1);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class PointerContext : ParserRuleContext
+    {
+        public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
+        public TypeQualifierListContext typeQualifierList()
+        {
+            return GetRuleContext<TypeQualifierListContext>(0);
+        }
+        public PointerContext pointer()
+        {
+            return GetRuleContext<PointerContext>(0);
+        }
+        public ITerminalNode Caret() { return GetToken(CParser.Caret, 0); }
+        public PointerContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_pointer; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterPointer(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitPointer(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public PointerContext pointer()
+    {
+        PointerContext _localctx = new PointerContext(Context, State);
+        EnterRule(_localctx, 108, RULE_pointer);
+        int _la;
+        try
+        {
+            State = 862;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 80, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 844; Match(Star);
+                        State = 846;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 76, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 845; typeQualifierList(0);
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 848; Match(Star);
+                        State = 850;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
+                        {
+                            {
+                                State = 849; typeQualifierList(0);
+                            }
+                        }
+
+                        State = 852; pointer();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 853; Match(Caret);
+                        State = 855;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 78, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 854; typeQualifierList(0);
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 857; Match(Caret);
+                        State = 859;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
+                        {
+                            {
+                                State = 858; typeQualifierList(0);
+                            }
+                        }
+
+                        State = 861; pointer();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class TypeQualifierListContext : ParserRuleContext
+    {
+        public TypeQualifierContext typeQualifier()
+        {
+            return GetRuleContext<TypeQualifierContext>(0);
+        }
+        public TypeQualifierListContext typeQualifierList()
+        {
+            return GetRuleContext<TypeQualifierListContext>(0);
+        }
+        public TypeQualifierListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_typeQualifierList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterTypeQualifierList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitTypeQualifierList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public TypeQualifierListContext typeQualifierList()
+    {
+        return typeQualifierList(0);
+    }
+
+    private TypeQualifierListContext typeQualifierList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        TypeQualifierListContext _localctx = new TypeQualifierListContext(Context, _parentState);
+        TypeQualifierListContext _prevctx = _localctx;
+        int _startState = 110;
+        EnterRecursionRule(_localctx, 110, RULE_typeQualifierList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 865; typeQualifier();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 871;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new TypeQualifierListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_typeQualifierList);
+                                State = 867;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 868; typeQualifier();
+                            }
+                        }
+                    }
+                    State = 873;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class ParameterTypeListContext : ParserRuleContext
+    {
+        public ParameterListContext parameterList()
+        {
+            return GetRuleContext<ParameterListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public ITerminalNode Ellipsis() { return GetToken(CParser.Ellipsis, 0); }
+        public ParameterTypeListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_parameterTypeList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterParameterTypeList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitParameterTypeList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ParameterTypeListContext parameterTypeList()
+    {
+        ParameterTypeListContext _localctx = new ParameterTypeListContext(Context, State);
+        EnterRule(_localctx, 112, RULE_parameterTypeList);
+        try
+        {
+            State = 879;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 82, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 874; parameterList(0);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 875; parameterList(0);
+                        State = 876; Match(Comma);
+                        State = 877; Match(Ellipsis);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ParameterListContext : ParserRuleContext
+    {
+        public ParameterDeclarationContext parameterDeclaration()
+        {
+            return GetRuleContext<ParameterDeclarationContext>(0);
+        }
+        public ParameterListContext parameterList()
+        {
+            return GetRuleContext<ParameterListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public ParameterListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_parameterList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterParameterList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitParameterList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ParameterListContext parameterList()
+    {
+        return parameterList(0);
+    }
+
+    private ParameterListContext parameterList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        ParameterListContext _localctx = new ParameterListContext(Context, _parentState);
+        ParameterListContext _prevctx = _localctx;
+        int _startState = 114;
+        EnterRecursionRule(_localctx, 114, RULE_parameterList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 882; parameterDeclaration();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 889;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 83, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new ParameterListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_parameterList);
+                                State = 884;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 885; Match(Comma);
+                                State = 886; parameterDeclaration();
+                            }
+                        }
+                    }
+                    State = 891;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 83, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class ParameterDeclarationContext : ParserRuleContext
+    {
+        public DeclarationSpecifiersContext declarationSpecifiers()
+        {
+            return GetRuleContext<DeclarationSpecifiersContext>(0);
+        }
+        public DeclaratorContext declarator()
+        {
+            return GetRuleContext<DeclaratorContext>(0);
+        }
+        public DeclarationSpecifiers2Context declarationSpecifiers2()
+        {
+            return GetRuleContext<DeclarationSpecifiers2Context>(0);
+        }
+        public AbstractDeclaratorContext abstractDeclarator()
+        {
+            return GetRuleContext<AbstractDeclaratorContext>(0);
+        }
+        public ParameterDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_parameterDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterParameterDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitParameterDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ParameterDeclarationContext parameterDeclaration()
+    {
+        ParameterDeclarationContext _localctx = new ParameterDeclarationContext(Context, State);
+        EnterRule(_localctx, 116, RULE_parameterDeclaration);
+        try
+        {
+            State = 899;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 85, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 892; declarationSpecifiers();
+                        State = 893; declarator();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 895; declarationSpecifiers2();
+                        State = 897;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 84, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 896; abstractDeclarator();
+                                }
+                                break;
+                        }
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class IdentifierListContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public IdentifierListContext identifierList()
+        {
+            return GetRuleContext<IdentifierListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public IdentifierListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_identifierList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterIdentifierList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitIdentifierList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public IdentifierListContext identifierList()
+    {
+        return identifierList(0);
+    }
+
+    private IdentifierListContext identifierList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        IdentifierListContext _localctx = new IdentifierListContext(Context, _parentState);
+        IdentifierListContext _prevctx = _localctx;
+        int _startState = 118;
+        EnterRecursionRule(_localctx, 118, RULE_identifierList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 902; Match(Identifier);
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 909;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new IdentifierListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_identifierList);
+                                State = 904;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 905; Match(Comma);
+                                State = 906; Match(Identifier);
+                            }
+                        }
+                    }
+                    State = 911;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class TypeNameContext : ParserRuleContext
+    {
+        public SpecifierQualifierListContext specifierQualifierList()
+        {
+            return GetRuleContext<SpecifierQualifierListContext>(0);
+        }
+        public AbstractDeclaratorContext abstractDeclarator()
+        {
+            return GetRuleContext<AbstractDeclaratorContext>(0);
+        }
+        public TypeNameContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_typeName; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterTypeName(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitTypeName(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public TypeNameContext typeName()
+    {
+        TypeNameContext _localctx = new TypeNameContext(Context, State);
+        EnterRule(_localctx, 120, RULE_typeName);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 912; specifierQualifierList();
+                State = 914;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (LeftParen - 59)) | (1L << (LeftBracket - 59)) | (1L << (Star - 59)) | (1L << (Caret - 59)))) != 0))
+                {
+                    {
+                        State = 913; abstractDeclarator();
+                    }
+                }
+
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class AbstractDeclaratorContext : ParserRuleContext
+    {
+        public PointerContext pointer()
+        {
+            return GetRuleContext<PointerContext>(0);
+        }
+        public DirectAbstractDeclaratorContext directAbstractDeclarator()
+        {
+            return GetRuleContext<DirectAbstractDeclaratorContext>(0);
+        }
+        public GccDeclaratorExtensionContext[] gccDeclaratorExtension()
+        {
+            return GetRuleContexts<GccDeclaratorExtensionContext>();
+        }
+        public GccDeclaratorExtensionContext gccDeclaratorExtension(int i)
+        {
+            return GetRuleContext<GccDeclaratorExtensionContext>(i);
+        }
+        public AbstractDeclaratorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_abstractDeclarator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterAbstractDeclarator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitAbstractDeclarator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AbstractDeclaratorContext abstractDeclarator()
+    {
+        AbstractDeclaratorContext _localctx = new AbstractDeclaratorContext(Context, State);
+        EnterRule(_localctx, 122, RULE_abstractDeclarator);
+        int _la;
+        try
+        {
+            int _alt;
+            State = 927;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 90, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 916; pointer();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 918;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Star || _la == Caret)
+                        {
+                            {
+                                State = 917; pointer();
+                            }
+                        }
+
+                        State = 920; directAbstractDeclarator(0);
+                        State = 924;
+                        ErrorHandler.Sync(this);
+                        _alt = Interpreter.AdaptivePredict(TokenStream, 89, Context);
+                        while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                        {
+                            if (_alt == 1)
+                            {
+                                {
+                                    {
+                                        State = 921; gccDeclaratorExtension();
+                                    }
+                                }
+                            }
+                            State = 926;
                             ErrorHandler.Sync(this);
                             _alt = Interpreter.AdaptivePredict(TokenStream, 89, Context);
+                        }
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DirectAbstractDeclaratorContext : ParserRuleContext
+    {
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public AbstractDeclaratorContext abstractDeclarator()
+        {
+            return GetRuleContext<AbstractDeclaratorContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public GccDeclaratorExtensionContext[] gccDeclaratorExtension()
+        {
+            return GetRuleContexts<GccDeclaratorExtensionContext>();
+        }
+        public GccDeclaratorExtensionContext gccDeclaratorExtension(int i)
+        {
+            return GetRuleContext<GccDeclaratorExtensionContext>(i);
+        }
+        public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
+        public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
+        public TypeQualifierListContext typeQualifierList()
+        {
+            return GetRuleContext<TypeQualifierListContext>(0);
+        }
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ITerminalNode Static() { return GetToken(CParser.Static, 0); }
+        public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
+        public ParameterTypeListContext parameterTypeList()
+        {
+            return GetRuleContext<ParameterTypeListContext>(0);
+        }
+        public DirectAbstractDeclaratorContext directAbstractDeclarator()
+        {
+            return GetRuleContext<DirectAbstractDeclaratorContext>(0);
+        }
+        public DirectAbstractDeclaratorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_directAbstractDeclarator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDirectAbstractDeclarator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDirectAbstractDeclarator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DirectAbstractDeclaratorContext directAbstractDeclarator()
+    {
+        return directAbstractDeclarator(0);
+    }
+
+    private DirectAbstractDeclaratorContext directAbstractDeclarator(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        DirectAbstractDeclaratorContext _localctx = new DirectAbstractDeclaratorContext(Context, _parentState);
+        DirectAbstractDeclaratorContext _prevctx = _localctx;
+        int _startState = 124;
+        EnterRecursionRule(_localctx, 124, RULE_directAbstractDeclarator, _p);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 975;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 97, Context))
+                {
+                    case 1:
+                        {
+                            State = 930; Match(LeftParen);
+                            State = 931; abstractDeclarator();
+                            State = 932; Match(RightParen);
+                            State = 936;
+                            ErrorHandler.Sync(this);
+                            _alt = Interpreter.AdaptivePredict(TokenStream, 91, Context);
                             while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
                             {
                                 if (_alt == 1)
                                 {
                                     {
                                         {
-                                            State = 921; gccDeclaratorExtension();
+                                            State = 933; gccDeclaratorExtension();
                                         }
                                     }
                                 }
-                                State = 926;
-                                ErrorHandler.Sync(this);
-                                _alt = Interpreter.AdaptivePredict(TokenStream, 89, Context);
-                            }
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DirectAbstractDeclaratorContext : ParserRuleContext
-        {
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public AbstractDeclaratorContext abstractDeclarator()
-            {
-                return GetRuleContext<AbstractDeclaratorContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public GccDeclaratorExtensionContext[] gccDeclaratorExtension()
-            {
-                return GetRuleContexts<GccDeclaratorExtensionContext>();
-            }
-            public GccDeclaratorExtensionContext gccDeclaratorExtension(int i)
-            {
-                return GetRuleContext<GccDeclaratorExtensionContext>(i);
-            }
-            public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
-            public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
-            public TypeQualifierListContext typeQualifierList()
-            {
-                return GetRuleContext<TypeQualifierListContext>(0);
-            }
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ITerminalNode Static() { return GetToken(CParser.Static, 0); }
-            public ITerminalNode Star() { return GetToken(CParser.Star, 0); }
-            public ParameterTypeListContext parameterTypeList()
-            {
-                return GetRuleContext<ParameterTypeListContext>(0);
-            }
-            public DirectAbstractDeclaratorContext directAbstractDeclarator()
-            {
-                return GetRuleContext<DirectAbstractDeclaratorContext>(0);
-            }
-            public DirectAbstractDeclaratorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_directAbstractDeclarator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDirectAbstractDeclarator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDirectAbstractDeclarator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DirectAbstractDeclaratorContext directAbstractDeclarator()
-        {
-            return directAbstractDeclarator(0);
-        }
-
-        private DirectAbstractDeclaratorContext directAbstractDeclarator(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            DirectAbstractDeclaratorContext _localctx = new DirectAbstractDeclaratorContext(Context, _parentState);
-            DirectAbstractDeclaratorContext _prevctx = _localctx;
-            int _startState = 124;
-            EnterRecursionRule(_localctx, 124, RULE_directAbstractDeclarator, _p);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 975;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 97, Context))
-                    {
-                        case 1:
-                            {
-                                State = 930; Match(LeftParen);
-                                State = 931; abstractDeclarator();
-                                State = 932; Match(RightParen);
-                                State = 936;
+                                State = 938;
                                 ErrorHandler.Sync(this);
                                 _alt = Interpreter.AdaptivePredict(TokenStream, 91, Context);
-                                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                                {
-                                    if (_alt == 1)
-                                    {
-                                        {
-                                            {
-                                                State = 933; gccDeclaratorExtension();
-                                            }
-                                        }
-                                    }
-                                    State = 938;
-                                    ErrorHandler.Sync(this);
-                                    _alt = Interpreter.AdaptivePredict(TokenStream, 91, Context);
-                                }
                             }
-                            break;
-                        case 2:
-                            {
-                                State = 939; Match(LeftBracket);
-                                State = 941;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                                {
-                                    {
-                                        State = 940; typeQualifierList(0);
-                                    }
-                                }
-
-                                State = 944;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                                {
-                                    {
-                                        State = 943; assignmentExpression();
-                                    }
-                                }
-
-                                State = 946; Match(RightBracket);
-                            }
-                            break;
-                        case 3:
-                            {
-                                State = 947; Match(LeftBracket);
-                                State = 948; Match(Static);
-                                State = 950;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                                {
-                                    {
-                                        State = 949; typeQualifierList(0);
-                                    }
-                                }
-
-                                State = 952; assignmentExpression();
-                                State = 953; Match(RightBracket);
-                            }
-                            break;
-                        case 4:
-                            {
-                                State = 955; Match(LeftBracket);
-                                State = 956; typeQualifierList(0);
-                                State = 957; Match(Static);
-                                State = 958; assignmentExpression();
-                                State = 959; Match(RightBracket);
-                            }
-                            break;
-                        case 5:
-                            {
-                                State = 961; Match(LeftBracket);
-                                State = 962; Match(Star);
-                                State = 963; Match(RightBracket);
-                            }
-                            break;
-                        case 6:
-                            {
-                                State = 964; Match(LeftParen);
-                                State = 966;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << ThreadLocal))) != 0) || _la == Identifier)
-                                {
-                                    {
-                                        State = 965; parameterTypeList();
-                                    }
-                                }
-
-                                State = 968; Match(RightParen);
-                                State = 972;
-                                ErrorHandler.Sync(this);
-                                _alt = Interpreter.AdaptivePredict(TokenStream, 96, Context);
-                                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                                {
-                                    if (_alt == 1)
-                                    {
-                                        {
-                                            {
-                                                State = 969; gccDeclaratorExtension();
-                                            }
-                                        }
-                                    }
-                                    State = 974;
-                                    ErrorHandler.Sync(this);
-                                    _alt = Interpreter.AdaptivePredict(TokenStream, 96, Context);
-                                }
-                            }
-                            break;
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 1020;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 104, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 1018;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 103, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
-                                            State = 977;
-                                            if (!(Precpred(Context, 5))) throw new FailedPredicateException(this, "Precpred(Context, 5)");
-                                            State = 978; Match(LeftBracket);
-                                            State = 980;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                                            {
-                                                {
-                                                    State = 979; typeQualifierList(0);
-                                                }
-                                            }
-
-                                            State = 983;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                                            {
-                                                {
-                                                    State = 982; assignmentExpression();
-                                                }
-                                            }
-
-                                            State = 985; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
-                                            State = 986;
-                                            if (!(Precpred(Context, 4))) throw new FailedPredicateException(this, "Precpred(Context, 4)");
-                                            State = 987; Match(LeftBracket);
-                                            State = 988; Match(Static);
-                                            State = 990;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
-                                            {
-                                                {
-                                                    State = 989; typeQualifierList(0);
-                                                }
-                                            }
-
-                                            State = 992; assignmentExpression();
-                                            State = 993; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 3:
-                                        {
-                                            _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
-                                            State = 995;
-                                            if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
-                                            State = 996; Match(LeftBracket);
-                                            State = 997; typeQualifierList(0);
-                                            State = 998; Match(Static);
-                                            State = 999; assignmentExpression();
-                                            State = 1000; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 4:
-                                        {
-                                            _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
-                                            State = 1002;
-                                            if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
-                                            State = 1003; Match(LeftBracket);
-                                            State = 1004; Match(Star);
-                                            State = 1005; Match(RightBracket);
-                                        }
-                                        break;
-                                    case 5:
-                                        {
-                                            _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
-                                            PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
-                                            State = 1006;
-                                            if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                            State = 1007; Match(LeftParen);
-                                            State = 1009;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << ThreadLocal))) != 0) || _la == Identifier)
-                                            {
-                                                {
-                                                    State = 1008; parameterTypeList();
-                                                }
-                                            }
-
-                                            State = 1011; Match(RightParen);
-                                            State = 1015;
-                                            ErrorHandler.Sync(this);
-                                            _alt = Interpreter.AdaptivePredict(TokenStream, 102, Context);
-                                            while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                                            {
-                                                if (_alt == 1)
-                                                {
-                                                    {
-                                                        {
-                                                            State = 1012; gccDeclaratorExtension();
-                                                        }
-                                                    }
-                                                }
-                                                State = 1017;
-                                                ErrorHandler.Sync(this);
-                                                _alt = Interpreter.AdaptivePredict(TokenStream, 102, Context);
-                                            }
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 1022;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 104, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class TypedefNameContext : ParserRuleContext
-        {
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public TypedefNameContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_typedefName; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterTypedefName(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitTypedefName(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public TypedefNameContext typedefName()
-        {
-            TypedefNameContext _localctx = new TypedefNameContext(Context, State);
-            EnterRule(_localctx, 126, RULE_typedefName);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 1023; Match(Identifier);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class InitializerContext : ParserRuleContext
-        {
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
-            public InitializerListContext initializerList()
-            {
-                return GetRuleContext<InitializerListContext>(0);
-            }
-            public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public InitializerContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_initializer; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterInitializer(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitInitializer(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public InitializerContext initializer()
-        {
-            InitializerContext _localctx = new InitializerContext(Context, State);
-            EnterRule(_localctx, 128, RULE_initializer);
-            try
-            {
-                State = 1035;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 105, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1025; assignmentExpression();
                         }
                         break;
                     case 2:
-                        EnterOuterAlt(_localctx, 2);
                         {
-                            State = 1026; Match(LeftBrace);
-                            State = 1027; initializerList(0);
-                            State = 1028; Match(RightBrace);
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 1030; Match(LeftBrace);
-                            State = 1031; initializerList(0);
-                            State = 1032; Match(Comma);
-                            State = 1033; Match(RightBrace);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class InitializerListContext : ParserRuleContext
-        {
-            public InitializerContext initializer()
-            {
-                return GetRuleContext<InitializerContext>(0);
-            }
-            public DesignationContext designation()
-            {
-                return GetRuleContext<DesignationContext>(0);
-            }
-            public InitializerListContext initializerList()
-            {
-                return GetRuleContext<InitializerListContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public InitializerListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_initializerList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterInitializerList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitInitializerList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public InitializerListContext initializerList()
-        {
-            return initializerList(0);
-        }
-
-        private InitializerListContext initializerList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            InitializerListContext _localctx = new InitializerListContext(Context, _parentState);
-            InitializerListContext _prevctx = _localctx;
-            int _startState = 130;
-            EnterRecursionRule(_localctx, 130, RULE_initializerList, _p);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 1039;
-                        ErrorHandler.Sync(this);
-                        _la = TokenStream.LA(1);
-                        if (_la == LeftBracket || _la == Dot)
-                        {
-                            {
-                                State = 1038; designation();
-                            }
-                        }
-
-                        State = 1041; initializer();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 1051;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 108, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
+                            State = 939; Match(LeftBracket);
+                            State = 941;
+                            ErrorHandler.Sync(this);
+                            _la = TokenStream.LA(1);
+                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
                             {
                                 {
-                                    _localctx = new InitializerListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_initializerList);
-                                    State = 1043;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 1044; Match(Comma);
-                                    State = 1046;
-                                    ErrorHandler.Sync(this);
-                                    _la = TokenStream.LA(1);
-                                    if (_la == LeftBracket || _la == Dot)
-                                    {
-                                        {
-                                            State = 1045; designation();
-                                        }
-                                    }
-
-                                    State = 1048; initializer();
+                                    State = 940; typeQualifierList(0);
                                 }
                             }
-                        }
-                        State = 1053;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 108, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
 
-        public partial class DesignationContext : ParserRuleContext
-        {
-            public DesignatorListContext designatorList()
-            {
-                return GetRuleContext<DesignatorListContext>(0);
-            }
-            public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
-            public DesignationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_designation; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDesignation(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDesignation(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DesignationContext designation()
-        {
-            DesignationContext _localctx = new DesignationContext(Context, State);
-            EnterRule(_localctx, 132, RULE_designation);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 1054; designatorList(0);
-                    State = 1055; Match(Assign);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DesignatorListContext : ParserRuleContext
-        {
-            public DesignatorContext designator()
-            {
-                return GetRuleContext<DesignatorContext>(0);
-            }
-            public DesignatorListContext designatorList()
-            {
-                return GetRuleContext<DesignatorListContext>(0);
-            }
-            public DesignatorListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_designatorList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDesignatorList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDesignatorList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DesignatorListContext designatorList()
-        {
-            return designatorList(0);
-        }
-
-        private DesignatorListContext designatorList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            DesignatorListContext _localctx = new DesignatorListContext(Context, _parentState);
-            DesignatorListContext _prevctx = _localctx;
-            int _startState = 134;
-            EnterRecursionRule(_localctx, 134, RULE_designatorList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 1058; designator();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 1064;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 109, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new DesignatorListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_designatorList);
-                                    State = 1060;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 1061; designator();
-                                }
-                            }
-                        }
-                        State = 1066;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 109, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class DesignatorContext : ParserRuleContext
-        {
-            public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
-            public ConstantExpressionContext constantExpression()
-            {
-                return GetRuleContext<ConstantExpressionContext>(0);
-            }
-            public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
-            public ITerminalNode Dot() { return GetToken(CParser.Dot, 0); }
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public DesignatorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_designator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDesignator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDesignator(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DesignatorContext designator()
-        {
-            DesignatorContext _localctx = new DesignatorContext(Context, State);
-            EnterRule(_localctx, 136, RULE_designator);
-            try
-            {
-                State = 1073;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case LeftBracket:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1067; Match(LeftBracket);
-                            State = 1068; constantExpression();
-                            State = 1069; Match(RightBracket);
-                        }
-                        break;
-                    case Dot:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1071; Match(Dot);
-                            State = 1072; Match(Identifier);
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class StaticAssertDeclarationContext : ParserRuleContext
-        {
-            public ITerminalNode StaticAssert() { return GetToken(CParser.StaticAssert, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ConstantExpressionContext constantExpression()
-            {
-                return GetRuleContext<ConstantExpressionContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public ITerminalNode[] StringLiteral() { return GetTokens(CParser.StringLiteral); }
-            public ITerminalNode StringLiteral(int i)
-            {
-                return GetToken(CParser.StringLiteral, i);
-            }
-            public StaticAssertDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_staticAssertDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStaticAssertDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStaticAssertDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StaticAssertDeclarationContext staticAssertDeclaration()
-        {
-            StaticAssertDeclarationContext _localctx = new StaticAssertDeclarationContext(Context, State);
-            EnterRule(_localctx, 138, RULE_staticAssertDeclaration);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 1075; Match(StaticAssert);
-                    State = 1076; Match(LeftParen);
-                    State = 1077; constantExpression();
-                    State = 1078; Match(Comma);
-                    State = 1080;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    do
-                    {
-                        {
-                            {
-                                State = 1079; Match(StringLiteral);
-                            }
-                        }
-                        State = 1082;
-                        ErrorHandler.Sync(this);
-                        _la = TokenStream.LA(1);
-                    } while (_la == StringLiteral);
-                    State = 1084; Match(RightParen);
-                    State = 1085; Match(Semi);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class StatementContext : ParserRuleContext
-        {
-            public LabeledStatementContext labeledStatement()
-            {
-                return GetRuleContext<LabeledStatementContext>(0);
-            }
-            public CompoundStatementContext compoundStatement()
-            {
-                return GetRuleContext<CompoundStatementContext>(0);
-            }
-            public ExpressionStatementContext expressionStatement()
-            {
-                return GetRuleContext<ExpressionStatementContext>(0);
-            }
-            public SelectionStatementContext selectionStatement()
-            {
-                return GetRuleContext<SelectionStatementContext>(0);
-            }
-            public IterationStatementContext iterationStatement()
-            {
-                return GetRuleContext<IterationStatementContext>(0);
-            }
-            public JumpStatementContext jumpStatement()
-            {
-                return GetRuleContext<JumpStatementContext>(0);
-            }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public ITerminalNode Volatile() { return GetToken(CParser.Volatile, 0); }
-            public LogicalOrExpressionContext[] logicalOrExpression()
-            {
-                return GetRuleContexts<LogicalOrExpressionContext>();
-            }
-            public LogicalOrExpressionContext logicalOrExpression(int i)
-            {
-                return GetRuleContext<LogicalOrExpressionContext>(i);
-            }
-            public ITerminalNode[] Colon() { return GetTokens(CParser.Colon); }
-            public ITerminalNode Colon(int i)
-            {
-                return GetToken(CParser.Colon, i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(CParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(CParser.Comma, i);
-            }
-            public StatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_statement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StatementContext statement()
-        {
-            StatementContext _localctx = new StatementContext(Context, State);
-            EnterRule(_localctx, 140, RULE_statement);
-            int _la;
-            try
-            {
-                State = 1124;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 117, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1087; labeledStatement();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1088; compoundStatement();
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 1089; expressionStatement();
-                        }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 1090; selectionStatement();
-                        }
-                        break;
-                    case 5:
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 1091; iterationStatement();
-                        }
-                        break;
-                    case 6:
-                        EnterOuterAlt(_localctx, 6);
-                        {
-                            State = 1092; jumpStatement();
-                        }
-                        break;
-                    case 7:
-                        EnterOuterAlt(_localctx, 7);
-                        {
-                            State = 1093;
-                            _la = TokenStream.LA(1);
-                            if (!(_la == T__10 || _la == T__12))
-                            {
-                                ErrorHandler.RecoverInline(this);
-                            }
-                            else
-                            {
-                                ErrorHandler.ReportMatch(this);
-                                Consume();
-                            }
-                            State = 1094;
-                            _la = TokenStream.LA(1);
-                            if (!(_la == T__13 || _la == Volatile))
-                            {
-                                ErrorHandler.RecoverInline(this);
-                            }
-                            else
-                            {
-                                ErrorHandler.ReportMatch(this);
-                                Consume();
-                            }
-                            State = 1095; Match(LeftParen);
-                            State = 1104;
+                            State = 944;
                             ErrorHandler.Sync(this);
                             _la = TokenStream.LA(1);
                             if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
                             {
                                 {
-                                    State = 1096; logicalOrExpression(0);
-                                    State = 1101;
-                                    ErrorHandler.Sync(this);
-                                    _la = TokenStream.LA(1);
-                                    while (_la == Comma)
-                                    {
-                                        {
-                                            {
-                                                State = 1097; Match(Comma);
-                                                State = 1098; logicalOrExpression(0);
-                                            }
-                                        }
-                                        State = 1103;
-                                        ErrorHandler.Sync(this);
-                                        _la = TokenStream.LA(1);
-                                    }
+                                    State = 943; assignmentExpression();
                                 }
                             }
 
-                            State = 1119;
+                            State = 946; Match(RightBracket);
+                        }
+                        break;
+                    case 3:
+                        {
+                            State = 947; Match(LeftBracket);
+                            State = 948; Match(Static);
+                            State = 950;
                             ErrorHandler.Sync(this);
                             _la = TokenStream.LA(1);
-                            while (_la == Colon)
+                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
                             {
                                 {
+                                    State = 949; typeQualifierList(0);
+                                }
+                            }
+
+                            State = 952; assignmentExpression();
+                            State = 953; Match(RightBracket);
+                        }
+                        break;
+                    case 4:
+                        {
+                            State = 955; Match(LeftBracket);
+                            State = 956; typeQualifierList(0);
+                            State = 957; Match(Static);
+                            State = 958; assignmentExpression();
+                            State = 959; Match(RightBracket);
+                        }
+                        break;
+                    case 5:
+                        {
+                            State = 961; Match(LeftBracket);
+                            State = 962; Match(Star);
+                            State = 963; Match(RightBracket);
+                        }
+                        break;
+                    case 6:
+                        {
+                            State = 964; Match(LeftParen);
+                            State = 966;
+                            ErrorHandler.Sync(this);
+                            _la = TokenStream.LA(1);
+                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << ThreadLocal))) != 0) || _la == Identifier)
+                            {
+                                {
+                                    State = 965; parameterTypeList();
+                                }
+                            }
+
+                            State = 968; Match(RightParen);
+                            State = 972;
+                            ErrorHandler.Sync(this);
+                            _alt = Interpreter.AdaptivePredict(TokenStream, 96, Context);
+                            while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                            {
+                                if (_alt == 1)
+                                {
                                     {
-                                        State = 1106; Match(Colon);
-                                        State = 1115;
+                                        {
+                                            State = 969; gccDeclaratorExtension();
+                                        }
+                                    }
+                                }
+                                State = 974;
+                                ErrorHandler.Sync(this);
+                                _alt = Interpreter.AdaptivePredict(TokenStream, 96, Context);
+                            }
+                        }
+                        break;
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 1020;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 104, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            State = 1018;
+                            ErrorHandler.Sync(this);
+                            switch (Interpreter.AdaptivePredict(TokenStream, 103, Context))
+                            {
+                                case 1:
+                                    {
+                                        _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
+                                        State = 977;
+                                        if (!(Precpred(Context, 5))) throw new FailedPredicateException(this, "Precpred(Context, 5)");
+                                        State = 978; Match(LeftBracket);
+                                        State = 980;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
+                                        {
+                                            {
+                                                State = 979; typeQualifierList(0);
+                                            }
+                                        }
+
+                                        State = 983;
                                         ErrorHandler.Sync(this);
                                         _la = TokenStream.LA(1);
                                         if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
                                         {
                                             {
-                                                State = 1107; logicalOrExpression(0);
-                                                State = 1112;
-                                                ErrorHandler.Sync(this);
-                                                _la = TokenStream.LA(1);
-                                                while (_la == Comma)
-                                                {
-                                                    {
-                                                        {
-                                                            State = 1108; Match(Comma);
-                                                            State = 1109; logicalOrExpression(0);
-                                                        }
-                                                    }
-                                                    State = 1114;
-                                                    ErrorHandler.Sync(this);
-                                                    _la = TokenStream.LA(1);
-                                                }
+                                                State = 982; assignmentExpression();
                                             }
                                         }
 
+                                        State = 985; Match(RightBracket);
                                     }
-                                }
-                                State = 1121;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                            }
-                            State = 1122; Match(RightParen);
-                            State = 1123; Match(Semi);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class LabeledStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public ITerminalNode Case() { return GetToken(CParser.Case, 0); }
-            public ConstantExpressionContext constantExpression()
-            {
-                return GetRuleContext<ConstantExpressionContext>(0);
-            }
-            public ITerminalNode Default() { return GetToken(CParser.Default, 0); }
-            public LabeledStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_labeledStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterLabeledStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitLabeledStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public LabeledStatementContext labeledStatement()
-        {
-            LabeledStatementContext _localctx = new LabeledStatementContext(Context, State);
-            EnterRule(_localctx, 142, RULE_labeledStatement);
-            try
-            {
-                State = 1137;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1126; Match(Identifier);
-                            State = 1127; Match(Colon);
-                            State = 1128; statement();
-                        }
-                        break;
-                    case Case:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1129; Match(Case);
-                            State = 1130; constantExpression();
-                            State = 1131; Match(Colon);
-                            State = 1132; statement();
-                        }
-                        break;
-                    case Default:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 1134; Match(Default);
-                            State = 1135; Match(Colon);
-                            State = 1136; statement();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class CompoundStatementContext : ParserRuleContext
-        {
-            public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
-            public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
-            public BlockItemListContext blockItemList()
-            {
-                return GetRuleContext<BlockItemListContext>(0);
-            }
-            public CompoundStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_compoundStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterCompoundStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitCompoundStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public CompoundStatementContext compoundStatement()
-        {
-            CompoundStatementContext _localctx = new CompoundStatementContext(Context, State);
-            EnterRule(_localctx, 144, RULE_compoundStatement);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 1139; Match(LeftBrace);
-                    State = 1141;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << Auto) | (1L << Break) | (1L << Case) | (1L << Char) | (1L << Const) | (1L << Continue) | (1L << Default) | (1L << Do) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << For) | (1L << Goto) | (1L << If) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Return) | (1L << Short) | (1L << Signed) | (1L << Sizeof) | (1L << Static) | (1L << Struct) | (1L << Switch) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << While) | (1L << Alignas) | (1L << Alignof) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Generic) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal) | (1L << LeftParen) | (1L << LeftBrace))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Semi - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                    {
-                        {
-                            State = 1140; blockItemList(0);
-                        }
-                    }
-
-                    State = 1143; Match(RightBrace);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class BlockItemListContext : ParserRuleContext
-        {
-            public BlockItemContext blockItem()
-            {
-                return GetRuleContext<BlockItemContext>(0);
-            }
-            public BlockItemListContext blockItemList()
-            {
-                return GetRuleContext<BlockItemListContext>(0);
-            }
-            public BlockItemListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_blockItemList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterBlockItemList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitBlockItemList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public BlockItemListContext blockItemList()
-        {
-            return blockItemList(0);
-        }
-
-        private BlockItemListContext blockItemList(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            BlockItemListContext _localctx = new BlockItemListContext(Context, _parentState);
-            BlockItemListContext _prevctx = _localctx;
-            int _startState = 146;
-            EnterRecursionRule(_localctx, 146, RULE_blockItemList, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 1146; blockItem();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 1152;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 120, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new BlockItemListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_blockItemList);
-                                    State = 1148;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 1149; blockItem();
-                                }
-                            }
-                        }
-                        State = 1154;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 120, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class BlockItemContext : ParserRuleContext
-        {
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public DeclarationContext declaration()
-            {
-                return GetRuleContext<DeclarationContext>(0);
-            }
-            public BlockItemContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_blockItem; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterBlockItem(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitBlockItem(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public BlockItemContext blockItem()
-        {
-            BlockItemContext _localctx = new BlockItemContext(Context, State);
-            EnterRule(_localctx, 148, RULE_blockItem);
-            try
-            {
-                State = 1157;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 121, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1155; statement();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1156; declaration();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ExpressionStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ExpressionStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_expressionStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterExpressionStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitExpressionStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ExpressionStatementContext expressionStatement()
-        {
-            ExpressionStatementContext _localctx = new ExpressionStatementContext(Context, State);
-            EnterRule(_localctx, 150, RULE_expressionStatement);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 1160;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                    {
-                        {
-                            State = 1159; expression(0);
-                        }
-                    }
-
-                    State = 1162; Match(Semi);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class SelectionStatementContext : ParserRuleContext
-        {
-            public ITerminalNode If() { return GetToken(CParser.If, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public StatementContext[] statement()
-            {
-                return GetRuleContexts<StatementContext>();
-            }
-            public StatementContext statement(int i)
-            {
-                return GetRuleContext<StatementContext>(i);
-            }
-            public ITerminalNode Else() { return GetToken(CParser.Else, 0); }
-            public ITerminalNode Switch() { return GetToken(CParser.Switch, 0); }
-            public SelectionStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_selectionStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterSelectionStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitSelectionStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public SelectionStatementContext selectionStatement()
-        {
-            SelectionStatementContext _localctx = new SelectionStatementContext(Context, State);
-            EnterRule(_localctx, 152, RULE_selectionStatement);
-            try
-            {
-                State = 1179;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case If:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1164; Match(If);
-                            State = 1165; Match(LeftParen);
-                            State = 1166; expression(0);
-                            State = 1167; Match(RightParen);
-                            State = 1168; statement();
-                            State = 1171;
-                            ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 123, Context))
-                            {
-                                case 1:
+                                    break;
+                                case 2:
                                     {
-                                        State = 1169; Match(Else);
-                                        State = 1170; statement();
+                                        _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
+                                        State = 986;
+                                        if (!(Precpred(Context, 4))) throw new FailedPredicateException(this, "Precpred(Context, 4)");
+                                        State = 987; Match(LeftBracket);
+                                        State = 988; Match(Static);
+                                        State = 990;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Const) | (1L << Restrict) | (1L << Volatile) | (1L << Atomic))) != 0))
+                                        {
+                                            {
+                                                State = 989; typeQualifierList(0);
+                                            }
+                                        }
+
+                                        State = 992; assignmentExpression();
+                                        State = 993; Match(RightBracket);
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
+                                        State = 995;
+                                        if (!(Precpred(Context, 3))) throw new FailedPredicateException(this, "Precpred(Context, 3)");
+                                        State = 996; Match(LeftBracket);
+                                        State = 997; typeQualifierList(0);
+                                        State = 998; Match(Static);
+                                        State = 999; assignmentExpression();
+                                        State = 1000; Match(RightBracket);
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
+                                        State = 1002;
+                                        if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
+                                        State = 1003; Match(LeftBracket);
+                                        State = 1004; Match(Star);
+                                        State = 1005; Match(RightBracket);
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        _localctx = new DirectAbstractDeclaratorContext(_parentctx, _parentState);
+                                        PushNewRecursionContext(_localctx, _startState, RULE_directAbstractDeclarator);
+                                        State = 1006;
+                                        if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                        State = 1007; Match(LeftParen);
+                                        State = 1009;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << ThreadLocal))) != 0) || _la == Identifier)
+                                        {
+                                            {
+                                                State = 1008; parameterTypeList();
+                                            }
+                                        }
+
+                                        State = 1011; Match(RightParen);
+                                        State = 1015;
+                                        ErrorHandler.Sync(this);
+                                        _alt = Interpreter.AdaptivePredict(TokenStream, 102, Context);
+                                        while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                                        {
+                                            if (_alt == 1)
+                                            {
+                                                {
+                                                    {
+                                                        State = 1012; gccDeclaratorExtension();
+                                                    }
+                                                }
+                                            }
+                                            State = 1017;
+                                            ErrorHandler.Sync(this);
+                                            _alt = Interpreter.AdaptivePredict(TokenStream, 102, Context);
+                                        }
                                     }
                                     break;
                             }
                         }
-                        break;
-                    case Switch:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1173; Match(Switch);
-                            State = 1174; Match(LeftParen);
-                            State = 1175; expression(0);
-                            State = 1176; Match(RightParen);
-                            State = 1177; statement();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
+                    }
+                    State = 1022;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 104, Context);
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class IterationStatementContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public ITerminalNode While() { return GetToken(CParser.While, 0); }
-            public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
-            public ExpressionContext expression()
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class TypedefNameContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public TypedefNameContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_typedefName; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterTypedefName(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitTypedefName(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public TypedefNameContext typedefName()
+    {
+        TypedefNameContext _localctx = new TypedefNameContext(Context, State);
+        EnterRule(_localctx, 126, RULE_typedefName);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public ITerminalNode Do() { return GetToken(CParser.Do, 0); }
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public ITerminalNode For() { return GetToken(CParser.For, 0); }
-            public ForConditionContext forCondition()
-            {
-                return GetRuleContext<ForConditionContext>(0);
-            }
-            public IterationStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_iterationStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterIterationStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitIterationStatement(this);
+                State = 1023; Match(Identifier);
             }
         }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class InitializerContext : ParserRuleContext
+    {
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
+        public InitializerListContext initializerList()
+        {
+            return GetRuleContext<InitializerListContext>(0);
+        }
+        public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public InitializerContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_initializer; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterInitializer(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitInitializer(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public InitializerContext initializer()
+    {
+        InitializerContext _localctx = new InitializerContext(Context, State);
+        EnterRule(_localctx, 128, RULE_initializer);
+        try
+        {
+            State = 1035;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 105, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1025; assignmentExpression();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1026; Match(LeftBrace);
+                        State = 1027; initializerList(0);
+                        State = 1028; Match(RightBrace);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 1030; Match(LeftBrace);
+                        State = 1031; initializerList(0);
+                        State = 1032; Match(Comma);
+                        State = 1033; Match(RightBrace);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class InitializerListContext : ParserRuleContext
+    {
+        public InitializerContext initializer()
+        {
+            return GetRuleContext<InitializerContext>(0);
+        }
+        public DesignationContext designation()
+        {
+            return GetRuleContext<DesignationContext>(0);
+        }
+        public InitializerListContext initializerList()
+        {
+            return GetRuleContext<InitializerListContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public InitializerListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_initializerList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterInitializerList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitInitializerList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public InitializerListContext initializerList()
+    {
+        return initializerList(0);
+    }
+
+    private InitializerListContext initializerList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        InitializerListContext _localctx = new InitializerListContext(Context, _parentState);
+        InitializerListContext _prevctx = _localctx;
+        int _startState = 130;
+        EnterRecursionRule(_localctx, 130, RULE_initializerList, _p);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 1039;
+                    ErrorHandler.Sync(this);
+                    _la = TokenStream.LA(1);
+                    if (_la == LeftBracket || _la == Dot)
+                    {
+                        {
+                            State = 1038; designation();
+                        }
+                    }
+
+                    State = 1041; initializer();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 1051;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 108, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new InitializerListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_initializerList);
+                                State = 1043;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 1044; Match(Comma);
+                                State = 1046;
+                                ErrorHandler.Sync(this);
+                                _la = TokenStream.LA(1);
+                                if (_la == LeftBracket || _la == Dot)
+                                {
+                                    {
+                                        State = 1045; designation();
+                                    }
+                                }
+
+                                State = 1048; initializer();
+                            }
+                        }
+                    }
+                    State = 1053;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 108, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class DesignationContext : ParserRuleContext
+    {
+        public DesignatorListContext designatorList()
+        {
+            return GetRuleContext<DesignatorListContext>(0);
+        }
+        public ITerminalNode Assign() { return GetToken(CParser.Assign, 0); }
+        public DesignationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_designation; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDesignation(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDesignation(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DesignationContext designation()
+    {
+        DesignationContext _localctx = new DesignationContext(Context, State);
+        EnterRule(_localctx, 132, RULE_designation);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 1054; designatorList(0);
+                State = 1055; Match(Assign);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DesignatorListContext : ParserRuleContext
+    {
+        public DesignatorContext designator()
+        {
+            return GetRuleContext<DesignatorContext>(0);
+        }
+        public DesignatorListContext designatorList()
+        {
+            return GetRuleContext<DesignatorListContext>(0);
+        }
+        public DesignatorListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_designatorList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDesignatorList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDesignatorList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DesignatorListContext designatorList()
+    {
+        return designatorList(0);
+    }
+
+    private DesignatorListContext designatorList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        DesignatorListContext _localctx = new DesignatorListContext(Context, _parentState);
+        DesignatorListContext _prevctx = _localctx;
+        int _startState = 134;
+        EnterRecursionRule(_localctx, 134, RULE_designatorList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 1058; designator();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 1064;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 109, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new DesignatorListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_designatorList);
+                                State = 1060;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 1061; designator();
+                            }
+                        }
+                    }
+                    State = 1066;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 109, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class DesignatorContext : ParserRuleContext
+    {
+        public ITerminalNode LeftBracket() { return GetToken(CParser.LeftBracket, 0); }
+        public ConstantExpressionContext constantExpression()
+        {
+            return GetRuleContext<ConstantExpressionContext>(0);
+        }
+        public ITerminalNode RightBracket() { return GetToken(CParser.RightBracket, 0); }
+        public ITerminalNode Dot() { return GetToken(CParser.Dot, 0); }
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public DesignatorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_designator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDesignator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDesignator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DesignatorContext designator()
+    {
+        DesignatorContext _localctx = new DesignatorContext(Context, State);
+        EnterRule(_localctx, 136, RULE_designator);
+        try
+        {
+            State = 1073;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case LeftBracket:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1067; Match(LeftBracket);
+                        State = 1068; constantExpression();
+                        State = 1069; Match(RightBracket);
+                    }
+                    break;
+                case Dot:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1071; Match(Dot);
+                        State = 1072; Match(Identifier);
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class StaticAssertDeclarationContext : ParserRuleContext
+    {
+        public ITerminalNode StaticAssert() { return GetToken(CParser.StaticAssert, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public ConstantExpressionContext constantExpression()
+        {
+            return GetRuleContext<ConstantExpressionContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public ITerminalNode[] StringLiteral() { return GetTokens(CParser.StringLiteral); }
+        public ITerminalNode StringLiteral(int i)
+        {
+            return GetToken(CParser.StringLiteral, i);
+        }
+        public StaticAssertDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_staticAssertDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStaticAssertDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStaticAssertDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StaticAssertDeclarationContext staticAssertDeclaration()
+    {
+        StaticAssertDeclarationContext _localctx = new StaticAssertDeclarationContext(Context, State);
+        EnterRule(_localctx, 138, RULE_staticAssertDeclaration);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 1075; Match(StaticAssert);
+                State = 1076; Match(LeftParen);
+                State = 1077; constantExpression();
+                State = 1078; Match(Comma);
+                State = 1080;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                do
+                {
+                    {
+                        {
+                            State = 1079; Match(StringLiteral);
+                        }
+                    }
+                    State = 1082;
+                    ErrorHandler.Sync(this);
+                    _la = TokenStream.LA(1);
+                } while (_la == StringLiteral);
+                State = 1084; Match(RightParen);
+                State = 1085; Match(Semi);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class StatementContext : ParserRuleContext
+    {
+        public LabeledStatementContext labeledStatement()
+        {
+            return GetRuleContext<LabeledStatementContext>(0);
+        }
+        public CompoundStatementContext compoundStatement()
+        {
+            return GetRuleContext<CompoundStatementContext>(0);
+        }
+        public ExpressionStatementContext expressionStatement()
+        {
+            return GetRuleContext<ExpressionStatementContext>(0);
+        }
+        public SelectionStatementContext selectionStatement()
+        {
+            return GetRuleContext<SelectionStatementContext>(0);
+        }
         public IterationStatementContext iterationStatement()
         {
-            IterationStatementContext _localctx = new IterationStatementContext(Context, State);
-            EnterRule(_localctx, 154, RULE_iterationStatement);
-            try
-            {
-                State = 1201;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case While:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1181; Match(While);
-                            State = 1182; Match(LeftParen);
-                            State = 1183; expression(0);
-                            State = 1184; Match(RightParen);
-                            State = 1185; statement();
-                        }
-                        break;
-                    case Do:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1187; Match(Do);
-                            State = 1188; statement();
-                            State = 1189; Match(While);
-                            State = 1190; Match(LeftParen);
-                            State = 1191; expression(0);
-                            State = 1192; Match(RightParen);
-                            State = 1193; Match(Semi);
-                        }
-                        break;
-                    case For:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 1195; Match(For);
-                            State = 1196; Match(LeftParen);
-                            State = 1197; forCondition();
-                            State = 1198; Match(RightParen);
-                            State = 1199; statement();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<IterationStatementContext>(0);
         }
-
-        public partial class ForConditionContext : ParserRuleContext
-        {
-            public ForDeclarationContext forDeclaration()
-            {
-                return GetRuleContext<ForDeclarationContext>(0);
-            }
-            public ITerminalNode[] Semi() { return GetTokens(CParser.Semi); }
-            public ITerminalNode Semi(int i)
-            {
-                return GetToken(CParser.Semi, i);
-            }
-            public ForExpressionContext[] forExpression()
-            {
-                return GetRuleContexts<ForExpressionContext>();
-            }
-            public ForExpressionContext forExpression(int i)
-            {
-                return GetRuleContext<ForExpressionContext>(i);
-            }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public ForConditionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_forCondition; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterForCondition(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitForCondition(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ForConditionContext forCondition()
-        {
-            ForConditionContext _localctx = new ForConditionContext(Context, State);
-            EnterRule(_localctx, 156, RULE_forCondition);
-            int _la;
-            try
-            {
-                State = 1223;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 131, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1203; forDeclaration();
-                            State = 1204; Match(Semi);
-                            State = 1206;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                            {
-                                {
-                                    State = 1205; forExpression(0);
-                                }
-                            }
-
-                            State = 1208; Match(Semi);
-                            State = 1210;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                            {
-                                {
-                                    State = 1209; forExpression(0);
-                                }
-                            }
-
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1213;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                            {
-                                {
-                                    State = 1212; expression(0);
-                                }
-                            }
-
-                            State = 1215; Match(Semi);
-                            State = 1217;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                            {
-                                {
-                                    State = 1216; forExpression(0);
-                                }
-                            }
-
-                            State = 1219; Match(Semi);
-                            State = 1221;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                            {
-                                {
-                                    State = 1220; forExpression(0);
-                                }
-                            }
-
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ForDeclarationContext : ParserRuleContext
-        {
-            public DeclarationSpecifiersContext declarationSpecifiers()
-            {
-                return GetRuleContext<DeclarationSpecifiersContext>(0);
-            }
-            public InitDeclaratorListContext initDeclaratorList()
-            {
-                return GetRuleContext<InitDeclaratorListContext>(0);
-            }
-            public ForDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_forDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterForDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitForDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ForDeclarationContext forDeclaration()
-        {
-            ForDeclarationContext _localctx = new ForDeclarationContext(Context, State);
-            EnterRule(_localctx, 158, RULE_forDeclaration);
-            try
-            {
-                State = 1229;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 132, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 1225; declarationSpecifiers();
-                            State = 1226; initDeclaratorList(0);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1228; declarationSpecifiers();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ForExpressionContext : ParserRuleContext
-        {
-            public AssignmentExpressionContext assignmentExpression()
-            {
-                return GetRuleContext<AssignmentExpressionContext>(0);
-            }
-            public ForExpressionContext forExpression()
-            {
-                return GetRuleContext<ForExpressionContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
-            public ForExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_forExpression; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterForExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitForExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ForExpressionContext forExpression()
-        {
-            return forExpression(0);
-        }
-
-        private ForExpressionContext forExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            ForExpressionContext _localctx = new ForExpressionContext(Context, _parentState);
-            ForExpressionContext _prevctx = _localctx;
-            int _startState = 160;
-            EnterRecursionRule(_localctx, 160, RULE_forExpression, _p);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    {
-                        State = 1232; assignmentExpression();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 1239;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 133, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new ForExpressionContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_forExpression);
-                                    State = 1234;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 1235; Match(Comma);
-                                    State = 1236; assignmentExpression();
-                                }
-                            }
-                        }
-                        State = 1241;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 133, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
-
-        public partial class JumpStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Goto() { return GetToken(CParser.Goto, 0); }
-            public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public ITerminalNode Continue() { return GetToken(CParser.Continue, 0); }
-            public ITerminalNode Break() { return GetToken(CParser.Break, 0); }
-            public ITerminalNode Return() { return GetToken(CParser.Return, 0); }
-            public ExpressionContext expression()
-            {
-                return GetRuleContext<ExpressionContext>(0);
-            }
-            public UnaryExpressionContext unaryExpression()
-            {
-                return GetRuleContext<UnaryExpressionContext>(0);
-            }
-            public JumpStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_jumpStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterJumpStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitJumpStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public JumpStatementContext jumpStatement()
         {
-            JumpStatementContext _localctx = new JumpStatementContext(Context, State);
-            EnterRule(_localctx, 162, RULE_jumpStatement);
-            int _la;
-            try
+            return GetRuleContext<JumpStatementContext>(0);
+        }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public ITerminalNode Volatile() { return GetToken(CParser.Volatile, 0); }
+        public LogicalOrExpressionContext[] logicalOrExpression()
+        {
+            return GetRuleContexts<LogicalOrExpressionContext>();
+        }
+        public LogicalOrExpressionContext logicalOrExpression(int i)
+        {
+            return GetRuleContext<LogicalOrExpressionContext>(i);
+        }
+        public ITerminalNode[] Colon() { return GetTokens(CParser.Colon); }
+        public ITerminalNode Colon(int i)
+        {
+            return GetToken(CParser.Colon, i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(CParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(CParser.Comma, i);
+        }
+        public StatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_statement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StatementContext statement()
+    {
+        StatementContext _localctx = new StatementContext(Context, State);
+        EnterRule(_localctx, 140, RULE_statement);
+        int _la;
+        try
+        {
+            State = 1124;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 117, Context))
             {
-                State = 1258;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 135, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1087; labeledStatement();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1088; compoundStatement();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 1089; expressionStatement();
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 1090; selectionStatement();
+                    }
+                    break;
+                case 5:
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 1091; iterationStatement();
+                    }
+                    break;
+                case 6:
+                    EnterOuterAlt(_localctx, 6);
+                    {
+                        State = 1092; jumpStatement();
+                    }
+                    break;
+                case 7:
+                    EnterOuterAlt(_localctx, 7);
+                    {
+                        State = 1093;
+                        _la = TokenStream.LA(1);
+                        if (!(_la == T__10 || _la == T__12))
                         {
-                            State = 1242; Match(Goto);
-                            State = 1243; Match(Identifier);
-                            State = 1244; Match(Semi);
+                            ErrorHandler.RecoverInline(this);
                         }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
+                        else
                         {
-                            State = 1245; Match(Continue);
-                            State = 1246; Match(Semi);
+                            ErrorHandler.ReportMatch(this);
+                            Consume();
                         }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
+                        State = 1094;
+                        _la = TokenStream.LA(1);
+                        if (!(_la == T__13 || _la == Volatile))
                         {
-                            State = 1247; Match(Break);
-                            State = 1248; Match(Semi);
+                            ErrorHandler.RecoverInline(this);
                         }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
+                        else
                         {
-                            State = 1249; Match(Return);
-                            State = 1251;
+                            ErrorHandler.ReportMatch(this);
+                            Consume();
+                        }
+                        State = 1095; Match(LeftParen);
+                        State = 1104;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                        {
+                            {
+                                State = 1096; logicalOrExpression(0);
+                                State = 1101;
+                                ErrorHandler.Sync(this);
+                                _la = TokenStream.LA(1);
+                                while (_la == Comma)
+                                {
+                                    {
+                                        {
+                                            State = 1097; Match(Comma);
+                                            State = 1098; logicalOrExpression(0);
+                                        }
+                                    }
+                                    State = 1103;
+                                    ErrorHandler.Sync(this);
+                                    _la = TokenStream.LA(1);
+                                }
+                            }
+                        }
+
+                        State = 1119;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        while (_la == Colon)
+                        {
+                            {
+                                {
+                                    State = 1106; Match(Colon);
+                                    State = 1115;
+                                    ErrorHandler.Sync(this);
+                                    _la = TokenStream.LA(1);
+                                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                                    {
+                                        {
+                                            State = 1107; logicalOrExpression(0);
+                                            State = 1112;
+                                            ErrorHandler.Sync(this);
+                                            _la = TokenStream.LA(1);
+                                            while (_la == Comma)
+                                            {
+                                                {
+                                                    {
+                                                        State = 1108; Match(Comma);
+                                                        State = 1109; logicalOrExpression(0);
+                                                    }
+                                                }
+                                                State = 1114;
+                                                ErrorHandler.Sync(this);
+                                                _la = TokenStream.LA(1);
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                            State = 1121;
                             ErrorHandler.Sync(this);
                             _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
-                            {
-                                {
-                                    State = 1250; expression(0);
-                                }
-                            }
-
-                            State = 1253; Match(Semi);
                         }
-                        break;
-                    case 5:
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 1254; Match(Goto);
-                            State = 1255; unaryExpression();
-                            State = 1256; Match(Semi);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class CompilationUnitContext : ParserRuleContext
-        {
-            public ITerminalNode Eof() { return GetToken(CParser.Eof, 0); }
-            public TranslationUnitContext translationUnit()
-            {
-                return GetRuleContext<TranslationUnitContext>(0);
-            }
-            public CompilationUnitContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_compilationUnit; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterCompilationUnit(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitCompilationUnit(this);
+                        State = 1122; Match(RightParen);
+                        State = 1123; Match(Semi);
+                    }
+                    break;
             }
         }
-
-        [RuleVersion(0)]
-        public CompilationUnitContext compilationUnit()
+        catch (RecognitionException re)
         {
-            CompilationUnitContext _localctx = new CompilationUnitContext(Context, State);
-            EnterRule(_localctx, 164, RULE_compilationUnit);
-            int _la;
-            try
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class LabeledStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public ITerminalNode Colon() { return GetToken(CParser.Colon, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public ITerminalNode Case() { return GetToken(CParser.Case, 0); }
+        public ConstantExpressionContext constantExpression()
+        {
+            return GetRuleContext<ConstantExpressionContext>(0);
+        }
+        public ITerminalNode Default() { return GetToken(CParser.Default, 0); }
+        public LabeledStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_labeledStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterLabeledStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitLabeledStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public LabeledStatementContext labeledStatement()
+    {
+        LabeledStatementContext _localctx = new LabeledStatementContext(Context, State);
+        EnterRule(_localctx, 142, RULE_labeledStatement);
+        try
+        {
+            State = 1137;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
             {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 1261;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal) | (1L << LeftParen))) != 0) || ((((_la - 75)) & ~0x3f) == 0 && ((1L << (_la - 75)) & ((1L << (Star - 75)) | (1L << (Caret - 75)) | (1L << (Semi - 75)) | (1L << (Identifier - 75)))) != 0))
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
                     {
+                        State = 1126; Match(Identifier);
+                        State = 1127; Match(Colon);
+                        State = 1128; statement();
+                    }
+                    break;
+                case Case:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1129; Match(Case);
+                        State = 1130; constantExpression();
+                        State = 1131; Match(Colon);
+                        State = 1132; statement();
+                    }
+                    break;
+                case Default:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 1134; Match(Default);
+                        State = 1135; Match(Colon);
+                        State = 1136; statement();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class CompoundStatementContext : ParserRuleContext
+    {
+        public ITerminalNode LeftBrace() { return GetToken(CParser.LeftBrace, 0); }
+        public ITerminalNode RightBrace() { return GetToken(CParser.RightBrace, 0); }
+        public BlockItemListContext blockItemList()
+        {
+            return GetRuleContext<BlockItemListContext>(0);
+        }
+        public CompoundStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_compoundStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterCompoundStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitCompoundStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public CompoundStatementContext compoundStatement()
+    {
+        CompoundStatementContext _localctx = new CompoundStatementContext(Context, State);
+        EnterRule(_localctx, 144, RULE_compoundStatement);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 1139; Match(LeftBrace);
+                State = 1141;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << Auto) | (1L << Break) | (1L << Case) | (1L << Char) | (1L << Const) | (1L << Continue) | (1L << Default) | (1L << Do) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << For) | (1L << Goto) | (1L << If) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Return) | (1L << Short) | (1L << Signed) | (1L << Sizeof) | (1L << Static) | (1L << Struct) | (1L << Switch) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << While) | (1L << Alignas) | (1L << Alignof) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Generic) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal) | (1L << LeftParen) | (1L << LeftBrace))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Semi - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                {
+                    {
+                        State = 1140; blockItemList(0);
+                    }
+                }
+
+                State = 1143; Match(RightBrace);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class BlockItemListContext : ParserRuleContext
+    {
+        public BlockItemContext blockItem()
+        {
+            return GetRuleContext<BlockItemContext>(0);
+        }
+        public BlockItemListContext blockItemList()
+        {
+            return GetRuleContext<BlockItemListContext>(0);
+        }
+        public BlockItemListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_blockItemList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterBlockItemList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitBlockItemList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public BlockItemListContext blockItemList()
+    {
+        return blockItemList(0);
+    }
+
+    private BlockItemListContext blockItemList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        BlockItemListContext _localctx = new BlockItemListContext(Context, _parentState);
+        BlockItemListContext _prevctx = _localctx;
+        int _startState = 146;
+        EnterRecursionRule(_localctx, 146, RULE_blockItemList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 1146; blockItem();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 1152;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 120, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
                         {
-                            State = 1260; translationUnit(0);
+                            {
+                                _localctx = new BlockItemListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_blockItemList);
+                                State = 1148;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 1149; blockItem();
+                            }
                         }
                     }
-
-                    State = 1263; Match(Eof);
+                    State = 1154;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 120, Context);
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class TranslationUnitContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public ExternalDeclarationContext externalDeclaration()
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class BlockItemContext : ParserRuleContext
+    {
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public DeclarationContext declaration()
+        {
+            return GetRuleContext<DeclarationContext>(0);
+        }
+        public BlockItemContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_blockItem; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterBlockItem(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitBlockItem(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public BlockItemContext blockItem()
+    {
+        BlockItemContext _localctx = new BlockItemContext(Context, State);
+        EnterRule(_localctx, 148, RULE_blockItem);
+        try
+        {
+            State = 1157;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 121, Context))
             {
-                return GetRuleContext<ExternalDeclarationContext>(0);
-            }
-            public TranslationUnitContext translationUnit()
-            {
-                return GetRuleContext<TranslationUnitContext>(0);
-            }
-            public TranslationUnitContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_translationUnit; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterTranslationUnit(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitTranslationUnit(this);
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1155; statement();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1156; declaration();
+                    }
+                    break;
             }
         }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class ExpressionStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public ExpressionStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_expressionStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterExpressionStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitExpressionStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExpressionStatementContext expressionStatement()
+    {
+        ExpressionStatementContext _localctx = new ExpressionStatementContext(Context, State);
+        EnterRule(_localctx, 150, RULE_expressionStatement);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 1160;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                {
+                    {
+                        State = 1159; expression(0);
+                    }
+                }
+
+                State = 1162; Match(Semi);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class SelectionStatementContext : ParserRuleContext
+    {
+        public ITerminalNode If() { return GetToken(CParser.If, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public StatementContext[] statement()
+        {
+            return GetRuleContexts<StatementContext>();
+        }
+        public StatementContext statement(int i)
+        {
+            return GetRuleContext<StatementContext>(i);
+        }
+        public ITerminalNode Else() { return GetToken(CParser.Else, 0); }
+        public ITerminalNode Switch() { return GetToken(CParser.Switch, 0); }
+        public SelectionStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_selectionStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterSelectionStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitSelectionStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public SelectionStatementContext selectionStatement()
+    {
+        SelectionStatementContext _localctx = new SelectionStatementContext(Context, State);
+        EnterRule(_localctx, 152, RULE_selectionStatement);
+        try
+        {
+            State = 1179;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case If:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1164; Match(If);
+                        State = 1165; Match(LeftParen);
+                        State = 1166; expression(0);
+                        State = 1167; Match(RightParen);
+                        State = 1168; statement();
+                        State = 1171;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 123, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 1169; Match(Else);
+                                    State = 1170; statement();
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                case Switch:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1173; Match(Switch);
+                        State = 1174; Match(LeftParen);
+                        State = 1175; expression(0);
+                        State = 1176; Match(RightParen);
+                        State = 1177; statement();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class IterationStatementContext : ParserRuleContext
+    {
+        public ITerminalNode While() { return GetToken(CParser.While, 0); }
+        public ITerminalNode LeftParen() { return GetToken(CParser.LeftParen, 0); }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public ITerminalNode RightParen() { return GetToken(CParser.RightParen, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public ITerminalNode Do() { return GetToken(CParser.Do, 0); }
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public ITerminalNode For() { return GetToken(CParser.For, 0); }
+        public ForConditionContext forCondition()
+        {
+            return GetRuleContext<ForConditionContext>(0);
+        }
+        public IterationStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_iterationStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterIterationStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitIterationStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public IterationStatementContext iterationStatement()
+    {
+        IterationStatementContext _localctx = new IterationStatementContext(Context, State);
+        EnterRule(_localctx, 154, RULE_iterationStatement);
+        try
+        {
+            State = 1201;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case While:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1181; Match(While);
+                        State = 1182; Match(LeftParen);
+                        State = 1183; expression(0);
+                        State = 1184; Match(RightParen);
+                        State = 1185; statement();
+                    }
+                    break;
+                case Do:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1187; Match(Do);
+                        State = 1188; statement();
+                        State = 1189; Match(While);
+                        State = 1190; Match(LeftParen);
+                        State = 1191; expression(0);
+                        State = 1192; Match(RightParen);
+                        State = 1193; Match(Semi);
+                    }
+                    break;
+                case For:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 1195; Match(For);
+                        State = 1196; Match(LeftParen);
+                        State = 1197; forCondition();
+                        State = 1198; Match(RightParen);
+                        State = 1199; statement();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ForConditionContext : ParserRuleContext
+    {
+        public ForDeclarationContext forDeclaration()
+        {
+            return GetRuleContext<ForDeclarationContext>(0);
+        }
+        public ITerminalNode[] Semi() { return GetTokens(CParser.Semi); }
+        public ITerminalNode Semi(int i)
+        {
+            return GetToken(CParser.Semi, i);
+        }
+        public ForExpressionContext[] forExpression()
+        {
+            return GetRuleContexts<ForExpressionContext>();
+        }
+        public ForExpressionContext forExpression(int i)
+        {
+            return GetRuleContext<ForExpressionContext>(i);
+        }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public ForConditionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_forCondition; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterForCondition(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitForCondition(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ForConditionContext forCondition()
+    {
+        ForConditionContext _localctx = new ForConditionContext(Context, State);
+        EnterRule(_localctx, 156, RULE_forCondition);
+        int _la;
+        try
+        {
+            State = 1223;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 131, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1203; forDeclaration();
+                        State = 1204; Match(Semi);
+                        State = 1206;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                        {
+                            {
+                                State = 1205; forExpression(0);
+                            }
+                        }
+
+                        State = 1208; Match(Semi);
+                        State = 1210;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                        {
+                            {
+                                State = 1209; forExpression(0);
+                            }
+                        }
+
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1213;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                        {
+                            {
+                                State = 1212; expression(0);
+                            }
+                        }
+
+                        State = 1215; Match(Semi);
+                        State = 1217;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                        {
+                            {
+                                State = 1216; forExpression(0);
+                            }
+                        }
+
+                        State = 1219; Match(Semi);
+                        State = 1221;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                        {
+                            {
+                                State = 1220; forExpression(0);
+                            }
+                        }
+
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ForDeclarationContext : ParserRuleContext
+    {
+        public DeclarationSpecifiersContext declarationSpecifiers()
+        {
+            return GetRuleContext<DeclarationSpecifiersContext>(0);
+        }
+        public InitDeclaratorListContext initDeclaratorList()
+        {
+            return GetRuleContext<InitDeclaratorListContext>(0);
+        }
+        public ForDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_forDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterForDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitForDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ForDeclarationContext forDeclaration()
+    {
+        ForDeclarationContext _localctx = new ForDeclarationContext(Context, State);
+        EnterRule(_localctx, 158, RULE_forDeclaration);
+        try
+        {
+            State = 1229;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 132, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1225; declarationSpecifiers();
+                        State = 1226; initDeclaratorList(0);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1228; declarationSpecifiers();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ForExpressionContext : ParserRuleContext
+    {
+        public AssignmentExpressionContext assignmentExpression()
+        {
+            return GetRuleContext<AssignmentExpressionContext>(0);
+        }
+        public ForExpressionContext forExpression()
+        {
+            return GetRuleContext<ForExpressionContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(CParser.Comma, 0); }
+        public ForExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_forExpression; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterForExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitForExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ForExpressionContext forExpression()
+    {
+        return forExpression(0);
+    }
+
+    private ForExpressionContext forExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        ForExpressionContext _localctx = new ForExpressionContext(Context, _parentState);
+        ForExpressionContext _prevctx = _localctx;
+        int _startState = 160;
+        EnterRecursionRule(_localctx, 160, RULE_forExpression, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 1232; assignmentExpression();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 1239;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 133, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new ForExpressionContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_forExpression);
+                                State = 1234;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 1235; Match(Comma);
+                                State = 1236; assignmentExpression();
+                            }
+                        }
+                    }
+                    State = 1241;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 133, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class JumpStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Goto() { return GetToken(CParser.Goto, 0); }
+        public ITerminalNode Identifier() { return GetToken(CParser.Identifier, 0); }
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public ITerminalNode Continue() { return GetToken(CParser.Continue, 0); }
+        public ITerminalNode Break() { return GetToken(CParser.Break, 0); }
+        public ITerminalNode Return() { return GetToken(CParser.Return, 0); }
+        public ExpressionContext expression()
+        {
+            return GetRuleContext<ExpressionContext>(0);
+        }
+        public UnaryExpressionContext unaryExpression()
+        {
+            return GetRuleContext<UnaryExpressionContext>(0);
+        }
+        public JumpStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_jumpStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterJumpStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitJumpStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public JumpStatementContext jumpStatement()
+    {
+        JumpStatementContext _localctx = new JumpStatementContext(Context, State);
+        EnterRule(_localctx, 162, RULE_jumpStatement);
+        int _la;
+        try
+        {
+            State = 1258;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 135, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1242; Match(Goto);
+                        State = 1243; Match(Identifier);
+                        State = 1244; Match(Semi);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1245; Match(Continue);
+                        State = 1246; Match(Semi);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 1247; Match(Break);
+                        State = 1248; Match(Semi);
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 1249; Match(Return);
+                        State = 1251;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << Sizeof) | (1L << Alignof) | (1L << Generic) | (1L << LeftParen))) != 0) || ((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (Plus - 71)) | (1L << (PlusPlus - 71)) | (1L << (Minus - 71)) | (1L << (MinusMinus - 71)) | (1L << (Star - 71)) | (1L << (And - 71)) | (1L << (AndAnd - 71)) | (1L << (Not - 71)) | (1L << (Tilde - 71)) | (1L << (Identifier - 71)) | (1L << (Constant - 71)) | (1L << (DigitSequence - 71)) | (1L << (StringLiteral - 71)))) != 0))
+                        {
+                            {
+                                State = 1250; expression(0);
+                            }
+                        }
+
+                        State = 1253; Match(Semi);
+                    }
+                    break;
+                case 5:
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 1254; Match(Goto);
+                        State = 1255; unaryExpression();
+                        State = 1256; Match(Semi);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class CompilationUnitContext : ParserRuleContext
+    {
+        public ITerminalNode Eof() { return GetToken(CParser.Eof, 0); }
         public TranslationUnitContext translationUnit()
         {
-            return translationUnit(0);
+            return GetRuleContext<TranslationUnitContext>(0);
         }
-
-        private TranslationUnitContext translationUnit(int _p)
+        public CompilationUnitContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
         {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            TranslationUnitContext _localctx = new TranslationUnitContext(Context, _parentState);
-            TranslationUnitContext _prevctx = _localctx;
-            int _startState = 166;
-            EnterRecursionRule(_localctx, 166, RULE_translationUnit, _p);
-            try
+        }
+        public override int RuleIndex { get { return RULE_compilationUnit; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterCompilationUnit(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitCompilationUnit(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public CompilationUnitContext compilationUnit()
+    {
+        CompilationUnitContext _localctx = new CompilationUnitContext(Context, State);
+        EnterRule(_localctx, 164, RULE_compilationUnit);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
+                State = 1261;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal) | (1L << LeftParen))) != 0) || ((((_la - 75)) & ~0x3f) == 0 && ((1L << (_la - 75)) & ((1L << (Star - 75)) | (1L << (Caret - 75)) | (1L << (Semi - 75)) | (1L << (Identifier - 75)))) != 0))
                 {
                     {
-                        State = 1266; externalDeclaration();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 1272;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 137, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new TranslationUnitContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_translationUnit);
-                                    State = 1268;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 1269; externalDeclaration();
-                                }
-                            }
-                        }
-                        State = 1274;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 137, Context);
+                        State = 1260; translationUnit(0);
                     }
                 }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
 
-        public partial class ExternalDeclarationContext : ParserRuleContext
+                State = 1263; Match(Eof);
+            }
+        }
+        catch (RecognitionException re)
         {
-            public FunctionDefinitionContext functionDefinition()
-            {
-                return GetRuleContext<FunctionDefinitionContext>(0);
-            }
-            public DeclarationContext declaration()
-            {
-                return GetRuleContext<DeclarationContext>(0);
-            }
-            public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
-            public ExternalDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_externalDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterExternalDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitExternalDeclaration(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class TranslationUnitContext : ParserRuleContext
+    {
         public ExternalDeclarationContext externalDeclaration()
         {
-            ExternalDeclarationContext _localctx = new ExternalDeclarationContext(Context, State);
-            EnterRule(_localctx, 168, RULE_externalDeclaration);
-            try
+            return GetRuleContext<ExternalDeclarationContext>(0);
+        }
+        public TranslationUnitContext translationUnit()
+        {
+            return GetRuleContext<TranslationUnitContext>(0);
+        }
+        public TranslationUnitContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_translationUnit; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterTranslationUnit(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitTranslationUnit(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public TranslationUnitContext translationUnit()
+    {
+        return translationUnit(0);
+    }
+
+    private TranslationUnitContext translationUnit(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        TranslationUnitContext _localctx = new TranslationUnitContext(Context, _parentState);
+        TranslationUnitContext _prevctx = _localctx;
+        int _startState = 166;
+        EnterRecursionRule(_localctx, 166, RULE_translationUnit, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
             {
-                State = 1278;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 138, Context))
                 {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
+                    State = 1266; externalDeclaration();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 1272;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 137, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
                         {
-                            State = 1275; functionDefinition();
+                            {
+                                _localctx = new TranslationUnitContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_translationUnit);
+                                State = 1268;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 1269; externalDeclaration();
+                            }
                         }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 1276; declaration();
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 1277; Match(Semi);
-                        }
-                        break;
+                    }
+                    State = 1274;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 137, Context);
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class FunctionDefinitionContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public DeclaratorContext declarator()
-            {
-                return GetRuleContext<DeclaratorContext>(0);
-            }
-            public CompoundStatementContext compoundStatement()
-            {
-                return GetRuleContext<CompoundStatementContext>(0);
-            }
-            public DeclarationSpecifiersContext declarationSpecifiers()
-            {
-                return GetRuleContext<DeclarationSpecifiersContext>(0);
-            }
-            public DeclarationListContext declarationList()
-            {
-                return GetRuleContext<DeclarationListContext>(0);
-            }
-            public FunctionDefinitionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_functionDefinition; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterFunctionDefinition(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitFunctionDefinition(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class ExternalDeclarationContext : ParserRuleContext
+    {
         public FunctionDefinitionContext functionDefinition()
         {
-            FunctionDefinitionContext _localctx = new FunctionDefinitionContext(Context, State);
-            EnterRule(_localctx, 170, RULE_functionDefinition);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 1281;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 139, Context))
-                    {
-                        case 1:
-                            {
-                                State = 1280; declarationSpecifiers();
-                            }
-                            break;
-                    }
-                    State = 1283; declarator();
-                    State = 1285;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal))) != 0) || _la == Identifier)
-                    {
-                        {
-                            State = 1284; declarationList(0);
-                        }
-                    }
-
-                    State = 1287; compoundStatement();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<FunctionDefinitionContext>(0);
         }
-
-        public partial class DeclarationListContext : ParserRuleContext
+        public DeclarationContext declaration()
         {
-            public DeclarationContext declaration()
+            return GetRuleContext<DeclarationContext>(0);
+        }
+        public ITerminalNode Semi() { return GetToken(CParser.Semi, 0); }
+        public ExternalDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_externalDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterExternalDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitExternalDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExternalDeclarationContext externalDeclaration()
+    {
+        ExternalDeclarationContext _localctx = new ExternalDeclarationContext(Context, State);
+        EnterRule(_localctx, 168, RULE_externalDeclaration);
+        try
+        {
+            State = 1278;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 138, Context))
             {
-                return GetRuleContext<DeclarationContext>(0);
-            }
-            public DeclarationListContext declarationList()
-            {
-                return GetRuleContext<DeclarationListContext>(0);
-            }
-            public DeclarationListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_declarationList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.EnterDeclarationList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                ICListener typedListener = listener as ICListener;
-                if (typedListener != null) typedListener.ExitDeclarationList(this);
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 1275; functionDefinition();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 1276; declaration();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 1277; Match(Semi);
+                    }
+                    break;
             }
         }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class FunctionDefinitionContext : ParserRuleContext
+    {
+        public DeclaratorContext declarator()
+        {
+            return GetRuleContext<DeclaratorContext>(0);
+        }
+        public CompoundStatementContext compoundStatement()
+        {
+            return GetRuleContext<CompoundStatementContext>(0);
+        }
+        public DeclarationSpecifiersContext declarationSpecifiers()
+        {
+            return GetRuleContext<DeclarationSpecifiersContext>(0);
+        }
         public DeclarationListContext declarationList()
         {
-            return declarationList(0);
+            return GetRuleContext<DeclarationListContext>(0);
         }
-
-        private DeclarationListContext declarationList(int _p)
+        public FunctionDefinitionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
         {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            DeclarationListContext _localctx = new DeclarationListContext(Context, _parentState);
-            DeclarationListContext _prevctx = _localctx;
-            int _startState = 172;
-            EnterRecursionRule(_localctx, 172, RULE_declarationList, _p);
-            try
+        }
+        public override int RuleIndex { get { return RULE_functionDefinition; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterFunctionDefinition(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitFunctionDefinition(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public FunctionDefinitionContext functionDefinition()
+    {
+        FunctionDefinitionContext _localctx = new FunctionDefinitionContext(Context, State);
+        EnterRule(_localctx, 170, RULE_functionDefinition);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
+                State = 1281;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 139, Context))
+                {
+                    case 1:
+                        {
+                            State = 1280; declarationSpecifiers();
+                        }
+                        break;
+                }
+                State = 1283; declarator();
+                State = 1285;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__11) | (1L << Auto) | (1L << Char) | (1L << Const) | (1L << Double) | (1L << Enum) | (1L << Extern) | (1L << Float) | (1L << Inline) | (1L << Int) | (1L << Long) | (1L << Register) | (1L << Restrict) | (1L << Short) | (1L << Signed) | (1L << Static) | (1L << Struct) | (1L << Typedef) | (1L << Union) | (1L << Unsigned) | (1L << Void) | (1L << Volatile) | (1L << Alignas) | (1L << Atomic) | (1L << Bool) | (1L << Complex) | (1L << Noreturn) | (1L << StaticAssert) | (1L << ThreadLocal))) != 0) || _la == Identifier)
                 {
                     {
-                        State = 1290; declaration();
-                    }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 1296;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 141, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                {
-                                    _localctx = new DeclarationListContext(_parentctx, _parentState);
-                                    PushNewRecursionContext(_localctx, _startState, RULE_declarationList);
-                                    State = 1292;
-                                    if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
-                                    State = 1293; declaration();
-                                }
-                            }
-                        }
-                        State = 1298;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 141, Context);
+                        State = 1284; declarationList(0);
                     }
                 }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
-        }
 
-        public override bool Sempred(RuleContext _localctx, int ruleIndex, int predIndex)
-        {
-            switch (ruleIndex)
-            {
-                case 2: return genericAssocList_sempred((GenericAssocListContext)_localctx, predIndex);
-                case 4: return postfixExpression_sempred((PostfixExpressionContext)_localctx, predIndex);
-                case 5: return argumentExpressionList_sempred((ArgumentExpressionListContext)_localctx, predIndex);
-                case 9: return multiplicativeExpression_sempred((MultiplicativeExpressionContext)_localctx, predIndex);
-                case 10: return additiveExpression_sempred((AdditiveExpressionContext)_localctx, predIndex);
-                case 11: return shiftExpression_sempred((ShiftExpressionContext)_localctx, predIndex);
-                case 12: return relationalExpression_sempred((RelationalExpressionContext)_localctx, predIndex);
-                case 13: return equalityExpression_sempred((EqualityExpressionContext)_localctx, predIndex);
-                case 14: return andExpression_sempred((AndExpressionContext)_localctx, predIndex);
-                case 15: return exclusiveOrExpression_sempred((ExclusiveOrExpressionContext)_localctx, predIndex);
-                case 16: return inclusiveOrExpression_sempred((InclusiveOrExpressionContext)_localctx, predIndex);
-                case 17: return logicalAndExpression_sempred((LogicalAndExpressionContext)_localctx, predIndex);
-                case 18: return logicalOrExpression_sempred((LogicalOrExpressionContext)_localctx, predIndex);
-                case 22: return expression_sempred((ExpressionContext)_localctx, predIndex);
-                case 28: return initDeclaratorList_sempred((InitDeclaratorListContext)_localctx, predIndex);
-                case 31: return typeSpecifier_sempred((TypeSpecifierContext)_localctx, predIndex);
-                case 34: return structDeclarationList_sempred((StructDeclarationListContext)_localctx, predIndex);
-                case 37: return structDeclaratorList_sempred((StructDeclaratorListContext)_localctx, predIndex);
-                case 40: return enumeratorList_sempred((EnumeratorListContext)_localctx, predIndex);
-                case 48: return directDeclarator_sempred((DirectDeclaratorContext)_localctx, predIndex);
-                case 55: return typeQualifierList_sempred((TypeQualifierListContext)_localctx, predIndex);
-                case 57: return parameterList_sempred((ParameterListContext)_localctx, predIndex);
-                case 59: return identifierList_sempred((IdentifierListContext)_localctx, predIndex);
-                case 62: return directAbstractDeclarator_sempred((DirectAbstractDeclaratorContext)_localctx, predIndex);
-                case 65: return initializerList_sempred((InitializerListContext)_localctx, predIndex);
-                case 67: return designatorList_sempred((DesignatorListContext)_localctx, predIndex);
-                case 73: return blockItemList_sempred((BlockItemListContext)_localctx, predIndex);
-                case 80: return forExpression_sempred((ForExpressionContext)_localctx, predIndex);
-                case 83: return translationUnit_sempred((TranslationUnitContext)_localctx, predIndex);
-                case 86: return declarationList_sempred((DeclarationListContext)_localctx, predIndex);
+                State = 1287; compoundStatement();
             }
-            return true;
         }
-        private bool genericAssocList_sempred(GenericAssocListContext _localctx, int predIndex)
+        catch (RecognitionException re)
         {
-            switch (predIndex)
-            {
-                case 0: return Precpred(Context, 1);
-            }
-            return true;
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
-        private bool postfixExpression_sempred(PostfixExpressionContext _localctx, int predIndex)
+        finally
         {
-            switch (predIndex)
-            {
-                case 1: return Precpred(Context, 10);
-                case 2: return Precpred(Context, 9);
-                case 3: return Precpred(Context, 8);
-                case 4: return Precpred(Context, 7);
-                case 5: return Precpred(Context, 6);
-                case 6: return Precpred(Context, 5);
-            }
-            return true;
+            ExitRule();
         }
-        private bool argumentExpressionList_sempred(ArgumentExpressionListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 7: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool multiplicativeExpression_sempred(MultiplicativeExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 8: return Precpred(Context, 3);
-                case 9: return Precpred(Context, 2);
-                case 10: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool additiveExpression_sempred(AdditiveExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 11: return Precpred(Context, 2);
-                case 12: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool shiftExpression_sempred(ShiftExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 13: return Precpred(Context, 2);
-                case 14: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool relationalExpression_sempred(RelationalExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 15: return Precpred(Context, 4);
-                case 16: return Precpred(Context, 3);
-                case 17: return Precpred(Context, 2);
-                case 18: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool equalityExpression_sempred(EqualityExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 19: return Precpred(Context, 2);
-                case 20: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool andExpression_sempred(AndExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 21: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool exclusiveOrExpression_sempred(ExclusiveOrExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 22: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool inclusiveOrExpression_sempred(InclusiveOrExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 23: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool logicalAndExpression_sempred(LogicalAndExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 24: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool logicalOrExpression_sempred(LogicalOrExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 25: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool expression_sempred(ExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 26: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool initDeclaratorList_sempred(InitDeclaratorListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 27: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool typeSpecifier_sempred(TypeSpecifierContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 28: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool structDeclarationList_sempred(StructDeclarationListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 29: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool structDeclaratorList_sempred(StructDeclaratorListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 30: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool enumeratorList_sempred(EnumeratorListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 31: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool directDeclarator_sempred(DirectDeclaratorContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 32: return Precpred(Context, 8);
-                case 33: return Precpred(Context, 7);
-                case 34: return Precpred(Context, 6);
-                case 35: return Precpred(Context, 5);
-                case 36: return Precpred(Context, 4);
-                case 37: return Precpred(Context, 3);
-            }
-            return true;
-        }
-        private bool typeQualifierList_sempred(TypeQualifierListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 38: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool parameterList_sempred(ParameterListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 39: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool identifierList_sempred(IdentifierListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 40: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool directAbstractDeclarator_sempred(DirectAbstractDeclaratorContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 41: return Precpred(Context, 5);
-                case 42: return Precpred(Context, 4);
-                case 43: return Precpred(Context, 3);
-                case 44: return Precpred(Context, 2);
-                case 45: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool initializerList_sempred(InitializerListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 46: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool designatorList_sempred(DesignatorListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 47: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool blockItemList_sempred(BlockItemListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 48: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool forExpression_sempred(ForExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 49: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool translationUnit_sempred(TranslationUnitContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 50: return Precpred(Context, 1);
-            }
-            return true;
-        }
-        private bool declarationList_sempred(DeclarationListContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 51: return Precpred(Context, 1);
-            }
-            return true;
-        }
+        return _localctx;
+    }
 
-        private static char[] _serializedATN = {
+    public partial class DeclarationListContext : ParserRuleContext
+    {
+        public DeclarationContext declaration()
+        {
+            return GetRuleContext<DeclarationContext>(0);
+        }
+        public DeclarationListContext declarationList()
+        {
+            return GetRuleContext<DeclarationListContext>(0);
+        }
+        public DeclarationListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_declarationList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.EnterDeclarationList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            ICListener typedListener = listener as ICListener;
+            if (typedListener != null) typedListener.ExitDeclarationList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DeclarationListContext declarationList()
+    {
+        return declarationList(0);
+    }
+
+    private DeclarationListContext declarationList(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        DeclarationListContext _localctx = new DeclarationListContext(Context, _parentState);
+        DeclarationListContext _prevctx = _localctx;
+        int _startState = 172;
+        EnterRecursionRule(_localctx, 172, RULE_declarationList, _p);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 1290; declaration();
+                }
+                Context.Stop = TokenStream.LT(-1);
+                State = 1296;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 141, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
+                        {
+                            {
+                                _localctx = new DeclarationListContext(_parentctx, _parentState);
+                                PushNewRecursionContext(_localctx, _startState, RULE_declarationList);
+                                State = 1292;
+                                if (!(Precpred(Context, 1))) throw new FailedPredicateException(this, "Precpred(Context, 1)");
+                                State = 1293; declaration();
+                            }
+                        }
+                    }
+                    State = 1298;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 141, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public override bool Sempred(RuleContext _localctx, int ruleIndex, int predIndex)
+    {
+        switch (ruleIndex)
+        {
+            case 2: return genericAssocList_sempred((GenericAssocListContext)_localctx, predIndex);
+            case 4: return postfixExpression_sempred((PostfixExpressionContext)_localctx, predIndex);
+            case 5: return argumentExpressionList_sempred((ArgumentExpressionListContext)_localctx, predIndex);
+            case 9: return multiplicativeExpression_sempred((MultiplicativeExpressionContext)_localctx, predIndex);
+            case 10: return additiveExpression_sempred((AdditiveExpressionContext)_localctx, predIndex);
+            case 11: return shiftExpression_sempred((ShiftExpressionContext)_localctx, predIndex);
+            case 12: return relationalExpression_sempred((RelationalExpressionContext)_localctx, predIndex);
+            case 13: return equalityExpression_sempred((EqualityExpressionContext)_localctx, predIndex);
+            case 14: return andExpression_sempred((AndExpressionContext)_localctx, predIndex);
+            case 15: return exclusiveOrExpression_sempred((ExclusiveOrExpressionContext)_localctx, predIndex);
+            case 16: return inclusiveOrExpression_sempred((InclusiveOrExpressionContext)_localctx, predIndex);
+            case 17: return logicalAndExpression_sempred((LogicalAndExpressionContext)_localctx, predIndex);
+            case 18: return logicalOrExpression_sempred((LogicalOrExpressionContext)_localctx, predIndex);
+            case 22: return expression_sempred((ExpressionContext)_localctx, predIndex);
+            case 28: return initDeclaratorList_sempred((InitDeclaratorListContext)_localctx, predIndex);
+            case 31: return typeSpecifier_sempred((TypeSpecifierContext)_localctx, predIndex);
+            case 34: return structDeclarationList_sempred((StructDeclarationListContext)_localctx, predIndex);
+            case 37: return structDeclaratorList_sempred((StructDeclaratorListContext)_localctx, predIndex);
+            case 40: return enumeratorList_sempred((EnumeratorListContext)_localctx, predIndex);
+            case 48: return directDeclarator_sempred((DirectDeclaratorContext)_localctx, predIndex);
+            case 55: return typeQualifierList_sempred((TypeQualifierListContext)_localctx, predIndex);
+            case 57: return parameterList_sempred((ParameterListContext)_localctx, predIndex);
+            case 59: return identifierList_sempred((IdentifierListContext)_localctx, predIndex);
+            case 62: return directAbstractDeclarator_sempred((DirectAbstractDeclaratorContext)_localctx, predIndex);
+            case 65: return initializerList_sempred((InitializerListContext)_localctx, predIndex);
+            case 67: return designatorList_sempred((DesignatorListContext)_localctx, predIndex);
+            case 73: return blockItemList_sempred((BlockItemListContext)_localctx, predIndex);
+            case 80: return forExpression_sempred((ForExpressionContext)_localctx, predIndex);
+            case 83: return translationUnit_sempred((TranslationUnitContext)_localctx, predIndex);
+            case 86: return declarationList_sempred((DeclarationListContext)_localctx, predIndex);
+        }
+        return true;
+    }
+    private bool genericAssocList_sempred(GenericAssocListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 0: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool postfixExpression_sempred(PostfixExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 1: return Precpred(Context, 10);
+            case 2: return Precpred(Context, 9);
+            case 3: return Precpred(Context, 8);
+            case 4: return Precpred(Context, 7);
+            case 5: return Precpred(Context, 6);
+            case 6: return Precpred(Context, 5);
+        }
+        return true;
+    }
+    private bool argumentExpressionList_sempred(ArgumentExpressionListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 7: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool multiplicativeExpression_sempred(MultiplicativeExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 8: return Precpred(Context, 3);
+            case 9: return Precpred(Context, 2);
+            case 10: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool additiveExpression_sempred(AdditiveExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 11: return Precpred(Context, 2);
+            case 12: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool shiftExpression_sempred(ShiftExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 13: return Precpred(Context, 2);
+            case 14: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool relationalExpression_sempred(RelationalExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 15: return Precpred(Context, 4);
+            case 16: return Precpred(Context, 3);
+            case 17: return Precpred(Context, 2);
+            case 18: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool equalityExpression_sempred(EqualityExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 19: return Precpred(Context, 2);
+            case 20: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool andExpression_sempred(AndExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 21: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool exclusiveOrExpression_sempred(ExclusiveOrExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 22: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool inclusiveOrExpression_sempred(InclusiveOrExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 23: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool logicalAndExpression_sempred(LogicalAndExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 24: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool logicalOrExpression_sempred(LogicalOrExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 25: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool expression_sempred(ExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 26: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool initDeclaratorList_sempred(InitDeclaratorListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 27: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool typeSpecifier_sempred(TypeSpecifierContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 28: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool structDeclarationList_sempred(StructDeclarationListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 29: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool structDeclaratorList_sempred(StructDeclaratorListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 30: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool enumeratorList_sempred(EnumeratorListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 31: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool directDeclarator_sempred(DirectDeclaratorContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 32: return Precpred(Context, 8);
+            case 33: return Precpred(Context, 7);
+            case 34: return Precpred(Context, 6);
+            case 35: return Precpred(Context, 5);
+            case 36: return Precpred(Context, 4);
+            case 37: return Precpred(Context, 3);
+        }
+        return true;
+    }
+    private bool typeQualifierList_sempred(TypeQualifierListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 38: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool parameterList_sempred(ParameterListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 39: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool identifierList_sempred(IdentifierListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 40: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool directAbstractDeclarator_sempred(DirectAbstractDeclaratorContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 41: return Precpred(Context, 5);
+            case 42: return Precpred(Context, 4);
+            case 43: return Precpred(Context, 3);
+            case 44: return Precpred(Context, 2);
+            case 45: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool initializerList_sempred(InitializerListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 46: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool designatorList_sempred(DesignatorListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 47: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool blockItemList_sempred(BlockItemListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 48: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool forExpression_sempred(ForExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 49: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool translationUnit_sempred(TranslationUnitContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 50: return Precpred(Context, 1);
+        }
+        return true;
+    }
+    private bool declarationList_sempred(DeclarationListContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 51: return Precpred(Context, 1);
+        }
+        return true;
+    }
+
+    private static char[] _serializedATN = {
         '\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786',
         '\x5964', '\x3', 'x', '\x516', '\x4', '\x2', '\t', '\x2', '\x4', '\x3',
         '\t', '\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t', '\x5', '\x4',
@@ -10163,7 +10161,6 @@ namespace CodeParser
         '\x4EF', '\x4FA', '\x500', '\x503', '\x507', '\x512',
     };
 
-        public static readonly ATN _ATN =
-            new ATNDeserializer().Deserialize(_serializedATN);
-    }
+    public static readonly ATN _ATN =
+        new ATNDeserializer().Deserialize(_serializedATN);
 }

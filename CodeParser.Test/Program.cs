@@ -1,5 +1,4 @@
-﻿using CodeParser;
-using System;
+﻿using System;
 
 namespace CodeParser.Test
 {
@@ -7,15 +6,15 @@ namespace CodeParser.Test
     {
         static void Main(string[] args)
         {
-            Parse("Java");
-            Parse("C#");
-            Parse("Python");
-            Parse("PHP");
-            Parse("JavaScript");
-            Parse("C++");
-            Parse("C");
-            Parse("MySql");
-
+            //Parse("Java");
+            //Parse("C#");
+            //Parse("Python");
+            //Parse("PHP");
+            //Parse("JavaScript");
+            //Parse("C++");
+            //Parse("C");
+            //Parse("MySql");
+          
             Console.ReadLine();
         }       
 

@@ -30,9128 +30,9127 @@ using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 using DFA = Antlr4.Runtime.Dfa.DFA;
 
-namespace CodeParser
+
+[System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
+//[System.CLSCompliant(false)]
+public partial class JavaScriptParser : JavaScriptBaseParser
 {
-    [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
-    //[System.CLSCompliant(false)]
-    public partial class JavaScriptParser : JavaScriptBaseParser
+    protected static DFA[] decisionToDFA;
+    protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
+
+    public const int
+        RULE_program = 0, RULE_sourceElement = 1, RULE_statement = 2, RULE_block = 3,
+        RULE_statementList = 4, RULE_importStatement = 5, RULE_importFromBlock = 6,
+        RULE_moduleItems = 7, RULE_importDefault = 8, RULE_importNamespace = 9,
+        RULE_importFrom = 10, RULE_aliasName = 11, RULE_exportStatement = 12,
+        RULE_exportFromBlock = 13, RULE_declaration = 14, RULE_variableStatement = 15,
+        RULE_variableDeclarationList = 16, RULE_variableDeclaration = 17, RULE_emptyStatement = 18,
+        RULE_expressionStatement = 19, RULE_ifStatement = 20, RULE_iterationStatement = 21,
+        RULE_varModifier = 22, RULE_continueStatement = 23, RULE_breakStatement = 24,
+        RULE_returnStatement = 25, RULE_yieldStatement = 26, RULE_withStatement = 27,
+        RULE_switchStatement = 28, RULE_caseBlock = 29, RULE_caseClauses = 30,
+        RULE_caseClause = 31, RULE_defaultClause = 32, RULE_labelledStatement = 33,
+        RULE_throwStatement = 34, RULE_tryStatement = 35, RULE_catchProduction = 36,
+        RULE_finallyProduction = 37, RULE_debuggerStatement = 38, RULE_functionDeclaration = 39,
+        RULE_classDeclaration = 40, RULE_classTail = 41, RULE_classElement = 42,
+        RULE_methodDefinition = 43, RULE_formalParameterList = 44, RULE_formalParameterArg = 45,
+        RULE_lastFormalParameterArg = 46, RULE_functionBody = 47, RULE_sourceElements = 48,
+        RULE_arrayLiteral = 49, RULE_elementList = 50, RULE_arrayElement = 51,
+        RULE_objectLiteral = 52, RULE_propertyAssignment = 53, RULE_propertyName = 54,
+        RULE_arguments = 55, RULE_argument = 56, RULE_expressionSequence = 57,
+        RULE_singleExpression = 58, RULE_assignable = 59, RULE_anoymousFunction = 60,
+        RULE_arrowFunctionParameters = 61, RULE_arrowFunctionBody = 62, RULE_assignmentOperator = 63,
+        RULE_literal = 64, RULE_numericLiteral = 65, RULE_bigintLiteral = 66,
+        RULE_identifierName = 67, RULE_reservedWord = 68, RULE_keyword = 69, RULE_getter = 70,
+        RULE_setter = 71, RULE_eos = 72;
+    public static readonly string[] ruleNames = {
+    "program", "sourceElement", "statement", "block", "statementList", "importStatement",
+    "importFromBlock", "moduleItems", "importDefault", "importNamespace",
+    "importFrom", "aliasName", "exportStatement", "exportFromBlock", "declaration",
+    "variableStatement", "variableDeclarationList", "variableDeclaration",
+    "emptyStatement", "expressionStatement", "ifStatement", "iterationStatement",
+    "varModifier", "continueStatement", "breakStatement", "returnStatement",
+    "yieldStatement", "withStatement", "switchStatement", "caseBlock", "caseClauses",
+    "caseClause", "defaultClause", "labelledStatement", "throwStatement",
+    "tryStatement", "catchProduction", "finallyProduction", "debuggerStatement",
+    "functionDeclaration", "classDeclaration", "classTail", "classElement",
+    "methodDefinition", "formalParameterList", "formalParameterArg", "lastFormalParameterArg",
+    "functionBody", "sourceElements", "arrayLiteral", "elementList", "arrayElement",
+    "objectLiteral", "propertyAssignment", "propertyName", "arguments", "argument",
+    "expressionSequence", "singleExpression", "assignable", "anoymousFunction",
+    "arrowFunctionParameters", "arrowFunctionBody", "assignmentOperator",
+    "literal", "numericLiteral", "bigintLiteral", "identifierName", "reservedWord",
+    "keyword", "getter", "setter", "eos"
+};
+
+    private static readonly string[] _LiteralNames = {
+    null, null, null, null, null, "'['", "']'", "'('", "')'", "'{'", "'}'",
+    "';'", "','", "'='", "'?'", "':'", "'...'", "'.'", "'++'", "'--'", "'+'",
+    "'-'", "'~'", "'!'", "'*'", "'/'", "'%'", "'**'", "'??'", "'#'", "'>>'",
+    "'<<'", "'>>>'", "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'==='",
+    "'!=='", "'&'", "'^'", "'|'", "'&&'", "'||'", "'*='", "'/='", "'%='",
+    "'+='", "'-='", "'<<='", "'>>='", "'>>>='", "'&='", "'^='", "'|='", "'**='",
+    "'=>'", "'null'", null, null, null, null, null, null, null, null, null,
+    null, "'break'", "'do'", "'instanceof'", "'typeof'", "'case'", "'else'",
+    "'new'", "'var'", "'catch'", "'finally'", "'return'", "'void'", "'continue'",
+    "'for'", "'switch'", "'while'", "'debugger'", "'function'", "'this'",
+    "'with'", "'default'", "'if'", "'throw'", "'delete'", "'in'", "'try'",
+    "'as'", "'from'", "'class'", "'enum'", "'extends'", "'super'", "'const'",
+    "'export'", "'import'", "'async'", "'await'", "'implements'", "'let'",
+    "'private'", "'public'", "'interface'", "'package'", "'protected'", "'static'",
+    "'yield'"
+};
+    private static readonly string[] _SymbolicNames = {
+    null, "HashBangLine", "MultiLineComment", "SingleLineComment", "RegularExpressionLiteral",
+    "OpenBracket", "CloseBracket", "OpenParen", "CloseParen", "OpenBrace",
+    "CloseBrace", "SemiColon", "Comma", "Assign", "QuestionMark", "Colon",
+    "Ellipsis", "Dot", "PlusPlus", "MinusMinus", "Plus", "Minus", "BitNot",
+    "Not", "Multiply", "Divide", "Modulus", "Power", "NullCoalesce", "Hashtag",
+    "RightShiftArithmetic", "LeftShiftArithmetic", "RightShiftLogical", "LessThan",
+    "MoreThan", "LessThanEquals", "GreaterThanEquals", "Equals_", "NotEquals",
+    "IdentityEquals", "IdentityNotEquals", "BitAnd", "BitXOr", "BitOr", "And",
+    "Or", "MultiplyAssign", "DivideAssign", "ModulusAssign", "PlusAssign",
+    "MinusAssign", "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign",
+    "RightShiftLogicalAssign", "BitAndAssign", "BitXorAssign", "BitOrAssign",
+    "PowerAssign", "ARROW", "NullLiteral", "BooleanLiteral", "DecimalLiteral",
+    "HexIntegerLiteral", "OctalIntegerLiteral", "OctalIntegerLiteral2", "BinaryIntegerLiteral",
+    "BigHexIntegerLiteral", "BigOctalIntegerLiteral", "BigBinaryIntegerLiteral",
+    "BigDecimalIntegerLiteral", "Break", "Do", "Instanceof", "Typeof", "Case",
+    "Else", "New", "Var", "Catch", "Finally", "Return", "Void", "Continue",
+    "For", "Switch", "While", "Debugger", "Function", "This", "With", "Default",
+    "If", "Throw", "Delete", "In", "Try", "As", "From", "Class", "Enum", "Extends",
+    "Super", "Const", "Export", "Import", "Async", "Await", "Implements",
+    "Let", "Private", "Public", "Interface", "Package", "Protected", "Static",
+    "Yield", "Identifier", "StringLiteral", "TemplateStringLiteral", "WhiteSpaces",
+    "LineTerminator", "HtmlComment", "CDataComment", "UnexpectedCharacter"
+};
+    public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
+
+    [NotNull]
+    public override IVocabulary Vocabulary
     {
-        protected static DFA[] decisionToDFA;
-        protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
-
-        public const int
-            RULE_program = 0, RULE_sourceElement = 1, RULE_statement = 2, RULE_block = 3,
-            RULE_statementList = 4, RULE_importStatement = 5, RULE_importFromBlock = 6,
-            RULE_moduleItems = 7, RULE_importDefault = 8, RULE_importNamespace = 9,
-            RULE_importFrom = 10, RULE_aliasName = 11, RULE_exportStatement = 12,
-            RULE_exportFromBlock = 13, RULE_declaration = 14, RULE_variableStatement = 15,
-            RULE_variableDeclarationList = 16, RULE_variableDeclaration = 17, RULE_emptyStatement = 18,
-            RULE_expressionStatement = 19, RULE_ifStatement = 20, RULE_iterationStatement = 21,
-            RULE_varModifier = 22, RULE_continueStatement = 23, RULE_breakStatement = 24,
-            RULE_returnStatement = 25, RULE_yieldStatement = 26, RULE_withStatement = 27,
-            RULE_switchStatement = 28, RULE_caseBlock = 29, RULE_caseClauses = 30,
-            RULE_caseClause = 31, RULE_defaultClause = 32, RULE_labelledStatement = 33,
-            RULE_throwStatement = 34, RULE_tryStatement = 35, RULE_catchProduction = 36,
-            RULE_finallyProduction = 37, RULE_debuggerStatement = 38, RULE_functionDeclaration = 39,
-            RULE_classDeclaration = 40, RULE_classTail = 41, RULE_classElement = 42,
-            RULE_methodDefinition = 43, RULE_formalParameterList = 44, RULE_formalParameterArg = 45,
-            RULE_lastFormalParameterArg = 46, RULE_functionBody = 47, RULE_sourceElements = 48,
-            RULE_arrayLiteral = 49, RULE_elementList = 50, RULE_arrayElement = 51,
-            RULE_objectLiteral = 52, RULE_propertyAssignment = 53, RULE_propertyName = 54,
-            RULE_arguments = 55, RULE_argument = 56, RULE_expressionSequence = 57,
-            RULE_singleExpression = 58, RULE_assignable = 59, RULE_anoymousFunction = 60,
-            RULE_arrowFunctionParameters = 61, RULE_arrowFunctionBody = 62, RULE_assignmentOperator = 63,
-            RULE_literal = 64, RULE_numericLiteral = 65, RULE_bigintLiteral = 66,
-            RULE_identifierName = 67, RULE_reservedWord = 68, RULE_keyword = 69, RULE_getter = 70,
-            RULE_setter = 71, RULE_eos = 72;
-        public static readonly string[] ruleNames = {
-        "program", "sourceElement", "statement", "block", "statementList", "importStatement",
-        "importFromBlock", "moduleItems", "importDefault", "importNamespace",
-        "importFrom", "aliasName", "exportStatement", "exportFromBlock", "declaration",
-        "variableStatement", "variableDeclarationList", "variableDeclaration",
-        "emptyStatement", "expressionStatement", "ifStatement", "iterationStatement",
-        "varModifier", "continueStatement", "breakStatement", "returnStatement",
-        "yieldStatement", "withStatement", "switchStatement", "caseBlock", "caseClauses",
-        "caseClause", "defaultClause", "labelledStatement", "throwStatement",
-        "tryStatement", "catchProduction", "finallyProduction", "debuggerStatement",
-        "functionDeclaration", "classDeclaration", "classTail", "classElement",
-        "methodDefinition", "formalParameterList", "formalParameterArg", "lastFormalParameterArg",
-        "functionBody", "sourceElements", "arrayLiteral", "elementList", "arrayElement",
-        "objectLiteral", "propertyAssignment", "propertyName", "arguments", "argument",
-        "expressionSequence", "singleExpression", "assignable", "anoymousFunction",
-        "arrowFunctionParameters", "arrowFunctionBody", "assignmentOperator",
-        "literal", "numericLiteral", "bigintLiteral", "identifierName", "reservedWord",
-        "keyword", "getter", "setter", "eos"
-    };
-
-        private static readonly string[] _LiteralNames = {
-        null, null, null, null, null, "'['", "']'", "'('", "')'", "'{'", "'}'",
-        "';'", "','", "'='", "'?'", "':'", "'...'", "'.'", "'++'", "'--'", "'+'",
-        "'-'", "'~'", "'!'", "'*'", "'/'", "'%'", "'**'", "'??'", "'#'", "'>>'",
-        "'<<'", "'>>>'", "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'==='",
-        "'!=='", "'&'", "'^'", "'|'", "'&&'", "'||'", "'*='", "'/='", "'%='",
-        "'+='", "'-='", "'<<='", "'>>='", "'>>>='", "'&='", "'^='", "'|='", "'**='",
-        "'=>'", "'null'", null, null, null, null, null, null, null, null, null,
-        null, "'break'", "'do'", "'instanceof'", "'typeof'", "'case'", "'else'",
-        "'new'", "'var'", "'catch'", "'finally'", "'return'", "'void'", "'continue'",
-        "'for'", "'switch'", "'while'", "'debugger'", "'function'", "'this'",
-        "'with'", "'default'", "'if'", "'throw'", "'delete'", "'in'", "'try'",
-        "'as'", "'from'", "'class'", "'enum'", "'extends'", "'super'", "'const'",
-        "'export'", "'import'", "'async'", "'await'", "'implements'", "'let'",
-        "'private'", "'public'", "'interface'", "'package'", "'protected'", "'static'",
-        "'yield'"
-    };
-        private static readonly string[] _SymbolicNames = {
-        null, "HashBangLine", "MultiLineComment", "SingleLineComment", "RegularExpressionLiteral",
-        "OpenBracket", "CloseBracket", "OpenParen", "CloseParen", "OpenBrace",
-        "CloseBrace", "SemiColon", "Comma", "Assign", "QuestionMark", "Colon",
-        "Ellipsis", "Dot", "PlusPlus", "MinusMinus", "Plus", "Minus", "BitNot",
-        "Not", "Multiply", "Divide", "Modulus", "Power", "NullCoalesce", "Hashtag",
-        "RightShiftArithmetic", "LeftShiftArithmetic", "RightShiftLogical", "LessThan",
-        "MoreThan", "LessThanEquals", "GreaterThanEquals", "Equals_", "NotEquals",
-        "IdentityEquals", "IdentityNotEquals", "BitAnd", "BitXOr", "BitOr", "And",
-        "Or", "MultiplyAssign", "DivideAssign", "ModulusAssign", "PlusAssign",
-        "MinusAssign", "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign",
-        "RightShiftLogicalAssign", "BitAndAssign", "BitXorAssign", "BitOrAssign",
-        "PowerAssign", "ARROW", "NullLiteral", "BooleanLiteral", "DecimalLiteral",
-        "HexIntegerLiteral", "OctalIntegerLiteral", "OctalIntegerLiteral2", "BinaryIntegerLiteral",
-        "BigHexIntegerLiteral", "BigOctalIntegerLiteral", "BigBinaryIntegerLiteral",
-        "BigDecimalIntegerLiteral", "Break", "Do", "Instanceof", "Typeof", "Case",
-        "Else", "New", "Var", "Catch", "Finally", "Return", "Void", "Continue",
-        "For", "Switch", "While", "Debugger", "Function", "This", "With", "Default",
-        "If", "Throw", "Delete", "In", "Try", "As", "From", "Class", "Enum", "Extends",
-        "Super", "Const", "Export", "Import", "Async", "Await", "Implements",
-        "Let", "Private", "Public", "Interface", "Package", "Protected", "Static",
-        "Yield", "Identifier", "StringLiteral", "TemplateStringLiteral", "WhiteSpaces",
-        "LineTerminator", "HtmlComment", "CDataComment", "UnexpectedCharacter"
-    };
-        public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
-
-        [NotNull]
-        public override IVocabulary Vocabulary
+        get
         {
-            get
-            {
-                return DefaultVocabulary;
-            }
+            return DefaultVocabulary;
         }
+    }
 
-        public override string GrammarFileName { get { return "JavaScriptParser.g4"; } }
+    public override string GrammarFileName { get { return "JavaScriptParser.g4"; } }
 
-        public override string[] RuleNames { get { return ruleNames; } }
+    public override string[] RuleNames { get { return ruleNames; } }
 
-        public override string SerializedAtn { get { return new string(_serializedATN); } }
+    public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-        static JavaScriptParser()
+    static JavaScriptParser()
+    {
+        decisionToDFA = new DFA[_ATN.NumberOfDecisions];
+        for (int i = 0; i < _ATN.NumberOfDecisions; i++)
         {
-            decisionToDFA = new DFA[_ATN.NumberOfDecisions];
-            for (int i = 0; i < _ATN.NumberOfDecisions; i++)
-            {
-                decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
-            }
+            decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
         }
+    }
 
-        public JavaScriptParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
+    public JavaScriptParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
 
-        public JavaScriptParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
-    : base(input, output, errorOutput)
+    public JavaScriptParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
+: base(input, output, errorOutput)
+    {
+        Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
+    }
+
+    public partial class ProgramContext : ParserRuleContext
+    {
+        public ITerminalNode Eof() { return GetToken(JavaScriptParser.Eof, 0); }
+        public ITerminalNode HashBangLine() { return GetToken(JavaScriptParser.HashBangLine, 0); }
+        public SourceElementsContext sourceElements()
         {
-            Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
+            return GetRuleContext<SourceElementsContext>(0);
         }
-
-        public partial class ProgramContext : ParserRuleContext
+        public ProgramContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
         {
-            public ITerminalNode Eof() { return GetToken(JavaScriptParser.Eof, 0); }
-            public ITerminalNode HashBangLine() { return GetToken(JavaScriptParser.HashBangLine, 0); }
-            public SourceElementsContext sourceElements()
-            {
-                return GetRuleContext<SourceElementsContext>(0);
-            }
-            public ProgramContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_program; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterProgram(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitProgram(this);
-            }
         }
-
-        [RuleVersion(0)]
-        public ProgramContext program()
+        public override int RuleIndex { get { return RULE_program; } }
+        public override void EnterRule(IParseTreeListener listener)
         {
-            ProgramContext _localctx = new ProgramContext(Context, State);
-            EnterRule(_localctx, 0, RULE_program);
-            try
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterProgram(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitProgram(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ProgramContext program()
+    {
+        ProgramContext _localctx = new ProgramContext(Context, State);
+        EnterRule(_localctx, 0, RULE_program);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                EnterOuterAlt(_localctx, 1);
+                State = 147;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 0, Context))
                 {
-                    State = 147;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 0, Context))
-                    {
-                        case 1:
-                            {
-                                State = 146; Match(HashBangLine);
-                            }
-                            break;
-                    }
-                    State = 150;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 1, Context))
-                    {
-                        case 1:
-                            {
-                                State = 149; sourceElements();
-                            }
-                            break;
-                    }
-                    State = 152; Match(Eof);
+                    case 1:
+                        {
+                            State = 146; Match(HashBangLine);
+                        }
+                        break;
                 }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class SourceElementContext : ParserRuleContext
-        {
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public SourceElementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_sourceElement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterSourceElement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitSourceElement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public SourceElementContext sourceElement()
-        {
-            SourceElementContext _localctx = new SourceElementContext(Context, State);
-            EnterRule(_localctx, 2, RULE_sourceElement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
+                State = 150;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 1, Context))
                 {
-                    State = 154; statement();
+                    case 1:
+                        {
+                            State = 149; sourceElements();
+                        }
+                        break;
                 }
+                State = 152; Match(Eof);
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class StatementContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public BlockContext block()
-            {
-                return GetRuleContext<BlockContext>(0);
-            }
-            public VariableStatementContext variableStatement()
-            {
-                return GetRuleContext<VariableStatementContext>(0);
-            }
-            public ImportStatementContext importStatement()
-            {
-                return GetRuleContext<ImportStatementContext>(0);
-            }
-            public ExportStatementContext exportStatement()
-            {
-                return GetRuleContext<ExportStatementContext>(0);
-            }
-            public EmptyStatementContext emptyStatement()
-            {
-                return GetRuleContext<EmptyStatementContext>(0);
-            }
-            public ClassDeclarationContext classDeclaration()
-            {
-                return GetRuleContext<ClassDeclarationContext>(0);
-            }
-            public ExpressionStatementContext expressionStatement()
-            {
-                return GetRuleContext<ExpressionStatementContext>(0);
-            }
-            public IfStatementContext ifStatement()
-            {
-                return GetRuleContext<IfStatementContext>(0);
-            }
-            public IterationStatementContext iterationStatement()
-            {
-                return GetRuleContext<IterationStatementContext>(0);
-            }
-            public ContinueStatementContext continueStatement()
-            {
-                return GetRuleContext<ContinueStatementContext>(0);
-            }
-            public BreakStatementContext breakStatement()
-            {
-                return GetRuleContext<BreakStatementContext>(0);
-            }
-            public ReturnStatementContext returnStatement()
-            {
-                return GetRuleContext<ReturnStatementContext>(0);
-            }
-            public YieldStatementContext yieldStatement()
-            {
-                return GetRuleContext<YieldStatementContext>(0);
-            }
-            public WithStatementContext withStatement()
-            {
-                return GetRuleContext<WithStatementContext>(0);
-            }
-            public LabelledStatementContext labelledStatement()
-            {
-                return GetRuleContext<LabelledStatementContext>(0);
-            }
-            public SwitchStatementContext switchStatement()
-            {
-                return GetRuleContext<SwitchStatementContext>(0);
-            }
-            public ThrowStatementContext throwStatement()
-            {
-                return GetRuleContext<ThrowStatementContext>(0);
-            }
-            public TryStatementContext tryStatement()
-            {
-                return GetRuleContext<TryStatementContext>(0);
-            }
-            public DebuggerStatementContext debuggerStatement()
-            {
-                return GetRuleContext<DebuggerStatementContext>(0);
-            }
-            public FunctionDeclarationContext functionDeclaration()
-            {
-                return GetRuleContext<FunctionDeclarationContext>(0);
-            }
-            public StatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_statement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitStatement(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class SourceElementContext : ParserRuleContext
+    {
         public StatementContext statement()
         {
-            StatementContext _localctx = new StatementContext(Context, State);
-            EnterRule(_localctx, 4, RULE_statement);
-            try
-            {
-                State = 176;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 2, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 156; block();
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 157; variableStatement();
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 158; importStatement();
-                        }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 159; exportStatement();
-                        }
-                        break;
-                    case 5:
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 160; emptyStatement();
-                        }
-                        break;
-                    case 6:
-                        EnterOuterAlt(_localctx, 6);
-                        {
-                            State = 161; classDeclaration();
-                        }
-                        break;
-                    case 7:
-                        EnterOuterAlt(_localctx, 7);
-                        {
-                            State = 162; expressionStatement();
-                        }
-                        break;
-                    case 8:
-                        EnterOuterAlt(_localctx, 8);
-                        {
-                            State = 163; ifStatement();
-                        }
-                        break;
-                    case 9:
-                        EnterOuterAlt(_localctx, 9);
-                        {
-                            State = 164; iterationStatement();
-                        }
-                        break;
-                    case 10:
-                        EnterOuterAlt(_localctx, 10);
-                        {
-                            State = 165; continueStatement();
-                        }
-                        break;
-                    case 11:
-                        EnterOuterAlt(_localctx, 11);
-                        {
-                            State = 166; breakStatement();
-                        }
-                        break;
-                    case 12:
-                        EnterOuterAlt(_localctx, 12);
-                        {
-                            State = 167; returnStatement();
-                        }
-                        break;
-                    case 13:
-                        EnterOuterAlt(_localctx, 13);
-                        {
-                            State = 168; yieldStatement();
-                        }
-                        break;
-                    case 14:
-                        EnterOuterAlt(_localctx, 14);
-                        {
-                            State = 169; withStatement();
-                        }
-                        break;
-                    case 15:
-                        EnterOuterAlt(_localctx, 15);
-                        {
-                            State = 170; labelledStatement();
-                        }
-                        break;
-                    case 16:
-                        EnterOuterAlt(_localctx, 16);
-                        {
-                            State = 171; switchStatement();
-                        }
-                        break;
-                    case 17:
-                        EnterOuterAlt(_localctx, 17);
-                        {
-                            State = 172; throwStatement();
-                        }
-                        break;
-                    case 18:
-                        EnterOuterAlt(_localctx, 18);
-                        {
-                            State = 173; tryStatement();
-                        }
-                        break;
-                    case 19:
-                        EnterOuterAlt(_localctx, 19);
-                        {
-                            State = 174; debuggerStatement();
-                        }
-                        break;
-                    case 20:
-                        EnterOuterAlt(_localctx, 20);
-                        {
-                            State = 175; functionDeclaration();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<StatementContext>(0);
         }
-
-        public partial class BlockContext : ParserRuleContext
+        public SourceElementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
         {
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public StatementListContext statementList()
+        }
+        public override int RuleIndex { get { return RULE_sourceElement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterSourceElement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitSourceElement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public SourceElementContext sourceElement()
+    {
+        SourceElementContext _localctx = new SourceElementContext(Context, State);
+        EnterRule(_localctx, 2, RULE_sourceElement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                return GetRuleContext<StatementListContext>(0);
-            }
-            public BlockContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_block; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBlock(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBlock(this);
+                State = 154; statement();
             }
         }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class StatementContext : ParserRuleContext
+    {
         public BlockContext block()
         {
-            BlockContext _localctx = new BlockContext(Context, State);
-            EnterRule(_localctx, 6, RULE_block);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 178; Match(OpenBrace);
-                    State = 180;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 3, Context))
-                    {
-                        case 1:
-                            {
-                                State = 179; statementList();
-                            }
-                            break;
-                    }
-                    State = 182; Match(CloseBrace);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<BlockContext>(0);
         }
-
-        public partial class StatementListContext : ParserRuleContext
-        {
-            public StatementContext[] statement()
-            {
-                return GetRuleContexts<StatementContext>();
-            }
-            public StatementContext statement(int i)
-            {
-                return GetRuleContext<StatementContext>(i);
-            }
-            public StatementListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_statementList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterStatementList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitStatementList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public StatementListContext statementList()
-        {
-            StatementListContext _localctx = new StatementListContext(Context, State);
-            EnterRule(_localctx, 8, RULE_statementList);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 185;
-                    ErrorHandler.Sync(this);
-                    _alt = 1;
-                    do
-                    {
-                        switch (_alt)
-                        {
-                            case 1:
-                                {
-                                    {
-                                        State = 184; statement();
-                                    }
-                                }
-                                break;
-                            default:
-                                throw new NoViableAltException(this);
-                        }
-                        State = 187;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 4, Context);
-                    } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ImportStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Import() { return GetToken(JavaScriptParser.Import, 0); }
-            public ImportFromBlockContext importFromBlock()
-            {
-                return GetRuleContext<ImportFromBlockContext>(0);
-            }
-            public ImportStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_importStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterImportStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitImportStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ImportStatementContext importStatement()
-        {
-            ImportStatementContext _localctx = new ImportStatementContext(Context, State);
-            EnterRule(_localctx, 10, RULE_importStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 189; Match(Import);
-                    State = 190; importFromBlock();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ImportFromBlockContext : ParserRuleContext
-        {
-            public ImportFromContext importFrom()
-            {
-                return GetRuleContext<ImportFromContext>(0);
-            }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ImportNamespaceContext importNamespace()
-            {
-                return GetRuleContext<ImportNamespaceContext>(0);
-            }
-            public ModuleItemsContext moduleItems()
-            {
-                return GetRuleContext<ModuleItemsContext>(0);
-            }
-            public ImportDefaultContext importDefault()
-            {
-                return GetRuleContext<ImportDefaultContext>(0);
-            }
-            public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
-            public ImportFromBlockContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_importFromBlock; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterImportFromBlock(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitImportFromBlock(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ImportFromBlockContext importFromBlock()
-        {
-            ImportFromBlockContext _localctx = new ImportFromBlockContext(Context, State);
-            EnterRule(_localctx, 12, RULE_importFromBlock);
-            int _la;
-            try
-            {
-                State = 204;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case OpenBrace:
-                    case Multiply:
-                    case NullLiteral:
-                    case BooleanLiteral:
-                    case Break:
-                    case Do:
-                    case Instanceof:
-                    case Typeof:
-                    case Case:
-                    case Else:
-                    case New:
-                    case Var:
-                    case Catch:
-                    case Finally:
-                    case Return:
-                    case Void:
-                    case Continue:
-                    case For:
-                    case Switch:
-                    case While:
-                    case Debugger:
-                    case Function:
-                    case This:
-                    case With:
-                    case Default:
-                    case If:
-                    case Throw:
-                    case Delete:
-                    case In:
-                    case Try:
-                    case As:
-                    case From:
-                    case Class:
-                    case Enum:
-                    case Extends:
-                    case Super:
-                    case Const:
-                    case Export:
-                    case Import:
-                    case Async:
-                    case Await:
-                    case Implements:
-                    case Let:
-                    case Private:
-                    case Public:
-                    case Interface:
-                    case Package:
-                    case Protected:
-                    case Static:
-                    case Yield:
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 193;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (NullLiteral - 59)) | (1L << (BooleanLiteral - 59)) | (1L << (Break - 59)) | (1L << (Do - 59)) | (1L << (Instanceof - 59)) | (1L << (Typeof - 59)) | (1L << (Case - 59)) | (1L << (Else - 59)) | (1L << (New - 59)) | (1L << (Var - 59)) | (1L << (Catch - 59)) | (1L << (Finally - 59)) | (1L << (Return - 59)) | (1L << (Void - 59)) | (1L << (Continue - 59)) | (1L << (For - 59)) | (1L << (Switch - 59)) | (1L << (While - 59)) | (1L << (Debugger - 59)) | (1L << (Function - 59)) | (1L << (This - 59)) | (1L << (With - 59)) | (1L << (Default - 59)) | (1L << (If - 59)) | (1L << (Throw - 59)) | (1L << (Delete - 59)) | (1L << (In - 59)) | (1L << (Try - 59)) | (1L << (As - 59)) | (1L << (From - 59)) | (1L << (Class - 59)) | (1L << (Enum - 59)) | (1L << (Extends - 59)) | (1L << (Super - 59)) | (1L << (Const - 59)) | (1L << (Export - 59)) | (1L << (Import - 59)) | (1L << (Async - 59)) | (1L << (Await - 59)) | (1L << (Implements - 59)) | (1L << (Let - 59)) | (1L << (Private - 59)) | (1L << (Public - 59)) | (1L << (Interface - 59)) | (1L << (Package - 59)) | (1L << (Protected - 59)) | (1L << (Static - 59)) | (1L << (Yield - 59)) | (1L << (Identifier - 59)))) != 0))
-                            {
-                                {
-                                    State = 192; importDefault();
-                                }
-                            }
-
-                            State = 197;
-                            ErrorHandler.Sync(this);
-                            switch (TokenStream.LA(1))
-                            {
-                                case Multiply:
-                                    {
-                                        State = 195; importNamespace();
-                                    }
-                                    break;
-                                case OpenBrace:
-                                    {
-                                        State = 196; moduleItems();
-                                    }
-                                    break;
-                                default:
-                                    throw new NoViableAltException(this);
-                            }
-                            State = 199; importFrom();
-                            State = 200; eos();
-                        }
-                        break;
-                    case StringLiteral:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 202; Match(StringLiteral);
-                            State = 203; eos();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ModuleItemsContext : ParserRuleContext
-        {
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public AliasNameContext[] aliasName()
-            {
-                return GetRuleContexts<AliasNameContext>();
-            }
-            public AliasNameContext aliasName(int i)
-            {
-                return GetRuleContext<AliasNameContext>(i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(JavaScriptParser.Comma, i);
-            }
-            public ModuleItemsContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_moduleItems; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterModuleItems(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitModuleItems(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ModuleItemsContext moduleItems()
-        {
-            ModuleItemsContext _localctx = new ModuleItemsContext(Context, State);
-            EnterRule(_localctx, 14, RULE_moduleItems);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 206; Match(OpenBrace);
-                    State = 212;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            {
-                                {
-                                    State = 207; aliasName();
-                                    State = 208; Match(Comma);
-                                }
-                            }
-                        }
-                        State = 214;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
-                    }
-                    State = 219;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (NullLiteral - 59)) | (1L << (BooleanLiteral - 59)) | (1L << (Break - 59)) | (1L << (Do - 59)) | (1L << (Instanceof - 59)) | (1L << (Typeof - 59)) | (1L << (Case - 59)) | (1L << (Else - 59)) | (1L << (New - 59)) | (1L << (Var - 59)) | (1L << (Catch - 59)) | (1L << (Finally - 59)) | (1L << (Return - 59)) | (1L << (Void - 59)) | (1L << (Continue - 59)) | (1L << (For - 59)) | (1L << (Switch - 59)) | (1L << (While - 59)) | (1L << (Debugger - 59)) | (1L << (Function - 59)) | (1L << (This - 59)) | (1L << (With - 59)) | (1L << (Default - 59)) | (1L << (If - 59)) | (1L << (Throw - 59)) | (1L << (Delete - 59)) | (1L << (In - 59)) | (1L << (Try - 59)) | (1L << (As - 59)) | (1L << (From - 59)) | (1L << (Class - 59)) | (1L << (Enum - 59)) | (1L << (Extends - 59)) | (1L << (Super - 59)) | (1L << (Const - 59)) | (1L << (Export - 59)) | (1L << (Import - 59)) | (1L << (Async - 59)) | (1L << (Await - 59)) | (1L << (Implements - 59)) | (1L << (Let - 59)) | (1L << (Private - 59)) | (1L << (Public - 59)) | (1L << (Interface - 59)) | (1L << (Package - 59)) | (1L << (Protected - 59)) | (1L << (Static - 59)) | (1L << (Yield - 59)) | (1L << (Identifier - 59)))) != 0))
-                    {
-                        {
-                            State = 215; aliasName();
-                            State = 217;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Comma)
-                            {
-                                {
-                                    State = 216; Match(Comma);
-                                }
-                            }
-
-                        }
-                    }
-
-                    State = 221; Match(CloseBrace);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ImportDefaultContext : ParserRuleContext
-        {
-            public AliasNameContext aliasName()
-            {
-                return GetRuleContext<AliasNameContext>(0);
-            }
-            public ITerminalNode Comma() { return GetToken(JavaScriptParser.Comma, 0); }
-            public ImportDefaultContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_importDefault; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterImportDefault(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitImportDefault(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ImportDefaultContext importDefault()
-        {
-            ImportDefaultContext _localctx = new ImportDefaultContext(Context, State);
-            EnterRule(_localctx, 16, RULE_importDefault);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 223; aliasName();
-                    State = 224; Match(Comma);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ImportNamespaceContext : ParserRuleContext
-        {
-            public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
-            public ITerminalNode As() { return GetToken(JavaScriptParser.As, 0); }
-            public IdentifierNameContext identifierName()
-            {
-                return GetRuleContext<IdentifierNameContext>(0);
-            }
-            public ImportNamespaceContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_importNamespace; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterImportNamespace(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitImportNamespace(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ImportNamespaceContext importNamespace()
-        {
-            ImportNamespaceContext _localctx = new ImportNamespaceContext(Context, State);
-            EnterRule(_localctx, 18, RULE_importNamespace);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 226; Match(Multiply);
-                    State = 229;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == As)
-                    {
-                        {
-                            State = 227; Match(As);
-                            State = 228; identifierName();
-                        }
-                    }
-
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ImportFromContext : ParserRuleContext
-        {
-            public ITerminalNode From() { return GetToken(JavaScriptParser.From, 0); }
-            public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
-            public ImportFromContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_importFrom; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterImportFrom(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitImportFrom(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ImportFromContext importFrom()
-        {
-            ImportFromContext _localctx = new ImportFromContext(Context, State);
-            EnterRule(_localctx, 20, RULE_importFrom);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 231; Match(From);
-                    State = 232; Match(StringLiteral);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class AliasNameContext : ParserRuleContext
-        {
-            public IdentifierNameContext[] identifierName()
-            {
-                return GetRuleContexts<IdentifierNameContext>();
-            }
-            public IdentifierNameContext identifierName(int i)
-            {
-                return GetRuleContext<IdentifierNameContext>(i);
-            }
-            public ITerminalNode As() { return GetToken(JavaScriptParser.As, 0); }
-            public AliasNameContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_aliasName; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAliasName(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAliasName(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public AliasNameContext aliasName()
-        {
-            AliasNameContext _localctx = new AliasNameContext(Context, State);
-            EnterRule(_localctx, 22, RULE_aliasName);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 234; identifierName();
-                    State = 237;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == As)
-                    {
-                        {
-                            State = 235; Match(As);
-                            State = 236; identifierName();
-                        }
-                    }
-
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ExportStatementContext : ParserRuleContext
-        {
-            public ExportStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_exportStatement; } }
-
-            public ExportStatementContext() { }
-            public virtual void CopyFrom(ExportStatementContext context)
-            {
-                base.CopyFrom(context);
-            }
-        }
-        public partial class ExportDefaultDeclarationContext : ExportStatementContext
-        {
-            public ITerminalNode Export() { return GetToken(JavaScriptParser.Export, 0); }
-            public ITerminalNode Default() { return GetToken(JavaScriptParser.Default, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ExportDefaultDeclarationContext(ExportStatementContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterExportDefaultDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitExportDefaultDeclaration(this);
-            }
-        }
-        public partial class ExportDeclarationContext : ExportStatementContext
-        {
-            public ITerminalNode Export() { return GetToken(JavaScriptParser.Export, 0); }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ExportFromBlockContext exportFromBlock()
-            {
-                return GetRuleContext<ExportFromBlockContext>(0);
-            }
-            public DeclarationContext declaration()
-            {
-                return GetRuleContext<DeclarationContext>(0);
-            }
-            public ExportDeclarationContext(ExportStatementContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterExportDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitExportDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ExportStatementContext exportStatement()
-        {
-            ExportStatementContext _localctx = new ExportStatementContext(Context, State);
-            EnterRule(_localctx, 24, RULE_exportStatement);
-            try
-            {
-                State = 251;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 14, Context))
-                {
-                    case 1:
-                        _localctx = new ExportDeclarationContext(_localctx);
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 239; Match(Export);
-                            State = 242;
-                            ErrorHandler.Sync(this);
-                            switch (TokenStream.LA(1))
-                            {
-                                case OpenBrace:
-                                case Multiply:
-                                    {
-                                        State = 240; exportFromBlock();
-                                    }
-                                    break;
-                                case Var:
-                                case Function:
-                                case Class:
-                                case Const:
-                                case Async:
-                                case Let:
-                                    {
-                                        State = 241; declaration();
-                                    }
-                                    break;
-                                default:
-                                    throw new NoViableAltException(this);
-                            }
-                            State = 244; eos();
-                        }
-                        break;
-                    case 2:
-                        _localctx = new ExportDefaultDeclarationContext(_localctx);
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 246; Match(Export);
-                            State = 247; Match(Default);
-                            State = 248; singleExpression(0);
-                            State = 249; eos();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ExportFromBlockContext : ParserRuleContext
-        {
-            public ImportNamespaceContext importNamespace()
-            {
-                return GetRuleContext<ImportNamespaceContext>(0);
-            }
-            public ImportFromContext importFrom()
-            {
-                return GetRuleContext<ImportFromContext>(0);
-            }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ModuleItemsContext moduleItems()
-            {
-                return GetRuleContext<ModuleItemsContext>(0);
-            }
-            public ExportFromBlockContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_exportFromBlock; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterExportFromBlock(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitExportFromBlock(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ExportFromBlockContext exportFromBlock()
-        {
-            ExportFromBlockContext _localctx = new ExportFromBlockContext(Context, State);
-            EnterRule(_localctx, 26, RULE_exportFromBlock);
-            try
-            {
-                State = 263;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case Multiply:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 253; importNamespace();
-                            State = 254; importFrom();
-                            State = 255; eos();
-                        }
-                        break;
-                    case OpenBrace:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 257; moduleItems();
-                            State = 259;
-                            ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 15, Context))
-                            {
-                                case 1:
-                                    {
-                                        State = 258; importFrom();
-                                    }
-                                    break;
-                            }
-                            State = 261; eos();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DeclarationContext : ParserRuleContext
-        {
-            public VariableStatementContext variableStatement()
-            {
-                return GetRuleContext<VariableStatementContext>(0);
-            }
-            public ClassDeclarationContext classDeclaration()
-            {
-                return GetRuleContext<ClassDeclarationContext>(0);
-            }
-            public FunctionDeclarationContext functionDeclaration()
-            {
-                return GetRuleContext<FunctionDeclarationContext>(0);
-            }
-            public DeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_declaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DeclarationContext declaration()
-        {
-            DeclarationContext _localctx = new DeclarationContext(Context, State);
-            EnterRule(_localctx, 28, RULE_declaration);
-            try
-            {
-                State = 268;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case Var:
-                    case Const:
-                    case Let:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 265; variableStatement();
-                        }
-                        break;
-                    case Class:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 266; classDeclaration();
-                        }
-                        break;
-                    case Function:
-                    case Async:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 267; functionDeclaration();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class VariableStatementContext : ParserRuleContext
-        {
-            public VariableDeclarationListContext variableDeclarationList()
-            {
-                return GetRuleContext<VariableDeclarationListContext>(0);
-            }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public VariableStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_variableStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterVariableStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitVariableStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public VariableStatementContext variableStatement()
         {
-            VariableStatementContext _localctx = new VariableStatementContext(Context, State);
-            EnterRule(_localctx, 30, RULE_variableStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 270; variableDeclarationList();
-                    State = 271; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<VariableStatementContext>(0);
         }
-
-        public partial class VariableDeclarationListContext : ParserRuleContext
+        public ImportStatementContext importStatement()
         {
-            public VarModifierContext varModifier()
-            {
-                return GetRuleContext<VarModifierContext>(0);
-            }
-            public VariableDeclarationContext[] variableDeclaration()
-            {
-                return GetRuleContexts<VariableDeclarationContext>();
-            }
-            public VariableDeclarationContext variableDeclaration(int i)
-            {
-                return GetRuleContext<VariableDeclarationContext>(i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(JavaScriptParser.Comma, i);
-            }
-            public VariableDeclarationListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_variableDeclarationList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterVariableDeclarationList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitVariableDeclarationList(this);
-            }
+            return GetRuleContext<ImportStatementContext>(0);
         }
-
-        [RuleVersion(0)]
-        public VariableDeclarationListContext variableDeclarationList()
+        public ExportStatementContext exportStatement()
         {
-            VariableDeclarationListContext _localctx = new VariableDeclarationListContext(Context, State);
-            EnterRule(_localctx, 32, RULE_variableDeclarationList);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 273; varModifier();
-                    State = 274; variableDeclaration();
-                    State = 279;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 18, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            {
-                                {
-                                    State = 275; Match(Comma);
-                                    State = 276; variableDeclaration();
-                                }
-                            }
-                        }
-                        State = 281;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 18, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ExportStatementContext>(0);
         }
-
-        public partial class VariableDeclarationContext : ParserRuleContext
-        {
-            public AssignableContext assignable()
-            {
-                return GetRuleContext<AssignableContext>(0);
-            }
-            public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public VariableDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_variableDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterVariableDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitVariableDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public VariableDeclarationContext variableDeclaration()
-        {
-            VariableDeclarationContext _localctx = new VariableDeclarationContext(Context, State);
-            EnterRule(_localctx, 34, RULE_variableDeclaration);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 282; assignable();
-                    State = 285;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 19, Context))
-                    {
-                        case 1:
-                            {
-                                State = 283; Match(Assign);
-                                State = 284; singleExpression(0);
-                            }
-                            break;
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class EmptyStatementContext : ParserRuleContext
-        {
-            public ITerminalNode SemiColon() { return GetToken(JavaScriptParser.SemiColon, 0); }
-            public EmptyStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_emptyStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterEmptyStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitEmptyStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public EmptyStatementContext emptyStatement()
         {
-            EmptyStatementContext _localctx = new EmptyStatementContext(Context, State);
-            EnterRule(_localctx, 36, RULE_emptyStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 287; Match(SemiColon);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<EmptyStatementContext>(0);
         }
-
-        public partial class ExpressionStatementContext : ParserRuleContext
+        public ClassDeclarationContext classDeclaration()
         {
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ExpressionStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_expressionStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterExpressionStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitExpressionStatement(this);
-            }
+            return GetRuleContext<ClassDeclarationContext>(0);
         }
-
-        [RuleVersion(0)]
         public ExpressionStatementContext expressionStatement()
         {
-            ExpressionStatementContext _localctx = new ExpressionStatementContext(Context, State);
-            EnterRule(_localctx, 38, RULE_expressionStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 289;
-                    if (!(this.notOpenBraceAndNotFunction())) throw new FailedPredicateException(this, "this.notOpenBraceAndNotFunction()");
-                    State = 290; expressionSequence();
-                    State = 291; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ExpressionStatementContext>(0);
         }
-
-        public partial class IfStatementContext : ParserRuleContext
-        {
-            public ITerminalNode If() { return GetToken(JavaScriptParser.If, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public StatementContext[] statement()
-            {
-                return GetRuleContexts<StatementContext>();
-            }
-            public StatementContext statement(int i)
-            {
-                return GetRuleContext<StatementContext>(i);
-            }
-            public ITerminalNode Else() { return GetToken(JavaScriptParser.Else, 0); }
-            public IfStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_ifStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterIfStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitIfStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public IfStatementContext ifStatement()
         {
-            IfStatementContext _localctx = new IfStatementContext(Context, State);
-            EnterRule(_localctx, 40, RULE_ifStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 293; Match(If);
-                    State = 294; Match(OpenParen);
-                    State = 295; expressionSequence();
-                    State = 296; Match(CloseParen);
-                    State = 297; statement();
-                    State = 300;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 20, Context))
-                    {
-                        case 1:
-                            {
-                                State = 298; Match(Else);
-                                State = 299; statement();
-                            }
-                            break;
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<IfStatementContext>(0);
         }
-
-        public partial class IterationStatementContext : ParserRuleContext
-        {
-            public IterationStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_iterationStatement; } }
-
-            public IterationStatementContext() { }
-            public virtual void CopyFrom(IterationStatementContext context)
-            {
-                base.CopyFrom(context);
-            }
-        }
-        public partial class DoStatementContext : IterationStatementContext
-        {
-            public ITerminalNode Do() { return GetToken(JavaScriptParser.Do, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public ITerminalNode While() { return GetToken(JavaScriptParser.While, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public DoStatementContext(IterationStatementContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterDoStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitDoStatement(this);
-            }
-        }
-        public partial class WhileStatementContext : IterationStatementContext
-        {
-            public ITerminalNode While() { return GetToken(JavaScriptParser.While, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public WhileStatementContext(IterationStatementContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterWhileStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitWhileStatement(this);
-            }
-        }
-        public partial class ForStatementContext : IterationStatementContext
-        {
-            public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode[] SemiColon() { return GetTokens(JavaScriptParser.SemiColon); }
-            public ITerminalNode SemiColon(int i)
-            {
-                return GetToken(JavaScriptParser.SemiColon, i);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public ExpressionSequenceContext[] expressionSequence()
-            {
-                return GetRuleContexts<ExpressionSequenceContext>();
-            }
-            public ExpressionSequenceContext expressionSequence(int i)
-            {
-                return GetRuleContext<ExpressionSequenceContext>(i);
-            }
-            public VariableDeclarationListContext variableDeclarationList()
-            {
-                return GetRuleContext<VariableDeclarationListContext>(0);
-            }
-            public ForStatementContext(IterationStatementContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterForStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitForStatement(this);
-            }
-        }
-        public partial class ForInStatementContext : IterationStatementContext
-        {
-            public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode In() { return GetToken(JavaScriptParser.In, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public VariableDeclarationListContext variableDeclarationList()
-            {
-                return GetRuleContext<VariableDeclarationListContext>(0);
-            }
-            public ForInStatementContext(IterationStatementContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterForInStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitForInStatement(this);
-            }
-        }
-        public partial class ForOfStatementContext : IterationStatementContext
-        {
-            public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public VariableDeclarationListContext variableDeclarationList()
-            {
-                return GetRuleContext<VariableDeclarationListContext>(0);
-            }
-            public ITerminalNode Await() { return GetToken(JavaScriptParser.Await, 0); }
-            public ForOfStatementContext(IterationStatementContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterForOfStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitForOfStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public IterationStatementContext iterationStatement()
         {
-            IterationStatementContext _localctx = new IterationStatementContext(Context, State);
-            EnterRule(_localctx, 42, RULE_iterationStatement);
-            int _la;
-            try
-            {
-                State = 358;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 27, Context))
-                {
-                    case 1:
-                        _localctx = new DoStatementContext(_localctx);
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 302; Match(Do);
-                            State = 303; statement();
-                            State = 304; Match(While);
-                            State = 305; Match(OpenParen);
-                            State = 306; expressionSequence();
-                            State = 307; Match(CloseParen);
-                            State = 308; eos();
-                        }
-                        break;
-                    case 2:
-                        _localctx = new WhileStatementContext(_localctx);
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 310; Match(While);
-                            State = 311; Match(OpenParen);
-                            State = 312; expressionSequence();
-                            State = 313; Match(CloseParen);
-                            State = 314; statement();
-                        }
-                        break;
-                    case 3:
-                        _localctx = new ForStatementContext(_localctx);
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 316; Match(For);
-                            State = 317; Match(OpenParen);
-                            State = 320;
-                            ErrorHandler.Sync(this);
-                            switch (TokenStream.LA(1))
-                            {
-                                case RegularExpressionLiteral:
-                                case OpenBracket:
-                                case OpenParen:
-                                case OpenBrace:
-                                case PlusPlus:
-                                case MinusMinus:
-                                case Plus:
-                                case Minus:
-                                case BitNot:
-                                case Not:
-                                case NullLiteral:
-                                case BooleanLiteral:
-                                case DecimalLiteral:
-                                case HexIntegerLiteral:
-                                case OctalIntegerLiteral:
-                                case OctalIntegerLiteral2:
-                                case BinaryIntegerLiteral:
-                                case BigHexIntegerLiteral:
-                                case BigOctalIntegerLiteral:
-                                case BigBinaryIntegerLiteral:
-                                case BigDecimalIntegerLiteral:
-                                case Typeof:
-                                case New:
-                                case Void:
-                                case Function:
-                                case This:
-                                case Delete:
-                                case Class:
-                                case Super:
-                                case Import:
-                                case Async:
-                                case Await:
-                                case Yield:
-                                case Identifier:
-                                case StringLiteral:
-                                case TemplateStringLiteral:
-                                    {
-                                        State = 318; expressionSequence();
-                                    }
-                                    break;
-                                case Var:
-                                case Const:
-                                case Let:
-                                    {
-                                        State = 319; variableDeclarationList();
-                                    }
-                                    break;
-                                case SemiColon:
-                                    break;
-                                default:
-                                    break;
-                            }
-                            State = 322; Match(SemiColon);
-                            State = 324;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
-                            {
-                                {
-                                    State = 323; expressionSequence();
-                                }
-                            }
-
-                            State = 326; Match(SemiColon);
-                            State = 328;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
-                            {
-                                {
-                                    State = 327; expressionSequence();
-                                }
-                            }
-
-                            State = 330; Match(CloseParen);
-                            State = 331; statement();
-                        }
-                        break;
-                    case 4:
-                        _localctx = new ForInStatementContext(_localctx);
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 332; Match(For);
-                            State = 333; Match(OpenParen);
-                            State = 336;
-                            ErrorHandler.Sync(this);
-                            switch (TokenStream.LA(1))
-                            {
-                                case RegularExpressionLiteral:
-                                case OpenBracket:
-                                case OpenParen:
-                                case OpenBrace:
-                                case PlusPlus:
-                                case MinusMinus:
-                                case Plus:
-                                case Minus:
-                                case BitNot:
-                                case Not:
-                                case NullLiteral:
-                                case BooleanLiteral:
-                                case DecimalLiteral:
-                                case HexIntegerLiteral:
-                                case OctalIntegerLiteral:
-                                case OctalIntegerLiteral2:
-                                case BinaryIntegerLiteral:
-                                case BigHexIntegerLiteral:
-                                case BigOctalIntegerLiteral:
-                                case BigBinaryIntegerLiteral:
-                                case BigDecimalIntegerLiteral:
-                                case Typeof:
-                                case New:
-                                case Void:
-                                case Function:
-                                case This:
-                                case Delete:
-                                case Class:
-                                case Super:
-                                case Import:
-                                case Async:
-                                case Await:
-                                case Yield:
-                                case Identifier:
-                                case StringLiteral:
-                                case TemplateStringLiteral:
-                                    {
-                                        State = 334; singleExpression(0);
-                                    }
-                                    break;
-                                case Var:
-                                case Const:
-                                case Let:
-                                    {
-                                        State = 335; variableDeclarationList();
-                                    }
-                                    break;
-                                default:
-                                    throw new NoViableAltException(this);
-                            }
-                            State = 338; Match(In);
-                            State = 339; expressionSequence();
-                            State = 340; Match(CloseParen);
-                            State = 341; statement();
-                        }
-                        break;
-                    case 5:
-                        _localctx = new ForOfStatementContext(_localctx);
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 343; Match(For);
-                            State = 345;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Await)
-                            {
-                                {
-                                    State = 344; Match(Await);
-                                }
-                            }
-
-                            State = 347; Match(OpenParen);
-                            State = 350;
-                            ErrorHandler.Sync(this);
-                            switch (TokenStream.LA(1))
-                            {
-                                case RegularExpressionLiteral:
-                                case OpenBracket:
-                                case OpenParen:
-                                case OpenBrace:
-                                case PlusPlus:
-                                case MinusMinus:
-                                case Plus:
-                                case Minus:
-                                case BitNot:
-                                case Not:
-                                case NullLiteral:
-                                case BooleanLiteral:
-                                case DecimalLiteral:
-                                case HexIntegerLiteral:
-                                case OctalIntegerLiteral:
-                                case OctalIntegerLiteral2:
-                                case BinaryIntegerLiteral:
-                                case BigHexIntegerLiteral:
-                                case BigOctalIntegerLiteral:
-                                case BigBinaryIntegerLiteral:
-                                case BigDecimalIntegerLiteral:
-                                case Typeof:
-                                case New:
-                                case Void:
-                                case Function:
-                                case This:
-                                case Delete:
-                                case Class:
-                                case Super:
-                                case Import:
-                                case Async:
-                                case Await:
-                                case Yield:
-                                case Identifier:
-                                case StringLiteral:
-                                case TemplateStringLiteral:
-                                    {
-                                        State = 348; singleExpression(0);
-                                    }
-                                    break;
-                                case Var:
-                                case Const:
-                                case Let:
-                                    {
-                                        State = 349; variableDeclarationList();
-                                    }
-                                    break;
-                                default:
-                                    throw new NoViableAltException(this);
-                            }
-                            State = 352; Match(Identifier);
-                            State = 353;
-                            if (!(this.p("of"))) throw new FailedPredicateException(this, "this.p(\"of\")");
-                            State = 354; expressionSequence();
-                            State = 355; Match(CloseParen);
-                            State = 356; statement();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<IterationStatementContext>(0);
         }
-
-        public partial class VarModifierContext : ParserRuleContext
-        {
-            public ITerminalNode Var() { return GetToken(JavaScriptParser.Var, 0); }
-            public ITerminalNode Let() { return GetToken(JavaScriptParser.Let, 0); }
-            public ITerminalNode Const() { return GetToken(JavaScriptParser.Const, 0); }
-            public VarModifierContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_varModifier; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterVarModifier(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitVarModifier(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public VarModifierContext varModifier()
-        {
-            VarModifierContext _localctx = new VarModifierContext(Context, State);
-            EnterRule(_localctx, 44, RULE_varModifier);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 360;
-                    _la = TokenStream.LA(1);
-                    if (!(((((_la - 77)) & ~0x3f) == 0 && ((1L << (_la - 77)) & ((1L << (Var - 77)) | (1L << (Const - 77)) | (1L << (Let - 77)))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ContinueStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Continue() { return GetToken(JavaScriptParser.Continue, 0); }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ContinueStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_continueStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterContinueStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitContinueStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public ContinueStatementContext continueStatement()
         {
-            ContinueStatementContext _localctx = new ContinueStatementContext(Context, State);
-            EnterRule(_localctx, 46, RULE_continueStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 362; Match(Continue);
-                    State = 365;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 28, Context))
-                    {
-                        case 1:
-                            {
-                                State = 363;
-                                if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
-                                State = 364; Match(Identifier);
-                            }
-                            break;
-                    }
-                    State = 367; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ContinueStatementContext>(0);
         }
-
-        public partial class BreakStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Break() { return GetToken(JavaScriptParser.Break, 0); }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public BreakStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_breakStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBreakStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBreakStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public BreakStatementContext breakStatement()
         {
-            BreakStatementContext _localctx = new BreakStatementContext(Context, State);
-            EnterRule(_localctx, 48, RULE_breakStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 369; Match(Break);
-                    State = 372;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 29, Context))
-                    {
-                        case 1:
-                            {
-                                State = 370;
-                                if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
-                                State = 371; Match(Identifier);
-                            }
-                            break;
-                    }
-                    State = 374; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<BreakStatementContext>(0);
         }
-
-        public partial class ReturnStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Return() { return GetToken(JavaScriptParser.Return, 0); }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ReturnStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_returnStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterReturnStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitReturnStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public ReturnStatementContext returnStatement()
         {
-            ReturnStatementContext _localctx = new ReturnStatementContext(Context, State);
-            EnterRule(_localctx, 50, RULE_returnStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 376; Match(Return);
-                    State = 379;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 30, Context))
-                    {
-                        case 1:
-                            {
-                                State = 377;
-                                if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
-                                State = 378; expressionSequence();
-                            }
-                            break;
-                    }
-                    State = 381; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ReturnStatementContext>(0);
         }
-
-        public partial class YieldStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Yield() { return GetToken(JavaScriptParser.Yield, 0); }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public YieldStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_yieldStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterYieldStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitYieldStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public YieldStatementContext yieldStatement()
         {
-            YieldStatementContext _localctx = new YieldStatementContext(Context, State);
-            EnterRule(_localctx, 52, RULE_yieldStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 383; Match(Yield);
-                    State = 386;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 31, Context))
-                    {
-                        case 1:
-                            {
-                                State = 384;
-                                if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
-                                State = 385; expressionSequence();
-                            }
-                            break;
-                    }
-                    State = 388; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<YieldStatementContext>(0);
         }
-
-        public partial class WithStatementContext : ParserRuleContext
-        {
-            public ITerminalNode With() { return GetToken(JavaScriptParser.With, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public WithStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_withStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterWithStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitWithStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public WithStatementContext withStatement()
         {
-            WithStatementContext _localctx = new WithStatementContext(Context, State);
-            EnterRule(_localctx, 54, RULE_withStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 390; Match(With);
-                    State = 391; Match(OpenParen);
-                    State = 392; expressionSequence();
-                    State = 393; Match(CloseParen);
-                    State = 394; statement();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<WithStatementContext>(0);
         }
-
-        public partial class SwitchStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Switch() { return GetToken(JavaScriptParser.Switch, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public CaseBlockContext caseBlock()
-            {
-                return GetRuleContext<CaseBlockContext>(0);
-            }
-            public SwitchStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_switchStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterSwitchStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitSwitchStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public SwitchStatementContext switchStatement()
-        {
-            SwitchStatementContext _localctx = new SwitchStatementContext(Context, State);
-            EnterRule(_localctx, 56, RULE_switchStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 396; Match(Switch);
-                    State = 397; Match(OpenParen);
-                    State = 398; expressionSequence();
-                    State = 399; Match(CloseParen);
-                    State = 400; caseBlock();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class CaseBlockContext : ParserRuleContext
-        {
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public CaseClausesContext[] caseClauses()
-            {
-                return GetRuleContexts<CaseClausesContext>();
-            }
-            public CaseClausesContext caseClauses(int i)
-            {
-                return GetRuleContext<CaseClausesContext>(i);
-            }
-            public DefaultClauseContext defaultClause()
-            {
-                return GetRuleContext<DefaultClauseContext>(0);
-            }
-            public CaseBlockContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_caseBlock; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterCaseBlock(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitCaseBlock(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public CaseBlockContext caseBlock()
-        {
-            CaseBlockContext _localctx = new CaseBlockContext(Context, State);
-            EnterRule(_localctx, 58, RULE_caseBlock);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 402; Match(OpenBrace);
-                    State = 404;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Case)
-                    {
-                        {
-                            State = 403; caseClauses();
-                        }
-                    }
-
-                    State = 410;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Default)
-                    {
-                        {
-                            State = 406; defaultClause();
-                            State = 408;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Case)
-                            {
-                                {
-                                    State = 407; caseClauses();
-                                }
-                            }
-
-                        }
-                    }
-
-                    State = 412; Match(CloseBrace);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class CaseClausesContext : ParserRuleContext
-        {
-            public CaseClauseContext[] caseClause()
-            {
-                return GetRuleContexts<CaseClauseContext>();
-            }
-            public CaseClauseContext caseClause(int i)
-            {
-                return GetRuleContext<CaseClauseContext>(i);
-            }
-            public CaseClausesContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_caseClauses; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterCaseClauses(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitCaseClauses(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public CaseClausesContext caseClauses()
-        {
-            CaseClausesContext _localctx = new CaseClausesContext(Context, State);
-            EnterRule(_localctx, 60, RULE_caseClauses);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 415;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    do
-                    {
-                        {
-                            {
-                                State = 414; caseClause();
-                            }
-                        }
-                        State = 417;
-                        ErrorHandler.Sync(this);
-                        _la = TokenStream.LA(1);
-                    } while (_la == Case);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class CaseClauseContext : ParserRuleContext
-        {
-            public ITerminalNode Case() { return GetToken(JavaScriptParser.Case, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
-            public StatementListContext statementList()
-            {
-                return GetRuleContext<StatementListContext>(0);
-            }
-            public CaseClauseContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_caseClause; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterCaseClause(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitCaseClause(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public CaseClauseContext caseClause()
-        {
-            CaseClauseContext _localctx = new CaseClauseContext(Context, State);
-            EnterRule(_localctx, 62, RULE_caseClause);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 419; Match(Case);
-                    State = 420; expressionSequence();
-                    State = 421; Match(Colon);
-                    State = 423;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 36, Context))
-                    {
-                        case 1:
-                            {
-                                State = 422; statementList();
-                            }
-                            break;
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DefaultClauseContext : ParserRuleContext
-        {
-            public ITerminalNode Default() { return GetToken(JavaScriptParser.Default, 0); }
-            public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
-            public StatementListContext statementList()
-            {
-                return GetRuleContext<StatementListContext>(0);
-            }
-            public DefaultClauseContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_defaultClause; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterDefaultClause(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitDefaultClause(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DefaultClauseContext defaultClause()
-        {
-            DefaultClauseContext _localctx = new DefaultClauseContext(Context, State);
-            EnterRule(_localctx, 64, RULE_defaultClause);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 425; Match(Default);
-                    State = 426; Match(Colon);
-                    State = 428;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 37, Context))
-                    {
-                        case 1:
-                            {
-                                State = 427; statementList();
-                            }
-                            break;
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class LabelledStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
-            public StatementContext statement()
-            {
-                return GetRuleContext<StatementContext>(0);
-            }
-            public LabelledStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_labelledStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterLabelledStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitLabelledStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public LabelledStatementContext labelledStatement()
         {
-            LabelledStatementContext _localctx = new LabelledStatementContext(Context, State);
-            EnterRule(_localctx, 66, RULE_labelledStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 430; Match(Identifier);
-                    State = 431; Match(Colon);
-                    State = 432; statement();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<LabelledStatementContext>(0);
         }
-
-        public partial class ThrowStatementContext : ParserRuleContext
+        public SwitchStatementContext switchStatement()
         {
-            public ITerminalNode Throw() { return GetToken(JavaScriptParser.Throw, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public ThrowStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_throwStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterThrowStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitThrowStatement(this);
-            }
+            return GetRuleContext<SwitchStatementContext>(0);
         }
-
-        [RuleVersion(0)]
         public ThrowStatementContext throwStatement()
         {
-            ThrowStatementContext _localctx = new ThrowStatementContext(Context, State);
-            EnterRule(_localctx, 68, RULE_throwStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 434; Match(Throw);
-                    State = 435;
-                    if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
-                    State = 436; expressionSequence();
-                    State = 437; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ThrowStatementContext>(0);
         }
-
-        public partial class TryStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Try() { return GetToken(JavaScriptParser.Try, 0); }
-            public BlockContext block()
-            {
-                return GetRuleContext<BlockContext>(0);
-            }
-            public CatchProductionContext catchProduction()
-            {
-                return GetRuleContext<CatchProductionContext>(0);
-            }
-            public FinallyProductionContext finallyProduction()
-            {
-                return GetRuleContext<FinallyProductionContext>(0);
-            }
-            public TryStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_tryStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterTryStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitTryStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public TryStatementContext tryStatement()
         {
-            TryStatementContext _localctx = new TryStatementContext(Context, State);
-            EnterRule(_localctx, 70, RULE_tryStatement);
-            try
+            return GetRuleContext<TryStatementContext>(0);
+        }
+        public DebuggerStatementContext debuggerStatement()
+        {
+            return GetRuleContext<DebuggerStatementContext>(0);
+        }
+        public FunctionDeclarationContext functionDeclaration()
+        {
+            return GetRuleContext<FunctionDeclarationContext>(0);
+        }
+        public StatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_statement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StatementContext statement()
+    {
+        StatementContext _localctx = new StatementContext(Context, State);
+        EnterRule(_localctx, 4, RULE_statement);
+        try
+        {
+            State = 176;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 2, Context))
             {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 439; Match(Try);
-                    State = 440; block();
-                    State = 446;
-                    ErrorHandler.Sync(this);
-                    switch (TokenStream.LA(1))
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
                     {
-                        case Catch:
+                        State = 156; block();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 157; variableStatement();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 158; importStatement();
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 159; exportStatement();
+                    }
+                    break;
+                case 5:
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 160; emptyStatement();
+                    }
+                    break;
+                case 6:
+                    EnterOuterAlt(_localctx, 6);
+                    {
+                        State = 161; classDeclaration();
+                    }
+                    break;
+                case 7:
+                    EnterOuterAlt(_localctx, 7);
+                    {
+                        State = 162; expressionStatement();
+                    }
+                    break;
+                case 8:
+                    EnterOuterAlt(_localctx, 8);
+                    {
+                        State = 163; ifStatement();
+                    }
+                    break;
+                case 9:
+                    EnterOuterAlt(_localctx, 9);
+                    {
+                        State = 164; iterationStatement();
+                    }
+                    break;
+                case 10:
+                    EnterOuterAlt(_localctx, 10);
+                    {
+                        State = 165; continueStatement();
+                    }
+                    break;
+                case 11:
+                    EnterOuterAlt(_localctx, 11);
+                    {
+                        State = 166; breakStatement();
+                    }
+                    break;
+                case 12:
+                    EnterOuterAlt(_localctx, 12);
+                    {
+                        State = 167; returnStatement();
+                    }
+                    break;
+                case 13:
+                    EnterOuterAlt(_localctx, 13);
+                    {
+                        State = 168; yieldStatement();
+                    }
+                    break;
+                case 14:
+                    EnterOuterAlt(_localctx, 14);
+                    {
+                        State = 169; withStatement();
+                    }
+                    break;
+                case 15:
+                    EnterOuterAlt(_localctx, 15);
+                    {
+                        State = 170; labelledStatement();
+                    }
+                    break;
+                case 16:
+                    EnterOuterAlt(_localctx, 16);
+                    {
+                        State = 171; switchStatement();
+                    }
+                    break;
+                case 17:
+                    EnterOuterAlt(_localctx, 17);
+                    {
+                        State = 172; throwStatement();
+                    }
+                    break;
+                case 18:
+                    EnterOuterAlt(_localctx, 18);
+                    {
+                        State = 173; tryStatement();
+                    }
+                    break;
+                case 19:
+                    EnterOuterAlt(_localctx, 19);
+                    {
+                        State = 174; debuggerStatement();
+                    }
+                    break;
+                case 20:
+                    EnterOuterAlt(_localctx, 20);
+                    {
+                        State = 175; functionDeclaration();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class BlockContext : ParserRuleContext
+    {
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public StatementListContext statementList()
+        {
+            return GetRuleContext<StatementListContext>(0);
+        }
+        public BlockContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_block; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBlock(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBlock(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public BlockContext block()
+    {
+        BlockContext _localctx = new BlockContext(Context, State);
+        EnterRule(_localctx, 6, RULE_block);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 178; Match(OpenBrace);
+                State = 180;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 3, Context))
+                {
+                    case 1:
+                        {
+                            State = 179; statementList();
+                        }
+                        break;
+                }
+                State = 182; Match(CloseBrace);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class StatementListContext : ParserRuleContext
+    {
+        public StatementContext[] statement()
+        {
+            return GetRuleContexts<StatementContext>();
+        }
+        public StatementContext statement(int i)
+        {
+            return GetRuleContext<StatementContext>(i);
+        }
+        public StatementListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_statementList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterStatementList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitStatementList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public StatementListContext statementList()
+    {
+        StatementListContext _localctx = new StatementListContext(Context, State);
+        EnterRule(_localctx, 8, RULE_statementList);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 185;
+                ErrorHandler.Sync(this);
+                _alt = 1;
+                do
+                {
+                    switch (_alt)
+                    {
+                        case 1:
                             {
-                                State = 441; catchProduction();
-                                State = 443;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 38, Context))
                                 {
-                                    case 1:
-                                        {
-                                            State = 442; finallyProduction();
-                                        }
-                                        break;
+                                    State = 184; statement();
                                 }
-                            }
-                            break;
-                        case Finally:
-                            {
-                                State = 445; finallyProduction();
                             }
                             break;
                         default:
                             throw new NoViableAltException(this);
                     }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class CatchProductionContext : ParserRuleContext
-        {
-            public ITerminalNode Catch() { return GetToken(JavaScriptParser.Catch, 0); }
-            public BlockContext block()
-            {
-                return GetRuleContext<BlockContext>(0);
-            }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public AssignableContext assignable()
-            {
-                return GetRuleContext<AssignableContext>(0);
-            }
-            public CatchProductionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_catchProduction; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterCatchProduction(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitCatchProduction(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public CatchProductionContext catchProduction()
-        {
-            CatchProductionContext _localctx = new CatchProductionContext(Context, State);
-            EnterRule(_localctx, 72, RULE_catchProduction);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 448; Match(Catch);
-                    State = 454;
+                    State = 187;
                     ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == OpenParen)
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 4, Context);
+                } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ImportStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Import() { return GetToken(JavaScriptParser.Import, 0); }
+        public ImportFromBlockContext importFromBlock()
+        {
+            return GetRuleContext<ImportFromBlockContext>(0);
+        }
+        public ImportStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_importStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterImportStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitImportStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ImportStatementContext importStatement()
+    {
+        ImportStatementContext _localctx = new ImportStatementContext(Context, State);
+        EnterRule(_localctx, 10, RULE_importStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 189; Match(Import);
+                State = 190; importFromBlock();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ImportFromBlockContext : ParserRuleContext
+    {
+        public ImportFromContext importFrom()
+        {
+            return GetRuleContext<ImportFromContext>(0);
+        }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ImportNamespaceContext importNamespace()
+        {
+            return GetRuleContext<ImportNamespaceContext>(0);
+        }
+        public ModuleItemsContext moduleItems()
+        {
+            return GetRuleContext<ModuleItemsContext>(0);
+        }
+        public ImportDefaultContext importDefault()
+        {
+            return GetRuleContext<ImportDefaultContext>(0);
+        }
+        public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
+        public ImportFromBlockContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_importFromBlock; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterImportFromBlock(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitImportFromBlock(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ImportFromBlockContext importFromBlock()
+    {
+        ImportFromBlockContext _localctx = new ImportFromBlockContext(Context, State);
+        EnterRule(_localctx, 12, RULE_importFromBlock);
+        int _la;
+        try
+        {
+            State = 204;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case OpenBrace:
+                case Multiply:
+                case NullLiteral:
+                case BooleanLiteral:
+                case Break:
+                case Do:
+                case Instanceof:
+                case Typeof:
+                case Case:
+                case Else:
+                case New:
+                case Var:
+                case Catch:
+                case Finally:
+                case Return:
+                case Void:
+                case Continue:
+                case For:
+                case Switch:
+                case While:
+                case Debugger:
+                case Function:
+                case This:
+                case With:
+                case Default:
+                case If:
+                case Throw:
+                case Delete:
+                case In:
+                case Try:
+                case As:
+                case From:
+                case Class:
+                case Enum:
+                case Extends:
+                case Super:
+                case Const:
+                case Export:
+                case Import:
+                case Async:
+                case Await:
+                case Implements:
+                case Let:
+                case Private:
+                case Public:
+                case Interface:
+                case Package:
+                case Protected:
+                case Static:
+                case Yield:
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
                     {
-                        {
-                            State = 449; Match(OpenParen);
-                            State = 451;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == OpenBracket || _la == OpenBrace || _la == Identifier)
-                            {
-                                {
-                                    State = 450; assignable();
-                                }
-                            }
-
-                            State = 453; Match(CloseParen);
-                        }
-                    }
-
-                    State = 456; block();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class FinallyProductionContext : ParserRuleContext
-        {
-            public ITerminalNode Finally() { return GetToken(JavaScriptParser.Finally, 0); }
-            public BlockContext block()
-            {
-                return GetRuleContext<BlockContext>(0);
-            }
-            public FinallyProductionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_finallyProduction; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFinallyProduction(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFinallyProduction(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public FinallyProductionContext finallyProduction()
-        {
-            FinallyProductionContext _localctx = new FinallyProductionContext(Context, State);
-            EnterRule(_localctx, 74, RULE_finallyProduction);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 458; Match(Finally);
-                    State = 459; block();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class DebuggerStatementContext : ParserRuleContext
-        {
-            public ITerminalNode Debugger() { return GetToken(JavaScriptParser.Debugger, 0); }
-            public EosContext eos()
-            {
-                return GetRuleContext<EosContext>(0);
-            }
-            public DebuggerStatementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_debuggerStatement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterDebuggerStatement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitDebuggerStatement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public DebuggerStatementContext debuggerStatement()
-        {
-            DebuggerStatementContext _localctx = new DebuggerStatementContext(Context, State);
-            EnterRule(_localctx, 76, RULE_debuggerStatement);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 461; Match(Debugger);
-                    State = 462; eos();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class FunctionDeclarationContext : ParserRuleContext
-        {
-            public ITerminalNode Function() { return GetToken(JavaScriptParser.Function, 0); }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public FunctionBodyContext functionBody()
-            {
-                return GetRuleContext<FunctionBodyContext>(0);
-            }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
-            public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
-            public FormalParameterListContext formalParameterList()
-            {
-                return GetRuleContext<FormalParameterListContext>(0);
-            }
-            public FunctionDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_functionDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFunctionDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFunctionDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public FunctionDeclarationContext functionDeclaration()
-        {
-            FunctionDeclarationContext _localctx = new FunctionDeclarationContext(Context, State);
-            EnterRule(_localctx, 78, RULE_functionDeclaration);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 465;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Async)
-                    {
-                        {
-                            State = 464; Match(Async);
-                        }
-                    }
-
-                    State = 467; Match(Function);
-                    State = 469;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Multiply)
-                    {
-                        {
-                            State = 468; Match(Multiply);
-                        }
-                    }
-
-                    State = 471; Match(Identifier);
-                    State = 472; Match(OpenParen);
-                    State = 474;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
-                    {
-                        {
-                            State = 473; formalParameterList();
-                        }
-                    }
-
-                    State = 476; Match(CloseParen);
-                    State = 477; Match(OpenBrace);
-                    State = 478; functionBody();
-                    State = 479; Match(CloseBrace);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ClassDeclarationContext : ParserRuleContext
-        {
-            public ITerminalNode Class() { return GetToken(JavaScriptParser.Class, 0); }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ClassTailContext classTail()
-            {
-                return GetRuleContext<ClassTailContext>(0);
-            }
-            public ClassDeclarationContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_classDeclaration; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterClassDeclaration(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitClassDeclaration(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ClassDeclarationContext classDeclaration()
-        {
-            ClassDeclarationContext _localctx = new ClassDeclarationContext(Context, State);
-            EnterRule(_localctx, 80, RULE_classDeclaration);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 481; Match(Class);
-                    State = 482; Match(Identifier);
-                    State = 483; classTail();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ClassTailContext : ParserRuleContext
-        {
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public ITerminalNode Extends() { return GetToken(JavaScriptParser.Extends, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ClassElementContext[] classElement()
-            {
-                return GetRuleContexts<ClassElementContext>();
-            }
-            public ClassElementContext classElement(int i)
-            {
-                return GetRuleContext<ClassElementContext>(i);
-            }
-            public ClassTailContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_classTail; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterClassTail(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitClassTail(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ClassTailContext classTail()
-        {
-            ClassTailContext _localctx = new ClassTailContext(Context, State);
-            EnterRule(_localctx, 82, RULE_classTail);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 487;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Extends)
-                    {
-                        {
-                            State = 485; Match(Extends);
-                            State = 486; singleExpression(0);
-                        }
-                    }
-
-                    State = 489; Match(OpenBrace);
-                    State = 493;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            {
-                                {
-                                    State = 490; classElement();
-                                }
-                            }
-                        }
-                        State = 495;
+                        State = 193;
                         ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
-                    }
-                    State = 496; Match(CloseBrace);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ClassElementContext : ParserRuleContext
-        {
-            public MethodDefinitionContext methodDefinition()
-            {
-                return GetRuleContext<MethodDefinitionContext>(0);
-            }
-            public ITerminalNode[] Static() { return GetTokens(JavaScriptParser.Static); }
-            public ITerminalNode Static(int i)
-            {
-                return GetToken(JavaScriptParser.Static, i);
-            }
-            public ITerminalNode[] Identifier() { return GetTokens(JavaScriptParser.Identifier); }
-            public ITerminalNode Identifier(int i)
-            {
-                return GetToken(JavaScriptParser.Identifier, i);
-            }
-            public ITerminalNode[] Async() { return GetTokens(JavaScriptParser.Async); }
-            public ITerminalNode Async(int i)
-            {
-                return GetToken(JavaScriptParser.Async, i);
-            }
-            public EmptyStatementContext emptyStatement()
-            {
-                return GetRuleContext<EmptyStatementContext>(0);
-            }
-            public PropertyNameContext propertyName()
-            {
-                return GetRuleContext<PropertyNameContext>(0);
-            }
-            public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode Hashtag() { return GetToken(JavaScriptParser.Hashtag, 0); }
-            public ClassElementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_classElement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterClassElement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitClassElement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ClassElementContext classElement()
-        {
-            ClassElementContext _localctx = new ClassElementContext(Context, State);
-            EnterRule(_localctx, 84, RULE_classElement);
-            int _la;
-            try
-            {
-                int _alt;
-                State = 516;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 50, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
+                        _la = TokenStream.LA(1);
+                        if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (NullLiteral - 59)) | (1L << (BooleanLiteral - 59)) | (1L << (Break - 59)) | (1L << (Do - 59)) | (1L << (Instanceof - 59)) | (1L << (Typeof - 59)) | (1L << (Case - 59)) | (1L << (Else - 59)) | (1L << (New - 59)) | (1L << (Var - 59)) | (1L << (Catch - 59)) | (1L << (Finally - 59)) | (1L << (Return - 59)) | (1L << (Void - 59)) | (1L << (Continue - 59)) | (1L << (For - 59)) | (1L << (Switch - 59)) | (1L << (While - 59)) | (1L << (Debugger - 59)) | (1L << (Function - 59)) | (1L << (This - 59)) | (1L << (With - 59)) | (1L << (Default - 59)) | (1L << (If - 59)) | (1L << (Throw - 59)) | (1L << (Delete - 59)) | (1L << (In - 59)) | (1L << (Try - 59)) | (1L << (As - 59)) | (1L << (From - 59)) | (1L << (Class - 59)) | (1L << (Enum - 59)) | (1L << (Extends - 59)) | (1L << (Super - 59)) | (1L << (Const - 59)) | (1L << (Export - 59)) | (1L << (Import - 59)) | (1L << (Async - 59)) | (1L << (Await - 59)) | (1L << (Implements - 59)) | (1L << (Let - 59)) | (1L << (Private - 59)) | (1L << (Public - 59)) | (1L << (Interface - 59)) | (1L << (Package - 59)) | (1L << (Protected - 59)) | (1L << (Static - 59)) | (1L << (Yield - 59)) | (1L << (Identifier - 59)))) != 0))
                         {
-                            State = 504;
-                            ErrorHandler.Sync(this);
-                            _alt = Interpreter.AdaptivePredict(TokenStream, 48, Context);
-                            while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
                             {
-                                if (_alt == 1)
-                                {
-                                    {
-                                        State = 502;
-                                        ErrorHandler.Sync(this);
-                                        switch (Interpreter.AdaptivePredict(TokenStream, 47, Context))
-                                        {
-                                            case 1:
-                                                {
-                                                    State = 498; Match(Static);
-                                                }
-                                                break;
-                                            case 2:
-                                                {
-                                                    State = 499;
-                                                    if (!(this.n("static"))) throw new FailedPredicateException(this, "this.n(\"static\")");
-                                                    State = 500; Match(Identifier);
-                                                }
-                                                break;
-                                            case 3:
-                                                {
-                                                    State = 501; Match(Async);
-                                                }
-                                                break;
-                                        }
-                                    }
-                                }
-                                State = 506;
-                                ErrorHandler.Sync(this);
-                                _alt = Interpreter.AdaptivePredict(TokenStream, 48, Context);
+                                State = 192; importDefault();
                             }
-                            State = 507; methodDefinition();
                         }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
+
+                        State = 197;
+                        ErrorHandler.Sync(this);
+                        switch (TokenStream.LA(1))
                         {
-                            State = 508; emptyStatement();
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 510;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Hashtag)
-                            {
+                            case Multiply:
                                 {
-                                    State = 509; Match(Hashtag);
+                                    State = 195; importNamespace();
                                 }
-                            }
-
-                            State = 512; propertyName();
-                            State = 513; Match(Assign);
-                            State = 514; singleExpression(0);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class MethodDefinitionContext : ParserRuleContext
-        {
-            public PropertyNameContext propertyName()
-            {
-                return GetRuleContext<PropertyNameContext>(0);
-            }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public FunctionBodyContext functionBody()
-            {
-                return GetRuleContext<FunctionBodyContext>(0);
-            }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
-            public ITerminalNode Hashtag() { return GetToken(JavaScriptParser.Hashtag, 0); }
-            public FormalParameterListContext formalParameterList()
-            {
-                return GetRuleContext<FormalParameterListContext>(0);
-            }
-            public GetterContext getter()
-            {
-                return GetRuleContext<GetterContext>(0);
-            }
-            public SetterContext setter()
-            {
-                return GetRuleContext<SetterContext>(0);
-            }
-            public MethodDefinitionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_methodDefinition; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterMethodDefinition(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitMethodDefinition(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public MethodDefinitionContext methodDefinition()
-        {
-            MethodDefinitionContext _localctx = new MethodDefinitionContext(Context, State);
-            EnterRule(_localctx, 86, RULE_methodDefinition);
-            int _la;
-            try
-            {
-                State = 563;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 59, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 519;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Multiply)
-                            {
+                                break;
+                            case OpenBrace:
                                 {
-                                    State = 518; Match(Multiply);
-                                }
-                            }
-
-                            State = 522;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Hashtag)
-                            {
-                                {
-                                    State = 521; Match(Hashtag);
-                                }
-                            }
-
-                            State = 524; propertyName();
-                            State = 525; Match(OpenParen);
-                            State = 527;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
-                            {
-                                {
-                                    State = 526; formalParameterList();
-                                }
-                            }
-
-                            State = 529; Match(CloseParen);
-                            State = 530; Match(OpenBrace);
-                            State = 531; functionBody();
-                            State = 532; Match(CloseBrace);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 535;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Multiply)
-                            {
-                                {
-                                    State = 534; Match(Multiply);
-                                }
-                            }
-
-                            State = 538;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Hashtag)
-                            {
-                                {
-                                    State = 537; Match(Hashtag);
-                                }
-                            }
-
-                            State = 540; getter();
-                            State = 541; Match(OpenParen);
-                            State = 542; Match(CloseParen);
-                            State = 543; Match(OpenBrace);
-                            State = 544; functionBody();
-                            State = 545; Match(CloseBrace);
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 548;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Multiply)
-                            {
-                                {
-                                    State = 547; Match(Multiply);
-                                }
-                            }
-
-                            State = 551;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Hashtag)
-                            {
-                                {
-                                    State = 550; Match(Hashtag);
-                                }
-                            }
-
-                            State = 553; setter();
-                            State = 554; Match(OpenParen);
-                            State = 556;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
-                            {
-                                {
-                                    State = 555; formalParameterList();
-                                }
-                            }
-
-                            State = 558; Match(CloseParen);
-                            State = 559; Match(OpenBrace);
-                            State = 560; functionBody();
-                            State = 561; Match(CloseBrace);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class FormalParameterListContext : ParserRuleContext
-        {
-            public FormalParameterArgContext[] formalParameterArg()
-            {
-                return GetRuleContexts<FormalParameterArgContext>();
-            }
-            public FormalParameterArgContext formalParameterArg(int i)
-            {
-                return GetRuleContext<FormalParameterArgContext>(i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(JavaScriptParser.Comma, i);
-            }
-            public LastFormalParameterArgContext lastFormalParameterArg()
-            {
-                return GetRuleContext<LastFormalParameterArgContext>(0);
-            }
-            public FormalParameterListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_formalParameterList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFormalParameterList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFormalParameterList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public FormalParameterListContext formalParameterList()
-        {
-            FormalParameterListContext _localctx = new FormalParameterListContext(Context, State);
-            EnterRule(_localctx, 88, RULE_formalParameterList);
-            int _la;
-            try
-            {
-                int _alt;
-                State = 578;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case OpenBracket:
-                    case OpenBrace:
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 565; formalParameterArg();
-                            State = 570;
-                            ErrorHandler.Sync(this);
-                            _alt = Interpreter.AdaptivePredict(TokenStream, 60, Context);
-                            while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                            {
-                                if (_alt == 1)
-                                {
-                                    {
-                                        {
-                                            State = 566; Match(Comma);
-                                            State = 567; formalParameterArg();
-                                        }
-                                    }
-                                }
-                                State = 572;
-                                ErrorHandler.Sync(this);
-                                _alt = Interpreter.AdaptivePredict(TokenStream, 60, Context);
-                            }
-                            State = 575;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Comma)
-                            {
-                                {
-                                    State = 573; Match(Comma);
-                                    State = 574; lastFormalParameterArg();
-                                }
-                            }
-
-                        }
-                        break;
-                    case Ellipsis:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 577; lastFormalParameterArg();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class FormalParameterArgContext : ParserRuleContext
-        {
-            public AssignableContext assignable()
-            {
-                return GetRuleContext<AssignableContext>(0);
-            }
-            public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public FormalParameterArgContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_formalParameterArg; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFormalParameterArg(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFormalParameterArg(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public FormalParameterArgContext formalParameterArg()
-        {
-            FormalParameterArgContext _localctx = new FormalParameterArgContext(Context, State);
-            EnterRule(_localctx, 90, RULE_formalParameterArg);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 580; assignable();
-                    State = 583;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Assign)
-                    {
-                        {
-                            State = 581; Match(Assign);
-                            State = 582; singleExpression(0);
-                        }
-                    }
-
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class LastFormalParameterArgContext : ParserRuleContext
-        {
-            public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public LastFormalParameterArgContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_lastFormalParameterArg; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterLastFormalParameterArg(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitLastFormalParameterArg(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public LastFormalParameterArgContext lastFormalParameterArg()
-        {
-            LastFormalParameterArgContext _localctx = new LastFormalParameterArgContext(Context, State);
-            EnterRule(_localctx, 92, RULE_lastFormalParameterArg);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 585; Match(Ellipsis);
-                    State = 586; singleExpression(0);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class FunctionBodyContext : ParserRuleContext
-        {
-            public SourceElementsContext sourceElements()
-            {
-                return GetRuleContext<SourceElementsContext>(0);
-            }
-            public FunctionBodyContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_functionBody; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFunctionBody(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFunctionBody(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public FunctionBodyContext functionBody()
-        {
-            FunctionBodyContext _localctx = new FunctionBodyContext(Context, State);
-            EnterRule(_localctx, 94, RULE_functionBody);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 589;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 64, Context))
-                    {
-                        case 1:
-                            {
-                                State = 588; sourceElements();
-                            }
-                            break;
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class SourceElementsContext : ParserRuleContext
-        {
-            public SourceElementContext[] sourceElement()
-            {
-                return GetRuleContexts<SourceElementContext>();
-            }
-            public SourceElementContext sourceElement(int i)
-            {
-                return GetRuleContext<SourceElementContext>(i);
-            }
-            public SourceElementsContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_sourceElements; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterSourceElements(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitSourceElements(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public SourceElementsContext sourceElements()
-        {
-            SourceElementsContext _localctx = new SourceElementsContext(Context, State);
-            EnterRule(_localctx, 96, RULE_sourceElements);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 592;
-                    ErrorHandler.Sync(this);
-                    _alt = 1;
-                    do
-                    {
-                        switch (_alt)
-                        {
-                            case 1:
-                                {
-                                    {
-                                        State = 591; sourceElement();
-                                    }
+                                    State = 196; moduleItems();
                                 }
                                 break;
                             default:
                                 throw new NoViableAltException(this);
                         }
-                        State = 594;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 65, Context);
-                    } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
+                        State = 199; importFrom();
+                        State = 200; eos();
+                    }
+                    break;
+                case StringLiteral:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 202; Match(StringLiteral);
+                        State = 203; eos();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ModuleItemsContext : ParserRuleContext
+    {
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public AliasNameContext[] aliasName()
+        {
+            return GetRuleContexts<AliasNameContext>();
+        }
+        public AliasNameContext aliasName(int i)
+        {
+            return GetRuleContext<AliasNameContext>(i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(JavaScriptParser.Comma, i);
+        }
+        public ModuleItemsContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_moduleItems; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterModuleItems(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitModuleItems(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ModuleItemsContext moduleItems()
+    {
+        ModuleItemsContext _localctx = new ModuleItemsContext(Context, State);
+        EnterRule(_localctx, 14, RULE_moduleItems);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 206; Match(OpenBrace);
+                State = 212;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        {
+                            {
+                                State = 207; aliasName();
+                                State = 208; Match(Comma);
+                            }
+                        }
+                    }
+                    State = 214;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 8, Context);
                 }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ArrayLiteralContext : ParserRuleContext
-        {
-            public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
-            public ElementListContext elementList()
-            {
-                return GetRuleContext<ElementListContext>(0);
-            }
-            public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
-            public ArrayLiteralContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_arrayLiteral; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArrayLiteral(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArrayLiteral(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ArrayLiteralContext arrayLiteral()
-        {
-            ArrayLiteralContext _localctx = new ArrayLiteralContext(Context, State);
-            EnterRule(_localctx, 98, RULE_arrayLiteral);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
+                State = 219;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (((((_la - 59)) & ~0x3f) == 0 && ((1L << (_la - 59)) & ((1L << (NullLiteral - 59)) | (1L << (BooleanLiteral - 59)) | (1L << (Break - 59)) | (1L << (Do - 59)) | (1L << (Instanceof - 59)) | (1L << (Typeof - 59)) | (1L << (Case - 59)) | (1L << (Else - 59)) | (1L << (New - 59)) | (1L << (Var - 59)) | (1L << (Catch - 59)) | (1L << (Finally - 59)) | (1L << (Return - 59)) | (1L << (Void - 59)) | (1L << (Continue - 59)) | (1L << (For - 59)) | (1L << (Switch - 59)) | (1L << (While - 59)) | (1L << (Debugger - 59)) | (1L << (Function - 59)) | (1L << (This - 59)) | (1L << (With - 59)) | (1L << (Default - 59)) | (1L << (If - 59)) | (1L << (Throw - 59)) | (1L << (Delete - 59)) | (1L << (In - 59)) | (1L << (Try - 59)) | (1L << (As - 59)) | (1L << (From - 59)) | (1L << (Class - 59)) | (1L << (Enum - 59)) | (1L << (Extends - 59)) | (1L << (Super - 59)) | (1L << (Const - 59)) | (1L << (Export - 59)) | (1L << (Import - 59)) | (1L << (Async - 59)) | (1L << (Await - 59)) | (1L << (Implements - 59)) | (1L << (Let - 59)) | (1L << (Private - 59)) | (1L << (Public - 59)) | (1L << (Interface - 59)) | (1L << (Package - 59)) | (1L << (Protected - 59)) | (1L << (Static - 59)) | (1L << (Yield - 59)) | (1L << (Identifier - 59)))) != 0))
                 {
                     {
-                        State = 596; Match(OpenBracket);
-                        State = 597; elementList();
-                        State = 598; Match(CloseBracket);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ElementListContext : ParserRuleContext
-        {
-            public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(JavaScriptParser.Comma, i);
-            }
-            public ArrayElementContext[] arrayElement()
-            {
-                return GetRuleContexts<ArrayElementContext>();
-            }
-            public ArrayElementContext arrayElement(int i)
-            {
-                return GetRuleContext<ArrayElementContext>(i);
-            }
-            public ElementListContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_elementList; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterElementList(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitElementList(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ElementListContext elementList()
-        {
-            ElementListContext _localctx = new ElementListContext(Context, State);
-            EnterRule(_localctx, 100, RULE_elementList);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 603;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            {
-                                {
-                                    State = 600; Match(Comma);
-                                }
-                            }
-                        }
-                        State = 605;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
-                    }
-                    State = 607;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << Ellipsis) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
-                    {
-                        {
-                            State = 606; arrayElement();
-                        }
-                    }
-
-                    State = 617;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 69, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            {
-                                {
-                                    State = 610;
-                                    ErrorHandler.Sync(this);
-                                    _la = TokenStream.LA(1);
-                                    do
-                                    {
-                                        {
-                                            {
-                                                State = 609; Match(Comma);
-                                            }
-                                        }
-                                        State = 612;
-                                        ErrorHandler.Sync(this);
-                                        _la = TokenStream.LA(1);
-                                    } while (_la == Comma);
-                                    State = 614; arrayElement();
-                                }
-                            }
-                        }
-                        State = 619;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 69, Context);
-                    }
-                    State = 623;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    while (_la == Comma)
-                    {
-                        {
-                            {
-                                State = 620; Match(Comma);
-                            }
-                        }
-                        State = 625;
+                        State = 215; aliasName();
+                        State = 217;
                         ErrorHandler.Sync(this);
                         _la = TokenStream.LA(1);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ArrayElementContext : ParserRuleContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
-            public ArrayElementContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_arrayElement; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArrayElement(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArrayElement(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ArrayElementContext arrayElement()
-        {
-            ArrayElementContext _localctx = new ArrayElementContext(Context, State);
-            EnterRule(_localctx, 102, RULE_arrayElement);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 627;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Ellipsis)
-                    {
+                        if (_la == Comma)
                         {
-                            State = 626; Match(Ellipsis);
-                        }
-                    }
-
-                    State = 629; singleExpression(0);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ObjectLiteralContext : ParserRuleContext
-        {
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public PropertyAssignmentContext[] propertyAssignment()
-            {
-                return GetRuleContexts<PropertyAssignmentContext>();
-            }
-            public PropertyAssignmentContext propertyAssignment(int i)
-            {
-                return GetRuleContext<PropertyAssignmentContext>(i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(JavaScriptParser.Comma, i);
-            }
-            public ObjectLiteralContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_objectLiteral; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterObjectLiteral(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitObjectLiteral(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ObjectLiteralContext objectLiteral()
-        {
-            ObjectLiteralContext _localctx = new ObjectLiteralContext(Context, State);
-            EnterRule(_localctx, 104, RULE_objectLiteral);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 631; Match(OpenBrace);
-                    State = 640;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << Ellipsis) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << Multiply) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Break - 64)) | (1L << (Do - 64)) | (1L << (Instanceof - 64)) | (1L << (Typeof - 64)) | (1L << (Case - 64)) | (1L << (Else - 64)) | (1L << (New - 64)) | (1L << (Var - 64)) | (1L << (Catch - 64)) | (1L << (Finally - 64)) | (1L << (Return - 64)) | (1L << (Void - 64)) | (1L << (Continue - 64)) | (1L << (For - 64)) | (1L << (Switch - 64)) | (1L << (While - 64)) | (1L << (Debugger - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (With - 64)) | (1L << (Default - 64)) | (1L << (If - 64)) | (1L << (Throw - 64)) | (1L << (Delete - 64)) | (1L << (In - 64)) | (1L << (Try - 64)) | (1L << (As - 64)) | (1L << (From - 64)) | (1L << (Class - 64)) | (1L << (Enum - 64)) | (1L << (Extends - 64)) | (1L << (Super - 64)) | (1L << (Const - 64)) | (1L << (Export - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Implements - 64)) | (1L << (Let - 64)) | (1L << (Private - 64)) | (1L << (Public - 64)) | (1L << (Interface - 64)) | (1L << (Package - 64)) | (1L << (Protected - 64)) | (1L << (Static - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
-                    {
-                        {
-                            State = 632; propertyAssignment();
-                            State = 637;
-                            ErrorHandler.Sync(this);
-                            _alt = Interpreter.AdaptivePredict(TokenStream, 72, Context);
-                            while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
                             {
-                                if (_alt == 1)
+                                State = 216; Match(Comma);
+                            }
+                        }
+
+                    }
+                }
+
+                State = 221; Match(CloseBrace);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ImportDefaultContext : ParserRuleContext
+    {
+        public AliasNameContext aliasName()
+        {
+            return GetRuleContext<AliasNameContext>(0);
+        }
+        public ITerminalNode Comma() { return GetToken(JavaScriptParser.Comma, 0); }
+        public ImportDefaultContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_importDefault; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterImportDefault(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitImportDefault(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ImportDefaultContext importDefault()
+    {
+        ImportDefaultContext _localctx = new ImportDefaultContext(Context, State);
+        EnterRule(_localctx, 16, RULE_importDefault);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 223; aliasName();
+                State = 224; Match(Comma);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ImportNamespaceContext : ParserRuleContext
+    {
+        public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
+        public ITerminalNode As() { return GetToken(JavaScriptParser.As, 0); }
+        public IdentifierNameContext identifierName()
+        {
+            return GetRuleContext<IdentifierNameContext>(0);
+        }
+        public ImportNamespaceContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_importNamespace; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterImportNamespace(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitImportNamespace(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ImportNamespaceContext importNamespace()
+    {
+        ImportNamespaceContext _localctx = new ImportNamespaceContext(Context, State);
+        EnterRule(_localctx, 18, RULE_importNamespace);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 226; Match(Multiply);
+                State = 229;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == As)
+                {
+                    {
+                        State = 227; Match(As);
+                        State = 228; identifierName();
+                    }
+                }
+
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ImportFromContext : ParserRuleContext
+    {
+        public ITerminalNode From() { return GetToken(JavaScriptParser.From, 0); }
+        public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
+        public ImportFromContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_importFrom; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterImportFrom(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitImportFrom(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ImportFromContext importFrom()
+    {
+        ImportFromContext _localctx = new ImportFromContext(Context, State);
+        EnterRule(_localctx, 20, RULE_importFrom);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 231; Match(From);
+                State = 232; Match(StringLiteral);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class AliasNameContext : ParserRuleContext
+    {
+        public IdentifierNameContext[] identifierName()
+        {
+            return GetRuleContexts<IdentifierNameContext>();
+        }
+        public IdentifierNameContext identifierName(int i)
+        {
+            return GetRuleContext<IdentifierNameContext>(i);
+        }
+        public ITerminalNode As() { return GetToken(JavaScriptParser.As, 0); }
+        public AliasNameContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_aliasName; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAliasName(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAliasName(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AliasNameContext aliasName()
+    {
+        AliasNameContext _localctx = new AliasNameContext(Context, State);
+        EnterRule(_localctx, 22, RULE_aliasName);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 234; identifierName();
+                State = 237;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == As)
+                {
+                    {
+                        State = 235; Match(As);
+                        State = 236; identifierName();
+                    }
+                }
+
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ExportStatementContext : ParserRuleContext
+    {
+        public ExportStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_exportStatement; } }
+
+        public ExportStatementContext() { }
+        public virtual void CopyFrom(ExportStatementContext context)
+        {
+            base.CopyFrom(context);
+        }
+    }
+    public partial class ExportDefaultDeclarationContext : ExportStatementContext
+    {
+        public ITerminalNode Export() { return GetToken(JavaScriptParser.Export, 0); }
+        public ITerminalNode Default() { return GetToken(JavaScriptParser.Default, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ExportDefaultDeclarationContext(ExportStatementContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterExportDefaultDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitExportDefaultDeclaration(this);
+        }
+    }
+    public partial class ExportDeclarationContext : ExportStatementContext
+    {
+        public ITerminalNode Export() { return GetToken(JavaScriptParser.Export, 0); }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ExportFromBlockContext exportFromBlock()
+        {
+            return GetRuleContext<ExportFromBlockContext>(0);
+        }
+        public DeclarationContext declaration()
+        {
+            return GetRuleContext<DeclarationContext>(0);
+        }
+        public ExportDeclarationContext(ExportStatementContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterExportDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitExportDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExportStatementContext exportStatement()
+    {
+        ExportStatementContext _localctx = new ExportStatementContext(Context, State);
+        EnterRule(_localctx, 24, RULE_exportStatement);
+        try
+        {
+            State = 251;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 14, Context))
+            {
+                case 1:
+                    _localctx = new ExportDeclarationContext(_localctx);
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 239; Match(Export);
+                        State = 242;
+                        ErrorHandler.Sync(this);
+                        switch (TokenStream.LA(1))
+                        {
+                            case OpenBrace:
+                            case Multiply:
                                 {
-                                    {
-                                        {
-                                            State = 633; Match(Comma);
-                                            State = 634; propertyAssignment();
-                                        }
-                                    }
+                                    State = 240; exportFromBlock();
                                 }
-                                State = 639;
-                                ErrorHandler.Sync(this);
-                                _alt = Interpreter.AdaptivePredict(TokenStream, 72, Context);
+                                break;
+                            case Var:
+                            case Function:
+                            case Class:
+                            case Const:
+                            case Async:
+                            case Let:
+                                {
+                                    State = 241; declaration();
+                                }
+                                break;
+                            default:
+                                throw new NoViableAltException(this);
+                        }
+                        State = 244; eos();
+                    }
+                    break;
+                case 2:
+                    _localctx = new ExportDefaultDeclarationContext(_localctx);
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 246; Match(Export);
+                        State = 247; Match(Default);
+                        State = 248; singleExpression(0);
+                        State = 249; eos();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ExportFromBlockContext : ParserRuleContext
+    {
+        public ImportNamespaceContext importNamespace()
+        {
+            return GetRuleContext<ImportNamespaceContext>(0);
+        }
+        public ImportFromContext importFrom()
+        {
+            return GetRuleContext<ImportFromContext>(0);
+        }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ModuleItemsContext moduleItems()
+        {
+            return GetRuleContext<ModuleItemsContext>(0);
+        }
+        public ExportFromBlockContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_exportFromBlock; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterExportFromBlock(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitExportFromBlock(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExportFromBlockContext exportFromBlock()
+    {
+        ExportFromBlockContext _localctx = new ExportFromBlockContext(Context, State);
+        EnterRule(_localctx, 26, RULE_exportFromBlock);
+        try
+        {
+            State = 263;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case Multiply:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 253; importNamespace();
+                        State = 254; importFrom();
+                        State = 255; eos();
+                    }
+                    break;
+                case OpenBrace:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 257; moduleItems();
+                        State = 259;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 15, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 258; importFrom();
+                                }
+                                break;
+                        }
+                        State = 261; eos();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DeclarationContext : ParserRuleContext
+    {
+        public VariableStatementContext variableStatement()
+        {
+            return GetRuleContext<VariableStatementContext>(0);
+        }
+        public ClassDeclarationContext classDeclaration()
+        {
+            return GetRuleContext<ClassDeclarationContext>(0);
+        }
+        public FunctionDeclarationContext functionDeclaration()
+        {
+            return GetRuleContext<FunctionDeclarationContext>(0);
+        }
+        public DeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_declaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DeclarationContext declaration()
+    {
+        DeclarationContext _localctx = new DeclarationContext(Context, State);
+        EnterRule(_localctx, 28, RULE_declaration);
+        try
+        {
+            State = 268;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case Var:
+                case Const:
+                case Let:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 265; variableStatement();
+                    }
+                    break;
+                case Class:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 266; classDeclaration();
+                    }
+                    break;
+                case Function:
+                case Async:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 267; functionDeclaration();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class VariableStatementContext : ParserRuleContext
+    {
+        public VariableDeclarationListContext variableDeclarationList()
+        {
+            return GetRuleContext<VariableDeclarationListContext>(0);
+        }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public VariableStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_variableStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterVariableStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitVariableStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public VariableStatementContext variableStatement()
+    {
+        VariableStatementContext _localctx = new VariableStatementContext(Context, State);
+        EnterRule(_localctx, 30, RULE_variableStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 270; variableDeclarationList();
+                State = 271; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class VariableDeclarationListContext : ParserRuleContext
+    {
+        public VarModifierContext varModifier()
+        {
+            return GetRuleContext<VarModifierContext>(0);
+        }
+        public VariableDeclarationContext[] variableDeclaration()
+        {
+            return GetRuleContexts<VariableDeclarationContext>();
+        }
+        public VariableDeclarationContext variableDeclaration(int i)
+        {
+            return GetRuleContext<VariableDeclarationContext>(i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(JavaScriptParser.Comma, i);
+        }
+        public VariableDeclarationListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_variableDeclarationList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterVariableDeclarationList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitVariableDeclarationList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public VariableDeclarationListContext variableDeclarationList()
+    {
+        VariableDeclarationListContext _localctx = new VariableDeclarationListContext(Context, State);
+        EnterRule(_localctx, 32, RULE_variableDeclarationList);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 273; varModifier();
+                State = 274; variableDeclaration();
+                State = 279;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 18, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        {
+                            {
+                                State = 275; Match(Comma);
+                                State = 276; variableDeclaration();
                             }
                         }
                     }
-
-                    State = 643;
+                    State = 281;
                     ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Comma)
-                    {
-                        {
-                            State = 642; Match(Comma);
-                        }
-                    }
-
-                    State = 645; Match(CloseBrace);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 18, Context);
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        public partial class PropertyAssignmentContext : ParserRuleContext
+    public partial class VariableDeclarationContext : ParserRuleContext
+    {
+        public AssignableContext assignable()
         {
-            public PropertyAssignmentContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_propertyAssignment; } }
+            return GetRuleContext<AssignableContext>(0);
+        }
+        public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public VariableDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_variableDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterVariableDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitVariableDeclaration(this);
+        }
+    }
 
-            public PropertyAssignmentContext() { }
-            public virtual void CopyFrom(PropertyAssignmentContext context)
-            {
-                base.CopyFrom(context);
-            }
-        }
-        public partial class PropertyExpressionAssignmentContext : PropertyAssignmentContext
+    [RuleVersion(0)]
+    public VariableDeclarationContext variableDeclaration()
+    {
+        VariableDeclarationContext _localctx = new VariableDeclarationContext(Context, State);
+        EnterRule(_localctx, 34, RULE_variableDeclaration);
+        try
         {
-            public PropertyNameContext propertyName()
+            EnterOuterAlt(_localctx, 1);
             {
-                return GetRuleContext<PropertyNameContext>(0);
-            }
-            public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public PropertyExpressionAssignmentContext(PropertyAssignmentContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPropertyExpressionAssignment(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPropertyExpressionAssignment(this);
-            }
-        }
-        public partial class ComputedPropertyExpressionAssignmentContext : PropertyAssignmentContext
-        {
-            public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
-            public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
-            public ComputedPropertyExpressionAssignmentContext(PropertyAssignmentContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterComputedPropertyExpressionAssignment(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitComputedPropertyExpressionAssignment(this);
-            }
-        }
-        public partial class PropertyShorthandContext : PropertyAssignmentContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
-            public PropertyShorthandContext(PropertyAssignmentContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPropertyShorthand(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPropertyShorthand(this);
-            }
-        }
-        public partial class PropertySetterContext : PropertyAssignmentContext
-        {
-            public SetterContext setter()
-            {
-                return GetRuleContext<SetterContext>(0);
-            }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public FormalParameterArgContext formalParameterArg()
-            {
-                return GetRuleContext<FormalParameterArgContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public FunctionBodyContext functionBody()
-            {
-                return GetRuleContext<FunctionBodyContext>(0);
-            }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public PropertySetterContext(PropertyAssignmentContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPropertySetter(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPropertySetter(this);
-            }
-        }
-        public partial class PropertyGetterContext : PropertyAssignmentContext
-        {
-            public GetterContext getter()
-            {
-                return GetRuleContext<GetterContext>(0);
-            }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public FunctionBodyContext functionBody()
-            {
-                return GetRuleContext<FunctionBodyContext>(0);
-            }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public PropertyGetterContext(PropertyAssignmentContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPropertyGetter(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPropertyGetter(this);
-            }
-        }
-        public partial class FunctionPropertyContext : PropertyAssignmentContext
-        {
-            public PropertyNameContext propertyName()
-            {
-                return GetRuleContext<PropertyNameContext>(0);
-            }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public FunctionBodyContext functionBody()
-            {
-                return GetRuleContext<FunctionBodyContext>(0);
-            }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
-            public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
-            public FormalParameterListContext formalParameterList()
-            {
-                return GetRuleContext<FormalParameterListContext>(0);
-            }
-            public FunctionPropertyContext(PropertyAssignmentContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFunctionProperty(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFunctionProperty(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public PropertyAssignmentContext propertyAssignment()
-        {
-            PropertyAssignmentContext _localctx = new PropertyAssignmentContext(Context, State);
-            EnterRule(_localctx, 106, RULE_propertyAssignment);
-            int _la;
-            try
-            {
-                State = 692;
+                State = 282; assignable();
+                State = 285;
                 ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 79, Context))
+                switch (Interpreter.AdaptivePredict(TokenStream, 19, Context))
                 {
                     case 1:
-                        _localctx = new PropertyExpressionAssignmentContext(_localctx);
-                        EnterOuterAlt(_localctx, 1);
                         {
-                            State = 647; propertyName();
-                            State = 648; Match(Colon);
-                            State = 649; singleExpression(0);
+                            State = 283; Match(Assign);
+                            State = 284; singleExpression(0);
                         }
                         break;
-                    case 2:
-                        _localctx = new ComputedPropertyExpressionAssignmentContext(_localctx);
-                        EnterOuterAlt(_localctx, 2);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class EmptyStatementContext : ParserRuleContext
+    {
+        public ITerminalNode SemiColon() { return GetToken(JavaScriptParser.SemiColon, 0); }
+        public EmptyStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_emptyStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterEmptyStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitEmptyStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public EmptyStatementContext emptyStatement()
+    {
+        EmptyStatementContext _localctx = new EmptyStatementContext(Context, State);
+        EnterRule(_localctx, 36, RULE_emptyStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 287; Match(SemiColon);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ExpressionStatementContext : ParserRuleContext
+    {
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ExpressionStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_expressionStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterExpressionStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitExpressionStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExpressionStatementContext expressionStatement()
+    {
+        ExpressionStatementContext _localctx = new ExpressionStatementContext(Context, State);
+        EnterRule(_localctx, 38, RULE_expressionStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 289;
+                if (!(this.notOpenBraceAndNotFunction())) throw new FailedPredicateException(this, "this.notOpenBraceAndNotFunction()");
+                State = 290; expressionSequence();
+                State = 291; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class IfStatementContext : ParserRuleContext
+    {
+        public ITerminalNode If() { return GetToken(JavaScriptParser.If, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public StatementContext[] statement()
+        {
+            return GetRuleContexts<StatementContext>();
+        }
+        public StatementContext statement(int i)
+        {
+            return GetRuleContext<StatementContext>(i);
+        }
+        public ITerminalNode Else() { return GetToken(JavaScriptParser.Else, 0); }
+        public IfStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_ifStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterIfStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitIfStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public IfStatementContext ifStatement()
+    {
+        IfStatementContext _localctx = new IfStatementContext(Context, State);
+        EnterRule(_localctx, 40, RULE_ifStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 293; Match(If);
+                State = 294; Match(OpenParen);
+                State = 295; expressionSequence();
+                State = 296; Match(CloseParen);
+                State = 297; statement();
+                State = 300;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 20, Context))
+                {
+                    case 1:
                         {
-                            State = 651; Match(OpenBracket);
-                            State = 652; singleExpression(0);
-                            State = 653; Match(CloseBracket);
-                            State = 654; Match(Colon);
-                            State = 655; singleExpression(0);
+                            State = 298; Match(Else);
+                            State = 299; statement();
                         }
                         break;
-                    case 3:
-                        _localctx = new FunctionPropertyContext(_localctx);
-                        EnterOuterAlt(_localctx, 3);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class IterationStatementContext : ParserRuleContext
+    {
+        public IterationStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_iterationStatement; } }
+
+        public IterationStatementContext() { }
+        public virtual void CopyFrom(IterationStatementContext context)
+        {
+            base.CopyFrom(context);
+        }
+    }
+    public partial class DoStatementContext : IterationStatementContext
+    {
+        public ITerminalNode Do() { return GetToken(JavaScriptParser.Do, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public ITerminalNode While() { return GetToken(JavaScriptParser.While, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public DoStatementContext(IterationStatementContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterDoStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitDoStatement(this);
+        }
+    }
+    public partial class WhileStatementContext : IterationStatementContext
+    {
+        public ITerminalNode While() { return GetToken(JavaScriptParser.While, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public WhileStatementContext(IterationStatementContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterWhileStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitWhileStatement(this);
+        }
+    }
+    public partial class ForStatementContext : IterationStatementContext
+    {
+        public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode[] SemiColon() { return GetTokens(JavaScriptParser.SemiColon); }
+        public ITerminalNode SemiColon(int i)
+        {
+            return GetToken(JavaScriptParser.SemiColon, i);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public ExpressionSequenceContext[] expressionSequence()
+        {
+            return GetRuleContexts<ExpressionSequenceContext>();
+        }
+        public ExpressionSequenceContext expressionSequence(int i)
+        {
+            return GetRuleContext<ExpressionSequenceContext>(i);
+        }
+        public VariableDeclarationListContext variableDeclarationList()
+        {
+            return GetRuleContext<VariableDeclarationListContext>(0);
+        }
+        public ForStatementContext(IterationStatementContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterForStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitForStatement(this);
+        }
+    }
+    public partial class ForInStatementContext : IterationStatementContext
+    {
+        public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode In() { return GetToken(JavaScriptParser.In, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public VariableDeclarationListContext variableDeclarationList()
+        {
+            return GetRuleContext<VariableDeclarationListContext>(0);
+        }
+        public ForInStatementContext(IterationStatementContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterForInStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitForInStatement(this);
+        }
+    }
+    public partial class ForOfStatementContext : IterationStatementContext
+    {
+        public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public VariableDeclarationListContext variableDeclarationList()
+        {
+            return GetRuleContext<VariableDeclarationListContext>(0);
+        }
+        public ITerminalNode Await() { return GetToken(JavaScriptParser.Await, 0); }
+        public ForOfStatementContext(IterationStatementContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterForOfStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitForOfStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public IterationStatementContext iterationStatement()
+    {
+        IterationStatementContext _localctx = new IterationStatementContext(Context, State);
+        EnterRule(_localctx, 42, RULE_iterationStatement);
+        int _la;
+        try
+        {
+            State = 358;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 27, Context))
+            {
+                case 1:
+                    _localctx = new DoStatementContext(_localctx);
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 302; Match(Do);
+                        State = 303; statement();
+                        State = 304; Match(While);
+                        State = 305; Match(OpenParen);
+                        State = 306; expressionSequence();
+                        State = 307; Match(CloseParen);
+                        State = 308; eos();
+                    }
+                    break;
+                case 2:
+                    _localctx = new WhileStatementContext(_localctx);
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 310; Match(While);
+                        State = 311; Match(OpenParen);
+                        State = 312; expressionSequence();
+                        State = 313; Match(CloseParen);
+                        State = 314; statement();
+                    }
+                    break;
+                case 3:
+                    _localctx = new ForStatementContext(_localctx);
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 316; Match(For);
+                        State = 317; Match(OpenParen);
+                        State = 320;
+                        ErrorHandler.Sync(this);
+                        switch (TokenStream.LA(1))
                         {
-                            State = 658;
+                            case RegularExpressionLiteral:
+                            case OpenBracket:
+                            case OpenParen:
+                            case OpenBrace:
+                            case PlusPlus:
+                            case MinusMinus:
+                            case Plus:
+                            case Minus:
+                            case BitNot:
+                            case Not:
+                            case NullLiteral:
+                            case BooleanLiteral:
+                            case DecimalLiteral:
+                            case HexIntegerLiteral:
+                            case OctalIntegerLiteral:
+                            case OctalIntegerLiteral2:
+                            case BinaryIntegerLiteral:
+                            case BigHexIntegerLiteral:
+                            case BigOctalIntegerLiteral:
+                            case BigBinaryIntegerLiteral:
+                            case BigDecimalIntegerLiteral:
+                            case Typeof:
+                            case New:
+                            case Void:
+                            case Function:
+                            case This:
+                            case Delete:
+                            case Class:
+                            case Super:
+                            case Import:
+                            case Async:
+                            case Await:
+                            case Yield:
+                            case Identifier:
+                            case StringLiteral:
+                            case TemplateStringLiteral:
+                                {
+                                    State = 318; expressionSequence();
+                                }
+                                break;
+                            case Var:
+                            case Const:
+                            case Let:
+                                {
+                                    State = 319; variableDeclarationList();
+                                }
+                                break;
+                            case SemiColon:
+                                break;
+                            default:
+                                break;
+                        }
+                        State = 322; Match(SemiColon);
+                        State = 324;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
+                        {
+                            {
+                                State = 323; expressionSequence();
+                            }
+                        }
+
+                        State = 326; Match(SemiColon);
+                        State = 328;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
+                        {
+                            {
+                                State = 327; expressionSequence();
+                            }
+                        }
+
+                        State = 330; Match(CloseParen);
+                        State = 331; statement();
+                    }
+                    break;
+                case 4:
+                    _localctx = new ForInStatementContext(_localctx);
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 332; Match(For);
+                        State = 333; Match(OpenParen);
+                        State = 336;
+                        ErrorHandler.Sync(this);
+                        switch (TokenStream.LA(1))
+                        {
+                            case RegularExpressionLiteral:
+                            case OpenBracket:
+                            case OpenParen:
+                            case OpenBrace:
+                            case PlusPlus:
+                            case MinusMinus:
+                            case Plus:
+                            case Minus:
+                            case BitNot:
+                            case Not:
+                            case NullLiteral:
+                            case BooleanLiteral:
+                            case DecimalLiteral:
+                            case HexIntegerLiteral:
+                            case OctalIntegerLiteral:
+                            case OctalIntegerLiteral2:
+                            case BinaryIntegerLiteral:
+                            case BigHexIntegerLiteral:
+                            case BigOctalIntegerLiteral:
+                            case BigBinaryIntegerLiteral:
+                            case BigDecimalIntegerLiteral:
+                            case Typeof:
+                            case New:
+                            case Void:
+                            case Function:
+                            case This:
+                            case Delete:
+                            case Class:
+                            case Super:
+                            case Import:
+                            case Async:
+                            case Await:
+                            case Yield:
+                            case Identifier:
+                            case StringLiteral:
+                            case TemplateStringLiteral:
+                                {
+                                    State = 334; singleExpression(0);
+                                }
+                                break;
+                            case Var:
+                            case Const:
+                            case Let:
+                                {
+                                    State = 335; variableDeclarationList();
+                                }
+                                break;
+                            default:
+                                throw new NoViableAltException(this);
+                        }
+                        State = 338; Match(In);
+                        State = 339; expressionSequence();
+                        State = 340; Match(CloseParen);
+                        State = 341; statement();
+                    }
+                    break;
+                case 5:
+                    _localctx = new ForOfStatementContext(_localctx);
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 343; Match(For);
+                        State = 345;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Await)
+                        {
+                            {
+                                State = 344; Match(Await);
+                            }
+                        }
+
+                        State = 347; Match(OpenParen);
+                        State = 350;
+                        ErrorHandler.Sync(this);
+                        switch (TokenStream.LA(1))
+                        {
+                            case RegularExpressionLiteral:
+                            case OpenBracket:
+                            case OpenParen:
+                            case OpenBrace:
+                            case PlusPlus:
+                            case MinusMinus:
+                            case Plus:
+                            case Minus:
+                            case BitNot:
+                            case Not:
+                            case NullLiteral:
+                            case BooleanLiteral:
+                            case DecimalLiteral:
+                            case HexIntegerLiteral:
+                            case OctalIntegerLiteral:
+                            case OctalIntegerLiteral2:
+                            case BinaryIntegerLiteral:
+                            case BigHexIntegerLiteral:
+                            case BigOctalIntegerLiteral:
+                            case BigBinaryIntegerLiteral:
+                            case BigDecimalIntegerLiteral:
+                            case Typeof:
+                            case New:
+                            case Void:
+                            case Function:
+                            case This:
+                            case Delete:
+                            case Class:
+                            case Super:
+                            case Import:
+                            case Async:
+                            case Await:
+                            case Yield:
+                            case Identifier:
+                            case StringLiteral:
+                            case TemplateStringLiteral:
+                                {
+                                    State = 348; singleExpression(0);
+                                }
+                                break;
+                            case Var:
+                            case Const:
+                            case Let:
+                                {
+                                    State = 349; variableDeclarationList();
+                                }
+                                break;
+                            default:
+                                throw new NoViableAltException(this);
+                        }
+                        State = 352; Match(Identifier);
+                        State = 353;
+                        if (!(this.p("of"))) throw new FailedPredicateException(this, "this.p(\"of\")");
+                        State = 354; expressionSequence();
+                        State = 355; Match(CloseParen);
+                        State = 356; statement();
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class VarModifierContext : ParserRuleContext
+    {
+        public ITerminalNode Var() { return GetToken(JavaScriptParser.Var, 0); }
+        public ITerminalNode Let() { return GetToken(JavaScriptParser.Let, 0); }
+        public ITerminalNode Const() { return GetToken(JavaScriptParser.Const, 0); }
+        public VarModifierContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_varModifier; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterVarModifier(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitVarModifier(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public VarModifierContext varModifier()
+    {
+        VarModifierContext _localctx = new VarModifierContext(Context, State);
+        EnterRule(_localctx, 44, RULE_varModifier);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 360;
+                _la = TokenStream.LA(1);
+                if (!(((((_la - 77)) & ~0x3f) == 0 && ((1L << (_la - 77)) & ((1L << (Var - 77)) | (1L << (Const - 77)) | (1L << (Let - 77)))) != 0)))
+                {
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ContinueStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Continue() { return GetToken(JavaScriptParser.Continue, 0); }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ContinueStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_continueStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterContinueStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitContinueStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ContinueStatementContext continueStatement()
+    {
+        ContinueStatementContext _localctx = new ContinueStatementContext(Context, State);
+        EnterRule(_localctx, 46, RULE_continueStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 362; Match(Continue);
+                State = 365;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 28, Context))
+                {
+                    case 1:
+                        {
+                            State = 363;
+                            if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
+                            State = 364; Match(Identifier);
+                        }
+                        break;
+                }
+                State = 367; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class BreakStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Break() { return GetToken(JavaScriptParser.Break, 0); }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public BreakStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_breakStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBreakStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBreakStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public BreakStatementContext breakStatement()
+    {
+        BreakStatementContext _localctx = new BreakStatementContext(Context, State);
+        EnterRule(_localctx, 48, RULE_breakStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 369; Match(Break);
+                State = 372;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 29, Context))
+                {
+                    case 1:
+                        {
+                            State = 370;
+                            if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
+                            State = 371; Match(Identifier);
+                        }
+                        break;
+                }
+                State = 374; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ReturnStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Return() { return GetToken(JavaScriptParser.Return, 0); }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ReturnStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_returnStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterReturnStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitReturnStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ReturnStatementContext returnStatement()
+    {
+        ReturnStatementContext _localctx = new ReturnStatementContext(Context, State);
+        EnterRule(_localctx, 50, RULE_returnStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 376; Match(Return);
+                State = 379;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 30, Context))
+                {
+                    case 1:
+                        {
+                            State = 377;
+                            if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
+                            State = 378; expressionSequence();
+                        }
+                        break;
+                }
+                State = 381; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class YieldStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Yield() { return GetToken(JavaScriptParser.Yield, 0); }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public YieldStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_yieldStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterYieldStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitYieldStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public YieldStatementContext yieldStatement()
+    {
+        YieldStatementContext _localctx = new YieldStatementContext(Context, State);
+        EnterRule(_localctx, 52, RULE_yieldStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 383; Match(Yield);
+                State = 386;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 31, Context))
+                {
+                    case 1:
+                        {
+                            State = 384;
+                            if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
+                            State = 385; expressionSequence();
+                        }
+                        break;
+                }
+                State = 388; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class WithStatementContext : ParserRuleContext
+    {
+        public ITerminalNode With() { return GetToken(JavaScriptParser.With, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public WithStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_withStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterWithStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitWithStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public WithStatementContext withStatement()
+    {
+        WithStatementContext _localctx = new WithStatementContext(Context, State);
+        EnterRule(_localctx, 54, RULE_withStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 390; Match(With);
+                State = 391; Match(OpenParen);
+                State = 392; expressionSequence();
+                State = 393; Match(CloseParen);
+                State = 394; statement();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class SwitchStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Switch() { return GetToken(JavaScriptParser.Switch, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public CaseBlockContext caseBlock()
+        {
+            return GetRuleContext<CaseBlockContext>(0);
+        }
+        public SwitchStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_switchStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterSwitchStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitSwitchStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public SwitchStatementContext switchStatement()
+    {
+        SwitchStatementContext _localctx = new SwitchStatementContext(Context, State);
+        EnterRule(_localctx, 56, RULE_switchStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 396; Match(Switch);
+                State = 397; Match(OpenParen);
+                State = 398; expressionSequence();
+                State = 399; Match(CloseParen);
+                State = 400; caseBlock();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class CaseBlockContext : ParserRuleContext
+    {
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public CaseClausesContext[] caseClauses()
+        {
+            return GetRuleContexts<CaseClausesContext>();
+        }
+        public CaseClausesContext caseClauses(int i)
+        {
+            return GetRuleContext<CaseClausesContext>(i);
+        }
+        public DefaultClauseContext defaultClause()
+        {
+            return GetRuleContext<DefaultClauseContext>(0);
+        }
+        public CaseBlockContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_caseBlock; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterCaseBlock(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitCaseBlock(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public CaseBlockContext caseBlock()
+    {
+        CaseBlockContext _localctx = new CaseBlockContext(Context, State);
+        EnterRule(_localctx, 58, RULE_caseBlock);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 402; Match(OpenBrace);
+                State = 404;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Case)
+                {
+                    {
+                        State = 403; caseClauses();
+                    }
+                }
+
+                State = 410;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Default)
+                {
+                    {
+                        State = 406; defaultClause();
+                        State = 408;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Case)
+                        {
+                            {
+                                State = 407; caseClauses();
+                            }
+                        }
+
+                    }
+                }
+
+                State = 412; Match(CloseBrace);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class CaseClausesContext : ParserRuleContext
+    {
+        public CaseClauseContext[] caseClause()
+        {
+            return GetRuleContexts<CaseClauseContext>();
+        }
+        public CaseClauseContext caseClause(int i)
+        {
+            return GetRuleContext<CaseClauseContext>(i);
+        }
+        public CaseClausesContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_caseClauses; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterCaseClauses(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitCaseClauses(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public CaseClausesContext caseClauses()
+    {
+        CaseClausesContext _localctx = new CaseClausesContext(Context, State);
+        EnterRule(_localctx, 60, RULE_caseClauses);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 415;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                do
+                {
+                    {
+                        {
+                            State = 414; caseClause();
+                        }
+                    }
+                    State = 417;
+                    ErrorHandler.Sync(this);
+                    _la = TokenStream.LA(1);
+                } while (_la == Case);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class CaseClauseContext : ParserRuleContext
+    {
+        public ITerminalNode Case() { return GetToken(JavaScriptParser.Case, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
+        public StatementListContext statementList()
+        {
+            return GetRuleContext<StatementListContext>(0);
+        }
+        public CaseClauseContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_caseClause; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterCaseClause(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitCaseClause(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public CaseClauseContext caseClause()
+    {
+        CaseClauseContext _localctx = new CaseClauseContext(Context, State);
+        EnterRule(_localctx, 62, RULE_caseClause);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 419; Match(Case);
+                State = 420; expressionSequence();
+                State = 421; Match(Colon);
+                State = 423;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 36, Context))
+                {
+                    case 1:
+                        {
+                            State = 422; statementList();
+                        }
+                        break;
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DefaultClauseContext : ParserRuleContext
+    {
+        public ITerminalNode Default() { return GetToken(JavaScriptParser.Default, 0); }
+        public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
+        public StatementListContext statementList()
+        {
+            return GetRuleContext<StatementListContext>(0);
+        }
+        public DefaultClauseContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_defaultClause; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterDefaultClause(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitDefaultClause(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DefaultClauseContext defaultClause()
+    {
+        DefaultClauseContext _localctx = new DefaultClauseContext(Context, State);
+        EnterRule(_localctx, 64, RULE_defaultClause);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 425; Match(Default);
+                State = 426; Match(Colon);
+                State = 428;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 37, Context))
+                {
+                    case 1:
+                        {
+                            State = 427; statementList();
+                        }
+                        break;
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class LabelledStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
+        public StatementContext statement()
+        {
+            return GetRuleContext<StatementContext>(0);
+        }
+        public LabelledStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_labelledStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterLabelledStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitLabelledStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public LabelledStatementContext labelledStatement()
+    {
+        LabelledStatementContext _localctx = new LabelledStatementContext(Context, State);
+        EnterRule(_localctx, 66, RULE_labelledStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 430; Match(Identifier);
+                State = 431; Match(Colon);
+                State = 432; statement();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ThrowStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Throw() { return GetToken(JavaScriptParser.Throw, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public ThrowStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_throwStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterThrowStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitThrowStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ThrowStatementContext throwStatement()
+    {
+        ThrowStatementContext _localctx = new ThrowStatementContext(Context, State);
+        EnterRule(_localctx, 68, RULE_throwStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 434; Match(Throw);
+                State = 435;
+                if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
+                State = 436; expressionSequence();
+                State = 437; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class TryStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Try() { return GetToken(JavaScriptParser.Try, 0); }
+        public BlockContext block()
+        {
+            return GetRuleContext<BlockContext>(0);
+        }
+        public CatchProductionContext catchProduction()
+        {
+            return GetRuleContext<CatchProductionContext>(0);
+        }
+        public FinallyProductionContext finallyProduction()
+        {
+            return GetRuleContext<FinallyProductionContext>(0);
+        }
+        public TryStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_tryStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterTryStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitTryStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public TryStatementContext tryStatement()
+    {
+        TryStatementContext _localctx = new TryStatementContext(Context, State);
+        EnterRule(_localctx, 70, RULE_tryStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 439; Match(Try);
+                State = 440; block();
+                State = 446;
+                ErrorHandler.Sync(this);
+                switch (TokenStream.LA(1))
+                {
+                    case Catch:
+                        {
+                            State = 441; catchProduction();
+                            State = 443;
                             ErrorHandler.Sync(this);
-                            switch (Interpreter.AdaptivePredict(TokenStream, 75, Context))
+                            switch (Interpreter.AdaptivePredict(TokenStream, 38, Context))
                             {
                                 case 1:
                                     {
-                                        State = 657; Match(Async);
+                                        State = 442; finallyProduction();
                                     }
                                     break;
                             }
-                            State = 661;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Multiply)
+                        }
+                        break;
+                    case Finally:
+                        {
+                            State = 445; finallyProduction();
+                        }
+                        break;
+                    default:
+                        throw new NoViableAltException(this);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class CatchProductionContext : ParserRuleContext
+    {
+        public ITerminalNode Catch() { return GetToken(JavaScriptParser.Catch, 0); }
+        public BlockContext block()
+        {
+            return GetRuleContext<BlockContext>(0);
+        }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public AssignableContext assignable()
+        {
+            return GetRuleContext<AssignableContext>(0);
+        }
+        public CatchProductionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_catchProduction; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterCatchProduction(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitCatchProduction(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public CatchProductionContext catchProduction()
+    {
+        CatchProductionContext _localctx = new CatchProductionContext(Context, State);
+        EnterRule(_localctx, 72, RULE_catchProduction);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 448; Match(Catch);
+                State = 454;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == OpenParen)
+                {
+                    {
+                        State = 449; Match(OpenParen);
+                        State = 451;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == OpenBracket || _la == OpenBrace || _la == Identifier)
+                        {
+                            {
+                                State = 450; assignable();
+                            }
+                        }
+
+                        State = 453; Match(CloseParen);
+                    }
+                }
+
+                State = 456; block();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class FinallyProductionContext : ParserRuleContext
+    {
+        public ITerminalNode Finally() { return GetToken(JavaScriptParser.Finally, 0); }
+        public BlockContext block()
+        {
+            return GetRuleContext<BlockContext>(0);
+        }
+        public FinallyProductionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_finallyProduction; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFinallyProduction(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFinallyProduction(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public FinallyProductionContext finallyProduction()
+    {
+        FinallyProductionContext _localctx = new FinallyProductionContext(Context, State);
+        EnterRule(_localctx, 74, RULE_finallyProduction);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 458; Match(Finally);
+                State = 459; block();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class DebuggerStatementContext : ParserRuleContext
+    {
+        public ITerminalNode Debugger() { return GetToken(JavaScriptParser.Debugger, 0); }
+        public EosContext eos()
+        {
+            return GetRuleContext<EosContext>(0);
+        }
+        public DebuggerStatementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_debuggerStatement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterDebuggerStatement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitDebuggerStatement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public DebuggerStatementContext debuggerStatement()
+    {
+        DebuggerStatementContext _localctx = new DebuggerStatementContext(Context, State);
+        EnterRule(_localctx, 76, RULE_debuggerStatement);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 461; Match(Debugger);
+                State = 462; eos();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class FunctionDeclarationContext : ParserRuleContext
+    {
+        public ITerminalNode Function() { return GetToken(JavaScriptParser.Function, 0); }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public FunctionBodyContext functionBody()
+        {
+            return GetRuleContext<FunctionBodyContext>(0);
+        }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
+        public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
+        public FormalParameterListContext formalParameterList()
+        {
+            return GetRuleContext<FormalParameterListContext>(0);
+        }
+        public FunctionDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_functionDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFunctionDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFunctionDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public FunctionDeclarationContext functionDeclaration()
+    {
+        FunctionDeclarationContext _localctx = new FunctionDeclarationContext(Context, State);
+        EnterRule(_localctx, 78, RULE_functionDeclaration);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 465;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Async)
+                {
+                    {
+                        State = 464; Match(Async);
+                    }
+                }
+
+                State = 467; Match(Function);
+                State = 469;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Multiply)
+                {
+                    {
+                        State = 468; Match(Multiply);
+                    }
+                }
+
+                State = 471; Match(Identifier);
+                State = 472; Match(OpenParen);
+                State = 474;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
+                {
+                    {
+                        State = 473; formalParameterList();
+                    }
+                }
+
+                State = 476; Match(CloseParen);
+                State = 477; Match(OpenBrace);
+                State = 478; functionBody();
+                State = 479; Match(CloseBrace);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ClassDeclarationContext : ParserRuleContext
+    {
+        public ITerminalNode Class() { return GetToken(JavaScriptParser.Class, 0); }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ClassTailContext classTail()
+        {
+            return GetRuleContext<ClassTailContext>(0);
+        }
+        public ClassDeclarationContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_classDeclaration; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterClassDeclaration(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitClassDeclaration(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ClassDeclarationContext classDeclaration()
+    {
+        ClassDeclarationContext _localctx = new ClassDeclarationContext(Context, State);
+        EnterRule(_localctx, 80, RULE_classDeclaration);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 481; Match(Class);
+                State = 482; Match(Identifier);
+                State = 483; classTail();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ClassTailContext : ParserRuleContext
+    {
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public ITerminalNode Extends() { return GetToken(JavaScriptParser.Extends, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ClassElementContext[] classElement()
+        {
+            return GetRuleContexts<ClassElementContext>();
+        }
+        public ClassElementContext classElement(int i)
+        {
+            return GetRuleContext<ClassElementContext>(i);
+        }
+        public ClassTailContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_classTail; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterClassTail(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitClassTail(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ClassTailContext classTail()
+    {
+        ClassTailContext _localctx = new ClassTailContext(Context, State);
+        EnterRule(_localctx, 82, RULE_classTail);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 487;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Extends)
+                {
+                    {
+                        State = 485; Match(Extends);
+                        State = 486; singleExpression(0);
+                    }
+                }
+
+                State = 489; Match(OpenBrace);
+                State = 493;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        {
+                            {
+                                State = 490; classElement();
+                            }
+                        }
+                    }
+                    State = 495;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 46, Context);
+                }
+                State = 496; Match(CloseBrace);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ClassElementContext : ParserRuleContext
+    {
+        public MethodDefinitionContext methodDefinition()
+        {
+            return GetRuleContext<MethodDefinitionContext>(0);
+        }
+        public ITerminalNode[] Static() { return GetTokens(JavaScriptParser.Static); }
+        public ITerminalNode Static(int i)
+        {
+            return GetToken(JavaScriptParser.Static, i);
+        }
+        public ITerminalNode[] Identifier() { return GetTokens(JavaScriptParser.Identifier); }
+        public ITerminalNode Identifier(int i)
+        {
+            return GetToken(JavaScriptParser.Identifier, i);
+        }
+        public ITerminalNode[] Async() { return GetTokens(JavaScriptParser.Async); }
+        public ITerminalNode Async(int i)
+        {
+            return GetToken(JavaScriptParser.Async, i);
+        }
+        public EmptyStatementContext emptyStatement()
+        {
+            return GetRuleContext<EmptyStatementContext>(0);
+        }
+        public PropertyNameContext propertyName()
+        {
+            return GetRuleContext<PropertyNameContext>(0);
+        }
+        public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode Hashtag() { return GetToken(JavaScriptParser.Hashtag, 0); }
+        public ClassElementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_classElement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterClassElement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitClassElement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ClassElementContext classElement()
+    {
+        ClassElementContext _localctx = new ClassElementContext(Context, State);
+        EnterRule(_localctx, 84, RULE_classElement);
+        int _la;
+        try
+        {
+            int _alt;
+            State = 516;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 50, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 504;
+                        ErrorHandler.Sync(this);
+                        _alt = Interpreter.AdaptivePredict(TokenStream, 48, Context);
+                        while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                        {
+                            if (_alt == 1)
                             {
                                 {
-                                    State = 660; Match(Multiply);
+                                    State = 502;
+                                    ErrorHandler.Sync(this);
+                                    switch (Interpreter.AdaptivePredict(TokenStream, 47, Context))
+                                    {
+                                        case 1:
+                                            {
+                                                State = 498; Match(Static);
+                                            }
+                                            break;
+                                        case 2:
+                                            {
+                                                State = 499;
+                                                if (!(this.n("static"))) throw new FailedPredicateException(this, "this.n(\"static\")");
+                                                State = 500; Match(Identifier);
+                                            }
+                                            break;
+                                        case 3:
+                                            {
+                                                State = 501; Match(Async);
+                                            }
+                                            break;
+                                    }
+                                }
+                            }
+                            State = 506;
+                            ErrorHandler.Sync(this);
+                            _alt = Interpreter.AdaptivePredict(TokenStream, 48, Context);
+                        }
+                        State = 507; methodDefinition();
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 508; emptyStatement();
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 510;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Hashtag)
+                        {
+                            {
+                                State = 509; Match(Hashtag);
+                            }
+                        }
+
+                        State = 512; propertyName();
+                        State = 513; Match(Assign);
+                        State = 514; singleExpression(0);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class MethodDefinitionContext : ParserRuleContext
+    {
+        public PropertyNameContext propertyName()
+        {
+            return GetRuleContext<PropertyNameContext>(0);
+        }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public FunctionBodyContext functionBody()
+        {
+            return GetRuleContext<FunctionBodyContext>(0);
+        }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
+        public ITerminalNode Hashtag() { return GetToken(JavaScriptParser.Hashtag, 0); }
+        public FormalParameterListContext formalParameterList()
+        {
+            return GetRuleContext<FormalParameterListContext>(0);
+        }
+        public GetterContext getter()
+        {
+            return GetRuleContext<GetterContext>(0);
+        }
+        public SetterContext setter()
+        {
+            return GetRuleContext<SetterContext>(0);
+        }
+        public MethodDefinitionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_methodDefinition; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterMethodDefinition(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitMethodDefinition(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public MethodDefinitionContext methodDefinition()
+    {
+        MethodDefinitionContext _localctx = new MethodDefinitionContext(Context, State);
+        EnterRule(_localctx, 86, RULE_methodDefinition);
+        int _la;
+        try
+        {
+            State = 563;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 59, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 519;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Multiply)
+                        {
+                            {
+                                State = 518; Match(Multiply);
+                            }
+                        }
+
+                        State = 522;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Hashtag)
+                        {
+                            {
+                                State = 521; Match(Hashtag);
+                            }
+                        }
+
+                        State = 524; propertyName();
+                        State = 525; Match(OpenParen);
+                        State = 527;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
+                        {
+                            {
+                                State = 526; formalParameterList();
+                            }
+                        }
+
+                        State = 529; Match(CloseParen);
+                        State = 530; Match(OpenBrace);
+                        State = 531; functionBody();
+                        State = 532; Match(CloseBrace);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 535;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Multiply)
+                        {
+                            {
+                                State = 534; Match(Multiply);
+                            }
+                        }
+
+                        State = 538;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Hashtag)
+                        {
+                            {
+                                State = 537; Match(Hashtag);
+                            }
+                        }
+
+                        State = 540; getter();
+                        State = 541; Match(OpenParen);
+                        State = 542; Match(CloseParen);
+                        State = 543; Match(OpenBrace);
+                        State = 544; functionBody();
+                        State = 545; Match(CloseBrace);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 548;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Multiply)
+                        {
+                            {
+                                State = 547; Match(Multiply);
+                            }
+                        }
+
+                        State = 551;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Hashtag)
+                        {
+                            {
+                                State = 550; Match(Hashtag);
+                            }
+                        }
+
+                        State = 553; setter();
+                        State = 554; Match(OpenParen);
+                        State = 556;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
+                        {
+                            {
+                                State = 555; formalParameterList();
+                            }
+                        }
+
+                        State = 558; Match(CloseParen);
+                        State = 559; Match(OpenBrace);
+                        State = 560; functionBody();
+                        State = 561; Match(CloseBrace);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class FormalParameterListContext : ParserRuleContext
+    {
+        public FormalParameterArgContext[] formalParameterArg()
+        {
+            return GetRuleContexts<FormalParameterArgContext>();
+        }
+        public FormalParameterArgContext formalParameterArg(int i)
+        {
+            return GetRuleContext<FormalParameterArgContext>(i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(JavaScriptParser.Comma, i);
+        }
+        public LastFormalParameterArgContext lastFormalParameterArg()
+        {
+            return GetRuleContext<LastFormalParameterArgContext>(0);
+        }
+        public FormalParameterListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_formalParameterList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFormalParameterList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFormalParameterList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public FormalParameterListContext formalParameterList()
+    {
+        FormalParameterListContext _localctx = new FormalParameterListContext(Context, State);
+        EnterRule(_localctx, 88, RULE_formalParameterList);
+        int _la;
+        try
+        {
+            int _alt;
+            State = 578;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case OpenBracket:
+                case OpenBrace:
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 565; formalParameterArg();
+                        State = 570;
+                        ErrorHandler.Sync(this);
+                        _alt = Interpreter.AdaptivePredict(TokenStream, 60, Context);
+                        while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                        {
+                            if (_alt == 1)
+                            {
+                                {
+                                    {
+                                        State = 566; Match(Comma);
+                                        State = 567; formalParameterArg();
+                                    }
+                                }
+                            }
+                            State = 572;
+                            ErrorHandler.Sync(this);
+                            _alt = Interpreter.AdaptivePredict(TokenStream, 60, Context);
+                        }
+                        State = 575;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Comma)
+                        {
+                            {
+                                State = 573; Match(Comma);
+                                State = 574; lastFormalParameterArg();
+                            }
+                        }
+
+                    }
+                    break;
+                case Ellipsis:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 577; lastFormalParameterArg();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class FormalParameterArgContext : ParserRuleContext
+    {
+        public AssignableContext assignable()
+        {
+            return GetRuleContext<AssignableContext>(0);
+        }
+        public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public FormalParameterArgContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_formalParameterArg; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFormalParameterArg(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFormalParameterArg(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public FormalParameterArgContext formalParameterArg()
+    {
+        FormalParameterArgContext _localctx = new FormalParameterArgContext(Context, State);
+        EnterRule(_localctx, 90, RULE_formalParameterArg);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 580; assignable();
+                State = 583;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Assign)
+                {
+                    {
+                        State = 581; Match(Assign);
+                        State = 582; singleExpression(0);
+                    }
+                }
+
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class LastFormalParameterArgContext : ParserRuleContext
+    {
+        public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public LastFormalParameterArgContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_lastFormalParameterArg; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterLastFormalParameterArg(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitLastFormalParameterArg(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public LastFormalParameterArgContext lastFormalParameterArg()
+    {
+        LastFormalParameterArgContext _localctx = new LastFormalParameterArgContext(Context, State);
+        EnterRule(_localctx, 92, RULE_lastFormalParameterArg);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 585; Match(Ellipsis);
+                State = 586; singleExpression(0);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class FunctionBodyContext : ParserRuleContext
+    {
+        public SourceElementsContext sourceElements()
+        {
+            return GetRuleContext<SourceElementsContext>(0);
+        }
+        public FunctionBodyContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_functionBody; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFunctionBody(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFunctionBody(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public FunctionBodyContext functionBody()
+    {
+        FunctionBodyContext _localctx = new FunctionBodyContext(Context, State);
+        EnterRule(_localctx, 94, RULE_functionBody);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 589;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 64, Context))
+                {
+                    case 1:
+                        {
+                            State = 588; sourceElements();
+                        }
+                        break;
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class SourceElementsContext : ParserRuleContext
+    {
+        public SourceElementContext[] sourceElement()
+        {
+            return GetRuleContexts<SourceElementContext>();
+        }
+        public SourceElementContext sourceElement(int i)
+        {
+            return GetRuleContext<SourceElementContext>(i);
+        }
+        public SourceElementsContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_sourceElements; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterSourceElements(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitSourceElements(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public SourceElementsContext sourceElements()
+    {
+        SourceElementsContext _localctx = new SourceElementsContext(Context, State);
+        EnterRule(_localctx, 96, RULE_sourceElements);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 592;
+                ErrorHandler.Sync(this);
+                _alt = 1;
+                do
+                {
+                    switch (_alt)
+                    {
+                        case 1:
+                            {
+                                {
+                                    State = 591; sourceElement();
+                                }
+                            }
+                            break;
+                        default:
+                            throw new NoViableAltException(this);
+                    }
+                    State = 594;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 65, Context);
+                } while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ArrayLiteralContext : ParserRuleContext
+    {
+        public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
+        public ElementListContext elementList()
+        {
+            return GetRuleContext<ElementListContext>(0);
+        }
+        public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
+        public ArrayLiteralContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_arrayLiteral; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArrayLiteral(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArrayLiteral(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ArrayLiteralContext arrayLiteral()
+    {
+        ArrayLiteralContext _localctx = new ArrayLiteralContext(Context, State);
+        EnterRule(_localctx, 98, RULE_arrayLiteral);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                {
+                    State = 596; Match(OpenBracket);
+                    State = 597; elementList();
+                    State = 598; Match(CloseBracket);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ElementListContext : ParserRuleContext
+    {
+        public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(JavaScriptParser.Comma, i);
+        }
+        public ArrayElementContext[] arrayElement()
+        {
+            return GetRuleContexts<ArrayElementContext>();
+        }
+        public ArrayElementContext arrayElement(int i)
+        {
+            return GetRuleContext<ArrayElementContext>(i);
+        }
+        public ElementListContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_elementList; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterElementList(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitElementList(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ElementListContext elementList()
+    {
+        ElementListContext _localctx = new ElementListContext(Context, State);
+        EnterRule(_localctx, 100, RULE_elementList);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 603;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        {
+                            {
+                                State = 600; Match(Comma);
+                            }
+                        }
+                    }
+                    State = 605;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 66, Context);
+                }
+                State = 607;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << Ellipsis) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
+                {
+                    {
+                        State = 606; arrayElement();
+                    }
+                }
+
+                State = 617;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 69, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        {
+                            {
+                                State = 610;
+                                ErrorHandler.Sync(this);
+                                _la = TokenStream.LA(1);
+                                do
+                                {
+                                    {
+                                        {
+                                            State = 609; Match(Comma);
+                                        }
+                                    }
+                                    State = 612;
+                                    ErrorHandler.Sync(this);
+                                    _la = TokenStream.LA(1);
+                                } while (_la == Comma);
+                                State = 614; arrayElement();
+                            }
+                        }
+                    }
+                    State = 619;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 69, Context);
+                }
+                State = 623;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                while (_la == Comma)
+                {
+                    {
+                        {
+                            State = 620; Match(Comma);
+                        }
+                    }
+                    State = 625;
+                    ErrorHandler.Sync(this);
+                    _la = TokenStream.LA(1);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ArrayElementContext : ParserRuleContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
+        public ArrayElementContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_arrayElement; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArrayElement(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArrayElement(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ArrayElementContext arrayElement()
+    {
+        ArrayElementContext _localctx = new ArrayElementContext(Context, State);
+        EnterRule(_localctx, 102, RULE_arrayElement);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 627;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Ellipsis)
+                {
+                    {
+                        State = 626; Match(Ellipsis);
+                    }
+                }
+
+                State = 629; singleExpression(0);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ObjectLiteralContext : ParserRuleContext
+    {
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public PropertyAssignmentContext[] propertyAssignment()
+        {
+            return GetRuleContexts<PropertyAssignmentContext>();
+        }
+        public PropertyAssignmentContext propertyAssignment(int i)
+        {
+            return GetRuleContext<PropertyAssignmentContext>(i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(JavaScriptParser.Comma, i);
+        }
+        public ObjectLiteralContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_objectLiteral; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterObjectLiteral(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitObjectLiteral(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ObjectLiteralContext objectLiteral()
+    {
+        ObjectLiteralContext _localctx = new ObjectLiteralContext(Context, State);
+        EnterRule(_localctx, 104, RULE_objectLiteral);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 631; Match(OpenBrace);
+                State = 640;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << Ellipsis) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << Multiply) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Break - 64)) | (1L << (Do - 64)) | (1L << (Instanceof - 64)) | (1L << (Typeof - 64)) | (1L << (Case - 64)) | (1L << (Else - 64)) | (1L << (New - 64)) | (1L << (Var - 64)) | (1L << (Catch - 64)) | (1L << (Finally - 64)) | (1L << (Return - 64)) | (1L << (Void - 64)) | (1L << (Continue - 64)) | (1L << (For - 64)) | (1L << (Switch - 64)) | (1L << (While - 64)) | (1L << (Debugger - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (With - 64)) | (1L << (Default - 64)) | (1L << (If - 64)) | (1L << (Throw - 64)) | (1L << (Delete - 64)) | (1L << (In - 64)) | (1L << (Try - 64)) | (1L << (As - 64)) | (1L << (From - 64)) | (1L << (Class - 64)) | (1L << (Enum - 64)) | (1L << (Extends - 64)) | (1L << (Super - 64)) | (1L << (Const - 64)) | (1L << (Export - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Implements - 64)) | (1L << (Let - 64)) | (1L << (Private - 64)) | (1L << (Public - 64)) | (1L << (Interface - 64)) | (1L << (Package - 64)) | (1L << (Protected - 64)) | (1L << (Static - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
+                {
+                    {
+                        State = 632; propertyAssignment();
+                        State = 637;
+                        ErrorHandler.Sync(this);
+                        _alt = Interpreter.AdaptivePredict(TokenStream, 72, Context);
+                        while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                        {
+                            if (_alt == 1)
+                            {
+                                {
+                                    {
+                                        State = 633; Match(Comma);
+                                        State = 634; propertyAssignment();
+                                    }
+                                }
+                            }
+                            State = 639;
+                            ErrorHandler.Sync(this);
+                            _alt = Interpreter.AdaptivePredict(TokenStream, 72, Context);
+                        }
+                    }
+                }
+
+                State = 643;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Comma)
+                {
+                    {
+                        State = 642; Match(Comma);
+                    }
+                }
+
+                State = 645; Match(CloseBrace);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class PropertyAssignmentContext : ParserRuleContext
+    {
+        public PropertyAssignmentContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_propertyAssignment; } }
+
+        public PropertyAssignmentContext() { }
+        public virtual void CopyFrom(PropertyAssignmentContext context)
+        {
+            base.CopyFrom(context);
+        }
+    }
+    public partial class PropertyExpressionAssignmentContext : PropertyAssignmentContext
+    {
+        public PropertyNameContext propertyName()
+        {
+            return GetRuleContext<PropertyNameContext>(0);
+        }
+        public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public PropertyExpressionAssignmentContext(PropertyAssignmentContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPropertyExpressionAssignment(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPropertyExpressionAssignment(this);
+        }
+    }
+    public partial class ComputedPropertyExpressionAssignmentContext : PropertyAssignmentContext
+    {
+        public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
+        public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
+        public ComputedPropertyExpressionAssignmentContext(PropertyAssignmentContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterComputedPropertyExpressionAssignment(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitComputedPropertyExpressionAssignment(this);
+        }
+    }
+    public partial class PropertyShorthandContext : PropertyAssignmentContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
+        public PropertyShorthandContext(PropertyAssignmentContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPropertyShorthand(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPropertyShorthand(this);
+        }
+    }
+    public partial class PropertySetterContext : PropertyAssignmentContext
+    {
+        public SetterContext setter()
+        {
+            return GetRuleContext<SetterContext>(0);
+        }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public FormalParameterArgContext formalParameterArg()
+        {
+            return GetRuleContext<FormalParameterArgContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public FunctionBodyContext functionBody()
+        {
+            return GetRuleContext<FunctionBodyContext>(0);
+        }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public PropertySetterContext(PropertyAssignmentContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPropertySetter(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPropertySetter(this);
+        }
+    }
+    public partial class PropertyGetterContext : PropertyAssignmentContext
+    {
+        public GetterContext getter()
+        {
+            return GetRuleContext<GetterContext>(0);
+        }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public FunctionBodyContext functionBody()
+        {
+            return GetRuleContext<FunctionBodyContext>(0);
+        }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public PropertyGetterContext(PropertyAssignmentContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPropertyGetter(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPropertyGetter(this);
+        }
+    }
+    public partial class FunctionPropertyContext : PropertyAssignmentContext
+    {
+        public PropertyNameContext propertyName()
+        {
+            return GetRuleContext<PropertyNameContext>(0);
+        }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public FunctionBodyContext functionBody()
+        {
+            return GetRuleContext<FunctionBodyContext>(0);
+        }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
+        public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
+        public FormalParameterListContext formalParameterList()
+        {
+            return GetRuleContext<FormalParameterListContext>(0);
+        }
+        public FunctionPropertyContext(PropertyAssignmentContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFunctionProperty(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFunctionProperty(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public PropertyAssignmentContext propertyAssignment()
+    {
+        PropertyAssignmentContext _localctx = new PropertyAssignmentContext(Context, State);
+        EnterRule(_localctx, 106, RULE_propertyAssignment);
+        int _la;
+        try
+        {
+            State = 692;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 79, Context))
+            {
+                case 1:
+                    _localctx = new PropertyExpressionAssignmentContext(_localctx);
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 647; propertyName();
+                        State = 648; Match(Colon);
+                        State = 649; singleExpression(0);
+                    }
+                    break;
+                case 2:
+                    _localctx = new ComputedPropertyExpressionAssignmentContext(_localctx);
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 651; Match(OpenBracket);
+                        State = 652; singleExpression(0);
+                        State = 653; Match(CloseBracket);
+                        State = 654; Match(Colon);
+                        State = 655; singleExpression(0);
+                    }
+                    break;
+                case 3:
+                    _localctx = new FunctionPropertyContext(_localctx);
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 658;
+                        ErrorHandler.Sync(this);
+                        switch (Interpreter.AdaptivePredict(TokenStream, 75, Context))
+                        {
+                            case 1:
+                                {
+                                    State = 657; Match(Async);
+                                }
+                                break;
+                        }
+                        State = 661;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Multiply)
+                        {
+                            {
+                                State = 660; Match(Multiply);
+                            }
+                        }
+
+                        State = 663; propertyName();
+                        State = 664; Match(OpenParen);
+                        State = 666;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
+                        {
+                            {
+                                State = 665; formalParameterList();
+                            }
+                        }
+
+                        State = 668; Match(CloseParen);
+                        State = 669; Match(OpenBrace);
+                        State = 670; functionBody();
+                        State = 671; Match(CloseBrace);
+                    }
+                    break;
+                case 4:
+                    _localctx = new PropertyGetterContext(_localctx);
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 673; getter();
+                        State = 674; Match(OpenParen);
+                        State = 675; Match(CloseParen);
+                        State = 676; Match(OpenBrace);
+                        State = 677; functionBody();
+                        State = 678; Match(CloseBrace);
+                    }
+                    break;
+                case 5:
+                    _localctx = new PropertySetterContext(_localctx);
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 680; setter();
+                        State = 681; Match(OpenParen);
+                        State = 682; formalParameterArg();
+                        State = 683; Match(CloseParen);
+                        State = 684; Match(OpenBrace);
+                        State = 685; functionBody();
+                        State = 686; Match(CloseBrace);
+                    }
+                    break;
+                case 6:
+                    _localctx = new PropertyShorthandContext(_localctx);
+                    EnterOuterAlt(_localctx, 6);
+                    {
+                        State = 689;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Ellipsis)
+                        {
+                            {
+                                State = 688; Match(Ellipsis);
+                            }
+                        }
+
+                        State = 691; singleExpression(0);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class PropertyNameContext : ParserRuleContext
+    {
+        public IdentifierNameContext identifierName()
+        {
+            return GetRuleContext<IdentifierNameContext>(0);
+        }
+        public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
+        public NumericLiteralContext numericLiteral()
+        {
+            return GetRuleContext<NumericLiteralContext>(0);
+        }
+        public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
+        public PropertyNameContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_propertyName; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPropertyName(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPropertyName(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public PropertyNameContext propertyName()
+    {
+        PropertyNameContext _localctx = new PropertyNameContext(Context, State);
+        EnterRule(_localctx, 108, RULE_propertyName);
+        try
+        {
+            State = 701;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case NullLiteral:
+                case BooleanLiteral:
+                case Break:
+                case Do:
+                case Instanceof:
+                case Typeof:
+                case Case:
+                case Else:
+                case New:
+                case Var:
+                case Catch:
+                case Finally:
+                case Return:
+                case Void:
+                case Continue:
+                case For:
+                case Switch:
+                case While:
+                case Debugger:
+                case Function:
+                case This:
+                case With:
+                case Default:
+                case If:
+                case Throw:
+                case Delete:
+                case In:
+                case Try:
+                case As:
+                case From:
+                case Class:
+                case Enum:
+                case Extends:
+                case Super:
+                case Const:
+                case Export:
+                case Import:
+                case Async:
+                case Await:
+                case Implements:
+                case Let:
+                case Private:
+                case Public:
+                case Interface:
+                case Package:
+                case Protected:
+                case Static:
+                case Yield:
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 694; identifierName();
+                    }
+                    break;
+                case StringLiteral:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 695; Match(StringLiteral);
+                    }
+                    break;
+                case DecimalLiteral:
+                case HexIntegerLiteral:
+                case OctalIntegerLiteral:
+                case OctalIntegerLiteral2:
+                case BinaryIntegerLiteral:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 696; numericLiteral();
+                    }
+                    break;
+                case OpenBracket:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 697; Match(OpenBracket);
+                        State = 698; singleExpression(0);
+                        State = 699; Match(CloseBracket);
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ArgumentsContext : ParserRuleContext
+    {
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ArgumentContext[] argument()
+        {
+            return GetRuleContexts<ArgumentContext>();
+        }
+        public ArgumentContext argument(int i)
+        {
+            return GetRuleContext<ArgumentContext>(i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(JavaScriptParser.Comma, i);
+        }
+        public ArgumentsContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_arguments; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArguments(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArguments(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ArgumentsContext arguments()
+    {
+        ArgumentsContext _localctx = new ArgumentsContext(Context, State);
+        EnterRule(_localctx, 110, RULE_arguments);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 703; Match(OpenParen);
+                State = 715;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << Ellipsis) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
+                {
+                    {
+                        State = 704; argument();
+                        State = 709;
+                        ErrorHandler.Sync(this);
+                        _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
+                        while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                        {
+                            if (_alt == 1)
+                            {
+                                {
+                                    {
+                                        State = 705; Match(Comma);
+                                        State = 706; argument();
+                                    }
+                                }
+                            }
+                            State = 711;
+                            ErrorHandler.Sync(this);
+                            _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
+                        }
+                        State = 713;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Comma)
+                        {
+                            {
+                                State = 712; Match(Comma);
+                            }
+                        }
+
+                    }
+                }
+
+                State = 717; Match(CloseParen);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ArgumentContext : ParserRuleContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
+        public ArgumentContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_argument; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArgument(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArgument(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ArgumentContext argument()
+    {
+        ArgumentContext _localctx = new ArgumentContext(Context, State);
+        EnterRule(_localctx, 112, RULE_argument);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 720;
+                ErrorHandler.Sync(this);
+                _la = TokenStream.LA(1);
+                if (_la == Ellipsis)
+                {
+                    {
+                        State = 719; Match(Ellipsis);
+                    }
+                }
+
+                State = 724;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 85, Context))
+                {
+                    case 1:
+                        {
+                            State = 722; singleExpression(0);
+                        }
+                        break;
+                    case 2:
+                        {
+                            State = 723; Match(Identifier);
+                        }
+                        break;
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ExpressionSequenceContext : ParserRuleContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
+        public ITerminalNode Comma(int i)
+        {
+            return GetToken(JavaScriptParser.Comma, i);
+        }
+        public ExpressionSequenceContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_expressionSequence; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterExpressionSequence(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitExpressionSequence(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ExpressionSequenceContext expressionSequence()
+    {
+        ExpressionSequenceContext _localctx = new ExpressionSequenceContext(Context, State);
+        EnterRule(_localctx, 114, RULE_expressionSequence);
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 726; singleExpression(0);
+                State = 731;
+                ErrorHandler.Sync(this);
+                _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                {
+                    if (_alt == 1)
+                    {
+                        {
+                            {
+                                State = 727; Match(Comma);
+                                State = 728; singleExpression(0);
+                            }
+                        }
+                    }
+                    State = 733;
+                    ErrorHandler.Sync(this);
+                    _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class SingleExpressionContext : ParserRuleContext
+    {
+        public SingleExpressionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_singleExpression; } }
+
+        public SingleExpressionContext() { }
+        public virtual void CopyFrom(SingleExpressionContext context)
+        {
+            base.CopyFrom(context);
+        }
+    }
+    public partial class TemplateStringExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode TemplateStringLiteral() { return GetToken(JavaScriptParser.TemplateStringLiteral, 0); }
+        public TemplateStringExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterTemplateStringExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitTemplateStringExpression(this);
+        }
+    }
+    public partial class TernaryExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode QuestionMark() { return GetToken(JavaScriptParser.QuestionMark, 0); }
+        public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
+        public TernaryExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterTernaryExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitTernaryExpression(this);
+        }
+    }
+    public partial class LogicalAndExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode And() { return GetToken(JavaScriptParser.And, 0); }
+        public LogicalAndExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterLogicalAndExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitLogicalAndExpression(this);
+        }
+    }
+    public partial class PowerExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode Power() { return GetToken(JavaScriptParser.Power, 0); }
+        public PowerExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPowerExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPowerExpression(this);
+        }
+    }
+    public partial class PreIncrementExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode PlusPlus() { return GetToken(JavaScriptParser.PlusPlus, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public PreIncrementExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPreIncrementExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPreIncrementExpression(this);
+        }
+    }
+    public partial class ObjectLiteralExpressionContext : SingleExpressionContext
+    {
+        public ObjectLiteralContext objectLiteral()
+        {
+            return GetRuleContext<ObjectLiteralContext>(0);
+        }
+        public ObjectLiteralExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterObjectLiteralExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitObjectLiteralExpression(this);
+        }
+    }
+    public partial class MetaExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode New() { return GetToken(JavaScriptParser.New, 0); }
+        public ITerminalNode Dot() { return GetToken(JavaScriptParser.Dot, 0); }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public MetaExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterMetaExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitMetaExpression(this);
+        }
+    }
+    public partial class InExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode In() { return GetToken(JavaScriptParser.In, 0); }
+        public InExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterInExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitInExpression(this);
+        }
+    }
+    public partial class LogicalOrExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode Or() { return GetToken(JavaScriptParser.Or, 0); }
+        public LogicalOrExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterLogicalOrExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitLogicalOrExpression(this);
+        }
+    }
+    public partial class NotExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Not() { return GetToken(JavaScriptParser.Not, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public NotExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterNotExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitNotExpression(this);
+        }
+    }
+    public partial class PreDecreaseExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode MinusMinus() { return GetToken(JavaScriptParser.MinusMinus, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public PreDecreaseExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPreDecreaseExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPreDecreaseExpression(this);
+        }
+    }
+    public partial class ArgumentsExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ArgumentsContext arguments()
+        {
+            return GetRuleContext<ArgumentsContext>(0);
+        }
+        public ArgumentsExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArgumentsExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArgumentsExpression(this);
+        }
+    }
+    public partial class AwaitExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Await() { return GetToken(JavaScriptParser.Await, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public AwaitExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAwaitExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAwaitExpression(this);
+        }
+    }
+    public partial class ThisExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode This() { return GetToken(JavaScriptParser.This, 0); }
+        public ThisExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterThisExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitThisExpression(this);
+        }
+    }
+    public partial class FunctionExpressionContext : SingleExpressionContext
+    {
+        public AnoymousFunctionContext anoymousFunction()
+        {
+            return GetRuleContext<AnoymousFunctionContext>(0);
+        }
+        public FunctionExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFunctionExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFunctionExpression(this);
+        }
+    }
+    public partial class UnaryMinusExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Minus() { return GetToken(JavaScriptParser.Minus, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public UnaryMinusExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterUnaryMinusExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitUnaryMinusExpression(this);
+        }
+    }
+    public partial class AssignmentExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
+        public AssignmentExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAssignmentExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAssignmentExpression(this);
+        }
+    }
+    public partial class PostDecreaseExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode MinusMinus() { return GetToken(JavaScriptParser.MinusMinus, 0); }
+        public PostDecreaseExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPostDecreaseExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPostDecreaseExpression(this);
+        }
+    }
+    public partial class TypeofExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Typeof() { return GetToken(JavaScriptParser.Typeof, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public TypeofExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterTypeofExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitTypeofExpression(this);
+        }
+    }
+    public partial class InstanceofExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode Instanceof() { return GetToken(JavaScriptParser.Instanceof, 0); }
+        public InstanceofExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterInstanceofExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitInstanceofExpression(this);
+        }
+    }
+    public partial class UnaryPlusExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Plus() { return GetToken(JavaScriptParser.Plus, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public UnaryPlusExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterUnaryPlusExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitUnaryPlusExpression(this);
+        }
+    }
+    public partial class DeleteExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Delete() { return GetToken(JavaScriptParser.Delete, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public DeleteExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterDeleteExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitDeleteExpression(this);
+        }
+    }
+    public partial class ImportExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Import() { return GetToken(JavaScriptParser.Import, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ImportExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterImportExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitImportExpression(this);
+        }
+    }
+    public partial class EqualityExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode Equals_() { return GetToken(JavaScriptParser.Equals_, 0); }
+        public ITerminalNode NotEquals() { return GetToken(JavaScriptParser.NotEquals, 0); }
+        public ITerminalNode IdentityEquals() { return GetToken(JavaScriptParser.IdentityEquals, 0); }
+        public ITerminalNode IdentityNotEquals() { return GetToken(JavaScriptParser.IdentityNotEquals, 0); }
+        public EqualityExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterEqualityExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitEqualityExpression(this);
+        }
+    }
+    public partial class BitXOrExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode BitXOr() { return GetToken(JavaScriptParser.BitXOr, 0); }
+        public BitXOrExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBitXOrExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBitXOrExpression(this);
+        }
+    }
+    public partial class SuperExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Super() { return GetToken(JavaScriptParser.Super, 0); }
+        public SuperExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterSuperExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitSuperExpression(this);
+        }
+    }
+    public partial class MultiplicativeExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
+        public ITerminalNode Divide() { return GetToken(JavaScriptParser.Divide, 0); }
+        public ITerminalNode Modulus() { return GetToken(JavaScriptParser.Modulus, 0); }
+        public MultiplicativeExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterMultiplicativeExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitMultiplicativeExpression(this);
+        }
+    }
+    public partial class BitShiftExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode LeftShiftArithmetic() { return GetToken(JavaScriptParser.LeftShiftArithmetic, 0); }
+        public ITerminalNode RightShiftArithmetic() { return GetToken(JavaScriptParser.RightShiftArithmetic, 0); }
+        public ITerminalNode RightShiftLogical() { return GetToken(JavaScriptParser.RightShiftLogical, 0); }
+        public BitShiftExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBitShiftExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBitShiftExpression(this);
+        }
+    }
+    public partial class ParenthesizedExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ParenthesizedExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterParenthesizedExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitParenthesizedExpression(this);
+        }
+    }
+    public partial class AdditiveExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode Plus() { return GetToken(JavaScriptParser.Plus, 0); }
+        public ITerminalNode Minus() { return GetToken(JavaScriptParser.Minus, 0); }
+        public AdditiveExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAdditiveExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAdditiveExpression(this);
+        }
+    }
+    public partial class RelationalExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode LessThan() { return GetToken(JavaScriptParser.LessThan, 0); }
+        public ITerminalNode MoreThan() { return GetToken(JavaScriptParser.MoreThan, 0); }
+        public ITerminalNode LessThanEquals() { return GetToken(JavaScriptParser.LessThanEquals, 0); }
+        public ITerminalNode GreaterThanEquals() { return GetToken(JavaScriptParser.GreaterThanEquals, 0); }
+        public RelationalExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterRelationalExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitRelationalExpression(this);
+        }
+    }
+    public partial class PostIncrementExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode PlusPlus() { return GetToken(JavaScriptParser.PlusPlus, 0); }
+        public PostIncrementExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterPostIncrementExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitPostIncrementExpression(this);
+        }
+    }
+    public partial class YieldExpressionContext : SingleExpressionContext
+    {
+        public YieldStatementContext yieldStatement()
+        {
+            return GetRuleContext<YieldStatementContext>(0);
+        }
+        public YieldExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterYieldExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitYieldExpression(this);
+        }
+    }
+    public partial class BitNotExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode BitNot() { return GetToken(JavaScriptParser.BitNot, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public BitNotExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBitNotExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBitNotExpression(this);
+        }
+    }
+    public partial class NewExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode New() { return GetToken(JavaScriptParser.New, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ArgumentsContext arguments()
+        {
+            return GetRuleContext<ArgumentsContext>(0);
+        }
+        public NewExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterNewExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitNewExpression(this);
+        }
+    }
+    public partial class LiteralExpressionContext : SingleExpressionContext
+    {
+        public LiteralContext literal()
+        {
+            return GetRuleContext<LiteralContext>(0);
+        }
+        public LiteralExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterLiteralExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitLiteralExpression(this);
+        }
+    }
+    public partial class ArrayLiteralExpressionContext : SingleExpressionContext
+    {
+        public ArrayLiteralContext arrayLiteral()
+        {
+            return GetRuleContext<ArrayLiteralContext>(0);
+        }
+        public ArrayLiteralExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArrayLiteralExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArrayLiteralExpression(this);
+        }
+    }
+    public partial class MemberDotExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode Dot() { return GetToken(JavaScriptParser.Dot, 0); }
+        public IdentifierNameContext identifierName()
+        {
+            return GetRuleContext<IdentifierNameContext>(0);
+        }
+        public ITerminalNode QuestionMark() { return GetToken(JavaScriptParser.QuestionMark, 0); }
+        public ITerminalNode Hashtag() { return GetToken(JavaScriptParser.Hashtag, 0); }
+        public MemberDotExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterMemberDotExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitMemberDotExpression(this);
+        }
+    }
+    public partial class ClassExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Class() { return GetToken(JavaScriptParser.Class, 0); }
+        public ClassTailContext classTail()
+        {
+            return GetRuleContext<ClassTailContext>(0);
+        }
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ClassExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterClassExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitClassExpression(this);
+        }
+    }
+    public partial class MemberIndexExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
+        public ExpressionSequenceContext expressionSequence()
+        {
+            return GetRuleContext<ExpressionSequenceContext>(0);
+        }
+        public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
+        public MemberIndexExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterMemberIndexExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitMemberIndexExpression(this);
+        }
+    }
+    public partial class IdentifierExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public IdentifierExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterIdentifierExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitIdentifierExpression(this);
+        }
+    }
+    public partial class BitAndExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode BitAnd() { return GetToken(JavaScriptParser.BitAnd, 0); }
+        public BitAndExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBitAndExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBitAndExpression(this);
+        }
+    }
+    public partial class BitOrExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode BitOr() { return GetToken(JavaScriptParser.BitOr, 0); }
+        public BitOrExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBitOrExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBitOrExpression(this);
+        }
+    }
+    public partial class AssignmentOperatorExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public AssignmentOperatorContext assignmentOperator()
+        {
+            return GetRuleContext<AssignmentOperatorContext>(0);
+        }
+        public AssignmentOperatorExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAssignmentOperatorExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAssignmentOperatorExpression(this);
+        }
+    }
+    public partial class VoidExpressionContext : SingleExpressionContext
+    {
+        public ITerminalNode Void() { return GetToken(JavaScriptParser.Void, 0); }
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public VoidExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterVoidExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitVoidExpression(this);
+        }
+    }
+    public partial class CoalesceExpressionContext : SingleExpressionContext
+    {
+        public SingleExpressionContext[] singleExpression()
+        {
+            return GetRuleContexts<SingleExpressionContext>();
+        }
+        public SingleExpressionContext singleExpression(int i)
+        {
+            return GetRuleContext<SingleExpressionContext>(i);
+        }
+        public ITerminalNode NullCoalesce() { return GetToken(JavaScriptParser.NullCoalesce, 0); }
+        public CoalesceExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterCoalesceExpression(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitCoalesceExpression(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public SingleExpressionContext singleExpression()
+    {
+        return singleExpression(0);
+    }
+
+    private SingleExpressionContext singleExpression(int _p)
+    {
+        ParserRuleContext _parentctx = Context;
+        int _parentState = State;
+        SingleExpressionContext _localctx = new SingleExpressionContext(Context, _parentState);
+        SingleExpressionContext _prevctx = _localctx;
+        int _startState = 116;
+        EnterRecursionRule(_localctx, 116, RULE_singleExpression, _p);
+        int _la;
+        try
+        {
+            int _alt;
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 785;
+                ErrorHandler.Sync(this);
+                switch (Interpreter.AdaptivePredict(TokenStream, 89, Context))
+                {
+                    case 1:
+                        {
+                            _localctx = new FunctionExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+
+                            State = 735; anoymousFunction();
+                        }
+                        break;
+                    case 2:
+                        {
+                            _localctx = new ClassExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 736; Match(Class);
+                            State = 738;
+                            ErrorHandler.Sync(this);
+                            _la = TokenStream.LA(1);
+                            if (_la == Identifier)
+                            {
+                                {
+                                    State = 737; Match(Identifier);
                                 }
                             }
 
-                            State = 663; propertyName();
-                            State = 664; Match(OpenParen);
-                            State = 666;
+                            State = 740; classTail();
+                        }
+                        break;
+                    case 3:
+                        {
+                            _localctx = new NewExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 741; Match(New);
+                            State = 742; singleExpression(0);
+                            State = 744;
                             ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
+                            switch (Interpreter.AdaptivePredict(TokenStream, 88, Context))
                             {
-                                {
-                                    State = 665; formalParameterList();
-                                }
+                                case 1:
+                                    {
+                                        State = 743; arguments();
+                                    }
+                                    break;
                             }
-
-                            State = 668; Match(CloseParen);
-                            State = 669; Match(OpenBrace);
-                            State = 670; functionBody();
-                            State = 671; Match(CloseBrace);
                         }
                         break;
                     case 4:
-                        _localctx = new PropertyGetterContext(_localctx);
-                        EnterOuterAlt(_localctx, 4);
                         {
-                            State = 673; getter();
-                            State = 674; Match(OpenParen);
-                            State = 675; Match(CloseParen);
-                            State = 676; Match(OpenBrace);
-                            State = 677; functionBody();
-                            State = 678; Match(CloseBrace);
+                            _localctx = new MetaExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 746; Match(New);
+                            State = 747; Match(Dot);
+                            State = 748; Match(Identifier);
                         }
                         break;
                     case 5:
-                        _localctx = new PropertySetterContext(_localctx);
-                        EnterOuterAlt(_localctx, 5);
                         {
-                            State = 680; setter();
-                            State = 681; Match(OpenParen);
-                            State = 682; formalParameterArg();
-                            State = 683; Match(CloseParen);
-                            State = 684; Match(OpenBrace);
-                            State = 685; functionBody();
-                            State = 686; Match(CloseBrace);
+                            _localctx = new DeleteExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 749; Match(Delete);
+                            State = 750; singleExpression(37);
                         }
                         break;
                     case 6:
-                        _localctx = new PropertyShorthandContext(_localctx);
-                        EnterOuterAlt(_localctx, 6);
                         {
-                            State = 689;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Ellipsis)
-                            {
-                                {
-                                    State = 688; Match(Ellipsis);
-                                }
-                            }
-
-                            State = 691; singleExpression(0);
+                            _localctx = new VoidExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 751; Match(Void);
+                            State = 752; singleExpression(36);
+                        }
+                        break;
+                    case 7:
+                        {
+                            _localctx = new TypeofExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 753; Match(Typeof);
+                            State = 754; singleExpression(35);
+                        }
+                        break;
+                    case 8:
+                        {
+                            _localctx = new PreIncrementExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 755; Match(PlusPlus);
+                            State = 756; singleExpression(34);
+                        }
+                        break;
+                    case 9:
+                        {
+                            _localctx = new PreDecreaseExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 757; Match(MinusMinus);
+                            State = 758; singleExpression(33);
+                        }
+                        break;
+                    case 10:
+                        {
+                            _localctx = new UnaryPlusExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 759; Match(Plus);
+                            State = 760; singleExpression(32);
+                        }
+                        break;
+                    case 11:
+                        {
+                            _localctx = new UnaryMinusExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 761; Match(Minus);
+                            State = 762; singleExpression(31);
+                        }
+                        break;
+                    case 12:
+                        {
+                            _localctx = new BitNotExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 763; Match(BitNot);
+                            State = 764; singleExpression(30);
+                        }
+                        break;
+                    case 13:
+                        {
+                            _localctx = new NotExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 765; Match(Not);
+                            State = 766; singleExpression(29);
+                        }
+                        break;
+                    case 14:
+                        {
+                            _localctx = new AwaitExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 767; Match(Await);
+                            State = 768; singleExpression(28);
+                        }
+                        break;
+                    case 15:
+                        {
+                            _localctx = new ImportExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 769; Match(Import);
+                            State = 770; Match(OpenParen);
+                            State = 771; singleExpression(0);
+                            State = 772; Match(CloseParen);
+                        }
+                        break;
+                    case 16:
+                        {
+                            _localctx = new YieldExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 774; yieldStatement();
+                        }
+                        break;
+                    case 17:
+                        {
+                            _localctx = new ThisExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 775; Match(This);
+                        }
+                        break;
+                    case 18:
+                        {
+                            _localctx = new IdentifierExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 776; Match(Identifier);
+                        }
+                        break;
+                    case 19:
+                        {
+                            _localctx = new SuperExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 777; Match(Super);
+                        }
+                        break;
+                    case 20:
+                        {
+                            _localctx = new LiteralExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 778; literal();
+                        }
+                        break;
+                    case 21:
+                        {
+                            _localctx = new ArrayLiteralExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 779; arrayLiteral();
+                        }
+                        break;
+                    case 22:
+                        {
+                            _localctx = new ObjectLiteralExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 780; objectLiteral();
+                        }
+                        break;
+                    case 23:
+                        {
+                            _localctx = new ParenthesizedExpressionContext(_localctx);
+                            Context = _localctx;
+                            _prevctx = _localctx;
+                            State = 781; Match(OpenParen);
+                            State = 782; expressionSequence();
+                            State = 783; Match(CloseParen);
                         }
                         break;
                 }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class PropertyNameContext : ParserRuleContext
-        {
-            public IdentifierNameContext identifierName()
-            {
-                return GetRuleContext<IdentifierNameContext>(0);
-            }
-            public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
-            public NumericLiteralContext numericLiteral()
-            {
-                return GetRuleContext<NumericLiteralContext>(0);
-            }
-            public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
-            public PropertyNameContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_propertyName; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPropertyName(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPropertyName(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public PropertyNameContext propertyName()
-        {
-            PropertyNameContext _localctx = new PropertyNameContext(Context, State);
-            EnterRule(_localctx, 108, RULE_propertyName);
-            try
-            {
-                State = 701;
+                Context.Stop = TokenStream.LT(-1);
+                State = 868;
                 ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
+                _alt = Interpreter.AdaptivePredict(TokenStream, 93, Context);
+                while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
                 {
-                    case NullLiteral:
-                    case BooleanLiteral:
-                    case Break:
-                    case Do:
-                    case Instanceof:
-                    case Typeof:
-                    case Case:
-                    case Else:
-                    case New:
-                    case Var:
-                    case Catch:
-                    case Finally:
-                    case Return:
-                    case Void:
-                    case Continue:
-                    case For:
-                    case Switch:
-                    case While:
-                    case Debugger:
-                    case Function:
-                    case This:
-                    case With:
-                    case Default:
-                    case If:
-                    case Throw:
-                    case Delete:
-                    case In:
-                    case Try:
-                    case As:
-                    case From:
-                    case Class:
-                    case Enum:
-                    case Extends:
-                    case Super:
-                    case Const:
-                    case Export:
-                    case Import:
-                    case Async:
-                    case Await:
-                    case Implements:
-                    case Let:
-                    case Private:
-                    case Public:
-                    case Interface:
-                    case Package:
-                    case Protected:
-                    case Static:
-                    case Yield:
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 694; identifierName();
-                        }
-                        break;
-                    case StringLiteral:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 695; Match(StringLiteral);
-                        }
-                        break;
-                    case DecimalLiteral:
-                    case HexIntegerLiteral:
-                    case OctalIntegerLiteral:
-                    case OctalIntegerLiteral2:
-                    case BinaryIntegerLiteral:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 696; numericLiteral();
-                        }
-                        break;
-                    case OpenBracket:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 697; Match(OpenBracket);
-                            State = 698; singleExpression(0);
-                            State = 699; Match(CloseBracket);
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ArgumentsContext : ParserRuleContext
-        {
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ArgumentContext[] argument()
-            {
-                return GetRuleContexts<ArgumentContext>();
-            }
-            public ArgumentContext argument(int i)
-            {
-                return GetRuleContext<ArgumentContext>(i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(JavaScriptParser.Comma, i);
-            }
-            public ArgumentsContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_arguments; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArguments(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArguments(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ArgumentsContext arguments()
-        {
-            ArgumentsContext _localctx = new ArgumentsContext(Context, State);
-            EnterRule(_localctx, 110, RULE_arguments);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 703; Match(OpenParen);
-                    State = 715;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RegularExpressionLiteral) | (1L << OpenBracket) | (1L << OpenParen) | (1L << OpenBrace) | (1L << Ellipsis) | (1L << PlusPlus) | (1L << MinusMinus) | (1L << Plus) | (1L << Minus) | (1L << BitNot) | (1L << Not) | (1L << NullLiteral) | (1L << BooleanLiteral) | (1L << DecimalLiteral) | (1L << HexIntegerLiteral) | (1L << OctalIntegerLiteral))) != 0) || ((((_la - 64)) & ~0x3f) == 0 && ((1L << (_la - 64)) & ((1L << (OctalIntegerLiteral2 - 64)) | (1L << (BinaryIntegerLiteral - 64)) | (1L << (BigHexIntegerLiteral - 64)) | (1L << (BigOctalIntegerLiteral - 64)) | (1L << (BigBinaryIntegerLiteral - 64)) | (1L << (BigDecimalIntegerLiteral - 64)) | (1L << (Typeof - 64)) | (1L << (New - 64)) | (1L << (Void - 64)) | (1L << (Function - 64)) | (1L << (This - 64)) | (1L << (Delete - 64)) | (1L << (Class - 64)) | (1L << (Super - 64)) | (1L << (Import - 64)) | (1L << (Async - 64)) | (1L << (Await - 64)) | (1L << (Yield - 64)) | (1L << (Identifier - 64)) | (1L << (StringLiteral - 64)) | (1L << (TemplateStringLiteral - 64)))) != 0))
+                    if (_alt == 1)
                     {
+                        if (ParseListeners != null)
+                            TriggerExitRuleEvent();
+                        _prevctx = _localctx;
                         {
-                            State = 704; argument();
-                            State = 709;
+                            State = 866;
                             ErrorHandler.Sync(this);
-                            _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
-                            while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                            switch (Interpreter.AdaptivePredict(TokenStream, 92, Context))
                             {
-                                if (_alt == 1)
-                                {
+                                case 1:
                                     {
-                                        {
-                                            State = 705; Match(Comma);
-                                            State = 706; argument();
-                                        }
+                                        _localctx = new PowerExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 787;
+                                        if (!(Precpred(Context, 27))) throw new FailedPredicateException(this, "Precpred(Context, 27)");
+                                        State = 788; Match(Power);
+                                        State = 789; singleExpression(27);
                                     }
-                                }
-                                State = 711;
-                                ErrorHandler.Sync(this);
-                                _alt = Interpreter.AdaptivePredict(TokenStream, 81, Context);
-                            }
-                            State = 713;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Comma)
-                            {
-                                {
-                                    State = 712; Match(Comma);
-                                }
-                            }
-
-                        }
-                    }
-
-                    State = 717; Match(CloseParen);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ArgumentContext : ParserRuleContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ITerminalNode Ellipsis() { return GetToken(JavaScriptParser.Ellipsis, 0); }
-            public ArgumentContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_argument; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArgument(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArgument(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ArgumentContext argument()
-        {
-            ArgumentContext _localctx = new ArgumentContext(Context, State);
-            EnterRule(_localctx, 112, RULE_argument);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 720;
-                    ErrorHandler.Sync(this);
-                    _la = TokenStream.LA(1);
-                    if (_la == Ellipsis)
-                    {
-                        {
-                            State = 719; Match(Ellipsis);
-                        }
-                    }
-
-                    State = 724;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 85, Context))
-                    {
-                        case 1:
-                            {
-                                State = 722; singleExpression(0);
-                            }
-                            break;
-                        case 2:
-                            {
-                                State = 723; Match(Identifier);
-                            }
-                            break;
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class ExpressionSequenceContext : ParserRuleContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode[] Comma() { return GetTokens(JavaScriptParser.Comma); }
-            public ITerminalNode Comma(int i)
-            {
-                return GetToken(JavaScriptParser.Comma, i);
-            }
-            public ExpressionSequenceContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_expressionSequence; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterExpressionSequence(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitExpressionSequence(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public ExpressionSequenceContext expressionSequence()
-        {
-            ExpressionSequenceContext _localctx = new ExpressionSequenceContext(Context, State);
-            EnterRule(_localctx, 114, RULE_expressionSequence);
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 726; singleExpression(0);
-                    State = 731;
-                    ErrorHandler.Sync(this);
-                    _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
-                    {
-                        if (_alt == 1)
-                        {
-                            {
-                                {
-                                    State = 727; Match(Comma);
-                                    State = 728; singleExpression(0);
-                                }
-                            }
-                        }
-                        State = 733;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 86, Context);
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class SingleExpressionContext : ParserRuleContext
-        {
-            public SingleExpressionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_singleExpression; } }
-
-            public SingleExpressionContext() { }
-            public virtual void CopyFrom(SingleExpressionContext context)
-            {
-                base.CopyFrom(context);
-            }
-        }
-        public partial class TemplateStringExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode TemplateStringLiteral() { return GetToken(JavaScriptParser.TemplateStringLiteral, 0); }
-            public TemplateStringExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterTemplateStringExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitTemplateStringExpression(this);
-            }
-        }
-        public partial class TernaryExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode QuestionMark() { return GetToken(JavaScriptParser.QuestionMark, 0); }
-            public ITerminalNode Colon() { return GetToken(JavaScriptParser.Colon, 0); }
-            public TernaryExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterTernaryExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitTernaryExpression(this);
-            }
-        }
-        public partial class LogicalAndExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode And() { return GetToken(JavaScriptParser.And, 0); }
-            public LogicalAndExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterLogicalAndExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitLogicalAndExpression(this);
-            }
-        }
-        public partial class PowerExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode Power() { return GetToken(JavaScriptParser.Power, 0); }
-            public PowerExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPowerExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPowerExpression(this);
-            }
-        }
-        public partial class PreIncrementExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode PlusPlus() { return GetToken(JavaScriptParser.PlusPlus, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public PreIncrementExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPreIncrementExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPreIncrementExpression(this);
-            }
-        }
-        public partial class ObjectLiteralExpressionContext : SingleExpressionContext
-        {
-            public ObjectLiteralContext objectLiteral()
-            {
-                return GetRuleContext<ObjectLiteralContext>(0);
-            }
-            public ObjectLiteralExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterObjectLiteralExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitObjectLiteralExpression(this);
-            }
-        }
-        public partial class MetaExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode New() { return GetToken(JavaScriptParser.New, 0); }
-            public ITerminalNode Dot() { return GetToken(JavaScriptParser.Dot, 0); }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public MetaExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterMetaExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitMetaExpression(this);
-            }
-        }
-        public partial class InExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode In() { return GetToken(JavaScriptParser.In, 0); }
-            public InExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterInExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitInExpression(this);
-            }
-        }
-        public partial class LogicalOrExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode Or() { return GetToken(JavaScriptParser.Or, 0); }
-            public LogicalOrExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterLogicalOrExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitLogicalOrExpression(this);
-            }
-        }
-        public partial class NotExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Not() { return GetToken(JavaScriptParser.Not, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public NotExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterNotExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitNotExpression(this);
-            }
-        }
-        public partial class PreDecreaseExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode MinusMinus() { return GetToken(JavaScriptParser.MinusMinus, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public PreDecreaseExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPreDecreaseExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPreDecreaseExpression(this);
-            }
-        }
-        public partial class ArgumentsExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ArgumentsContext arguments()
-            {
-                return GetRuleContext<ArgumentsContext>(0);
-            }
-            public ArgumentsExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArgumentsExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArgumentsExpression(this);
-            }
-        }
-        public partial class AwaitExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Await() { return GetToken(JavaScriptParser.Await, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public AwaitExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAwaitExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAwaitExpression(this);
-            }
-        }
-        public partial class ThisExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode This() { return GetToken(JavaScriptParser.This, 0); }
-            public ThisExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterThisExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitThisExpression(this);
-            }
-        }
-        public partial class FunctionExpressionContext : SingleExpressionContext
-        {
-            public AnoymousFunctionContext anoymousFunction()
-            {
-                return GetRuleContext<AnoymousFunctionContext>(0);
-            }
-            public FunctionExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFunctionExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFunctionExpression(this);
-            }
-        }
-        public partial class UnaryMinusExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Minus() { return GetToken(JavaScriptParser.Minus, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public UnaryMinusExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterUnaryMinusExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitUnaryMinusExpression(this);
-            }
-        }
-        public partial class AssignmentExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode Assign() { return GetToken(JavaScriptParser.Assign, 0); }
-            public AssignmentExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAssignmentExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAssignmentExpression(this);
-            }
-        }
-        public partial class PostDecreaseExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode MinusMinus() { return GetToken(JavaScriptParser.MinusMinus, 0); }
-            public PostDecreaseExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPostDecreaseExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPostDecreaseExpression(this);
-            }
-        }
-        public partial class TypeofExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Typeof() { return GetToken(JavaScriptParser.Typeof, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public TypeofExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterTypeofExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitTypeofExpression(this);
-            }
-        }
-        public partial class InstanceofExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode Instanceof() { return GetToken(JavaScriptParser.Instanceof, 0); }
-            public InstanceofExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterInstanceofExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitInstanceofExpression(this);
-            }
-        }
-        public partial class UnaryPlusExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Plus() { return GetToken(JavaScriptParser.Plus, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public UnaryPlusExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterUnaryPlusExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitUnaryPlusExpression(this);
-            }
-        }
-        public partial class DeleteExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Delete() { return GetToken(JavaScriptParser.Delete, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public DeleteExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterDeleteExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitDeleteExpression(this);
-            }
-        }
-        public partial class ImportExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Import() { return GetToken(JavaScriptParser.Import, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ImportExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterImportExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitImportExpression(this);
-            }
-        }
-        public partial class EqualityExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode Equals_() { return GetToken(JavaScriptParser.Equals_, 0); }
-            public ITerminalNode NotEquals() { return GetToken(JavaScriptParser.NotEquals, 0); }
-            public ITerminalNode IdentityEquals() { return GetToken(JavaScriptParser.IdentityEquals, 0); }
-            public ITerminalNode IdentityNotEquals() { return GetToken(JavaScriptParser.IdentityNotEquals, 0); }
-            public EqualityExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterEqualityExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitEqualityExpression(this);
-            }
-        }
-        public partial class BitXOrExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode BitXOr() { return GetToken(JavaScriptParser.BitXOr, 0); }
-            public BitXOrExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBitXOrExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBitXOrExpression(this);
-            }
-        }
-        public partial class SuperExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Super() { return GetToken(JavaScriptParser.Super, 0); }
-            public SuperExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterSuperExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitSuperExpression(this);
-            }
-        }
-        public partial class MultiplicativeExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
-            public ITerminalNode Divide() { return GetToken(JavaScriptParser.Divide, 0); }
-            public ITerminalNode Modulus() { return GetToken(JavaScriptParser.Modulus, 0); }
-            public MultiplicativeExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterMultiplicativeExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitMultiplicativeExpression(this);
-            }
-        }
-        public partial class BitShiftExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode LeftShiftArithmetic() { return GetToken(JavaScriptParser.LeftShiftArithmetic, 0); }
-            public ITerminalNode RightShiftArithmetic() { return GetToken(JavaScriptParser.RightShiftArithmetic, 0); }
-            public ITerminalNode RightShiftLogical() { return GetToken(JavaScriptParser.RightShiftLogical, 0); }
-            public BitShiftExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBitShiftExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBitShiftExpression(this);
-            }
-        }
-        public partial class ParenthesizedExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ParenthesizedExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterParenthesizedExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitParenthesizedExpression(this);
-            }
-        }
-        public partial class AdditiveExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode Plus() { return GetToken(JavaScriptParser.Plus, 0); }
-            public ITerminalNode Minus() { return GetToken(JavaScriptParser.Minus, 0); }
-            public AdditiveExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAdditiveExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAdditiveExpression(this);
-            }
-        }
-        public partial class RelationalExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode LessThan() { return GetToken(JavaScriptParser.LessThan, 0); }
-            public ITerminalNode MoreThan() { return GetToken(JavaScriptParser.MoreThan, 0); }
-            public ITerminalNode LessThanEquals() { return GetToken(JavaScriptParser.LessThanEquals, 0); }
-            public ITerminalNode GreaterThanEquals() { return GetToken(JavaScriptParser.GreaterThanEquals, 0); }
-            public RelationalExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterRelationalExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitRelationalExpression(this);
-            }
-        }
-        public partial class PostIncrementExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode PlusPlus() { return GetToken(JavaScriptParser.PlusPlus, 0); }
-            public PostIncrementExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterPostIncrementExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitPostIncrementExpression(this);
-            }
-        }
-        public partial class YieldExpressionContext : SingleExpressionContext
-        {
-            public YieldStatementContext yieldStatement()
-            {
-                return GetRuleContext<YieldStatementContext>(0);
-            }
-            public YieldExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterYieldExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitYieldExpression(this);
-            }
-        }
-        public partial class BitNotExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode BitNot() { return GetToken(JavaScriptParser.BitNot, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public BitNotExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBitNotExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBitNotExpression(this);
-            }
-        }
-        public partial class NewExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode New() { return GetToken(JavaScriptParser.New, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ArgumentsContext arguments()
-            {
-                return GetRuleContext<ArgumentsContext>(0);
-            }
-            public NewExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterNewExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitNewExpression(this);
-            }
-        }
-        public partial class LiteralExpressionContext : SingleExpressionContext
-        {
-            public LiteralContext literal()
-            {
-                return GetRuleContext<LiteralContext>(0);
-            }
-            public LiteralExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterLiteralExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitLiteralExpression(this);
-            }
-        }
-        public partial class ArrayLiteralExpressionContext : SingleExpressionContext
-        {
-            public ArrayLiteralContext arrayLiteral()
-            {
-                return GetRuleContext<ArrayLiteralContext>(0);
-            }
-            public ArrayLiteralExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArrayLiteralExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArrayLiteralExpression(this);
-            }
-        }
-        public partial class MemberDotExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode Dot() { return GetToken(JavaScriptParser.Dot, 0); }
-            public IdentifierNameContext identifierName()
-            {
-                return GetRuleContext<IdentifierNameContext>(0);
-            }
-            public ITerminalNode QuestionMark() { return GetToken(JavaScriptParser.QuestionMark, 0); }
-            public ITerminalNode Hashtag() { return GetToken(JavaScriptParser.Hashtag, 0); }
-            public MemberDotExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterMemberDotExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitMemberDotExpression(this);
-            }
-        }
-        public partial class ClassExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Class() { return GetToken(JavaScriptParser.Class, 0); }
-            public ClassTailContext classTail()
-            {
-                return GetRuleContext<ClassTailContext>(0);
-            }
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ClassExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterClassExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitClassExpression(this);
-            }
-        }
-        public partial class MemberIndexExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode OpenBracket() { return GetToken(JavaScriptParser.OpenBracket, 0); }
-            public ExpressionSequenceContext expressionSequence()
-            {
-                return GetRuleContext<ExpressionSequenceContext>(0);
-            }
-            public ITerminalNode CloseBracket() { return GetToken(JavaScriptParser.CloseBracket, 0); }
-            public MemberIndexExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterMemberIndexExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitMemberIndexExpression(this);
-            }
-        }
-        public partial class IdentifierExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public IdentifierExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterIdentifierExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitIdentifierExpression(this);
-            }
-        }
-        public partial class BitAndExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode BitAnd() { return GetToken(JavaScriptParser.BitAnd, 0); }
-            public BitAndExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBitAndExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBitAndExpression(this);
-            }
-        }
-        public partial class BitOrExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode BitOr() { return GetToken(JavaScriptParser.BitOr, 0); }
-            public BitOrExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBitOrExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBitOrExpression(this);
-            }
-        }
-        public partial class AssignmentOperatorExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public AssignmentOperatorContext assignmentOperator()
-            {
-                return GetRuleContext<AssignmentOperatorContext>(0);
-            }
-            public AssignmentOperatorExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAssignmentOperatorExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAssignmentOperatorExpression(this);
-            }
-        }
-        public partial class VoidExpressionContext : SingleExpressionContext
-        {
-            public ITerminalNode Void() { return GetToken(JavaScriptParser.Void, 0); }
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public VoidExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterVoidExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitVoidExpression(this);
-            }
-        }
-        public partial class CoalesceExpressionContext : SingleExpressionContext
-        {
-            public SingleExpressionContext[] singleExpression()
-            {
-                return GetRuleContexts<SingleExpressionContext>();
-            }
-            public SingleExpressionContext singleExpression(int i)
-            {
-                return GetRuleContext<SingleExpressionContext>(i);
-            }
-            public ITerminalNode NullCoalesce() { return GetToken(JavaScriptParser.NullCoalesce, 0); }
-            public CoalesceExpressionContext(SingleExpressionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterCoalesceExpression(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitCoalesceExpression(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public SingleExpressionContext singleExpression()
-        {
-            return singleExpression(0);
-        }
-
-        private SingleExpressionContext singleExpression(int _p)
-        {
-            ParserRuleContext _parentctx = Context;
-            int _parentState = State;
-            SingleExpressionContext _localctx = new SingleExpressionContext(Context, _parentState);
-            SingleExpressionContext _prevctx = _localctx;
-            int _startState = 116;
-            EnterRecursionRule(_localctx, 116, RULE_singleExpression, _p);
-            int _la;
-            try
-            {
-                int _alt;
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 785;
-                    ErrorHandler.Sync(this);
-                    switch (Interpreter.AdaptivePredict(TokenStream, 89, Context))
-                    {
-                        case 1:
-                            {
-                                _localctx = new FunctionExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-
-                                State = 735; anoymousFunction();
-                            }
-                            break;
-                        case 2:
-                            {
-                                _localctx = new ClassExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 736; Match(Class);
-                                State = 738;
-                                ErrorHandler.Sync(this);
-                                _la = TokenStream.LA(1);
-                                if (_la == Identifier)
-                                {
+                                    break;
+                                case 2:
                                     {
-                                        State = 737; Match(Identifier);
-                                    }
-                                }
-
-                                State = 740; classTail();
-                            }
-                            break;
-                        case 3:
-                            {
-                                _localctx = new NewExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 741; Match(New);
-                                State = 742; singleExpression(0);
-                                State = 744;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 88, Context))
-                                {
-                                    case 1:
+                                        _localctx = new MultiplicativeExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 790;
+                                        if (!(Precpred(Context, 26))) throw new FailedPredicateException(this, "Precpred(Context, 26)");
+                                        State = 791;
+                                        _la = TokenStream.LA(1);
+                                        if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Multiply) | (1L << Divide) | (1L << Modulus))) != 0)))
                                         {
-                                            State = 743; arguments();
+                                            ErrorHandler.RecoverInline(this);
                                         }
-                                        break;
-                                }
+                                        else
+                                        {
+                                            ErrorHandler.ReportMatch(this);
+                                            Consume();
+                                        }
+                                        State = 792; singleExpression(27);
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        _localctx = new AdditiveExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 793;
+                                        if (!(Precpred(Context, 25))) throw new FailedPredicateException(this, "Precpred(Context, 25)");
+                                        State = 794;
+                                        _la = TokenStream.LA(1);
+                                        if (!(_la == Plus || _la == Minus))
+                                        {
+                                            ErrorHandler.RecoverInline(this);
+                                        }
+                                        else
+                                        {
+                                            ErrorHandler.ReportMatch(this);
+                                            Consume();
+                                        }
+                                        State = 795; singleExpression(26);
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        _localctx = new CoalesceExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 796;
+                                        if (!(Precpred(Context, 24))) throw new FailedPredicateException(this, "Precpred(Context, 24)");
+                                        State = 797; Match(NullCoalesce);
+                                        State = 798; singleExpression(25);
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        _localctx = new BitShiftExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 799;
+                                        if (!(Precpred(Context, 23))) throw new FailedPredicateException(this, "Precpred(Context, 23)");
+                                        State = 800;
+                                        _la = TokenStream.LA(1);
+                                        if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RightShiftArithmetic) | (1L << LeftShiftArithmetic) | (1L << RightShiftLogical))) != 0)))
+                                        {
+                                            ErrorHandler.RecoverInline(this);
+                                        }
+                                        else
+                                        {
+                                            ErrorHandler.ReportMatch(this);
+                                            Consume();
+                                        }
+                                        State = 801; singleExpression(24);
+                                    }
+                                    break;
+                                case 6:
+                                    {
+                                        _localctx = new RelationalExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 802;
+                                        if (!(Precpred(Context, 22))) throw new FailedPredicateException(this, "Precpred(Context, 22)");
+                                        State = 803;
+                                        _la = TokenStream.LA(1);
+                                        if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LessThan) | (1L << MoreThan) | (1L << LessThanEquals) | (1L << GreaterThanEquals))) != 0)))
+                                        {
+                                            ErrorHandler.RecoverInline(this);
+                                        }
+                                        else
+                                        {
+                                            ErrorHandler.ReportMatch(this);
+                                            Consume();
+                                        }
+                                        State = 804; singleExpression(23);
+                                    }
+                                    break;
+                                case 7:
+                                    {
+                                        _localctx = new InstanceofExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 805;
+                                        if (!(Precpred(Context, 21))) throw new FailedPredicateException(this, "Precpred(Context, 21)");
+                                        State = 806; Match(Instanceof);
+                                        State = 807; singleExpression(22);
+                                    }
+                                    break;
+                                case 8:
+                                    {
+                                        _localctx = new InExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 808;
+                                        if (!(Precpred(Context, 20))) throw new FailedPredicateException(this, "Precpred(Context, 20)");
+                                        State = 809; Match(In);
+                                        State = 810; singleExpression(21);
+                                    }
+                                    break;
+                                case 9:
+                                    {
+                                        _localctx = new EqualityExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 811;
+                                        if (!(Precpred(Context, 19))) throw new FailedPredicateException(this, "Precpred(Context, 19)");
+                                        State = 812;
+                                        _la = TokenStream.LA(1);
+                                        if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Equals_) | (1L << NotEquals) | (1L << IdentityEquals) | (1L << IdentityNotEquals))) != 0)))
+                                        {
+                                            ErrorHandler.RecoverInline(this);
+                                        }
+                                        else
+                                        {
+                                            ErrorHandler.ReportMatch(this);
+                                            Consume();
+                                        }
+                                        State = 813; singleExpression(20);
+                                    }
+                                    break;
+                                case 10:
+                                    {
+                                        _localctx = new BitAndExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 814;
+                                        if (!(Precpred(Context, 18))) throw new FailedPredicateException(this, "Precpred(Context, 18)");
+                                        State = 815; Match(BitAnd);
+                                        State = 816; singleExpression(19);
+                                    }
+                                    break;
+                                case 11:
+                                    {
+                                        _localctx = new BitXOrExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 817;
+                                        if (!(Precpred(Context, 17))) throw new FailedPredicateException(this, "Precpred(Context, 17)");
+                                        State = 818; Match(BitXOr);
+                                        State = 819; singleExpression(18);
+                                    }
+                                    break;
+                                case 12:
+                                    {
+                                        _localctx = new BitOrExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 820;
+                                        if (!(Precpred(Context, 16))) throw new FailedPredicateException(this, "Precpred(Context, 16)");
+                                        State = 821; Match(BitOr);
+                                        State = 822; singleExpression(17);
+                                    }
+                                    break;
+                                case 13:
+                                    {
+                                        _localctx = new LogicalAndExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 823;
+                                        if (!(Precpred(Context, 15))) throw new FailedPredicateException(this, "Precpred(Context, 15)");
+                                        State = 824; Match(And);
+                                        State = 825; singleExpression(16);
+                                    }
+                                    break;
+                                case 14:
+                                    {
+                                        _localctx = new LogicalOrExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 826;
+                                        if (!(Precpred(Context, 14))) throw new FailedPredicateException(this, "Precpred(Context, 14)");
+                                        State = 827; Match(Or);
+                                        State = 828; singleExpression(15);
+                                    }
+                                    break;
+                                case 15:
+                                    {
+                                        _localctx = new TernaryExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 829;
+                                        if (!(Precpred(Context, 13))) throw new FailedPredicateException(this, "Precpred(Context, 13)");
+                                        State = 830; Match(QuestionMark);
+                                        State = 831; singleExpression(0);
+                                        State = 832; Match(Colon);
+                                        State = 833; singleExpression(14);
+                                    }
+                                    break;
+                                case 16:
+                                    {
+                                        _localctx = new AssignmentExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 835;
+                                        if (!(Precpred(Context, 12))) throw new FailedPredicateException(this, "Precpred(Context, 12)");
+                                        State = 836; Match(Assign);
+                                        State = 837; singleExpression(12);
+                                    }
+                                    break;
+                                case 17:
+                                    {
+                                        _localctx = new AssignmentOperatorExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 838;
+                                        if (!(Precpred(Context, 11))) throw new FailedPredicateException(this, "Precpred(Context, 11)");
+                                        State = 839; assignmentOperator();
+                                        State = 840; singleExpression(11);
+                                    }
+                                    break;
+                                case 18:
+                                    {
+                                        _localctx = new MemberIndexExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 842;
+                                        if (!(Precpred(Context, 44))) throw new FailedPredicateException(this, "Precpred(Context, 44)");
+                                        State = 843; Match(OpenBracket);
+                                        State = 844; expressionSequence();
+                                        State = 845; Match(CloseBracket);
+                                    }
+                                    break;
+                                case 19:
+                                    {
+                                        _localctx = new MemberDotExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 847;
+                                        if (!(Precpred(Context, 43))) throw new FailedPredicateException(this, "Precpred(Context, 43)");
+                                        State = 849;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if (_la == QuestionMark)
+                                        {
+                                            {
+                                                State = 848; Match(QuestionMark);
+                                            }
+                                        }
+
+                                        State = 851; Match(Dot);
+                                        State = 853;
+                                        ErrorHandler.Sync(this);
+                                        _la = TokenStream.LA(1);
+                                        if (_la == Hashtag)
+                                        {
+                                            {
+                                                State = 852; Match(Hashtag);
+                                            }
+                                        }
+
+                                        State = 855; identifierName();
+                                    }
+                                    break;
+                                case 20:
+                                    {
+                                        _localctx = new ArgumentsExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 856;
+                                        if (!(Precpred(Context, 42))) throw new FailedPredicateException(this, "Precpred(Context, 42)");
+                                        State = 857; arguments();
+                                    }
+                                    break;
+                                case 21:
+                                    {
+                                        _localctx = new PostIncrementExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 858;
+                                        if (!(Precpred(Context, 39))) throw new FailedPredicateException(this, "Precpred(Context, 39)");
+                                        State = 859;
+                                        if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
+                                        State = 860; Match(PlusPlus);
+                                    }
+                                    break;
+                                case 22:
+                                    {
+                                        _localctx = new PostDecreaseExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 861;
+                                        if (!(Precpred(Context, 38))) throw new FailedPredicateException(this, "Precpred(Context, 38)");
+                                        State = 862;
+                                        if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
+                                        State = 863; Match(MinusMinus);
+                                    }
+                                    break;
+                                case 23:
+                                    {
+                                        _localctx = new TemplateStringExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
+                                        PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
+                                        State = 864;
+                                        if (!(Precpred(Context, 9))) throw new FailedPredicateException(this, "Precpred(Context, 9)");
+                                        State = 865; Match(TemplateStringLiteral);
+                                    }
+                                    break;
                             }
-                            break;
-                        case 4:
-                            {
-                                _localctx = new MetaExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 746; Match(New);
-                                State = 747; Match(Dot);
-                                State = 748; Match(Identifier);
-                            }
-                            break;
-                        case 5:
-                            {
-                                _localctx = new DeleteExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 749; Match(Delete);
-                                State = 750; singleExpression(37);
-                            }
-                            break;
-                        case 6:
-                            {
-                                _localctx = new VoidExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 751; Match(Void);
-                                State = 752; singleExpression(36);
-                            }
-                            break;
-                        case 7:
-                            {
-                                _localctx = new TypeofExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 753; Match(Typeof);
-                                State = 754; singleExpression(35);
-                            }
-                            break;
-                        case 8:
-                            {
-                                _localctx = new PreIncrementExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 755; Match(PlusPlus);
-                                State = 756; singleExpression(34);
-                            }
-                            break;
-                        case 9:
-                            {
-                                _localctx = new PreDecreaseExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 757; Match(MinusMinus);
-                                State = 758; singleExpression(33);
-                            }
-                            break;
-                        case 10:
-                            {
-                                _localctx = new UnaryPlusExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 759; Match(Plus);
-                                State = 760; singleExpression(32);
-                            }
-                            break;
-                        case 11:
-                            {
-                                _localctx = new UnaryMinusExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 761; Match(Minus);
-                                State = 762; singleExpression(31);
-                            }
-                            break;
-                        case 12:
-                            {
-                                _localctx = new BitNotExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 763; Match(BitNot);
-                                State = 764; singleExpression(30);
-                            }
-                            break;
-                        case 13:
-                            {
-                                _localctx = new NotExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 765; Match(Not);
-                                State = 766; singleExpression(29);
-                            }
-                            break;
-                        case 14:
-                            {
-                                _localctx = new AwaitExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 767; Match(Await);
-                                State = 768; singleExpression(28);
-                            }
-                            break;
-                        case 15:
-                            {
-                                _localctx = new ImportExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 769; Match(Import);
-                                State = 770; Match(OpenParen);
-                                State = 771; singleExpression(0);
-                                State = 772; Match(CloseParen);
-                            }
-                            break;
-                        case 16:
-                            {
-                                _localctx = new YieldExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 774; yieldStatement();
-                            }
-                            break;
-                        case 17:
-                            {
-                                _localctx = new ThisExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 775; Match(This);
-                            }
-                            break;
-                        case 18:
-                            {
-                                _localctx = new IdentifierExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 776; Match(Identifier);
-                            }
-                            break;
-                        case 19:
-                            {
-                                _localctx = new SuperExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 777; Match(Super);
-                            }
-                            break;
-                        case 20:
-                            {
-                                _localctx = new LiteralExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 778; literal();
-                            }
-                            break;
-                        case 21:
-                            {
-                                _localctx = new ArrayLiteralExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 779; arrayLiteral();
-                            }
-                            break;
-                        case 22:
-                            {
-                                _localctx = new ObjectLiteralExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 780; objectLiteral();
-                            }
-                            break;
-                        case 23:
-                            {
-                                _localctx = new ParenthesizedExpressionContext(_localctx);
-                                Context = _localctx;
-                                _prevctx = _localctx;
-                                State = 781; Match(OpenParen);
-                                State = 782; expressionSequence();
-                                State = 783; Match(CloseParen);
-                            }
-                            break;
+                        }
                     }
-                    Context.Stop = TokenStream.LT(-1);
-                    State = 868;
+                    State = 870;
                     ErrorHandler.Sync(this);
                     _alt = Interpreter.AdaptivePredict(TokenStream, 93, Context);
-                    while (_alt != 2 && _alt != global::Antlr4.Runtime.Atn.ATN.INVALID_ALT_NUMBER)
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            UnrollRecursionContexts(_parentctx);
+        }
+        return _localctx;
+    }
+
+    public partial class AssignableContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ArrayLiteralContext arrayLiteral()
+        {
+            return GetRuleContext<ArrayLiteralContext>(0);
+        }
+        public ObjectLiteralContext objectLiteral()
+        {
+            return GetRuleContext<ObjectLiteralContext>(0);
+        }
+        public AssignableContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_assignable; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAssignable(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAssignable(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AssignableContext assignable()
+    {
+        AssignableContext _localctx = new AssignableContext(Context, State);
+        EnterRule(_localctx, 118, RULE_assignable);
+        try
+        {
+            State = 874;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
                     {
-                        if (_alt == 1)
-                        {
-                            if (ParseListeners != null)
-                                TriggerExitRuleEvent();
-                            _prevctx = _localctx;
-                            {
-                                State = 866;
-                                ErrorHandler.Sync(this);
-                                switch (Interpreter.AdaptivePredict(TokenStream, 92, Context))
-                                {
-                                    case 1:
-                                        {
-                                            _localctx = new PowerExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 787;
-                                            if (!(Precpred(Context, 27))) throw new FailedPredicateException(this, "Precpred(Context, 27)");
-                                            State = 788; Match(Power);
-                                            State = 789; singleExpression(27);
-                                        }
-                                        break;
-                                    case 2:
-                                        {
-                                            _localctx = new MultiplicativeExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 790;
-                                            if (!(Precpred(Context, 26))) throw new FailedPredicateException(this, "Precpred(Context, 26)");
-                                            State = 791;
-                                            _la = TokenStream.LA(1);
-                                            if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Multiply) | (1L << Divide) | (1L << Modulus))) != 0)))
-                                            {
-                                                ErrorHandler.RecoverInline(this);
-                                            }
-                                            else
-                                            {
-                                                ErrorHandler.ReportMatch(this);
-                                                Consume();
-                                            }
-                                            State = 792; singleExpression(27);
-                                        }
-                                        break;
-                                    case 3:
-                                        {
-                                            _localctx = new AdditiveExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 793;
-                                            if (!(Precpred(Context, 25))) throw new FailedPredicateException(this, "Precpred(Context, 25)");
-                                            State = 794;
-                                            _la = TokenStream.LA(1);
-                                            if (!(_la == Plus || _la == Minus))
-                                            {
-                                                ErrorHandler.RecoverInline(this);
-                                            }
-                                            else
-                                            {
-                                                ErrorHandler.ReportMatch(this);
-                                                Consume();
-                                            }
-                                            State = 795; singleExpression(26);
-                                        }
-                                        break;
-                                    case 4:
-                                        {
-                                            _localctx = new CoalesceExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 796;
-                                            if (!(Precpred(Context, 24))) throw new FailedPredicateException(this, "Precpred(Context, 24)");
-                                            State = 797; Match(NullCoalesce);
-                                            State = 798; singleExpression(25);
-                                        }
-                                        break;
-                                    case 5:
-                                        {
-                                            _localctx = new BitShiftExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 799;
-                                            if (!(Precpred(Context, 23))) throw new FailedPredicateException(this, "Precpred(Context, 23)");
-                                            State = 800;
-                                            _la = TokenStream.LA(1);
-                                            if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << RightShiftArithmetic) | (1L << LeftShiftArithmetic) | (1L << RightShiftLogical))) != 0)))
-                                            {
-                                                ErrorHandler.RecoverInline(this);
-                                            }
-                                            else
-                                            {
-                                                ErrorHandler.ReportMatch(this);
-                                                Consume();
-                                            }
-                                            State = 801; singleExpression(24);
-                                        }
-                                        break;
-                                    case 6:
-                                        {
-                                            _localctx = new RelationalExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 802;
-                                            if (!(Precpred(Context, 22))) throw new FailedPredicateException(this, "Precpred(Context, 22)");
-                                            State = 803;
-                                            _la = TokenStream.LA(1);
-                                            if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LessThan) | (1L << MoreThan) | (1L << LessThanEquals) | (1L << GreaterThanEquals))) != 0)))
-                                            {
-                                                ErrorHandler.RecoverInline(this);
-                                            }
-                                            else
-                                            {
-                                                ErrorHandler.ReportMatch(this);
-                                                Consume();
-                                            }
-                                            State = 804; singleExpression(23);
-                                        }
-                                        break;
-                                    case 7:
-                                        {
-                                            _localctx = new InstanceofExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 805;
-                                            if (!(Precpred(Context, 21))) throw new FailedPredicateException(this, "Precpred(Context, 21)");
-                                            State = 806; Match(Instanceof);
-                                            State = 807; singleExpression(22);
-                                        }
-                                        break;
-                                    case 8:
-                                        {
-                                            _localctx = new InExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 808;
-                                            if (!(Precpred(Context, 20))) throw new FailedPredicateException(this, "Precpred(Context, 20)");
-                                            State = 809; Match(In);
-                                            State = 810; singleExpression(21);
-                                        }
-                                        break;
-                                    case 9:
-                                        {
-                                            _localctx = new EqualityExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 811;
-                                            if (!(Precpred(Context, 19))) throw new FailedPredicateException(this, "Precpred(Context, 19)");
-                                            State = 812;
-                                            _la = TokenStream.LA(1);
-                                            if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Equals_) | (1L << NotEquals) | (1L << IdentityEquals) | (1L << IdentityNotEquals))) != 0)))
-                                            {
-                                                ErrorHandler.RecoverInline(this);
-                                            }
-                                            else
-                                            {
-                                                ErrorHandler.ReportMatch(this);
-                                                Consume();
-                                            }
-                                            State = 813; singleExpression(20);
-                                        }
-                                        break;
-                                    case 10:
-                                        {
-                                            _localctx = new BitAndExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 814;
-                                            if (!(Precpred(Context, 18))) throw new FailedPredicateException(this, "Precpred(Context, 18)");
-                                            State = 815; Match(BitAnd);
-                                            State = 816; singleExpression(19);
-                                        }
-                                        break;
-                                    case 11:
-                                        {
-                                            _localctx = new BitXOrExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 817;
-                                            if (!(Precpred(Context, 17))) throw new FailedPredicateException(this, "Precpred(Context, 17)");
-                                            State = 818; Match(BitXOr);
-                                            State = 819; singleExpression(18);
-                                        }
-                                        break;
-                                    case 12:
-                                        {
-                                            _localctx = new BitOrExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 820;
-                                            if (!(Precpred(Context, 16))) throw new FailedPredicateException(this, "Precpred(Context, 16)");
-                                            State = 821; Match(BitOr);
-                                            State = 822; singleExpression(17);
-                                        }
-                                        break;
-                                    case 13:
-                                        {
-                                            _localctx = new LogicalAndExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 823;
-                                            if (!(Precpred(Context, 15))) throw new FailedPredicateException(this, "Precpred(Context, 15)");
-                                            State = 824; Match(And);
-                                            State = 825; singleExpression(16);
-                                        }
-                                        break;
-                                    case 14:
-                                        {
-                                            _localctx = new LogicalOrExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 826;
-                                            if (!(Precpred(Context, 14))) throw new FailedPredicateException(this, "Precpred(Context, 14)");
-                                            State = 827; Match(Or);
-                                            State = 828; singleExpression(15);
-                                        }
-                                        break;
-                                    case 15:
-                                        {
-                                            _localctx = new TernaryExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 829;
-                                            if (!(Precpred(Context, 13))) throw new FailedPredicateException(this, "Precpred(Context, 13)");
-                                            State = 830; Match(QuestionMark);
-                                            State = 831; singleExpression(0);
-                                            State = 832; Match(Colon);
-                                            State = 833; singleExpression(14);
-                                        }
-                                        break;
-                                    case 16:
-                                        {
-                                            _localctx = new AssignmentExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 835;
-                                            if (!(Precpred(Context, 12))) throw new FailedPredicateException(this, "Precpred(Context, 12)");
-                                            State = 836; Match(Assign);
-                                            State = 837; singleExpression(12);
-                                        }
-                                        break;
-                                    case 17:
-                                        {
-                                            _localctx = new AssignmentOperatorExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 838;
-                                            if (!(Precpred(Context, 11))) throw new FailedPredicateException(this, "Precpred(Context, 11)");
-                                            State = 839; assignmentOperator();
-                                            State = 840; singleExpression(11);
-                                        }
-                                        break;
-                                    case 18:
-                                        {
-                                            _localctx = new MemberIndexExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 842;
-                                            if (!(Precpred(Context, 44))) throw new FailedPredicateException(this, "Precpred(Context, 44)");
-                                            State = 843; Match(OpenBracket);
-                                            State = 844; expressionSequence();
-                                            State = 845; Match(CloseBracket);
-                                        }
-                                        break;
-                                    case 19:
-                                        {
-                                            _localctx = new MemberDotExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 847;
-                                            if (!(Precpred(Context, 43))) throw new FailedPredicateException(this, "Precpred(Context, 43)");
-                                            State = 849;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if (_la == QuestionMark)
-                                            {
-                                                {
-                                                    State = 848; Match(QuestionMark);
-                                                }
-                                            }
-
-                                            State = 851; Match(Dot);
-                                            State = 853;
-                                            ErrorHandler.Sync(this);
-                                            _la = TokenStream.LA(1);
-                                            if (_la == Hashtag)
-                                            {
-                                                {
-                                                    State = 852; Match(Hashtag);
-                                                }
-                                            }
-
-                                            State = 855; identifierName();
-                                        }
-                                        break;
-                                    case 20:
-                                        {
-                                            _localctx = new ArgumentsExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 856;
-                                            if (!(Precpred(Context, 42))) throw new FailedPredicateException(this, "Precpred(Context, 42)");
-                                            State = 857; arguments();
-                                        }
-                                        break;
-                                    case 21:
-                                        {
-                                            _localctx = new PostIncrementExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 858;
-                                            if (!(Precpred(Context, 39))) throw new FailedPredicateException(this, "Precpred(Context, 39)");
-                                            State = 859;
-                                            if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
-                                            State = 860; Match(PlusPlus);
-                                        }
-                                        break;
-                                    case 22:
-                                        {
-                                            _localctx = new PostDecreaseExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 861;
-                                            if (!(Precpred(Context, 38))) throw new FailedPredicateException(this, "Precpred(Context, 38)");
-                                            State = 862;
-                                            if (!(this.notLineTerminator())) throw new FailedPredicateException(this, "this.notLineTerminator()");
-                                            State = 863; Match(MinusMinus);
-                                        }
-                                        break;
-                                    case 23:
-                                        {
-                                            _localctx = new TemplateStringExpressionContext(new SingleExpressionContext(_parentctx, _parentState));
-                                            PushNewRecursionContext(_localctx, _startState, RULE_singleExpression);
-                                            State = 864;
-                                            if (!(Precpred(Context, 9))) throw new FailedPredicateException(this, "Precpred(Context, 9)");
-                                            State = 865; Match(TemplateStringLiteral);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                        State = 870;
-                        ErrorHandler.Sync(this);
-                        _alt = Interpreter.AdaptivePredict(TokenStream, 93, Context);
+                        State = 871; Match(Identifier);
                     }
-                }
+                    break;
+                case OpenBracket:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 872; arrayLiteral();
+                    }
+                    break;
+                case OpenBrace:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 873; objectLiteral();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                UnrollRecursionContexts(_parentctx);
-            }
-            return _localctx;
         }
-
-        public partial class AssignableContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ArrayLiteralContext arrayLiteral()
-            {
-                return GetRuleContext<ArrayLiteralContext>(0);
-            }
-            public ObjectLiteralContext objectLiteral()
-            {
-                return GetRuleContext<ObjectLiteralContext>(0);
-            }
-            public AssignableContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_assignable; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAssignable(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAssignable(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
-
-        [RuleVersion(0)]
-        public AssignableContext assignable()
+        finally
         {
-            AssignableContext _localctx = new AssignableContext(Context, State);
-            EnterRule(_localctx, 118, RULE_assignable);
-            try
-            {
-                State = 874;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 871; Match(Identifier);
-                        }
-                        break;
-                    case OpenBracket:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 872; arrayLiteral();
-                        }
-                        break;
-                    case OpenBrace:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 873; objectLiteral();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            ExitRule();
         }
+        return _localctx;
+    }
 
-        public partial class AnoymousFunctionContext : ParserRuleContext
+    public partial class AnoymousFunctionContext : ParserRuleContext
+    {
+        public AnoymousFunctionContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
         {
-            public AnoymousFunctionContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_anoymousFunction; } }
-
-            public AnoymousFunctionContext() { }
-            public virtual void CopyFrom(AnoymousFunctionContext context)
-            {
-                base.CopyFrom(context);
-            }
         }
-        public partial class AnoymousFunctionDeclContext : AnoymousFunctionContext
+        public override int RuleIndex { get { return RULE_anoymousFunction; } }
+
+        public AnoymousFunctionContext() { }
+        public virtual void CopyFrom(AnoymousFunctionContext context)
         {
-            public ITerminalNode Function() { return GetToken(JavaScriptParser.Function, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public FunctionBodyContext functionBody()
-            {
-                return GetRuleContext<FunctionBodyContext>(0);
-            }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
-            public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
-            public FormalParameterListContext formalParameterList()
-            {
-                return GetRuleContext<FormalParameterListContext>(0);
-            }
-            public AnoymousFunctionDeclContext(AnoymousFunctionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAnoymousFunctionDecl(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAnoymousFunctionDecl(this);
-            }
+            base.CopyFrom(context);
         }
-        public partial class ArrowFunctionContext : AnoymousFunctionContext
+    }
+    public partial class AnoymousFunctionDeclContext : AnoymousFunctionContext
+    {
+        public ITerminalNode Function() { return GetToken(JavaScriptParser.Function, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public FunctionBodyContext functionBody()
         {
-            public ArrowFunctionParametersContext arrowFunctionParameters()
-            {
-                return GetRuleContext<ArrowFunctionParametersContext>(0);
-            }
-            public ITerminalNode ARROW() { return GetToken(JavaScriptParser.ARROW, 0); }
-            public ArrowFunctionBodyContext arrowFunctionBody()
-            {
-                return GetRuleContext<ArrowFunctionBodyContext>(0);
-            }
-            public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
-            public ArrowFunctionContext(AnoymousFunctionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArrowFunction(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArrowFunction(this);
-            }
+            return GetRuleContext<FunctionBodyContext>(0);
         }
-        public partial class FunctionDeclContext : AnoymousFunctionContext
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
+        public ITerminalNode Multiply() { return GetToken(JavaScriptParser.Multiply, 0); }
+        public FormalParameterListContext formalParameterList()
         {
-            public FunctionDeclarationContext functionDeclaration()
-            {
-                return GetRuleContext<FunctionDeclarationContext>(0);
-            }
-            public FunctionDeclContext(AnoymousFunctionContext context) { CopyFrom(context); }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterFunctionDecl(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitFunctionDecl(this);
-            }
+            return GetRuleContext<FormalParameterListContext>(0);
         }
-
-        [RuleVersion(0)]
-        public AnoymousFunctionContext anoymousFunction()
+        public AnoymousFunctionDeclContext(AnoymousFunctionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
         {
-            AnoymousFunctionContext _localctx = new AnoymousFunctionContext(Context, State);
-            EnterRule(_localctx, 120, RULE_anoymousFunction);
-            int _la;
-            try
-            {
-                State = 900;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 99, Context))
-                {
-                    case 1:
-                        _localctx = new FunctionDeclContext(_localctx);
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 876; functionDeclaration();
-                        }
-                        break;
-                    case 2:
-                        _localctx = new AnoymousFunctionDeclContext(_localctx);
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 878;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Async)
-                            {
-                                {
-                                    State = 877; Match(Async);
-                                }
-                            }
-
-                            State = 880; Match(Function);
-                            State = 882;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Multiply)
-                            {
-                                {
-                                    State = 881; Match(Multiply);
-                                }
-                            }
-
-                            State = 884; Match(OpenParen);
-                            State = 886;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
-                            {
-                                {
-                                    State = 885; formalParameterList();
-                                }
-                            }
-
-                            State = 888; Match(CloseParen);
-                            State = 889; Match(OpenBrace);
-                            State = 890; functionBody();
-                            State = 891; Match(CloseBrace);
-                        }
-                        break;
-                    case 3:
-                        _localctx = new ArrowFunctionContext(_localctx);
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 894;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if (_la == Async)
-                            {
-                                {
-                                    State = 893; Match(Async);
-                                }
-                            }
-
-                            State = 896; arrowFunctionParameters();
-                            State = 897; Match(ARROW);
-                            State = 898; arrowFunctionBody();
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAnoymousFunctionDecl(this);
         }
-
-        public partial class ArrowFunctionParametersContext : ParserRuleContext
+        public override void ExitRule(IParseTreeListener listener)
         {
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
-            public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
-            public FormalParameterListContext formalParameterList()
-            {
-                return GetRuleContext<FormalParameterListContext>(0);
-            }
-            public ArrowFunctionParametersContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_arrowFunctionParameters; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArrowFunctionParameters(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArrowFunctionParameters(this);
-            }
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAnoymousFunctionDecl(this);
         }
-
-        [RuleVersion(0)]
+    }
+    public partial class ArrowFunctionContext : AnoymousFunctionContext
+    {
         public ArrowFunctionParametersContext arrowFunctionParameters()
         {
-            ArrowFunctionParametersContext _localctx = new ArrowFunctionParametersContext(Context, State);
-            EnterRule(_localctx, 122, RULE_arrowFunctionParameters);
-            int _la;
-            try
-            {
-                State = 908;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 902; Match(Identifier);
-                        }
-                        break;
-                    case OpenParen:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 903; Match(OpenParen);
-                            State = 905;
-                            ErrorHandler.Sync(this);
-                            _la = TokenStream.LA(1);
-                            if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
-                            {
-                                {
-                                    State = 904; formalParameterList();
-                                }
-                            }
-
-                            State = 907; Match(CloseParen);
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ArrowFunctionParametersContext>(0);
         }
-
-        public partial class ArrowFunctionBodyContext : ParserRuleContext
-        {
-            public SingleExpressionContext singleExpression()
-            {
-                return GetRuleContext<SingleExpressionContext>(0);
-            }
-            public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
-            public FunctionBodyContext functionBody()
-            {
-                return GetRuleContext<FunctionBodyContext>(0);
-            }
-            public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
-            public ArrowFunctionBodyContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_arrowFunctionBody; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterArrowFunctionBody(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitArrowFunctionBody(this);
-            }
-        }
-
-        [RuleVersion(0)]
+        public ITerminalNode ARROW() { return GetToken(JavaScriptParser.ARROW, 0); }
         public ArrowFunctionBodyContext arrowFunctionBody()
         {
-            ArrowFunctionBodyContext _localctx = new ArrowFunctionBodyContext(Context, State);
-            EnterRule(_localctx, 124, RULE_arrowFunctionBody);
-            try
-            {
-                State = 915;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 102, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 910; singleExpression(0);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 911; Match(OpenBrace);
-                            State = 912; functionBody();
-                            State = 913; Match(CloseBrace);
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ArrowFunctionBodyContext>(0);
         }
-
-        public partial class AssignmentOperatorContext : ParserRuleContext
+        public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
+        public ArrowFunctionContext(AnoymousFunctionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
         {
-            public ITerminalNode MultiplyAssign() { return GetToken(JavaScriptParser.MultiplyAssign, 0); }
-            public ITerminalNode DivideAssign() { return GetToken(JavaScriptParser.DivideAssign, 0); }
-            public ITerminalNode ModulusAssign() { return GetToken(JavaScriptParser.ModulusAssign, 0); }
-            public ITerminalNode PlusAssign() { return GetToken(JavaScriptParser.PlusAssign, 0); }
-            public ITerminalNode MinusAssign() { return GetToken(JavaScriptParser.MinusAssign, 0); }
-            public ITerminalNode LeftShiftArithmeticAssign() { return GetToken(JavaScriptParser.LeftShiftArithmeticAssign, 0); }
-            public ITerminalNode RightShiftArithmeticAssign() { return GetToken(JavaScriptParser.RightShiftArithmeticAssign, 0); }
-            public ITerminalNode RightShiftLogicalAssign() { return GetToken(JavaScriptParser.RightShiftLogicalAssign, 0); }
-            public ITerminalNode BitAndAssign() { return GetToken(JavaScriptParser.BitAndAssign, 0); }
-            public ITerminalNode BitXorAssign() { return GetToken(JavaScriptParser.BitXorAssign, 0); }
-            public ITerminalNode BitOrAssign() { return GetToken(JavaScriptParser.BitOrAssign, 0); }
-            public ITerminalNode PowerAssign() { return GetToken(JavaScriptParser.PowerAssign, 0); }
-            public AssignmentOperatorContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_assignmentOperator; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterAssignmentOperator(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitAssignmentOperator(this);
-            }
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArrowFunction(this);
         }
-
-        [RuleVersion(0)]
-        public AssignmentOperatorContext assignmentOperator()
+        public override void ExitRule(IParseTreeListener listener)
         {
-            AssignmentOperatorContext _localctx = new AssignmentOperatorContext(Context, State);
-            EnterRule(_localctx, 126, RULE_assignmentOperator);
-            int _la;
-            try
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArrowFunction(this);
+        }
+    }
+    public partial class FunctionDeclContext : AnoymousFunctionContext
+    {
+        public FunctionDeclarationContext functionDeclaration()
+        {
+            return GetRuleContext<FunctionDeclarationContext>(0);
+        }
+        public FunctionDeclContext(AnoymousFunctionContext context) { CopyFrom(context); }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterFunctionDecl(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitFunctionDecl(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AnoymousFunctionContext anoymousFunction()
+    {
+        AnoymousFunctionContext _localctx = new AnoymousFunctionContext(Context, State);
+        EnterRule(_localctx, 120, RULE_anoymousFunction);
+        int _la;
+        try
+        {
+            State = 900;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 99, Context))
             {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 917;
-                    _la = TokenStream.LA(1);
-                    if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MultiplyAssign) | (1L << DivideAssign) | (1L << ModulusAssign) | (1L << PlusAssign) | (1L << MinusAssign) | (1L << LeftShiftArithmeticAssign) | (1L << RightShiftArithmeticAssign) | (1L << RightShiftLogicalAssign) | (1L << BitAndAssign) | (1L << BitXorAssign) | (1L << BitOrAssign) | (1L << PowerAssign))) != 0)))
+                case 1:
+                    _localctx = new FunctionDeclContext(_localctx);
+                    EnterOuterAlt(_localctx, 1);
                     {
-                        ErrorHandler.RecoverInline(this);
+                        State = 876; functionDeclaration();
                     }
-                    else
+                    break;
+                case 2:
+                    _localctx = new AnoymousFunctionDeclContext(_localctx);
+                    EnterOuterAlt(_localctx, 2);
                     {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
+                        State = 878;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Async)
+                        {
+                            {
+                                State = 877; Match(Async);
+                            }
+                        }
+
+                        State = 880; Match(Function);
+                        State = 882;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Multiply)
+                        {
+                            {
+                                State = 881; Match(Multiply);
+                            }
+                        }
+
+                        State = 884; Match(OpenParen);
+                        State = 886;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
+                        {
+                            {
+                                State = 885; formalParameterList();
+                            }
+                        }
+
+                        State = 888; Match(CloseParen);
+                        State = 889; Match(OpenBrace);
+                        State = 890; functionBody();
+                        State = 891; Match(CloseBrace);
                     }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
+                    break;
+                case 3:
+                    _localctx = new ArrowFunctionContext(_localctx);
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 894;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if (_la == Async)
+                        {
+                            {
+                                State = 893; Match(Async);
+                            }
+                        }
 
-        public partial class LiteralContext : ParserRuleContext
-        {
-            public ITerminalNode NullLiteral() { return GetToken(JavaScriptParser.NullLiteral, 0); }
-            public ITerminalNode BooleanLiteral() { return GetToken(JavaScriptParser.BooleanLiteral, 0); }
-            public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
-            public ITerminalNode TemplateStringLiteral() { return GetToken(JavaScriptParser.TemplateStringLiteral, 0); }
-            public ITerminalNode RegularExpressionLiteral() { return GetToken(JavaScriptParser.RegularExpressionLiteral, 0); }
-            public NumericLiteralContext numericLiteral()
-            {
-                return GetRuleContext<NumericLiteralContext>(0);
-            }
-            public BigintLiteralContext bigintLiteral()
-            {
-                return GetRuleContext<BigintLiteralContext>(0);
-            }
-            public LiteralContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_literal; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterLiteral(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitLiteral(this);
+                        State = 896; arrowFunctionParameters();
+                        State = 897; Match(ARROW);
+                        State = 898; arrowFunctionBody();
+                    }
+                    break;
             }
         }
-
-        [RuleVersion(0)]
-        public LiteralContext literal()
+        catch (RecognitionException re)
         {
-            LiteralContext _localctx = new LiteralContext(Context, State);
-            EnterRule(_localctx, 128, RULE_literal);
-            try
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ArrowFunctionParametersContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public ITerminalNode OpenParen() { return GetToken(JavaScriptParser.OpenParen, 0); }
+        public ITerminalNode CloseParen() { return GetToken(JavaScriptParser.CloseParen, 0); }
+        public FormalParameterListContext formalParameterList()
+        {
+            return GetRuleContext<FormalParameterListContext>(0);
+        }
+        public ArrowFunctionParametersContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_arrowFunctionParameters; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArrowFunctionParameters(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArrowFunctionParameters(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ArrowFunctionParametersContext arrowFunctionParameters()
+    {
+        ArrowFunctionParametersContext _localctx = new ArrowFunctionParametersContext(Context, State);
+        EnterRule(_localctx, 122, RULE_arrowFunctionParameters);
+        int _la;
+        try
+        {
+            State = 908;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
             {
-                State = 926;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 902; Match(Identifier);
+                    }
+                    break;
+                case OpenParen:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 903; Match(OpenParen);
+                        State = 905;
+                        ErrorHandler.Sync(this);
+                        _la = TokenStream.LA(1);
+                        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OpenBracket) | (1L << OpenBrace) | (1L << Ellipsis))) != 0) || _la == Identifier)
+                        {
+                            {
+                                State = 904; formalParameterList();
+                            }
+                        }
+
+                        State = 907; Match(CloseParen);
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class ArrowFunctionBodyContext : ParserRuleContext
+    {
+        public SingleExpressionContext singleExpression()
+        {
+            return GetRuleContext<SingleExpressionContext>(0);
+        }
+        public ITerminalNode OpenBrace() { return GetToken(JavaScriptParser.OpenBrace, 0); }
+        public FunctionBodyContext functionBody()
+        {
+            return GetRuleContext<FunctionBodyContext>(0);
+        }
+        public ITerminalNode CloseBrace() { return GetToken(JavaScriptParser.CloseBrace, 0); }
+        public ArrowFunctionBodyContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_arrowFunctionBody; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterArrowFunctionBody(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitArrowFunctionBody(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public ArrowFunctionBodyContext arrowFunctionBody()
+    {
+        ArrowFunctionBodyContext _localctx = new ArrowFunctionBodyContext(Context, State);
+        EnterRule(_localctx, 124, RULE_arrowFunctionBody);
+        try
+        {
+            State = 915;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 102, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 910; singleExpression(0);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 911; Match(OpenBrace);
+                        State = 912; functionBody();
+                        State = 913; Match(CloseBrace);
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class AssignmentOperatorContext : ParserRuleContext
+    {
+        public ITerminalNode MultiplyAssign() { return GetToken(JavaScriptParser.MultiplyAssign, 0); }
+        public ITerminalNode DivideAssign() { return GetToken(JavaScriptParser.DivideAssign, 0); }
+        public ITerminalNode ModulusAssign() { return GetToken(JavaScriptParser.ModulusAssign, 0); }
+        public ITerminalNode PlusAssign() { return GetToken(JavaScriptParser.PlusAssign, 0); }
+        public ITerminalNode MinusAssign() { return GetToken(JavaScriptParser.MinusAssign, 0); }
+        public ITerminalNode LeftShiftArithmeticAssign() { return GetToken(JavaScriptParser.LeftShiftArithmeticAssign, 0); }
+        public ITerminalNode RightShiftArithmeticAssign() { return GetToken(JavaScriptParser.RightShiftArithmeticAssign, 0); }
+        public ITerminalNode RightShiftLogicalAssign() { return GetToken(JavaScriptParser.RightShiftLogicalAssign, 0); }
+        public ITerminalNode BitAndAssign() { return GetToken(JavaScriptParser.BitAndAssign, 0); }
+        public ITerminalNode BitXorAssign() { return GetToken(JavaScriptParser.BitXorAssign, 0); }
+        public ITerminalNode BitOrAssign() { return GetToken(JavaScriptParser.BitOrAssign, 0); }
+        public ITerminalNode PowerAssign() { return GetToken(JavaScriptParser.PowerAssign, 0); }
+        public AssignmentOperatorContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_assignmentOperator; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterAssignmentOperator(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitAssignmentOperator(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public AssignmentOperatorContext assignmentOperator()
+    {
+        AssignmentOperatorContext _localctx = new AssignmentOperatorContext(Context, State);
+        EnterRule(_localctx, 126, RULE_assignmentOperator);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 917;
+                _la = TokenStream.LA(1);
+                if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MultiplyAssign) | (1L << DivideAssign) | (1L << ModulusAssign) | (1L << PlusAssign) | (1L << MinusAssign) | (1L << LeftShiftArithmeticAssign) | (1L << RightShiftArithmeticAssign) | (1L << RightShiftLogicalAssign) | (1L << BitAndAssign) | (1L << BitXorAssign) | (1L << BitOrAssign) | (1L << PowerAssign))) != 0)))
                 {
-                    case NullLiteral:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 919; Match(NullLiteral);
-                        }
-                        break;
-                    case BooleanLiteral:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 920; Match(BooleanLiteral);
-                        }
-                        break;
-                    case StringLiteral:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 921; Match(StringLiteral);
-                        }
-                        break;
-                    case TemplateStringLiteral:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 922; Match(TemplateStringLiteral);
-                        }
-                        break;
-                    case RegularExpressionLiteral:
-                        EnterOuterAlt(_localctx, 5);
-                        {
-                            State = 923; Match(RegularExpressionLiteral);
-                        }
-                        break;
-                    case DecimalLiteral:
-                    case HexIntegerLiteral:
-                    case OctalIntegerLiteral:
-                    case OctalIntegerLiteral2:
-                    case BinaryIntegerLiteral:
-                        EnterOuterAlt(_localctx, 6);
-                        {
-                            State = 924; numericLiteral();
-                        }
-                        break;
-                    case BigHexIntegerLiteral:
-                    case BigOctalIntegerLiteral:
-                    case BigBinaryIntegerLiteral:
-                    case BigDecimalIntegerLiteral:
-                        EnterOuterAlt(_localctx, 7);
-                        {
-                            State = 925; bigintLiteral();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class NumericLiteralContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public ITerminalNode DecimalLiteral() { return GetToken(JavaScriptParser.DecimalLiteral, 0); }
-            public ITerminalNode HexIntegerLiteral() { return GetToken(JavaScriptParser.HexIntegerLiteral, 0); }
-            public ITerminalNode OctalIntegerLiteral() { return GetToken(JavaScriptParser.OctalIntegerLiteral, 0); }
-            public ITerminalNode OctalIntegerLiteral2() { return GetToken(JavaScriptParser.OctalIntegerLiteral2, 0); }
-            public ITerminalNode BinaryIntegerLiteral() { return GetToken(JavaScriptParser.BinaryIntegerLiteral, 0); }
-            public NumericLiteralContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_numericLiteral; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterNumericLiteral(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitNumericLiteral(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class LiteralContext : ParserRuleContext
+    {
+        public ITerminalNode NullLiteral() { return GetToken(JavaScriptParser.NullLiteral, 0); }
+        public ITerminalNode BooleanLiteral() { return GetToken(JavaScriptParser.BooleanLiteral, 0); }
+        public ITerminalNode StringLiteral() { return GetToken(JavaScriptParser.StringLiteral, 0); }
+        public ITerminalNode TemplateStringLiteral() { return GetToken(JavaScriptParser.TemplateStringLiteral, 0); }
+        public ITerminalNode RegularExpressionLiteral() { return GetToken(JavaScriptParser.RegularExpressionLiteral, 0); }
         public NumericLiteralContext numericLiteral()
         {
-            NumericLiteralContext _localctx = new NumericLiteralContext(Context, State);
-            EnterRule(_localctx, 130, RULE_numericLiteral);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 928;
-                    _la = TokenStream.LA(1);
-                    if (!(((((_la - 61)) & ~0x3f) == 0 && ((1L << (_la - 61)) & ((1L << (DecimalLiteral - 61)) | (1L << (HexIntegerLiteral - 61)) | (1L << (OctalIntegerLiteral - 61)) | (1L << (OctalIntegerLiteral2 - 61)) | (1L << (BinaryIntegerLiteral - 61)))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<NumericLiteralContext>(0);
         }
-
-        public partial class BigintLiteralContext : ParserRuleContext
-        {
-            public ITerminalNode BigDecimalIntegerLiteral() { return GetToken(JavaScriptParser.BigDecimalIntegerLiteral, 0); }
-            public ITerminalNode BigHexIntegerLiteral() { return GetToken(JavaScriptParser.BigHexIntegerLiteral, 0); }
-            public ITerminalNode BigOctalIntegerLiteral() { return GetToken(JavaScriptParser.BigOctalIntegerLiteral, 0); }
-            public ITerminalNode BigBinaryIntegerLiteral() { return GetToken(JavaScriptParser.BigBinaryIntegerLiteral, 0); }
-            public BigintLiteralContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_bigintLiteral; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterBigintLiteral(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitBigintLiteral(this);
-            }
-        }
-
-        [RuleVersion(0)]
         public BigintLiteralContext bigintLiteral()
         {
-            BigintLiteralContext _localctx = new BigintLiteralContext(Context, State);
-            EnterRule(_localctx, 132, RULE_bigintLiteral);
-            int _la;
-            try
+            return GetRuleContext<BigintLiteralContext>(0);
+        }
+        public LiteralContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_literal; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterLiteral(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitLiteral(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public LiteralContext literal()
+    {
+        LiteralContext _localctx = new LiteralContext(Context, State);
+        EnterRule(_localctx, 128, RULE_literal);
+        try
+        {
+            State = 926;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
             {
-                EnterOuterAlt(_localctx, 1);
+                case NullLiteral:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 919; Match(NullLiteral);
+                    }
+                    break;
+                case BooleanLiteral:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 920; Match(BooleanLiteral);
+                    }
+                    break;
+                case StringLiteral:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 921; Match(StringLiteral);
+                    }
+                    break;
+                case TemplateStringLiteral:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 922; Match(TemplateStringLiteral);
+                    }
+                    break;
+                case RegularExpressionLiteral:
+                    EnterOuterAlt(_localctx, 5);
+                    {
+                        State = 923; Match(RegularExpressionLiteral);
+                    }
+                    break;
+                case DecimalLiteral:
+                case HexIntegerLiteral:
+                case OctalIntegerLiteral:
+                case OctalIntegerLiteral2:
+                case BinaryIntegerLiteral:
+                    EnterOuterAlt(_localctx, 6);
+                    {
+                        State = 924; numericLiteral();
+                    }
+                    break;
+                case BigHexIntegerLiteral:
+                case BigOctalIntegerLiteral:
+                case BigBinaryIntegerLiteral:
+                case BigDecimalIntegerLiteral:
+                    EnterOuterAlt(_localctx, 7);
+                    {
+                        State = 925; bigintLiteral();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class NumericLiteralContext : ParserRuleContext
+    {
+        public ITerminalNode DecimalLiteral() { return GetToken(JavaScriptParser.DecimalLiteral, 0); }
+        public ITerminalNode HexIntegerLiteral() { return GetToken(JavaScriptParser.HexIntegerLiteral, 0); }
+        public ITerminalNode OctalIntegerLiteral() { return GetToken(JavaScriptParser.OctalIntegerLiteral, 0); }
+        public ITerminalNode OctalIntegerLiteral2() { return GetToken(JavaScriptParser.OctalIntegerLiteral2, 0); }
+        public ITerminalNode BinaryIntegerLiteral() { return GetToken(JavaScriptParser.BinaryIntegerLiteral, 0); }
+        public NumericLiteralContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_numericLiteral; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterNumericLiteral(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitNumericLiteral(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public NumericLiteralContext numericLiteral()
+    {
+        NumericLiteralContext _localctx = new NumericLiteralContext(Context, State);
+        EnterRule(_localctx, 130, RULE_numericLiteral);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 928;
+                _la = TokenStream.LA(1);
+                if (!(((((_la - 61)) & ~0x3f) == 0 && ((1L << (_la - 61)) & ((1L << (DecimalLiteral - 61)) | (1L << (HexIntegerLiteral - 61)) | (1L << (OctalIntegerLiteral - 61)) | (1L << (OctalIntegerLiteral2 - 61)) | (1L << (BinaryIntegerLiteral - 61)))) != 0)))
                 {
-                    State = 930;
-                    _la = TokenStream.LA(1);
-                    if (!(((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (BigHexIntegerLiteral - 66)) | (1L << (BigOctalIntegerLiteral - 66)) | (1L << (BigBinaryIntegerLiteral - 66)) | (1L << (BigDecimalIntegerLiteral - 66)))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class IdentifierNameContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public ReservedWordContext reservedWord()
-            {
-                return GetRuleContext<ReservedWordContext>(0);
-            }
-            public IdentifierNameContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_identifierName; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterIdentifierName(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitIdentifierName(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
-
-        [RuleVersion(0)]
-        public IdentifierNameContext identifierName()
+        finally
         {
-            IdentifierNameContext _localctx = new IdentifierNameContext(Context, State);
-            EnterRule(_localctx, 134, RULE_identifierName);
-            try
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class BigintLiteralContext : ParserRuleContext
+    {
+        public ITerminalNode BigDecimalIntegerLiteral() { return GetToken(JavaScriptParser.BigDecimalIntegerLiteral, 0); }
+        public ITerminalNode BigHexIntegerLiteral() { return GetToken(JavaScriptParser.BigHexIntegerLiteral, 0); }
+        public ITerminalNode BigOctalIntegerLiteral() { return GetToken(JavaScriptParser.BigOctalIntegerLiteral, 0); }
+        public ITerminalNode BigBinaryIntegerLiteral() { return GetToken(JavaScriptParser.BigBinaryIntegerLiteral, 0); }
+        public BigintLiteralContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_bigintLiteral; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterBigintLiteral(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitBigintLiteral(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public BigintLiteralContext bigintLiteral()
+    {
+        BigintLiteralContext _localctx = new BigintLiteralContext(Context, State);
+        EnterRule(_localctx, 132, RULE_bigintLiteral);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
             {
-                State = 934;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
+                State = 930;
+                _la = TokenStream.LA(1);
+                if (!(((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (BigHexIntegerLiteral - 66)) | (1L << (BigOctalIntegerLiteral - 66)) | (1L << (BigBinaryIntegerLiteral - 66)) | (1L << (BigDecimalIntegerLiteral - 66)))) != 0)))
                 {
-                    case Identifier:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 932; Match(Identifier);
-                        }
-                        break;
-                    case NullLiteral:
-                    case BooleanLiteral:
-                    case Break:
-                    case Do:
-                    case Instanceof:
-                    case Typeof:
-                    case Case:
-                    case Else:
-                    case New:
-                    case Var:
-                    case Catch:
-                    case Finally:
-                    case Return:
-                    case Void:
-                    case Continue:
-                    case For:
-                    case Switch:
-                    case While:
-                    case Debugger:
-                    case Function:
-                    case This:
-                    case With:
-                    case Default:
-                    case If:
-                    case Throw:
-                    case Delete:
-                    case In:
-                    case Try:
-                    case As:
-                    case From:
-                    case Class:
-                    case Enum:
-                    case Extends:
-                    case Super:
-                    case Const:
-                    case Export:
-                    case Import:
-                    case Async:
-                    case Await:
-                    case Implements:
-                    case Let:
-                    case Private:
-                    case Public:
-                    case Interface:
-                    case Package:
-                    case Protected:
-                    case Static:
-                    case Yield:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 933; reservedWord();
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
                 }
             }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
         }
-
-        public partial class ReservedWordContext : ParserRuleContext
+        catch (RecognitionException re)
         {
-            public KeywordContext keyword()
-            {
-                return GetRuleContext<KeywordContext>(0);
-            }
-            public ITerminalNode NullLiteral() { return GetToken(JavaScriptParser.NullLiteral, 0); }
-            public ITerminalNode BooleanLiteral() { return GetToken(JavaScriptParser.BooleanLiteral, 0); }
-            public ReservedWordContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_reservedWord; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterReservedWord(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitReservedWord(this);
-            }
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
         }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class IdentifierNameContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
         public ReservedWordContext reservedWord()
         {
-            ReservedWordContext _localctx = new ReservedWordContext(Context, State);
-            EnterRule(_localctx, 136, RULE_reservedWord);
-            try
-            {
-                State = 939;
-                ErrorHandler.Sync(this);
-                switch (TokenStream.LA(1))
-                {
-                    case Break:
-                    case Do:
-                    case Instanceof:
-                    case Typeof:
-                    case Case:
-                    case Else:
-                    case New:
-                    case Var:
-                    case Catch:
-                    case Finally:
-                    case Return:
-                    case Void:
-                    case Continue:
-                    case For:
-                    case Switch:
-                    case While:
-                    case Debugger:
-                    case Function:
-                    case This:
-                    case With:
-                    case Default:
-                    case If:
-                    case Throw:
-                    case Delete:
-                    case In:
-                    case Try:
-                    case As:
-                    case From:
-                    case Class:
-                    case Enum:
-                    case Extends:
-                    case Super:
-                    case Const:
-                    case Export:
-                    case Import:
-                    case Async:
-                    case Await:
-                    case Implements:
-                    case Let:
-                    case Private:
-                    case Public:
-                    case Interface:
-                    case Package:
-                    case Protected:
-                    case Static:
-                    case Yield:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 936; keyword();
-                        }
-                        break;
-                    case NullLiteral:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 937; Match(NullLiteral);
-                        }
-                        break;
-                    case BooleanLiteral:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 938; Match(BooleanLiteral);
-                        }
-                        break;
-                    default:
-                        throw new NoViableAltException(this);
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<ReservedWordContext>(0);
         }
-
-        public partial class KeywordContext : ParserRuleContext
+        public IdentifierNameContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
         {
-            public ITerminalNode Break() { return GetToken(JavaScriptParser.Break, 0); }
-            public ITerminalNode Do() { return GetToken(JavaScriptParser.Do, 0); }
-            public ITerminalNode Instanceof() { return GetToken(JavaScriptParser.Instanceof, 0); }
-            public ITerminalNode Typeof() { return GetToken(JavaScriptParser.Typeof, 0); }
-            public ITerminalNode Case() { return GetToken(JavaScriptParser.Case, 0); }
-            public ITerminalNode Else() { return GetToken(JavaScriptParser.Else, 0); }
-            public ITerminalNode New() { return GetToken(JavaScriptParser.New, 0); }
-            public ITerminalNode Var() { return GetToken(JavaScriptParser.Var, 0); }
-            public ITerminalNode Catch() { return GetToken(JavaScriptParser.Catch, 0); }
-            public ITerminalNode Finally() { return GetToken(JavaScriptParser.Finally, 0); }
-            public ITerminalNode Return() { return GetToken(JavaScriptParser.Return, 0); }
-            public ITerminalNode Void() { return GetToken(JavaScriptParser.Void, 0); }
-            public ITerminalNode Continue() { return GetToken(JavaScriptParser.Continue, 0); }
-            public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
-            public ITerminalNode Switch() { return GetToken(JavaScriptParser.Switch, 0); }
-            public ITerminalNode While() { return GetToken(JavaScriptParser.While, 0); }
-            public ITerminalNode Debugger() { return GetToken(JavaScriptParser.Debugger, 0); }
-            public ITerminalNode Function() { return GetToken(JavaScriptParser.Function, 0); }
-            public ITerminalNode This() { return GetToken(JavaScriptParser.This, 0); }
-            public ITerminalNode With() { return GetToken(JavaScriptParser.With, 0); }
-            public ITerminalNode Default() { return GetToken(JavaScriptParser.Default, 0); }
-            public ITerminalNode If() { return GetToken(JavaScriptParser.If, 0); }
-            public ITerminalNode Throw() { return GetToken(JavaScriptParser.Throw, 0); }
-            public ITerminalNode Delete() { return GetToken(JavaScriptParser.Delete, 0); }
-            public ITerminalNode In() { return GetToken(JavaScriptParser.In, 0); }
-            public ITerminalNode Try() { return GetToken(JavaScriptParser.Try, 0); }
-            public ITerminalNode Class() { return GetToken(JavaScriptParser.Class, 0); }
-            public ITerminalNode Enum() { return GetToken(JavaScriptParser.Enum, 0); }
-            public ITerminalNode Extends() { return GetToken(JavaScriptParser.Extends, 0); }
-            public ITerminalNode Super() { return GetToken(JavaScriptParser.Super, 0); }
-            public ITerminalNode Const() { return GetToken(JavaScriptParser.Const, 0); }
-            public ITerminalNode Export() { return GetToken(JavaScriptParser.Export, 0); }
-            public ITerminalNode Import() { return GetToken(JavaScriptParser.Import, 0); }
-            public ITerminalNode Implements() { return GetToken(JavaScriptParser.Implements, 0); }
-            public ITerminalNode Let() { return GetToken(JavaScriptParser.Let, 0); }
-            public ITerminalNode Private() { return GetToken(JavaScriptParser.Private, 0); }
-            public ITerminalNode Public() { return GetToken(JavaScriptParser.Public, 0); }
-            public ITerminalNode Interface() { return GetToken(JavaScriptParser.Interface, 0); }
-            public ITerminalNode Package() { return GetToken(JavaScriptParser.Package, 0); }
-            public ITerminalNode Protected() { return GetToken(JavaScriptParser.Protected, 0); }
-            public ITerminalNode Static() { return GetToken(JavaScriptParser.Static, 0); }
-            public ITerminalNode Yield() { return GetToken(JavaScriptParser.Yield, 0); }
-            public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
-            public ITerminalNode Await() { return GetToken(JavaScriptParser.Await, 0); }
-            public ITerminalNode From() { return GetToken(JavaScriptParser.From, 0); }
-            public ITerminalNode As() { return GetToken(JavaScriptParser.As, 0); }
-            public KeywordContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
+        }
+        public override int RuleIndex { get { return RULE_identifierName; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterIdentifierName(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitIdentifierName(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public IdentifierNameContext identifierName()
+    {
+        IdentifierNameContext _localctx = new IdentifierNameContext(Context, State);
+        EnterRule(_localctx, 134, RULE_identifierName);
+        try
+        {
+            State = 934;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
             {
-            }
-            public override int RuleIndex { get { return RULE_keyword; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterKeyword(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitKeyword(this);
+                case Identifier:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 932; Match(Identifier);
+                    }
+                    break;
+                case NullLiteral:
+                case BooleanLiteral:
+                case Break:
+                case Do:
+                case Instanceof:
+                case Typeof:
+                case Case:
+                case Else:
+                case New:
+                case Var:
+                case Catch:
+                case Finally:
+                case Return:
+                case Void:
+                case Continue:
+                case For:
+                case Switch:
+                case While:
+                case Debugger:
+                case Function:
+                case This:
+                case With:
+                case Default:
+                case If:
+                case Throw:
+                case Delete:
+                case In:
+                case Try:
+                case As:
+                case From:
+                case Class:
+                case Enum:
+                case Extends:
+                case Super:
+                case Const:
+                case Export:
+                case Import:
+                case Async:
+                case Await:
+                case Implements:
+                case Let:
+                case Private:
+                case Public:
+                case Interface:
+                case Package:
+                case Protected:
+                case Static:
+                case Yield:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 933; reservedWord();
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
             }
         }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
 
-        [RuleVersion(0)]
+    public partial class ReservedWordContext : ParserRuleContext
+    {
         public KeywordContext keyword()
         {
-            KeywordContext _localctx = new KeywordContext(Context, State);
-            EnterRule(_localctx, 138, RULE_keyword);
-            int _la;
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 941;
-                    _la = TokenStream.LA(1);
-                    if (!(((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (Break - 70)) | (1L << (Do - 70)) | (1L << (Instanceof - 70)) | (1L << (Typeof - 70)) | (1L << (Case - 70)) | (1L << (Else - 70)) | (1L << (New - 70)) | (1L << (Var - 70)) | (1L << (Catch - 70)) | (1L << (Finally - 70)) | (1L << (Return - 70)) | (1L << (Void - 70)) | (1L << (Continue - 70)) | (1L << (For - 70)) | (1L << (Switch - 70)) | (1L << (While - 70)) | (1L << (Debugger - 70)) | (1L << (Function - 70)) | (1L << (This - 70)) | (1L << (With - 70)) | (1L << (Default - 70)) | (1L << (If - 70)) | (1L << (Throw - 70)) | (1L << (Delete - 70)) | (1L << (In - 70)) | (1L << (Try - 70)) | (1L << (As - 70)) | (1L << (From - 70)) | (1L << (Class - 70)) | (1L << (Enum - 70)) | (1L << (Extends - 70)) | (1L << (Super - 70)) | (1L << (Const - 70)) | (1L << (Export - 70)) | (1L << (Import - 70)) | (1L << (Async - 70)) | (1L << (Await - 70)) | (1L << (Implements - 70)) | (1L << (Let - 70)) | (1L << (Private - 70)) | (1L << (Public - 70)) | (1L << (Interface - 70)) | (1L << (Package - 70)) | (1L << (Protected - 70)) | (1L << (Static - 70)) | (1L << (Yield - 70)))) != 0)))
-                    {
-                        ErrorHandler.RecoverInline(this);
-                    }
-                    else
-                    {
-                        ErrorHandler.ReportMatch(this);
-                        Consume();
-                    }
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            return GetRuleContext<KeywordContext>(0);
         }
-
-        public partial class GetterContext : ParserRuleContext
+        public ITerminalNode NullLiteral() { return GetToken(JavaScriptParser.NullLiteral, 0); }
+        public ITerminalNode BooleanLiteral() { return GetToken(JavaScriptParser.BooleanLiteral, 0); }
+        public ReservedWordContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
         {
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public PropertyNameContext propertyName()
-            {
-                return GetRuleContext<PropertyNameContext>(0);
-            }
-            public GetterContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_getter; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterGetter(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitGetter(this);
-            }
         }
-
-        [RuleVersion(0)]
-        public GetterContext getter()
+        public override int RuleIndex { get { return RULE_reservedWord; } }
+        public override void EnterRule(IParseTreeListener listener)
         {
-            GetterContext _localctx = new GetterContext(Context, State);
-            EnterRule(_localctx, 140, RULE_getter);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 943; Match(Identifier);
-                    State = 944;
-                    if (!(this.p("get"))) throw new FailedPredicateException(this, "this.p(\"get\")");
-                    State = 945; propertyName();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterReservedWord(this);
         }
-
-        public partial class SetterContext : ParserRuleContext
+        public override void ExitRule(IParseTreeListener listener)
         {
-            public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
-            public PropertyNameContext propertyName()
-            {
-                return GetRuleContext<PropertyNameContext>(0);
-            }
-            public SetterContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_setter; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterSetter(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitSetter(this);
-            }
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitReservedWord(this);
         }
-
-        [RuleVersion(0)]
-        public SetterContext setter()
-        {
-            SetterContext _localctx = new SetterContext(Context, State);
-            EnterRule(_localctx, 142, RULE_setter);
-            try
-            {
-                EnterOuterAlt(_localctx, 1);
-                {
-                    State = 947; Match(Identifier);
-                    State = 948;
-                    if (!(this.p("set"))) throw new FailedPredicateException(this, "this.p(\"set\")");
-                    State = 949; propertyName();
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public partial class EosContext : ParserRuleContext
-        {
-            public ITerminalNode SemiColon() { return GetToken(JavaScriptParser.SemiColon, 0); }
-            public ITerminalNode Eof() { return GetToken(JavaScriptParser.Eof, 0); }
-            public EosContext(ParserRuleContext parent, int invokingState)
-                : base(parent, invokingState)
-            {
-            }
-            public override int RuleIndex { get { return RULE_eos; } }
-            public override void EnterRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.EnterEos(this);
-            }
-            public override void ExitRule(IParseTreeListener listener)
-            {
-                IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
-                if (typedListener != null) typedListener.ExitEos(this);
-            }
-        }
-
-        [RuleVersion(0)]
-        public EosContext eos()
-        {
-            EosContext _localctx = new EosContext(Context, State);
-            EnterRule(_localctx, 144, RULE_eos);
-            try
-            {
-                State = 955;
-                ErrorHandler.Sync(this);
-                switch (Interpreter.AdaptivePredict(TokenStream, 106, Context))
-                {
-                    case 1:
-                        EnterOuterAlt(_localctx, 1);
-                        {
-                            State = 951; Match(SemiColon);
-                        }
-                        break;
-                    case 2:
-                        EnterOuterAlt(_localctx, 2);
-                        {
-                            State = 952; Match(Eof);
-                        }
-                        break;
-                    case 3:
-                        EnterOuterAlt(_localctx, 3);
-                        {
-                            State = 953;
-                            if (!(this.lineTerminatorAhead())) throw new FailedPredicateException(this, "this.lineTerminatorAhead()");
-                        }
-                        break;
-                    case 4:
-                        EnterOuterAlt(_localctx, 4);
-                        {
-                            State = 954;
-                            if (!(this.closeBrace())) throw new FailedPredicateException(this, "this.closeBrace()");
-                        }
-                        break;
-                }
-            }
-            catch (RecognitionException re)
-            {
-                _localctx.exception = re;
-                ErrorHandler.ReportError(this, re);
-                ErrorHandler.Recover(this, re);
-            }
-            finally
-            {
-                ExitRule();
-            }
-            return _localctx;
-        }
-
-        public override bool Sempred(RuleContext _localctx, int ruleIndex, int predIndex)
-        {
-            switch (ruleIndex)
-            {
-                case 19: return expressionStatement_sempred((ExpressionStatementContext)_localctx, predIndex);
-                case 21: return iterationStatement_sempred((IterationStatementContext)_localctx, predIndex);
-                case 23: return continueStatement_sempred((ContinueStatementContext)_localctx, predIndex);
-                case 24: return breakStatement_sempred((BreakStatementContext)_localctx, predIndex);
-                case 25: return returnStatement_sempred((ReturnStatementContext)_localctx, predIndex);
-                case 26: return yieldStatement_sempred((YieldStatementContext)_localctx, predIndex);
-                case 34: return throwStatement_sempred((ThrowStatementContext)_localctx, predIndex);
-                case 42: return classElement_sempred((ClassElementContext)_localctx, predIndex);
-                case 58: return singleExpression_sempred((SingleExpressionContext)_localctx, predIndex);
-                case 70: return getter_sempred((GetterContext)_localctx, predIndex);
-                case 71: return setter_sempred((SetterContext)_localctx, predIndex);
-                case 72: return eos_sempred((EosContext)_localctx, predIndex);
-            }
-            return true;
-        }
-        private bool expressionStatement_sempred(ExpressionStatementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 0: return this.notOpenBraceAndNotFunction();
-            }
-            return true;
-        }
-        private bool iterationStatement_sempred(IterationStatementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 1: return this.p("of");
-            }
-            return true;
-        }
-        private bool continueStatement_sempred(ContinueStatementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 2: return this.notLineTerminator();
-            }
-            return true;
-        }
-        private bool breakStatement_sempred(BreakStatementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 3: return this.notLineTerminator();
-            }
-            return true;
-        }
-        private bool returnStatement_sempred(ReturnStatementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 4: return this.notLineTerminator();
-            }
-            return true;
-        }
-        private bool yieldStatement_sempred(YieldStatementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 5: return this.notLineTerminator();
-            }
-            return true;
-        }
-        private bool throwStatement_sempred(ThrowStatementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 6: return this.notLineTerminator();
-            }
-            return true;
-        }
-        private bool classElement_sempred(ClassElementContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 7: return this.n("static");
-            }
-            return true;
-        }
-        private bool singleExpression_sempred(SingleExpressionContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 8: return Precpred(Context, 27);
-                case 9: return Precpred(Context, 26);
-                case 10: return Precpred(Context, 25);
-                case 11: return Precpred(Context, 24);
-                case 12: return Precpred(Context, 23);
-                case 13: return Precpred(Context, 22);
-                case 14: return Precpred(Context, 21);
-                case 15: return Precpred(Context, 20);
-                case 16: return Precpred(Context, 19);
-                case 17: return Precpred(Context, 18);
-                case 18: return Precpred(Context, 17);
-                case 19: return Precpred(Context, 16);
-                case 20: return Precpred(Context, 15);
-                case 21: return Precpred(Context, 14);
-                case 22: return Precpred(Context, 13);
-                case 23: return Precpred(Context, 12);
-                case 24: return Precpred(Context, 11);
-                case 25: return Precpred(Context, 44);
-                case 26: return Precpred(Context, 43);
-                case 27: return Precpred(Context, 42);
-                case 28: return Precpred(Context, 39);
-                case 29: return this.notLineTerminator();
-                case 30: return Precpred(Context, 38);
-                case 31: return this.notLineTerminator();
-                case 32: return Precpred(Context, 9);
-            }
-            return true;
-        }
-        private bool getter_sempred(GetterContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 33: return this.p("get");
-            }
-            return true;
-        }
-        private bool setter_sempred(SetterContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 34: return this.p("set");
-            }
-            return true;
-        }
-        private bool eos_sempred(EosContext _localctx, int predIndex)
-        {
-            switch (predIndex)
-            {
-                case 35: return this.lineTerminatorAhead();
-                case 36: return this.closeBrace();
-            }
-            return true;
-        }
-
-        private static char[] _serializedATN = {
-        '\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786',
-        '\x5964', '\x3', '}', '\x3C0', '\x4', '\x2', '\t', '\x2', '\x4', '\x3',
-        '\t', '\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t', '\x5', '\x4',
-        '\x6', '\t', '\x6', '\x4', '\a', '\t', '\a', '\x4', '\b', '\t', '\b',
-        '\x4', '\t', '\t', '\t', '\x4', '\n', '\t', '\n', '\x4', '\v', '\t', '\v',
-        '\x4', '\f', '\t', '\f', '\x4', '\r', '\t', '\r', '\x4', '\xE', '\t',
-        '\xE', '\x4', '\xF', '\t', '\xF', '\x4', '\x10', '\t', '\x10', '\x4',
-        '\x11', '\t', '\x11', '\x4', '\x12', '\t', '\x12', '\x4', '\x13', '\t',
-        '\x13', '\x4', '\x14', '\t', '\x14', '\x4', '\x15', '\t', '\x15', '\x4',
-        '\x16', '\t', '\x16', '\x4', '\x17', '\t', '\x17', '\x4', '\x18', '\t',
-        '\x18', '\x4', '\x19', '\t', '\x19', '\x4', '\x1A', '\t', '\x1A', '\x4',
-        '\x1B', '\t', '\x1B', '\x4', '\x1C', '\t', '\x1C', '\x4', '\x1D', '\t',
-        '\x1D', '\x4', '\x1E', '\t', '\x1E', '\x4', '\x1F', '\t', '\x1F', '\x4',
-        ' ', '\t', ' ', '\x4', '!', '\t', '!', '\x4', '\"', '\t', '\"', '\x4',
-        '#', '\t', '#', '\x4', '$', '\t', '$', '\x4', '%', '\t', '%', '\x4', '&',
-        '\t', '&', '\x4', '\'', '\t', '\'', '\x4', '(', '\t', '(', '\x4', ')',
-        '\t', ')', '\x4', '*', '\t', '*', '\x4', '+', '\t', '+', '\x4', ',', '\t',
-        ',', '\x4', '-', '\t', '-', '\x4', '.', '\t', '.', '\x4', '/', '\t', '/',
-        '\x4', '\x30', '\t', '\x30', '\x4', '\x31', '\t', '\x31', '\x4', '\x32',
-        '\t', '\x32', '\x4', '\x33', '\t', '\x33', '\x4', '\x34', '\t', '\x34',
-        '\x4', '\x35', '\t', '\x35', '\x4', '\x36', '\t', '\x36', '\x4', '\x37',
-        '\t', '\x37', '\x4', '\x38', '\t', '\x38', '\x4', '\x39', '\t', '\x39',
-        '\x4', ':', '\t', ':', '\x4', ';', '\t', ';', '\x4', '<', '\t', '<', '\x4',
-        '=', '\t', '=', '\x4', '>', '\t', '>', '\x4', '?', '\t', '?', '\x4', '@',
-        '\t', '@', '\x4', '\x41', '\t', '\x41', '\x4', '\x42', '\t', '\x42', '\x4',
-        '\x43', '\t', '\x43', '\x4', '\x44', '\t', '\x44', '\x4', '\x45', '\t',
-        '\x45', '\x4', '\x46', '\t', '\x46', '\x4', 'G', '\t', 'G', '\x4', 'H',
-        '\t', 'H', '\x4', 'I', '\t', 'I', '\x4', 'J', '\t', 'J', '\x3', '\x2',
-        '\x5', '\x2', '\x96', '\n', '\x2', '\x3', '\x2', '\x5', '\x2', '\x99',
-        '\n', '\x2', '\x3', '\x2', '\x3', '\x2', '\x3', '\x3', '\x3', '\x3', '\x3',
-        '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3',
-        '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3',
-        '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3',
-        '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x5',
-        '\x4', '\xB3', '\n', '\x4', '\x3', '\x5', '\x3', '\x5', '\x5', '\x5',
-        '\xB7', '\n', '\x5', '\x3', '\x5', '\x3', '\x5', '\x3', '\x6', '\x6',
-        '\x6', '\xBC', '\n', '\x6', '\r', '\x6', '\xE', '\x6', '\xBD', '\x3',
-        '\a', '\x3', '\a', '\x3', '\a', '\x3', '\b', '\x5', '\b', '\xC4', '\n',
-        '\b', '\x3', '\b', '\x3', '\b', '\x5', '\b', '\xC8', '\n', '\b', '\x3',
-        '\b', '\x3', '\b', '\x3', '\b', '\x3', '\b', '\x3', '\b', '\x5', '\b',
-        '\xCF', '\n', '\b', '\x3', '\t', '\x3', '\t', '\x3', '\t', '\x3', '\t',
-        '\a', '\t', '\xD5', '\n', '\t', '\f', '\t', '\xE', '\t', '\xD8', '\v',
-        '\t', '\x3', '\t', '\x3', '\t', '\x5', '\t', '\xDC', '\n', '\t', '\x5',
-        '\t', '\xDE', '\n', '\t', '\x3', '\t', '\x3', '\t', '\x3', '\n', '\x3',
-        '\n', '\x3', '\n', '\x3', '\v', '\x3', '\v', '\x3', '\v', '\x5', '\v',
-        '\xE8', '\n', '\v', '\x3', '\f', '\x3', '\f', '\x3', '\f', '\x3', '\r',
-        '\x3', '\r', '\x3', '\r', '\x5', '\r', '\xF0', '\n', '\r', '\x3', '\xE',
-        '\x3', '\xE', '\x3', '\xE', '\x5', '\xE', '\xF5', '\n', '\xE', '\x3',
-        '\xE', '\x3', '\xE', '\x3', '\xE', '\x3', '\xE', '\x3', '\xE', '\x3',
-        '\xE', '\x3', '\xE', '\x5', '\xE', '\xFE', '\n', '\xE', '\x3', '\xF',
-        '\x3', '\xF', '\x3', '\xF', '\x3', '\xF', '\x3', '\xF', '\x3', '\xF',
-        '\x5', '\xF', '\x106', '\n', '\xF', '\x3', '\xF', '\x3', '\xF', '\x5',
-        '\xF', '\x10A', '\n', '\xF', '\x3', '\x10', '\x3', '\x10', '\x3', '\x10',
-        '\x5', '\x10', '\x10F', '\n', '\x10', '\x3', '\x11', '\x3', '\x11', '\x3',
-        '\x11', '\x3', '\x12', '\x3', '\x12', '\x3', '\x12', '\x3', '\x12', '\a',
-        '\x12', '\x118', '\n', '\x12', '\f', '\x12', '\xE', '\x12', '\x11B', '\v',
-        '\x12', '\x3', '\x13', '\x3', '\x13', '\x3', '\x13', '\x5', '\x13', '\x120',
-        '\n', '\x13', '\x3', '\x14', '\x3', '\x14', '\x3', '\x15', '\x3', '\x15',
-        '\x3', '\x15', '\x3', '\x15', '\x3', '\x16', '\x3', '\x16', '\x3', '\x16',
-        '\x3', '\x16', '\x3', '\x16', '\x3', '\x16', '\x3', '\x16', '\x5', '\x16',
-        '\x12F', '\n', '\x16', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
-        '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
-        '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
-        '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x5',
-        '\x17', '\x143', '\n', '\x17', '\x3', '\x17', '\x3', '\x17', '\x5', '\x17',
-        '\x147', '\n', '\x17', '\x3', '\x17', '\x3', '\x17', '\x5', '\x17', '\x14B',
-        '\n', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17',
-        '\x3', '\x17', '\x3', '\x17', '\x5', '\x17', '\x153', '\n', '\x17', '\x3',
-        '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
-        '\x17', '\x3', '\x17', '\x5', '\x17', '\x15C', '\n', '\x17', '\x3', '\x17',
-        '\x3', '\x17', '\x3', '\x17', '\x5', '\x17', '\x161', '\n', '\x17', '\x3',
-        '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
-        '\x17', '\x5', '\x17', '\x169', '\n', '\x17', '\x3', '\x18', '\x3', '\x18',
-        '\x3', '\x19', '\x3', '\x19', '\x3', '\x19', '\x5', '\x19', '\x170', '\n',
-        '\x19', '\x3', '\x19', '\x3', '\x19', '\x3', '\x1A', '\x3', '\x1A', '\x3',
-        '\x1A', '\x5', '\x1A', '\x177', '\n', '\x1A', '\x3', '\x1A', '\x3', '\x1A',
-        '\x3', '\x1B', '\x3', '\x1B', '\x3', '\x1B', '\x5', '\x1B', '\x17E', '\n',
-        '\x1B', '\x3', '\x1B', '\x3', '\x1B', '\x3', '\x1C', '\x3', '\x1C', '\x3',
-        '\x1C', '\x5', '\x1C', '\x185', '\n', '\x1C', '\x3', '\x1C', '\x3', '\x1C',
-        '\x3', '\x1D', '\x3', '\x1D', '\x3', '\x1D', '\x3', '\x1D', '\x3', '\x1D',
-        '\x3', '\x1D', '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1E',
-        '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1F', '\x3', '\x1F', '\x5', '\x1F',
-        '\x197', '\n', '\x1F', '\x3', '\x1F', '\x3', '\x1F', '\x5', '\x1F', '\x19B',
-        '\n', '\x1F', '\x5', '\x1F', '\x19D', '\n', '\x1F', '\x3', '\x1F', '\x3',
-        '\x1F', '\x3', ' ', '\x6', ' ', '\x1A2', '\n', ' ', '\r', ' ', '\xE',
-        ' ', '\x1A3', '\x3', '!', '\x3', '!', '\x3', '!', '\x3', '!', '\x5', '!',
-        '\x1AA', '\n', '!', '\x3', '\"', '\x3', '\"', '\x3', '\"', '\x5', '\"',
-        '\x1AF', '\n', '\"', '\x3', '#', '\x3', '#', '\x3', '#', '\x3', '#', '\x3',
-        '$', '\x3', '$', '\x3', '$', '\x3', '$', '\x3', '$', '\x3', '%', '\x3',
-        '%', '\x3', '%', '\x3', '%', '\x5', '%', '\x1BE', '\n', '%', '\x3', '%',
-        '\x5', '%', '\x1C1', '\n', '%', '\x3', '&', '\x3', '&', '\x3', '&', '\x5',
-        '&', '\x1C6', '\n', '&', '\x3', '&', '\x5', '&', '\x1C9', '\n', '&', '\x3',
-        '&', '\x3', '&', '\x3', '\'', '\x3', '\'', '\x3', '\'', '\x3', '(', '\x3',
-        '(', '\x3', '(', '\x3', ')', '\x5', ')', '\x1D4', '\n', ')', '\x3', ')',
-        '\x3', ')', '\x5', ')', '\x1D8', '\n', ')', '\x3', ')', '\x3', ')', '\x3',
-        ')', '\x5', ')', '\x1DD', '\n', ')', '\x3', ')', '\x3', ')', '\x3', ')',
-        '\x3', ')', '\x3', ')', '\x3', '*', '\x3', '*', '\x3', '*', '\x3', '*',
-        '\x3', '+', '\x3', '+', '\x5', '+', '\x1EA', '\n', '+', '\x3', '+', '\x3',
-        '+', '\a', '+', '\x1EE', '\n', '+', '\f', '+', '\xE', '+', '\x1F1', '\v',
-        '+', '\x3', '+', '\x3', '+', '\x3', ',', '\x3', ',', '\x3', ',', '\x3',
-        ',', '\a', ',', '\x1F9', '\n', ',', '\f', ',', '\xE', ',', '\x1FC', '\v',
-        ',', '\x3', ',', '\x3', ',', '\x3', ',', '\x5', ',', '\x201', '\n', ',',
-        '\x3', ',', '\x3', ',', '\x3', ',', '\x3', ',', '\x5', ',', '\x207', '\n',
-        ',', '\x3', '-', '\x5', '-', '\x20A', '\n', '-', '\x3', '-', '\x5', '-',
-        '\x20D', '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x5', '-', '\x212',
-        '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-',
-        '\x3', '-', '\x5', '-', '\x21A', '\n', '-', '\x3', '-', '\x5', '-', '\x21D',
-        '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-',
-        '\x3', '-', '\x3', '-', '\x3', '-', '\x5', '-', '\x227', '\n', '-', '\x3',
-        '-', '\x5', '-', '\x22A', '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-',
-        '\x5', '-', '\x22F', '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3',
-        '-', '\x3', '-', '\x5', '-', '\x236', '\n', '-', '\x3', '.', '\x3', '.',
-        '\x3', '.', '\a', '.', '\x23B', '\n', '.', '\f', '.', '\xE', '.', '\x23E',
-        '\v', '.', '\x3', '.', '\x3', '.', '\x5', '.', '\x242', '\n', '.', '\x3',
-        '.', '\x5', '.', '\x245', '\n', '.', '\x3', '/', '\x3', '/', '\x3', '/',
-        '\x5', '/', '\x24A', '\n', '/', '\x3', '\x30', '\x3', '\x30', '\x3', '\x30',
-        '\x3', '\x31', '\x5', '\x31', '\x250', '\n', '\x31', '\x3', '\x32', '\x6',
-        '\x32', '\x253', '\n', '\x32', '\r', '\x32', '\xE', '\x32', '\x254', '\x3',
-        '\x33', '\x3', '\x33', '\x3', '\x33', '\x3', '\x33', '\x3', '\x34', '\a',
-        '\x34', '\x25C', '\n', '\x34', '\f', '\x34', '\xE', '\x34', '\x25F', '\v',
-        '\x34', '\x3', '\x34', '\x5', '\x34', '\x262', '\n', '\x34', '\x3', '\x34',
-        '\x6', '\x34', '\x265', '\n', '\x34', '\r', '\x34', '\xE', '\x34', '\x266',
-        '\x3', '\x34', '\a', '\x34', '\x26A', '\n', '\x34', '\f', '\x34', '\xE',
-        '\x34', '\x26D', '\v', '\x34', '\x3', '\x34', '\a', '\x34', '\x270', '\n',
-        '\x34', '\f', '\x34', '\xE', '\x34', '\x273', '\v', '\x34', '\x3', '\x35',
-        '\x5', '\x35', '\x276', '\n', '\x35', '\x3', '\x35', '\x3', '\x35', '\x3',
-        '\x36', '\x3', '\x36', '\x3', '\x36', '\x3', '\x36', '\a', '\x36', '\x27E',
-        '\n', '\x36', '\f', '\x36', '\xE', '\x36', '\x281', '\v', '\x36', '\x5',
-        '\x36', '\x283', '\n', '\x36', '\x3', '\x36', '\x5', '\x36', '\x286',
-        '\n', '\x36', '\x3', '\x36', '\x3', '\x36', '\x3', '\x37', '\x3', '\x37',
-        '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37',
-        '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x5', '\x37',
-        '\x295', '\n', '\x37', '\x3', '\x37', '\x5', '\x37', '\x298', '\n', '\x37',
-        '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x5', '\x37', '\x29D', '\n',
-        '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
-        '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
-        '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
-        '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
-        '\x37', '\x3', '\x37', '\x5', '\x37', '\x2B4', '\n', '\x37', '\x3', '\x37',
-        '\x5', '\x37', '\x2B7', '\n', '\x37', '\x3', '\x38', '\x3', '\x38', '\x3',
-        '\x38', '\x3', '\x38', '\x3', '\x38', '\x3', '\x38', '\x3', '\x38', '\x5',
-        '\x38', '\x2C0', '\n', '\x38', '\x3', '\x39', '\x3', '\x39', '\x3', '\x39',
-        '\x3', '\x39', '\a', '\x39', '\x2C6', '\n', '\x39', '\f', '\x39', '\xE',
-        '\x39', '\x2C9', '\v', '\x39', '\x3', '\x39', '\x5', '\x39', '\x2CC',
-        '\n', '\x39', '\x5', '\x39', '\x2CE', '\n', '\x39', '\x3', '\x39', '\x3',
-        '\x39', '\x3', ':', '\x5', ':', '\x2D3', '\n', ':', '\x3', ':', '\x3',
-        ':', '\x5', ':', '\x2D7', '\n', ':', '\x3', ';', '\x3', ';', '\x3', ';',
-        '\a', ';', '\x2DC', '\n', ';', '\f', ';', '\xE', ';', '\x2DF', '\v', ';',
-        '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x2E5', '\n',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x2EB',
-        '\n', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
-        '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
-        '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
-        '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
-        '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
-        '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
-        '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x314', '\n',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x354', '\n', '<', '\x3', '<',
-        '\x3', '<', '\x5', '<', '\x358', '\n', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
-        '<', '\x3', '<', '\x3', '<', '\a', '<', '\x365', '\n', '<', '\f', '<',
-        '\xE', '<', '\x368', '\v', '<', '\x3', '=', '\x3', '=', '\x3', '=', '\x5',
-        '=', '\x36D', '\n', '=', '\x3', '>', '\x3', '>', '\x5', '>', '\x371',
-        '\n', '>', '\x3', '>', '\x3', '>', '\x5', '>', '\x375', '\n', '>', '\x3',
-        '>', '\x3', '>', '\x5', '>', '\x379', '\n', '>', '\x3', '>', '\x3', '>',
-        '\x3', '>', '\x3', '>', '\x3', '>', '\x3', '>', '\x5', '>', '\x381', '\n',
-        '>', '\x3', '>', '\x3', '>', '\x3', '>', '\x3', '>', '\x5', '>', '\x387',
-        '\n', '>', '\x3', '?', '\x3', '?', '\x3', '?', '\x5', '?', '\x38C', '\n',
-        '?', '\x3', '?', '\x5', '?', '\x38F', '\n', '?', '\x3', '@', '\x3', '@',
-        '\x3', '@', '\x3', '@', '\x3', '@', '\x5', '@', '\x396', '\n', '@', '\x3',
-        '\x41', '\x3', '\x41', '\x3', '\x42', '\x3', '\x42', '\x3', '\x42', '\x3',
-        '\x42', '\x3', '\x42', '\x3', '\x42', '\x3', '\x42', '\x5', '\x42', '\x3A1',
-        '\n', '\x42', '\x3', '\x43', '\x3', '\x43', '\x3', '\x44', '\x3', '\x44',
-        '\x3', '\x45', '\x3', '\x45', '\x5', '\x45', '\x3A9', '\n', '\x45', '\x3',
-        '\x46', '\x3', '\x46', '\x3', '\x46', '\x5', '\x46', '\x3AE', '\n', '\x46',
-        '\x3', 'G', '\x3', 'G', '\x3', 'H', '\x3', 'H', '\x3', 'H', '\x3', 'H',
-        '\x3', 'I', '\x3', 'I', '\x3', 'I', '\x3', 'I', '\x3', 'J', '\x3', 'J',
-        '\x3', 'J', '\x3', 'J', '\x5', 'J', '\x3BE', '\n', 'J', '\x3', 'J', '\x2',
-        '\x3', 'v', 'K', '\x2', '\x4', '\x6', '\b', '\n', '\f', '\xE', '\x10',
-        '\x12', '\x14', '\x16', '\x18', '\x1A', '\x1C', '\x1E', ' ', '\"', '$',
-        '&', '(', '*', ',', '.', '\x30', '\x32', '\x34', '\x36', '\x38', ':',
-        '<', '>', '@', '\x42', '\x44', '\x46', 'H', 'J', 'L', 'N', 'P', 'R', 'T',
-        'V', 'X', 'Z', '\\', '^', '`', '\x62', '\x64', '\x66', 'h', 'j', 'l',
-        'n', 'p', 'r', 't', 'v', 'x', 'z', '|', '~', '\x80', '\x82', '\x84', '\x86',
-        '\x88', '\x8A', '\x8C', '\x8E', '\x90', '\x92', '\x2', '\f', '\x5', '\x2',
-        'O', 'O', 'h', 'h', 'n', 'n', '\x3', '\x2', '\x1A', '\x1C', '\x3', '\x2',
-        '\x16', '\x17', '\x3', '\x2', ' ', '\"', '\x3', '\x2', '#', '&', '\x3',
-        '\x2', '\'', '*', '\x3', '\x2', '\x30', ';', '\x3', '\x2', '?', '\x43',
-        '\x3', '\x2', '\x44', 'G', '\x3', '\x2', 'H', 'u', '\x2', '\x435', '\x2',
-        '\x95', '\x3', '\x2', '\x2', '\x2', '\x4', '\x9C', '\x3', '\x2', '\x2',
-        '\x2', '\x6', '\xB2', '\x3', '\x2', '\x2', '\x2', '\b', '\xB4', '\x3',
-        '\x2', '\x2', '\x2', '\n', '\xBB', '\x3', '\x2', '\x2', '\x2', '\f', '\xBF',
-        '\x3', '\x2', '\x2', '\x2', '\xE', '\xCE', '\x3', '\x2', '\x2', '\x2',
-        '\x10', '\xD0', '\x3', '\x2', '\x2', '\x2', '\x12', '\xE1', '\x3', '\x2',
-        '\x2', '\x2', '\x14', '\xE4', '\x3', '\x2', '\x2', '\x2', '\x16', '\xE9',
-        '\x3', '\x2', '\x2', '\x2', '\x18', '\xEC', '\x3', '\x2', '\x2', '\x2',
-        '\x1A', '\xFD', '\x3', '\x2', '\x2', '\x2', '\x1C', '\x109', '\x3', '\x2',
-        '\x2', '\x2', '\x1E', '\x10E', '\x3', '\x2', '\x2', '\x2', ' ', '\x110',
-        '\x3', '\x2', '\x2', '\x2', '\"', '\x113', '\x3', '\x2', '\x2', '\x2',
-        '$', '\x11C', '\x3', '\x2', '\x2', '\x2', '&', '\x121', '\x3', '\x2',
-        '\x2', '\x2', '(', '\x123', '\x3', '\x2', '\x2', '\x2', '*', '\x127',
-        '\x3', '\x2', '\x2', '\x2', ',', '\x168', '\x3', '\x2', '\x2', '\x2',
-        '.', '\x16A', '\x3', '\x2', '\x2', '\x2', '\x30', '\x16C', '\x3', '\x2',
-        '\x2', '\x2', '\x32', '\x173', '\x3', '\x2', '\x2', '\x2', '\x34', '\x17A',
-        '\x3', '\x2', '\x2', '\x2', '\x36', '\x181', '\x3', '\x2', '\x2', '\x2',
-        '\x38', '\x188', '\x3', '\x2', '\x2', '\x2', ':', '\x18E', '\x3', '\x2',
-        '\x2', '\x2', '<', '\x194', '\x3', '\x2', '\x2', '\x2', '>', '\x1A1',
-        '\x3', '\x2', '\x2', '\x2', '@', '\x1A5', '\x3', '\x2', '\x2', '\x2',
-        '\x42', '\x1AB', '\x3', '\x2', '\x2', '\x2', '\x44', '\x1B0', '\x3', '\x2',
-        '\x2', '\x2', '\x46', '\x1B4', '\x3', '\x2', '\x2', '\x2', 'H', '\x1B9',
-        '\x3', '\x2', '\x2', '\x2', 'J', '\x1C2', '\x3', '\x2', '\x2', '\x2',
-        'L', '\x1CC', '\x3', '\x2', '\x2', '\x2', 'N', '\x1CF', '\x3', '\x2',
-        '\x2', '\x2', 'P', '\x1D3', '\x3', '\x2', '\x2', '\x2', 'R', '\x1E3',
-        '\x3', '\x2', '\x2', '\x2', 'T', '\x1E9', '\x3', '\x2', '\x2', '\x2',
-        'V', '\x206', '\x3', '\x2', '\x2', '\x2', 'X', '\x235', '\x3', '\x2',
-        '\x2', '\x2', 'Z', '\x244', '\x3', '\x2', '\x2', '\x2', '\\', '\x246',
-        '\x3', '\x2', '\x2', '\x2', '^', '\x24B', '\x3', '\x2', '\x2', '\x2',
-        '`', '\x24F', '\x3', '\x2', '\x2', '\x2', '\x62', '\x252', '\x3', '\x2',
-        '\x2', '\x2', '\x64', '\x256', '\x3', '\x2', '\x2', '\x2', '\x66', '\x25D',
-        '\x3', '\x2', '\x2', '\x2', 'h', '\x275', '\x3', '\x2', '\x2', '\x2',
-        'j', '\x279', '\x3', '\x2', '\x2', '\x2', 'l', '\x2B6', '\x3', '\x2',
-        '\x2', '\x2', 'n', '\x2BF', '\x3', '\x2', '\x2', '\x2', 'p', '\x2C1',
-        '\x3', '\x2', '\x2', '\x2', 'r', '\x2D2', '\x3', '\x2', '\x2', '\x2',
-        't', '\x2D8', '\x3', '\x2', '\x2', '\x2', 'v', '\x313', '\x3', '\x2',
-        '\x2', '\x2', 'x', '\x36C', '\x3', '\x2', '\x2', '\x2', 'z', '\x386',
-        '\x3', '\x2', '\x2', '\x2', '|', '\x38E', '\x3', '\x2', '\x2', '\x2',
-        '~', '\x395', '\x3', '\x2', '\x2', '\x2', '\x80', '\x397', '\x3', '\x2',
-        '\x2', '\x2', '\x82', '\x3A0', '\x3', '\x2', '\x2', '\x2', '\x84', '\x3A2',
-        '\x3', '\x2', '\x2', '\x2', '\x86', '\x3A4', '\x3', '\x2', '\x2', '\x2',
-        '\x88', '\x3A8', '\x3', '\x2', '\x2', '\x2', '\x8A', '\x3AD', '\x3', '\x2',
-        '\x2', '\x2', '\x8C', '\x3AF', '\x3', '\x2', '\x2', '\x2', '\x8E', '\x3B1',
-        '\x3', '\x2', '\x2', '\x2', '\x90', '\x3B5', '\x3', '\x2', '\x2', '\x2',
-        '\x92', '\x3BD', '\x3', '\x2', '\x2', '\x2', '\x94', '\x96', '\a', '\x3',
-        '\x2', '\x2', '\x95', '\x94', '\x3', '\x2', '\x2', '\x2', '\x95', '\x96',
-        '\x3', '\x2', '\x2', '\x2', '\x96', '\x98', '\x3', '\x2', '\x2', '\x2',
-        '\x97', '\x99', '\x5', '\x62', '\x32', '\x2', '\x98', '\x97', '\x3', '\x2',
-        '\x2', '\x2', '\x98', '\x99', '\x3', '\x2', '\x2', '\x2', '\x99', '\x9A',
-        '\x3', '\x2', '\x2', '\x2', '\x9A', '\x9B', '\a', '\x2', '\x2', '\x3',
-        '\x9B', '\x3', '\x3', '\x2', '\x2', '\x2', '\x9C', '\x9D', '\x5', '\x6',
-        '\x4', '\x2', '\x9D', '\x5', '\x3', '\x2', '\x2', '\x2', '\x9E', '\xB3',
-        '\x5', '\b', '\x5', '\x2', '\x9F', '\xB3', '\x5', ' ', '\x11', '\x2',
-        '\xA0', '\xB3', '\x5', '\f', '\a', '\x2', '\xA1', '\xB3', '\x5', '\x1A',
-        '\xE', '\x2', '\xA2', '\xB3', '\x5', '&', '\x14', '\x2', '\xA3', '\xB3',
-        '\x5', 'R', '*', '\x2', '\xA4', '\xB3', '\x5', '(', '\x15', '\x2', '\xA5',
-        '\xB3', '\x5', '*', '\x16', '\x2', '\xA6', '\xB3', '\x5', ',', '\x17',
-        '\x2', '\xA7', '\xB3', '\x5', '\x30', '\x19', '\x2', '\xA8', '\xB3', '\x5',
-        '\x32', '\x1A', '\x2', '\xA9', '\xB3', '\x5', '\x34', '\x1B', '\x2', '\xAA',
-        '\xB3', '\x5', '\x36', '\x1C', '\x2', '\xAB', '\xB3', '\x5', '\x38', '\x1D',
-        '\x2', '\xAC', '\xB3', '\x5', '\x44', '#', '\x2', '\xAD', '\xB3', '\x5',
-        ':', '\x1E', '\x2', '\xAE', '\xB3', '\x5', '\x46', '$', '\x2', '\xAF',
-        '\xB3', '\x5', 'H', '%', '\x2', '\xB0', '\xB3', '\x5', 'N', '(', '\x2',
-        '\xB1', '\xB3', '\x5', 'P', ')', '\x2', '\xB2', '\x9E', '\x3', '\x2',
-        '\x2', '\x2', '\xB2', '\x9F', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA0',
-        '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA1', '\x3', '\x2', '\x2', '\x2',
-        '\xB2', '\xA2', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA3', '\x3', '\x2',
-        '\x2', '\x2', '\xB2', '\xA4', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA5',
-        '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA6', '\x3', '\x2', '\x2', '\x2',
-        '\xB2', '\xA7', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA8', '\x3', '\x2',
-        '\x2', '\x2', '\xB2', '\xA9', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAA',
-        '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAB', '\x3', '\x2', '\x2', '\x2',
-        '\xB2', '\xAC', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAD', '\x3', '\x2',
-        '\x2', '\x2', '\xB2', '\xAE', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAF',
-        '\x3', '\x2', '\x2', '\x2', '\xB2', '\xB0', '\x3', '\x2', '\x2', '\x2',
-        '\xB2', '\xB1', '\x3', '\x2', '\x2', '\x2', '\xB3', '\a', '\x3', '\x2',
-        '\x2', '\x2', '\xB4', '\xB6', '\a', '\v', '\x2', '\x2', '\xB5', '\xB7',
-        '\x5', '\n', '\x6', '\x2', '\xB6', '\xB5', '\x3', '\x2', '\x2', '\x2',
-        '\xB6', '\xB7', '\x3', '\x2', '\x2', '\x2', '\xB7', '\xB8', '\x3', '\x2',
-        '\x2', '\x2', '\xB8', '\xB9', '\a', '\f', '\x2', '\x2', '\xB9', '\t',
-        '\x3', '\x2', '\x2', '\x2', '\xBA', '\xBC', '\x5', '\x6', '\x4', '\x2',
-        '\xBB', '\xBA', '\x3', '\x2', '\x2', '\x2', '\xBC', '\xBD', '\x3', '\x2',
-        '\x2', '\x2', '\xBD', '\xBB', '\x3', '\x2', '\x2', '\x2', '\xBD', '\xBE',
-        '\x3', '\x2', '\x2', '\x2', '\xBE', '\v', '\x3', '\x2', '\x2', '\x2',
-        '\xBF', '\xC0', '\a', 'j', '\x2', '\x2', '\xC0', '\xC1', '\x5', '\xE',
-        '\b', '\x2', '\xC1', '\r', '\x3', '\x2', '\x2', '\x2', '\xC2', '\xC4',
-        '\x5', '\x12', '\n', '\x2', '\xC3', '\xC2', '\x3', '\x2', '\x2', '\x2',
-        '\xC3', '\xC4', '\x3', '\x2', '\x2', '\x2', '\xC4', '\xC7', '\x3', '\x2',
-        '\x2', '\x2', '\xC5', '\xC8', '\x5', '\x14', '\v', '\x2', '\xC6', '\xC8',
-        '\x5', '\x10', '\t', '\x2', '\xC7', '\xC5', '\x3', '\x2', '\x2', '\x2',
-        '\xC7', '\xC6', '\x3', '\x2', '\x2', '\x2', '\xC8', '\xC9', '\x3', '\x2',
-        '\x2', '\x2', '\xC9', '\xCA', '\x5', '\x16', '\f', '\x2', '\xCA', '\xCB',
-        '\x5', '\x92', 'J', '\x2', '\xCB', '\xCF', '\x3', '\x2', '\x2', '\x2',
-        '\xCC', '\xCD', '\a', 'w', '\x2', '\x2', '\xCD', '\xCF', '\x5', '\x92',
-        'J', '\x2', '\xCE', '\xC3', '\x3', '\x2', '\x2', '\x2', '\xCE', '\xCC',
-        '\x3', '\x2', '\x2', '\x2', '\xCF', '\xF', '\x3', '\x2', '\x2', '\x2',
-        '\xD0', '\xD6', '\a', '\v', '\x2', '\x2', '\xD1', '\xD2', '\x5', '\x18',
-        '\r', '\x2', '\xD2', '\xD3', '\a', '\xE', '\x2', '\x2', '\xD3', '\xD5',
-        '\x3', '\x2', '\x2', '\x2', '\xD4', '\xD1', '\x3', '\x2', '\x2', '\x2',
-        '\xD5', '\xD8', '\x3', '\x2', '\x2', '\x2', '\xD6', '\xD4', '\x3', '\x2',
-        '\x2', '\x2', '\xD6', '\xD7', '\x3', '\x2', '\x2', '\x2', '\xD7', '\xDD',
-        '\x3', '\x2', '\x2', '\x2', '\xD8', '\xD6', '\x3', '\x2', '\x2', '\x2',
-        '\xD9', '\xDB', '\x5', '\x18', '\r', '\x2', '\xDA', '\xDC', '\a', '\xE',
-        '\x2', '\x2', '\xDB', '\xDA', '\x3', '\x2', '\x2', '\x2', '\xDB', '\xDC',
-        '\x3', '\x2', '\x2', '\x2', '\xDC', '\xDE', '\x3', '\x2', '\x2', '\x2',
-        '\xDD', '\xD9', '\x3', '\x2', '\x2', '\x2', '\xDD', '\xDE', '\x3', '\x2',
-        '\x2', '\x2', '\xDE', '\xDF', '\x3', '\x2', '\x2', '\x2', '\xDF', '\xE0',
-        '\a', '\f', '\x2', '\x2', '\xE0', '\x11', '\x3', '\x2', '\x2', '\x2',
-        '\xE1', '\xE2', '\x5', '\x18', '\r', '\x2', '\xE2', '\xE3', '\a', '\xE',
-        '\x2', '\x2', '\xE3', '\x13', '\x3', '\x2', '\x2', '\x2', '\xE4', '\xE7',
-        '\a', '\x1A', '\x2', '\x2', '\xE5', '\xE6', '\a', '\x62', '\x2', '\x2',
-        '\xE6', '\xE8', '\x5', '\x88', '\x45', '\x2', '\xE7', '\xE5', '\x3', '\x2',
-        '\x2', '\x2', '\xE7', '\xE8', '\x3', '\x2', '\x2', '\x2', '\xE8', '\x15',
-        '\x3', '\x2', '\x2', '\x2', '\xE9', '\xEA', '\a', '\x63', '\x2', '\x2',
-        '\xEA', '\xEB', '\a', 'w', '\x2', '\x2', '\xEB', '\x17', '\x3', '\x2',
-        '\x2', '\x2', '\xEC', '\xEF', '\x5', '\x88', '\x45', '\x2', '\xED', '\xEE',
-        '\a', '\x62', '\x2', '\x2', '\xEE', '\xF0', '\x5', '\x88', '\x45', '\x2',
-        '\xEF', '\xED', '\x3', '\x2', '\x2', '\x2', '\xEF', '\xF0', '\x3', '\x2',
-        '\x2', '\x2', '\xF0', '\x19', '\x3', '\x2', '\x2', '\x2', '\xF1', '\xF4',
-        '\a', 'i', '\x2', '\x2', '\xF2', '\xF5', '\x5', '\x1C', '\xF', '\x2',
-        '\xF3', '\xF5', '\x5', '\x1E', '\x10', '\x2', '\xF4', '\xF2', '\x3', '\x2',
-        '\x2', '\x2', '\xF4', '\xF3', '\x3', '\x2', '\x2', '\x2', '\xF5', '\xF6',
-        '\x3', '\x2', '\x2', '\x2', '\xF6', '\xF7', '\x5', '\x92', 'J', '\x2',
-        '\xF7', '\xFE', '\x3', '\x2', '\x2', '\x2', '\xF8', '\xF9', '\a', 'i',
-        '\x2', '\x2', '\xF9', '\xFA', '\a', '\\', '\x2', '\x2', '\xFA', '\xFB',
-        '\x5', 'v', '<', '\x2', '\xFB', '\xFC', '\x5', '\x92', 'J', '\x2', '\xFC',
-        '\xFE', '\x3', '\x2', '\x2', '\x2', '\xFD', '\xF1', '\x3', '\x2', '\x2',
-        '\x2', '\xFD', '\xF8', '\x3', '\x2', '\x2', '\x2', '\xFE', '\x1B', '\x3',
-        '\x2', '\x2', '\x2', '\xFF', '\x100', '\x5', '\x14', '\v', '\x2', '\x100',
-        '\x101', '\x5', '\x16', '\f', '\x2', '\x101', '\x102', '\x5', '\x92',
-        'J', '\x2', '\x102', '\x10A', '\x3', '\x2', '\x2', '\x2', '\x103', '\x105',
-        '\x5', '\x10', '\t', '\x2', '\x104', '\x106', '\x5', '\x16', '\f', '\x2',
-        '\x105', '\x104', '\x3', '\x2', '\x2', '\x2', '\x105', '\x106', '\x3',
-        '\x2', '\x2', '\x2', '\x106', '\x107', '\x3', '\x2', '\x2', '\x2', '\x107',
-        '\x108', '\x5', '\x92', 'J', '\x2', '\x108', '\x10A', '\x3', '\x2', '\x2',
-        '\x2', '\x109', '\xFF', '\x3', '\x2', '\x2', '\x2', '\x109', '\x103',
-        '\x3', '\x2', '\x2', '\x2', '\x10A', '\x1D', '\x3', '\x2', '\x2', '\x2',
-        '\x10B', '\x10F', '\x5', ' ', '\x11', '\x2', '\x10C', '\x10F', '\x5',
-        'R', '*', '\x2', '\x10D', '\x10F', '\x5', 'P', ')', '\x2', '\x10E', '\x10B',
-        '\x3', '\x2', '\x2', '\x2', '\x10E', '\x10C', '\x3', '\x2', '\x2', '\x2',
-        '\x10E', '\x10D', '\x3', '\x2', '\x2', '\x2', '\x10F', '\x1F', '\x3',
-        '\x2', '\x2', '\x2', '\x110', '\x111', '\x5', '\"', '\x12', '\x2', '\x111',
-        '\x112', '\x5', '\x92', 'J', '\x2', '\x112', '!', '\x3', '\x2', '\x2',
-        '\x2', '\x113', '\x114', '\x5', '.', '\x18', '\x2', '\x114', '\x119',
-        '\x5', '$', '\x13', '\x2', '\x115', '\x116', '\a', '\xE', '\x2', '\x2',
-        '\x116', '\x118', '\x5', '$', '\x13', '\x2', '\x117', '\x115', '\x3',
-        '\x2', '\x2', '\x2', '\x118', '\x11B', '\x3', '\x2', '\x2', '\x2', '\x119',
-        '\x117', '\x3', '\x2', '\x2', '\x2', '\x119', '\x11A', '\x3', '\x2', '\x2',
-        '\x2', '\x11A', '#', '\x3', '\x2', '\x2', '\x2', '\x11B', '\x119', '\x3',
-        '\x2', '\x2', '\x2', '\x11C', '\x11F', '\x5', 'x', '=', '\x2', '\x11D',
-        '\x11E', '\a', '\xF', '\x2', '\x2', '\x11E', '\x120', '\x5', 'v', '<',
-        '\x2', '\x11F', '\x11D', '\x3', '\x2', '\x2', '\x2', '\x11F', '\x120',
-        '\x3', '\x2', '\x2', '\x2', '\x120', '%', '\x3', '\x2', '\x2', '\x2',
-        '\x121', '\x122', '\a', '\r', '\x2', '\x2', '\x122', '\'', '\x3', '\x2',
-        '\x2', '\x2', '\x123', '\x124', '\x6', '\x15', '\x2', '\x2', '\x124',
-        '\x125', '\x5', 't', ';', '\x2', '\x125', '\x126', '\x5', '\x92', 'J',
-        '\x2', '\x126', ')', '\x3', '\x2', '\x2', '\x2', '\x127', '\x128', '\a',
-        ']', '\x2', '\x2', '\x128', '\x129', '\a', '\t', '\x2', '\x2', '\x129',
-        '\x12A', '\x5', 't', ';', '\x2', '\x12A', '\x12B', '\a', '\n', '\x2',
-        '\x2', '\x12B', '\x12E', '\x5', '\x6', '\x4', '\x2', '\x12C', '\x12D',
-        '\a', 'M', '\x2', '\x2', '\x12D', '\x12F', '\x5', '\x6', '\x4', '\x2',
-        '\x12E', '\x12C', '\x3', '\x2', '\x2', '\x2', '\x12E', '\x12F', '\x3',
-        '\x2', '\x2', '\x2', '\x12F', '+', '\x3', '\x2', '\x2', '\x2', '\x130',
-        '\x131', '\a', 'I', '\x2', '\x2', '\x131', '\x132', '\x5', '\x6', '\x4',
-        '\x2', '\x132', '\x133', '\a', 'W', '\x2', '\x2', '\x133', '\x134', '\a',
-        '\t', '\x2', '\x2', '\x134', '\x135', '\x5', 't', ';', '\x2', '\x135',
-        '\x136', '\a', '\n', '\x2', '\x2', '\x136', '\x137', '\x5', '\x92', 'J',
-        '\x2', '\x137', '\x169', '\x3', '\x2', '\x2', '\x2', '\x138', '\x139',
-        '\a', 'W', '\x2', '\x2', '\x139', '\x13A', '\a', '\t', '\x2', '\x2', '\x13A',
-        '\x13B', '\x5', 't', ';', '\x2', '\x13B', '\x13C', '\a', '\n', '\x2',
-        '\x2', '\x13C', '\x13D', '\x5', '\x6', '\x4', '\x2', '\x13D', '\x169',
-        '\x3', '\x2', '\x2', '\x2', '\x13E', '\x13F', '\a', 'U', '\x2', '\x2',
-        '\x13F', '\x142', '\a', '\t', '\x2', '\x2', '\x140', '\x143', '\x5', 't',
-        ';', '\x2', '\x141', '\x143', '\x5', '\"', '\x12', '\x2', '\x142', '\x140',
-        '\x3', '\x2', '\x2', '\x2', '\x142', '\x141', '\x3', '\x2', '\x2', '\x2',
-        '\x142', '\x143', '\x3', '\x2', '\x2', '\x2', '\x143', '\x144', '\x3',
-        '\x2', '\x2', '\x2', '\x144', '\x146', '\a', '\r', '\x2', '\x2', '\x145',
-        '\x147', '\x5', 't', ';', '\x2', '\x146', '\x145', '\x3', '\x2', '\x2',
-        '\x2', '\x146', '\x147', '\x3', '\x2', '\x2', '\x2', '\x147', '\x148',
-        '\x3', '\x2', '\x2', '\x2', '\x148', '\x14A', '\a', '\r', '\x2', '\x2',
-        '\x149', '\x14B', '\x5', 't', ';', '\x2', '\x14A', '\x149', '\x3', '\x2',
-        '\x2', '\x2', '\x14A', '\x14B', '\x3', '\x2', '\x2', '\x2', '\x14B', '\x14C',
-        '\x3', '\x2', '\x2', '\x2', '\x14C', '\x14D', '\a', '\n', '\x2', '\x2',
-        '\x14D', '\x169', '\x5', '\x6', '\x4', '\x2', '\x14E', '\x14F', '\a',
-        'U', '\x2', '\x2', '\x14F', '\x152', '\a', '\t', '\x2', '\x2', '\x150',
-        '\x153', '\x5', 'v', '<', '\x2', '\x151', '\x153', '\x5', '\"', '\x12',
-        '\x2', '\x152', '\x150', '\x3', '\x2', '\x2', '\x2', '\x152', '\x151',
-        '\x3', '\x2', '\x2', '\x2', '\x153', '\x154', '\x3', '\x2', '\x2', '\x2',
-        '\x154', '\x155', '\a', '`', '\x2', '\x2', '\x155', '\x156', '\x5', 't',
-        ';', '\x2', '\x156', '\x157', '\a', '\n', '\x2', '\x2', '\x157', '\x158',
-        '\x5', '\x6', '\x4', '\x2', '\x158', '\x169', '\x3', '\x2', '\x2', '\x2',
-        '\x159', '\x15B', '\a', 'U', '\x2', '\x2', '\x15A', '\x15C', '\a', 'l',
-        '\x2', '\x2', '\x15B', '\x15A', '\x3', '\x2', '\x2', '\x2', '\x15B', '\x15C',
-        '\x3', '\x2', '\x2', '\x2', '\x15C', '\x15D', '\x3', '\x2', '\x2', '\x2',
-        '\x15D', '\x160', '\a', '\t', '\x2', '\x2', '\x15E', '\x161', '\x5', 'v',
-        '<', '\x2', '\x15F', '\x161', '\x5', '\"', '\x12', '\x2', '\x160', '\x15E',
-        '\x3', '\x2', '\x2', '\x2', '\x160', '\x15F', '\x3', '\x2', '\x2', '\x2',
-        '\x161', '\x162', '\x3', '\x2', '\x2', '\x2', '\x162', '\x163', '\a',
-        'v', '\x2', '\x2', '\x163', '\x164', '\x6', '\x17', '\x3', '\x2', '\x164',
-        '\x165', '\x5', 't', ';', '\x2', '\x165', '\x166', '\a', '\n', '\x2',
-        '\x2', '\x166', '\x167', '\x5', '\x6', '\x4', '\x2', '\x167', '\x169',
-        '\x3', '\x2', '\x2', '\x2', '\x168', '\x130', '\x3', '\x2', '\x2', '\x2',
-        '\x168', '\x138', '\x3', '\x2', '\x2', '\x2', '\x168', '\x13E', '\x3',
-        '\x2', '\x2', '\x2', '\x168', '\x14E', '\x3', '\x2', '\x2', '\x2', '\x168',
-        '\x159', '\x3', '\x2', '\x2', '\x2', '\x169', '-', '\x3', '\x2', '\x2',
-        '\x2', '\x16A', '\x16B', '\t', '\x2', '\x2', '\x2', '\x16B', '/', '\x3',
-        '\x2', '\x2', '\x2', '\x16C', '\x16F', '\a', 'T', '\x2', '\x2', '\x16D',
-        '\x16E', '\x6', '\x19', '\x4', '\x2', '\x16E', '\x170', '\a', 'v', '\x2',
-        '\x2', '\x16F', '\x16D', '\x3', '\x2', '\x2', '\x2', '\x16F', '\x170',
-        '\x3', '\x2', '\x2', '\x2', '\x170', '\x171', '\x3', '\x2', '\x2', '\x2',
-        '\x171', '\x172', '\x5', '\x92', 'J', '\x2', '\x172', '\x31', '\x3', '\x2',
-        '\x2', '\x2', '\x173', '\x176', '\a', 'H', '\x2', '\x2', '\x174', '\x175',
-        '\x6', '\x1A', '\x5', '\x2', '\x175', '\x177', '\a', 'v', '\x2', '\x2',
-        '\x176', '\x174', '\x3', '\x2', '\x2', '\x2', '\x176', '\x177', '\x3',
-        '\x2', '\x2', '\x2', '\x177', '\x178', '\x3', '\x2', '\x2', '\x2', '\x178',
-        '\x179', '\x5', '\x92', 'J', '\x2', '\x179', '\x33', '\x3', '\x2', '\x2',
-        '\x2', '\x17A', '\x17D', '\a', 'R', '\x2', '\x2', '\x17B', '\x17C', '\x6',
-        '\x1B', '\x6', '\x2', '\x17C', '\x17E', '\x5', 't', ';', '\x2', '\x17D',
-        '\x17B', '\x3', '\x2', '\x2', '\x2', '\x17D', '\x17E', '\x3', '\x2', '\x2',
-        '\x2', '\x17E', '\x17F', '\x3', '\x2', '\x2', '\x2', '\x17F', '\x180',
-        '\x5', '\x92', 'J', '\x2', '\x180', '\x35', '\x3', '\x2', '\x2', '\x2',
-        '\x181', '\x184', '\a', 'u', '\x2', '\x2', '\x182', '\x183', '\x6', '\x1C',
-        '\a', '\x2', '\x183', '\x185', '\x5', 't', ';', '\x2', '\x184', '\x182',
-        '\x3', '\x2', '\x2', '\x2', '\x184', '\x185', '\x3', '\x2', '\x2', '\x2',
-        '\x185', '\x186', '\x3', '\x2', '\x2', '\x2', '\x186', '\x187', '\x5',
-        '\x92', 'J', '\x2', '\x187', '\x37', '\x3', '\x2', '\x2', '\x2', '\x188',
-        '\x189', '\a', '[', '\x2', '\x2', '\x189', '\x18A', '\a', '\t', '\x2',
-        '\x2', '\x18A', '\x18B', '\x5', 't', ';', '\x2', '\x18B', '\x18C', '\a',
-        '\n', '\x2', '\x2', '\x18C', '\x18D', '\x5', '\x6', '\x4', '\x2', '\x18D',
-        '\x39', '\x3', '\x2', '\x2', '\x2', '\x18E', '\x18F', '\a', 'V', '\x2',
-        '\x2', '\x18F', '\x190', '\a', '\t', '\x2', '\x2', '\x190', '\x191', '\x5',
-        't', ';', '\x2', '\x191', '\x192', '\a', '\n', '\x2', '\x2', '\x192',
-        '\x193', '\x5', '<', '\x1F', '\x2', '\x193', ';', '\x3', '\x2', '\x2',
-        '\x2', '\x194', '\x196', '\a', '\v', '\x2', '\x2', '\x195', '\x197', '\x5',
-        '>', ' ', '\x2', '\x196', '\x195', '\x3', '\x2', '\x2', '\x2', '\x196',
-        '\x197', '\x3', '\x2', '\x2', '\x2', '\x197', '\x19C', '\x3', '\x2', '\x2',
-        '\x2', '\x198', '\x19A', '\x5', '\x42', '\"', '\x2', '\x199', '\x19B',
-        '\x5', '>', ' ', '\x2', '\x19A', '\x199', '\x3', '\x2', '\x2', '\x2',
-        '\x19A', '\x19B', '\x3', '\x2', '\x2', '\x2', '\x19B', '\x19D', '\x3',
-        '\x2', '\x2', '\x2', '\x19C', '\x198', '\x3', '\x2', '\x2', '\x2', '\x19C',
-        '\x19D', '\x3', '\x2', '\x2', '\x2', '\x19D', '\x19E', '\x3', '\x2', '\x2',
-        '\x2', '\x19E', '\x19F', '\a', '\f', '\x2', '\x2', '\x19F', '=', '\x3',
-        '\x2', '\x2', '\x2', '\x1A0', '\x1A2', '\x5', '@', '!', '\x2', '\x1A1',
-        '\x1A0', '\x3', '\x2', '\x2', '\x2', '\x1A2', '\x1A3', '\x3', '\x2', '\x2',
-        '\x2', '\x1A3', '\x1A1', '\x3', '\x2', '\x2', '\x2', '\x1A3', '\x1A4',
-        '\x3', '\x2', '\x2', '\x2', '\x1A4', '?', '\x3', '\x2', '\x2', '\x2',
-        '\x1A5', '\x1A6', '\a', 'L', '\x2', '\x2', '\x1A6', '\x1A7', '\x5', 't',
-        ';', '\x2', '\x1A7', '\x1A9', '\a', '\x11', '\x2', '\x2', '\x1A8', '\x1AA',
-        '\x5', '\n', '\x6', '\x2', '\x1A9', '\x1A8', '\x3', '\x2', '\x2', '\x2',
-        '\x1A9', '\x1AA', '\x3', '\x2', '\x2', '\x2', '\x1AA', '\x41', '\x3',
-        '\x2', '\x2', '\x2', '\x1AB', '\x1AC', '\a', '\\', '\x2', '\x2', '\x1AC',
-        '\x1AE', '\a', '\x11', '\x2', '\x2', '\x1AD', '\x1AF', '\x5', '\n', '\x6',
-        '\x2', '\x1AE', '\x1AD', '\x3', '\x2', '\x2', '\x2', '\x1AE', '\x1AF',
-        '\x3', '\x2', '\x2', '\x2', '\x1AF', '\x43', '\x3', '\x2', '\x2', '\x2',
-        '\x1B0', '\x1B1', '\a', 'v', '\x2', '\x2', '\x1B1', '\x1B2', '\a', '\x11',
-        '\x2', '\x2', '\x1B2', '\x1B3', '\x5', '\x6', '\x4', '\x2', '\x1B3', '\x45',
-        '\x3', '\x2', '\x2', '\x2', '\x1B4', '\x1B5', '\a', '^', '\x2', '\x2',
-        '\x1B5', '\x1B6', '\x6', '$', '\b', '\x2', '\x1B6', '\x1B7', '\x5', 't',
-        ';', '\x2', '\x1B7', '\x1B8', '\x5', '\x92', 'J', '\x2', '\x1B8', 'G',
-        '\x3', '\x2', '\x2', '\x2', '\x1B9', '\x1BA', '\a', '\x61', '\x2', '\x2',
-        '\x1BA', '\x1C0', '\x5', '\b', '\x5', '\x2', '\x1BB', '\x1BD', '\x5',
-        'J', '&', '\x2', '\x1BC', '\x1BE', '\x5', 'L', '\'', '\x2', '\x1BD', '\x1BC',
-        '\x3', '\x2', '\x2', '\x2', '\x1BD', '\x1BE', '\x3', '\x2', '\x2', '\x2',
-        '\x1BE', '\x1C1', '\x3', '\x2', '\x2', '\x2', '\x1BF', '\x1C1', '\x5',
-        'L', '\'', '\x2', '\x1C0', '\x1BB', '\x3', '\x2', '\x2', '\x2', '\x1C0',
-        '\x1BF', '\x3', '\x2', '\x2', '\x2', '\x1C1', 'I', '\x3', '\x2', '\x2',
-        '\x2', '\x1C2', '\x1C8', '\a', 'P', '\x2', '\x2', '\x1C3', '\x1C5', '\a',
-        '\t', '\x2', '\x2', '\x1C4', '\x1C6', '\x5', 'x', '=', '\x2', '\x1C5',
-        '\x1C4', '\x3', '\x2', '\x2', '\x2', '\x1C5', '\x1C6', '\x3', '\x2', '\x2',
-        '\x2', '\x1C6', '\x1C7', '\x3', '\x2', '\x2', '\x2', '\x1C7', '\x1C9',
-        '\a', '\n', '\x2', '\x2', '\x1C8', '\x1C3', '\x3', '\x2', '\x2', '\x2',
-        '\x1C8', '\x1C9', '\x3', '\x2', '\x2', '\x2', '\x1C9', '\x1CA', '\x3',
-        '\x2', '\x2', '\x2', '\x1CA', '\x1CB', '\x5', '\b', '\x5', '\x2', '\x1CB',
-        'K', '\x3', '\x2', '\x2', '\x2', '\x1CC', '\x1CD', '\a', 'Q', '\x2', '\x2',
-        '\x1CD', '\x1CE', '\x5', '\b', '\x5', '\x2', '\x1CE', 'M', '\x3', '\x2',
-        '\x2', '\x2', '\x1CF', '\x1D0', '\a', 'X', '\x2', '\x2', '\x1D0', '\x1D1',
-        '\x5', '\x92', 'J', '\x2', '\x1D1', 'O', '\x3', '\x2', '\x2', '\x2', '\x1D2',
-        '\x1D4', '\a', 'k', '\x2', '\x2', '\x1D3', '\x1D2', '\x3', '\x2', '\x2',
-        '\x2', '\x1D3', '\x1D4', '\x3', '\x2', '\x2', '\x2', '\x1D4', '\x1D5',
-        '\x3', '\x2', '\x2', '\x2', '\x1D5', '\x1D7', '\a', 'Y', '\x2', '\x2',
-        '\x1D6', '\x1D8', '\a', '\x1A', '\x2', '\x2', '\x1D7', '\x1D6', '\x3',
-        '\x2', '\x2', '\x2', '\x1D7', '\x1D8', '\x3', '\x2', '\x2', '\x2', '\x1D8',
-        '\x1D9', '\x3', '\x2', '\x2', '\x2', '\x1D9', '\x1DA', '\a', 'v', '\x2',
-        '\x2', '\x1DA', '\x1DC', '\a', '\t', '\x2', '\x2', '\x1DB', '\x1DD', '\x5',
-        'Z', '.', '\x2', '\x1DC', '\x1DB', '\x3', '\x2', '\x2', '\x2', '\x1DC',
-        '\x1DD', '\x3', '\x2', '\x2', '\x2', '\x1DD', '\x1DE', '\x3', '\x2', '\x2',
-        '\x2', '\x1DE', '\x1DF', '\a', '\n', '\x2', '\x2', '\x1DF', '\x1E0', '\a',
-        '\v', '\x2', '\x2', '\x1E0', '\x1E1', '\x5', '`', '\x31', '\x2', '\x1E1',
-        '\x1E2', '\a', '\f', '\x2', '\x2', '\x1E2', 'Q', '\x3', '\x2', '\x2',
-        '\x2', '\x1E3', '\x1E4', '\a', '\x64', '\x2', '\x2', '\x1E4', '\x1E5',
-        '\a', 'v', '\x2', '\x2', '\x1E5', '\x1E6', '\x5', 'T', '+', '\x2', '\x1E6',
-        'S', '\x3', '\x2', '\x2', '\x2', '\x1E7', '\x1E8', '\a', '\x66', '\x2',
-        '\x2', '\x1E8', '\x1EA', '\x5', 'v', '<', '\x2', '\x1E9', '\x1E7', '\x3',
-        '\x2', '\x2', '\x2', '\x1E9', '\x1EA', '\x3', '\x2', '\x2', '\x2', '\x1EA',
-        '\x1EB', '\x3', '\x2', '\x2', '\x2', '\x1EB', '\x1EF', '\a', '\v', '\x2',
-        '\x2', '\x1EC', '\x1EE', '\x5', 'V', ',', '\x2', '\x1ED', '\x1EC', '\x3',
-        '\x2', '\x2', '\x2', '\x1EE', '\x1F1', '\x3', '\x2', '\x2', '\x2', '\x1EF',
-        '\x1ED', '\x3', '\x2', '\x2', '\x2', '\x1EF', '\x1F0', '\x3', '\x2', '\x2',
-        '\x2', '\x1F0', '\x1F2', '\x3', '\x2', '\x2', '\x2', '\x1F1', '\x1EF',
-        '\x3', '\x2', '\x2', '\x2', '\x1F2', '\x1F3', '\a', '\f', '\x2', '\x2',
-        '\x1F3', 'U', '\x3', '\x2', '\x2', '\x2', '\x1F4', '\x1F9', '\a', 't',
-        '\x2', '\x2', '\x1F5', '\x1F6', '\x6', ',', '\t', '\x2', '\x1F6', '\x1F9',
-        '\a', 'v', '\x2', '\x2', '\x1F7', '\x1F9', '\a', 'k', '\x2', '\x2', '\x1F8',
-        '\x1F4', '\x3', '\x2', '\x2', '\x2', '\x1F8', '\x1F5', '\x3', '\x2', '\x2',
-        '\x2', '\x1F8', '\x1F7', '\x3', '\x2', '\x2', '\x2', '\x1F9', '\x1FC',
-        '\x3', '\x2', '\x2', '\x2', '\x1FA', '\x1F8', '\x3', '\x2', '\x2', '\x2',
-        '\x1FA', '\x1FB', '\x3', '\x2', '\x2', '\x2', '\x1FB', '\x1FD', '\x3',
-        '\x2', '\x2', '\x2', '\x1FC', '\x1FA', '\x3', '\x2', '\x2', '\x2', '\x1FD',
-        '\x207', '\x5', 'X', '-', '\x2', '\x1FE', '\x207', '\x5', '&', '\x14',
-        '\x2', '\x1FF', '\x201', '\a', '\x1F', '\x2', '\x2', '\x200', '\x1FF',
-        '\x3', '\x2', '\x2', '\x2', '\x200', '\x201', '\x3', '\x2', '\x2', '\x2',
-        '\x201', '\x202', '\x3', '\x2', '\x2', '\x2', '\x202', '\x203', '\x5',
-        'n', '\x38', '\x2', '\x203', '\x204', '\a', '\xF', '\x2', '\x2', '\x204',
-        '\x205', '\x5', 'v', '<', '\x2', '\x205', '\x207', '\x3', '\x2', '\x2',
-        '\x2', '\x206', '\x1FA', '\x3', '\x2', '\x2', '\x2', '\x206', '\x1FE',
-        '\x3', '\x2', '\x2', '\x2', '\x206', '\x200', '\x3', '\x2', '\x2', '\x2',
-        '\x207', 'W', '\x3', '\x2', '\x2', '\x2', '\x208', '\x20A', '\a', '\x1A',
-        '\x2', '\x2', '\x209', '\x208', '\x3', '\x2', '\x2', '\x2', '\x209', '\x20A',
-        '\x3', '\x2', '\x2', '\x2', '\x20A', '\x20C', '\x3', '\x2', '\x2', '\x2',
-        '\x20B', '\x20D', '\a', '\x1F', '\x2', '\x2', '\x20C', '\x20B', '\x3',
-        '\x2', '\x2', '\x2', '\x20C', '\x20D', '\x3', '\x2', '\x2', '\x2', '\x20D',
-        '\x20E', '\x3', '\x2', '\x2', '\x2', '\x20E', '\x20F', '\x5', 'n', '\x38',
-        '\x2', '\x20F', '\x211', '\a', '\t', '\x2', '\x2', '\x210', '\x212', '\x5',
-        'Z', '.', '\x2', '\x211', '\x210', '\x3', '\x2', '\x2', '\x2', '\x211',
-        '\x212', '\x3', '\x2', '\x2', '\x2', '\x212', '\x213', '\x3', '\x2', '\x2',
-        '\x2', '\x213', '\x214', '\a', '\n', '\x2', '\x2', '\x214', '\x215', '\a',
-        '\v', '\x2', '\x2', '\x215', '\x216', '\x5', '`', '\x31', '\x2', '\x216',
-        '\x217', '\a', '\f', '\x2', '\x2', '\x217', '\x236', '\x3', '\x2', '\x2',
-        '\x2', '\x218', '\x21A', '\a', '\x1A', '\x2', '\x2', '\x219', '\x218',
-        '\x3', '\x2', '\x2', '\x2', '\x219', '\x21A', '\x3', '\x2', '\x2', '\x2',
-        '\x21A', '\x21C', '\x3', '\x2', '\x2', '\x2', '\x21B', '\x21D', '\a',
-        '\x1F', '\x2', '\x2', '\x21C', '\x21B', '\x3', '\x2', '\x2', '\x2', '\x21C',
-        '\x21D', '\x3', '\x2', '\x2', '\x2', '\x21D', '\x21E', '\x3', '\x2', '\x2',
-        '\x2', '\x21E', '\x21F', '\x5', '\x8E', 'H', '\x2', '\x21F', '\x220',
-        '\a', '\t', '\x2', '\x2', '\x220', '\x221', '\a', '\n', '\x2', '\x2',
-        '\x221', '\x222', '\a', '\v', '\x2', '\x2', '\x222', '\x223', '\x5', '`',
-        '\x31', '\x2', '\x223', '\x224', '\a', '\f', '\x2', '\x2', '\x224', '\x236',
-        '\x3', '\x2', '\x2', '\x2', '\x225', '\x227', '\a', '\x1A', '\x2', '\x2',
-        '\x226', '\x225', '\x3', '\x2', '\x2', '\x2', '\x226', '\x227', '\x3',
-        '\x2', '\x2', '\x2', '\x227', '\x229', '\x3', '\x2', '\x2', '\x2', '\x228',
-        '\x22A', '\a', '\x1F', '\x2', '\x2', '\x229', '\x228', '\x3', '\x2', '\x2',
-        '\x2', '\x229', '\x22A', '\x3', '\x2', '\x2', '\x2', '\x22A', '\x22B',
-        '\x3', '\x2', '\x2', '\x2', '\x22B', '\x22C', '\x5', '\x90', 'I', '\x2',
-        '\x22C', '\x22E', '\a', '\t', '\x2', '\x2', '\x22D', '\x22F', '\x5', 'Z',
-        '.', '\x2', '\x22E', '\x22D', '\x3', '\x2', '\x2', '\x2', '\x22E', '\x22F',
-        '\x3', '\x2', '\x2', '\x2', '\x22F', '\x230', '\x3', '\x2', '\x2', '\x2',
-        '\x230', '\x231', '\a', '\n', '\x2', '\x2', '\x231', '\x232', '\a', '\v',
-        '\x2', '\x2', '\x232', '\x233', '\x5', '`', '\x31', '\x2', '\x233', '\x234',
-        '\a', '\f', '\x2', '\x2', '\x234', '\x236', '\x3', '\x2', '\x2', '\x2',
-        '\x235', '\x209', '\x3', '\x2', '\x2', '\x2', '\x235', '\x219', '\x3',
-        '\x2', '\x2', '\x2', '\x235', '\x226', '\x3', '\x2', '\x2', '\x2', '\x236',
-        'Y', '\x3', '\x2', '\x2', '\x2', '\x237', '\x23C', '\x5', '\\', '/', '\x2',
-        '\x238', '\x239', '\a', '\xE', '\x2', '\x2', '\x239', '\x23B', '\x5',
-        '\\', '/', '\x2', '\x23A', '\x238', '\x3', '\x2', '\x2', '\x2', '\x23B',
-        '\x23E', '\x3', '\x2', '\x2', '\x2', '\x23C', '\x23A', '\x3', '\x2', '\x2',
-        '\x2', '\x23C', '\x23D', '\x3', '\x2', '\x2', '\x2', '\x23D', '\x241',
-        '\x3', '\x2', '\x2', '\x2', '\x23E', '\x23C', '\x3', '\x2', '\x2', '\x2',
-        '\x23F', '\x240', '\a', '\xE', '\x2', '\x2', '\x240', '\x242', '\x5',
-        '^', '\x30', '\x2', '\x241', '\x23F', '\x3', '\x2', '\x2', '\x2', '\x241',
-        '\x242', '\x3', '\x2', '\x2', '\x2', '\x242', '\x245', '\x3', '\x2', '\x2',
-        '\x2', '\x243', '\x245', '\x5', '^', '\x30', '\x2', '\x244', '\x237',
-        '\x3', '\x2', '\x2', '\x2', '\x244', '\x243', '\x3', '\x2', '\x2', '\x2',
-        '\x245', '[', '\x3', '\x2', '\x2', '\x2', '\x246', '\x249', '\x5', 'x',
-        '=', '\x2', '\x247', '\x248', '\a', '\xF', '\x2', '\x2', '\x248', '\x24A',
-        '\x5', 'v', '<', '\x2', '\x249', '\x247', '\x3', '\x2', '\x2', '\x2',
-        '\x249', '\x24A', '\x3', '\x2', '\x2', '\x2', '\x24A', ']', '\x3', '\x2',
-        '\x2', '\x2', '\x24B', '\x24C', '\a', '\x12', '\x2', '\x2', '\x24C', '\x24D',
-        '\x5', 'v', '<', '\x2', '\x24D', '_', '\x3', '\x2', '\x2', '\x2', '\x24E',
-        '\x250', '\x5', '\x62', '\x32', '\x2', '\x24F', '\x24E', '\x3', '\x2',
-        '\x2', '\x2', '\x24F', '\x250', '\x3', '\x2', '\x2', '\x2', '\x250', '\x61',
-        '\x3', '\x2', '\x2', '\x2', '\x251', '\x253', '\x5', '\x4', '\x3', '\x2',
-        '\x252', '\x251', '\x3', '\x2', '\x2', '\x2', '\x253', '\x254', '\x3',
-        '\x2', '\x2', '\x2', '\x254', '\x252', '\x3', '\x2', '\x2', '\x2', '\x254',
-        '\x255', '\x3', '\x2', '\x2', '\x2', '\x255', '\x63', '\x3', '\x2', '\x2',
-        '\x2', '\x256', '\x257', '\a', '\a', '\x2', '\x2', '\x257', '\x258', '\x5',
-        '\x66', '\x34', '\x2', '\x258', '\x259', '\a', '\b', '\x2', '\x2', '\x259',
-        '\x65', '\x3', '\x2', '\x2', '\x2', '\x25A', '\x25C', '\a', '\xE', '\x2',
-        '\x2', '\x25B', '\x25A', '\x3', '\x2', '\x2', '\x2', '\x25C', '\x25F',
-        '\x3', '\x2', '\x2', '\x2', '\x25D', '\x25B', '\x3', '\x2', '\x2', '\x2',
-        '\x25D', '\x25E', '\x3', '\x2', '\x2', '\x2', '\x25E', '\x261', '\x3',
-        '\x2', '\x2', '\x2', '\x25F', '\x25D', '\x3', '\x2', '\x2', '\x2', '\x260',
-        '\x262', '\x5', 'h', '\x35', '\x2', '\x261', '\x260', '\x3', '\x2', '\x2',
-        '\x2', '\x261', '\x262', '\x3', '\x2', '\x2', '\x2', '\x262', '\x26B',
-        '\x3', '\x2', '\x2', '\x2', '\x263', '\x265', '\a', '\xE', '\x2', '\x2',
-        '\x264', '\x263', '\x3', '\x2', '\x2', '\x2', '\x265', '\x266', '\x3',
-        '\x2', '\x2', '\x2', '\x266', '\x264', '\x3', '\x2', '\x2', '\x2', '\x266',
-        '\x267', '\x3', '\x2', '\x2', '\x2', '\x267', '\x268', '\x3', '\x2', '\x2',
-        '\x2', '\x268', '\x26A', '\x5', 'h', '\x35', '\x2', '\x269', '\x264',
-        '\x3', '\x2', '\x2', '\x2', '\x26A', '\x26D', '\x3', '\x2', '\x2', '\x2',
-        '\x26B', '\x269', '\x3', '\x2', '\x2', '\x2', '\x26B', '\x26C', '\x3',
-        '\x2', '\x2', '\x2', '\x26C', '\x271', '\x3', '\x2', '\x2', '\x2', '\x26D',
-        '\x26B', '\x3', '\x2', '\x2', '\x2', '\x26E', '\x270', '\a', '\xE', '\x2',
-        '\x2', '\x26F', '\x26E', '\x3', '\x2', '\x2', '\x2', '\x270', '\x273',
-        '\x3', '\x2', '\x2', '\x2', '\x271', '\x26F', '\x3', '\x2', '\x2', '\x2',
-        '\x271', '\x272', '\x3', '\x2', '\x2', '\x2', '\x272', 'g', '\x3', '\x2',
-        '\x2', '\x2', '\x273', '\x271', '\x3', '\x2', '\x2', '\x2', '\x274', '\x276',
-        '\a', '\x12', '\x2', '\x2', '\x275', '\x274', '\x3', '\x2', '\x2', '\x2',
-        '\x275', '\x276', '\x3', '\x2', '\x2', '\x2', '\x276', '\x277', '\x3',
-        '\x2', '\x2', '\x2', '\x277', '\x278', '\x5', 'v', '<', '\x2', '\x278',
-        'i', '\x3', '\x2', '\x2', '\x2', '\x279', '\x282', '\a', '\v', '\x2',
-        '\x2', '\x27A', '\x27F', '\x5', 'l', '\x37', '\x2', '\x27B', '\x27C',
-        '\a', '\xE', '\x2', '\x2', '\x27C', '\x27E', '\x5', 'l', '\x37', '\x2',
-        '\x27D', '\x27B', '\x3', '\x2', '\x2', '\x2', '\x27E', '\x281', '\x3',
-        '\x2', '\x2', '\x2', '\x27F', '\x27D', '\x3', '\x2', '\x2', '\x2', '\x27F',
-        '\x280', '\x3', '\x2', '\x2', '\x2', '\x280', '\x283', '\x3', '\x2', '\x2',
-        '\x2', '\x281', '\x27F', '\x3', '\x2', '\x2', '\x2', '\x282', '\x27A',
-        '\x3', '\x2', '\x2', '\x2', '\x282', '\x283', '\x3', '\x2', '\x2', '\x2',
-        '\x283', '\x285', '\x3', '\x2', '\x2', '\x2', '\x284', '\x286', '\a',
-        '\xE', '\x2', '\x2', '\x285', '\x284', '\x3', '\x2', '\x2', '\x2', '\x285',
-        '\x286', '\x3', '\x2', '\x2', '\x2', '\x286', '\x287', '\x3', '\x2', '\x2',
-        '\x2', '\x287', '\x288', '\a', '\f', '\x2', '\x2', '\x288', 'k', '\x3',
-        '\x2', '\x2', '\x2', '\x289', '\x28A', '\x5', 'n', '\x38', '\x2', '\x28A',
-        '\x28B', '\a', '\x11', '\x2', '\x2', '\x28B', '\x28C', '\x5', 'v', '<',
-        '\x2', '\x28C', '\x2B7', '\x3', '\x2', '\x2', '\x2', '\x28D', '\x28E',
-        '\a', '\a', '\x2', '\x2', '\x28E', '\x28F', '\x5', 'v', '<', '\x2', '\x28F',
-        '\x290', '\a', '\b', '\x2', '\x2', '\x290', '\x291', '\a', '\x11', '\x2',
-        '\x2', '\x291', '\x292', '\x5', 'v', '<', '\x2', '\x292', '\x2B7', '\x3',
-        '\x2', '\x2', '\x2', '\x293', '\x295', '\a', 'k', '\x2', '\x2', '\x294',
-        '\x293', '\x3', '\x2', '\x2', '\x2', '\x294', '\x295', '\x3', '\x2', '\x2',
-        '\x2', '\x295', '\x297', '\x3', '\x2', '\x2', '\x2', '\x296', '\x298',
-        '\a', '\x1A', '\x2', '\x2', '\x297', '\x296', '\x3', '\x2', '\x2', '\x2',
-        '\x297', '\x298', '\x3', '\x2', '\x2', '\x2', '\x298', '\x299', '\x3',
-        '\x2', '\x2', '\x2', '\x299', '\x29A', '\x5', 'n', '\x38', '\x2', '\x29A',
-        '\x29C', '\a', '\t', '\x2', '\x2', '\x29B', '\x29D', '\x5', 'Z', '.',
-        '\x2', '\x29C', '\x29B', '\x3', '\x2', '\x2', '\x2', '\x29C', '\x29D',
-        '\x3', '\x2', '\x2', '\x2', '\x29D', '\x29E', '\x3', '\x2', '\x2', '\x2',
-        '\x29E', '\x29F', '\a', '\n', '\x2', '\x2', '\x29F', '\x2A0', '\a', '\v',
-        '\x2', '\x2', '\x2A0', '\x2A1', '\x5', '`', '\x31', '\x2', '\x2A1', '\x2A2',
-        '\a', '\f', '\x2', '\x2', '\x2A2', '\x2B7', '\x3', '\x2', '\x2', '\x2',
-        '\x2A3', '\x2A4', '\x5', '\x8E', 'H', '\x2', '\x2A4', '\x2A5', '\a', '\t',
-        '\x2', '\x2', '\x2A5', '\x2A6', '\a', '\n', '\x2', '\x2', '\x2A6', '\x2A7',
-        '\a', '\v', '\x2', '\x2', '\x2A7', '\x2A8', '\x5', '`', '\x31', '\x2',
-        '\x2A8', '\x2A9', '\a', '\f', '\x2', '\x2', '\x2A9', '\x2B7', '\x3', '\x2',
-        '\x2', '\x2', '\x2AA', '\x2AB', '\x5', '\x90', 'I', '\x2', '\x2AB', '\x2AC',
-        '\a', '\t', '\x2', '\x2', '\x2AC', '\x2AD', '\x5', '\\', '/', '\x2', '\x2AD',
-        '\x2AE', '\a', '\n', '\x2', '\x2', '\x2AE', '\x2AF', '\a', '\v', '\x2',
-        '\x2', '\x2AF', '\x2B0', '\x5', '`', '\x31', '\x2', '\x2B0', '\x2B1',
-        '\a', '\f', '\x2', '\x2', '\x2B1', '\x2B7', '\x3', '\x2', '\x2', '\x2',
-        '\x2B2', '\x2B4', '\a', '\x12', '\x2', '\x2', '\x2B3', '\x2B2', '\x3',
-        '\x2', '\x2', '\x2', '\x2B3', '\x2B4', '\x3', '\x2', '\x2', '\x2', '\x2B4',
-        '\x2B5', '\x3', '\x2', '\x2', '\x2', '\x2B5', '\x2B7', '\x5', 'v', '<',
-        '\x2', '\x2B6', '\x289', '\x3', '\x2', '\x2', '\x2', '\x2B6', '\x28D',
-        '\x3', '\x2', '\x2', '\x2', '\x2B6', '\x294', '\x3', '\x2', '\x2', '\x2',
-        '\x2B6', '\x2A3', '\x3', '\x2', '\x2', '\x2', '\x2B6', '\x2AA', '\x3',
-        '\x2', '\x2', '\x2', '\x2B6', '\x2B3', '\x3', '\x2', '\x2', '\x2', '\x2B7',
-        'm', '\x3', '\x2', '\x2', '\x2', '\x2B8', '\x2C0', '\x5', '\x88', '\x45',
-        '\x2', '\x2B9', '\x2C0', '\a', 'w', '\x2', '\x2', '\x2BA', '\x2C0', '\x5',
-        '\x84', '\x43', '\x2', '\x2BB', '\x2BC', '\a', '\a', '\x2', '\x2', '\x2BC',
-        '\x2BD', '\x5', 'v', '<', '\x2', '\x2BD', '\x2BE', '\a', '\b', '\x2',
-        '\x2', '\x2BE', '\x2C0', '\x3', '\x2', '\x2', '\x2', '\x2BF', '\x2B8',
-        '\x3', '\x2', '\x2', '\x2', '\x2BF', '\x2B9', '\x3', '\x2', '\x2', '\x2',
-        '\x2BF', '\x2BA', '\x3', '\x2', '\x2', '\x2', '\x2BF', '\x2BB', '\x3',
-        '\x2', '\x2', '\x2', '\x2C0', 'o', '\x3', '\x2', '\x2', '\x2', '\x2C1',
-        '\x2CD', '\a', '\t', '\x2', '\x2', '\x2C2', '\x2C7', '\x5', 'r', ':',
-        '\x2', '\x2C3', '\x2C4', '\a', '\xE', '\x2', '\x2', '\x2C4', '\x2C6',
-        '\x5', 'r', ':', '\x2', '\x2C5', '\x2C3', '\x3', '\x2', '\x2', '\x2',
-        '\x2C6', '\x2C9', '\x3', '\x2', '\x2', '\x2', '\x2C7', '\x2C5', '\x3',
-        '\x2', '\x2', '\x2', '\x2C7', '\x2C8', '\x3', '\x2', '\x2', '\x2', '\x2C8',
-        '\x2CB', '\x3', '\x2', '\x2', '\x2', '\x2C9', '\x2C7', '\x3', '\x2', '\x2',
-        '\x2', '\x2CA', '\x2CC', '\a', '\xE', '\x2', '\x2', '\x2CB', '\x2CA',
-        '\x3', '\x2', '\x2', '\x2', '\x2CB', '\x2CC', '\x3', '\x2', '\x2', '\x2',
-        '\x2CC', '\x2CE', '\x3', '\x2', '\x2', '\x2', '\x2CD', '\x2C2', '\x3',
-        '\x2', '\x2', '\x2', '\x2CD', '\x2CE', '\x3', '\x2', '\x2', '\x2', '\x2CE',
-        '\x2CF', '\x3', '\x2', '\x2', '\x2', '\x2CF', '\x2D0', '\a', '\n', '\x2',
-        '\x2', '\x2D0', 'q', '\x3', '\x2', '\x2', '\x2', '\x2D1', '\x2D3', '\a',
-        '\x12', '\x2', '\x2', '\x2D2', '\x2D1', '\x3', '\x2', '\x2', '\x2', '\x2D2',
-        '\x2D3', '\x3', '\x2', '\x2', '\x2', '\x2D3', '\x2D6', '\x3', '\x2', '\x2',
-        '\x2', '\x2D4', '\x2D7', '\x5', 'v', '<', '\x2', '\x2D5', '\x2D7', '\a',
-        'v', '\x2', '\x2', '\x2D6', '\x2D4', '\x3', '\x2', '\x2', '\x2', '\x2D6',
-        '\x2D5', '\x3', '\x2', '\x2', '\x2', '\x2D7', 's', '\x3', '\x2', '\x2',
-        '\x2', '\x2D8', '\x2DD', '\x5', 'v', '<', '\x2', '\x2D9', '\x2DA', '\a',
-        '\xE', '\x2', '\x2', '\x2DA', '\x2DC', '\x5', 'v', '<', '\x2', '\x2DB',
-        '\x2D9', '\x3', '\x2', '\x2', '\x2', '\x2DC', '\x2DF', '\x3', '\x2', '\x2',
-        '\x2', '\x2DD', '\x2DB', '\x3', '\x2', '\x2', '\x2', '\x2DD', '\x2DE',
-        '\x3', '\x2', '\x2', '\x2', '\x2DE', 'u', '\x3', '\x2', '\x2', '\x2',
-        '\x2DF', '\x2DD', '\x3', '\x2', '\x2', '\x2', '\x2E0', '\x2E1', '\b',
-        '<', '\x1', '\x2', '\x2E1', '\x314', '\x5', 'z', '>', '\x2', '\x2E2',
-        '\x2E4', '\a', '\x64', '\x2', '\x2', '\x2E3', '\x2E5', '\a', 'v', '\x2',
-        '\x2', '\x2E4', '\x2E3', '\x3', '\x2', '\x2', '\x2', '\x2E4', '\x2E5',
-        '\x3', '\x2', '\x2', '\x2', '\x2E5', '\x2E6', '\x3', '\x2', '\x2', '\x2',
-        '\x2E6', '\x314', '\x5', 'T', '+', '\x2', '\x2E7', '\x2E8', '\a', 'N',
-        '\x2', '\x2', '\x2E8', '\x2EA', '\x5', 'v', '<', '\x2', '\x2E9', '\x2EB',
-        '\x5', 'p', '\x39', '\x2', '\x2EA', '\x2E9', '\x3', '\x2', '\x2', '\x2',
-        '\x2EA', '\x2EB', '\x3', '\x2', '\x2', '\x2', '\x2EB', '\x314', '\x3',
-        '\x2', '\x2', '\x2', '\x2EC', '\x2ED', '\a', 'N', '\x2', '\x2', '\x2ED',
-        '\x2EE', '\a', '\x13', '\x2', '\x2', '\x2EE', '\x314', '\a', 'v', '\x2',
-        '\x2', '\x2EF', '\x2F0', '\a', '_', '\x2', '\x2', '\x2F0', '\x314', '\x5',
-        'v', '<', '\'', '\x2F1', '\x2F2', '\a', 'S', '\x2', '\x2', '\x2F2', '\x314',
-        '\x5', 'v', '<', '&', '\x2F3', '\x2F4', '\a', 'K', '\x2', '\x2', '\x2F4',
-        '\x314', '\x5', 'v', '<', '%', '\x2F5', '\x2F6', '\a', '\x14', '\x2',
-        '\x2', '\x2F6', '\x314', '\x5', 'v', '<', '$', '\x2F7', '\x2F8', '\a',
-        '\x15', '\x2', '\x2', '\x2F8', '\x314', '\x5', 'v', '<', '#', '\x2F9',
-        '\x2FA', '\a', '\x16', '\x2', '\x2', '\x2FA', '\x314', '\x5', 'v', '<',
-        '\"', '\x2FB', '\x2FC', '\a', '\x17', '\x2', '\x2', '\x2FC', '\x314',
-        '\x5', 'v', '<', '!', '\x2FD', '\x2FE', '\a', '\x18', '\x2', '\x2', '\x2FE',
-        '\x314', '\x5', 'v', '<', ' ', '\x2FF', '\x300', '\a', '\x19', '\x2',
-        '\x2', '\x300', '\x314', '\x5', 'v', '<', '\x1F', '\x301', '\x302', '\a',
-        'l', '\x2', '\x2', '\x302', '\x314', '\x5', 'v', '<', '\x1E', '\x303',
-        '\x304', '\a', 'j', '\x2', '\x2', '\x304', '\x305', '\a', '\t', '\x2',
-        '\x2', '\x305', '\x306', '\x5', 'v', '<', '\x2', '\x306', '\x307', '\a',
-        '\n', '\x2', '\x2', '\x307', '\x314', '\x3', '\x2', '\x2', '\x2', '\x308',
-        '\x314', '\x5', '\x36', '\x1C', '\x2', '\x309', '\x314', '\a', 'Z', '\x2',
-        '\x2', '\x30A', '\x314', '\a', 'v', '\x2', '\x2', '\x30B', '\x314', '\a',
-        'g', '\x2', '\x2', '\x30C', '\x314', '\x5', '\x82', '\x42', '\x2', '\x30D',
-        '\x314', '\x5', '\x64', '\x33', '\x2', '\x30E', '\x314', '\x5', 'j', '\x36',
-        '\x2', '\x30F', '\x310', '\a', '\t', '\x2', '\x2', '\x310', '\x311', '\x5',
-        't', ';', '\x2', '\x311', '\x312', '\a', '\n', '\x2', '\x2', '\x312',
-        '\x314', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2E0', '\x3', '\x2', '\x2',
-        '\x2', '\x313', '\x2E2', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2E7',
-        '\x3', '\x2', '\x2', '\x2', '\x313', '\x2EC', '\x3', '\x2', '\x2', '\x2',
-        '\x313', '\x2EF', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2F1', '\x3',
-        '\x2', '\x2', '\x2', '\x313', '\x2F3', '\x3', '\x2', '\x2', '\x2', '\x313',
-        '\x2F5', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2F7', '\x3', '\x2', '\x2',
-        '\x2', '\x313', '\x2F9', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2FB',
-        '\x3', '\x2', '\x2', '\x2', '\x313', '\x2FD', '\x3', '\x2', '\x2', '\x2',
-        '\x313', '\x2FF', '\x3', '\x2', '\x2', '\x2', '\x313', '\x301', '\x3',
-        '\x2', '\x2', '\x2', '\x313', '\x303', '\x3', '\x2', '\x2', '\x2', '\x313',
-        '\x308', '\x3', '\x2', '\x2', '\x2', '\x313', '\x309', '\x3', '\x2', '\x2',
-        '\x2', '\x313', '\x30A', '\x3', '\x2', '\x2', '\x2', '\x313', '\x30B',
-        '\x3', '\x2', '\x2', '\x2', '\x313', '\x30C', '\x3', '\x2', '\x2', '\x2',
-        '\x313', '\x30D', '\x3', '\x2', '\x2', '\x2', '\x313', '\x30E', '\x3',
-        '\x2', '\x2', '\x2', '\x313', '\x30F', '\x3', '\x2', '\x2', '\x2', '\x314',
-        '\x366', '\x3', '\x2', '\x2', '\x2', '\x315', '\x316', '\f', '\x1D', '\x2',
-        '\x2', '\x316', '\x317', '\a', '\x1D', '\x2', '\x2', '\x317', '\x365',
-        '\x5', 'v', '<', '\x1D', '\x318', '\x319', '\f', '\x1C', '\x2', '\x2',
-        '\x319', '\x31A', '\t', '\x3', '\x2', '\x2', '\x31A', '\x365', '\x5',
-        'v', '<', '\x1D', '\x31B', '\x31C', '\f', '\x1B', '\x2', '\x2', '\x31C',
-        '\x31D', '\t', '\x4', '\x2', '\x2', '\x31D', '\x365', '\x5', 'v', '<',
-        '\x1C', '\x31E', '\x31F', '\f', '\x1A', '\x2', '\x2', '\x31F', '\x320',
-        '\a', '\x1E', '\x2', '\x2', '\x320', '\x365', '\x5', 'v', '<', '\x1B',
-        '\x321', '\x322', '\f', '\x19', '\x2', '\x2', '\x322', '\x323', '\t',
-        '\x5', '\x2', '\x2', '\x323', '\x365', '\x5', 'v', '<', '\x1A', '\x324',
-        '\x325', '\f', '\x18', '\x2', '\x2', '\x325', '\x326', '\t', '\x6', '\x2',
-        '\x2', '\x326', '\x365', '\x5', 'v', '<', '\x19', '\x327', '\x328', '\f',
-        '\x17', '\x2', '\x2', '\x328', '\x329', '\a', 'J', '\x2', '\x2', '\x329',
-        '\x365', '\x5', 'v', '<', '\x18', '\x32A', '\x32B', '\f', '\x16', '\x2',
-        '\x2', '\x32B', '\x32C', '\a', '`', '\x2', '\x2', '\x32C', '\x365', '\x5',
-        'v', '<', '\x17', '\x32D', '\x32E', '\f', '\x15', '\x2', '\x2', '\x32E',
-        '\x32F', '\t', '\a', '\x2', '\x2', '\x32F', '\x365', '\x5', 'v', '<',
-        '\x16', '\x330', '\x331', '\f', '\x14', '\x2', '\x2', '\x331', '\x332',
-        '\a', '+', '\x2', '\x2', '\x332', '\x365', '\x5', 'v', '<', '\x15', '\x333',
-        '\x334', '\f', '\x13', '\x2', '\x2', '\x334', '\x335', '\a', ',', '\x2',
-        '\x2', '\x335', '\x365', '\x5', 'v', '<', '\x14', '\x336', '\x337', '\f',
-        '\x12', '\x2', '\x2', '\x337', '\x338', '\a', '-', '\x2', '\x2', '\x338',
-        '\x365', '\x5', 'v', '<', '\x13', '\x339', '\x33A', '\f', '\x11', '\x2',
-        '\x2', '\x33A', '\x33B', '\a', '.', '\x2', '\x2', '\x33B', '\x365', '\x5',
-        'v', '<', '\x12', '\x33C', '\x33D', '\f', '\x10', '\x2', '\x2', '\x33D',
-        '\x33E', '\a', '/', '\x2', '\x2', '\x33E', '\x365', '\x5', 'v', '<', '\x11',
-        '\x33F', '\x340', '\f', '\xF', '\x2', '\x2', '\x340', '\x341', '\a', '\x10',
-        '\x2', '\x2', '\x341', '\x342', '\x5', 'v', '<', '\x2', '\x342', '\x343',
-        '\a', '\x11', '\x2', '\x2', '\x343', '\x344', '\x5', 'v', '<', '\x10',
-        '\x344', '\x365', '\x3', '\x2', '\x2', '\x2', '\x345', '\x346', '\f',
-        '\xE', '\x2', '\x2', '\x346', '\x347', '\a', '\xF', '\x2', '\x2', '\x347',
-        '\x365', '\x5', 'v', '<', '\xE', '\x348', '\x349', '\f', '\r', '\x2',
-        '\x2', '\x349', '\x34A', '\x5', '\x80', '\x41', '\x2', '\x34A', '\x34B',
-        '\x5', 'v', '<', '\r', '\x34B', '\x365', '\x3', '\x2', '\x2', '\x2', '\x34C',
-        '\x34D', '\f', '.', '\x2', '\x2', '\x34D', '\x34E', '\a', '\a', '\x2',
-        '\x2', '\x34E', '\x34F', '\x5', 't', ';', '\x2', '\x34F', '\x350', '\a',
-        '\b', '\x2', '\x2', '\x350', '\x365', '\x3', '\x2', '\x2', '\x2', '\x351',
-        '\x353', '\f', '-', '\x2', '\x2', '\x352', '\x354', '\a', '\x10', '\x2',
-        '\x2', '\x353', '\x352', '\x3', '\x2', '\x2', '\x2', '\x353', '\x354',
-        '\x3', '\x2', '\x2', '\x2', '\x354', '\x355', '\x3', '\x2', '\x2', '\x2',
-        '\x355', '\x357', '\a', '\x13', '\x2', '\x2', '\x356', '\x358', '\a',
-        '\x1F', '\x2', '\x2', '\x357', '\x356', '\x3', '\x2', '\x2', '\x2', '\x357',
-        '\x358', '\x3', '\x2', '\x2', '\x2', '\x358', '\x359', '\x3', '\x2', '\x2',
-        '\x2', '\x359', '\x365', '\x5', '\x88', '\x45', '\x2', '\x35A', '\x35B',
-        '\f', ',', '\x2', '\x2', '\x35B', '\x365', '\x5', 'p', '\x39', '\x2',
-        '\x35C', '\x35D', '\f', ')', '\x2', '\x2', '\x35D', '\x35E', '\x6', '<',
-        '\x1F', '\x2', '\x35E', '\x365', '\a', '\x14', '\x2', '\x2', '\x35F',
-        '\x360', '\f', '(', '\x2', '\x2', '\x360', '\x361', '\x6', '<', '!', '\x2',
-        '\x361', '\x365', '\a', '\x15', '\x2', '\x2', '\x362', '\x363', '\f',
-        '\v', '\x2', '\x2', '\x363', '\x365', '\a', 'x', '\x2', '\x2', '\x364',
-        '\x315', '\x3', '\x2', '\x2', '\x2', '\x364', '\x318', '\x3', '\x2', '\x2',
-        '\x2', '\x364', '\x31B', '\x3', '\x2', '\x2', '\x2', '\x364', '\x31E',
-        '\x3', '\x2', '\x2', '\x2', '\x364', '\x321', '\x3', '\x2', '\x2', '\x2',
-        '\x364', '\x324', '\x3', '\x2', '\x2', '\x2', '\x364', '\x327', '\x3',
-        '\x2', '\x2', '\x2', '\x364', '\x32A', '\x3', '\x2', '\x2', '\x2', '\x364',
-        '\x32D', '\x3', '\x2', '\x2', '\x2', '\x364', '\x330', '\x3', '\x2', '\x2',
-        '\x2', '\x364', '\x333', '\x3', '\x2', '\x2', '\x2', '\x364', '\x336',
-        '\x3', '\x2', '\x2', '\x2', '\x364', '\x339', '\x3', '\x2', '\x2', '\x2',
-        '\x364', '\x33C', '\x3', '\x2', '\x2', '\x2', '\x364', '\x33F', '\x3',
-        '\x2', '\x2', '\x2', '\x364', '\x345', '\x3', '\x2', '\x2', '\x2', '\x364',
-        '\x348', '\x3', '\x2', '\x2', '\x2', '\x364', '\x34C', '\x3', '\x2', '\x2',
-        '\x2', '\x364', '\x351', '\x3', '\x2', '\x2', '\x2', '\x364', '\x35A',
-        '\x3', '\x2', '\x2', '\x2', '\x364', '\x35C', '\x3', '\x2', '\x2', '\x2',
-        '\x364', '\x35F', '\x3', '\x2', '\x2', '\x2', '\x364', '\x362', '\x3',
-        '\x2', '\x2', '\x2', '\x365', '\x368', '\x3', '\x2', '\x2', '\x2', '\x366',
-        '\x364', '\x3', '\x2', '\x2', '\x2', '\x366', '\x367', '\x3', '\x2', '\x2',
-        '\x2', '\x367', 'w', '\x3', '\x2', '\x2', '\x2', '\x368', '\x366', '\x3',
-        '\x2', '\x2', '\x2', '\x369', '\x36D', '\a', 'v', '\x2', '\x2', '\x36A',
-        '\x36D', '\x5', '\x64', '\x33', '\x2', '\x36B', '\x36D', '\x5', 'j', '\x36',
-        '\x2', '\x36C', '\x369', '\x3', '\x2', '\x2', '\x2', '\x36C', '\x36A',
-        '\x3', '\x2', '\x2', '\x2', '\x36C', '\x36B', '\x3', '\x2', '\x2', '\x2',
-        '\x36D', 'y', '\x3', '\x2', '\x2', '\x2', '\x36E', '\x387', '\x5', 'P',
-        ')', '\x2', '\x36F', '\x371', '\a', 'k', '\x2', '\x2', '\x370', '\x36F',
-        '\x3', '\x2', '\x2', '\x2', '\x370', '\x371', '\x3', '\x2', '\x2', '\x2',
-        '\x371', '\x372', '\x3', '\x2', '\x2', '\x2', '\x372', '\x374', '\a',
-        'Y', '\x2', '\x2', '\x373', '\x375', '\a', '\x1A', '\x2', '\x2', '\x374',
-        '\x373', '\x3', '\x2', '\x2', '\x2', '\x374', '\x375', '\x3', '\x2', '\x2',
-        '\x2', '\x375', '\x376', '\x3', '\x2', '\x2', '\x2', '\x376', '\x378',
-        '\a', '\t', '\x2', '\x2', '\x377', '\x379', '\x5', 'Z', '.', '\x2', '\x378',
-        '\x377', '\x3', '\x2', '\x2', '\x2', '\x378', '\x379', '\x3', '\x2', '\x2',
-        '\x2', '\x379', '\x37A', '\x3', '\x2', '\x2', '\x2', '\x37A', '\x37B',
-        '\a', '\n', '\x2', '\x2', '\x37B', '\x37C', '\a', '\v', '\x2', '\x2',
-        '\x37C', '\x37D', '\x5', '`', '\x31', '\x2', '\x37D', '\x37E', '\a', '\f',
-        '\x2', '\x2', '\x37E', '\x387', '\x3', '\x2', '\x2', '\x2', '\x37F', '\x381',
-        '\a', 'k', '\x2', '\x2', '\x380', '\x37F', '\x3', '\x2', '\x2', '\x2',
-        '\x380', '\x381', '\x3', '\x2', '\x2', '\x2', '\x381', '\x382', '\x3',
-        '\x2', '\x2', '\x2', '\x382', '\x383', '\x5', '|', '?', '\x2', '\x383',
-        '\x384', '\a', '<', '\x2', '\x2', '\x384', '\x385', '\x5', '~', '@', '\x2',
-        '\x385', '\x387', '\x3', '\x2', '\x2', '\x2', '\x386', '\x36E', '\x3',
-        '\x2', '\x2', '\x2', '\x386', '\x370', '\x3', '\x2', '\x2', '\x2', '\x386',
-        '\x380', '\x3', '\x2', '\x2', '\x2', '\x387', '{', '\x3', '\x2', '\x2',
-        '\x2', '\x388', '\x38F', '\a', 'v', '\x2', '\x2', '\x389', '\x38B', '\a',
-        '\t', '\x2', '\x2', '\x38A', '\x38C', '\x5', 'Z', '.', '\x2', '\x38B',
-        '\x38A', '\x3', '\x2', '\x2', '\x2', '\x38B', '\x38C', '\x3', '\x2', '\x2',
-        '\x2', '\x38C', '\x38D', '\x3', '\x2', '\x2', '\x2', '\x38D', '\x38F',
-        '\a', '\n', '\x2', '\x2', '\x38E', '\x388', '\x3', '\x2', '\x2', '\x2',
-        '\x38E', '\x389', '\x3', '\x2', '\x2', '\x2', '\x38F', '}', '\x3', '\x2',
-        '\x2', '\x2', '\x390', '\x396', '\x5', 'v', '<', '\x2', '\x391', '\x392',
-        '\a', '\v', '\x2', '\x2', '\x392', '\x393', '\x5', '`', '\x31', '\x2',
-        '\x393', '\x394', '\a', '\f', '\x2', '\x2', '\x394', '\x396', '\x3', '\x2',
-        '\x2', '\x2', '\x395', '\x390', '\x3', '\x2', '\x2', '\x2', '\x395', '\x391',
-        '\x3', '\x2', '\x2', '\x2', '\x396', '\x7F', '\x3', '\x2', '\x2', '\x2',
-        '\x397', '\x398', '\t', '\b', '\x2', '\x2', '\x398', '\x81', '\x3', '\x2',
-        '\x2', '\x2', '\x399', '\x3A1', '\a', '=', '\x2', '\x2', '\x39A', '\x3A1',
-        '\a', '>', '\x2', '\x2', '\x39B', '\x3A1', '\a', 'w', '\x2', '\x2', '\x39C',
-        '\x3A1', '\a', 'x', '\x2', '\x2', '\x39D', '\x3A1', '\a', '\x6', '\x2',
-        '\x2', '\x39E', '\x3A1', '\x5', '\x84', '\x43', '\x2', '\x39F', '\x3A1',
-        '\x5', '\x86', '\x44', '\x2', '\x3A0', '\x399', '\x3', '\x2', '\x2', '\x2',
-        '\x3A0', '\x39A', '\x3', '\x2', '\x2', '\x2', '\x3A0', '\x39B', '\x3',
-        '\x2', '\x2', '\x2', '\x3A0', '\x39C', '\x3', '\x2', '\x2', '\x2', '\x3A0',
-        '\x39D', '\x3', '\x2', '\x2', '\x2', '\x3A0', '\x39E', '\x3', '\x2', '\x2',
-        '\x2', '\x3A0', '\x39F', '\x3', '\x2', '\x2', '\x2', '\x3A1', '\x83',
-        '\x3', '\x2', '\x2', '\x2', '\x3A2', '\x3A3', '\t', '\t', '\x2', '\x2',
-        '\x3A3', '\x85', '\x3', '\x2', '\x2', '\x2', '\x3A4', '\x3A5', '\t', '\n',
-        '\x2', '\x2', '\x3A5', '\x87', '\x3', '\x2', '\x2', '\x2', '\x3A6', '\x3A9',
-        '\a', 'v', '\x2', '\x2', '\x3A7', '\x3A9', '\x5', '\x8A', '\x46', '\x2',
-        '\x3A8', '\x3A6', '\x3', '\x2', '\x2', '\x2', '\x3A8', '\x3A7', '\x3',
-        '\x2', '\x2', '\x2', '\x3A9', '\x89', '\x3', '\x2', '\x2', '\x2', '\x3AA',
-        '\x3AE', '\x5', '\x8C', 'G', '\x2', '\x3AB', '\x3AE', '\a', '=', '\x2',
-        '\x2', '\x3AC', '\x3AE', '\a', '>', '\x2', '\x2', '\x3AD', '\x3AA', '\x3',
-        '\x2', '\x2', '\x2', '\x3AD', '\x3AB', '\x3', '\x2', '\x2', '\x2', '\x3AD',
-        '\x3AC', '\x3', '\x2', '\x2', '\x2', '\x3AE', '\x8B', '\x3', '\x2', '\x2',
-        '\x2', '\x3AF', '\x3B0', '\t', '\v', '\x2', '\x2', '\x3B0', '\x8D', '\x3',
-        '\x2', '\x2', '\x2', '\x3B1', '\x3B2', '\a', 'v', '\x2', '\x2', '\x3B2',
-        '\x3B3', '\x6', 'H', '#', '\x2', '\x3B3', '\x3B4', '\x5', 'n', '\x38',
-        '\x2', '\x3B4', '\x8F', '\x3', '\x2', '\x2', '\x2', '\x3B5', '\x3B6',
-        '\a', 'v', '\x2', '\x2', '\x3B6', '\x3B7', '\x6', 'I', '$', '\x2', '\x3B7',
-        '\x3B8', '\x5', 'n', '\x38', '\x2', '\x3B8', '\x91', '\x3', '\x2', '\x2',
-        '\x2', '\x3B9', '\x3BE', '\a', '\r', '\x2', '\x2', '\x3BA', '\x3BE', '\a',
-        '\x2', '\x2', '\x3', '\x3BB', '\x3BE', '\x6', 'J', '%', '\x2', '\x3BC',
-        '\x3BE', '\x6', 'J', '&', '\x2', '\x3BD', '\x3B9', '\x3', '\x2', '\x2',
-        '\x2', '\x3BD', '\x3BA', '\x3', '\x2', '\x2', '\x2', '\x3BD', '\x3BB',
-        '\x3', '\x2', '\x2', '\x2', '\x3BD', '\x3BC', '\x3', '\x2', '\x2', '\x2',
-        '\x3BE', '\x93', '\x3', '\x2', '\x2', '\x2', 'm', '\x95', '\x98', '\xB2',
-        '\xB6', '\xBD', '\xC3', '\xC7', '\xCE', '\xD6', '\xDB', '\xDD', '\xE7',
-        '\xEF', '\xF4', '\xFD', '\x105', '\x109', '\x10E', '\x119', '\x11F', '\x12E',
-        '\x142', '\x146', '\x14A', '\x152', '\x15B', '\x160', '\x168', '\x16F',
-        '\x176', '\x17D', '\x184', '\x196', '\x19A', '\x19C', '\x1A3', '\x1A9',
-        '\x1AE', '\x1BD', '\x1C0', '\x1C5', '\x1C8', '\x1D3', '\x1D7', '\x1DC',
-        '\x1E9', '\x1EF', '\x1F8', '\x1FA', '\x200', '\x206', '\x209', '\x20C',
-        '\x211', '\x219', '\x21C', '\x226', '\x229', '\x22E', '\x235', '\x23C',
-        '\x241', '\x244', '\x249', '\x24F', '\x254', '\x25D', '\x261', '\x266',
-        '\x26B', '\x271', '\x275', '\x27F', '\x282', '\x285', '\x294', '\x297',
-        '\x29C', '\x2B3', '\x2B6', '\x2BF', '\x2C7', '\x2CB', '\x2CD', '\x2D2',
-        '\x2D6', '\x2DD', '\x2E4', '\x2EA', '\x313', '\x353', '\x357', '\x364',
-        '\x366', '\x36C', '\x370', '\x374', '\x378', '\x380', '\x386', '\x38B',
-        '\x38E', '\x395', '\x3A0', '\x3A8', '\x3AD', '\x3BD',
-    };
-
-        public static readonly ATN _ATN =
-            new ATNDeserializer().Deserialize(_serializedATN);
     }
+
+    [RuleVersion(0)]
+    public ReservedWordContext reservedWord()
+    {
+        ReservedWordContext _localctx = new ReservedWordContext(Context, State);
+        EnterRule(_localctx, 136, RULE_reservedWord);
+        try
+        {
+            State = 939;
+            ErrorHandler.Sync(this);
+            switch (TokenStream.LA(1))
+            {
+                case Break:
+                case Do:
+                case Instanceof:
+                case Typeof:
+                case Case:
+                case Else:
+                case New:
+                case Var:
+                case Catch:
+                case Finally:
+                case Return:
+                case Void:
+                case Continue:
+                case For:
+                case Switch:
+                case While:
+                case Debugger:
+                case Function:
+                case This:
+                case With:
+                case Default:
+                case If:
+                case Throw:
+                case Delete:
+                case In:
+                case Try:
+                case As:
+                case From:
+                case Class:
+                case Enum:
+                case Extends:
+                case Super:
+                case Const:
+                case Export:
+                case Import:
+                case Async:
+                case Await:
+                case Implements:
+                case Let:
+                case Private:
+                case Public:
+                case Interface:
+                case Package:
+                case Protected:
+                case Static:
+                case Yield:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 936; keyword();
+                    }
+                    break;
+                case NullLiteral:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 937; Match(NullLiteral);
+                    }
+                    break;
+                case BooleanLiteral:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 938; Match(BooleanLiteral);
+                    }
+                    break;
+                default:
+                    throw new NoViableAltException(this);
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class KeywordContext : ParserRuleContext
+    {
+        public ITerminalNode Break() { return GetToken(JavaScriptParser.Break, 0); }
+        public ITerminalNode Do() { return GetToken(JavaScriptParser.Do, 0); }
+        public ITerminalNode Instanceof() { return GetToken(JavaScriptParser.Instanceof, 0); }
+        public ITerminalNode Typeof() { return GetToken(JavaScriptParser.Typeof, 0); }
+        public ITerminalNode Case() { return GetToken(JavaScriptParser.Case, 0); }
+        public ITerminalNode Else() { return GetToken(JavaScriptParser.Else, 0); }
+        public ITerminalNode New() { return GetToken(JavaScriptParser.New, 0); }
+        public ITerminalNode Var() { return GetToken(JavaScriptParser.Var, 0); }
+        public ITerminalNode Catch() { return GetToken(JavaScriptParser.Catch, 0); }
+        public ITerminalNode Finally() { return GetToken(JavaScriptParser.Finally, 0); }
+        public ITerminalNode Return() { return GetToken(JavaScriptParser.Return, 0); }
+        public ITerminalNode Void() { return GetToken(JavaScriptParser.Void, 0); }
+        public ITerminalNode Continue() { return GetToken(JavaScriptParser.Continue, 0); }
+        public ITerminalNode For() { return GetToken(JavaScriptParser.For, 0); }
+        public ITerminalNode Switch() { return GetToken(JavaScriptParser.Switch, 0); }
+        public ITerminalNode While() { return GetToken(JavaScriptParser.While, 0); }
+        public ITerminalNode Debugger() { return GetToken(JavaScriptParser.Debugger, 0); }
+        public ITerminalNode Function() { return GetToken(JavaScriptParser.Function, 0); }
+        public ITerminalNode This() { return GetToken(JavaScriptParser.This, 0); }
+        public ITerminalNode With() { return GetToken(JavaScriptParser.With, 0); }
+        public ITerminalNode Default() { return GetToken(JavaScriptParser.Default, 0); }
+        public ITerminalNode If() { return GetToken(JavaScriptParser.If, 0); }
+        public ITerminalNode Throw() { return GetToken(JavaScriptParser.Throw, 0); }
+        public ITerminalNode Delete() { return GetToken(JavaScriptParser.Delete, 0); }
+        public ITerminalNode In() { return GetToken(JavaScriptParser.In, 0); }
+        public ITerminalNode Try() { return GetToken(JavaScriptParser.Try, 0); }
+        public ITerminalNode Class() { return GetToken(JavaScriptParser.Class, 0); }
+        public ITerminalNode Enum() { return GetToken(JavaScriptParser.Enum, 0); }
+        public ITerminalNode Extends() { return GetToken(JavaScriptParser.Extends, 0); }
+        public ITerminalNode Super() { return GetToken(JavaScriptParser.Super, 0); }
+        public ITerminalNode Const() { return GetToken(JavaScriptParser.Const, 0); }
+        public ITerminalNode Export() { return GetToken(JavaScriptParser.Export, 0); }
+        public ITerminalNode Import() { return GetToken(JavaScriptParser.Import, 0); }
+        public ITerminalNode Implements() { return GetToken(JavaScriptParser.Implements, 0); }
+        public ITerminalNode Let() { return GetToken(JavaScriptParser.Let, 0); }
+        public ITerminalNode Private() { return GetToken(JavaScriptParser.Private, 0); }
+        public ITerminalNode Public() { return GetToken(JavaScriptParser.Public, 0); }
+        public ITerminalNode Interface() { return GetToken(JavaScriptParser.Interface, 0); }
+        public ITerminalNode Package() { return GetToken(JavaScriptParser.Package, 0); }
+        public ITerminalNode Protected() { return GetToken(JavaScriptParser.Protected, 0); }
+        public ITerminalNode Static() { return GetToken(JavaScriptParser.Static, 0); }
+        public ITerminalNode Yield() { return GetToken(JavaScriptParser.Yield, 0); }
+        public ITerminalNode Async() { return GetToken(JavaScriptParser.Async, 0); }
+        public ITerminalNode Await() { return GetToken(JavaScriptParser.Await, 0); }
+        public ITerminalNode From() { return GetToken(JavaScriptParser.From, 0); }
+        public ITerminalNode As() { return GetToken(JavaScriptParser.As, 0); }
+        public KeywordContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_keyword; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterKeyword(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitKeyword(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public KeywordContext keyword()
+    {
+        KeywordContext _localctx = new KeywordContext(Context, State);
+        EnterRule(_localctx, 138, RULE_keyword);
+        int _la;
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 941;
+                _la = TokenStream.LA(1);
+                if (!(((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (Break - 70)) | (1L << (Do - 70)) | (1L << (Instanceof - 70)) | (1L << (Typeof - 70)) | (1L << (Case - 70)) | (1L << (Else - 70)) | (1L << (New - 70)) | (1L << (Var - 70)) | (1L << (Catch - 70)) | (1L << (Finally - 70)) | (1L << (Return - 70)) | (1L << (Void - 70)) | (1L << (Continue - 70)) | (1L << (For - 70)) | (1L << (Switch - 70)) | (1L << (While - 70)) | (1L << (Debugger - 70)) | (1L << (Function - 70)) | (1L << (This - 70)) | (1L << (With - 70)) | (1L << (Default - 70)) | (1L << (If - 70)) | (1L << (Throw - 70)) | (1L << (Delete - 70)) | (1L << (In - 70)) | (1L << (Try - 70)) | (1L << (As - 70)) | (1L << (From - 70)) | (1L << (Class - 70)) | (1L << (Enum - 70)) | (1L << (Extends - 70)) | (1L << (Super - 70)) | (1L << (Const - 70)) | (1L << (Export - 70)) | (1L << (Import - 70)) | (1L << (Async - 70)) | (1L << (Await - 70)) | (1L << (Implements - 70)) | (1L << (Let - 70)) | (1L << (Private - 70)) | (1L << (Public - 70)) | (1L << (Interface - 70)) | (1L << (Package - 70)) | (1L << (Protected - 70)) | (1L << (Static - 70)) | (1L << (Yield - 70)))) != 0)))
+                {
+                    ErrorHandler.RecoverInline(this);
+                }
+                else
+                {
+                    ErrorHandler.ReportMatch(this);
+                    Consume();
+                }
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class GetterContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public PropertyNameContext propertyName()
+        {
+            return GetRuleContext<PropertyNameContext>(0);
+        }
+        public GetterContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_getter; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterGetter(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitGetter(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public GetterContext getter()
+    {
+        GetterContext _localctx = new GetterContext(Context, State);
+        EnterRule(_localctx, 140, RULE_getter);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 943; Match(Identifier);
+                State = 944;
+                if (!(this.p("get"))) throw new FailedPredicateException(this, "this.p(\"get\")");
+                State = 945; propertyName();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class SetterContext : ParserRuleContext
+    {
+        public ITerminalNode Identifier() { return GetToken(JavaScriptParser.Identifier, 0); }
+        public PropertyNameContext propertyName()
+        {
+            return GetRuleContext<PropertyNameContext>(0);
+        }
+        public SetterContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_setter; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterSetter(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitSetter(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public SetterContext setter()
+    {
+        SetterContext _localctx = new SetterContext(Context, State);
+        EnterRule(_localctx, 142, RULE_setter);
+        try
+        {
+            EnterOuterAlt(_localctx, 1);
+            {
+                State = 947; Match(Identifier);
+                State = 948;
+                if (!(this.p("set"))) throw new FailedPredicateException(this, "this.p(\"set\")");
+                State = 949; propertyName();
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public partial class EosContext : ParserRuleContext
+    {
+        public ITerminalNode SemiColon() { return GetToken(JavaScriptParser.SemiColon, 0); }
+        public ITerminalNode Eof() { return GetToken(JavaScriptParser.Eof, 0); }
+        public EosContext(ParserRuleContext parent, int invokingState)
+            : base(parent, invokingState)
+        {
+        }
+        public override int RuleIndex { get { return RULE_eos; } }
+        public override void EnterRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.EnterEos(this);
+        }
+        public override void ExitRule(IParseTreeListener listener)
+        {
+            IJavaScriptParserListener typedListener = listener as IJavaScriptParserListener;
+            if (typedListener != null) typedListener.ExitEos(this);
+        }
+    }
+
+    [RuleVersion(0)]
+    public EosContext eos()
+    {
+        EosContext _localctx = new EosContext(Context, State);
+        EnterRule(_localctx, 144, RULE_eos);
+        try
+        {
+            State = 955;
+            ErrorHandler.Sync(this);
+            switch (Interpreter.AdaptivePredict(TokenStream, 106, Context))
+            {
+                case 1:
+                    EnterOuterAlt(_localctx, 1);
+                    {
+                        State = 951; Match(SemiColon);
+                    }
+                    break;
+                case 2:
+                    EnterOuterAlt(_localctx, 2);
+                    {
+                        State = 952; Match(Eof);
+                    }
+                    break;
+                case 3:
+                    EnterOuterAlt(_localctx, 3);
+                    {
+                        State = 953;
+                        if (!(this.lineTerminatorAhead())) throw new FailedPredicateException(this, "this.lineTerminatorAhead()");
+                    }
+                    break;
+                case 4:
+                    EnterOuterAlt(_localctx, 4);
+                    {
+                        State = 954;
+                        if (!(this.closeBrace())) throw new FailedPredicateException(this, "this.closeBrace()");
+                    }
+                    break;
+            }
+        }
+        catch (RecognitionException re)
+        {
+            _localctx.exception = re;
+            ErrorHandler.ReportError(this, re);
+            ErrorHandler.Recover(this, re);
+        }
+        finally
+        {
+            ExitRule();
+        }
+        return _localctx;
+    }
+
+    public override bool Sempred(RuleContext _localctx, int ruleIndex, int predIndex)
+    {
+        switch (ruleIndex)
+        {
+            case 19: return expressionStatement_sempred((ExpressionStatementContext)_localctx, predIndex);
+            case 21: return iterationStatement_sempred((IterationStatementContext)_localctx, predIndex);
+            case 23: return continueStatement_sempred((ContinueStatementContext)_localctx, predIndex);
+            case 24: return breakStatement_sempred((BreakStatementContext)_localctx, predIndex);
+            case 25: return returnStatement_sempred((ReturnStatementContext)_localctx, predIndex);
+            case 26: return yieldStatement_sempred((YieldStatementContext)_localctx, predIndex);
+            case 34: return throwStatement_sempred((ThrowStatementContext)_localctx, predIndex);
+            case 42: return classElement_sempred((ClassElementContext)_localctx, predIndex);
+            case 58: return singleExpression_sempred((SingleExpressionContext)_localctx, predIndex);
+            case 70: return getter_sempred((GetterContext)_localctx, predIndex);
+            case 71: return setter_sempred((SetterContext)_localctx, predIndex);
+            case 72: return eos_sempred((EosContext)_localctx, predIndex);
+        }
+        return true;
+    }
+    private bool expressionStatement_sempred(ExpressionStatementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 0: return this.notOpenBraceAndNotFunction();
+        }
+        return true;
+    }
+    private bool iterationStatement_sempred(IterationStatementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 1: return this.p("of");
+        }
+        return true;
+    }
+    private bool continueStatement_sempred(ContinueStatementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 2: return this.notLineTerminator();
+        }
+        return true;
+    }
+    private bool breakStatement_sempred(BreakStatementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 3: return this.notLineTerminator();
+        }
+        return true;
+    }
+    private bool returnStatement_sempred(ReturnStatementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 4: return this.notLineTerminator();
+        }
+        return true;
+    }
+    private bool yieldStatement_sempred(YieldStatementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 5: return this.notLineTerminator();
+        }
+        return true;
+    }
+    private bool throwStatement_sempred(ThrowStatementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 6: return this.notLineTerminator();
+        }
+        return true;
+    }
+    private bool classElement_sempred(ClassElementContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 7: return this.n("static");
+        }
+        return true;
+    }
+    private bool singleExpression_sempred(SingleExpressionContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 8: return Precpred(Context, 27);
+            case 9: return Precpred(Context, 26);
+            case 10: return Precpred(Context, 25);
+            case 11: return Precpred(Context, 24);
+            case 12: return Precpred(Context, 23);
+            case 13: return Precpred(Context, 22);
+            case 14: return Precpred(Context, 21);
+            case 15: return Precpred(Context, 20);
+            case 16: return Precpred(Context, 19);
+            case 17: return Precpred(Context, 18);
+            case 18: return Precpred(Context, 17);
+            case 19: return Precpred(Context, 16);
+            case 20: return Precpred(Context, 15);
+            case 21: return Precpred(Context, 14);
+            case 22: return Precpred(Context, 13);
+            case 23: return Precpred(Context, 12);
+            case 24: return Precpred(Context, 11);
+            case 25: return Precpred(Context, 44);
+            case 26: return Precpred(Context, 43);
+            case 27: return Precpred(Context, 42);
+            case 28: return Precpred(Context, 39);
+            case 29: return this.notLineTerminator();
+            case 30: return Precpred(Context, 38);
+            case 31: return this.notLineTerminator();
+            case 32: return Precpred(Context, 9);
+        }
+        return true;
+    }
+    private bool getter_sempred(GetterContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 33: return this.p("get");
+        }
+        return true;
+    }
+    private bool setter_sempred(SetterContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 34: return this.p("set");
+        }
+        return true;
+    }
+    private bool eos_sempred(EosContext _localctx, int predIndex)
+    {
+        switch (predIndex)
+        {
+            case 35: return this.lineTerminatorAhead();
+            case 36: return this.closeBrace();
+        }
+        return true;
+    }
+
+    private static char[] _serializedATN = {
+    '\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786',
+    '\x5964', '\x3', '}', '\x3C0', '\x4', '\x2', '\t', '\x2', '\x4', '\x3',
+    '\t', '\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t', '\x5', '\x4',
+    '\x6', '\t', '\x6', '\x4', '\a', '\t', '\a', '\x4', '\b', '\t', '\b',
+    '\x4', '\t', '\t', '\t', '\x4', '\n', '\t', '\n', '\x4', '\v', '\t', '\v',
+    '\x4', '\f', '\t', '\f', '\x4', '\r', '\t', '\r', '\x4', '\xE', '\t',
+    '\xE', '\x4', '\xF', '\t', '\xF', '\x4', '\x10', '\t', '\x10', '\x4',
+    '\x11', '\t', '\x11', '\x4', '\x12', '\t', '\x12', '\x4', '\x13', '\t',
+    '\x13', '\x4', '\x14', '\t', '\x14', '\x4', '\x15', '\t', '\x15', '\x4',
+    '\x16', '\t', '\x16', '\x4', '\x17', '\t', '\x17', '\x4', '\x18', '\t',
+    '\x18', '\x4', '\x19', '\t', '\x19', '\x4', '\x1A', '\t', '\x1A', '\x4',
+    '\x1B', '\t', '\x1B', '\x4', '\x1C', '\t', '\x1C', '\x4', '\x1D', '\t',
+    '\x1D', '\x4', '\x1E', '\t', '\x1E', '\x4', '\x1F', '\t', '\x1F', '\x4',
+    ' ', '\t', ' ', '\x4', '!', '\t', '!', '\x4', '\"', '\t', '\"', '\x4',
+    '#', '\t', '#', '\x4', '$', '\t', '$', '\x4', '%', '\t', '%', '\x4', '&',
+    '\t', '&', '\x4', '\'', '\t', '\'', '\x4', '(', '\t', '(', '\x4', ')',
+    '\t', ')', '\x4', '*', '\t', '*', '\x4', '+', '\t', '+', '\x4', ',', '\t',
+    ',', '\x4', '-', '\t', '-', '\x4', '.', '\t', '.', '\x4', '/', '\t', '/',
+    '\x4', '\x30', '\t', '\x30', '\x4', '\x31', '\t', '\x31', '\x4', '\x32',
+    '\t', '\x32', '\x4', '\x33', '\t', '\x33', '\x4', '\x34', '\t', '\x34',
+    '\x4', '\x35', '\t', '\x35', '\x4', '\x36', '\t', '\x36', '\x4', '\x37',
+    '\t', '\x37', '\x4', '\x38', '\t', '\x38', '\x4', '\x39', '\t', '\x39',
+    '\x4', ':', '\t', ':', '\x4', ';', '\t', ';', '\x4', '<', '\t', '<', '\x4',
+    '=', '\t', '=', '\x4', '>', '\t', '>', '\x4', '?', '\t', '?', '\x4', '@',
+    '\t', '@', '\x4', '\x41', '\t', '\x41', '\x4', '\x42', '\t', '\x42', '\x4',
+    '\x43', '\t', '\x43', '\x4', '\x44', '\t', '\x44', '\x4', '\x45', '\t',
+    '\x45', '\x4', '\x46', '\t', '\x46', '\x4', 'G', '\t', 'G', '\x4', 'H',
+    '\t', 'H', '\x4', 'I', '\t', 'I', '\x4', 'J', '\t', 'J', '\x3', '\x2',
+    '\x5', '\x2', '\x96', '\n', '\x2', '\x3', '\x2', '\x5', '\x2', '\x99',
+    '\n', '\x2', '\x3', '\x2', '\x3', '\x2', '\x3', '\x3', '\x3', '\x3', '\x3',
+    '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3',
+    '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3',
+    '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3',
+    '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x3', '\x4', '\x5',
+    '\x4', '\xB3', '\n', '\x4', '\x3', '\x5', '\x3', '\x5', '\x5', '\x5',
+    '\xB7', '\n', '\x5', '\x3', '\x5', '\x3', '\x5', '\x3', '\x6', '\x6',
+    '\x6', '\xBC', '\n', '\x6', '\r', '\x6', '\xE', '\x6', '\xBD', '\x3',
+    '\a', '\x3', '\a', '\x3', '\a', '\x3', '\b', '\x5', '\b', '\xC4', '\n',
+    '\b', '\x3', '\b', '\x3', '\b', '\x5', '\b', '\xC8', '\n', '\b', '\x3',
+    '\b', '\x3', '\b', '\x3', '\b', '\x3', '\b', '\x3', '\b', '\x5', '\b',
+    '\xCF', '\n', '\b', '\x3', '\t', '\x3', '\t', '\x3', '\t', '\x3', '\t',
+    '\a', '\t', '\xD5', '\n', '\t', '\f', '\t', '\xE', '\t', '\xD8', '\v',
+    '\t', '\x3', '\t', '\x3', '\t', '\x5', '\t', '\xDC', '\n', '\t', '\x5',
+    '\t', '\xDE', '\n', '\t', '\x3', '\t', '\x3', '\t', '\x3', '\n', '\x3',
+    '\n', '\x3', '\n', '\x3', '\v', '\x3', '\v', '\x3', '\v', '\x5', '\v',
+    '\xE8', '\n', '\v', '\x3', '\f', '\x3', '\f', '\x3', '\f', '\x3', '\r',
+    '\x3', '\r', '\x3', '\r', '\x5', '\r', '\xF0', '\n', '\r', '\x3', '\xE',
+    '\x3', '\xE', '\x3', '\xE', '\x5', '\xE', '\xF5', '\n', '\xE', '\x3',
+    '\xE', '\x3', '\xE', '\x3', '\xE', '\x3', '\xE', '\x3', '\xE', '\x3',
+    '\xE', '\x3', '\xE', '\x5', '\xE', '\xFE', '\n', '\xE', '\x3', '\xF',
+    '\x3', '\xF', '\x3', '\xF', '\x3', '\xF', '\x3', '\xF', '\x3', '\xF',
+    '\x5', '\xF', '\x106', '\n', '\xF', '\x3', '\xF', '\x3', '\xF', '\x5',
+    '\xF', '\x10A', '\n', '\xF', '\x3', '\x10', '\x3', '\x10', '\x3', '\x10',
+    '\x5', '\x10', '\x10F', '\n', '\x10', '\x3', '\x11', '\x3', '\x11', '\x3',
+    '\x11', '\x3', '\x12', '\x3', '\x12', '\x3', '\x12', '\x3', '\x12', '\a',
+    '\x12', '\x118', '\n', '\x12', '\f', '\x12', '\xE', '\x12', '\x11B', '\v',
+    '\x12', '\x3', '\x13', '\x3', '\x13', '\x3', '\x13', '\x5', '\x13', '\x120',
+    '\n', '\x13', '\x3', '\x14', '\x3', '\x14', '\x3', '\x15', '\x3', '\x15',
+    '\x3', '\x15', '\x3', '\x15', '\x3', '\x16', '\x3', '\x16', '\x3', '\x16',
+    '\x3', '\x16', '\x3', '\x16', '\x3', '\x16', '\x3', '\x16', '\x5', '\x16',
+    '\x12F', '\n', '\x16', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
+    '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
+    '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
+    '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x5',
+    '\x17', '\x143', '\n', '\x17', '\x3', '\x17', '\x3', '\x17', '\x5', '\x17',
+    '\x147', '\n', '\x17', '\x3', '\x17', '\x3', '\x17', '\x5', '\x17', '\x14B',
+    '\n', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17',
+    '\x3', '\x17', '\x3', '\x17', '\x5', '\x17', '\x153', '\n', '\x17', '\x3',
+    '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
+    '\x17', '\x3', '\x17', '\x5', '\x17', '\x15C', '\n', '\x17', '\x3', '\x17',
+    '\x3', '\x17', '\x3', '\x17', '\x5', '\x17', '\x161', '\n', '\x17', '\x3',
+    '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3', '\x17', '\x3',
+    '\x17', '\x5', '\x17', '\x169', '\n', '\x17', '\x3', '\x18', '\x3', '\x18',
+    '\x3', '\x19', '\x3', '\x19', '\x3', '\x19', '\x5', '\x19', '\x170', '\n',
+    '\x19', '\x3', '\x19', '\x3', '\x19', '\x3', '\x1A', '\x3', '\x1A', '\x3',
+    '\x1A', '\x5', '\x1A', '\x177', '\n', '\x1A', '\x3', '\x1A', '\x3', '\x1A',
+    '\x3', '\x1B', '\x3', '\x1B', '\x3', '\x1B', '\x5', '\x1B', '\x17E', '\n',
+    '\x1B', '\x3', '\x1B', '\x3', '\x1B', '\x3', '\x1C', '\x3', '\x1C', '\x3',
+    '\x1C', '\x5', '\x1C', '\x185', '\n', '\x1C', '\x3', '\x1C', '\x3', '\x1C',
+    '\x3', '\x1D', '\x3', '\x1D', '\x3', '\x1D', '\x3', '\x1D', '\x3', '\x1D',
+    '\x3', '\x1D', '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1E',
+    '\x3', '\x1E', '\x3', '\x1E', '\x3', '\x1F', '\x3', '\x1F', '\x5', '\x1F',
+    '\x197', '\n', '\x1F', '\x3', '\x1F', '\x3', '\x1F', '\x5', '\x1F', '\x19B',
+    '\n', '\x1F', '\x5', '\x1F', '\x19D', '\n', '\x1F', '\x3', '\x1F', '\x3',
+    '\x1F', '\x3', ' ', '\x6', ' ', '\x1A2', '\n', ' ', '\r', ' ', '\xE',
+    ' ', '\x1A3', '\x3', '!', '\x3', '!', '\x3', '!', '\x3', '!', '\x5', '!',
+    '\x1AA', '\n', '!', '\x3', '\"', '\x3', '\"', '\x3', '\"', '\x5', '\"',
+    '\x1AF', '\n', '\"', '\x3', '#', '\x3', '#', '\x3', '#', '\x3', '#', '\x3',
+    '$', '\x3', '$', '\x3', '$', '\x3', '$', '\x3', '$', '\x3', '%', '\x3',
+    '%', '\x3', '%', '\x3', '%', '\x5', '%', '\x1BE', '\n', '%', '\x3', '%',
+    '\x5', '%', '\x1C1', '\n', '%', '\x3', '&', '\x3', '&', '\x3', '&', '\x5',
+    '&', '\x1C6', '\n', '&', '\x3', '&', '\x5', '&', '\x1C9', '\n', '&', '\x3',
+    '&', '\x3', '&', '\x3', '\'', '\x3', '\'', '\x3', '\'', '\x3', '(', '\x3',
+    '(', '\x3', '(', '\x3', ')', '\x5', ')', '\x1D4', '\n', ')', '\x3', ')',
+    '\x3', ')', '\x5', ')', '\x1D8', '\n', ')', '\x3', ')', '\x3', ')', '\x3',
+    ')', '\x5', ')', '\x1DD', '\n', ')', '\x3', ')', '\x3', ')', '\x3', ')',
+    '\x3', ')', '\x3', ')', '\x3', '*', '\x3', '*', '\x3', '*', '\x3', '*',
+    '\x3', '+', '\x3', '+', '\x5', '+', '\x1EA', '\n', '+', '\x3', '+', '\x3',
+    '+', '\a', '+', '\x1EE', '\n', '+', '\f', '+', '\xE', '+', '\x1F1', '\v',
+    '+', '\x3', '+', '\x3', '+', '\x3', ',', '\x3', ',', '\x3', ',', '\x3',
+    ',', '\a', ',', '\x1F9', '\n', ',', '\f', ',', '\xE', ',', '\x1FC', '\v',
+    ',', '\x3', ',', '\x3', ',', '\x3', ',', '\x5', ',', '\x201', '\n', ',',
+    '\x3', ',', '\x3', ',', '\x3', ',', '\x3', ',', '\x5', ',', '\x207', '\n',
+    ',', '\x3', '-', '\x5', '-', '\x20A', '\n', '-', '\x3', '-', '\x5', '-',
+    '\x20D', '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x5', '-', '\x212',
+    '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-',
+    '\x3', '-', '\x5', '-', '\x21A', '\n', '-', '\x3', '-', '\x5', '-', '\x21D',
+    '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3', '-',
+    '\x3', '-', '\x3', '-', '\x3', '-', '\x5', '-', '\x227', '\n', '-', '\x3',
+    '-', '\x5', '-', '\x22A', '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-',
+    '\x5', '-', '\x22F', '\n', '-', '\x3', '-', '\x3', '-', '\x3', '-', '\x3',
+    '-', '\x3', '-', '\x5', '-', '\x236', '\n', '-', '\x3', '.', '\x3', '.',
+    '\x3', '.', '\a', '.', '\x23B', '\n', '.', '\f', '.', '\xE', '.', '\x23E',
+    '\v', '.', '\x3', '.', '\x3', '.', '\x5', '.', '\x242', '\n', '.', '\x3',
+    '.', '\x5', '.', '\x245', '\n', '.', '\x3', '/', '\x3', '/', '\x3', '/',
+    '\x5', '/', '\x24A', '\n', '/', '\x3', '\x30', '\x3', '\x30', '\x3', '\x30',
+    '\x3', '\x31', '\x5', '\x31', '\x250', '\n', '\x31', '\x3', '\x32', '\x6',
+    '\x32', '\x253', '\n', '\x32', '\r', '\x32', '\xE', '\x32', '\x254', '\x3',
+    '\x33', '\x3', '\x33', '\x3', '\x33', '\x3', '\x33', '\x3', '\x34', '\a',
+    '\x34', '\x25C', '\n', '\x34', '\f', '\x34', '\xE', '\x34', '\x25F', '\v',
+    '\x34', '\x3', '\x34', '\x5', '\x34', '\x262', '\n', '\x34', '\x3', '\x34',
+    '\x6', '\x34', '\x265', '\n', '\x34', '\r', '\x34', '\xE', '\x34', '\x266',
+    '\x3', '\x34', '\a', '\x34', '\x26A', '\n', '\x34', '\f', '\x34', '\xE',
+    '\x34', '\x26D', '\v', '\x34', '\x3', '\x34', '\a', '\x34', '\x270', '\n',
+    '\x34', '\f', '\x34', '\xE', '\x34', '\x273', '\v', '\x34', '\x3', '\x35',
+    '\x5', '\x35', '\x276', '\n', '\x35', '\x3', '\x35', '\x3', '\x35', '\x3',
+    '\x36', '\x3', '\x36', '\x3', '\x36', '\x3', '\x36', '\a', '\x36', '\x27E',
+    '\n', '\x36', '\f', '\x36', '\xE', '\x36', '\x281', '\v', '\x36', '\x5',
+    '\x36', '\x283', '\n', '\x36', '\x3', '\x36', '\x5', '\x36', '\x286',
+    '\n', '\x36', '\x3', '\x36', '\x3', '\x36', '\x3', '\x37', '\x3', '\x37',
+    '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37',
+    '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x5', '\x37',
+    '\x295', '\n', '\x37', '\x3', '\x37', '\x5', '\x37', '\x298', '\n', '\x37',
+    '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x5', '\x37', '\x29D', '\n',
+    '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
+    '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
+    '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
+    '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3', '\x37', '\x3',
+    '\x37', '\x3', '\x37', '\x5', '\x37', '\x2B4', '\n', '\x37', '\x3', '\x37',
+    '\x5', '\x37', '\x2B7', '\n', '\x37', '\x3', '\x38', '\x3', '\x38', '\x3',
+    '\x38', '\x3', '\x38', '\x3', '\x38', '\x3', '\x38', '\x3', '\x38', '\x5',
+    '\x38', '\x2C0', '\n', '\x38', '\x3', '\x39', '\x3', '\x39', '\x3', '\x39',
+    '\x3', '\x39', '\a', '\x39', '\x2C6', '\n', '\x39', '\f', '\x39', '\xE',
+    '\x39', '\x2C9', '\v', '\x39', '\x3', '\x39', '\x5', '\x39', '\x2CC',
+    '\n', '\x39', '\x5', '\x39', '\x2CE', '\n', '\x39', '\x3', '\x39', '\x3',
+    '\x39', '\x3', ':', '\x5', ':', '\x2D3', '\n', ':', '\x3', ':', '\x3',
+    ':', '\x5', ':', '\x2D7', '\n', ':', '\x3', ';', '\x3', ';', '\x3', ';',
+    '\a', ';', '\x2DC', '\n', ';', '\f', ';', '\xE', ';', '\x2DF', '\v', ';',
+    '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x2E5', '\n',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x2EB',
+    '\n', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
+    '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
+    '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
+    '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
+    '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
+    '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<',
+    '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x314', '\n',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x5', '<', '\x354', '\n', '<', '\x3', '<',
+    '\x3', '<', '\x5', '<', '\x358', '\n', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3', '<', '\x3',
+    '<', '\x3', '<', '\x3', '<', '\a', '<', '\x365', '\n', '<', '\f', '<',
+    '\xE', '<', '\x368', '\v', '<', '\x3', '=', '\x3', '=', '\x3', '=', '\x5',
+    '=', '\x36D', '\n', '=', '\x3', '>', '\x3', '>', '\x5', '>', '\x371',
+    '\n', '>', '\x3', '>', '\x3', '>', '\x5', '>', '\x375', '\n', '>', '\x3',
+    '>', '\x3', '>', '\x5', '>', '\x379', '\n', '>', '\x3', '>', '\x3', '>',
+    '\x3', '>', '\x3', '>', '\x3', '>', '\x3', '>', '\x5', '>', '\x381', '\n',
+    '>', '\x3', '>', '\x3', '>', '\x3', '>', '\x3', '>', '\x5', '>', '\x387',
+    '\n', '>', '\x3', '?', '\x3', '?', '\x3', '?', '\x5', '?', '\x38C', '\n',
+    '?', '\x3', '?', '\x5', '?', '\x38F', '\n', '?', '\x3', '@', '\x3', '@',
+    '\x3', '@', '\x3', '@', '\x3', '@', '\x5', '@', '\x396', '\n', '@', '\x3',
+    '\x41', '\x3', '\x41', '\x3', '\x42', '\x3', '\x42', '\x3', '\x42', '\x3',
+    '\x42', '\x3', '\x42', '\x3', '\x42', '\x3', '\x42', '\x5', '\x42', '\x3A1',
+    '\n', '\x42', '\x3', '\x43', '\x3', '\x43', '\x3', '\x44', '\x3', '\x44',
+    '\x3', '\x45', '\x3', '\x45', '\x5', '\x45', '\x3A9', '\n', '\x45', '\x3',
+    '\x46', '\x3', '\x46', '\x3', '\x46', '\x5', '\x46', '\x3AE', '\n', '\x46',
+    '\x3', 'G', '\x3', 'G', '\x3', 'H', '\x3', 'H', '\x3', 'H', '\x3', 'H',
+    '\x3', 'I', '\x3', 'I', '\x3', 'I', '\x3', 'I', '\x3', 'J', '\x3', 'J',
+    '\x3', 'J', '\x3', 'J', '\x5', 'J', '\x3BE', '\n', 'J', '\x3', 'J', '\x2',
+    '\x3', 'v', 'K', '\x2', '\x4', '\x6', '\b', '\n', '\f', '\xE', '\x10',
+    '\x12', '\x14', '\x16', '\x18', '\x1A', '\x1C', '\x1E', ' ', '\"', '$',
+    '&', '(', '*', ',', '.', '\x30', '\x32', '\x34', '\x36', '\x38', ':',
+    '<', '>', '@', '\x42', '\x44', '\x46', 'H', 'J', 'L', 'N', 'P', 'R', 'T',
+    'V', 'X', 'Z', '\\', '^', '`', '\x62', '\x64', '\x66', 'h', 'j', 'l',
+    'n', 'p', 'r', 't', 'v', 'x', 'z', '|', '~', '\x80', '\x82', '\x84', '\x86',
+    '\x88', '\x8A', '\x8C', '\x8E', '\x90', '\x92', '\x2', '\f', '\x5', '\x2',
+    'O', 'O', 'h', 'h', 'n', 'n', '\x3', '\x2', '\x1A', '\x1C', '\x3', '\x2',
+    '\x16', '\x17', '\x3', '\x2', ' ', '\"', '\x3', '\x2', '#', '&', '\x3',
+    '\x2', '\'', '*', '\x3', '\x2', '\x30', ';', '\x3', '\x2', '?', '\x43',
+    '\x3', '\x2', '\x44', 'G', '\x3', '\x2', 'H', 'u', '\x2', '\x435', '\x2',
+    '\x95', '\x3', '\x2', '\x2', '\x2', '\x4', '\x9C', '\x3', '\x2', '\x2',
+    '\x2', '\x6', '\xB2', '\x3', '\x2', '\x2', '\x2', '\b', '\xB4', '\x3',
+    '\x2', '\x2', '\x2', '\n', '\xBB', '\x3', '\x2', '\x2', '\x2', '\f', '\xBF',
+    '\x3', '\x2', '\x2', '\x2', '\xE', '\xCE', '\x3', '\x2', '\x2', '\x2',
+    '\x10', '\xD0', '\x3', '\x2', '\x2', '\x2', '\x12', '\xE1', '\x3', '\x2',
+    '\x2', '\x2', '\x14', '\xE4', '\x3', '\x2', '\x2', '\x2', '\x16', '\xE9',
+    '\x3', '\x2', '\x2', '\x2', '\x18', '\xEC', '\x3', '\x2', '\x2', '\x2',
+    '\x1A', '\xFD', '\x3', '\x2', '\x2', '\x2', '\x1C', '\x109', '\x3', '\x2',
+    '\x2', '\x2', '\x1E', '\x10E', '\x3', '\x2', '\x2', '\x2', ' ', '\x110',
+    '\x3', '\x2', '\x2', '\x2', '\"', '\x113', '\x3', '\x2', '\x2', '\x2',
+    '$', '\x11C', '\x3', '\x2', '\x2', '\x2', '&', '\x121', '\x3', '\x2',
+    '\x2', '\x2', '(', '\x123', '\x3', '\x2', '\x2', '\x2', '*', '\x127',
+    '\x3', '\x2', '\x2', '\x2', ',', '\x168', '\x3', '\x2', '\x2', '\x2',
+    '.', '\x16A', '\x3', '\x2', '\x2', '\x2', '\x30', '\x16C', '\x3', '\x2',
+    '\x2', '\x2', '\x32', '\x173', '\x3', '\x2', '\x2', '\x2', '\x34', '\x17A',
+    '\x3', '\x2', '\x2', '\x2', '\x36', '\x181', '\x3', '\x2', '\x2', '\x2',
+    '\x38', '\x188', '\x3', '\x2', '\x2', '\x2', ':', '\x18E', '\x3', '\x2',
+    '\x2', '\x2', '<', '\x194', '\x3', '\x2', '\x2', '\x2', '>', '\x1A1',
+    '\x3', '\x2', '\x2', '\x2', '@', '\x1A5', '\x3', '\x2', '\x2', '\x2',
+    '\x42', '\x1AB', '\x3', '\x2', '\x2', '\x2', '\x44', '\x1B0', '\x3', '\x2',
+    '\x2', '\x2', '\x46', '\x1B4', '\x3', '\x2', '\x2', '\x2', 'H', '\x1B9',
+    '\x3', '\x2', '\x2', '\x2', 'J', '\x1C2', '\x3', '\x2', '\x2', '\x2',
+    'L', '\x1CC', '\x3', '\x2', '\x2', '\x2', 'N', '\x1CF', '\x3', '\x2',
+    '\x2', '\x2', 'P', '\x1D3', '\x3', '\x2', '\x2', '\x2', 'R', '\x1E3',
+    '\x3', '\x2', '\x2', '\x2', 'T', '\x1E9', '\x3', '\x2', '\x2', '\x2',
+    'V', '\x206', '\x3', '\x2', '\x2', '\x2', 'X', '\x235', '\x3', '\x2',
+    '\x2', '\x2', 'Z', '\x244', '\x3', '\x2', '\x2', '\x2', '\\', '\x246',
+    '\x3', '\x2', '\x2', '\x2', '^', '\x24B', '\x3', '\x2', '\x2', '\x2',
+    '`', '\x24F', '\x3', '\x2', '\x2', '\x2', '\x62', '\x252', '\x3', '\x2',
+    '\x2', '\x2', '\x64', '\x256', '\x3', '\x2', '\x2', '\x2', '\x66', '\x25D',
+    '\x3', '\x2', '\x2', '\x2', 'h', '\x275', '\x3', '\x2', '\x2', '\x2',
+    'j', '\x279', '\x3', '\x2', '\x2', '\x2', 'l', '\x2B6', '\x3', '\x2',
+    '\x2', '\x2', 'n', '\x2BF', '\x3', '\x2', '\x2', '\x2', 'p', '\x2C1',
+    '\x3', '\x2', '\x2', '\x2', 'r', '\x2D2', '\x3', '\x2', '\x2', '\x2',
+    't', '\x2D8', '\x3', '\x2', '\x2', '\x2', 'v', '\x313', '\x3', '\x2',
+    '\x2', '\x2', 'x', '\x36C', '\x3', '\x2', '\x2', '\x2', 'z', '\x386',
+    '\x3', '\x2', '\x2', '\x2', '|', '\x38E', '\x3', '\x2', '\x2', '\x2',
+    '~', '\x395', '\x3', '\x2', '\x2', '\x2', '\x80', '\x397', '\x3', '\x2',
+    '\x2', '\x2', '\x82', '\x3A0', '\x3', '\x2', '\x2', '\x2', '\x84', '\x3A2',
+    '\x3', '\x2', '\x2', '\x2', '\x86', '\x3A4', '\x3', '\x2', '\x2', '\x2',
+    '\x88', '\x3A8', '\x3', '\x2', '\x2', '\x2', '\x8A', '\x3AD', '\x3', '\x2',
+    '\x2', '\x2', '\x8C', '\x3AF', '\x3', '\x2', '\x2', '\x2', '\x8E', '\x3B1',
+    '\x3', '\x2', '\x2', '\x2', '\x90', '\x3B5', '\x3', '\x2', '\x2', '\x2',
+    '\x92', '\x3BD', '\x3', '\x2', '\x2', '\x2', '\x94', '\x96', '\a', '\x3',
+    '\x2', '\x2', '\x95', '\x94', '\x3', '\x2', '\x2', '\x2', '\x95', '\x96',
+    '\x3', '\x2', '\x2', '\x2', '\x96', '\x98', '\x3', '\x2', '\x2', '\x2',
+    '\x97', '\x99', '\x5', '\x62', '\x32', '\x2', '\x98', '\x97', '\x3', '\x2',
+    '\x2', '\x2', '\x98', '\x99', '\x3', '\x2', '\x2', '\x2', '\x99', '\x9A',
+    '\x3', '\x2', '\x2', '\x2', '\x9A', '\x9B', '\a', '\x2', '\x2', '\x3',
+    '\x9B', '\x3', '\x3', '\x2', '\x2', '\x2', '\x9C', '\x9D', '\x5', '\x6',
+    '\x4', '\x2', '\x9D', '\x5', '\x3', '\x2', '\x2', '\x2', '\x9E', '\xB3',
+    '\x5', '\b', '\x5', '\x2', '\x9F', '\xB3', '\x5', ' ', '\x11', '\x2',
+    '\xA0', '\xB3', '\x5', '\f', '\a', '\x2', '\xA1', '\xB3', '\x5', '\x1A',
+    '\xE', '\x2', '\xA2', '\xB3', '\x5', '&', '\x14', '\x2', '\xA3', '\xB3',
+    '\x5', 'R', '*', '\x2', '\xA4', '\xB3', '\x5', '(', '\x15', '\x2', '\xA5',
+    '\xB3', '\x5', '*', '\x16', '\x2', '\xA6', '\xB3', '\x5', ',', '\x17',
+    '\x2', '\xA7', '\xB3', '\x5', '\x30', '\x19', '\x2', '\xA8', '\xB3', '\x5',
+    '\x32', '\x1A', '\x2', '\xA9', '\xB3', '\x5', '\x34', '\x1B', '\x2', '\xAA',
+    '\xB3', '\x5', '\x36', '\x1C', '\x2', '\xAB', '\xB3', '\x5', '\x38', '\x1D',
+    '\x2', '\xAC', '\xB3', '\x5', '\x44', '#', '\x2', '\xAD', '\xB3', '\x5',
+    ':', '\x1E', '\x2', '\xAE', '\xB3', '\x5', '\x46', '$', '\x2', '\xAF',
+    '\xB3', '\x5', 'H', '%', '\x2', '\xB0', '\xB3', '\x5', 'N', '(', '\x2',
+    '\xB1', '\xB3', '\x5', 'P', ')', '\x2', '\xB2', '\x9E', '\x3', '\x2',
+    '\x2', '\x2', '\xB2', '\x9F', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA0',
+    '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA1', '\x3', '\x2', '\x2', '\x2',
+    '\xB2', '\xA2', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA3', '\x3', '\x2',
+    '\x2', '\x2', '\xB2', '\xA4', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA5',
+    '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA6', '\x3', '\x2', '\x2', '\x2',
+    '\xB2', '\xA7', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xA8', '\x3', '\x2',
+    '\x2', '\x2', '\xB2', '\xA9', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAA',
+    '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAB', '\x3', '\x2', '\x2', '\x2',
+    '\xB2', '\xAC', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAD', '\x3', '\x2',
+    '\x2', '\x2', '\xB2', '\xAE', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xAF',
+    '\x3', '\x2', '\x2', '\x2', '\xB2', '\xB0', '\x3', '\x2', '\x2', '\x2',
+    '\xB2', '\xB1', '\x3', '\x2', '\x2', '\x2', '\xB3', '\a', '\x3', '\x2',
+    '\x2', '\x2', '\xB4', '\xB6', '\a', '\v', '\x2', '\x2', '\xB5', '\xB7',
+    '\x5', '\n', '\x6', '\x2', '\xB6', '\xB5', '\x3', '\x2', '\x2', '\x2',
+    '\xB6', '\xB7', '\x3', '\x2', '\x2', '\x2', '\xB7', '\xB8', '\x3', '\x2',
+    '\x2', '\x2', '\xB8', '\xB9', '\a', '\f', '\x2', '\x2', '\xB9', '\t',
+    '\x3', '\x2', '\x2', '\x2', '\xBA', '\xBC', '\x5', '\x6', '\x4', '\x2',
+    '\xBB', '\xBA', '\x3', '\x2', '\x2', '\x2', '\xBC', '\xBD', '\x3', '\x2',
+    '\x2', '\x2', '\xBD', '\xBB', '\x3', '\x2', '\x2', '\x2', '\xBD', '\xBE',
+    '\x3', '\x2', '\x2', '\x2', '\xBE', '\v', '\x3', '\x2', '\x2', '\x2',
+    '\xBF', '\xC0', '\a', 'j', '\x2', '\x2', '\xC0', '\xC1', '\x5', '\xE',
+    '\b', '\x2', '\xC1', '\r', '\x3', '\x2', '\x2', '\x2', '\xC2', '\xC4',
+    '\x5', '\x12', '\n', '\x2', '\xC3', '\xC2', '\x3', '\x2', '\x2', '\x2',
+    '\xC3', '\xC4', '\x3', '\x2', '\x2', '\x2', '\xC4', '\xC7', '\x3', '\x2',
+    '\x2', '\x2', '\xC5', '\xC8', '\x5', '\x14', '\v', '\x2', '\xC6', '\xC8',
+    '\x5', '\x10', '\t', '\x2', '\xC7', '\xC5', '\x3', '\x2', '\x2', '\x2',
+    '\xC7', '\xC6', '\x3', '\x2', '\x2', '\x2', '\xC8', '\xC9', '\x3', '\x2',
+    '\x2', '\x2', '\xC9', '\xCA', '\x5', '\x16', '\f', '\x2', '\xCA', '\xCB',
+    '\x5', '\x92', 'J', '\x2', '\xCB', '\xCF', '\x3', '\x2', '\x2', '\x2',
+    '\xCC', '\xCD', '\a', 'w', '\x2', '\x2', '\xCD', '\xCF', '\x5', '\x92',
+    'J', '\x2', '\xCE', '\xC3', '\x3', '\x2', '\x2', '\x2', '\xCE', '\xCC',
+    '\x3', '\x2', '\x2', '\x2', '\xCF', '\xF', '\x3', '\x2', '\x2', '\x2',
+    '\xD0', '\xD6', '\a', '\v', '\x2', '\x2', '\xD1', '\xD2', '\x5', '\x18',
+    '\r', '\x2', '\xD2', '\xD3', '\a', '\xE', '\x2', '\x2', '\xD3', '\xD5',
+    '\x3', '\x2', '\x2', '\x2', '\xD4', '\xD1', '\x3', '\x2', '\x2', '\x2',
+    '\xD5', '\xD8', '\x3', '\x2', '\x2', '\x2', '\xD6', '\xD4', '\x3', '\x2',
+    '\x2', '\x2', '\xD6', '\xD7', '\x3', '\x2', '\x2', '\x2', '\xD7', '\xDD',
+    '\x3', '\x2', '\x2', '\x2', '\xD8', '\xD6', '\x3', '\x2', '\x2', '\x2',
+    '\xD9', '\xDB', '\x5', '\x18', '\r', '\x2', '\xDA', '\xDC', '\a', '\xE',
+    '\x2', '\x2', '\xDB', '\xDA', '\x3', '\x2', '\x2', '\x2', '\xDB', '\xDC',
+    '\x3', '\x2', '\x2', '\x2', '\xDC', '\xDE', '\x3', '\x2', '\x2', '\x2',
+    '\xDD', '\xD9', '\x3', '\x2', '\x2', '\x2', '\xDD', '\xDE', '\x3', '\x2',
+    '\x2', '\x2', '\xDE', '\xDF', '\x3', '\x2', '\x2', '\x2', '\xDF', '\xE0',
+    '\a', '\f', '\x2', '\x2', '\xE0', '\x11', '\x3', '\x2', '\x2', '\x2',
+    '\xE1', '\xE2', '\x5', '\x18', '\r', '\x2', '\xE2', '\xE3', '\a', '\xE',
+    '\x2', '\x2', '\xE3', '\x13', '\x3', '\x2', '\x2', '\x2', '\xE4', '\xE7',
+    '\a', '\x1A', '\x2', '\x2', '\xE5', '\xE6', '\a', '\x62', '\x2', '\x2',
+    '\xE6', '\xE8', '\x5', '\x88', '\x45', '\x2', '\xE7', '\xE5', '\x3', '\x2',
+    '\x2', '\x2', '\xE7', '\xE8', '\x3', '\x2', '\x2', '\x2', '\xE8', '\x15',
+    '\x3', '\x2', '\x2', '\x2', '\xE9', '\xEA', '\a', '\x63', '\x2', '\x2',
+    '\xEA', '\xEB', '\a', 'w', '\x2', '\x2', '\xEB', '\x17', '\x3', '\x2',
+    '\x2', '\x2', '\xEC', '\xEF', '\x5', '\x88', '\x45', '\x2', '\xED', '\xEE',
+    '\a', '\x62', '\x2', '\x2', '\xEE', '\xF0', '\x5', '\x88', '\x45', '\x2',
+    '\xEF', '\xED', '\x3', '\x2', '\x2', '\x2', '\xEF', '\xF0', '\x3', '\x2',
+    '\x2', '\x2', '\xF0', '\x19', '\x3', '\x2', '\x2', '\x2', '\xF1', '\xF4',
+    '\a', 'i', '\x2', '\x2', '\xF2', '\xF5', '\x5', '\x1C', '\xF', '\x2',
+    '\xF3', '\xF5', '\x5', '\x1E', '\x10', '\x2', '\xF4', '\xF2', '\x3', '\x2',
+    '\x2', '\x2', '\xF4', '\xF3', '\x3', '\x2', '\x2', '\x2', '\xF5', '\xF6',
+    '\x3', '\x2', '\x2', '\x2', '\xF6', '\xF7', '\x5', '\x92', 'J', '\x2',
+    '\xF7', '\xFE', '\x3', '\x2', '\x2', '\x2', '\xF8', '\xF9', '\a', 'i',
+    '\x2', '\x2', '\xF9', '\xFA', '\a', '\\', '\x2', '\x2', '\xFA', '\xFB',
+    '\x5', 'v', '<', '\x2', '\xFB', '\xFC', '\x5', '\x92', 'J', '\x2', '\xFC',
+    '\xFE', '\x3', '\x2', '\x2', '\x2', '\xFD', '\xF1', '\x3', '\x2', '\x2',
+    '\x2', '\xFD', '\xF8', '\x3', '\x2', '\x2', '\x2', '\xFE', '\x1B', '\x3',
+    '\x2', '\x2', '\x2', '\xFF', '\x100', '\x5', '\x14', '\v', '\x2', '\x100',
+    '\x101', '\x5', '\x16', '\f', '\x2', '\x101', '\x102', '\x5', '\x92',
+    'J', '\x2', '\x102', '\x10A', '\x3', '\x2', '\x2', '\x2', '\x103', '\x105',
+    '\x5', '\x10', '\t', '\x2', '\x104', '\x106', '\x5', '\x16', '\f', '\x2',
+    '\x105', '\x104', '\x3', '\x2', '\x2', '\x2', '\x105', '\x106', '\x3',
+    '\x2', '\x2', '\x2', '\x106', '\x107', '\x3', '\x2', '\x2', '\x2', '\x107',
+    '\x108', '\x5', '\x92', 'J', '\x2', '\x108', '\x10A', '\x3', '\x2', '\x2',
+    '\x2', '\x109', '\xFF', '\x3', '\x2', '\x2', '\x2', '\x109', '\x103',
+    '\x3', '\x2', '\x2', '\x2', '\x10A', '\x1D', '\x3', '\x2', '\x2', '\x2',
+    '\x10B', '\x10F', '\x5', ' ', '\x11', '\x2', '\x10C', '\x10F', '\x5',
+    'R', '*', '\x2', '\x10D', '\x10F', '\x5', 'P', ')', '\x2', '\x10E', '\x10B',
+    '\x3', '\x2', '\x2', '\x2', '\x10E', '\x10C', '\x3', '\x2', '\x2', '\x2',
+    '\x10E', '\x10D', '\x3', '\x2', '\x2', '\x2', '\x10F', '\x1F', '\x3',
+    '\x2', '\x2', '\x2', '\x110', '\x111', '\x5', '\"', '\x12', '\x2', '\x111',
+    '\x112', '\x5', '\x92', 'J', '\x2', '\x112', '!', '\x3', '\x2', '\x2',
+    '\x2', '\x113', '\x114', '\x5', '.', '\x18', '\x2', '\x114', '\x119',
+    '\x5', '$', '\x13', '\x2', '\x115', '\x116', '\a', '\xE', '\x2', '\x2',
+    '\x116', '\x118', '\x5', '$', '\x13', '\x2', '\x117', '\x115', '\x3',
+    '\x2', '\x2', '\x2', '\x118', '\x11B', '\x3', '\x2', '\x2', '\x2', '\x119',
+    '\x117', '\x3', '\x2', '\x2', '\x2', '\x119', '\x11A', '\x3', '\x2', '\x2',
+    '\x2', '\x11A', '#', '\x3', '\x2', '\x2', '\x2', '\x11B', '\x119', '\x3',
+    '\x2', '\x2', '\x2', '\x11C', '\x11F', '\x5', 'x', '=', '\x2', '\x11D',
+    '\x11E', '\a', '\xF', '\x2', '\x2', '\x11E', '\x120', '\x5', 'v', '<',
+    '\x2', '\x11F', '\x11D', '\x3', '\x2', '\x2', '\x2', '\x11F', '\x120',
+    '\x3', '\x2', '\x2', '\x2', '\x120', '%', '\x3', '\x2', '\x2', '\x2',
+    '\x121', '\x122', '\a', '\r', '\x2', '\x2', '\x122', '\'', '\x3', '\x2',
+    '\x2', '\x2', '\x123', '\x124', '\x6', '\x15', '\x2', '\x2', '\x124',
+    '\x125', '\x5', 't', ';', '\x2', '\x125', '\x126', '\x5', '\x92', 'J',
+    '\x2', '\x126', ')', '\x3', '\x2', '\x2', '\x2', '\x127', '\x128', '\a',
+    ']', '\x2', '\x2', '\x128', '\x129', '\a', '\t', '\x2', '\x2', '\x129',
+    '\x12A', '\x5', 't', ';', '\x2', '\x12A', '\x12B', '\a', '\n', '\x2',
+    '\x2', '\x12B', '\x12E', '\x5', '\x6', '\x4', '\x2', '\x12C', '\x12D',
+    '\a', 'M', '\x2', '\x2', '\x12D', '\x12F', '\x5', '\x6', '\x4', '\x2',
+    '\x12E', '\x12C', '\x3', '\x2', '\x2', '\x2', '\x12E', '\x12F', '\x3',
+    '\x2', '\x2', '\x2', '\x12F', '+', '\x3', '\x2', '\x2', '\x2', '\x130',
+    '\x131', '\a', 'I', '\x2', '\x2', '\x131', '\x132', '\x5', '\x6', '\x4',
+    '\x2', '\x132', '\x133', '\a', 'W', '\x2', '\x2', '\x133', '\x134', '\a',
+    '\t', '\x2', '\x2', '\x134', '\x135', '\x5', 't', ';', '\x2', '\x135',
+    '\x136', '\a', '\n', '\x2', '\x2', '\x136', '\x137', '\x5', '\x92', 'J',
+    '\x2', '\x137', '\x169', '\x3', '\x2', '\x2', '\x2', '\x138', '\x139',
+    '\a', 'W', '\x2', '\x2', '\x139', '\x13A', '\a', '\t', '\x2', '\x2', '\x13A',
+    '\x13B', '\x5', 't', ';', '\x2', '\x13B', '\x13C', '\a', '\n', '\x2',
+    '\x2', '\x13C', '\x13D', '\x5', '\x6', '\x4', '\x2', '\x13D', '\x169',
+    '\x3', '\x2', '\x2', '\x2', '\x13E', '\x13F', '\a', 'U', '\x2', '\x2',
+    '\x13F', '\x142', '\a', '\t', '\x2', '\x2', '\x140', '\x143', '\x5', 't',
+    ';', '\x2', '\x141', '\x143', '\x5', '\"', '\x12', '\x2', '\x142', '\x140',
+    '\x3', '\x2', '\x2', '\x2', '\x142', '\x141', '\x3', '\x2', '\x2', '\x2',
+    '\x142', '\x143', '\x3', '\x2', '\x2', '\x2', '\x143', '\x144', '\x3',
+    '\x2', '\x2', '\x2', '\x144', '\x146', '\a', '\r', '\x2', '\x2', '\x145',
+    '\x147', '\x5', 't', ';', '\x2', '\x146', '\x145', '\x3', '\x2', '\x2',
+    '\x2', '\x146', '\x147', '\x3', '\x2', '\x2', '\x2', '\x147', '\x148',
+    '\x3', '\x2', '\x2', '\x2', '\x148', '\x14A', '\a', '\r', '\x2', '\x2',
+    '\x149', '\x14B', '\x5', 't', ';', '\x2', '\x14A', '\x149', '\x3', '\x2',
+    '\x2', '\x2', '\x14A', '\x14B', '\x3', '\x2', '\x2', '\x2', '\x14B', '\x14C',
+    '\x3', '\x2', '\x2', '\x2', '\x14C', '\x14D', '\a', '\n', '\x2', '\x2',
+    '\x14D', '\x169', '\x5', '\x6', '\x4', '\x2', '\x14E', '\x14F', '\a',
+    'U', '\x2', '\x2', '\x14F', '\x152', '\a', '\t', '\x2', '\x2', '\x150',
+    '\x153', '\x5', 'v', '<', '\x2', '\x151', '\x153', '\x5', '\"', '\x12',
+    '\x2', '\x152', '\x150', '\x3', '\x2', '\x2', '\x2', '\x152', '\x151',
+    '\x3', '\x2', '\x2', '\x2', '\x153', '\x154', '\x3', '\x2', '\x2', '\x2',
+    '\x154', '\x155', '\a', '`', '\x2', '\x2', '\x155', '\x156', '\x5', 't',
+    ';', '\x2', '\x156', '\x157', '\a', '\n', '\x2', '\x2', '\x157', '\x158',
+    '\x5', '\x6', '\x4', '\x2', '\x158', '\x169', '\x3', '\x2', '\x2', '\x2',
+    '\x159', '\x15B', '\a', 'U', '\x2', '\x2', '\x15A', '\x15C', '\a', 'l',
+    '\x2', '\x2', '\x15B', '\x15A', '\x3', '\x2', '\x2', '\x2', '\x15B', '\x15C',
+    '\x3', '\x2', '\x2', '\x2', '\x15C', '\x15D', '\x3', '\x2', '\x2', '\x2',
+    '\x15D', '\x160', '\a', '\t', '\x2', '\x2', '\x15E', '\x161', '\x5', 'v',
+    '<', '\x2', '\x15F', '\x161', '\x5', '\"', '\x12', '\x2', '\x160', '\x15E',
+    '\x3', '\x2', '\x2', '\x2', '\x160', '\x15F', '\x3', '\x2', '\x2', '\x2',
+    '\x161', '\x162', '\x3', '\x2', '\x2', '\x2', '\x162', '\x163', '\a',
+    'v', '\x2', '\x2', '\x163', '\x164', '\x6', '\x17', '\x3', '\x2', '\x164',
+    '\x165', '\x5', 't', ';', '\x2', '\x165', '\x166', '\a', '\n', '\x2',
+    '\x2', '\x166', '\x167', '\x5', '\x6', '\x4', '\x2', '\x167', '\x169',
+    '\x3', '\x2', '\x2', '\x2', '\x168', '\x130', '\x3', '\x2', '\x2', '\x2',
+    '\x168', '\x138', '\x3', '\x2', '\x2', '\x2', '\x168', '\x13E', '\x3',
+    '\x2', '\x2', '\x2', '\x168', '\x14E', '\x3', '\x2', '\x2', '\x2', '\x168',
+    '\x159', '\x3', '\x2', '\x2', '\x2', '\x169', '-', '\x3', '\x2', '\x2',
+    '\x2', '\x16A', '\x16B', '\t', '\x2', '\x2', '\x2', '\x16B', '/', '\x3',
+    '\x2', '\x2', '\x2', '\x16C', '\x16F', '\a', 'T', '\x2', '\x2', '\x16D',
+    '\x16E', '\x6', '\x19', '\x4', '\x2', '\x16E', '\x170', '\a', 'v', '\x2',
+    '\x2', '\x16F', '\x16D', '\x3', '\x2', '\x2', '\x2', '\x16F', '\x170',
+    '\x3', '\x2', '\x2', '\x2', '\x170', '\x171', '\x3', '\x2', '\x2', '\x2',
+    '\x171', '\x172', '\x5', '\x92', 'J', '\x2', '\x172', '\x31', '\x3', '\x2',
+    '\x2', '\x2', '\x173', '\x176', '\a', 'H', '\x2', '\x2', '\x174', '\x175',
+    '\x6', '\x1A', '\x5', '\x2', '\x175', '\x177', '\a', 'v', '\x2', '\x2',
+    '\x176', '\x174', '\x3', '\x2', '\x2', '\x2', '\x176', '\x177', '\x3',
+    '\x2', '\x2', '\x2', '\x177', '\x178', '\x3', '\x2', '\x2', '\x2', '\x178',
+    '\x179', '\x5', '\x92', 'J', '\x2', '\x179', '\x33', '\x3', '\x2', '\x2',
+    '\x2', '\x17A', '\x17D', '\a', 'R', '\x2', '\x2', '\x17B', '\x17C', '\x6',
+    '\x1B', '\x6', '\x2', '\x17C', '\x17E', '\x5', 't', ';', '\x2', '\x17D',
+    '\x17B', '\x3', '\x2', '\x2', '\x2', '\x17D', '\x17E', '\x3', '\x2', '\x2',
+    '\x2', '\x17E', '\x17F', '\x3', '\x2', '\x2', '\x2', '\x17F', '\x180',
+    '\x5', '\x92', 'J', '\x2', '\x180', '\x35', '\x3', '\x2', '\x2', '\x2',
+    '\x181', '\x184', '\a', 'u', '\x2', '\x2', '\x182', '\x183', '\x6', '\x1C',
+    '\a', '\x2', '\x183', '\x185', '\x5', 't', ';', '\x2', '\x184', '\x182',
+    '\x3', '\x2', '\x2', '\x2', '\x184', '\x185', '\x3', '\x2', '\x2', '\x2',
+    '\x185', '\x186', '\x3', '\x2', '\x2', '\x2', '\x186', '\x187', '\x5',
+    '\x92', 'J', '\x2', '\x187', '\x37', '\x3', '\x2', '\x2', '\x2', '\x188',
+    '\x189', '\a', '[', '\x2', '\x2', '\x189', '\x18A', '\a', '\t', '\x2',
+    '\x2', '\x18A', '\x18B', '\x5', 't', ';', '\x2', '\x18B', '\x18C', '\a',
+    '\n', '\x2', '\x2', '\x18C', '\x18D', '\x5', '\x6', '\x4', '\x2', '\x18D',
+    '\x39', '\x3', '\x2', '\x2', '\x2', '\x18E', '\x18F', '\a', 'V', '\x2',
+    '\x2', '\x18F', '\x190', '\a', '\t', '\x2', '\x2', '\x190', '\x191', '\x5',
+    't', ';', '\x2', '\x191', '\x192', '\a', '\n', '\x2', '\x2', '\x192',
+    '\x193', '\x5', '<', '\x1F', '\x2', '\x193', ';', '\x3', '\x2', '\x2',
+    '\x2', '\x194', '\x196', '\a', '\v', '\x2', '\x2', '\x195', '\x197', '\x5',
+    '>', ' ', '\x2', '\x196', '\x195', '\x3', '\x2', '\x2', '\x2', '\x196',
+    '\x197', '\x3', '\x2', '\x2', '\x2', '\x197', '\x19C', '\x3', '\x2', '\x2',
+    '\x2', '\x198', '\x19A', '\x5', '\x42', '\"', '\x2', '\x199', '\x19B',
+    '\x5', '>', ' ', '\x2', '\x19A', '\x199', '\x3', '\x2', '\x2', '\x2',
+    '\x19A', '\x19B', '\x3', '\x2', '\x2', '\x2', '\x19B', '\x19D', '\x3',
+    '\x2', '\x2', '\x2', '\x19C', '\x198', '\x3', '\x2', '\x2', '\x2', '\x19C',
+    '\x19D', '\x3', '\x2', '\x2', '\x2', '\x19D', '\x19E', '\x3', '\x2', '\x2',
+    '\x2', '\x19E', '\x19F', '\a', '\f', '\x2', '\x2', '\x19F', '=', '\x3',
+    '\x2', '\x2', '\x2', '\x1A0', '\x1A2', '\x5', '@', '!', '\x2', '\x1A1',
+    '\x1A0', '\x3', '\x2', '\x2', '\x2', '\x1A2', '\x1A3', '\x3', '\x2', '\x2',
+    '\x2', '\x1A3', '\x1A1', '\x3', '\x2', '\x2', '\x2', '\x1A3', '\x1A4',
+    '\x3', '\x2', '\x2', '\x2', '\x1A4', '?', '\x3', '\x2', '\x2', '\x2',
+    '\x1A5', '\x1A6', '\a', 'L', '\x2', '\x2', '\x1A6', '\x1A7', '\x5', 't',
+    ';', '\x2', '\x1A7', '\x1A9', '\a', '\x11', '\x2', '\x2', '\x1A8', '\x1AA',
+    '\x5', '\n', '\x6', '\x2', '\x1A9', '\x1A8', '\x3', '\x2', '\x2', '\x2',
+    '\x1A9', '\x1AA', '\x3', '\x2', '\x2', '\x2', '\x1AA', '\x41', '\x3',
+    '\x2', '\x2', '\x2', '\x1AB', '\x1AC', '\a', '\\', '\x2', '\x2', '\x1AC',
+    '\x1AE', '\a', '\x11', '\x2', '\x2', '\x1AD', '\x1AF', '\x5', '\n', '\x6',
+    '\x2', '\x1AE', '\x1AD', '\x3', '\x2', '\x2', '\x2', '\x1AE', '\x1AF',
+    '\x3', '\x2', '\x2', '\x2', '\x1AF', '\x43', '\x3', '\x2', '\x2', '\x2',
+    '\x1B0', '\x1B1', '\a', 'v', '\x2', '\x2', '\x1B1', '\x1B2', '\a', '\x11',
+    '\x2', '\x2', '\x1B2', '\x1B3', '\x5', '\x6', '\x4', '\x2', '\x1B3', '\x45',
+    '\x3', '\x2', '\x2', '\x2', '\x1B4', '\x1B5', '\a', '^', '\x2', '\x2',
+    '\x1B5', '\x1B6', '\x6', '$', '\b', '\x2', '\x1B6', '\x1B7', '\x5', 't',
+    ';', '\x2', '\x1B7', '\x1B8', '\x5', '\x92', 'J', '\x2', '\x1B8', 'G',
+    '\x3', '\x2', '\x2', '\x2', '\x1B9', '\x1BA', '\a', '\x61', '\x2', '\x2',
+    '\x1BA', '\x1C0', '\x5', '\b', '\x5', '\x2', '\x1BB', '\x1BD', '\x5',
+    'J', '&', '\x2', '\x1BC', '\x1BE', '\x5', 'L', '\'', '\x2', '\x1BD', '\x1BC',
+    '\x3', '\x2', '\x2', '\x2', '\x1BD', '\x1BE', '\x3', '\x2', '\x2', '\x2',
+    '\x1BE', '\x1C1', '\x3', '\x2', '\x2', '\x2', '\x1BF', '\x1C1', '\x5',
+    'L', '\'', '\x2', '\x1C0', '\x1BB', '\x3', '\x2', '\x2', '\x2', '\x1C0',
+    '\x1BF', '\x3', '\x2', '\x2', '\x2', '\x1C1', 'I', '\x3', '\x2', '\x2',
+    '\x2', '\x1C2', '\x1C8', '\a', 'P', '\x2', '\x2', '\x1C3', '\x1C5', '\a',
+    '\t', '\x2', '\x2', '\x1C4', '\x1C6', '\x5', 'x', '=', '\x2', '\x1C5',
+    '\x1C4', '\x3', '\x2', '\x2', '\x2', '\x1C5', '\x1C6', '\x3', '\x2', '\x2',
+    '\x2', '\x1C6', '\x1C7', '\x3', '\x2', '\x2', '\x2', '\x1C7', '\x1C9',
+    '\a', '\n', '\x2', '\x2', '\x1C8', '\x1C3', '\x3', '\x2', '\x2', '\x2',
+    '\x1C8', '\x1C9', '\x3', '\x2', '\x2', '\x2', '\x1C9', '\x1CA', '\x3',
+    '\x2', '\x2', '\x2', '\x1CA', '\x1CB', '\x5', '\b', '\x5', '\x2', '\x1CB',
+    'K', '\x3', '\x2', '\x2', '\x2', '\x1CC', '\x1CD', '\a', 'Q', '\x2', '\x2',
+    '\x1CD', '\x1CE', '\x5', '\b', '\x5', '\x2', '\x1CE', 'M', '\x3', '\x2',
+    '\x2', '\x2', '\x1CF', '\x1D0', '\a', 'X', '\x2', '\x2', '\x1D0', '\x1D1',
+    '\x5', '\x92', 'J', '\x2', '\x1D1', 'O', '\x3', '\x2', '\x2', '\x2', '\x1D2',
+    '\x1D4', '\a', 'k', '\x2', '\x2', '\x1D3', '\x1D2', '\x3', '\x2', '\x2',
+    '\x2', '\x1D3', '\x1D4', '\x3', '\x2', '\x2', '\x2', '\x1D4', '\x1D5',
+    '\x3', '\x2', '\x2', '\x2', '\x1D5', '\x1D7', '\a', 'Y', '\x2', '\x2',
+    '\x1D6', '\x1D8', '\a', '\x1A', '\x2', '\x2', '\x1D7', '\x1D6', '\x3',
+    '\x2', '\x2', '\x2', '\x1D7', '\x1D8', '\x3', '\x2', '\x2', '\x2', '\x1D8',
+    '\x1D9', '\x3', '\x2', '\x2', '\x2', '\x1D9', '\x1DA', '\a', 'v', '\x2',
+    '\x2', '\x1DA', '\x1DC', '\a', '\t', '\x2', '\x2', '\x1DB', '\x1DD', '\x5',
+    'Z', '.', '\x2', '\x1DC', '\x1DB', '\x3', '\x2', '\x2', '\x2', '\x1DC',
+    '\x1DD', '\x3', '\x2', '\x2', '\x2', '\x1DD', '\x1DE', '\x3', '\x2', '\x2',
+    '\x2', '\x1DE', '\x1DF', '\a', '\n', '\x2', '\x2', '\x1DF', '\x1E0', '\a',
+    '\v', '\x2', '\x2', '\x1E0', '\x1E1', '\x5', '`', '\x31', '\x2', '\x1E1',
+    '\x1E2', '\a', '\f', '\x2', '\x2', '\x1E2', 'Q', '\x3', '\x2', '\x2',
+    '\x2', '\x1E3', '\x1E4', '\a', '\x64', '\x2', '\x2', '\x1E4', '\x1E5',
+    '\a', 'v', '\x2', '\x2', '\x1E5', '\x1E6', '\x5', 'T', '+', '\x2', '\x1E6',
+    'S', '\x3', '\x2', '\x2', '\x2', '\x1E7', '\x1E8', '\a', '\x66', '\x2',
+    '\x2', '\x1E8', '\x1EA', '\x5', 'v', '<', '\x2', '\x1E9', '\x1E7', '\x3',
+    '\x2', '\x2', '\x2', '\x1E9', '\x1EA', '\x3', '\x2', '\x2', '\x2', '\x1EA',
+    '\x1EB', '\x3', '\x2', '\x2', '\x2', '\x1EB', '\x1EF', '\a', '\v', '\x2',
+    '\x2', '\x1EC', '\x1EE', '\x5', 'V', ',', '\x2', '\x1ED', '\x1EC', '\x3',
+    '\x2', '\x2', '\x2', '\x1EE', '\x1F1', '\x3', '\x2', '\x2', '\x2', '\x1EF',
+    '\x1ED', '\x3', '\x2', '\x2', '\x2', '\x1EF', '\x1F0', '\x3', '\x2', '\x2',
+    '\x2', '\x1F0', '\x1F2', '\x3', '\x2', '\x2', '\x2', '\x1F1', '\x1EF',
+    '\x3', '\x2', '\x2', '\x2', '\x1F2', '\x1F3', '\a', '\f', '\x2', '\x2',
+    '\x1F3', 'U', '\x3', '\x2', '\x2', '\x2', '\x1F4', '\x1F9', '\a', 't',
+    '\x2', '\x2', '\x1F5', '\x1F6', '\x6', ',', '\t', '\x2', '\x1F6', '\x1F9',
+    '\a', 'v', '\x2', '\x2', '\x1F7', '\x1F9', '\a', 'k', '\x2', '\x2', '\x1F8',
+    '\x1F4', '\x3', '\x2', '\x2', '\x2', '\x1F8', '\x1F5', '\x3', '\x2', '\x2',
+    '\x2', '\x1F8', '\x1F7', '\x3', '\x2', '\x2', '\x2', '\x1F9', '\x1FC',
+    '\x3', '\x2', '\x2', '\x2', '\x1FA', '\x1F8', '\x3', '\x2', '\x2', '\x2',
+    '\x1FA', '\x1FB', '\x3', '\x2', '\x2', '\x2', '\x1FB', '\x1FD', '\x3',
+    '\x2', '\x2', '\x2', '\x1FC', '\x1FA', '\x3', '\x2', '\x2', '\x2', '\x1FD',
+    '\x207', '\x5', 'X', '-', '\x2', '\x1FE', '\x207', '\x5', '&', '\x14',
+    '\x2', '\x1FF', '\x201', '\a', '\x1F', '\x2', '\x2', '\x200', '\x1FF',
+    '\x3', '\x2', '\x2', '\x2', '\x200', '\x201', '\x3', '\x2', '\x2', '\x2',
+    '\x201', '\x202', '\x3', '\x2', '\x2', '\x2', '\x202', '\x203', '\x5',
+    'n', '\x38', '\x2', '\x203', '\x204', '\a', '\xF', '\x2', '\x2', '\x204',
+    '\x205', '\x5', 'v', '<', '\x2', '\x205', '\x207', '\x3', '\x2', '\x2',
+    '\x2', '\x206', '\x1FA', '\x3', '\x2', '\x2', '\x2', '\x206', '\x1FE',
+    '\x3', '\x2', '\x2', '\x2', '\x206', '\x200', '\x3', '\x2', '\x2', '\x2',
+    '\x207', 'W', '\x3', '\x2', '\x2', '\x2', '\x208', '\x20A', '\a', '\x1A',
+    '\x2', '\x2', '\x209', '\x208', '\x3', '\x2', '\x2', '\x2', '\x209', '\x20A',
+    '\x3', '\x2', '\x2', '\x2', '\x20A', '\x20C', '\x3', '\x2', '\x2', '\x2',
+    '\x20B', '\x20D', '\a', '\x1F', '\x2', '\x2', '\x20C', '\x20B', '\x3',
+    '\x2', '\x2', '\x2', '\x20C', '\x20D', '\x3', '\x2', '\x2', '\x2', '\x20D',
+    '\x20E', '\x3', '\x2', '\x2', '\x2', '\x20E', '\x20F', '\x5', 'n', '\x38',
+    '\x2', '\x20F', '\x211', '\a', '\t', '\x2', '\x2', '\x210', '\x212', '\x5',
+    'Z', '.', '\x2', '\x211', '\x210', '\x3', '\x2', '\x2', '\x2', '\x211',
+    '\x212', '\x3', '\x2', '\x2', '\x2', '\x212', '\x213', '\x3', '\x2', '\x2',
+    '\x2', '\x213', '\x214', '\a', '\n', '\x2', '\x2', '\x214', '\x215', '\a',
+    '\v', '\x2', '\x2', '\x215', '\x216', '\x5', '`', '\x31', '\x2', '\x216',
+    '\x217', '\a', '\f', '\x2', '\x2', '\x217', '\x236', '\x3', '\x2', '\x2',
+    '\x2', '\x218', '\x21A', '\a', '\x1A', '\x2', '\x2', '\x219', '\x218',
+    '\x3', '\x2', '\x2', '\x2', '\x219', '\x21A', '\x3', '\x2', '\x2', '\x2',
+    '\x21A', '\x21C', '\x3', '\x2', '\x2', '\x2', '\x21B', '\x21D', '\a',
+    '\x1F', '\x2', '\x2', '\x21C', '\x21B', '\x3', '\x2', '\x2', '\x2', '\x21C',
+    '\x21D', '\x3', '\x2', '\x2', '\x2', '\x21D', '\x21E', '\x3', '\x2', '\x2',
+    '\x2', '\x21E', '\x21F', '\x5', '\x8E', 'H', '\x2', '\x21F', '\x220',
+    '\a', '\t', '\x2', '\x2', '\x220', '\x221', '\a', '\n', '\x2', '\x2',
+    '\x221', '\x222', '\a', '\v', '\x2', '\x2', '\x222', '\x223', '\x5', '`',
+    '\x31', '\x2', '\x223', '\x224', '\a', '\f', '\x2', '\x2', '\x224', '\x236',
+    '\x3', '\x2', '\x2', '\x2', '\x225', '\x227', '\a', '\x1A', '\x2', '\x2',
+    '\x226', '\x225', '\x3', '\x2', '\x2', '\x2', '\x226', '\x227', '\x3',
+    '\x2', '\x2', '\x2', '\x227', '\x229', '\x3', '\x2', '\x2', '\x2', '\x228',
+    '\x22A', '\a', '\x1F', '\x2', '\x2', '\x229', '\x228', '\x3', '\x2', '\x2',
+    '\x2', '\x229', '\x22A', '\x3', '\x2', '\x2', '\x2', '\x22A', '\x22B',
+    '\x3', '\x2', '\x2', '\x2', '\x22B', '\x22C', '\x5', '\x90', 'I', '\x2',
+    '\x22C', '\x22E', '\a', '\t', '\x2', '\x2', '\x22D', '\x22F', '\x5', 'Z',
+    '.', '\x2', '\x22E', '\x22D', '\x3', '\x2', '\x2', '\x2', '\x22E', '\x22F',
+    '\x3', '\x2', '\x2', '\x2', '\x22F', '\x230', '\x3', '\x2', '\x2', '\x2',
+    '\x230', '\x231', '\a', '\n', '\x2', '\x2', '\x231', '\x232', '\a', '\v',
+    '\x2', '\x2', '\x232', '\x233', '\x5', '`', '\x31', '\x2', '\x233', '\x234',
+    '\a', '\f', '\x2', '\x2', '\x234', '\x236', '\x3', '\x2', '\x2', '\x2',
+    '\x235', '\x209', '\x3', '\x2', '\x2', '\x2', '\x235', '\x219', '\x3',
+    '\x2', '\x2', '\x2', '\x235', '\x226', '\x3', '\x2', '\x2', '\x2', '\x236',
+    'Y', '\x3', '\x2', '\x2', '\x2', '\x237', '\x23C', '\x5', '\\', '/', '\x2',
+    '\x238', '\x239', '\a', '\xE', '\x2', '\x2', '\x239', '\x23B', '\x5',
+    '\\', '/', '\x2', '\x23A', '\x238', '\x3', '\x2', '\x2', '\x2', '\x23B',
+    '\x23E', '\x3', '\x2', '\x2', '\x2', '\x23C', '\x23A', '\x3', '\x2', '\x2',
+    '\x2', '\x23C', '\x23D', '\x3', '\x2', '\x2', '\x2', '\x23D', '\x241',
+    '\x3', '\x2', '\x2', '\x2', '\x23E', '\x23C', '\x3', '\x2', '\x2', '\x2',
+    '\x23F', '\x240', '\a', '\xE', '\x2', '\x2', '\x240', '\x242', '\x5',
+    '^', '\x30', '\x2', '\x241', '\x23F', '\x3', '\x2', '\x2', '\x2', '\x241',
+    '\x242', '\x3', '\x2', '\x2', '\x2', '\x242', '\x245', '\x3', '\x2', '\x2',
+    '\x2', '\x243', '\x245', '\x5', '^', '\x30', '\x2', '\x244', '\x237',
+    '\x3', '\x2', '\x2', '\x2', '\x244', '\x243', '\x3', '\x2', '\x2', '\x2',
+    '\x245', '[', '\x3', '\x2', '\x2', '\x2', '\x246', '\x249', '\x5', 'x',
+    '=', '\x2', '\x247', '\x248', '\a', '\xF', '\x2', '\x2', '\x248', '\x24A',
+    '\x5', 'v', '<', '\x2', '\x249', '\x247', '\x3', '\x2', '\x2', '\x2',
+    '\x249', '\x24A', '\x3', '\x2', '\x2', '\x2', '\x24A', ']', '\x3', '\x2',
+    '\x2', '\x2', '\x24B', '\x24C', '\a', '\x12', '\x2', '\x2', '\x24C', '\x24D',
+    '\x5', 'v', '<', '\x2', '\x24D', '_', '\x3', '\x2', '\x2', '\x2', '\x24E',
+    '\x250', '\x5', '\x62', '\x32', '\x2', '\x24F', '\x24E', '\x3', '\x2',
+    '\x2', '\x2', '\x24F', '\x250', '\x3', '\x2', '\x2', '\x2', '\x250', '\x61',
+    '\x3', '\x2', '\x2', '\x2', '\x251', '\x253', '\x5', '\x4', '\x3', '\x2',
+    '\x252', '\x251', '\x3', '\x2', '\x2', '\x2', '\x253', '\x254', '\x3',
+    '\x2', '\x2', '\x2', '\x254', '\x252', '\x3', '\x2', '\x2', '\x2', '\x254',
+    '\x255', '\x3', '\x2', '\x2', '\x2', '\x255', '\x63', '\x3', '\x2', '\x2',
+    '\x2', '\x256', '\x257', '\a', '\a', '\x2', '\x2', '\x257', '\x258', '\x5',
+    '\x66', '\x34', '\x2', '\x258', '\x259', '\a', '\b', '\x2', '\x2', '\x259',
+    '\x65', '\x3', '\x2', '\x2', '\x2', '\x25A', '\x25C', '\a', '\xE', '\x2',
+    '\x2', '\x25B', '\x25A', '\x3', '\x2', '\x2', '\x2', '\x25C', '\x25F',
+    '\x3', '\x2', '\x2', '\x2', '\x25D', '\x25B', '\x3', '\x2', '\x2', '\x2',
+    '\x25D', '\x25E', '\x3', '\x2', '\x2', '\x2', '\x25E', '\x261', '\x3',
+    '\x2', '\x2', '\x2', '\x25F', '\x25D', '\x3', '\x2', '\x2', '\x2', '\x260',
+    '\x262', '\x5', 'h', '\x35', '\x2', '\x261', '\x260', '\x3', '\x2', '\x2',
+    '\x2', '\x261', '\x262', '\x3', '\x2', '\x2', '\x2', '\x262', '\x26B',
+    '\x3', '\x2', '\x2', '\x2', '\x263', '\x265', '\a', '\xE', '\x2', '\x2',
+    '\x264', '\x263', '\x3', '\x2', '\x2', '\x2', '\x265', '\x266', '\x3',
+    '\x2', '\x2', '\x2', '\x266', '\x264', '\x3', '\x2', '\x2', '\x2', '\x266',
+    '\x267', '\x3', '\x2', '\x2', '\x2', '\x267', '\x268', '\x3', '\x2', '\x2',
+    '\x2', '\x268', '\x26A', '\x5', 'h', '\x35', '\x2', '\x269', '\x264',
+    '\x3', '\x2', '\x2', '\x2', '\x26A', '\x26D', '\x3', '\x2', '\x2', '\x2',
+    '\x26B', '\x269', '\x3', '\x2', '\x2', '\x2', '\x26B', '\x26C', '\x3',
+    '\x2', '\x2', '\x2', '\x26C', '\x271', '\x3', '\x2', '\x2', '\x2', '\x26D',
+    '\x26B', '\x3', '\x2', '\x2', '\x2', '\x26E', '\x270', '\a', '\xE', '\x2',
+    '\x2', '\x26F', '\x26E', '\x3', '\x2', '\x2', '\x2', '\x270', '\x273',
+    '\x3', '\x2', '\x2', '\x2', '\x271', '\x26F', '\x3', '\x2', '\x2', '\x2',
+    '\x271', '\x272', '\x3', '\x2', '\x2', '\x2', '\x272', 'g', '\x3', '\x2',
+    '\x2', '\x2', '\x273', '\x271', '\x3', '\x2', '\x2', '\x2', '\x274', '\x276',
+    '\a', '\x12', '\x2', '\x2', '\x275', '\x274', '\x3', '\x2', '\x2', '\x2',
+    '\x275', '\x276', '\x3', '\x2', '\x2', '\x2', '\x276', '\x277', '\x3',
+    '\x2', '\x2', '\x2', '\x277', '\x278', '\x5', 'v', '<', '\x2', '\x278',
+    'i', '\x3', '\x2', '\x2', '\x2', '\x279', '\x282', '\a', '\v', '\x2',
+    '\x2', '\x27A', '\x27F', '\x5', 'l', '\x37', '\x2', '\x27B', '\x27C',
+    '\a', '\xE', '\x2', '\x2', '\x27C', '\x27E', '\x5', 'l', '\x37', '\x2',
+    '\x27D', '\x27B', '\x3', '\x2', '\x2', '\x2', '\x27E', '\x281', '\x3',
+    '\x2', '\x2', '\x2', '\x27F', '\x27D', '\x3', '\x2', '\x2', '\x2', '\x27F',
+    '\x280', '\x3', '\x2', '\x2', '\x2', '\x280', '\x283', '\x3', '\x2', '\x2',
+    '\x2', '\x281', '\x27F', '\x3', '\x2', '\x2', '\x2', '\x282', '\x27A',
+    '\x3', '\x2', '\x2', '\x2', '\x282', '\x283', '\x3', '\x2', '\x2', '\x2',
+    '\x283', '\x285', '\x3', '\x2', '\x2', '\x2', '\x284', '\x286', '\a',
+    '\xE', '\x2', '\x2', '\x285', '\x284', '\x3', '\x2', '\x2', '\x2', '\x285',
+    '\x286', '\x3', '\x2', '\x2', '\x2', '\x286', '\x287', '\x3', '\x2', '\x2',
+    '\x2', '\x287', '\x288', '\a', '\f', '\x2', '\x2', '\x288', 'k', '\x3',
+    '\x2', '\x2', '\x2', '\x289', '\x28A', '\x5', 'n', '\x38', '\x2', '\x28A',
+    '\x28B', '\a', '\x11', '\x2', '\x2', '\x28B', '\x28C', '\x5', 'v', '<',
+    '\x2', '\x28C', '\x2B7', '\x3', '\x2', '\x2', '\x2', '\x28D', '\x28E',
+    '\a', '\a', '\x2', '\x2', '\x28E', '\x28F', '\x5', 'v', '<', '\x2', '\x28F',
+    '\x290', '\a', '\b', '\x2', '\x2', '\x290', '\x291', '\a', '\x11', '\x2',
+    '\x2', '\x291', '\x292', '\x5', 'v', '<', '\x2', '\x292', '\x2B7', '\x3',
+    '\x2', '\x2', '\x2', '\x293', '\x295', '\a', 'k', '\x2', '\x2', '\x294',
+    '\x293', '\x3', '\x2', '\x2', '\x2', '\x294', '\x295', '\x3', '\x2', '\x2',
+    '\x2', '\x295', '\x297', '\x3', '\x2', '\x2', '\x2', '\x296', '\x298',
+    '\a', '\x1A', '\x2', '\x2', '\x297', '\x296', '\x3', '\x2', '\x2', '\x2',
+    '\x297', '\x298', '\x3', '\x2', '\x2', '\x2', '\x298', '\x299', '\x3',
+    '\x2', '\x2', '\x2', '\x299', '\x29A', '\x5', 'n', '\x38', '\x2', '\x29A',
+    '\x29C', '\a', '\t', '\x2', '\x2', '\x29B', '\x29D', '\x5', 'Z', '.',
+    '\x2', '\x29C', '\x29B', '\x3', '\x2', '\x2', '\x2', '\x29C', '\x29D',
+    '\x3', '\x2', '\x2', '\x2', '\x29D', '\x29E', '\x3', '\x2', '\x2', '\x2',
+    '\x29E', '\x29F', '\a', '\n', '\x2', '\x2', '\x29F', '\x2A0', '\a', '\v',
+    '\x2', '\x2', '\x2A0', '\x2A1', '\x5', '`', '\x31', '\x2', '\x2A1', '\x2A2',
+    '\a', '\f', '\x2', '\x2', '\x2A2', '\x2B7', '\x3', '\x2', '\x2', '\x2',
+    '\x2A3', '\x2A4', '\x5', '\x8E', 'H', '\x2', '\x2A4', '\x2A5', '\a', '\t',
+    '\x2', '\x2', '\x2A5', '\x2A6', '\a', '\n', '\x2', '\x2', '\x2A6', '\x2A7',
+    '\a', '\v', '\x2', '\x2', '\x2A7', '\x2A8', '\x5', '`', '\x31', '\x2',
+    '\x2A8', '\x2A9', '\a', '\f', '\x2', '\x2', '\x2A9', '\x2B7', '\x3', '\x2',
+    '\x2', '\x2', '\x2AA', '\x2AB', '\x5', '\x90', 'I', '\x2', '\x2AB', '\x2AC',
+    '\a', '\t', '\x2', '\x2', '\x2AC', '\x2AD', '\x5', '\\', '/', '\x2', '\x2AD',
+    '\x2AE', '\a', '\n', '\x2', '\x2', '\x2AE', '\x2AF', '\a', '\v', '\x2',
+    '\x2', '\x2AF', '\x2B0', '\x5', '`', '\x31', '\x2', '\x2B0', '\x2B1',
+    '\a', '\f', '\x2', '\x2', '\x2B1', '\x2B7', '\x3', '\x2', '\x2', '\x2',
+    '\x2B2', '\x2B4', '\a', '\x12', '\x2', '\x2', '\x2B3', '\x2B2', '\x3',
+    '\x2', '\x2', '\x2', '\x2B3', '\x2B4', '\x3', '\x2', '\x2', '\x2', '\x2B4',
+    '\x2B5', '\x3', '\x2', '\x2', '\x2', '\x2B5', '\x2B7', '\x5', 'v', '<',
+    '\x2', '\x2B6', '\x289', '\x3', '\x2', '\x2', '\x2', '\x2B6', '\x28D',
+    '\x3', '\x2', '\x2', '\x2', '\x2B6', '\x294', '\x3', '\x2', '\x2', '\x2',
+    '\x2B6', '\x2A3', '\x3', '\x2', '\x2', '\x2', '\x2B6', '\x2AA', '\x3',
+    '\x2', '\x2', '\x2', '\x2B6', '\x2B3', '\x3', '\x2', '\x2', '\x2', '\x2B7',
+    'm', '\x3', '\x2', '\x2', '\x2', '\x2B8', '\x2C0', '\x5', '\x88', '\x45',
+    '\x2', '\x2B9', '\x2C0', '\a', 'w', '\x2', '\x2', '\x2BA', '\x2C0', '\x5',
+    '\x84', '\x43', '\x2', '\x2BB', '\x2BC', '\a', '\a', '\x2', '\x2', '\x2BC',
+    '\x2BD', '\x5', 'v', '<', '\x2', '\x2BD', '\x2BE', '\a', '\b', '\x2',
+    '\x2', '\x2BE', '\x2C0', '\x3', '\x2', '\x2', '\x2', '\x2BF', '\x2B8',
+    '\x3', '\x2', '\x2', '\x2', '\x2BF', '\x2B9', '\x3', '\x2', '\x2', '\x2',
+    '\x2BF', '\x2BA', '\x3', '\x2', '\x2', '\x2', '\x2BF', '\x2BB', '\x3',
+    '\x2', '\x2', '\x2', '\x2C0', 'o', '\x3', '\x2', '\x2', '\x2', '\x2C1',
+    '\x2CD', '\a', '\t', '\x2', '\x2', '\x2C2', '\x2C7', '\x5', 'r', ':',
+    '\x2', '\x2C3', '\x2C4', '\a', '\xE', '\x2', '\x2', '\x2C4', '\x2C6',
+    '\x5', 'r', ':', '\x2', '\x2C5', '\x2C3', '\x3', '\x2', '\x2', '\x2',
+    '\x2C6', '\x2C9', '\x3', '\x2', '\x2', '\x2', '\x2C7', '\x2C5', '\x3',
+    '\x2', '\x2', '\x2', '\x2C7', '\x2C8', '\x3', '\x2', '\x2', '\x2', '\x2C8',
+    '\x2CB', '\x3', '\x2', '\x2', '\x2', '\x2C9', '\x2C7', '\x3', '\x2', '\x2',
+    '\x2', '\x2CA', '\x2CC', '\a', '\xE', '\x2', '\x2', '\x2CB', '\x2CA',
+    '\x3', '\x2', '\x2', '\x2', '\x2CB', '\x2CC', '\x3', '\x2', '\x2', '\x2',
+    '\x2CC', '\x2CE', '\x3', '\x2', '\x2', '\x2', '\x2CD', '\x2C2', '\x3',
+    '\x2', '\x2', '\x2', '\x2CD', '\x2CE', '\x3', '\x2', '\x2', '\x2', '\x2CE',
+    '\x2CF', '\x3', '\x2', '\x2', '\x2', '\x2CF', '\x2D0', '\a', '\n', '\x2',
+    '\x2', '\x2D0', 'q', '\x3', '\x2', '\x2', '\x2', '\x2D1', '\x2D3', '\a',
+    '\x12', '\x2', '\x2', '\x2D2', '\x2D1', '\x3', '\x2', '\x2', '\x2', '\x2D2',
+    '\x2D3', '\x3', '\x2', '\x2', '\x2', '\x2D3', '\x2D6', '\x3', '\x2', '\x2',
+    '\x2', '\x2D4', '\x2D7', '\x5', 'v', '<', '\x2', '\x2D5', '\x2D7', '\a',
+    'v', '\x2', '\x2', '\x2D6', '\x2D4', '\x3', '\x2', '\x2', '\x2', '\x2D6',
+    '\x2D5', '\x3', '\x2', '\x2', '\x2', '\x2D7', 's', '\x3', '\x2', '\x2',
+    '\x2', '\x2D8', '\x2DD', '\x5', 'v', '<', '\x2', '\x2D9', '\x2DA', '\a',
+    '\xE', '\x2', '\x2', '\x2DA', '\x2DC', '\x5', 'v', '<', '\x2', '\x2DB',
+    '\x2D9', '\x3', '\x2', '\x2', '\x2', '\x2DC', '\x2DF', '\x3', '\x2', '\x2',
+    '\x2', '\x2DD', '\x2DB', '\x3', '\x2', '\x2', '\x2', '\x2DD', '\x2DE',
+    '\x3', '\x2', '\x2', '\x2', '\x2DE', 'u', '\x3', '\x2', '\x2', '\x2',
+    '\x2DF', '\x2DD', '\x3', '\x2', '\x2', '\x2', '\x2E0', '\x2E1', '\b',
+    '<', '\x1', '\x2', '\x2E1', '\x314', '\x5', 'z', '>', '\x2', '\x2E2',
+    '\x2E4', '\a', '\x64', '\x2', '\x2', '\x2E3', '\x2E5', '\a', 'v', '\x2',
+    '\x2', '\x2E4', '\x2E3', '\x3', '\x2', '\x2', '\x2', '\x2E4', '\x2E5',
+    '\x3', '\x2', '\x2', '\x2', '\x2E5', '\x2E6', '\x3', '\x2', '\x2', '\x2',
+    '\x2E6', '\x314', '\x5', 'T', '+', '\x2', '\x2E7', '\x2E8', '\a', 'N',
+    '\x2', '\x2', '\x2E8', '\x2EA', '\x5', 'v', '<', '\x2', '\x2E9', '\x2EB',
+    '\x5', 'p', '\x39', '\x2', '\x2EA', '\x2E9', '\x3', '\x2', '\x2', '\x2',
+    '\x2EA', '\x2EB', '\x3', '\x2', '\x2', '\x2', '\x2EB', '\x314', '\x3',
+    '\x2', '\x2', '\x2', '\x2EC', '\x2ED', '\a', 'N', '\x2', '\x2', '\x2ED',
+    '\x2EE', '\a', '\x13', '\x2', '\x2', '\x2EE', '\x314', '\a', 'v', '\x2',
+    '\x2', '\x2EF', '\x2F0', '\a', '_', '\x2', '\x2', '\x2F0', '\x314', '\x5',
+    'v', '<', '\'', '\x2F1', '\x2F2', '\a', 'S', '\x2', '\x2', '\x2F2', '\x314',
+    '\x5', 'v', '<', '&', '\x2F3', '\x2F4', '\a', 'K', '\x2', '\x2', '\x2F4',
+    '\x314', '\x5', 'v', '<', '%', '\x2F5', '\x2F6', '\a', '\x14', '\x2',
+    '\x2', '\x2F6', '\x314', '\x5', 'v', '<', '$', '\x2F7', '\x2F8', '\a',
+    '\x15', '\x2', '\x2', '\x2F8', '\x314', '\x5', 'v', '<', '#', '\x2F9',
+    '\x2FA', '\a', '\x16', '\x2', '\x2', '\x2FA', '\x314', '\x5', 'v', '<',
+    '\"', '\x2FB', '\x2FC', '\a', '\x17', '\x2', '\x2', '\x2FC', '\x314',
+    '\x5', 'v', '<', '!', '\x2FD', '\x2FE', '\a', '\x18', '\x2', '\x2', '\x2FE',
+    '\x314', '\x5', 'v', '<', ' ', '\x2FF', '\x300', '\a', '\x19', '\x2',
+    '\x2', '\x300', '\x314', '\x5', 'v', '<', '\x1F', '\x301', '\x302', '\a',
+    'l', '\x2', '\x2', '\x302', '\x314', '\x5', 'v', '<', '\x1E', '\x303',
+    '\x304', '\a', 'j', '\x2', '\x2', '\x304', '\x305', '\a', '\t', '\x2',
+    '\x2', '\x305', '\x306', '\x5', 'v', '<', '\x2', '\x306', '\x307', '\a',
+    '\n', '\x2', '\x2', '\x307', '\x314', '\x3', '\x2', '\x2', '\x2', '\x308',
+    '\x314', '\x5', '\x36', '\x1C', '\x2', '\x309', '\x314', '\a', 'Z', '\x2',
+    '\x2', '\x30A', '\x314', '\a', 'v', '\x2', '\x2', '\x30B', '\x314', '\a',
+    'g', '\x2', '\x2', '\x30C', '\x314', '\x5', '\x82', '\x42', '\x2', '\x30D',
+    '\x314', '\x5', '\x64', '\x33', '\x2', '\x30E', '\x314', '\x5', 'j', '\x36',
+    '\x2', '\x30F', '\x310', '\a', '\t', '\x2', '\x2', '\x310', '\x311', '\x5',
+    't', ';', '\x2', '\x311', '\x312', '\a', '\n', '\x2', '\x2', '\x312',
+    '\x314', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2E0', '\x3', '\x2', '\x2',
+    '\x2', '\x313', '\x2E2', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2E7',
+    '\x3', '\x2', '\x2', '\x2', '\x313', '\x2EC', '\x3', '\x2', '\x2', '\x2',
+    '\x313', '\x2EF', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2F1', '\x3',
+    '\x2', '\x2', '\x2', '\x313', '\x2F3', '\x3', '\x2', '\x2', '\x2', '\x313',
+    '\x2F5', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2F7', '\x3', '\x2', '\x2',
+    '\x2', '\x313', '\x2F9', '\x3', '\x2', '\x2', '\x2', '\x313', '\x2FB',
+    '\x3', '\x2', '\x2', '\x2', '\x313', '\x2FD', '\x3', '\x2', '\x2', '\x2',
+    '\x313', '\x2FF', '\x3', '\x2', '\x2', '\x2', '\x313', '\x301', '\x3',
+    '\x2', '\x2', '\x2', '\x313', '\x303', '\x3', '\x2', '\x2', '\x2', '\x313',
+    '\x308', '\x3', '\x2', '\x2', '\x2', '\x313', '\x309', '\x3', '\x2', '\x2',
+    '\x2', '\x313', '\x30A', '\x3', '\x2', '\x2', '\x2', '\x313', '\x30B',
+    '\x3', '\x2', '\x2', '\x2', '\x313', '\x30C', '\x3', '\x2', '\x2', '\x2',
+    '\x313', '\x30D', '\x3', '\x2', '\x2', '\x2', '\x313', '\x30E', '\x3',
+    '\x2', '\x2', '\x2', '\x313', '\x30F', '\x3', '\x2', '\x2', '\x2', '\x314',
+    '\x366', '\x3', '\x2', '\x2', '\x2', '\x315', '\x316', '\f', '\x1D', '\x2',
+    '\x2', '\x316', '\x317', '\a', '\x1D', '\x2', '\x2', '\x317', '\x365',
+    '\x5', 'v', '<', '\x1D', '\x318', '\x319', '\f', '\x1C', '\x2', '\x2',
+    '\x319', '\x31A', '\t', '\x3', '\x2', '\x2', '\x31A', '\x365', '\x5',
+    'v', '<', '\x1D', '\x31B', '\x31C', '\f', '\x1B', '\x2', '\x2', '\x31C',
+    '\x31D', '\t', '\x4', '\x2', '\x2', '\x31D', '\x365', '\x5', 'v', '<',
+    '\x1C', '\x31E', '\x31F', '\f', '\x1A', '\x2', '\x2', '\x31F', '\x320',
+    '\a', '\x1E', '\x2', '\x2', '\x320', '\x365', '\x5', 'v', '<', '\x1B',
+    '\x321', '\x322', '\f', '\x19', '\x2', '\x2', '\x322', '\x323', '\t',
+    '\x5', '\x2', '\x2', '\x323', '\x365', '\x5', 'v', '<', '\x1A', '\x324',
+    '\x325', '\f', '\x18', '\x2', '\x2', '\x325', '\x326', '\t', '\x6', '\x2',
+    '\x2', '\x326', '\x365', '\x5', 'v', '<', '\x19', '\x327', '\x328', '\f',
+    '\x17', '\x2', '\x2', '\x328', '\x329', '\a', 'J', '\x2', '\x2', '\x329',
+    '\x365', '\x5', 'v', '<', '\x18', '\x32A', '\x32B', '\f', '\x16', '\x2',
+    '\x2', '\x32B', '\x32C', '\a', '`', '\x2', '\x2', '\x32C', '\x365', '\x5',
+    'v', '<', '\x17', '\x32D', '\x32E', '\f', '\x15', '\x2', '\x2', '\x32E',
+    '\x32F', '\t', '\a', '\x2', '\x2', '\x32F', '\x365', '\x5', 'v', '<',
+    '\x16', '\x330', '\x331', '\f', '\x14', '\x2', '\x2', '\x331', '\x332',
+    '\a', '+', '\x2', '\x2', '\x332', '\x365', '\x5', 'v', '<', '\x15', '\x333',
+    '\x334', '\f', '\x13', '\x2', '\x2', '\x334', '\x335', '\a', ',', '\x2',
+    '\x2', '\x335', '\x365', '\x5', 'v', '<', '\x14', '\x336', '\x337', '\f',
+    '\x12', '\x2', '\x2', '\x337', '\x338', '\a', '-', '\x2', '\x2', '\x338',
+    '\x365', '\x5', 'v', '<', '\x13', '\x339', '\x33A', '\f', '\x11', '\x2',
+    '\x2', '\x33A', '\x33B', '\a', '.', '\x2', '\x2', '\x33B', '\x365', '\x5',
+    'v', '<', '\x12', '\x33C', '\x33D', '\f', '\x10', '\x2', '\x2', '\x33D',
+    '\x33E', '\a', '/', '\x2', '\x2', '\x33E', '\x365', '\x5', 'v', '<', '\x11',
+    '\x33F', '\x340', '\f', '\xF', '\x2', '\x2', '\x340', '\x341', '\a', '\x10',
+    '\x2', '\x2', '\x341', '\x342', '\x5', 'v', '<', '\x2', '\x342', '\x343',
+    '\a', '\x11', '\x2', '\x2', '\x343', '\x344', '\x5', 'v', '<', '\x10',
+    '\x344', '\x365', '\x3', '\x2', '\x2', '\x2', '\x345', '\x346', '\f',
+    '\xE', '\x2', '\x2', '\x346', '\x347', '\a', '\xF', '\x2', '\x2', '\x347',
+    '\x365', '\x5', 'v', '<', '\xE', '\x348', '\x349', '\f', '\r', '\x2',
+    '\x2', '\x349', '\x34A', '\x5', '\x80', '\x41', '\x2', '\x34A', '\x34B',
+    '\x5', 'v', '<', '\r', '\x34B', '\x365', '\x3', '\x2', '\x2', '\x2', '\x34C',
+    '\x34D', '\f', '.', '\x2', '\x2', '\x34D', '\x34E', '\a', '\a', '\x2',
+    '\x2', '\x34E', '\x34F', '\x5', 't', ';', '\x2', '\x34F', '\x350', '\a',
+    '\b', '\x2', '\x2', '\x350', '\x365', '\x3', '\x2', '\x2', '\x2', '\x351',
+    '\x353', '\f', '-', '\x2', '\x2', '\x352', '\x354', '\a', '\x10', '\x2',
+    '\x2', '\x353', '\x352', '\x3', '\x2', '\x2', '\x2', '\x353', '\x354',
+    '\x3', '\x2', '\x2', '\x2', '\x354', '\x355', '\x3', '\x2', '\x2', '\x2',
+    '\x355', '\x357', '\a', '\x13', '\x2', '\x2', '\x356', '\x358', '\a',
+    '\x1F', '\x2', '\x2', '\x357', '\x356', '\x3', '\x2', '\x2', '\x2', '\x357',
+    '\x358', '\x3', '\x2', '\x2', '\x2', '\x358', '\x359', '\x3', '\x2', '\x2',
+    '\x2', '\x359', '\x365', '\x5', '\x88', '\x45', '\x2', '\x35A', '\x35B',
+    '\f', ',', '\x2', '\x2', '\x35B', '\x365', '\x5', 'p', '\x39', '\x2',
+    '\x35C', '\x35D', '\f', ')', '\x2', '\x2', '\x35D', '\x35E', '\x6', '<',
+    '\x1F', '\x2', '\x35E', '\x365', '\a', '\x14', '\x2', '\x2', '\x35F',
+    '\x360', '\f', '(', '\x2', '\x2', '\x360', '\x361', '\x6', '<', '!', '\x2',
+    '\x361', '\x365', '\a', '\x15', '\x2', '\x2', '\x362', '\x363', '\f',
+    '\v', '\x2', '\x2', '\x363', '\x365', '\a', 'x', '\x2', '\x2', '\x364',
+    '\x315', '\x3', '\x2', '\x2', '\x2', '\x364', '\x318', '\x3', '\x2', '\x2',
+    '\x2', '\x364', '\x31B', '\x3', '\x2', '\x2', '\x2', '\x364', '\x31E',
+    '\x3', '\x2', '\x2', '\x2', '\x364', '\x321', '\x3', '\x2', '\x2', '\x2',
+    '\x364', '\x324', '\x3', '\x2', '\x2', '\x2', '\x364', '\x327', '\x3',
+    '\x2', '\x2', '\x2', '\x364', '\x32A', '\x3', '\x2', '\x2', '\x2', '\x364',
+    '\x32D', '\x3', '\x2', '\x2', '\x2', '\x364', '\x330', '\x3', '\x2', '\x2',
+    '\x2', '\x364', '\x333', '\x3', '\x2', '\x2', '\x2', '\x364', '\x336',
+    '\x3', '\x2', '\x2', '\x2', '\x364', '\x339', '\x3', '\x2', '\x2', '\x2',
+    '\x364', '\x33C', '\x3', '\x2', '\x2', '\x2', '\x364', '\x33F', '\x3',
+    '\x2', '\x2', '\x2', '\x364', '\x345', '\x3', '\x2', '\x2', '\x2', '\x364',
+    '\x348', '\x3', '\x2', '\x2', '\x2', '\x364', '\x34C', '\x3', '\x2', '\x2',
+    '\x2', '\x364', '\x351', '\x3', '\x2', '\x2', '\x2', '\x364', '\x35A',
+    '\x3', '\x2', '\x2', '\x2', '\x364', '\x35C', '\x3', '\x2', '\x2', '\x2',
+    '\x364', '\x35F', '\x3', '\x2', '\x2', '\x2', '\x364', '\x362', '\x3',
+    '\x2', '\x2', '\x2', '\x365', '\x368', '\x3', '\x2', '\x2', '\x2', '\x366',
+    '\x364', '\x3', '\x2', '\x2', '\x2', '\x366', '\x367', '\x3', '\x2', '\x2',
+    '\x2', '\x367', 'w', '\x3', '\x2', '\x2', '\x2', '\x368', '\x366', '\x3',
+    '\x2', '\x2', '\x2', '\x369', '\x36D', '\a', 'v', '\x2', '\x2', '\x36A',
+    '\x36D', '\x5', '\x64', '\x33', '\x2', '\x36B', '\x36D', '\x5', 'j', '\x36',
+    '\x2', '\x36C', '\x369', '\x3', '\x2', '\x2', '\x2', '\x36C', '\x36A',
+    '\x3', '\x2', '\x2', '\x2', '\x36C', '\x36B', '\x3', '\x2', '\x2', '\x2',
+    '\x36D', 'y', '\x3', '\x2', '\x2', '\x2', '\x36E', '\x387', '\x5', 'P',
+    ')', '\x2', '\x36F', '\x371', '\a', 'k', '\x2', '\x2', '\x370', '\x36F',
+    '\x3', '\x2', '\x2', '\x2', '\x370', '\x371', '\x3', '\x2', '\x2', '\x2',
+    '\x371', '\x372', '\x3', '\x2', '\x2', '\x2', '\x372', '\x374', '\a',
+    'Y', '\x2', '\x2', '\x373', '\x375', '\a', '\x1A', '\x2', '\x2', '\x374',
+    '\x373', '\x3', '\x2', '\x2', '\x2', '\x374', '\x375', '\x3', '\x2', '\x2',
+    '\x2', '\x375', '\x376', '\x3', '\x2', '\x2', '\x2', '\x376', '\x378',
+    '\a', '\t', '\x2', '\x2', '\x377', '\x379', '\x5', 'Z', '.', '\x2', '\x378',
+    '\x377', '\x3', '\x2', '\x2', '\x2', '\x378', '\x379', '\x3', '\x2', '\x2',
+    '\x2', '\x379', '\x37A', '\x3', '\x2', '\x2', '\x2', '\x37A', '\x37B',
+    '\a', '\n', '\x2', '\x2', '\x37B', '\x37C', '\a', '\v', '\x2', '\x2',
+    '\x37C', '\x37D', '\x5', '`', '\x31', '\x2', '\x37D', '\x37E', '\a', '\f',
+    '\x2', '\x2', '\x37E', '\x387', '\x3', '\x2', '\x2', '\x2', '\x37F', '\x381',
+    '\a', 'k', '\x2', '\x2', '\x380', '\x37F', '\x3', '\x2', '\x2', '\x2',
+    '\x380', '\x381', '\x3', '\x2', '\x2', '\x2', '\x381', '\x382', '\x3',
+    '\x2', '\x2', '\x2', '\x382', '\x383', '\x5', '|', '?', '\x2', '\x383',
+    '\x384', '\a', '<', '\x2', '\x2', '\x384', '\x385', '\x5', '~', '@', '\x2',
+    '\x385', '\x387', '\x3', '\x2', '\x2', '\x2', '\x386', '\x36E', '\x3',
+    '\x2', '\x2', '\x2', '\x386', '\x370', '\x3', '\x2', '\x2', '\x2', '\x386',
+    '\x380', '\x3', '\x2', '\x2', '\x2', '\x387', '{', '\x3', '\x2', '\x2',
+    '\x2', '\x388', '\x38F', '\a', 'v', '\x2', '\x2', '\x389', '\x38B', '\a',
+    '\t', '\x2', '\x2', '\x38A', '\x38C', '\x5', 'Z', '.', '\x2', '\x38B',
+    '\x38A', '\x3', '\x2', '\x2', '\x2', '\x38B', '\x38C', '\x3', '\x2', '\x2',
+    '\x2', '\x38C', '\x38D', '\x3', '\x2', '\x2', '\x2', '\x38D', '\x38F',
+    '\a', '\n', '\x2', '\x2', '\x38E', '\x388', '\x3', '\x2', '\x2', '\x2',
+    '\x38E', '\x389', '\x3', '\x2', '\x2', '\x2', '\x38F', '}', '\x3', '\x2',
+    '\x2', '\x2', '\x390', '\x396', '\x5', 'v', '<', '\x2', '\x391', '\x392',
+    '\a', '\v', '\x2', '\x2', '\x392', '\x393', '\x5', '`', '\x31', '\x2',
+    '\x393', '\x394', '\a', '\f', '\x2', '\x2', '\x394', '\x396', '\x3', '\x2',
+    '\x2', '\x2', '\x395', '\x390', '\x3', '\x2', '\x2', '\x2', '\x395', '\x391',
+    '\x3', '\x2', '\x2', '\x2', '\x396', '\x7F', '\x3', '\x2', '\x2', '\x2',
+    '\x397', '\x398', '\t', '\b', '\x2', '\x2', '\x398', '\x81', '\x3', '\x2',
+    '\x2', '\x2', '\x399', '\x3A1', '\a', '=', '\x2', '\x2', '\x39A', '\x3A1',
+    '\a', '>', '\x2', '\x2', '\x39B', '\x3A1', '\a', 'w', '\x2', '\x2', '\x39C',
+    '\x3A1', '\a', 'x', '\x2', '\x2', '\x39D', '\x3A1', '\a', '\x6', '\x2',
+    '\x2', '\x39E', '\x3A1', '\x5', '\x84', '\x43', '\x2', '\x39F', '\x3A1',
+    '\x5', '\x86', '\x44', '\x2', '\x3A0', '\x399', '\x3', '\x2', '\x2', '\x2',
+    '\x3A0', '\x39A', '\x3', '\x2', '\x2', '\x2', '\x3A0', '\x39B', '\x3',
+    '\x2', '\x2', '\x2', '\x3A0', '\x39C', '\x3', '\x2', '\x2', '\x2', '\x3A0',
+    '\x39D', '\x3', '\x2', '\x2', '\x2', '\x3A0', '\x39E', '\x3', '\x2', '\x2',
+    '\x2', '\x3A0', '\x39F', '\x3', '\x2', '\x2', '\x2', '\x3A1', '\x83',
+    '\x3', '\x2', '\x2', '\x2', '\x3A2', '\x3A3', '\t', '\t', '\x2', '\x2',
+    '\x3A3', '\x85', '\x3', '\x2', '\x2', '\x2', '\x3A4', '\x3A5', '\t', '\n',
+    '\x2', '\x2', '\x3A5', '\x87', '\x3', '\x2', '\x2', '\x2', '\x3A6', '\x3A9',
+    '\a', 'v', '\x2', '\x2', '\x3A7', '\x3A9', '\x5', '\x8A', '\x46', '\x2',
+    '\x3A8', '\x3A6', '\x3', '\x2', '\x2', '\x2', '\x3A8', '\x3A7', '\x3',
+    '\x2', '\x2', '\x2', '\x3A9', '\x89', '\x3', '\x2', '\x2', '\x2', '\x3AA',
+    '\x3AE', '\x5', '\x8C', 'G', '\x2', '\x3AB', '\x3AE', '\a', '=', '\x2',
+    '\x2', '\x3AC', '\x3AE', '\a', '>', '\x2', '\x2', '\x3AD', '\x3AA', '\x3',
+    '\x2', '\x2', '\x2', '\x3AD', '\x3AB', '\x3', '\x2', '\x2', '\x2', '\x3AD',
+    '\x3AC', '\x3', '\x2', '\x2', '\x2', '\x3AE', '\x8B', '\x3', '\x2', '\x2',
+    '\x2', '\x3AF', '\x3B0', '\t', '\v', '\x2', '\x2', '\x3B0', '\x8D', '\x3',
+    '\x2', '\x2', '\x2', '\x3B1', '\x3B2', '\a', 'v', '\x2', '\x2', '\x3B2',
+    '\x3B3', '\x6', 'H', '#', '\x2', '\x3B3', '\x3B4', '\x5', 'n', '\x38',
+    '\x2', '\x3B4', '\x8F', '\x3', '\x2', '\x2', '\x2', '\x3B5', '\x3B6',
+    '\a', 'v', '\x2', '\x2', '\x3B6', '\x3B7', '\x6', 'I', '$', '\x2', '\x3B7',
+    '\x3B8', '\x5', 'n', '\x38', '\x2', '\x3B8', '\x91', '\x3', '\x2', '\x2',
+    '\x2', '\x3B9', '\x3BE', '\a', '\r', '\x2', '\x2', '\x3BA', '\x3BE', '\a',
+    '\x2', '\x2', '\x3', '\x3BB', '\x3BE', '\x6', 'J', '%', '\x2', '\x3BC',
+    '\x3BE', '\x6', 'J', '&', '\x2', '\x3BD', '\x3B9', '\x3', '\x2', '\x2',
+    '\x2', '\x3BD', '\x3BA', '\x3', '\x2', '\x2', '\x2', '\x3BD', '\x3BB',
+    '\x3', '\x2', '\x2', '\x2', '\x3BD', '\x3BC', '\x3', '\x2', '\x2', '\x2',
+    '\x3BE', '\x93', '\x3', '\x2', '\x2', '\x2', 'm', '\x95', '\x98', '\xB2',
+    '\xB6', '\xBD', '\xC3', '\xC7', '\xCE', '\xD6', '\xDB', '\xDD', '\xE7',
+    '\xEF', '\xF4', '\xFD', '\x105', '\x109', '\x10E', '\x119', '\x11F', '\x12E',
+    '\x142', '\x146', '\x14A', '\x152', '\x15B', '\x160', '\x168', '\x16F',
+    '\x176', '\x17D', '\x184', '\x196', '\x19A', '\x19C', '\x1A3', '\x1A9',
+    '\x1AE', '\x1BD', '\x1C0', '\x1C5', '\x1C8', '\x1D3', '\x1D7', '\x1DC',
+    '\x1E9', '\x1EF', '\x1F8', '\x1FA', '\x200', '\x206', '\x209', '\x20C',
+    '\x211', '\x219', '\x21C', '\x226', '\x229', '\x22E', '\x235', '\x23C',
+    '\x241', '\x244', '\x249', '\x24F', '\x254', '\x25D', '\x261', '\x266',
+    '\x26B', '\x271', '\x275', '\x27F', '\x282', '\x285', '\x294', '\x297',
+    '\x29C', '\x2B3', '\x2B6', '\x2BF', '\x2C7', '\x2CB', '\x2CD', '\x2D2',
+    '\x2D6', '\x2DD', '\x2E4', '\x2EA', '\x313', '\x353', '\x357', '\x364',
+    '\x366', '\x36C', '\x370', '\x374', '\x378', '\x380', '\x386', '\x38B',
+    '\x38E', '\x395', '\x3A0', '\x3A8', '\x3AD', '\x3BD',
+};
+
+    public static readonly ATN _ATN =
+        new ATNDeserializer().Deserialize(_serializedATN);
 }
+

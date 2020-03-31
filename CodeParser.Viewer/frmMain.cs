@@ -20,7 +20,13 @@ namespace CodeParser.Viewer
         private string coderPaserDllName = "CodeParser.dll";
         private Assembly assembly = null;
         private List<Type> parserTypes = new List<Type>();
-        private Parser parser = null;
+        private Parser parser = null;       
+
+        private static List<string> ignoreMethods = new List<string>()
+        {
+            "getAltNumber",
+            "Eof"
+        };
 
         public frmMain()
         {
@@ -112,12 +118,21 @@ namespace CodeParser.Viewer
             this.LoadTree();
         }
 
+        private void Reset()
+        {
+            this.txtChildCount.Text = "";
+            this.txtTypeName.Text = "";
+            this.txtText.Text = "";
+        }
+
         private void LoadTree()
         {
             if (!File.Exists(this.txtFile.Text))
             {
                 return;
             }
+
+            this.Reset();
 
             this.tvParserNodes.Nodes.Clear();
 
@@ -144,14 +159,14 @@ namespace CodeParser.Viewer
 
             object value = rootMethod.Invoke(parser, new object[] { });
 
-            TreeNode rootNode = new TreeNode(info.EntryRuleName);
+            TreeNode rootNode = this.CreateTreeNode(info.EntryRuleName);
             rootNode.Tag = value;
 
             this.tvParserNodes.Nodes.Add(rootNode);
 
             this.AddChildNodes(rootNode, false);
 
-            this.tvParserNodes.ExpandAll();
+            rootNode.Expand();
 
             rootNode.EnsureVisible();
         }
@@ -173,7 +188,14 @@ namespace CodeParser.Viewer
             {
                 object[] values = value as object[];
 
-                list.AddRange(values);
+                if (values != null)
+                {
+                    list.AddRange(values);
+                }
+                else
+                {
+                    list.Add(value);
+                }
             }
             else
             {
@@ -185,43 +207,85 @@ namespace CodeParser.Viewer
             foreach (object v in list)
             {
                 Type t = v.GetType();
-                MethodInfo[] methods = t.GetMethods();
 
-                Regex regex = new Regex("[a-z]");
-
-                foreach (MethodInfo m in methods)
+                if (this.rbMethods.Checked)
                 {
-                    if (m.IsPublic && regex.IsMatch(m.Name[0].ToString()) && !m.Name.StartsWith("get") && !m.Name.StartsWith("set") && m.GetParameters().Length == 0)
+                    #region Methods                 
+
+                    MethodInfo[] methods = t.GetMethods();
+
+                    foreach (MethodInfo m in methods)
                     {
-                        var childValue = m.Invoke(v, new object[] { });
-
-                        if (childValue == null && hideEmptyNode)
+                        if (m.IsPublic && !ignoreMethods.Contains(m.Name) && m.Module.Name == this.coderPaserDllName && !m.Name.StartsWith("get_") && !m.Name.StartsWith("set_") && m.GetParameters().Length == 0)
                         {
-                            continue;
-                        }
+                            var childValue = m.Invoke(v, new object[] { });
 
-                        bool isArray = m.ReturnType.IsArray;
-                        string count = "";
-
-                        if (isArray)
-                        {
-                            count = childValue.GetType().GetMethod("get_Length").Invoke(childValue, new object[] { }).ToString();
-
-                            if (count == "0" && hideEmptyNode)
+                            if (childValue == null && hideEmptyNode)
                             {
                                 continue;
                             }
+
+                            bool isArray = m.ReturnType.IsArray;
+                            int count = 0;
+
+                            if (isArray && childValue is IEnumerable<IParseTree> treeNodes)
+                            {
+                                count = treeNodes.Count();
+
+                                if (count == 0 && hideEmptyNode)
+                                {
+                                    continue;
+                                }
+                            }
+
+                            string nodeText = isArray ? (m.Name + "[]") : m.Name;
+                            TreeNode childNode = this.CreateTreeNode(nodeText);
+
+                            childNode.Tag = childValue;                            
+
+                            node.Nodes.Add(childNode);
+
+                            Console.WriteLine(m.Name);
+
+                            this.AddChildNodes(childNode, false);
                         }
-
-                        string nodeText = isArray ? (m.Name + $"[{count}]") : m.Name;
-                        TreeNode childNode = new TreeNode(nodeText);
-
-                        childNode.Tag = childValue;
-
-                        node.Nodes.Add(childNode);
-
-                        this.AddChildNodes(childNode, false);
                     }
+
+                    #endregion
+                }
+
+                if (this.rbChildren.Checked)
+                {
+                    #region Children          
+
+                    var childrenField = type.GetField("children");
+
+                    if (childrenField != null)
+                    {
+                        var children = childrenField.GetValue(value);
+
+                        if (children != null)
+                        {
+                            if (children is List<IParseTree> treeNodes)
+                            {
+                                int i = 0;
+
+                                foreach (IParseTree tn in treeNodes)
+                                {
+                                    TreeNode childNode = this.CreateTreeNode($"{tn.GetType().Name}");
+                                    childNode.Tag = tn;
+
+                                    node.Nodes.Add(childNode);
+
+                                    this.AddChildNodes(childNode, false);
+
+                                    i++;
+                                }
+                            }
+                        }
+                    }
+
+                    #endregion
                 }
             }
 
@@ -229,6 +293,15 @@ namespace CodeParser.Viewer
             {
                 node.Expand();
             }
+        }       
+
+        private TreeNode CreateTreeNode(string text, string imageKey = null)
+        {
+            TreeNode node = new TreeNode(text);
+            node.ImageKey = string.IsNullOrEmpty(imageKey) ? "" : imageKey;
+            node.SelectedImageKey = node.ImageKey;
+
+            return node;
         }
 
         private void txtFile_KeyUp(object sender, KeyEventArgs e)
@@ -239,43 +312,55 @@ namespace CodeParser.Viewer
             }
         }
 
-        private void tvParserNodes_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private (int ChildCount, string Text) GetNodeValueInfo(object value)
         {
-            object value = e.Node.Tag;
-
-            if (value == null)
-            {
-                return;
-            }
-
-            this.txtTypeName.Text = "";
-            this.txtChildCount.Text = "";
-            this.txtText.Text = "";
-
             Type type = value.GetType();
 
-            this.txtTypeName.Text = type.Name;
+            int childCount = 0;
+            string text = "";
 
-            if (!type.IsArray)
+            if (type.IsClass)
             {
-                var info = this.GetNodeValueInfo(value);
-                this.txtChildCount.Text = info.ChildCount;
-                this.txtText.Text = info.Text;
+                var childrenField = type.GetField("children");
+
+                if (childrenField != null)
+                {
+                    var children = childrenField.GetValue(value);
+
+                    if (children != null)
+                    {
+                        if (children is List<IParseTree> treeNodes)
+                        {
+                            childCount = treeNodes.Count;
+
+                            if (childCount > 1)
+                            {
+                                text = string.Join(" ", treeNodes.Select(item => item.GetText()));
+                            }
+                            else if (childCount == 1)
+                            {
+                                text = this.GetNodeValueInfo(treeNodes[0]).Text;
+                            }
+                        }
+                        else
+                        {
+                            childCount = int.Parse(children.GetType().GetMethod("get_Count").Invoke(children, new object[] { }).ToString());
+                        }
+                    }
+                }
+            }
+
+            if (this.tvParserNodes.SelectedNode != null && this.tvParserNodes.SelectedNode.Level == 0 && this.tvParserNodes.Nodes.Count == 1)
+            {
+                text = this.GetFileContent();
             }
             else
             {
-                object[] values = value as object[];
-                this.txtChildCount.Text = values.Length.ToString();
-                this.txtText.Text = string.Join(Environment.NewLine, values.Select(item => this.GetNodeValueInfo(item).Text));
+                if (string.IsNullOrEmpty(text))
+                {
+                    text = type.GetMethod("GetText").Invoke(value, new object[] { }).ToString();
+                }
             }
-        }
-
-        private (string ChildCount, string Text) GetNodeValueInfo(object value)
-        {
-            Type type = value.GetType();
-            var children = type.GetField("children").GetValue(value);
-            string childCount = children.GetType().GetMethod("get_Count").Invoke(children, new object[] { }).ToString();
-            string text = type.GetMethod("GetText").Invoke(value, new object[] { }).ToString();
 
             return (childCount, text);
         }
@@ -298,6 +383,101 @@ namespace CodeParser.Viewer
         private void tsmiCollapseAll_Click(object sender, EventArgs e)
         {
             this.tvParserNodes.CollapseAll();
+        }
+
+        private void tvParserNodes_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            object value = e.Node.Tag;
+
+            if (value == null)
+            {
+                return;
+            }
+
+            this.Reset();
+
+            Type type = value.GetType();
+
+            this.txtTypeName.Text = type.Name;
+
+            if (!type.IsArray)
+            {
+                var info = this.GetNodeValueInfo(value);
+                this.txtChildCount.Text = info.ChildCount.ToString();
+                this.txtText.Text = info.Text;
+            }
+            else
+            {
+                object[] values = value as object[];
+                this.txtChildCount.Text = values.Length.ToString();
+                this.txtText.Text = string.Join(Environment.NewLine, values.Select(item => this.GetNodeValueInfo(item).Text));
+            }
+        }
+
+        private string GetFileContent()
+        {
+            string filePath = this.txtFile.Text;
+
+            if (File.Exists(filePath))
+            {
+                return File.ReadAllText(filePath);
+            }
+
+            return string.Empty;
+        }
+
+        private void frmMain_DragDrop(object sender, DragEventArgs e)
+        {
+            this.SetDropFiles(e);
+        }
+
+        private void frmMain_DragOver(object sender, DragEventArgs e)
+        {
+            this.SetDragEffect(e);
+        }
+
+        private void SetDragEffect(DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void SetDropFiles(DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] filePaths = (string[])e.Data.GetData(DataFormats.FileDrop.ToString());
+
+                string filePath = filePaths.FirstOrDefault();
+
+                if (!string.IsNullOrEmpty(filePath) && filePath != this.txtFile.Text)
+                {
+                    this.txtFile.Text = filePath;
+
+                    this.LoadTree();
+                }
+            }
+        }
+
+        private void rbChildren_CheckedChanged(object sender, EventArgs e)
+        {
+            this.LoadTree();
+        }
+
+        private void rbMethods_CheckedChanged(object sender, EventArgs e)
+        {
+            this.LoadTree();
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.LoadTree();
         }
     }
 }

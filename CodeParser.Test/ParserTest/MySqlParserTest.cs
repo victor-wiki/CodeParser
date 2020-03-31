@@ -3,7 +3,7 @@ using Antlr4.Runtime.Tree;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using static CodeParser.MySqlParser;
+using static MySqlParser;
 
 namespace CodeParser.Test
 {
@@ -32,9 +32,8 @@ namespace CodeParser.Test
 
         public void ParseNode(IParseTree node)
         {
-            if (node is SqlStatementsContext)
-            {
-                SqlStatementsContext context = node as SqlStatementsContext;
+            if (node is SqlStatementsContext context)
+            {              
                 SqlStatementContext[] statements = context.sqlStatement();
 
                 foreach (SqlStatementContext statement in statements)

@@ -27,42 +27,42 @@ using Antlr4.Runtime.Atn;
 using Antlr4.Runtime.Misc;
 using DFA = Antlr4.Runtime.Dfa.DFA;
 
-namespace CodeParser
+
+[System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
+//[System.CLSCompliant(false)]
+public partial class CLexer : Lexer
 {
-    [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
-    //[System.CLSCompliant(false)]
-    public partial class CLexer : Lexer {
-        protected static DFA[] decisionToDFA;
-        protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
-        public const int
-            T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, T__7 = 8, T__8 = 9,
-            T__9 = 10, T__10 = 11, T__11 = 12, T__12 = 13, T__13 = 14, Auto = 15, Break = 16, Case = 17,
-            Char = 18, Const = 19, Continue = 20, Default = 21, Do = 22, Double = 23, Else = 24,
-            Enum = 25, Extern = 26, Float = 27, For = 28, Goto = 29, If = 30, Inline = 31, Int = 32,
-            Long = 33, Register = 34, Restrict = 35, Return = 36, Short = 37, Signed = 38, Sizeof = 39,
-            Static = 40, Struct = 41, Switch = 42, Typedef = 43, Union = 44, Unsigned = 45, Void = 46,
-            Volatile = 47, While = 48, Alignas = 49, Alignof = 50, Atomic = 51, Bool = 52, Complex = 53,
-            Generic = 54, Imaginary = 55, Noreturn = 56, StaticAssert = 57, ThreadLocal = 58,
-            LeftParen = 59, RightParen = 60, LeftBracket = 61, RightBracket = 62, LeftBrace = 63,
-            RightBrace = 64, Less = 65, LessEqual = 66, Greater = 67, GreaterEqual = 68, LeftShift = 69,
-            RightShift = 70, Plus = 71, PlusPlus = 72, Minus = 73, MinusMinus = 74, Star = 75,
-            Div = 76, Mod = 77, And = 78, Or = 79, AndAnd = 80, OrOr = 81, Caret = 82, Not = 83, Tilde = 84,
-            Question = 85, Colon = 86, Semi = 87, Comma = 88, Assign = 89, StarAssign = 90, DivAssign = 91,
-            ModAssign = 92, PlusAssign = 93, MinusAssign = 94, LeftShiftAssign = 95, RightShiftAssign = 96,
-            AndAssign = 97, XorAssign = 98, OrAssign = 99, Equal = 100, NotEqual = 101, Arrow = 102,
-            Dot = 103, Ellipsis = 104, Identifier = 105, Constant = 106, DigitSequence = 107,
-            StringLiteral = 108, ComplexDefine = 109, IncludeDirective = 110, AsmBlock = 111,
-            LineAfterPreprocessing = 112, LineDirective = 113, PragmaDirective = 114, Whitespace = 115,
-            Newline = 116, BlockComment = 117, LineComment = 118;
-        public static string[] channelNames = {
+    protected static DFA[] decisionToDFA;
+    protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
+    public const int
+        T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, T__7 = 8, T__8 = 9,
+        T__9 = 10, T__10 = 11, T__11 = 12, T__12 = 13, T__13 = 14, Auto = 15, Break = 16, Case = 17,
+        Char = 18, Const = 19, Continue = 20, Default = 21, Do = 22, Double = 23, Else = 24,
+        Enum = 25, Extern = 26, Float = 27, For = 28, Goto = 29, If = 30, Inline = 31, Int = 32,
+        Long = 33, Register = 34, Restrict = 35, Return = 36, Short = 37, Signed = 38, Sizeof = 39,
+        Static = 40, Struct = 41, Switch = 42, Typedef = 43, Union = 44, Unsigned = 45, Void = 46,
+        Volatile = 47, While = 48, Alignas = 49, Alignof = 50, Atomic = 51, Bool = 52, Complex = 53,
+        Generic = 54, Imaginary = 55, Noreturn = 56, StaticAssert = 57, ThreadLocal = 58,
+        LeftParen = 59, RightParen = 60, LeftBracket = 61, RightBracket = 62, LeftBrace = 63,
+        RightBrace = 64, Less = 65, LessEqual = 66, Greater = 67, GreaterEqual = 68, LeftShift = 69,
+        RightShift = 70, Plus = 71, PlusPlus = 72, Minus = 73, MinusMinus = 74, Star = 75,
+        Div = 76, Mod = 77, And = 78, Or = 79, AndAnd = 80, OrOr = 81, Caret = 82, Not = 83, Tilde = 84,
+        Question = 85, Colon = 86, Semi = 87, Comma = 88, Assign = 89, StarAssign = 90, DivAssign = 91,
+        ModAssign = 92, PlusAssign = 93, MinusAssign = 94, LeftShiftAssign = 95, RightShiftAssign = 96,
+        AndAssign = 97, XorAssign = 98, OrAssign = 99, Equal = 100, NotEqual = 101, Arrow = 102,
+        Dot = 103, Ellipsis = 104, Identifier = 105, Constant = 106, DigitSequence = 107,
+        StringLiteral = 108, ComplexDefine = 109, IncludeDirective = 110, AsmBlock = 111,
+        LineAfterPreprocessing = 112, LineDirective = 113, PragmaDirective = 114, Whitespace = 115,
+        Newline = 116, BlockComment = 117, LineComment = 118;
+    public static string[] channelNames = {
         "DEFAULT_TOKEN_CHANNEL", "HIDDEN"
     };
 
-        public static string[] modeNames = {
+    public static string[] modeNames = {
         "DEFAULT_MODE"
     };
 
-        public static readonly string[] ruleNames = {
+    public static readonly string[] ruleNames = {
         "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8",
         "T__9", "T__10", "T__11", "T__12", "T__13", "Auto", "Break", "Case", "Char",
         "Const", "Continue", "Default", "Do", "Double", "Else", "Enum", "Extern",
@@ -92,16 +92,16 @@ namespace CodeParser
     };
 
 
-        public CLexer(ICharStream input)
-        : this(input, Console.Out, Console.Error) { }
+    public CLexer(ICharStream input)
+    : this(input, Console.Out, Console.Error) { }
 
-        public CLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
-        : base(input, output, errorOutput)
-        {
-            Interpreter = new LexerATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
-        }
+    public CLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
+    : base(input, output, errorOutput)
+    {
+        Interpreter = new LexerATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
+    }
 
-        private static readonly string[] _LiteralNames = {
+    private static readonly string[] _LiteralNames = {
         null, "'__extension__'", "'__builtin_va_arg'", "'__builtin_offsetof'",
         "'__m128'", "'__m128d'", "'__m128i'", "'__typeof__'", "'__inline__'",
         "'__stdcall'", "'__declspec'", "'__asm'", "'__attribute__'", "'__asm__'",
@@ -118,7 +118,7 @@ namespace CodeParser
         "';'", "','", "'='", "'*='", "'/='", "'%='", "'+='", "'-='", "'<<='",
         "'>>='", "'&='", "'^='", "'|='", "'=='", "'!='", "'->'", "'.'", "'...'"
     };
-        private static readonly string[] _SymbolicNames = {
+    private static readonly string[] _SymbolicNames = {
         null, null, null, null, null, null, null, null, null, null, null, null,
         null, null, null, "Auto", "Break", "Case", "Char", "Const", "Continue",
         "Default", "Do", "Double", "Else", "Enum", "Extern", "Float", "For", "Goto",
@@ -138,34 +138,36 @@ namespace CodeParser
         "LineDirective", "PragmaDirective", "Whitespace", "Newline", "BlockComment",
         "LineComment"
     };
-        public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
+    public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
-        [NotNull]
-        public override IVocabulary Vocabulary
+    [NotNull]
+    public override IVocabulary Vocabulary
+    {
+        get
         {
-            get
-            {
-                return DefaultVocabulary;
-            }
+            return DefaultVocabulary;
         }
+    }
 
-        public override string GrammarFileName { get { return "C.g4"; } }
+    public override string GrammarFileName { get { return "C.g4"; } }
 
-        public override string[] RuleNames { get { return ruleNames; } }
+    public override string[] RuleNames { get { return ruleNames; } }
 
-        public override string[] ChannelNames { get { return channelNames; } }
+    public override string[] ChannelNames { get { return channelNames; } }
 
-        public override string[] ModeNames { get { return modeNames; } }
+    public override string[] ModeNames { get { return modeNames; } }
 
-        public override string SerializedAtn { get { return new string(_serializedATN); } }
+    public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-        static CLexer() {
-            decisionToDFA = new DFA[_ATN.NumberOfDecisions];
-            for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
-                decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
-            }
+    static CLexer()
+    {
+        decisionToDFA = new DFA[_ATN.NumberOfDecisions];
+        for (int i = 0; i < _ATN.NumberOfDecisions; i++)
+        {
+            decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
         }
-        private static char[] _serializedATN = {
+    }
+    private static char[] _serializedATN = {
         '\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786',
         '\x5964', '\x2', 'x', '\x562', '\b', '\x1', '\x4', '\x2', '\t', '\x2',
         '\x4', '\x3', '\t', '\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t',
@@ -1350,7 +1352,6 @@ namespace CodeParser
         '\x3', '\b', '\x2', '\x2',
     };
 
-        public static readonly ATN _ATN =
-            new ATNDeserializer().Deserialize(_serializedATN);
-    }
+    public static readonly ATN _ATN =
+        new ATNDeserializer().Deserialize(_serializedATN);
 }

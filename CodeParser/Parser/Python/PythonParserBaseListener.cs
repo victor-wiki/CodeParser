@@ -19,1013 +19,1012 @@
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
 
-namespace CodeParser
+
+using Antlr4.Runtime.Misc;
+using IErrorNode = Antlr4.Runtime.Tree.IErrorNode;
+using ITerminalNode = Antlr4.Runtime.Tree.ITerminalNode;
+using IToken = Antlr4.Runtime.IToken;
+using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
+
+/// <summary>
+/// This class provides an empty implementation of <see cref="IPythonParserListener"/>,
+/// which can be extended to create a listener which only needs to handle a subset
+/// of the available methods.
+/// </summary>
+[System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
+//[System.CLSCompliant(false)]
+public partial class PythonParserBaseListener : IPythonParserListener
 {
-    using Antlr4.Runtime.Misc;
-    using IErrorNode = Antlr4.Runtime.Tree.IErrorNode;
-    using ITerminalNode = Antlr4.Runtime.Tree.ITerminalNode;
-    using IToken = Antlr4.Runtime.IToken;
-    using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
-
     /// <summary>
-    /// This class provides an empty implementation of <see cref="IPythonParserListener"/>,
-    /// which can be extended to create a listener which only needs to handle a subset
-    /// of the available methods.
+    /// Enter a parse tree produced by <see cref="PythonParser.root"/>.
+    /// <para>The default implementation does nothing.</para>
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
-    //[System.CLSCompliant(false)]
-    public partial class PythonParserBaseListener : IPythonParserListener
-    {
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.root"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterRoot([NotNull] PythonParser.RootContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.root"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitRoot([NotNull] PythonParser.RootContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.single_input"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterSingle_input([NotNull] PythonParser.Single_inputContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.single_input"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitSingle_input([NotNull] PythonParser.Single_inputContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.file_input"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterFile_input([NotNull] PythonParser.File_inputContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.file_input"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitFile_input([NotNull] PythonParser.File_inputContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.eval_input"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterEval_input([NotNull] PythonParser.Eval_inputContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.eval_input"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitEval_input([NotNull] PythonParser.Eval_inputContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterStmt([NotNull] PythonParser.StmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitStmt([NotNull] PythonParser.StmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>if_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterIf_stmt([NotNull] PythonParser.If_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>if_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitIf_stmt([NotNull] PythonParser.If_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>while_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterWhile_stmt([NotNull] PythonParser.While_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>while_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitWhile_stmt([NotNull] PythonParser.While_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>for_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterFor_stmt([NotNull] PythonParser.For_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>for_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitFor_stmt([NotNull] PythonParser.For_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>try_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterTry_stmt([NotNull] PythonParser.Try_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>try_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitTry_stmt([NotNull] PythonParser.Try_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>with_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterWith_stmt([NotNull] PythonParser.With_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>with_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitWith_stmt([NotNull] PythonParser.With_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>class_or_func_def_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterClass_or_func_def_stmt([NotNull] PythonParser.Class_or_func_def_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>class_or_func_def_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitClass_or_func_def_stmt([NotNull] PythonParser.Class_or_func_def_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.suite"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterSuite([NotNull] PythonParser.SuiteContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.suite"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitSuite([NotNull] PythonParser.SuiteContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.decorator"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDecorator([NotNull] PythonParser.DecoratorContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.decorator"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDecorator([NotNull] PythonParser.DecoratorContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.elif_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterElif_clause([NotNull] PythonParser.Elif_clauseContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.elif_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitElif_clause([NotNull] PythonParser.Elif_clauseContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.else_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterElse_clause([NotNull] PythonParser.Else_clauseContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.else_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitElse_clause([NotNull] PythonParser.Else_clauseContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.finally_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterFinally_clause([NotNull] PythonParser.Finally_clauseContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.finally_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitFinally_clause([NotNull] PythonParser.Finally_clauseContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.with_item"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterWith_item([NotNull] PythonParser.With_itemContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.with_item"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitWith_item([NotNull] PythonParser.With_itemContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.except_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterExcept_clause([NotNull] PythonParser.Except_clauseContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.except_clause"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitExcept_clause([NotNull] PythonParser.Except_clauseContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.classdef"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterClassdef([NotNull] PythonParser.ClassdefContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.classdef"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitClassdef([NotNull] PythonParser.ClassdefContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.funcdef"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterFuncdef([NotNull] PythonParser.FuncdefContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.funcdef"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitFuncdef([NotNull] PythonParser.FuncdefContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.typedargslist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterTypedargslist([NotNull] PythonParser.TypedargslistContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.typedargslist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitTypedargslist([NotNull] PythonParser.TypedargslistContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.args"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterArgs([NotNull] PythonParser.ArgsContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.args"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitArgs([NotNull] PythonParser.ArgsContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.kwargs"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterKwargs([NotNull] PythonParser.KwargsContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.kwargs"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitKwargs([NotNull] PythonParser.KwargsContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.def_parameters"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDef_parameters([NotNull] PythonParser.Def_parametersContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.def_parameters"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDef_parameters([NotNull] PythonParser.Def_parametersContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.def_parameter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDef_parameter([NotNull] PythonParser.Def_parameterContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.def_parameter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDef_parameter([NotNull] PythonParser.Def_parameterContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.named_parameter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterNamed_parameter([NotNull] PythonParser.Named_parameterContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.named_parameter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitNamed_parameter([NotNull] PythonParser.Named_parameterContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.simple_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterSimple_stmt([NotNull] PythonParser.Simple_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.simple_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitSimple_stmt([NotNull] PythonParser.Simple_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>expr_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterExpr_stmt([NotNull] PythonParser.Expr_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>expr_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitExpr_stmt([NotNull] PythonParser.Expr_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>print_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterPrint_stmt([NotNull] PythonParser.Print_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>print_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitPrint_stmt([NotNull] PythonParser.Print_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>del_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDel_stmt([NotNull] PythonParser.Del_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>del_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDel_stmt([NotNull] PythonParser.Del_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>pass_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterPass_stmt([NotNull] PythonParser.Pass_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>pass_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitPass_stmt([NotNull] PythonParser.Pass_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>break_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterBreak_stmt([NotNull] PythonParser.Break_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>break_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitBreak_stmt([NotNull] PythonParser.Break_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>continue_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterContinue_stmt([NotNull] PythonParser.Continue_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>continue_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitContinue_stmt([NotNull] PythonParser.Continue_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>return_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterReturn_stmt([NotNull] PythonParser.Return_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>return_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitReturn_stmt([NotNull] PythonParser.Return_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>raise_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterRaise_stmt([NotNull] PythonParser.Raise_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>raise_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitRaise_stmt([NotNull] PythonParser.Raise_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>yield_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterYield_stmt([NotNull] PythonParser.Yield_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>yield_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitYield_stmt([NotNull] PythonParser.Yield_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>import_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterImport_stmt([NotNull] PythonParser.Import_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>import_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitImport_stmt([NotNull] PythonParser.Import_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>from_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterFrom_stmt([NotNull] PythonParser.From_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>from_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitFrom_stmt([NotNull] PythonParser.From_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>global_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterGlobal_stmt([NotNull] PythonParser.Global_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>global_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitGlobal_stmt([NotNull] PythonParser.Global_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>exec_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterExec_stmt([NotNull] PythonParser.Exec_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>exec_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitExec_stmt([NotNull] PythonParser.Exec_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>assert_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterAssert_stmt([NotNull] PythonParser.Assert_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>assert_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitAssert_stmt([NotNull] PythonParser.Assert_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by the <c>nonlocal_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterNonlocal_stmt([NotNull] PythonParser.Nonlocal_stmtContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by the <c>nonlocal_stmt</c>
-        /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitNonlocal_stmt([NotNull] PythonParser.Nonlocal_stmtContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.testlist_star_expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterTestlist_star_expr([NotNull] PythonParser.Testlist_star_exprContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.testlist_star_expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitTestlist_star_expr([NotNull] PythonParser.Testlist_star_exprContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.star_expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterStar_expr([NotNull] PythonParser.Star_exprContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.star_expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitStar_expr([NotNull] PythonParser.Star_exprContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.assign_part"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterAssign_part([NotNull] PythonParser.Assign_partContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.assign_part"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitAssign_part([NotNull] PythonParser.Assign_partContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.exprlist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterExprlist([NotNull] PythonParser.ExprlistContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.exprlist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitExprlist([NotNull] PythonParser.ExprlistContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.import_as_names"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterImport_as_names([NotNull] PythonParser.Import_as_namesContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.import_as_names"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitImport_as_names([NotNull] PythonParser.Import_as_namesContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.import_as_name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterImport_as_name([NotNull] PythonParser.Import_as_nameContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.import_as_name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitImport_as_name([NotNull] PythonParser.Import_as_nameContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.dotted_as_names"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDotted_as_names([NotNull] PythonParser.Dotted_as_namesContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.dotted_as_names"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDotted_as_names([NotNull] PythonParser.Dotted_as_namesContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.dotted_as_name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDotted_as_name([NotNull] PythonParser.Dotted_as_nameContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.dotted_as_name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDotted_as_name([NotNull] PythonParser.Dotted_as_nameContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.test"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterTest([NotNull] PythonParser.TestContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.test"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitTest([NotNull] PythonParser.TestContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.varargslist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterVarargslist([NotNull] PythonParser.VarargslistContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.varargslist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitVarargslist([NotNull] PythonParser.VarargslistContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.vardef_parameters"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterVardef_parameters([NotNull] PythonParser.Vardef_parametersContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.vardef_parameters"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitVardef_parameters([NotNull] PythonParser.Vardef_parametersContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.vardef_parameter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterVardef_parameter([NotNull] PythonParser.Vardef_parameterContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.vardef_parameter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitVardef_parameter([NotNull] PythonParser.Vardef_parameterContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.varargs"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterVarargs([NotNull] PythonParser.VarargsContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.varargs"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitVarargs([NotNull] PythonParser.VarargsContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.varkwargs"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterVarkwargs([NotNull] PythonParser.VarkwargsContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.varkwargs"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitVarkwargs([NotNull] PythonParser.VarkwargsContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.logical_test"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterLogical_test([NotNull] PythonParser.Logical_testContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.logical_test"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitLogical_test([NotNull] PythonParser.Logical_testContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.comparison"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterComparison([NotNull] PythonParser.ComparisonContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.comparison"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitComparison([NotNull] PythonParser.ComparisonContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterExpr([NotNull] PythonParser.ExprContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitExpr([NotNull] PythonParser.ExprContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.atom"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterAtom([NotNull] PythonParser.AtomContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.atom"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitAtom([NotNull] PythonParser.AtomContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.dictorsetmaker"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDictorsetmaker([NotNull] PythonParser.DictorsetmakerContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.dictorsetmaker"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDictorsetmaker([NotNull] PythonParser.DictorsetmakerContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.testlist_comp"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterTestlist_comp([NotNull] PythonParser.Testlist_compContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.testlist_comp"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitTestlist_comp([NotNull] PythonParser.Testlist_compContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.testlist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterTestlist([NotNull] PythonParser.TestlistContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.testlist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitTestlist([NotNull] PythonParser.TestlistContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.dotted_name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterDotted_name([NotNull] PythonParser.Dotted_nameContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.dotted_name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitDotted_name([NotNull] PythonParser.Dotted_nameContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterName([NotNull] PythonParser.NameContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.name"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitName([NotNull] PythonParser.NameContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.number"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterNumber([NotNull] PythonParser.NumberContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.number"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitNumber([NotNull] PythonParser.NumberContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.integer"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterInteger([NotNull] PythonParser.IntegerContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.integer"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitInteger([NotNull] PythonParser.IntegerContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.yield_expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterYield_expr([NotNull] PythonParser.Yield_exprContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.yield_expr"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitYield_expr([NotNull] PythonParser.Yield_exprContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.yield_arg"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterYield_arg([NotNull] PythonParser.Yield_argContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.yield_arg"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitYield_arg([NotNull] PythonParser.Yield_argContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.trailer"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterTrailer([NotNull] PythonParser.TrailerContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.trailer"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitTrailer([NotNull] PythonParser.TrailerContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.arguments"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterArguments([NotNull] PythonParser.ArgumentsContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.arguments"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitArguments([NotNull] PythonParser.ArgumentsContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.arglist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterArglist([NotNull] PythonParser.ArglistContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.arglist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitArglist([NotNull] PythonParser.ArglistContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.argument"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterArgument([NotNull] PythonParser.ArgumentContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.argument"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitArgument([NotNull] PythonParser.ArgumentContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.subscriptlist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterSubscriptlist([NotNull] PythonParser.SubscriptlistContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.subscriptlist"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitSubscriptlist([NotNull] PythonParser.SubscriptlistContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.subscript"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterSubscript([NotNull] PythonParser.SubscriptContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.subscript"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitSubscript([NotNull] PythonParser.SubscriptContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.sliceop"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterSliceop([NotNull] PythonParser.SliceopContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.sliceop"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitSliceop([NotNull] PythonParser.SliceopContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.comp_for"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterComp_for([NotNull] PythonParser.Comp_forContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.comp_for"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitComp_for([NotNull] PythonParser.Comp_forContext context) { }
-        /// <summary>
-        /// Enter a parse tree produced by <see cref="PythonParser.comp_iter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void EnterComp_iter([NotNull] PythonParser.Comp_iterContext context) { }
-        /// <summary>
-        /// Exit a parse tree produced by <see cref="PythonParser.comp_iter"/>.
-        /// <para>The default implementation does nothing.</para>
-        /// </summary>
-        /// <param name="context">The parse tree.</param>
-        public virtual void ExitComp_iter([NotNull] PythonParser.Comp_iterContext context) { }
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterRoot([NotNull] PythonParser.RootContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.root"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitRoot([NotNull] PythonParser.RootContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.single_input"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterSingle_input([NotNull] PythonParser.Single_inputContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.single_input"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitSingle_input([NotNull] PythonParser.Single_inputContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.file_input"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterFile_input([NotNull] PythonParser.File_inputContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.file_input"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitFile_input([NotNull] PythonParser.File_inputContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.eval_input"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterEval_input([NotNull] PythonParser.Eval_inputContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.eval_input"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitEval_input([NotNull] PythonParser.Eval_inputContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterStmt([NotNull] PythonParser.StmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitStmt([NotNull] PythonParser.StmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>if_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterIf_stmt([NotNull] PythonParser.If_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>if_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitIf_stmt([NotNull] PythonParser.If_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>while_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterWhile_stmt([NotNull] PythonParser.While_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>while_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitWhile_stmt([NotNull] PythonParser.While_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>for_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterFor_stmt([NotNull] PythonParser.For_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>for_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitFor_stmt([NotNull] PythonParser.For_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>try_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterTry_stmt([NotNull] PythonParser.Try_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>try_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitTry_stmt([NotNull] PythonParser.Try_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>with_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterWith_stmt([NotNull] PythonParser.With_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>with_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitWith_stmt([NotNull] PythonParser.With_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>class_or_func_def_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterClass_or_func_def_stmt([NotNull] PythonParser.Class_or_func_def_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>class_or_func_def_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.compound_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitClass_or_func_def_stmt([NotNull] PythonParser.Class_or_func_def_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.suite"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterSuite([NotNull] PythonParser.SuiteContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.suite"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitSuite([NotNull] PythonParser.SuiteContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.decorator"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDecorator([NotNull] PythonParser.DecoratorContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.decorator"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDecorator([NotNull] PythonParser.DecoratorContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.elif_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterElif_clause([NotNull] PythonParser.Elif_clauseContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.elif_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitElif_clause([NotNull] PythonParser.Elif_clauseContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.else_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterElse_clause([NotNull] PythonParser.Else_clauseContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.else_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitElse_clause([NotNull] PythonParser.Else_clauseContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.finally_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterFinally_clause([NotNull] PythonParser.Finally_clauseContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.finally_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitFinally_clause([NotNull] PythonParser.Finally_clauseContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.with_item"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterWith_item([NotNull] PythonParser.With_itemContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.with_item"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitWith_item([NotNull] PythonParser.With_itemContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.except_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterExcept_clause([NotNull] PythonParser.Except_clauseContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.except_clause"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitExcept_clause([NotNull] PythonParser.Except_clauseContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.classdef"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterClassdef([NotNull] PythonParser.ClassdefContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.classdef"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitClassdef([NotNull] PythonParser.ClassdefContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.funcdef"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterFuncdef([NotNull] PythonParser.FuncdefContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.funcdef"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitFuncdef([NotNull] PythonParser.FuncdefContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.typedargslist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterTypedargslist([NotNull] PythonParser.TypedargslistContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.typedargslist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitTypedargslist([NotNull] PythonParser.TypedargslistContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.args"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterArgs([NotNull] PythonParser.ArgsContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.args"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitArgs([NotNull] PythonParser.ArgsContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.kwargs"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterKwargs([NotNull] PythonParser.KwargsContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.kwargs"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitKwargs([NotNull] PythonParser.KwargsContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.def_parameters"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDef_parameters([NotNull] PythonParser.Def_parametersContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.def_parameters"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDef_parameters([NotNull] PythonParser.Def_parametersContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.def_parameter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDef_parameter([NotNull] PythonParser.Def_parameterContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.def_parameter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDef_parameter([NotNull] PythonParser.Def_parameterContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.named_parameter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterNamed_parameter([NotNull] PythonParser.Named_parameterContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.named_parameter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitNamed_parameter([NotNull] PythonParser.Named_parameterContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.simple_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterSimple_stmt([NotNull] PythonParser.Simple_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.simple_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitSimple_stmt([NotNull] PythonParser.Simple_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>expr_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterExpr_stmt([NotNull] PythonParser.Expr_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>expr_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitExpr_stmt([NotNull] PythonParser.Expr_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>print_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterPrint_stmt([NotNull] PythonParser.Print_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>print_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitPrint_stmt([NotNull] PythonParser.Print_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>del_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDel_stmt([NotNull] PythonParser.Del_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>del_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDel_stmt([NotNull] PythonParser.Del_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>pass_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterPass_stmt([NotNull] PythonParser.Pass_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>pass_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitPass_stmt([NotNull] PythonParser.Pass_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>break_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterBreak_stmt([NotNull] PythonParser.Break_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>break_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitBreak_stmt([NotNull] PythonParser.Break_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>continue_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterContinue_stmt([NotNull] PythonParser.Continue_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>continue_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitContinue_stmt([NotNull] PythonParser.Continue_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>return_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterReturn_stmt([NotNull] PythonParser.Return_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>return_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitReturn_stmt([NotNull] PythonParser.Return_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>raise_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterRaise_stmt([NotNull] PythonParser.Raise_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>raise_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitRaise_stmt([NotNull] PythonParser.Raise_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>yield_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterYield_stmt([NotNull] PythonParser.Yield_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>yield_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitYield_stmt([NotNull] PythonParser.Yield_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>import_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterImport_stmt([NotNull] PythonParser.Import_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>import_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitImport_stmt([NotNull] PythonParser.Import_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>from_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterFrom_stmt([NotNull] PythonParser.From_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>from_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitFrom_stmt([NotNull] PythonParser.From_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>global_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterGlobal_stmt([NotNull] PythonParser.Global_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>global_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitGlobal_stmt([NotNull] PythonParser.Global_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>exec_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterExec_stmt([NotNull] PythonParser.Exec_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>exec_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitExec_stmt([NotNull] PythonParser.Exec_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>assert_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterAssert_stmt([NotNull] PythonParser.Assert_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>assert_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitAssert_stmt([NotNull] PythonParser.Assert_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by the <c>nonlocal_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterNonlocal_stmt([NotNull] PythonParser.Nonlocal_stmtContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by the <c>nonlocal_stmt</c>
+    /// labeled alternative in <see cref="PythonParser.small_stmt"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitNonlocal_stmt([NotNull] PythonParser.Nonlocal_stmtContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.testlist_star_expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterTestlist_star_expr([NotNull] PythonParser.Testlist_star_exprContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.testlist_star_expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitTestlist_star_expr([NotNull] PythonParser.Testlist_star_exprContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.star_expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterStar_expr([NotNull] PythonParser.Star_exprContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.star_expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitStar_expr([NotNull] PythonParser.Star_exprContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.assign_part"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterAssign_part([NotNull] PythonParser.Assign_partContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.assign_part"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitAssign_part([NotNull] PythonParser.Assign_partContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.exprlist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterExprlist([NotNull] PythonParser.ExprlistContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.exprlist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitExprlist([NotNull] PythonParser.ExprlistContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.import_as_names"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterImport_as_names([NotNull] PythonParser.Import_as_namesContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.import_as_names"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitImport_as_names([NotNull] PythonParser.Import_as_namesContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.import_as_name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterImport_as_name([NotNull] PythonParser.Import_as_nameContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.import_as_name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitImport_as_name([NotNull] PythonParser.Import_as_nameContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.dotted_as_names"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDotted_as_names([NotNull] PythonParser.Dotted_as_namesContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.dotted_as_names"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDotted_as_names([NotNull] PythonParser.Dotted_as_namesContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.dotted_as_name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDotted_as_name([NotNull] PythonParser.Dotted_as_nameContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.dotted_as_name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDotted_as_name([NotNull] PythonParser.Dotted_as_nameContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.test"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterTest([NotNull] PythonParser.TestContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.test"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitTest([NotNull] PythonParser.TestContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.varargslist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterVarargslist([NotNull] PythonParser.VarargslistContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.varargslist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitVarargslist([NotNull] PythonParser.VarargslistContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.vardef_parameters"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterVardef_parameters([NotNull] PythonParser.Vardef_parametersContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.vardef_parameters"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitVardef_parameters([NotNull] PythonParser.Vardef_parametersContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.vardef_parameter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterVardef_parameter([NotNull] PythonParser.Vardef_parameterContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.vardef_parameter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitVardef_parameter([NotNull] PythonParser.Vardef_parameterContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.varargs"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterVarargs([NotNull] PythonParser.VarargsContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.varargs"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitVarargs([NotNull] PythonParser.VarargsContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.varkwargs"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterVarkwargs([NotNull] PythonParser.VarkwargsContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.varkwargs"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitVarkwargs([NotNull] PythonParser.VarkwargsContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.logical_test"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterLogical_test([NotNull] PythonParser.Logical_testContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.logical_test"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitLogical_test([NotNull] PythonParser.Logical_testContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.comparison"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterComparison([NotNull] PythonParser.ComparisonContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.comparison"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitComparison([NotNull] PythonParser.ComparisonContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterExpr([NotNull] PythonParser.ExprContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitExpr([NotNull] PythonParser.ExprContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.atom"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterAtom([NotNull] PythonParser.AtomContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.atom"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitAtom([NotNull] PythonParser.AtomContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.dictorsetmaker"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDictorsetmaker([NotNull] PythonParser.DictorsetmakerContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.dictorsetmaker"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDictorsetmaker([NotNull] PythonParser.DictorsetmakerContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.testlist_comp"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterTestlist_comp([NotNull] PythonParser.Testlist_compContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.testlist_comp"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitTestlist_comp([NotNull] PythonParser.Testlist_compContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.testlist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterTestlist([NotNull] PythonParser.TestlistContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.testlist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitTestlist([NotNull] PythonParser.TestlistContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.dotted_name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterDotted_name([NotNull] PythonParser.Dotted_nameContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.dotted_name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitDotted_name([NotNull] PythonParser.Dotted_nameContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterName([NotNull] PythonParser.NameContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.name"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitName([NotNull] PythonParser.NameContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.number"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterNumber([NotNull] PythonParser.NumberContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.number"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitNumber([NotNull] PythonParser.NumberContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.integer"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterInteger([NotNull] PythonParser.IntegerContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.integer"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitInteger([NotNull] PythonParser.IntegerContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.yield_expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterYield_expr([NotNull] PythonParser.Yield_exprContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.yield_expr"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitYield_expr([NotNull] PythonParser.Yield_exprContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.yield_arg"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterYield_arg([NotNull] PythonParser.Yield_argContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.yield_arg"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitYield_arg([NotNull] PythonParser.Yield_argContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.trailer"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterTrailer([NotNull] PythonParser.TrailerContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.trailer"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitTrailer([NotNull] PythonParser.TrailerContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.arguments"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterArguments([NotNull] PythonParser.ArgumentsContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.arguments"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitArguments([NotNull] PythonParser.ArgumentsContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.arglist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterArglist([NotNull] PythonParser.ArglistContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.arglist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitArglist([NotNull] PythonParser.ArglistContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.argument"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterArgument([NotNull] PythonParser.ArgumentContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.argument"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitArgument([NotNull] PythonParser.ArgumentContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.subscriptlist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterSubscriptlist([NotNull] PythonParser.SubscriptlistContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.subscriptlist"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitSubscriptlist([NotNull] PythonParser.SubscriptlistContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.subscript"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterSubscript([NotNull] PythonParser.SubscriptContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.subscript"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitSubscript([NotNull] PythonParser.SubscriptContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.sliceop"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterSliceop([NotNull] PythonParser.SliceopContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.sliceop"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitSliceop([NotNull] PythonParser.SliceopContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.comp_for"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterComp_for([NotNull] PythonParser.Comp_forContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.comp_for"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitComp_for([NotNull] PythonParser.Comp_forContext context) { }
+    /// <summary>
+    /// Enter a parse tree produced by <see cref="PythonParser.comp_iter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void EnterComp_iter([NotNull] PythonParser.Comp_iterContext context) { }
+    /// <summary>
+    /// Exit a parse tree produced by <see cref="PythonParser.comp_iter"/>.
+    /// <para>The default implementation does nothing.</para>
+    /// </summary>
+    /// <param name="context">The parse tree.</param>
+    public virtual void ExitComp_iter([NotNull] PythonParser.Comp_iterContext context) { }
 
-        /// <inheritdoc/>
-        /// <remarks>The default implementation does nothing.</remarks>
-        public virtual void EnterEveryRule([NotNull] ParserRuleContext context) { }
-        /// <inheritdoc/>
-        /// <remarks>The default implementation does nothing.</remarks>
-        public virtual void ExitEveryRule([NotNull] ParserRuleContext context) { }
-        /// <inheritdoc/>
-        /// <remarks>The default implementation does nothing.</remarks>
-        public virtual void VisitTerminal([NotNull] ITerminalNode node) { }
-        /// <inheritdoc/>
-        /// <remarks>The default implementation does nothing.</remarks>
-        public virtual void VisitErrorNode([NotNull] IErrorNode node) { }
-    }
+    /// <inheritdoc/>
+    /// <remarks>The default implementation does nothing.</remarks>
+    public virtual void EnterEveryRule([NotNull] ParserRuleContext context) { }
+    /// <inheritdoc/>
+    /// <remarks>The default implementation does nothing.</remarks>
+    public virtual void ExitEveryRule([NotNull] ParserRuleContext context) { }
+    /// <inheritdoc/>
+    /// <remarks>The default implementation does nothing.</remarks>
+    public virtual void VisitTerminal([NotNull] ITerminalNode node) { }
+    /// <inheritdoc/>
+    /// <remarks>The default implementation does nothing.</remarks>
+    public virtual void VisitErrorNode([NotNull] IErrorNode node) { }
 }
+

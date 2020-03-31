@@ -8,23 +8,21 @@ public enum PythonVersion
     Python3 = 3
 }
 
-namespace CodeParser
+
+public abstract class PythonParserBase : Parser
 {
-    public abstract class PythonParserBase : Parser
+    public PythonVersion Version { get; set; }
+
+    protected PythonParserBase(ITokenStream input) : base(input)
     {
-        public PythonVersion Version { get; set; }
-
-        protected PythonParserBase(ITokenStream input) : base(input)
-        {
-        }
-
-        public PythonParserBase(ITokenStream input, TextWriter output, TextWriter errorOutput)
-            : base(input, output, errorOutput)
-        {
-        }
-
-        protected bool CheckVersion(int version) => Version == PythonVersion.Autodetect || version == (int)Version;
-
-        protected void SetVersion(int requiredVersion) => Version = (PythonVersion)requiredVersion;
     }
+
+    public PythonParserBase(ITokenStream input, TextWriter output, TextWriter errorOutput)
+        : base(input, output, errorOutput)
+    {
+    }
+
+    protected bool CheckVersion(int version) => Version == PythonVersion.Autodetect || version == (int)Version;
+
+    protected void SetVersion(int requiredVersion) => Version = (PythonVersion)requiredVersion;
 }

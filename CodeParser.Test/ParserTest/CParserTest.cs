@@ -1,7 +1,7 @@
 ﻿using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using System.IO;
-using static CodeParser.CParser;
+using static CParser;
 
 namespace CodeParser.Test
 {

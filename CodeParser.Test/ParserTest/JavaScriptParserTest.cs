@@ -2,7 +2,7 @@
 using Antlr4.Runtime.Tree;
 using System.IO;
 using System.Linq;
-using static CodeParser.JavaScriptParser;
+using static JavaScriptParser;
 
 namespace CodeParser.Test
 {

@@ -3,7 +3,7 @@ using Antlr4.Runtime.Tree;
 using System;
 using System.IO;
 using System.Linq;
-using static CodeParser.CSharpParser;
+using static CSharpParser;
 
 namespace CodeParser.Test
 {
