@@ -74,6 +74,7 @@ Method:sayHello
 Function:test
 ~~~
 
-### You can use the below viewer tool to quickly build your own code:
+### You can use the below viewer tool to analyse the parser rules:
+![CodePaser Viewer](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/CodeParser/Viewer.png?raw=true&rid=1)
 
-![CodePaser Viewer](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/CodeParser/Viewer.png?raw=true)
+![CodePaser Viewer](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/CodeParser/Viewer2.png?raw=true&rid=1)
