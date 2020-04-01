@@ -102,8 +102,11 @@
             this.txtText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtText.BackColor = System.Drawing.Color.White;
+            this.txtText.HideSelection = false;
             this.txtText.Location = new System.Drawing.Point(3, 82);
             this.txtText.Name = "txtText";
+            this.txtText.ReadOnly = true;
             this.txtText.Size = new System.Drawing.Size(404, 379);
             this.txtText.TabIndex = 7;
             this.txtText.Text = "";
@@ -112,8 +115,10 @@
             // 
             this.txtChildCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtChildCount.BackColor = System.Drawing.Color.White;
             this.txtChildCount.Location = new System.Drawing.Point(86, 37);
             this.txtChildCount.Name = "txtChildCount";
+            this.txtChildCount.ReadOnly = true;
             this.txtChildCount.Size = new System.Drawing.Size(319, 21);
             this.txtChildCount.TabIndex = 6;
             // 
@@ -121,8 +126,10 @@
             // 
             this.txtTypeName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTypeName.BackColor = System.Drawing.Color.White;
             this.txtTypeName.Location = new System.Drawing.Point(86, 10);
             this.txtTypeName.Name = "txtTypeName";
+            this.txtTypeName.ReadOnly = true;
             this.txtTypeName.Size = new System.Drawing.Size(319, 21);
             this.txtTypeName.TabIndex = 5;
             // 
@@ -214,7 +221,7 @@
             // btnOpenFile
             // 
             this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpenFile.Location = new System.Drawing.Point(736, 33);
+            this.btnOpenFile.Location = new System.Drawing.Point(736, 34);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(36, 23);
             this.btnOpenFile.TabIndex = 4;
@@ -279,7 +286,7 @@
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReload.Location = new System.Drawing.Point(777, 33);
+            this.btnReload.Location = new System.Drawing.Point(777, 34);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(53, 23);
             this.btnReload.TabIndex = 11;
@@ -319,7 +326,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CodeParser viewer";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.SizeChanged += new System.EventHandler(this.frmMain_SizeChanged);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmMain_DragDrop);
             this.DragOver += new System.Windows.Forms.DragEventHandler(this.frmMain_DragOver);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -351,7 +357,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiExpandAll;
         private System.Windows.Forms.ToolStripMenuItem tsmiCollapseAll;
         private System.Windows.Forms.CheckBox chkHideEmptyNode;
-        private System.Windows.Forms.RichTextBox txtText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rbChildren;
         private System.Windows.Forms.RadioButton rbMethods;
@@ -360,6 +365,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyPath;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.RichTextBox txtText;
     }
 }
 

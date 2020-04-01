@@ -21,10 +21,10 @@ namespace CodeParser.Viewer
         private Assembly assembly = null;
         private List<Type> parserTypes = new List<Type>();
         private Parser parser = null;
+        private string fileContent = "";
 
         private static List<string> ignoreMethods = new List<string>()
-        {
-            "getAltNumber",
+        {          
             "Eof"
         };
 
@@ -68,6 +68,13 @@ namespace CodeParser.Viewer
                     select type).FirstOrDefault();
         }
 
+        private void ShowContent()
+        {
+            this.LoadTree();
+            this.fileContent = this.GetFileContent();
+            this.txtText.Text = this.fileContent;
+        }
+
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
             if (this.cboParser.SelectedIndex < 0)
@@ -94,7 +101,7 @@ namespace CodeParser.Viewer
             {
                 this.txtFile.Text = this.openFileDialog1.FileName;
 
-                this.LoadTree();
+                this.ShowContent();
             }
         }
 
@@ -115,14 +122,19 @@ namespace CodeParser.Viewer
 
         private void txtFile_TextChanged(object sender, EventArgs e)
         {
-            this.LoadTree();
+            this.ShowContent();
         }
 
         private void Reset()
         {
             this.txtChildCount.Text = "";
             this.txtTypeName.Text = "";
-            this.txtText.Text = "";
+
+            this.txtText.SelectionBackColor = Color.White;
+            this.txtText.SelectionColor = Color.Black;
+            this.txtText.SelectAll();          
+            this.txtText.SelectionLength = 0;
+            this.txtText.SelectionStart = 0;
         }
 
         private void LoadTree()
@@ -215,8 +227,8 @@ namespace CodeParser.Viewer
                     MethodInfo[] methods = t.GetMethods();
 
                     foreach (MethodInfo m in methods)
-                    {
-                        if (m.IsPublic && !ignoreMethods.Contains(m.Name) && m.Module.Name == this.coderPaserDllName && !m.Name.StartsWith("get_") && !m.Name.StartsWith("set_") && m.GetParameters().Length == 0)
+                    {                       
+                        if (m.IsPublic && !m.IsSpecialName && !ignoreMethods.Contains(m.Name) && m.Module.Name == this.coderPaserDllName && m.GetParameters().Length == 0)
                         {
                             var childValue = m.Invoke(v, new object[] { });
 
@@ -316,61 +328,8 @@ namespace CodeParser.Viewer
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.LoadTree();
+                this.ShowContent();
             }
-        }
-
-        private (int ChildCount, string Text) GetNodeValueInfo(object value)
-        {
-            Type type = value.GetType();
-
-            int childCount = 0;
-            string text = "";
-
-            if (type.IsClass)
-            {
-                var childrenField = type.GetField("children");
-
-                if (childrenField != null)
-                {
-                    var children = childrenField.GetValue(value);
-
-                    if (children != null)
-                    {
-                        if (children is List<IParseTree> treeNodes)
-                        {
-                            childCount = treeNodes.Count;
-
-                            if (childCount > 1)
-                            {
-                                text = string.Join(" ", treeNodes.Select(item => item.GetText()));
-                            }
-                            else if (childCount == 1)
-                            {
-                                text = this.GetNodeValueInfo(treeNodes[0]).Text;
-                            }
-                        }
-                        else
-                        {
-                            childCount = int.Parse(children.GetType().GetMethod("get_Count").Invoke(children, new object[] { }).ToString());
-                        }
-                    }
-                }
-            }
-
-            if (this.tvParserNodes.SelectedNode != null && this.tvParserNodes.SelectedNode.Level == 0 && this.tvParserNodes.Nodes.Count == 1)
-            {
-                text = this.GetFileContent();
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(text))
-                {
-                    text = type.GetMethod("GetText").Invoke(value, new object[] { }).ToString();
-                }
-            }
-
-            return (childCount, text);
         }
 
         private void tvParserNodes_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -385,7 +344,7 @@ namespace CodeParser.Viewer
 
         private void tsmiExpandAll_Click(object sender, EventArgs e)
         {
-            TreeNode node = this.tvParserNodes.SelectedNode;            
+            TreeNode node = this.tvParserNodes.SelectedNode;
 
             this.tvParserNodes.ExpandAll();
 
@@ -409,26 +368,83 @@ namespace CodeParser.Viewer
                 return;
             }
 
-            this.Reset();
+            if (this.tvParserNodes.SelectedNode != null && this.tvParserNodes.SelectedNode.Level == 0 && this.tvParserNodes.Nodes.Count == 1)
+            {
+                return;
+            }
+
+            this.Reset();          
 
             Type type = value.GetType();
-
             this.txtTypeName.Text = type.Name;
 
-            if (!type.IsArray)
+            int start = -1;
+            int end = -1;
+            int childCount = 0;
+
+            if (value is ParserRuleContext context)
             {
-                var info = this.GetNodeValueInfo(value);
-                this.txtChildCount.Text = info.ChildCount.ToString();
-                this.txtText.Text = info.Text;
+                start = context.Start.StartIndex;
+                end = context.Stop.StopIndex;
+                childCount = context.children.Count;
             }
-            else
+            else if (value is ParserRuleContext[] contextes)
             {
-                object[] values = value as object[];
-                this.txtChildCount.Text = values.Length.ToString();
-                this.txtText.Text = string.Join(Environment.NewLine, values.Select(item => this.GetNodeValueInfo(item).Text));
+                start = contextes.First().Start.StartIndex;
+                end = contextes.Last().Stop.StopIndex;
+                childCount = contextes.Length;
+            }
+            else if (value is ITerminalNode terminalNode)
+            {
+                start = terminalNode.Symbol.StartIndex;
+                end = terminalNode.Symbol.StopIndex;
+                childCount = terminalNode.ChildCount;
+            }
+            else if (value is ITerminalNode[] terminalNodes)
+            {
+                start = terminalNodes.First().Symbol.StartIndex;
+                end = terminalNodes.Last().Symbol.StopIndex;
+                childCount = terminalNodes.Length;
             }
 
+            this.txtChildCount.Text = childCount.ToString();
+
+            if (start < 0)
+            {
+                return;
+            }
+
+            int length = end - start + 1;
+
+            (int Start, int Length) actualStartLength = this.ReCalculateStartLength(start, length);
+            start = actualStartLength.Start;
+            length = actualStartLength.Length;
+           
+            this.txtText.SelectionStart = start;
+            this.txtText.SelectionLength = length;
+            this.txtText.SelectionBackColor = Color.Blue;
+            this.txtText.SelectionColor = Color.White;
+
+            this.txtText.ScrollToCaret();
+
             this.lblMessage.Text = this.GetTreeNodePath(e.Node);
+        }
+
+        private (int Start, int Length) ReCalculateStartLength(int start, int length)
+        {
+            string content = this.fileContent.Substring(start, length);
+
+            string foreContent = this.fileContent.Substring(0, start);
+
+            int actualStart = start - this.CalculateCarriageCount(foreContent);
+            int actualLength = length - this.CalculateCarriageCount(content);
+
+            return (actualStart, actualLength);
+        }
+
+        private int CalculateCarriageCount(string content)
+        {
+            return content.Length - content.Replace("\r", "").Length;
         }
 
         private string GetFileContent()
@@ -477,7 +493,7 @@ namespace CodeParser.Viewer
                 {
                     this.txtFile.Text = filePath;
 
-                    this.LoadTree();
+                    this.ShowContent();
                 }
             }
         }
@@ -494,7 +510,7 @@ namespace CodeParser.Viewer
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            this.LoadTree();
+            this.ShowContent();
         }
 
         private void tvParserNodes_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -512,7 +528,7 @@ namespace CodeParser.Viewer
         private void SetMenuItemVisible(TreeNode node)
         {
             this.tsmiCollapseToChildren.Visible = node != null;
-            this.tsmiCopyPath.Visible = node != null;           
+            this.tsmiCopyPath.Visible = node != null;
         }
 
         private void tvParserNodes_MouseClick(object sender, MouseEventArgs e)
@@ -529,9 +545,9 @@ namespace CodeParser.Viewer
         {
             TreeNode node = this.tvParserNodes.SelectedNode;
 
-            if(node!=null)
+            if (node != null)
             {
-                foreach(TreeNode tn in node.Nodes)
+                foreach (TreeNode tn in node.Nodes)
                 {
                     tn.Collapse();
                 }
@@ -542,12 +558,12 @@ namespace CodeParser.Viewer
         {
             List<string> texts = new List<string>();
 
-            texts.Add(string.IsNullOrEmpty(node.Name) ? node.Text: node.Name);
+            texts.Add(string.IsNullOrEmpty(node.Name) ? node.Text : node.Name);
 
             TreeNode parent = node.Parent;
-            while(parent!=null)
+            while (parent != null)
             {
-                texts.Add(string.IsNullOrEmpty(parent.Name) ? parent.Text: parent.Name);
+                texts.Add(string.IsNullOrEmpty(parent.Name) ? parent.Text : parent.Name);
                 parent = parent.Parent;
             }
 
@@ -570,11 +586,6 @@ namespace CodeParser.Viewer
                     MessageBox.Show("The path has been copied to clipboard.");
                 }
             }
-        }
-
-        private void frmMain_SizeChanged(object sender, EventArgs e)
-        {
-            
-        }      
+        }        
     }
 }
