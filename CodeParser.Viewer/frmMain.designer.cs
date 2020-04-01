@@ -35,6 +35,8 @@
             this.txtText = new System.Windows.Forms.RichTextBox();
             this.textContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiNavigateToTreeNode = new System.Windows.Forms.ToolStripMenuItem();
             this.txtChildCount = new System.Windows.Forms.TextBox();
             this.txtTypeName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +61,7 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -110,28 +112,43 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtText.BackColor = System.Drawing.Color.White;
-            this.txtText.ContextMenuStrip = this.textContextMenu;
             this.txtText.Location = new System.Drawing.Point(3, 82);
             this.txtText.Name = "txtText";
             this.txtText.Size = new System.Drawing.Size(404, 379);
             this.txtText.TabIndex = 7;
             this.txtText.Text = "";
             this.txtText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyUp);
+            this.txtText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseUp);
             // 
             // textContextMenu
             // 
             this.textContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiPaste,
-            this.tsmiClearSelection});
+            this.tsmiClearSelection,
+            this.tsmiNavigateToTreeNode});
             this.textContextMenu.Name = "textContextMenu";
-            this.textContextMenu.Size = new System.Drawing.Size(160, 48);
+            this.textContextMenu.Size = new System.Drawing.Size(203, 70);
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(159, 22);
+            this.tsmiPaste.Size = new System.Drawing.Size(202, 22);
             this.tsmiPaste.Text = "paste";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
+            // 
+            // tsmiClearSelection
+            // 
+            this.tsmiClearSelection.Name = "tsmiClearSelection";
+            this.tsmiClearSelection.Size = new System.Drawing.Size(202, 22);
+            this.tsmiClearSelection.Text = "clear selection";
+            this.tsmiClearSelection.Click += new System.EventHandler(this.tsmiClearSelection_Click);
+            // 
+            // tsmiNavigateToTreeNode
+            // 
+            this.tsmiNavigateToTreeNode.Name = "tsmiNavigateToTreeNode";
+            this.tsmiNavigateToTreeNode.Size = new System.Drawing.Size(202, 22);
+            this.tsmiNavigateToTreeNode.Text = "navigate to tree node";
+            this.tsmiNavigateToTreeNode.Click += new System.EventHandler(this.tsmiNavigateToTreeNode_Click);
             // 
             // txtChildCount
             // 
@@ -252,7 +269,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFile.Location = new System.Drawing.Point(57, 35);
             this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(674, 21);
+            this.txtFile.Size = new System.Drawing.Size(625, 21);
             this.txtFile.TabIndex = 3;
             this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
             this.txtFile.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFile_KeyUp);
@@ -261,7 +278,7 @@
             // btnOpenFile
             // 
             this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpenFile.Location = new System.Drawing.Point(736, 34);
+            this.btnOpenFile.Location = new System.Drawing.Point(688, 34);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(36, 23);
             this.btnOpenFile.TabIndex = 4;
@@ -326,7 +343,7 @@
             // btnReload
             // 
             this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReload.Location = new System.Drawing.Point(777, 34);
+            this.btnReload.Location = new System.Drawing.Point(729, 34);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(53, 23);
             this.btnReload.TabIndex = 11;
@@ -346,12 +363,16 @@
             this.txtMessage.TabIndex = 12;
             this.txtMessage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtMessage_MouseDoubleClick);
             // 
-            // tsmiClearSelection
+            // btnReset
             // 
-            this.tsmiClearSelection.Name = "tsmiClearSelection";
-            this.tsmiClearSelection.Size = new System.Drawing.Size(159, 22);
-            this.tsmiClearSelection.Text = "clear selection";
-            this.tsmiClearSelection.Click += new System.EventHandler(this.tsmiClearSelection_Click);
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Location = new System.Drawing.Point(784, 34);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(51, 23);
+            this.btnReset.TabIndex = 13;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmMain
             // 
@@ -359,6 +380,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 548);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.rbMethods);
@@ -422,6 +444,8 @@
         private System.Windows.Forms.ContextMenuStrip textContextMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiPaste;
         private System.Windows.Forms.ToolStripMenuItem tsmiClearSelection;
+        private System.Windows.Forms.ToolStripMenuItem tsmiNavigateToTreeNode;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 

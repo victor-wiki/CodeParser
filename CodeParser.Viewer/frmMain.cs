@@ -22,6 +22,7 @@ namespace CodeParser.Viewer
         private List<Type> parserTypes = new List<Type>();
         private Parser parser = null;
         private Color selectionBackColor = ColorTranslator.FromHtml("#0078D7");
+        private Dictionary<TreeNode, TokenInfo> dictTokenInfo = new Dictionary<TreeNode, TokenInfo>();
 
         private static List<string> ignoreMethods = new List<string>()
         {
@@ -129,7 +130,7 @@ namespace CodeParser.Viewer
             this.LoadFromFile();
         }
 
-        private void Reset()
+        private void ClearValues()
         {
             this.txtChildCount.Text = "";
             this.txtTypeName.Text = "";
@@ -139,21 +140,30 @@ namespace CodeParser.Viewer
 
         private void ClearSelection()
         {
-            this.txtText.SelectAll();
-            this.txtText.SelectionBackColor = Color.White;
-            this.txtText.SelectionColor = Color.Black;           
+            int start = this.txtText.SelectionStart;
+
+            if (this.txtText.SelectionLength > 0 || this.txtText.SelectedText?.Length > 0)
+            {
+                this.txtText.SelectAll();
+                this.txtText.SelectionBackColor = Color.White;
+                this.txtText.SelectionColor = Color.Black;
+                this.txtText.SelectionStart = start;
+                this.txtText.SelectionLength = 0;
+            }
         }
 
         private void LoadTree()
         {
-            this.Reset();
+            this.ClearValues();
+            this.txtMessage.Text = "";
+
+            this.tvParserNodes.Nodes.Clear();
+            this.dictTokenInfo.Clear();
 
             if (this.cboParser.SelectedIndex < 0)
             {
                 return;
             }
-
-            this.tvParserNodes.Nodes.Clear();
 
             if (string.IsNullOrEmpty(this.txtText.Text))
             {
@@ -240,6 +250,7 @@ namespace CodeParser.Viewer
 
                     foreach (MethodInfo m in methods)
                     {
+
                         if (m.IsPublic && !m.IsSpecialName && !ignoreMethods.Contains(m.Name) && m.Module.Name == this.coderPaserDllName && m.GetParameters().Length == 0)
                         {
                             var childValue = m.Invoke(v, new object[] { });
@@ -263,6 +274,7 @@ namespace CodeParser.Viewer
                             }
 
                             string nodeText = isArray ? (m.Name + "[]") : m.Name;
+
                             TreeNode childNode = this.CreateTreeNode(nodeText);
                             childNode.Name = m.Name;
 
@@ -270,7 +282,7 @@ namespace CodeParser.Viewer
 
                             node.Nodes.Add(childNode);
 
-                            Console.WriteLine(m.Name);
+                            this.dictTokenInfo.Add(childNode, this.GetTokenInfo(childValue));
 
                             this.AddChildNodes(childNode, false);
                         }
@@ -308,6 +320,8 @@ namespace CodeParser.Viewer
                                     childNode.Tag = tn;
 
                                     node.Nodes.Add(childNode);
+
+                                    this.dictTokenInfo.Add(childNode, this.GetTokenInfo(tn));
 
                                     this.AddChildNodes(childNode, false);
 
@@ -373,7 +387,12 @@ namespace CodeParser.Viewer
 
         private void tvParserNodes_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            object value = e.Node.Tag;
+            this.ShowNodeDetails(e.Node);
+        }
+
+        private void ShowNodeDetails(TreeNode node)
+        {
+            object value = node.Tag;
 
             if (value == null)
             {
@@ -385,57 +404,62 @@ namespace CodeParser.Viewer
                 return;
             }
 
-            this.Reset();
+            this.ClearValues();
 
             Type type = value.GetType();
             this.txtTypeName.Text = type.Name;
 
-            int? start = -1;
-            int? end = -1;
-            int childCount = 0;
+            TokenInfo tokenInfo = this.GetTokenInfo(value);
 
-            if (value is ParserRuleContext context)
-            {
-                start = context.Start.StartIndex;
-                end = context.Stop.StopIndex;
-                childCount = context.children.Count;
-            }
-            else if (value is ParserRuleContext[] contextes)
-            {
-                start = contextes.First().Start?.StartIndex;
-                end = contextes.Last().Stop?.StopIndex;
-                childCount = contextes.Length;
-            }
-            else if (value is ITerminalNode terminalNode)
-            {
-                start = terminalNode.Symbol?.StartIndex;
-                end = terminalNode.Symbol?.StopIndex;
-                childCount = terminalNode.ChildCount;
-            }
-            else if (value is ITerminalNode[] terminalNodes)
-            {
-                start = terminalNodes.First().Symbol?.StartIndex;
-                end = terminalNodes.Last().Symbol?.StopIndex;
-                childCount = terminalNodes.Length;
-            }
+            this.txtChildCount.Text = tokenInfo.ChildCount?.ToString();
 
-            this.txtChildCount.Text = childCount.ToString();
-
-            if (!start.HasValue || start < 0 || !end.HasValue || end < 0)
+            if (!tokenInfo.StartIndex.HasValue || tokenInfo.StartIndex < 0 || !tokenInfo.StopIndex.HasValue || tokenInfo.StopIndex < 0)
             {
                 return;
             }
 
-            int length = end.Value - start.Value + 1;
+            int length = tokenInfo.StopIndex.Value - tokenInfo.StartIndex.Value + 1;
 
-            this.txtText.SelectionStart = start.Value;
+            this.txtText.SelectionStart = tokenInfo.StartIndex.Value;
             this.txtText.SelectionLength = length;
             this.txtText.SelectionBackColor = this.selectionBackColor;
             this.txtText.SelectionColor = Color.White;
 
             this.txtText.ScrollToCaret();
 
-            this.txtMessage.Text = this.GetTreeNodePath(e.Node);
+            this.txtMessage.Text = this.GetTreeNodePath(node);
+        }
+
+        private TokenInfo GetTokenInfo(dynamic value)
+        {
+            TokenInfo tokenInfo = new TokenInfo();
+
+            if (value is ParserRuleContext context)
+            {
+                tokenInfo.StartIndex = context.Start?.StartIndex;
+                tokenInfo.StopIndex = context.Stop?.StopIndex;
+                tokenInfo.ChildCount = context.children?.Count;
+            }
+            else if (value is ParserRuleContext[] contextes)
+            {
+                tokenInfo.StartIndex = contextes.First().Start?.StartIndex;
+                tokenInfo.StopIndex = contextes.Last().Stop?.StopIndex;
+                tokenInfo.ChildCount = contextes.Length;
+            }
+            else if (value is ITerminalNode terminalNode)
+            {
+                tokenInfo.StartIndex = terminalNode.Symbol?.StartIndex;
+                tokenInfo.StopIndex = terminalNode.Symbol?.StopIndex;
+                tokenInfo.ChildCount = terminalNode.ChildCount;
+            }
+            else if (value is ITerminalNode[] terminalNodes)
+            {
+                tokenInfo.StartIndex = terminalNodes.First().Symbol?.StartIndex;
+                tokenInfo.StopIndex = terminalNodes.Last().Symbol?.StopIndex;
+                tokenInfo.ChildCount = terminalNodes.Length;
+            }
+
+            return tokenInfo;
         }
 
         private string GetFileContent()
@@ -651,6 +675,68 @@ namespace CodeParser.Viewer
         private void tsmiClearSelection_Click(object sender, EventArgs e)
         {
             this.ClearSelection();
+        }
+
+        private void tsmiNavigateToTreeNode_Click(object sender, EventArgs e)
+        {
+            if (this.txtText.SelectionLength > 0)
+            {
+                int start = this.txtText.SelectionStart + (this.txtText.SelectedText.Length - this.txtText.SelectedText.TrimStart().Length);
+                int length = this.txtText.SelectedText.Trim().Replace("\n", "").Length;
+
+                TreeNode node = this.FindTreeNode(start, length);
+
+                if (node != null)
+                {
+                    this.tvParserNodes.SelectedNode = node;
+
+                    node.EnsureVisible();
+                }
+                else
+                {
+                    MessageBox.Show("No match.");
+                }
+            }
+        }
+
+        private TreeNode FindTreeNode(int start, int lenght)
+        {
+            int end = start + lenght - 1;
+
+            TreeNode node = this.dictTokenInfo
+                    .Where(item => item.Value.StartIndex.HasValue && item.Value.StopIndex.HasValue && start >= item.Value.StartIndex && end <= item.Value.StopIndex)
+                    .OrderByDescending(item => item.Key.Level)
+                    .Select(item => item.Key)
+                    .FirstOrDefault();
+
+            return node;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            this.Reset();
+        }
+
+        private void Reset()
+        {
+            this.cboParser.SelectedIndex = -1;
+            this.txtFile.Text = "";
+            this.ClearValues();
+            this.tvParserNodes.Nodes.Clear();
+            this.txtText.Text = "";
+            this.txtMessage.Text = "";
+        }
+
+        private void txtText_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.tsmiClearSelection.Visible = this.txtText.SelectionLength > 0;
+                this.tsmiNavigateToTreeNode.Visible = this.txtText.SelectionLength > 0;
+                this.tsmiPaste.Visible = this.txtText.Text.Length == 0 || this.txtText.SelectionLength == this.txtText.Text.Length;
+
+                this.textContextMenu.Show(this.txtText, e.Location);
+            }
         }
     }
 }
