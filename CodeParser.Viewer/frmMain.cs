@@ -77,6 +77,11 @@ namespace CodeParser.Viewer
 
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
+            this.SelectFile();
+        }
+
+        private void SelectFile()
+        {
             if (this.cboParser.SelectedIndex < 0)
             {
                 MessageBox.Show("Please select a parser first.");
@@ -427,7 +432,7 @@ namespace CodeParser.Viewer
 
             this.txtText.ScrollToCaret();
 
-            this.lblMessage.Text = this.GetTreeNodePath(e.Node);
+            this.txtMessage.Text = this.GetTreeNodePath(e.Node);
         }
 
         private (int Start, int Length) ReCalculateStartLength(int start, int length)
@@ -547,10 +552,7 @@ namespace CodeParser.Viewer
 
             if (node != null)
             {
-                foreach (TreeNode tn in node.Nodes)
-                {
-                    tn.Collapse();
-                }
+                node.Collapse(false);
             }
         }
 
@@ -574,18 +576,59 @@ namespace CodeParser.Viewer
 
         private void tsmiCopyPath_Click(object sender, EventArgs e)
         {
+            this.CopyNodeText(true);
+        }
+
+        private void tsmiCopyText_Click(object sender, EventArgs e)
+        {
+            this.CopyNodeText(false);
+        }
+
+        private void CopyNodeText(bool isCopyPath)
+        {
             TreeNode node = this.tvParserNodes.SelectedNode;
 
             if (node != null)
             {
-                string path = this.GetTreeNodePath(node);
-
-                if (!string.IsNullOrEmpty(path))
+                if(isCopyPath)
                 {
-                    Clipboard.SetDataObject(path);
-                    MessageBox.Show("The path has been copied to clipboard.");
+                    string path = this.GetTreeNodePath(node);
+
+                    if (!string.IsNullOrEmpty(path))
+                    {
+                        Clipboard.SetDataObject(path);                       
+                    }
                 }
+                else
+                {
+                    Clipboard.SetDataObject(node.Text);
+                }
+
+                MessageBox.Show("Has been copied to clipboard.");
+
+                this.tvParserNodes.SelectedNode = node;
             }
-        }        
+        }
+
+        private void tsmiExpandAllChildren_Click(object sender, EventArgs e)
+        {
+            TreeNode node = this.tvParserNodes.SelectedNode;
+
+            if (node != null)
+            {
+                node.ExpandAll();
+                node.EnsureVisible();
+            }
+        }
+
+        private void txtMessage_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.txtMessage.SelectAll();
+        }
+
+        private void txtFile_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.SelectFile();
+        }
     }
 }

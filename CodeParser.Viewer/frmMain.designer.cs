@@ -53,8 +53,10 @@
             this.rbChildren = new System.Windows.Forms.RadioButton();
             this.rbMethods = new System.Windows.Forms.RadioButton();
             this.btnReload = new System.Windows.Forms.Button();
-            this.lblMessage = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.tsmiCopyText = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExpandAllChildren = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -156,36 +158,38 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiExpandAll,
             this.tsmiCollapseAll,
+            this.tsmiExpandAllChildren,
             this.tsmiCollapseToChildren,
+            this.tsmiCopyText,
             this.tsmiCopyPath});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(191, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 136);
             // 
             // tsmiExpandAll
             // 
             this.tsmiExpandAll.Name = "tsmiExpandAll";
-            this.tsmiExpandAll.Size = new System.Drawing.Size(190, 22);
+            this.tsmiExpandAll.Size = new System.Drawing.Size(191, 22);
             this.tsmiExpandAll.Text = "expand all";
             this.tsmiExpandAll.Click += new System.EventHandler(this.tsmiExpandAll_Click);
             // 
             // tsmiCollapseAll
             // 
             this.tsmiCollapseAll.Name = "tsmiCollapseAll";
-            this.tsmiCollapseAll.Size = new System.Drawing.Size(190, 22);
+            this.tsmiCollapseAll.Size = new System.Drawing.Size(191, 22);
             this.tsmiCollapseAll.Text = "collapse all";
             this.tsmiCollapseAll.Click += new System.EventHandler(this.tsmiCollapseAll_Click);
             // 
             // tsmiCollapseToChildren
             // 
             this.tsmiCollapseToChildren.Name = "tsmiCollapseToChildren";
-            this.tsmiCollapseToChildren.Size = new System.Drawing.Size(190, 22);
-            this.tsmiCollapseToChildren.Text = "collapse to children";
+            this.tsmiCollapseToChildren.Size = new System.Drawing.Size(191, 22);
+            this.tsmiCollapseToChildren.Text = "collapse all children";
             this.tsmiCollapseToChildren.Click += new System.EventHandler(this.tsmiCollapseToChildren_Click);
             // 
             // tsmiCopyPath
             // 
             this.tsmiCopyPath.Name = "tsmiCopyPath";
-            this.tsmiCopyPath.Size = new System.Drawing.Size(190, 22);
+            this.tsmiCopyPath.Size = new System.Drawing.Size(191, 22);
             this.tsmiCopyPath.Text = "copy path";
             this.tsmiCopyPath.Click += new System.EventHandler(this.tsmiCopyPath_Click);
             // 
@@ -217,6 +221,7 @@
             this.txtFile.TabIndex = 3;
             this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
             this.txtFile.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFile_KeyUp);
+            this.txtFile.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtFile_MouseDoubleClick);
             // 
             // btnOpenFile
             // 
@@ -294,14 +299,31 @@
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // lblMessage
+            // txtMessage
             // 
-            this.lblMessage.AutoEllipsis = true;
-            this.lblMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblMessage.Location = new System.Drawing.Point(0, 530);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(837, 18);
-            this.lblMessage.TabIndex = 12;
+            this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtMessage.Location = new System.Drawing.Point(0, 529);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.ReadOnly = true;
+            this.txtMessage.Size = new System.Drawing.Size(837, 19);
+            this.txtMessage.TabIndex = 12;
+            this.txtMessage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtMessage_MouseDoubleClick);
+            // 
+            // tsmiCopyText
+            // 
+            this.tsmiCopyText.Name = "tsmiCopyText";
+            this.tsmiCopyText.Size = new System.Drawing.Size(191, 22);
+            this.tsmiCopyText.Text = "copy text";
+            this.tsmiCopyText.Click += new System.EventHandler(this.tsmiCopyText_Click);
+            // 
+            // tsmiExpandAllChildren
+            // 
+            this.tsmiExpandAllChildren.Name = "tsmiExpandAllChildren";
+            this.tsmiExpandAllChildren.Size = new System.Drawing.Size(191, 22);
+            this.tsmiExpandAllChildren.Text = "expand all children";
+            this.tsmiExpandAllChildren.Click += new System.EventHandler(this.tsmiExpandAllChildren_Click);
             // 
             // frmMain
             // 
@@ -309,7 +331,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 548);
-            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.rbMethods);
             this.Controls.Add(this.rbChildren);
@@ -363,9 +385,11 @@
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.ToolStripMenuItem tsmiCollapseToChildren;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyPath;
-        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.RichTextBox txtText;
+        private System.Windows.Forms.TextBox txtMessage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCopyText;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExpandAllChildren;
     }
 }
 
