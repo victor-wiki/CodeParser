@@ -21,7 +21,7 @@ namespace CodeParser.Viewer
         private Assembly assembly = null;
         private List<Type> parserTypes = new List<Type>();
         private Parser parser = null;
-        private Color selectionBackColor = Color.Blue;
+        private Color selectionBackColor = ColorTranslator.FromHtml("#0078D7");
 
         private static List<string> ignoreMethods = new List<string>()
         {
@@ -141,9 +141,7 @@ namespace CodeParser.Viewer
         {
             this.txtText.SelectAll();
             this.txtText.SelectionBackColor = Color.White;
-            this.txtText.SelectionColor = Color.Black;
-            this.txtText.SelectionLength = 0;
-            this.txtText.SelectionStart = 0;
+            this.txtText.SelectionColor = Color.Black;           
         }
 
         private void LoadTree()

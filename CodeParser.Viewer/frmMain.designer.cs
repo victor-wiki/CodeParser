@@ -94,6 +94,7 @@
             // tvParserNodes
             // 
             this.tvParserNodes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvParserNodes.HideSelection = false;
             this.tvParserNodes.Location = new System.Drawing.Point(0, 0);
             this.tvParserNodes.Name = "tvParserNodes";
             this.tvParserNodes.Size = new System.Drawing.Size(418, 461);
