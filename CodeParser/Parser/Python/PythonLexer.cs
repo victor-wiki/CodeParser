@@ -158,8 +158,8 @@ public partial class PythonLexer : PythonLexerBase
             case 89: CLOSE_BRACE_action(_localctx, actionIndex); break;
             case 90: OPEN_BRACKET_action(_localctx, actionIndex); break;
             case 91: CLOSE_BRACKET_action(_localctx, actionIndex); break;
-            //case 94: NEWLINE_action(_localctx, actionIndex); break; //throw error!!!
-            //case 95: WS_action(_localctx, actionIndex); break; //throow error!!!
+            ////case 94: NEWLINE_action(_localctx, actionIndex); break; //throw error!!!
+            ////case 95: WS_action(_localctx, actionIndex); break; //throw error!!!
         }
     }
     private void OPEN_PAREN_action(RuleContext _localctx, int actionIndex)
