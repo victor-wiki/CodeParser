@@ -24,6 +24,7 @@ namespace CodeParser
                     new ParserInfo() { ParserName = nameof(TSqlParser), Language= "TSql", FileExtension = ".sql", EntryRuleName =nameof(TSqlParser.tsql_file) },
                     new ParserInfo() { ParserName = nameof(MySqlParser), Language= "MySql", FileExtension = ".sql", EntryRuleName =nameof(MySqlParser.root) },
                     new ParserInfo() { ParserName = nameof(PlSqlParser), Language= "PlSql", FileExtension = ".sql", EntryRuleName =nameof(PlSqlParser.sql_script) },
+                    new ParserInfo() { ParserName = nameof(SQLiteParser), Language= "SQLite", FileExtension = ".sql", EntryRuleName =nameof(SQLiteParser.parse) }
                 };
             }
         }

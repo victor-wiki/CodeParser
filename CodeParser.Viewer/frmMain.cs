@@ -21,10 +21,10 @@ namespace CodeParser.Viewer
         private Assembly assembly = null;
         private List<Type> parserTypes = new List<Type>();
         private Parser parser = null;
-        private string fileContent = "";
+        private Color selectionBackColor = Color.Blue;
 
         private static List<string> ignoreMethods = new List<string>()
-        {          
+        {
             "Eof"
         };
 
@@ -68,11 +68,10 @@ namespace CodeParser.Viewer
                     select type).FirstOrDefault();
         }
 
-        private void ShowContent()
+        private void LoadFromFile()
         {
+            this.txtText.Text = this.GetFileContent();
             this.LoadTree();
-            this.fileContent = this.GetFileContent();
-            this.txtText.Text = this.fileContent;
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)
@@ -106,7 +105,7 @@ namespace CodeParser.Viewer
             {
                 this.txtFile.Text = this.openFileDialog1.FileName;
 
-                this.ShowContent();
+                this.LoadFromFile();
             }
         }
 
@@ -127,7 +126,7 @@ namespace CodeParser.Viewer
 
         private void txtFile_TextChanged(object sender, EventArgs e)
         {
-            this.ShowContent();
+            this.LoadFromFile();
         }
 
         private void Reset()
@@ -135,23 +134,33 @@ namespace CodeParser.Viewer
             this.txtChildCount.Text = "";
             this.txtTypeName.Text = "";
 
+            this.ClearSelection();
+        }
+
+        private void ClearSelection()
+        {
+            this.txtText.SelectAll();
             this.txtText.SelectionBackColor = Color.White;
             this.txtText.SelectionColor = Color.Black;
-            this.txtText.SelectAll();          
             this.txtText.SelectionLength = 0;
             this.txtText.SelectionStart = 0;
         }
 
         private void LoadTree()
         {
-            if (!File.Exists(this.txtFile.Text))
+            this.Reset();
+
+            if (this.cboParser.SelectedIndex < 0)
             {
                 return;
             }
 
-            this.Reset();
-
             this.tvParserNodes.Nodes.Clear();
+
+            if (string.IsNullOrEmpty(this.txtText.Text))
+            {
+                return;
+            }
 
             string parserName = this.cboParser.Text;
 
@@ -159,7 +168,7 @@ namespace CodeParser.Viewer
 
             Type lexerType = this.GetLexerType(parserType.Name.Replace("Parser", "Lexer"));
 
-            Lexer lexer = (Lexer)Activator.CreateInstance(lexerType, new object[] { CharStreams.fromPath(this.txtFile.Text) });
+            Lexer lexer = (Lexer)Activator.CreateInstance(lexerType, new object[] { CharStreams.fromstring(this.txtText.Text) });
 
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 
@@ -232,7 +241,7 @@ namespace CodeParser.Viewer
                     MethodInfo[] methods = t.GetMethods();
 
                     foreach (MethodInfo m in methods)
-                    {                       
+                    {
                         if (m.IsPublic && !m.IsSpecialName && !ignoreMethods.Contains(m.Name) && m.Module.Name == this.coderPaserDllName && m.GetParameters().Length == 0)
                         {
                             var childValue = m.Invoke(v, new object[] { });
@@ -333,7 +342,7 @@ namespace CodeParser.Viewer
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.ShowContent();
+                this.LoadFromFile();
             }
         }
 
@@ -378,13 +387,13 @@ namespace CodeParser.Viewer
                 return;
             }
 
-            this.Reset();          
+            this.Reset();
 
             Type type = value.GetType();
             this.txtTypeName.Text = type.Name;
 
-            int start = -1;
-            int end = -1;
+            int? start = -1;
+            int? end = -1;
             int childCount = 0;
 
             if (value is ParserRuleContext context)
@@ -395,61 +404,40 @@ namespace CodeParser.Viewer
             }
             else if (value is ParserRuleContext[] contextes)
             {
-                start = contextes.First().Start.StartIndex;
-                end = contextes.Last().Stop.StopIndex;
+                start = contextes.First().Start?.StartIndex;
+                end = contextes.Last().Stop?.StopIndex;
                 childCount = contextes.Length;
             }
             else if (value is ITerminalNode terminalNode)
             {
-                start = terminalNode.Symbol.StartIndex;
-                end = terminalNode.Symbol.StopIndex;
+                start = terminalNode.Symbol?.StartIndex;
+                end = terminalNode.Symbol?.StopIndex;
                 childCount = terminalNode.ChildCount;
             }
             else if (value is ITerminalNode[] terminalNodes)
             {
-                start = terminalNodes.First().Symbol.StartIndex;
-                end = terminalNodes.Last().Symbol.StopIndex;
+                start = terminalNodes.First().Symbol?.StartIndex;
+                end = terminalNodes.Last().Symbol?.StopIndex;
                 childCount = terminalNodes.Length;
             }
 
             this.txtChildCount.Text = childCount.ToString();
 
-            if (start < 0)
+            if (!start.HasValue || start < 0 || !end.HasValue || end < 0)
             {
                 return;
             }
 
-            int length = end - start + 1;
+            int length = end.Value - start.Value + 1;
 
-            (int Start, int Length) actualStartLength = this.ReCalculateStartLength(start, length);
-            start = actualStartLength.Start;
-            length = actualStartLength.Length;
-           
-            this.txtText.SelectionStart = start;
+            this.txtText.SelectionStart = start.Value;
             this.txtText.SelectionLength = length;
-            this.txtText.SelectionBackColor = Color.Blue;
+            this.txtText.SelectionBackColor = this.selectionBackColor;
             this.txtText.SelectionColor = Color.White;
 
             this.txtText.ScrollToCaret();
 
             this.txtMessage.Text = this.GetTreeNodePath(e.Node);
-        }
-
-        private (int Start, int Length) ReCalculateStartLength(int start, int length)
-        {
-            string content = this.fileContent.Substring(start, length);
-
-            string foreContent = this.fileContent.Substring(0, start);
-
-            int actualStart = start - this.CalculateCarriageCount(foreContent);
-            int actualLength = length - this.CalculateCarriageCount(content);
-
-            return (actualStart, actualLength);
-        }
-
-        private int CalculateCarriageCount(string content)
-        {
-            return content.Length - content.Replace("\r", "").Length;
         }
 
         private string GetFileContent()
@@ -498,7 +486,7 @@ namespace CodeParser.Viewer
                 {
                     this.txtFile.Text = filePath;
 
-                    this.ShowContent();
+                    this.LoadFromFile();
                 }
             }
         }
@@ -515,7 +503,14 @@ namespace CodeParser.Viewer
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            this.ShowContent();
+            if (File.Exists(this.txtFile.Text))
+            {
+                this.LoadFromFile();
+            }
+            else
+            {
+                this.LoadTree();
+            }
         }
 
         private void tvParserNodes_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -526,7 +521,7 @@ namespace CodeParser.Viewer
 
                 this.SetMenuItemVisible(e.Node);
 
-                this.contextMenuStrip1.Show(Cursor.Position);
+                this.treeContextMenu.Show(Cursor.Position);
             }
         }
 
@@ -542,7 +537,7 @@ namespace CodeParser.Viewer
             {
                 this.SetMenuItemVisible(null);
 
-                this.contextMenuStrip1.Show(Cursor.Position);
+                this.treeContextMenu.Show(Cursor.Position);
             }
         }
 
@@ -590,13 +585,13 @@ namespace CodeParser.Viewer
 
             if (node != null)
             {
-                if(isCopyPath)
+                if (isCopyPath)
                 {
                     string path = this.GetTreeNodePath(node);
 
                     if (!string.IsNullOrEmpty(path))
                     {
-                        Clipboard.SetDataObject(path);                       
+                        Clipboard.SetDataObject(path);
                     }
                 }
                 else
@@ -629,6 +624,35 @@ namespace CodeParser.Viewer
         private void txtFile_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.SelectFile();
+        }
+
+        private void txtText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                this.LoadTree();
+            }
+        }
+
+        private void tsmiPaste_Click(object sender, EventArgs e)
+        {
+            var data = Clipboard.GetDataObject();
+            if (data != null)
+            {
+                this.txtText.Text = data.GetData(DataFormats.UnicodeText)?.ToString();
+
+                this.LoadTree();
+            }
+        }
+
+        private void cboParser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.LoadTree();
+        }
+
+        private void tsmiClearSelection_Click(object sender, EventArgs e)
+        {
+            this.ClearSelection();
         }
     }
 }

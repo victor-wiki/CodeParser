@@ -33,14 +33,18 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvParserNodes = new System.Windows.Forms.TreeView();
             this.txtText = new System.Windows.Forms.RichTextBox();
+            this.textContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.txtChildCount = new System.Windows.Forms.TextBox();
             this.txtTypeName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.treeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiExpandAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCollapseAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExpandAllChildren = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCollapseToChildren = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCopyText = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyPath = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.cboParser = new System.Windows.Forms.ComboBox();
@@ -55,13 +59,13 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.tsmiCopyText = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiExpandAllChildren = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.textContextMenu.SuspendLayout();
+            this.treeContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -105,13 +109,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtText.BackColor = System.Drawing.Color.White;
-            this.txtText.HideSelection = false;
+            this.txtText.ContextMenuStrip = this.textContextMenu;
             this.txtText.Location = new System.Drawing.Point(3, 82);
             this.txtText.Name = "txtText";
-            this.txtText.ReadOnly = true;
             this.txtText.Size = new System.Drawing.Size(404, 379);
             this.txtText.TabIndex = 7;
             this.txtText.Text = "";
+            this.txtText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyUp);
+            // 
+            // textContextMenu
+            // 
+            this.textContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPaste,
+            this.tsmiClearSelection});
+            this.textContextMenu.Name = "textContextMenu";
+            this.textContextMenu.Size = new System.Drawing.Size(160, 48);
+            // 
+            // tsmiPaste
+            // 
+            this.tsmiPaste.Name = "tsmiPaste";
+            this.tsmiPaste.Size = new System.Drawing.Size(159, 22);
+            this.tsmiPaste.Text = "paste";
+            this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // txtChildCount
             // 
@@ -153,17 +172,17 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Child count:";
             // 
-            // contextMenuStrip1
+            // treeContextMenu
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.treeContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiExpandAll,
             this.tsmiCollapseAll,
             this.tsmiExpandAllChildren,
             this.tsmiCollapseToChildren,
             this.tsmiCopyText,
             this.tsmiCopyPath});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 136);
+            this.treeContextMenu.Name = "contextMenuStrip1";
+            this.treeContextMenu.Size = new System.Drawing.Size(192, 136);
             // 
             // tsmiExpandAll
             // 
@@ -179,12 +198,26 @@
             this.tsmiCollapseAll.Text = "collapse all";
             this.tsmiCollapseAll.Click += new System.EventHandler(this.tsmiCollapseAll_Click);
             // 
+            // tsmiExpandAllChildren
+            // 
+            this.tsmiExpandAllChildren.Name = "tsmiExpandAllChildren";
+            this.tsmiExpandAllChildren.Size = new System.Drawing.Size(191, 22);
+            this.tsmiExpandAllChildren.Text = "expand all children";
+            this.tsmiExpandAllChildren.Click += new System.EventHandler(this.tsmiExpandAllChildren_Click);
+            // 
             // tsmiCollapseToChildren
             // 
             this.tsmiCollapseToChildren.Name = "tsmiCollapseToChildren";
             this.tsmiCollapseToChildren.Size = new System.Drawing.Size(191, 22);
             this.tsmiCollapseToChildren.Text = "collapse all children";
             this.tsmiCollapseToChildren.Click += new System.EventHandler(this.tsmiCollapseToChildren_Click);
+            // 
+            // tsmiCopyText
+            // 
+            this.tsmiCopyText.Name = "tsmiCopyText";
+            this.tsmiCopyText.Size = new System.Drawing.Size(191, 22);
+            this.tsmiCopyText.Text = "copy text";
+            this.tsmiCopyText.Click += new System.EventHandler(this.tsmiCopyText_Click);
             // 
             // tsmiCopyPath
             // 
@@ -210,6 +243,7 @@
             this.cboParser.Name = "cboParser";
             this.cboParser.Size = new System.Drawing.Size(115, 20);
             this.cboParser.TabIndex = 2;
+            this.cboParser.SelectedIndexChanged += new System.EventHandler(this.cboParser_SelectedIndexChanged);
             // 
             // txtFile
             // 
@@ -311,19 +345,12 @@
             this.txtMessage.TabIndex = 12;
             this.txtMessage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtMessage_MouseDoubleClick);
             // 
-            // tsmiCopyText
+            // tsmiClearSelection
             // 
-            this.tsmiCopyText.Name = "tsmiCopyText";
-            this.tsmiCopyText.Size = new System.Drawing.Size(191, 22);
-            this.tsmiCopyText.Text = "copy text";
-            this.tsmiCopyText.Click += new System.EventHandler(this.tsmiCopyText_Click);
-            // 
-            // tsmiExpandAllChildren
-            // 
-            this.tsmiExpandAllChildren.Name = "tsmiExpandAllChildren";
-            this.tsmiExpandAllChildren.Size = new System.Drawing.Size(191, 22);
-            this.tsmiExpandAllChildren.Text = "expand all children";
-            this.tsmiExpandAllChildren.Click += new System.EventHandler(this.tsmiExpandAllChildren_Click);
+            this.tsmiClearSelection.Name = "tsmiClearSelection";
+            this.tsmiClearSelection.Size = new System.Drawing.Size(159, 22);
+            this.tsmiClearSelection.Text = "clear selection";
+            this.tsmiClearSelection.Click += new System.EventHandler(this.tsmiClearSelection_Click);
             // 
             // frmMain
             // 
@@ -355,7 +382,8 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.textContextMenu.ResumeLayout(false);
+            this.treeContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,7 +403,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip treeContextMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiExpandAll;
         private System.Windows.Forms.ToolStripMenuItem tsmiCollapseAll;
         private System.Windows.Forms.CheckBox chkHideEmptyNode;
@@ -390,6 +418,9 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyText;
         private System.Windows.Forms.ToolStripMenuItem tsmiExpandAllChildren;
+        private System.Windows.Forms.ContextMenuStrip textContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPaste;
+        private System.Windows.Forms.ToolStripMenuItem tsmiClearSelection;
     }
 }
 
