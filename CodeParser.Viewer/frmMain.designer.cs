@@ -319,10 +319,12 @@
             // rbChildren
             // 
             this.rbChildren.AutoSize = true;
-            this.rbChildren.Location = new System.Drawing.Point(351, 12);
+            this.rbChildren.Checked = true;
+            this.rbChildren.Location = new System.Drawing.Point(280, 12);
             this.rbChildren.Name = "rbChildren";
             this.rbChildren.Size = new System.Drawing.Size(71, 16);
             this.rbChildren.TabIndex = 9;
+            this.rbChildren.TabStop = true;
             this.rbChildren.Text = "children";
             this.rbChildren.UseVisualStyleBackColor = true;
             this.rbChildren.CheckedChanged += new System.EventHandler(this.rbChildren_CheckedChanged);
@@ -330,12 +332,10 @@
             // rbMethods
             // 
             this.rbMethods.AutoSize = true;
-            this.rbMethods.Checked = true;
-            this.rbMethods.Location = new System.Drawing.Point(280, 11);
+            this.rbMethods.Location = new System.Drawing.Point(357, 12);
             this.rbMethods.Name = "rbMethods";
             this.rbMethods.Size = new System.Drawing.Size(65, 16);
             this.rbMethods.TabIndex = 10;
-            this.rbMethods.TabStop = true;
             this.rbMethods.Text = "methods";
             this.rbMethods.UseVisualStyleBackColor = true;
             this.rbMethods.CheckedChanged += new System.EventHandler(this.rbMethods_CheckedChanged);

@@ -127,7 +127,10 @@ namespace CodeParser.Viewer
 
         private void txtFile_TextChanged(object sender, EventArgs e)
         {
-            this.LoadFromFile();
+            if(File.Exists(this.txtFile.Text))
+            {
+                this.LoadFromFile();
+            }            
         }
 
         private void ClearValues()
@@ -737,7 +740,7 @@ namespace CodeParser.Viewer
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.tsmiClearSelection.Visible = this.txtText.SelectionLength > 0;
+                //this.tsmiClearSelection.Visible = this.txtText.SelectionLength > 0;
                 this.tsmiNavigateToTreeNode.Visible = this.txtText.SelectionLength > 0;
                 this.tsmiPaste.Visible = this.txtText.Text.Length == 0 || this.txtText.SelectionLength == this.txtText.Text.Length;
 
