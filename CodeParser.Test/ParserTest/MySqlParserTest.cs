@@ -98,17 +98,7 @@ namespace CodeParser.Test
             {
                 if (blockChild is ProcedureSqlStatementContext procedure)
                 {
-                    SqlStatementContext sqlStatement = procedure.sqlStatement();
-                    CompoundStatementContext compoundStatement = procedure.compoundStatement();
-
-                    if (sqlStatement != null)
-                    {
-                        this.ParserSqlStatement(sqlStatement);
-                    }
-                    else if (compoundStatement != null)
-                    {
-                        this.ParseCompoundStatement(compoundStatement);
-                    }
+                    this.ParseProcedureStatement(procedure);
                 }
                 else
                 {
@@ -123,7 +113,28 @@ namespace CodeParser.Test
             this.WriteEndBrace();
         }
 
-        private void ParserSqlStatement(SqlStatementContext node)
+        private void ParseProcedureStatement(ProcedureSqlStatementContext node)
+        {
+            foreach(var child in node.children)
+            {
+                if (child is SqlStatementContext sqlStatement)
+                {
+                    this.ParseSqlStatement(sqlStatement);
+                }
+                else if(child is CompoundStatementContext compoundStatement)
+                {
+                    this.ParseCompoundStatement(compoundStatement);
+                }
+                else if(child is TerminalNodeImpl terminalNode)
+                {
+                    this.Write(terminalNode.GetText());
+                }                
+            }
+
+            this.WriteLine();
+        }
+
+        private void ParseSqlStatement(SqlStatementContext node)
         {
             foreach (var child in node.children)
             {
@@ -148,31 +159,107 @@ namespace CodeParser.Test
                 {
                     string text = variable.GetText();
 
-                    this.Write(text);
+                    this.Write(text, 1);
                 }
                 else if (child is PredicateExpressionContext exp)
                 {
-                    string text = exp.GetText();
-
-                    ExpressionAtomPredicateContext atom = exp.GetRuleContext<ExpressionAtomPredicateContext>(0);
-
-                    if (atom != null)
-                    {
-                        ConstantExpressionAtomContext constant = atom.GetRuleContext<ConstantExpressionAtomContext>(0);
-
-                        string value = constant.GetText();
-
-                        this.Write(value);
-                    }
+                    this.ParsePredicateExpression(exp);
                 }
-                else
+                else if(child is TerminalNodeImpl terminalNode)
                 {
                     string text = child.GetText();
-                    this.Write(text, indent);
+
+                    this.Write(text, terminalNode.Symbol.Type == MySqlParser.SET ? this.indent: 0);
+                }
+            }            
+        }
+
+        private void ParsePredicateExpression(PredicateExpressionContext node)
+        {
+            foreach(var child in node.children)
+            {
+                if(child is ExpressionAtomPredicateContext atom)
+                {
+                    this.ParseExpressionAtom(atom);
+                }
+                else if(child is BinaryComparasionPredicateContext binary)
+                {
+                    foreach(var binaryChild in binary.children)
+                    {
+                        if(binaryChild is ExpressionAtomPredicateContext expAtom)
+                        {
+                            this.ParseExpressionAtom(expAtom);
+                        }
+                        else if(binaryChild is ComparisonOperatorContext comparison)
+                        {
+                            foreach(var comparionChild in comparison.children)
+                            {
+                                if(comparionChild is TerminalNodeImpl terminalNode)
+                                {
+                                    this.Write(terminalNode.GetText());
+                                }
+                            }
+                        }
+                    }
+                }                
+            }           
+        }
+
+        private void ParseMathExpression(MathExpressionAtomContext node)
+        {
+            foreach(var child in node.children)
+            {
+                if(child is MysqlVariableExpressionAtomContext variableExp)
+                {
+                    string text = variableExp.GetText();
+
+                    this.Write(text, 1);
+                }
+                else if(child is MathOperatorContext @operator)
+                {
+                    string text = @operator.GetText();
+
+                    this.Write(text);
+                }
+                else if(child is ConstantExpressionAtomContext constant)
+                {
+                    this.ParseConstExpression(constant);
                 }
             }
+        }
 
-            this.WriteLine();
+        private void ParseConstExpression(ConstantExpressionAtomContext node)
+        {
+            string text = node.GetText();
+
+            this.Write(text);
+        }
+
+        private void ParseExpressionAtom(ExpressionAtomPredicateContext node)
+        {
+            foreach(var child in node.children)
+            {
+                if(child is ConstantExpressionAtomContext constantExp)
+                {
+                    this.ParseConstExpression(constantExp);
+                }
+                else if(child is MysqlVariableExpressionAtomContext variableExp)
+                {
+                    string text = variableExp.GetText();
+
+                    this.Write(text, 1);
+                }
+                else if(child is FullColumnNameExpressionAtomContext columnNameExp)
+                {
+                    string text = columnNameExp.GetText();
+
+                    this.Write(text, 1);
+                }
+                else if (child is MathExpressionAtomContext mathExp)
+                {
+                    this.ParseMathExpression(mathExp);
+                }
+            }           
         }
 
         private void ParseCompoundStatement(CompoundStatementContext node)
@@ -180,12 +267,54 @@ namespace CodeParser.Test
             foreach (var child in node.children)
             {
                 if (child is WhileStatementContext whileStatement)
-                {
+                {                   
+                    foreach(var whileChild in whileStatement.children)
+                    {
+                        if(whileChild is TerminalNodeImpl terminalNode)
+                        {
+                            string text = terminalNode.GetText();
 
+                            if(terminalNode.Symbol.Type == MySqlParser.DO)
+                            {
+                                text += Environment.NewLine;
+                            }
+
+                            this.Write(text, indent);
+                        }
+                        else if(whileChild is ProcedureSqlStatementContext procedure)
+                        {
+                            this.ParseProcedureStatement(procedure);
+                        }
+                        else if(whileChild is PredicateExpressionContext exp)
+                        {
+                            this.ParsePredicateExpression(exp);
+                        }
+                    }
                 }
-                else
+                else if(child is ReturnStatementContext returnStatement)
                 {
-                    this.WriteLine(child.GetText(), indent);
+                    this.ParseReturnStatement(returnStatement);
+                }
+                else if(child is TerminalNodeImpl terminalNode)
+                {
+                    this.WriteLine(terminalNode.GetText());
+                }
+            }
+        }
+
+        private void ParseReturnStatement(ReturnStatementContext node)
+        {
+            foreach(var child in node.children)
+            {
+                if(child is PredicateExpressionContext predicate)
+                {
+                    this.ParsePredicateExpression(predicate);
+                }
+                else if(child is TerminalNodeImpl terminalNode)
+                {
+                    string text = terminalNode.GetText();
+
+                    this.Write(text, terminalNode.Symbol.Type == MySqlParser.RETURN ? this.indent: 0);
                 }
             }
         }

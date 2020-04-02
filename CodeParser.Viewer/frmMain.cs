@@ -250,7 +250,6 @@ namespace CodeParser.Viewer
 
                     foreach (MethodInfo m in methods)
                     {
-
                         if (m.IsPublic && !m.IsSpecialName && !ignoreMethods.Contains(m.Name) && m.Module.Name == this.coderPaserDllName && m.GetParameters().Length == 0)
                         {
                             var childValue = m.Invoke(v, new object[] { });
