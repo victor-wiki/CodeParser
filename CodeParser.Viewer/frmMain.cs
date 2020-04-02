@@ -392,19 +392,20 @@ namespace CodeParser.Viewer
 
         private void ShowNodeDetails(TreeNode node)
         {
-            object value = node.Tag;
-
-            if (value == null)
-            {
-                return;
-            }
-
             if (this.tvParserNodes.SelectedNode != null && this.tvParserNodes.SelectedNode.Level == 0 && this.tvParserNodes.Nodes.Count == 1)
             {
                 return;
             }
 
             this.ClearValues();
+            this.ClearSelection();
+
+            object value = node.Tag;
+
+            if (value == null)
+            {
+                return;
+            }         
 
             Type type = value.GetType();
             this.txtTypeName.Text = type.Name;
@@ -442,9 +443,12 @@ namespace CodeParser.Viewer
             }
             else if (value is ParserRuleContext[] contextes)
             {
-                tokenInfo.StartIndex = contextes.First().Start?.StartIndex;
-                tokenInfo.StopIndex = contextes.Last().Stop?.StopIndex;
-                tokenInfo.ChildCount = contextes.Length;
+                if(contextes.Any())
+                {
+                    tokenInfo.StartIndex = contextes.First().Start?.StartIndex;
+                    tokenInfo.StopIndex = contextes.Last().Stop?.StopIndex;
+                    tokenInfo.ChildCount = contextes.Length;
+                }               
             }
             else if (value is ITerminalNode terminalNode)
             {
@@ -454,9 +458,12 @@ namespace CodeParser.Viewer
             }
             else if (value is ITerminalNode[] terminalNodes)
             {
-                tokenInfo.StartIndex = terminalNodes.First().Symbol?.StartIndex;
-                tokenInfo.StopIndex = terminalNodes.Last().Symbol?.StopIndex;
-                tokenInfo.ChildCount = terminalNodes.Length;
+                if(terminalNodes.Any())
+                {
+                    tokenInfo.StartIndex = terminalNodes.First().Symbol?.StartIndex;
+                    tokenInfo.StopIndex = terminalNodes.Last().Symbol?.StopIndex;
+                    tokenInfo.ChildCount = terminalNodes.Length;
+                }               
             }
 
             return tokenInfo;
