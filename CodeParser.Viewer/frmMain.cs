@@ -145,14 +145,11 @@ namespace CodeParser.Viewer
         {
             int start = this.txtText.SelectionStart;
 
-            if (this.txtText.SelectionLength > 0 || this.txtText.SelectedText?.Length > 0)
-            {
-                this.txtText.SelectAll();
-                this.txtText.SelectionBackColor = Color.White;
-                this.txtText.SelectionColor = Color.Black;
-                this.txtText.SelectionStart = start;
-                this.txtText.SelectionLength = 0;
-            }
+            this.txtText.SelectAll();
+            this.txtText.SelectionBackColor = Color.White;
+            this.txtText.SelectionColor = Color.Black;
+            this.txtText.SelectionStart = start;
+            this.txtText.SelectionLength = 0;
         }
 
         private void LoadTree()
