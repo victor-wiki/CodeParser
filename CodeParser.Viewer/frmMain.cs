@@ -127,10 +127,10 @@ namespace CodeParser.Viewer
 
         private void txtFile_TextChanged(object sender, EventArgs e)
         {
-            if(File.Exists(this.txtFile.Text))
+            if (File.Exists(this.txtFile.Text))
             {
                 this.LoadFromFile();
-            }            
+            }
         }
 
         private void ClearValues()
@@ -404,7 +404,7 @@ namespace CodeParser.Viewer
             if (value == null)
             {
                 return;
-            }         
+            }
 
             Type type = value.GetType();
             this.txtTypeName.Text = type.Name;
@@ -420,12 +420,15 @@ namespace CodeParser.Viewer
 
             int length = tokenInfo.StopIndex.Value - tokenInfo.StartIndex.Value + 1;
 
-            this.txtText.SelectionStart = tokenInfo.StartIndex.Value;
-            this.txtText.SelectionLength = length;
-            this.txtText.SelectionBackColor = this.selectionBackColor;
-            this.txtText.SelectionColor = Color.White;
+            if (length > 0)
+            {
+                this.txtText.SelectionStart = tokenInfo.StartIndex.Value;
+                this.txtText.SelectionLength = length;
+                this.txtText.SelectionBackColor = this.selectionBackColor;
+                this.txtText.SelectionColor = Color.White;
 
-            this.txtText.ScrollToCaret();
+                this.txtText.ScrollToCaret();
+            }
 
             this.txtMessage.Text = this.GetTreeNodePath(node);
         }
@@ -442,12 +445,12 @@ namespace CodeParser.Viewer
             }
             else if (value is ParserRuleContext[] contextes)
             {
-                if(contextes.Any())
+                if (contextes.Any())
                 {
                     tokenInfo.StartIndex = contextes.First().Start?.StartIndex;
                     tokenInfo.StopIndex = contextes.Last().Stop?.StopIndex;
                     tokenInfo.ChildCount = contextes.Length;
-                }               
+                }
             }
             else if (value is ITerminalNode terminalNode)
             {
@@ -457,12 +460,12 @@ namespace CodeParser.Viewer
             }
             else if (value is ITerminalNode[] terminalNodes)
             {
-                if(terminalNodes.Any())
+                if (terminalNodes.Any())
                 {
                     tokenInfo.StartIndex = terminalNodes.First().Symbol?.StartIndex;
                     tokenInfo.StopIndex = terminalNodes.Last().Symbol?.StopIndex;
                     tokenInfo.ChildCount = terminalNodes.Length;
-                }               
+                }
             }
 
             return tokenInfo;
@@ -658,7 +661,7 @@ namespace CodeParser.Viewer
         {
             if (e.Control)
             {
-                if(e.KeyCode == Keys.V)
+                if (e.KeyCode == Keys.V)
                 {
                     this.txtFile.Text = "";
 
@@ -666,7 +669,7 @@ namespace CodeParser.Viewer
                 }
                 else if (e.KeyCode.HasFlag(Keys.U))
                 {
-                    if(e.Shift)
+                    if (e.Shift)
                     {
                         this.txtText.SelectedText = this.txtText.SelectedText.ToUpper();
                     }
@@ -759,6 +762,11 @@ namespace CodeParser.Viewer
 
                 this.textContextMenu.Show(this.txtText, e.Location);
             }
+        }
+
+        private void txtMessage_MouseEnter(object sender, EventArgs e)
+        {
+            this.toolTip1.SetToolTip(this.txtMessage, this.txtMessage.Text);
         }
     }
 }

@@ -353,15 +353,16 @@
             // 
             // txtMessage
             // 
+            this.txtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtMessage.Location = new System.Drawing.Point(0, 529);
-            this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ReadOnly = true;
-            this.txtMessage.Size = new System.Drawing.Size(837, 19);
+            this.txtMessage.Size = new System.Drawing.Size(837, 14);
             this.txtMessage.TabIndex = 12;
             this.txtMessage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtMessage_MouseDoubleClick);
+            this.txtMessage.MouseEnter += new System.EventHandler(this.txtMessage_MouseEnter);
             // 
             // btnReset
             // 
