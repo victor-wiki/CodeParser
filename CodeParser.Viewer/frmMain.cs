@@ -656,9 +656,25 @@ namespace CodeParser.Viewer
 
         private void txtText_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Control && e.KeyCode == Keys.V)
+            if (e.Control)
             {
-                this.LoadTree();
+                if(e.KeyCode == Keys.V)
+                {
+                    this.txtFile.Text = "";
+
+                    this.LoadTree();
+                }
+                else if (e.KeyCode.HasFlag(Keys.U))
+                {
+                    if(e.Shift)
+                    {
+                        this.txtText.SelectedText = this.txtText.SelectedText.ToUpper();
+                    }
+                    else
+                    {
+                        this.txtText.SelectedText = this.txtText.SelectedText.ToLower();
+                    }
+                }
             }
         }
 
