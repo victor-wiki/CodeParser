@@ -46,6 +46,24 @@ namespace CodeParser.Viewer
             this.cboParser.SelectedIndex = -1;
         }
 
+        private bool IsSqlParser()
+        {
+            string parserName = this.cboParser.Text;
+
+            if(!string.IsNullOrEmpty(parserName))
+            {               
+                if(parserName == nameof(MySqlParser) ||
+                   parserName == nameof(TSqlParser) ||
+                   parserName == nameof(PlSqlParser) ||
+                   parserName == nameof(SQLiteParser)
+                  )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void LoadParsers()
         {
             this.assembly = Assembly.LoadFrom(this.coderPaserDllName);
@@ -71,7 +89,8 @@ namespace CodeParser.Viewer
 
         private void LoadFromFile()
         {
-            this.txtText.Text = this.GetFileContent();
+            string content= this.GetFileContent();
+            this.txtText.Text = this.IsSqlParser() ? content.ToUpper() : content;
             this.LoadTree();
         }
 
@@ -655,31 +674,7 @@ namespace CodeParser.Viewer
         private void txtFile_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.SelectFile();
-        }
-
-        private void txtText_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Control)
-            {
-                if (e.KeyCode == Keys.V)
-                {
-                    this.txtFile.Text = "";
-
-                    this.LoadTree();
-                }
-                else if (e.KeyCode.HasFlag(Keys.U))
-                {
-                    if (e.Shift)
-                    {
-                        this.txtText.SelectedText = this.txtText.SelectedText.ToUpper();
-                    }
-                    else
-                    {
-                        this.txtText.SelectedText = this.txtText.SelectedText.ToLower();
-                    }
-                }
-            }
-        }
+        }       
 
         private void tsmiPaste_Click(object sender, EventArgs e)
         {
@@ -767,6 +762,46 @@ namespace CodeParser.Viewer
         private void txtMessage_MouseEnter(object sender, EventArgs e)
         {
             this.toolTip1.SetToolTip(this.txtMessage, this.txtMessage.Text);
+        }
+
+        private void txtText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control)
+            {
+                if (e.KeyCode == Keys.V)
+                {
+                    this.txtFile.Text = "";
+
+                    if (this.IsSqlParser() && (this.txtText.Text.Length ==0 || this.txtText.SelectedText.Length == this.txtText.Text.Length))
+                    {
+                        e.SuppressKeyPress = true;
+
+                        this.txtText.Clear();
+
+                        string content = Clipboard.GetText();
+
+                        this.txtText.AppendText(content.ToUpper());                       
+                    }
+
+                    this.LoadTree();
+                }
+                else if (e.KeyCode.HasFlag(Keys.U))
+                {
+                    if (e.Shift)
+                    {
+                        this.txtText.SelectedText = this.txtText.SelectedText.ToUpper();
+
+                        if (this.txtText.SelectionLength == this.txtText.TextLength)
+                        {
+                            this.LoadTree();
+                        }
+                    }
+                    else
+                    {
+                        this.txtText.SelectedText = this.txtText.SelectedText.ToLower();
+                    }
+                }
+            }
         }
     }
 }

@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from E:\resource\antlr-output\PlSqlParser.g4 by ANTLR 4.8
-
 // Unreachable code detected
 #pragma warning disable 0162
 // The variable '...' is assigned but its value is never used
@@ -32,7 +30,7 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 /// of the available methods.
 /// </summary>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.8")]
-[System.CLSCompliant(false)]
+//[System.CLSCompliant(false)]
 public partial class PlSqlParserBaseListener : IPlSqlParserListener {
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="PlSqlParser.sql_script"/>.
