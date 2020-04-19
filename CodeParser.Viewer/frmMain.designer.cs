@@ -62,6 +62,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.tsmiConvertToUpperCase = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConvertToLowerCase = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -117,7 +119,7 @@
             this.txtText.Size = new System.Drawing.Size(404, 379);
             this.txtText.TabIndex = 7;
             this.txtText.Text = "";
-            this.txtText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyDown);          
+            this.txtText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyDown);
             this.txtText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseUp);
             // 
             // txtChildCount
@@ -165,28 +167,30 @@
             this.textContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiPaste,
             this.tsmiClearSelection,
-            this.tsmiNavigateToTreeNode});
+            this.tsmiNavigateToTreeNode,
+            this.tsmiConvertToUpperCase,
+            this.tsmiConvertToLowerCase});
             this.textContextMenu.Name = "textContextMenu";
-            this.textContextMenu.Size = new System.Drawing.Size(203, 70);
+            this.textContextMenu.Size = new System.Drawing.Size(205, 114);
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(202, 22);
+            this.tsmiPaste.Size = new System.Drawing.Size(204, 22);
             this.tsmiPaste.Text = "paste";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // tsmiClearSelection
             // 
             this.tsmiClearSelection.Name = "tsmiClearSelection";
-            this.tsmiClearSelection.Size = new System.Drawing.Size(202, 22);
+            this.tsmiClearSelection.Size = new System.Drawing.Size(204, 22);
             this.tsmiClearSelection.Text = "clear selection";
             this.tsmiClearSelection.Click += new System.EventHandler(this.tsmiClearSelection_Click);
             // 
             // tsmiNavigateToTreeNode
             // 
             this.tsmiNavigateToTreeNode.Name = "tsmiNavigateToTreeNode";
-            this.tsmiNavigateToTreeNode.Size = new System.Drawing.Size(202, 22);
+            this.tsmiNavigateToTreeNode.Size = new System.Drawing.Size(204, 22);
             this.tsmiNavigateToTreeNode.Text = "navigate to tree node";
             this.tsmiNavigateToTreeNode.Click += new System.EventHandler(this.tsmiNavigateToTreeNode_Click);
             // 
@@ -375,6 +379,20 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // tsmiConvertToUpperCase
+            // 
+            this.tsmiConvertToUpperCase.Name = "tsmiConvertToUpperCase";
+            this.tsmiConvertToUpperCase.Size = new System.Drawing.Size(204, 22);
+            this.tsmiConvertToUpperCase.Text = "convert to upper case";
+            this.tsmiConvertToUpperCase.Click += new System.EventHandler(this.tsmiConvertToUpperCase_Click);
+            // 
+            // tsmiConvertToLowerCase
+            // 
+            this.tsmiConvertToLowerCase.Name = "tsmiConvertToLowerCase";
+            this.tsmiConvertToLowerCase.Size = new System.Drawing.Size(204, 22);
+            this.tsmiConvertToLowerCase.Text = "convert to lower case";
+            this.tsmiConvertToLowerCase.Click += new System.EventHandler(this.tsmiConvertToLowerCase_Click);
+            // 
             // frmMain
             // 
             this.AllowDrop = true;
@@ -447,6 +465,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiClearSelection;
         private System.Windows.Forms.ToolStripMenuItem tsmiNavigateToTreeNode;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ToolStripMenuItem tsmiConvertToUpperCase;
+        private System.Windows.Forms.ToolStripMenuItem tsmiConvertToLowerCase;
     }
 }
 

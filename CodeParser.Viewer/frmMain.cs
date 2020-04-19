@@ -803,5 +803,15 @@ namespace CodeParser.Viewer
                 }
             }
         }
+
+        private void tsmiConvertToUpperCase_Click(object sender, EventArgs e)
+        {
+            this.txtText.Text = this.txtText.Text.ToUpper();
+        }
+
+        private void tsmiConvertToLowerCase_Click(object sender, EventArgs e)
+        {
+            this.txtText.Text = this.txtText.Text.ToLower();
+        }
     }
 }
