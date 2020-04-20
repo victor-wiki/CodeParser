@@ -333,9 +333,15 @@ namespace CodeParser.Viewer
                                     }
 
                                     string childName = tn.GetType().Name;
+
                                     TreeNode childNode = this.CreateTreeNode($"{childName}");
                                     childNode.Name = childName;
                                     childNode.Tag = tn;
+
+                                    if(tn is ErrorNodeImpl)
+                                    {
+                                        childNode.ForeColor = Color.Red;
+                                    }
 
                                     node.Nodes.Add(childNode);
 
