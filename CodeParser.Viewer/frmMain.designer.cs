@@ -41,6 +41,8 @@
             this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNavigateToTreeNode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConvertToUpperCase = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConvertToLowerCase = new System.Windows.Forms.ToolStripMenuItem();
             this.treeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiExpandAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCollapseAll = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +64,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
-            this.tsmiConvertToUpperCase = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiConvertToLowerCase = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,11 +114,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtText.BackColor = System.Drawing.Color.White;
+            this.txtText.Font = new System.Drawing.Font("宋体", 9.75F);
             this.txtText.Location = new System.Drawing.Point(3, 82);
             this.txtText.Name = "txtText";
             this.txtText.Size = new System.Drawing.Size(404, 379);
             this.txtText.TabIndex = 7;
             this.txtText.Text = "";
+            this.txtText.SelectionChanged += new System.EventHandler(this.txtText_SelectionChanged);
             this.txtText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyDown);
             this.txtText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseUp);
             // 
@@ -193,6 +195,20 @@
             this.tsmiNavigateToTreeNode.Size = new System.Drawing.Size(204, 22);
             this.tsmiNavigateToTreeNode.Text = "navigate to tree node";
             this.tsmiNavigateToTreeNode.Click += new System.EventHandler(this.tsmiNavigateToTreeNode_Click);
+            // 
+            // tsmiConvertToUpperCase
+            // 
+            this.tsmiConvertToUpperCase.Name = "tsmiConvertToUpperCase";
+            this.tsmiConvertToUpperCase.Size = new System.Drawing.Size(204, 22);
+            this.tsmiConvertToUpperCase.Text = "convert to upper case";
+            this.tsmiConvertToUpperCase.Click += new System.EventHandler(this.tsmiConvertToUpperCase_Click);
+            // 
+            // tsmiConvertToLowerCase
+            // 
+            this.tsmiConvertToLowerCase.Name = "tsmiConvertToLowerCase";
+            this.tsmiConvertToLowerCase.Size = new System.Drawing.Size(204, 22);
+            this.tsmiConvertToLowerCase.Text = "convert to lower case";
+            this.tsmiConvertToLowerCase.Click += new System.EventHandler(this.tsmiConvertToLowerCase_Click);
             // 
             // treeContextMenu
             // 
@@ -378,20 +394,6 @@
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // tsmiConvertToUpperCase
-            // 
-            this.tsmiConvertToUpperCase.Name = "tsmiConvertToUpperCase";
-            this.tsmiConvertToUpperCase.Size = new System.Drawing.Size(204, 22);
-            this.tsmiConvertToUpperCase.Text = "convert to upper case";
-            this.tsmiConvertToUpperCase.Click += new System.EventHandler(this.tsmiConvertToUpperCase_Click);
-            // 
-            // tsmiConvertToLowerCase
-            // 
-            this.tsmiConvertToLowerCase.Name = "tsmiConvertToLowerCase";
-            this.tsmiConvertToLowerCase.Size = new System.Drawing.Size(204, 22);
-            this.tsmiConvertToLowerCase.Text = "convert to lower case";
-            this.tsmiConvertToLowerCase.Click += new System.EventHandler(this.tsmiConvertToLowerCase_Click);
             // 
             // frmMain
             // 

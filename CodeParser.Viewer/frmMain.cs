@@ -787,7 +787,7 @@ namespace CodeParser.Viewer
                         string content = Clipboard.GetText();
 
                         this.txtText.AppendText(content.ToUpper());                       
-                    }
+                    }               
 
                     this.LoadTree();
                 }
@@ -818,6 +818,11 @@ namespace CodeParser.Viewer
         private void tsmiConvertToLowerCase_Click(object sender, EventArgs e)
         {
             this.txtText.Text = this.txtText.Text.ToLower();
+        }
+
+        private void txtText_SelectionChanged(object sender, EventArgs e)
+        {
+            this.txtText.SelectionFont = this.txtText.Font;
         }
     }
 }
