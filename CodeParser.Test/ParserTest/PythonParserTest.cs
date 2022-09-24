@@ -2,21 +2,21 @@
 using Antlr4.Runtime.Tree;
 using System.IO;
 using System.Linq;
-using static PythonParser;
+using static Python3Parser;
 
 namespace CodeParser.Test
 {
     public class PythonParserTest : CodeParserTest
     {
-        public override string Language => "Python";      
+        public override string Language => "Python3";      
 
         public override void Parse(FileInfo file)
         {
-            Lexer lexer = new PythonLexer(CharStreams.fromPath(file.FullName));
+            Lexer lexer = new Python3Lexer(CharStreams.fromPath(file.FullName));
 
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-            PythonParser parser = new PythonParser(tokens);
+            Python3Parser parser = new Python3Parser(tokens);
 
             ParserRuleContext context = parser.file_input();
 
@@ -40,7 +40,7 @@ namespace CodeParser.Test
 
                     foreach (ClassdefContext classdef in classdefs)
                     {
-                        string name = classdef.name().GetText();
+                        string name = classdef.NAME().GetText();
 
                         this.WriteLine();
                         this.WriteKeyValue("Class", name);
@@ -74,7 +74,7 @@ namespace CodeParser.Test
 
                         foreach (FuncdefContext func in funcs)
                         {
-                            string name = func.name().GetText();
+                            string name = func.NAME().GetText();
 
                             this.WriteKeyValue("Method", name);
                         }

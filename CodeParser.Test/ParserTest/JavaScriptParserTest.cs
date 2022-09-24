@@ -94,7 +94,7 @@ namespace CodeParser.Test
                     }
                     else if (functionContext != null)
                     {
-                        string name = functionContext.Identifier().GetText();
+                        string name = functionContext.identifier().GetText();
                         this.WriteKeyValue("Function", name);
                     }
                     else if (importContext != null)
@@ -122,7 +122,7 @@ namespace CodeParser.Test
 
                             if (funcContext != null)
                             {
-                                string name = funcContext.Identifier().GetText();
+                                string name = funcContext.identifier().GetText();
 
                                 this.WriteKeyValue("Export", name);
                             }
@@ -137,7 +137,7 @@ namespace CodeParser.Test
                                 foreach (AliasNameContext aliasName in aliasNames)
                                 {
                                     IdentifierNameContext[] identifierNames = aliasName.identifierName();
-                                    string name = identifierNames.LastOrDefault().Identifier().GetText();
+                                    string name = identifierNames.LastOrDefault().identifier().GetText();
                                     this.WriteKeyValue("Export", name);
                                 }
                             }

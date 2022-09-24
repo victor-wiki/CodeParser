@@ -192,9 +192,9 @@ namespace CodeParser.Test
 
         private void ParseInterfaceDeclaration(Interface_definitionContext node)
         {
-            var members = node.interface_body().interface_member_declaration();
+            var members = node.class_body().class_member_declarations();
 
-            foreach (var member in members)
+            foreach (var member in members.children)
             {
                 if (member is Interface_member_declarationContext)
                 {

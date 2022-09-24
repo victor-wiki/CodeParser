@@ -51,10 +51,11 @@ namespace CodeParser.Viewer
             string parserName = this.cboParser.Text;
 
             if(!string.IsNullOrEmpty(parserName))
-            {               
-                if(parserName == nameof(MySqlParser) ||
+            {
+                if (parserName == nameof(MySqlParser) ||
                    parserName == nameof(TSqlParser) ||
                    parserName == nameof(PlSqlParser) ||
+                   parserName == nameof(PostgreSqlParser) ||
                    parserName == nameof(SQLiteParser)
                   )
                 {
@@ -195,11 +196,11 @@ namespace CodeParser.Viewer
 
             Type lexerType = this.GetLexerType(parserType.Name.Replace("Parser", "Lexer"));
 
-            Lexer lexer = (Lexer)Activator.CreateInstance(lexerType, new object[] { CharStreams.fromstring(this.txtText.Text) });
+            Lexer lexer = (Lexer)Activator.CreateInstance(lexerType, new object[] { CharStreams.fromString(this.txtText.Text) });
 
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-            this.parser = (Parser)Activator.CreateInstance(parserType, new object[] { tokens });
+            this.parser = (Parser)Activator.CreateInstance(parserType, new object[] { tokens });            
 
             ParserInfo info = this.GetParserInfo();
 
@@ -757,7 +758,7 @@ namespace CodeParser.Viewer
         {
             if (e.Button == MouseButtons.Right)
             {
-                //this.tsmiClearSelection.Visible = this.txtText.SelectionLength > 0;
+                this.tsmiClearSelection.Visible = this.txtText.SelectionLength > 0;
                 this.tsmiNavigateToTreeNode.Visible = this.txtText.SelectionLength > 0;
                 this.tsmiPaste.Visible = this.txtText.Text.Length == 0 || this.txtText.SelectionLength == this.txtText.Text.Length;
 
@@ -823,6 +824,16 @@ namespace CodeParser.Viewer
         private void txtText_SelectionChanged(object sender, EventArgs e)
         {
             this.txtText.SelectionFont = this.txtText.Font;
+        }
+
+        private void tsmiParseCurrent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiClearContent_Click(object sender, EventArgs e)
+        {
+            this.txtText.Clear();
         }
     }
 }

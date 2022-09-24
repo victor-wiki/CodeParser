@@ -10,39 +10,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Examples\helloworld.c" />
     <None Remove="Examples\Helloworld.cpp" />
-    <None Remove="Examples\HelloWorld.java" />
     <None Remove="Examples\HelloWorld.js" />
-    <None Remove="Examples\HelloWorld.php" />
     <None Remove="Examples\HelloWorld.py" />
-    <None Remove="Examples\MySql\Function.sql" />
     <None Remove="Examples\Tsql_view.sql" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Examples\helloworld.c">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Examples\Helloworld.cpp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Examples\HelloWorld.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Examples\HelloWorld.java">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Examples\HelloWorld.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Examples\HelloWorld.php">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Examples\HelloWorld.py">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Examples\MySql\Function.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

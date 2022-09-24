@@ -39,8 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNavigateToTreeNode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConvertToUpperCase = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConvertToLowerCase = new System.Windows.Forms.ToolStripMenuItem();
             this.treeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -64,6 +64,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.tsmiClearContent = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -168,12 +169,13 @@
             // 
             this.textContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiPaste,
-            this.tsmiClearSelection,
             this.tsmiNavigateToTreeNode,
+            this.tsmiClearSelection,
             this.tsmiConvertToUpperCase,
-            this.tsmiConvertToLowerCase});
+            this.tsmiConvertToLowerCase,
+            this.tsmiClearContent});
             this.textContextMenu.Name = "textContextMenu";
-            this.textContextMenu.Size = new System.Drawing.Size(205, 114);
+            this.textContextMenu.Size = new System.Drawing.Size(205, 158);
             // 
             // tsmiPaste
             // 
@@ -182,19 +184,19 @@
             this.tsmiPaste.Text = "paste";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
-            // tsmiClearSelection
-            // 
-            this.tsmiClearSelection.Name = "tsmiClearSelection";
-            this.tsmiClearSelection.Size = new System.Drawing.Size(204, 22);
-            this.tsmiClearSelection.Text = "clear selection";
-            this.tsmiClearSelection.Click += new System.EventHandler(this.tsmiClearSelection_Click);
-            // 
             // tsmiNavigateToTreeNode
             // 
             this.tsmiNavigateToTreeNode.Name = "tsmiNavigateToTreeNode";
             this.tsmiNavigateToTreeNode.Size = new System.Drawing.Size(204, 22);
             this.tsmiNavigateToTreeNode.Text = "navigate to tree node";
             this.tsmiNavigateToTreeNode.Click += new System.EventHandler(this.tsmiNavigateToTreeNode_Click);
+            // 
+            // tsmiClearSelection
+            // 
+            this.tsmiClearSelection.Name = "tsmiClearSelection";
+            this.tsmiClearSelection.Size = new System.Drawing.Size(204, 22);
+            this.tsmiClearSelection.Text = "clear selection";
+            this.tsmiClearSelection.Click += new System.EventHandler(this.tsmiClearSelection_Click);
             // 
             // tsmiConvertToUpperCase
             // 
@@ -395,6 +397,13 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // tsmiClearContent
+            // 
+            this.tsmiClearContent.Name = "tsmiClearContent";
+            this.tsmiClearContent.Size = new System.Drawing.Size(204, 22);
+            this.tsmiClearContent.Text = "clear content";
+            this.tsmiClearContent.Click += new System.EventHandler(this.tsmiClearContent_Click);
+            // 
             // frmMain
             // 
             this.AllowDrop = true;
@@ -469,6 +478,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ToolStripMenuItem tsmiConvertToUpperCase;
         private System.Windows.Forms.ToolStripMenuItem tsmiConvertToLowerCase;
+        private System.Windows.Forms.ToolStripMenuItem tsmiClearContent;
     }
 }
 

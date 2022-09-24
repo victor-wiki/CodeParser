@@ -6,14 +6,10 @@ namespace CodeParser.Test
     {
         static void Main(string[] args)
         {
-            Parse("Java");
-            Parse("C#");
-            Parse("Python");
-            Parse("PHP");
+            Parse("Python3");
+            Parse("C#");             
             Parse("JavaScript");
-            Parse("C++");
-            Parse("C");
-            Parse("MySql");
+            Parse("C++");           
 
             Console.ReadLine();
         }       

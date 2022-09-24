@@ -36,8 +36,8 @@
     <ApplicationIcon>Resources\magic.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr4.Runtime.Standard, Version=4.8.0.0, Culture=neutral, PublicKeyToken=e78b2c5abd1fcb3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr4.Runtime.Standard.4.8.0\lib\net35\Antlr4.Runtime.Standard.dll</HintPath>
+    <Reference Include="Antlr4.Runtime.Standard, Version=4.10.1.0, Culture=neutral, PublicKeyToken=e78b2c5abd1fcb3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr4.Runtime.Standard.4.10.1\lib\netstandard2.0\Antlr4.Runtime.Standard.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
