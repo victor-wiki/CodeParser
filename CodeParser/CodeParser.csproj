@@ -5,8 +5,9 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>victor-wiki</Authors>
     <PackageProjectUrl>https://github.com/victor-wiki/CodeParser</PackageProjectUrl>
-    <Description>Parser code generated from antlr(https://github.com/antlr/grammars-v4), the library includes C, C++, C#, Java, JavaScript, Python, Php, MySql, TSql, PlSql and SQLite.</Description>
+    <Description>Parser code generated from antlr(https://github.com/antlr/grammars-v4), the library includes C, C++, C#, Java, JavaScript, Python, Php, MySql, TSql, PlSql, Postgres and SQLite.</Description>
     <Version>2.0.0</Version>
+    <PackageReleaseNotes>make up missing files</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

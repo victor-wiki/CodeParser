@@ -23,6 +23,7 @@ namespace CodeParser.Viewer
         private Parser parser = null;
         private Color selectionBackColor = ColorTranslator.FromHtml("#0078D7");
         private Dictionary<TreeNode, TokenInfo> dictTokenInfo = new Dictionary<TreeNode, TokenInfo>();
+        private SqlSyntaxError error;
 
         private static List<string> ignoreMethods = new List<string>()
         {
@@ -50,7 +51,7 @@ namespace CodeParser.Viewer
         {
             string parserName = this.cboParser.Text;
 
-            if(!string.IsNullOrEmpty(parserName))
+            if (!string.IsNullOrEmpty(parserName))
             {
                 if (parserName == nameof(MySqlParser) ||
                    parserName == nameof(TSqlParser) ||
@@ -90,7 +91,7 @@ namespace CodeParser.Viewer
 
         private void LoadFromFile()
         {
-            string content= this.GetFileContent();
+            string content = this.GetFileContent();
             this.txtText.Text = this.IsSqlParser() ? content.ToUpper() : content;
             this.LoadTree();
         }
@@ -200,7 +201,11 @@ namespace CodeParser.Viewer
 
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-            this.parser = (Parser)Activator.CreateInstance(parserType, new object[] { tokens });            
+            this.parser = (Parser)Activator.CreateInstance(parserType, new object[] { tokens });
+
+            var errorListener = new SqlSyntaxErrorListener();
+
+            this.parser.AddErrorListener(errorListener);
 
             ParserInfo info = this.GetParserInfo();
 
@@ -209,9 +214,16 @@ namespace CodeParser.Viewer
                 return;
             }
 
-            MethodInfo rootMethod = parserType.GetMethod(info.EntryRuleName);
+            var rootMethod = parserType.GetMethod(info.EntryRuleName);
 
-            object value = rootMethod.Invoke(parser, new object[] { });
+            object value = rootMethod.Invoke(this.parser, new object[] { });
+
+            this.error = errorListener.Error;
+
+            if (this.chkHighlightingErrors.Checked)
+            {
+                this.HighlightingError();
+            }
 
             TreeNode rootNode = this.CreateTreeNode(info.EntryRuleName);
             rootNode.Tag = value;
@@ -223,6 +235,27 @@ namespace CodeParser.Viewer
             rootNode.Expand();
 
             rootNode.EnsureVisible();
+        }
+
+        public void HighlightingError()
+        {
+            if (this.error != null)
+            {
+                bool enabled = this.chkHighlightingErrors.Checked;
+
+                foreach (var item in this.error.Items)
+                {
+                    this.txtText.SelectionStart = item.StartIndex;
+                    this.txtText.SelectionLength = item.StopIndex - item.StartIndex + 1;
+
+                    this.txtText.SelectionColor = enabled ? Color.Red : Color.Black;
+                    this.txtText.SelectionBackColor = enabled ? Color.Yellow : Color.White;
+                }
+            }
+
+            this.txtText.SelectionStart = 0;
+            this.txtText.SelectionLength = 0;
+            this.txtText.Focus();
         }
 
         private void AddChildNodes(TreeNode node, bool expand)
@@ -339,7 +372,7 @@ namespace CodeParser.Viewer
                                     childNode.Name = childName;
                                     childNode.Tag = tn;
 
-                                    if(tn is ErrorNodeImpl)
+                                    if (tn is ErrorNodeImpl)
                                     {
                                         childNode.ForeColor = Color.Red;
                                     }
@@ -424,6 +457,7 @@ namespace CodeParser.Viewer
 
             this.ClearValues();
             this.ClearSelection();
+            this.HighlightingError();
 
             object value = node.Tag;
 
@@ -456,7 +490,7 @@ namespace CodeParser.Viewer
                 this.txtText.ScrollToCaret();
             }
 
-            this.txtMessage.Text = this.GetTreeNodePath(node);
+            this.txtMessage.Text = this.GetTreeNodePath(node);            
         }
 
         private TokenInfo GetTokenInfo(dynamic value)
@@ -681,7 +715,7 @@ namespace CodeParser.Viewer
         private void txtFile_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.SelectFile();
-        }       
+        }
 
         private void tsmiPaste_Click(object sender, EventArgs e)
         {
@@ -702,6 +736,7 @@ namespace CodeParser.Viewer
         private void tsmiClearSelection_Click(object sender, EventArgs e)
         {
             this.ClearSelection();
+            this.HighlightingError();
         }
 
         private void tsmiNavigateToTreeNode_Click(object sender, EventArgs e)
@@ -758,7 +793,6 @@ namespace CodeParser.Viewer
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.tsmiClearSelection.Visible = this.txtText.SelectionLength > 0;
                 this.tsmiNavigateToTreeNode.Visible = this.txtText.SelectionLength > 0;
                 this.tsmiPaste.Visible = this.txtText.Text.Length == 0 || this.txtText.SelectionLength == this.txtText.Text.Length;
 
@@ -779,7 +813,7 @@ namespace CodeParser.Viewer
                 {
                     this.txtFile.Text = "";
 
-                    if (this.IsSqlParser() && (this.txtText.Text.Length ==0 || this.txtText.SelectedText.Length == this.txtText.Text.Length))
+                    if (this.IsSqlParser() && (this.txtText.Text.Length == 0 || this.txtText.SelectedText.Length == this.txtText.Text.Length))
                     {
                         e.SuppressKeyPress = true;
 
@@ -787,8 +821,8 @@ namespace CodeParser.Viewer
 
                         string content = Clipboard.GetText();
 
-                        this.txtText.AppendText(content.ToUpper());                       
-                    }               
+                        this.txtText.AppendText(content.ToUpper());
+                    }
 
                     this.LoadTree();
                 }
@@ -834,6 +868,11 @@ namespace CodeParser.Viewer
         private void tsmiClearContent_Click(object sender, EventArgs e)
         {
             this.txtText.Clear();
+        }
+
+        private void chkHighlightingErrors_CheckedChanged(object sender, EventArgs e)
+        {
+            this.HighlightingError();
         }
     }
 }

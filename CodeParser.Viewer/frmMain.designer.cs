@@ -43,6 +43,7 @@
             this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConvertToUpperCase = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConvertToLowerCase = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearContent = new System.Windows.Forms.ToolStripMenuItem();
             this.treeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiExpandAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCollapseAll = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
-            this.tsmiClearContent = new System.Windows.Forms.ToolStripMenuItem();
+            this.chkHighlightingErrors = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -175,7 +176,7 @@
             this.tsmiConvertToLowerCase,
             this.tsmiClearContent});
             this.textContextMenu.Name = "textContextMenu";
-            this.textContextMenu.Size = new System.Drawing.Size(205, 158);
+            this.textContextMenu.Size = new System.Drawing.Size(205, 136);
             // 
             // tsmiPaste
             // 
@@ -211,6 +212,13 @@
             this.tsmiConvertToLowerCase.Size = new System.Drawing.Size(204, 22);
             this.tsmiConvertToLowerCase.Text = "convert to lower case";
             this.tsmiConvertToLowerCase.Click += new System.EventHandler(this.tsmiConvertToLowerCase_Click);
+            // 
+            // tsmiClearContent
+            // 
+            this.tsmiClearContent.Name = "tsmiClearContent";
+            this.tsmiClearContent.Size = new System.Drawing.Size(204, 22);
+            this.tsmiClearContent.Text = "clear content";
+            this.tsmiClearContent.Click += new System.EventHandler(this.tsmiClearContent_Click);
             // 
             // treeContextMenu
             // 
@@ -397,12 +405,18 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // tsmiClearContent
+            // chkHighlightingErrors
             // 
-            this.tsmiClearContent.Name = "tsmiClearContent";
-            this.tsmiClearContent.Size = new System.Drawing.Size(204, 22);
-            this.tsmiClearContent.Text = "clear content";
-            this.tsmiClearContent.Click += new System.EventHandler(this.tsmiClearContent_Click);
+            this.chkHighlightingErrors.AutoSize = true;
+            this.chkHighlightingErrors.Checked = true;
+            this.chkHighlightingErrors.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkHighlightingErrors.Location = new System.Drawing.Point(577, 13);
+            this.chkHighlightingErrors.Name = "chkHighlightingErrors";
+            this.chkHighlightingErrors.Size = new System.Drawing.Size(138, 16);
+            this.chkHighlightingErrors.TabIndex = 14;
+            this.chkHighlightingErrors.Text = "Highlighting errors";
+            this.chkHighlightingErrors.UseVisualStyleBackColor = true;
+            this.chkHighlightingErrors.CheckedChanged += new System.EventHandler(this.chkHighlightingErrors_CheckedChanged);
             // 
             // frmMain
             // 
@@ -410,6 +424,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 548);
+            this.Controls.Add(this.chkHighlightingErrors);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.btnReload);
@@ -479,6 +494,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiConvertToUpperCase;
         private System.Windows.Forms.ToolStripMenuItem tsmiConvertToLowerCase;
         private System.Windows.Forms.ToolStripMenuItem tsmiClearContent;
+        private System.Windows.Forms.CheckBox chkHighlightingErrors;
     }
 }
 
