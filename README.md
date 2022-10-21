@@ -38,4 +38,4 @@ Method:sayHello
 ![CodePaser Viewer](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/CodeParser/Viewer2.png?raw=true&rid=1)
 
 ## Use Case
-The library [SqlAnalyser.Core](https://github.com/victor-wiki/DatabaseManager/tree/master/DatabaseConverter/SqlAnalyser.Core) of [DatabaseManager](https://github.com/victor-wiki/DatabaseManager) project uses the TSqlParser, MySqlParser and PlSqlParser to parse and translate view, function, procedure and table trigger between SqlServer, MySql and Oracle.
+The library [SqlAnalyser.Core](https://github.com/victor-wiki/DatabaseManager/tree/master/DatabaseConverter/SqlAnalyser.Core) of [DatabaseManager](https://github.com/victor-wiki/DatabaseManager) project uses the TSqlParser, MySqlParser, PlSqlParser and PostgreSqlParser to parse and translate view, function, procedure and table trigger between SqlServer, MySql, Oracle and Postgres.
