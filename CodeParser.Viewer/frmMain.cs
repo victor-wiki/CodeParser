@@ -25,6 +25,8 @@ namespace CodeParser.Viewer
         private Dictionary<TreeNode, TokenInfo> dictTokenInfo = new Dictionary<TreeNode, TokenInfo>();
         private SqlSyntaxError error;
 
+        public delegate void AddNodeDelegate(TreeNode node);
+
         private static List<string> ignoreMethods = new List<string>()
         {
             "Eof"
@@ -32,6 +34,11 @@ namespace CodeParser.Viewer
 
         public frmMain()
         {
+            RichTextBox.CheckForIllegalCrossThreadCalls = false;
+            TreeView.CheckForIllegalCrossThreadCalls = false;            
+            TextBox.CheckForIllegalCrossThreadCalls = false;
+            Label.CheckForIllegalCrossThreadCalls = false;
+
             InitializeComponent();
         }
 
@@ -175,8 +182,13 @@ namespace CodeParser.Viewer
 
         private void LoadTree()
         {
-            this.ClearValues();
-            this.txtMessage.Text = "";
+            Task.Run(()=> this.InternalLoadTree());
+        }
+
+        private void InternalLoadTree()
+        {
+            this.ClearValues();         
+            this.txtMessage.Text = "is parsing...";
 
             this.tvParserNodes.Nodes.Clear();
             this.dictTokenInfo.Clear();
@@ -212,7 +224,7 @@ namespace CodeParser.Viewer
             if (info == null)
             {
                 return;
-            }
+            }         
 
             var rootMethod = parserType.GetMethod(info.EntryRuleName);
 
@@ -228,13 +240,23 @@ namespace CodeParser.Viewer
             TreeNode rootNode = this.CreateTreeNode(info.EntryRuleName);
             rootNode.Tag = value;
 
-            this.tvParserNodes.Nodes.Add(rootNode);
+            this.txtMessage.Text = "is loading tree...";
 
-            this.AddChildNodes(rootNode, false);
+            AddNodeDelegate @delegate = new AddNodeDelegate(this.AddTreeNode);
+            this.Invoke(@delegate, rootNode);         
 
             rootNode.Expand();
 
             rootNode.EnsureVisible();
+
+            this.txtMessage.Text = "";
+        }
+
+        private void AddTreeNode(TreeNode node)
+        {
+            this.tvParserNodes.Nodes.Add(node);
+
+            this.AddChildNodes(node, false);
         }
 
         public void HighlightingError()
@@ -821,7 +843,7 @@ namespace CodeParser.Viewer
 
                         string content = Clipboard.GetText();
 
-                        this.txtText.AppendText(content.ToUpper());
+                        this.txtText.AppendText(content);
                     }
 
                     this.LoadTree();

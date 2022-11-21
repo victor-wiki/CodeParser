@@ -41,8 +41,6 @@
             this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNavigateToTreeNode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearSelection = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiConvertToUpperCase = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiConvertToLowerCase = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearContent = new System.Windows.Forms.ToolStripMenuItem();
             this.treeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiExpandAll = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,7 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtText.BackColor = System.Drawing.Color.White;
-            this.txtText.Font = new System.Drawing.Font("宋体", 9.75F);
+            this.txtText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtText.Location = new System.Drawing.Point(3, 82);
             this.txtText.Name = "txtText";
             this.txtText.Size = new System.Drawing.Size(404, 379);
@@ -172,52 +170,36 @@
             this.tsmiPaste,
             this.tsmiNavigateToTreeNode,
             this.tsmiClearSelection,
-            this.tsmiConvertToUpperCase,
-            this.tsmiConvertToLowerCase,
             this.tsmiClearContent});
             this.textContextMenu.Name = "textContextMenu";
-            this.textContextMenu.Size = new System.Drawing.Size(205, 136);
+            this.textContextMenu.Size = new System.Drawing.Size(206, 92);
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(204, 22);
-            this.tsmiPaste.Text = "paste";
+            this.tsmiPaste.Size = new System.Drawing.Size(205, 22);
+            this.tsmiPaste.Text = "Paste";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // tsmiNavigateToTreeNode
             // 
             this.tsmiNavigateToTreeNode.Name = "tsmiNavigateToTreeNode";
-            this.tsmiNavigateToTreeNode.Size = new System.Drawing.Size(204, 22);
-            this.tsmiNavigateToTreeNode.Text = "navigate to tree node";
+            this.tsmiNavigateToTreeNode.Size = new System.Drawing.Size(205, 22);
+            this.tsmiNavigateToTreeNode.Text = "Navigate to tree node";
             this.tsmiNavigateToTreeNode.Click += new System.EventHandler(this.tsmiNavigateToTreeNode_Click);
             // 
             // tsmiClearSelection
             // 
             this.tsmiClearSelection.Name = "tsmiClearSelection";
-            this.tsmiClearSelection.Size = new System.Drawing.Size(204, 22);
-            this.tsmiClearSelection.Text = "clear selection";
+            this.tsmiClearSelection.Size = new System.Drawing.Size(205, 22);
+            this.tsmiClearSelection.Text = "Clear Selection";
             this.tsmiClearSelection.Click += new System.EventHandler(this.tsmiClearSelection_Click);
-            // 
-            // tsmiConvertToUpperCase
-            // 
-            this.tsmiConvertToUpperCase.Name = "tsmiConvertToUpperCase";
-            this.tsmiConvertToUpperCase.Size = new System.Drawing.Size(204, 22);
-            this.tsmiConvertToUpperCase.Text = "convert to upper case";
-            this.tsmiConvertToUpperCase.Click += new System.EventHandler(this.tsmiConvertToUpperCase_Click);
-            // 
-            // tsmiConvertToLowerCase
-            // 
-            this.tsmiConvertToLowerCase.Name = "tsmiConvertToLowerCase";
-            this.tsmiConvertToLowerCase.Size = new System.Drawing.Size(204, 22);
-            this.tsmiConvertToLowerCase.Text = "convert to lower case";
-            this.tsmiConvertToLowerCase.Click += new System.EventHandler(this.tsmiConvertToLowerCase_Click);
             // 
             // tsmiClearContent
             // 
             this.tsmiClearContent.Name = "tsmiClearContent";
-            this.tsmiClearContent.Size = new System.Drawing.Size(204, 22);
-            this.tsmiClearContent.Text = "clear content";
+            this.tsmiClearContent.Size = new System.Drawing.Size(205, 22);
+            this.tsmiClearContent.Text = "Clear Content";
             this.tsmiClearContent.Click += new System.EventHandler(this.tsmiClearContent_Click);
             // 
             // treeContextMenu
@@ -491,8 +473,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiClearSelection;
         private System.Windows.Forms.ToolStripMenuItem tsmiNavigateToTreeNode;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.ToolStripMenuItem tsmiConvertToUpperCase;
-        private System.Windows.Forms.ToolStripMenuItem tsmiConvertToLowerCase;
         private System.Windows.Forms.ToolStripMenuItem tsmiClearContent;
         private System.Windows.Forms.CheckBox chkHighlightingErrors;
     }
