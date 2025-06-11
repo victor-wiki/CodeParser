@@ -155,10 +155,10 @@ namespace CodeParser.Viewer
 
         private void txtFile_TextChanged(object sender, EventArgs e)
         {
-            if (File.Exists(this.txtFile.Text))
-            {
-                this.LoadFromFile();
-            }
+            //if (File.Exists(this.txtFile.Text))
+            //{
+            //    this.LoadFromFile();
+            //}
         }
 
         private void ClearValues()
